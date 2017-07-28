@@ -1,6 +1,6 @@
 # Site settings
 languageCode = "en-us"
-baseurl = "http://127.0.0.1:8070/blog"
+baseurl = "https://ningyu1.github.io/site"
 title = "凝雨 - Yun"
 theme = "hugo-fabric"
 rssuri = "atom.xml"

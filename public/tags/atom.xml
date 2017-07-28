@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 凝雨 - Yun</title>
-    <link>http://127.0.0.1:8070/blog/tags/</link>
+    <link>https://ningyu1.github.io/site/tags/</link>
     <description>Recent content in Tags on 凝雨 - Yun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 04 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://127.0.0.1:8070/blog/tags/atom.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ningyu1.github.io/site/tags/atom.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Fastdfs</title>
-      <link>http://127.0.0.1:8070/blog/tags/fastdfs/</link>
+      <link>https://ningyu1.github.io/site/tags/fastdfs/</link>
       <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://127.0.0.1:8070/blog/tags/fastdfs/</guid>
+      <guid>https://ningyu1.github.io/site/tags/fastdfs/</guid>
       <description></description>
     </item>
     

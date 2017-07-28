@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>凝雨 - Yun</title>
-    <link>http://127.0.0.1:8070/blog/</link>
+    <link>https://ningyu1.github.io/site/</link>
     <description>Recent content on 凝雨 - Yun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 04 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://127.0.0.1:8070/blog/atom.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ningyu1.github.io/site/atom.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>FASTDFS安装手册</title>
-      <link>http://127.0.0.1:8070/blog/post/fastdfs-installer/</link>
+      <link>https://ningyu1.github.io/site/post/fastdfs-installer/</link>
       <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://127.0.0.1:8070/blog/post/fastdfs-installer/</guid>
+      <guid>https://ningyu1.github.io/site/post/fastdfs-installer/</guid>
       <description>FASTDFS安装手册 @(DFS)
 docker中安装 docker pull season/fastdfs docker tag season/fastdfs 192.168.0.34:5000/season/fastdfs docker push 192.168.0.34:5000/season/fastdfs  启动会获取tracker ip 192.168.0.54:22122
 monitor检测
@@ -27,10 +27,10 @@ monitor检测
     
     <item>
       <title>archives</title>
-      <link>http://127.0.0.1:8070/blog/archives/</link>
+      <link>https://ningyu1.github.io/site/archives/</link>
       <pubDate>Tue, 28 Mar 2017 15:58:20 +0800</pubDate>
       
-      <guid>http://127.0.0.1:8070/blog/archives/</guid>
+      <guid>https://ningyu1.github.io/site/archives/</guid>
       <description></description>
     </item>
     
