@@ -1,0 +1,27 @@
+# Site settings
+languageCode = "en-us"
+baseurl = "http://127.0.0.1:8070/blog"
+title = "凝雨 - Yun"
+theme = "hugo-fabric"
+rssuri = "atom.xml"
+
+[params]
+  [params.theme]
+    subtitle = "快乐编程每一天 - Happy Coding Every Days"
+    post_type = "page" # For archive
+    archive_post_type = "archives"
+
+    # According to https://discuss.gohugo.io/t/how-to-access-the-top-level-rsslink-from-a-post/2044, we have to set this ourself
+    site_rsslink = "atom.xml"
+
+    # social account
+    github_user = "ningyu1"
+    # twitter_user = "wd"
+    disqus_shortname = "wdicc"
+
+    # post sharing
+    facebook_like = false
+    twitter_tweet_button = false
+    google_plus_one = true
+    google_plus_one_size = "midum"
+    #addthis_profile_id = "wd"
