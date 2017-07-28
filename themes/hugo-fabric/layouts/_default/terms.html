@@ -1,0 +1,7 @@
+{{ define "body" }}
+{{ $site := .Site }}
+{{ $data := .Data }}
+{{ range $key, $value := .Data.Terms.Alphabetical }}
+<a href="{{ $site.BaseURL }}/{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a><sup class="tagcount">{{ $value.Count }}</sup>
+{{ end }}
+{{ end }}

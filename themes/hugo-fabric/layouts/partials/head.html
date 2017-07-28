@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+    {{ $.Scratch.Add "title" "" }}
+    {{ if eq .Type "archives" }}
+    {{ $.Scratch.Set "title" "Archives" }}
+    {{ else if ne .Title .Site.Title }}
+    {{ $.Scratch.Set "title" .Title }}
+    {{ end }}
+    <title>{{ if $.Scratch.Get "title" }}{{ $.Scratch.Get "title" }} - {{ end }}{{ .Site.Title }}</title>
+    <meta name="author" content="{{ .Site.Params.author }}">
+    <meta name="description" content="{{ .Description }}">
+    <meta name="keywords" content="{{ range .Keywords }}{{ . }},{{ end }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="{{ .RSSLink }}" rel="alternate" title="{{ .Site.Title }}" type="application/atom+xml">
+    <link href="{{ .Site.BaseURL }}/images/fav.ico" rel="shortcut icon">
+    <style>
+    {{ partial "css/screen.css" . | safeCSS }}
+    </style>
+
+    <link href="{{ .Site.BaseURL }}/css/custom.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='//fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![}]-->
+
+    <script type="text/javascript" src="{{ .Site.BaseURL }}/js/jquery-tapir.js"></script>
+
+    {{ template "_internal/google_analytics_async.html" . }}
+
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/hljs.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>

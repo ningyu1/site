@@ -1,0 +1,15 @@
+<ul id="nav">
+    <li id="ajax"><a href="{{ .Site.BaseURL }}/index.html">首页</a></li>
+    <li id="ajax"><a href="{{ .Site.BaseURL }}/archives/index.html">博文</a></li>
+	<li id="ajax"><a href="{{ .Site.BaseURL }}/categories/index.html">分类</a></li>
+    <li id="ajax"><a href="{{ .Site.BaseURL }}/tags/index.html">标签</a></li>
+    <li><a href="{{ .Site.BaseURL }}/{{ .Site.Params.theme.site_rsslink }}">RSS</a></li>
+    <li>
+    <div id="dark">
+        <form action="//www.google.com.hk/search" method="get" accept-charset="UTF-8" id="search">
+            <input type="hidden" name="sitesearch" value="{{ .Site.BaseURL }}" />
+            <input type="text" name="q" results="0" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+</ul>
