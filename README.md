@@ -1,1 +1,1 @@
-https://github.com/ningyu1/site
+https://ningyu1.github.io/site/
