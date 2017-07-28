@@ -1,17 +1,18 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.21" />
 	<meta charset="utf-8">
     
     
-    <title>凝雨 - Yun</title>
+    
+    
+    <title>Nginx 502 Bad Gateway问题分析与踩过的坑 - 凝雨 - Yun</title>
     <meta name="author" content="">
-    <meta name="description" content="">
+    <meta name="description" content="Nginx 502 Bad Gateway问题分析与踩过的坑">
     <meta name="keywords" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link href="https://ningyu1.github.io/site/atom.xml" rel="alternate" title="凝雨 - Yun" type="application/atom+xml">
+    <link href="" rel="alternate" title="凝雨 - Yun" type="application/atom+xml">
     <link href="https://ningyu1.github.io/site/images/fav.ico" rel="shortcut icon">
     <style>
     @charset "UTF-8";
@@ -4204,22 +4205,8 @@ body {
 
     <div id="content" class="inner">
         
-
-
-
-
-    
-    <script id="dsq-count-scr" src="//wdicc.disqus.com/count.js" async></script>
-    
-
-
-
-
-  <article class="post">
-    <h2 class="title"> 
-        <a href="https://ningyu1.github.io/site/post/nginx-502-bad-gateway/">Nginx 502 Bad Gateway问题分析与踩过的坑</a>
-    </h2>
-    <div class="entry-content">
+<article class="post">
+    <h2 class="title">Nginx 502 Bad Gateway问题分析与踩过的坑</h2>
     <div class="meta">
         <div class="date">Published on: <time datetime='2017-07-28T00:00:00.000&#43;00:00' itemprop="datePublished">2017-07-28</time>
 </div>
@@ -4232,7 +4219,7 @@ body {
 
 </div>
     </div>
-        
+    <div class="entry-content">
 
 <h3 id="我相信使用nginx的都会遇到过502-504-这种bad-gateway错误-下面我把碰到这个问题分析过程记录并分享出来">我相信使用Nginx的都会遇到过502 504 这种bad gateway错误，下面我把碰到这个问题分析过程记录并分享出来。</h3>
 
@@ -4370,503 +4357,53 @@ receiverArea=&amp;referenceNo=&amp;receiverName=&amp;page=1&amp;pageSize=50&amp;
 </ol>
 
 <p>采用这种部署方式来解决nginx 502问题</p>
-
-    </div>
+</div>
 
 <div class="meta">
-    
-    
-    <span class="comments"><a href="https://ningyu1.github.io/site/post/nginx-502-bad-gateway/#disqus_thread">Comments</a></span>
-    
-    
-</div>
-</article>
-
-  <article class="post">
-    <h2 class="title"> 
-        <a href="https://ningyu1.github.io/site/post/fastdfs-installer/">FASTDFS安装手册</a>
-    </h2>
-    <div class="entry-content">
-    <div class="meta">
-        <div class="date">Published on: <time datetime='2017-07-04T00:00:00.000&#43;00:00' itemprop="datePublished">2017-07-04</time>
-</div>
-        <div class="tags">Tags: 
-
-<a href="https://ningyu1.github.io/site/tags/fastdfs">FASTDFS</a>
-
-
-</div>
-    </div>
-        
-
-<h1 id="fastdfs安装手册">FASTDFS安装手册</h1>
-
-<p>@(DFS)</p>
-
-<h2 id="docker中安装">docker中安装</h2>
-
-<pre><code class="language-bash">docker pull season/fastdfs
-docker tag season/fastdfs 192.168.0.34:5000/season/fastdfs
-docker push 192.168.0.34:5000/season/fastdfs
-</code></pre>
-
-<p>启动会获取tracker ip
-<code>192.168.0.54:22122</code></p>
-
-<p>monitor检测</p>
-
-<pre><code class="language-bash">/usr/local/bin/fdfs_monitor /etc/fdfs/storage.conf
-</code></pre>
-
-<p>storage
-store_path0路径与base_path路径必须不同
-group1/M00/00/00/wKgANlkZguqAXkEWAAAHCocH0Uw633.xml
-group1/M00/00/00/wKgANlkZgxWAfY1YAAAHCocH0Uw396.xml
-group1/M00/00/00/wKgANlkZixuAUWv_AAAHCocH0Uw537.xml</p>
-
-<h2 id="物理机安装">物理机安装</h2>
-
-<h3 id="1-安装git">1.安装git</h3>
-
-<p><code>yum install -y git</code></p>
-
-<h3 id="2-下载fastdfs源码">2.下载fastdfs源码</h3>
-
-<pre><code class="language-bash">git clone https://github.com/happyfish100/fastdfs.git
-git clone https://github.com/happyfish100/libfastcommon.git
-git clone https://github.com/happyfish100/fastdfs-nginx-module.git
-</code></pre>
-
-<h3 id="3-下载nginx">3.下载nginx</h3>
-
-<pre><code class="language-bash">cp /home/jyftp/nginx-1.10.1.tar.gz ./
-tar -xvf nginx-1.10.1.tar.gz 
-rm -rf nginx-1.10.1.tar.gz 
-chown -R root.root nginx-1.10.1/
-mv nginx-1.10.1/ nginx
-</code></pre>
-
-<h3 id="4-安装libfastcommon-fastdfs依赖的系统库">4.安装libfastcommon (fastdfs依赖的系统库）</h3>
-
-<pre><code class="language-bash">cd /usr/local/fastdfs/libfastcommon
-./make.sh
-./make.sh install
-</code></pre>
-
-<h3 id="5-安装fastdfs">5.安装fastdfs</h3>
-
-<pre><code class="language-bash">cd /usr/local/fastdfs/fastdfs
-./make.sh
-./make.sh install
-</code></pre>
-
-<h3 id="6-安装nginx">6.安装nginx</h3>
-
-<pre><code class="language-bash">cd /usr/local/nginx
-./configure --prefix=/usr/local/nginx --conf-path=/usr/local/nginx/nginx.conf --add-module=/usr/local/fastdfs/fastdfs-nginx-module/src
-make 
-make install
-</code></pre>
-
-<p>ps.安装nginx错误处理</p>
-
-<pre><code>安装Nginx时报错误提示：
-./configure: error: the HTTP rewrite module requires the PCRE library.
- 
-安装pcre-devel与openssl-devel解决问题
- 
-yum -y install pcre-devel openssl openssl-devel
-</code></pre>
-
-<p>nginx make时报错如下：</p>
-
-<pre><code>/data/soft/fastdfs-nginx-module/src/ngx_http_fastdfs_module.c:894: 错误：‘struct fdfs_http_context’没有名为‘if_modified_since’的成员
-/data/soft/fastdfs-nginx-module/src/ngx_http_fastdfs_module.c:897: 错误：‘struct fdfs_http_context’没有名为‘if_modified_since’的成员
-/data/soft/fastdfs-nginx-module/src/ngx_http_fastdfs_module.c:927: 错误：‘struct fdfs_http_context’没有名为‘range’的成员
-/data/soft/fastdfs-nginx-module/src/ngx_http_fastdfs_module.c:933: 错误：‘struct fdfs_http_context’没有名为‘if_range’的成员
-/data/soft/fastdfs-nginx-module/src/ngx_http_fastdfs_module.c:933: 错误：‘true’未声明(在此函数内第一次使用)
-make[1]: *** [objs/addon/src/ngx_http_fastdfs_module.o] 错误 1
-make[1]: Leaving directory `/data/soft/nginx-1.8.0'
-make: *** [build] 错误 2
-</code></pre>
-
-<p>解决办法
-执行以下2条命令，然后重新make</p>
-
-<pre><code># ln -sv /usr/include/fastcommon /usr/local/include/fastcommon
-# ln -sv /usr/include/fastdfs /usr/local/include/fastdfs
-</code></pre>
-
-<p>拷贝相关文件到/etc/fdfs目录下：</p>
-
-<pre><code># cp /usr/local/fastdfs/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs/
-# cp /usr/local/fastdfs/fastdfs/conf/mime.types /etc/fdfs/
-# cp /usr/local/fastdfs/fastdfs/conf/http.conf /etc/fdfs/
-# cp /usr/local/fastdfs/fastdfs/conf/anti-steal.jpg /etc/fdfs/
-</code></pre>
-
-<p>如果是下面错误，需要安装fastdfs最新版，直接从github上下载源码安装</p>
-
-<pre><code>local/fastdfs-nginx-module/src/common.c:1245: 错误：‘FDFSHTTPParams’没有名为‘support_multi_range’的成员
-make[1]: *** [objs/addon/src/ngx_http_fastdfs_module.o] 错误 1
-make[1]: Leaving directory `/usr/local/nginx-1.10.1'
-</code></pre>
-
-<p>解决办法：github上下载最新FastDFS master源码，重新编译安装即可。</p>
-
-<h3 id="7-配置fastdfs">7.配置fastdfs</h3>
-
-<h4 id="7-1-创建数据存放目录-用于存放数据">7.1 创建数据存放目录（用于存放数据）</h4>
-
-<pre><code class="language-bash">cd /usr/local/fastdfs
-mkdir fast_data
-cd fast_data
-</code></pre>
-
-<h5 id="tracker基础数据和日志">tracker基础数据和日志</h5>
-
-<p><code>mkdir tracker</code></p>
-
-<h5 id="storage基础数据和日志">storage基础数据和日志</h5>
-
-<p><code>mkdir storage</code></p>
-
-<h5 id="storage-数据存放目录">storage 数据存放目录</h5>
-
-<p><code>mkdir store_path</code></p>
-
-<h5 id="fast-nginx模块基础数据和日志">fast nginx模块基础数据和日志</h5>
-
-<p><code>mkdir nginx_module</code></p>
-
-<h4 id="7-2-创建配置文件目录-用于存放使用的配置文件">7.2 创建配置文件目录（用于存放使用的配置文件）</h4>
-
-<pre><code class="language-bash">mkdir fast_conf
-cd /usr/local/fastdfs/fastdfs/conf
-cp ./* /usr/local/fastdfs/fast_conf/
-</code></pre>
-
-<p>####7.3 配置tracker
-#####编辑basepath</p>
-
-<pre><code class="language-bash">＃basepath(用于存放tracker的基本数据，包括日志）
-base_path=/usr/local/fastdfs/fast_data/tracker
-</code></pre>
-
-<p>####7.4 配置storage
-#####修改如下配置：</p>
-
-<pre><code class="language-bash">＃用于存储storage基本数据的目录（包括日志）
-base_path=/usr/local/fastdfs/fast_data/storage
-＃数据存放的目录
-store_path0=/usr/local/fastdfs/fast_data/store_path
-＃group的名字
-group_name=group1
-# tracker地址
-tracker_server=10.30.193.163:22122
-</code></pre>
-
-<p>#####这个是tracker的ip地址和端口号
-<code>tracker_server=192.168.0.48:22122</code>
-####7.5 修改nginx相关的fastdfs配置文件
-将nginx module的配置文件拷贝到fastdfs的配置目录
-<code>cp /usr/local/fastdfs/fastdfs-nginx-module/src/mod_fastdfs.conf /usr/local/fastdfs/fast_conf</code>
-修改mod_fastdfs.conf</p>
-
-<pre><code class="language-bash">#存放日志等文件
-base_path=/usr/local/fastdfs/fast_data/nginx_module
-#tracker的地址（这个是nginx中的plugin使用的）
-tracker_server=192.168.0.48:22122
-#本地对应的group名字（当前nginx对应的storage存储的group的名字）
-group_name=group1
-#这个配置用于说明nginx对应的storage存储文件的实际位置
-store_path0=/usr/local/fastdfs/fast_data/store_path
-#这个是url是否需要带groupname
-url_have_group_name = true
-</code></pre>
-
-<p>####9. 编写启动脚本
-<code>cd /usr/local/fastdfs</code>
-####9.1 创建 启动文件目录
-<code>mkdir bin</code>
-tracker的启动脚本
-#####9.2 在bin目录下，创建tracker.sh</p>
-
-<pre><code class="language-bash">#!/bin/sh
-
-case &quot;$1&quot; in
-
-    start) 
-    /usr/local/fastdfs/fastdfs/tracker/fdfs_trackerd /usr/local/fastdfs/fast_conf/tracker.conf
-    ;;
-    stop) 
-    /usr/local/fastdfs/fastdfs/tracker/fdfs_trackerd /usr/local/fastdfs/fast_conf/tracker.conf stop
-    ;;
-    restart)
-    /usr/local/fastdfs/fastdfs/tracker/fdfs_trackerd /usr/local/fastdfs/fast_conf/tracker.conf restart 
-    ;;
-
-esac   
-
-# tailf /usr/local/fastdfs/fast_data/tracker/logs/trackerd.log
-
-exit 0
-</code></pre>
-
-<p>将文件变成可执行
-<code>chmod +x tracker.sh</code>
-#####9.3 在bin目录下，创建storage.sh</p>
-
-<pre><code class="language-bash">#!/bin/sh
-
-case &quot;$1&quot; in
-
-    start)
-    /usr/local/fastdfs/fastdfs/storage/fdfs_storaged /usr/local/fastdfs/fast_conf/storage.conf 
-    ;;
-    stop)
-    /usr/local/fastdfs/fastdfs/storage/fdfs_storaged /usr/local/fastdfs/fast_conf/storage.conf stop 
-    ;;
-    restart)
-    /usr/local/fastdfs/fastdfs/storage/fdfs_storaged /usr/local/fastdfs/fast_conf/storage.conf restart
-    ;;
-
-esac   
-
-# tailf /usr/local/fastdfs/fast_data/storage/logs/storaged.log
-
-exit 0
-</code></pre>
-
-<p>将文件变成可执行
-<code>chmod +x storage.sh</code>
-#####9.4 配置、启动nginx
-修改<code>mod_fastdfs.conf</code>配置文件
-<code>cd /usr/local/fastdfs/fast_conf/</code>
-<code>vi mod_fastdfs.conf</code></p>
-
-<pre><code class="language-bash"># FastDFS tracker_server can ocur more than once, and tracker_server format is
-#  &quot;host:port&quot;, host can be hostname or ip address
-# valid only when load_fdfs_parameters_from_tracker is true
-tracker_server=192.168.0.48:22122
-
-# the port of the local storage server
-# the default value is 23000
-storage_server_port=23000
-
-# if the url / uri including the group name
-# set to false when uri like /M00/00/00/xxx
-# set to true when uri like ${group_name}/M00/00/00/xxx, such as group1/M00/xxx
-# default value is false
-url_have_group_name = true
-
-# store_path#, based 0, if store_path0 not exists, it's value is base_path
-# the paths must be exist
-# must same as storage.conf
-store_path0=/usr/local/fastdfs/fast_data/store_path
-#store_path1=/home/yuqing/fastdfs1
-</code></pre>
-
-<p>copy配置文件到 <code>/etc/fdfs</code>下</p>
-
-<pre><code class="language-bash">cd /usr/local/fastdfs/fast_conf/
-cp anti-steal.jpg http.conf mime.types mod_fastdfs.conf /etc/fdfs/
-</code></pre>
-
-<p>修改nginx的配置文件</p>
-
-<pre><code class="language-bash">cd /usr/local/nginx
-vi nginx.conf
-server {
-listen 8079;
-    location ~/M00 {
-        root /usr/local/fastdfs/fast_data/store_path/data;
-        ngx_fastdfs_module;
-    }
-}
-</code></pre>
-
-<p>创建软连接
-<code>ln -s /usr/local/fastdfs/fast_data/store_path/data /usr/local/fastdfs/fast_data/store_path/data/M00</code>
-启动nginx之前先-t检查一下配置文件是否有错误
-<code>/usr/local/nginx/sbin/nginx -t</code>
-输出一下信息表示正确</p>
-
-<pre><code>[root@localhost bin]# /usr/local/nginx/sbin/nginx -t
-ngx_http_fastdfs_set pid=125936
-nginx: the configuration file /usr/local/nginx/nginx.conf syntax is ok
-nginx: configuration file /usr/local/nginx/nginx.conf test is successful
-</code></pre>
-
-<p>启动nginx
-<code>/usr/local/nginx/sbin/nginx</code>
-启动 Nginx 后会打印出fastdfs模块的pid，看看日志是否报错，正常不会报错的</p>
-
-<pre><code class="language-bash">[root@localhost fdfs]# /usr/local/nginx/sbin/nginx
-ngx_http_fastdfs_set pid=126276
-</code></pre>
-
-<h4 id="遇到的错误">遇到的错误</h4>
-
-<p>错误：
-<code>ERROR - file: storage_ip_changed_dealer.c, line: 186, connect to tracker server 172.0.0.1:22122 fail, errno: 110, error info: Connection timed out</code>
-防火墙中打开tracker服务器端口（ 默认为 22122）
-<code>vi /etc/sysconfig/iptables</code>
-附加：若/etc/sysconfig 目录下没有iptables文件可随便写一条iptables命令配置个防火墙规则：如：
-<code>iptables -P OUTPUT ACCEPT</code>
-然后用命令：service iptables save 进行保存，默认就保存到 /etc/sysconfig/iptables 文件里。这时既有了这个文件。防火墙也可以启动了。接下来要写策略，也可以直接写在/etc/sysconfig/iptables 里了。
-添加如下端口行：</p>
-
-<pre><code class="language-bash">-A INPUT -m state --state NEW -m tcp -p tcp --dport 22122 -j ACCEPT 
--A INPUT -m state --state NEW -m tcp -p tcp --dport 23000 -j ACCEPT 
--A INPUT -m state --state NEW -m tcp -p tcp --dport 8079 -j ACCEPT 
-# 22122 tracker 端口
-# 23000 storage 端口
-# 8079 nginx listen端口
-</code></pre>
-
-<p>重启防火墙
-<code>service iptables restart</code></p>
-
-<h4 id="fastdfs-client测试">Fastdfs Client测试</h4>
-
-<p><code>/usr/bin/fdfs_test /usr/local/fastdfs/fast_conf/client.conf  upload /usr/local/fastdfs/fast_conf/</code>
-输出</p>
-
-<pre><code class="language-bash">This is FastDFS client test program v5.11
-
-Copyright (C) 2008, Happy Fish / YuQing
-
-FastDFS may be copied only under the terms of the GNU General
-Public License V3, which may be found in the FastDFS source kit.
-Please visit the FastDFS Home Page http://www.csource.org/ 
-for more detail.
-
-[2017-05-16 14:03:07] DEBUG - base_path=/usr/local/fastdfs/fast_data, connect_timeout=30, network_timeout=60, tracker_server_count=1, anti_steal_token=0, anti_steal_secret_key length=0, use_connection_pool=0, g_connection_pool_max_idle_time=3600s, use_storage_id=0, storage server id count: 0
-
-tracker_query_storage_store_list_without_group: 
-    server 1. group_name=, ip_addr=192.168.0.48, port=23000
-
-group_name=group1, ip_addr=192.168.0.48, port=23000
-storage_upload_by_filename
-group_name=group1, remote_filename=M00/00/00/wKgAMFkalhuARwsaAAAFvLZ-36489.conf
-source ip address: 192.168.0.48
-file timestamp=2017-05-16 14:03:07
-file size=1468
-file crc32=3061768110
-example file url: http://192.168.0.48/group1/M00/00/00/wKgAMFkalhuARwsaAAAFvLZ-36489.conf
-storage_upload_slave_by_filename
-group_name=group1, remote_filename=M00/00/00/wKgAMFkalhuARwsaAAAFvLZ-36489_big.conf
-source ip address: 192.168.0.48
-file timestamp=2017-05-16 14:03:08
-file size=1468
-file crc32=3061768110
-example file url: http://192.168.0.48/group1/M00/00/00/wKgAMFkalhuARwsaAAAFvLZ-36489_big.conf
-</code></pre>
-
-<h4 id="查看fastdfs集群监控信息">查看Fastdfs集群监控信息</h4>
-
-<p><code>/usr/bin/fdfs_monitor /usr/local/fastdfs/fast_conf/client.conf</code>
-输出</p>
-
-<pre><code class="language-bash">[2017-05-16 14:17:38] DEBUG - base_path=/usr/local/fastdfs/fast_data, connect_timeout=30, network_timeout=60, tracker_server_count=1, anti_steal_token=0, anti_steal_secret_key length=0, use_connection_pool=0, g_connection_pool_max_idle_time=3600s, use_storage_id=0, storage server id count: 0
-
-server_count=1, server_index=0
-
-tracker server is 192.168.0.48:22122
-
-group count: 1
-
-Group 1:
-group name = group1
-disk total space = 46161 MB
-disk free space = 33446 MB
-trunk free space = 0 MB
-storage server count = 1
-active server count = 1
-storage server port = 23000
-storage HTTP port = 8888
-store path count = 1
-subdir count per path = 256
-current write server index = 0
-current trunk file id = 0
-
-    Storage 1:
-        id = 192.168.0.48
-        ip_addr = 192.168.0.48  ACTIVE
-        http domain = 
-        version = 5.11
-        join time = 2017-05-16 11:40:48
-        up time = 2017-05-16 13:04:57
-        total storage = 46161 MB
-        free storage = 33446 MB
-        upload priority = 10
-        store_path_count = 1
-        subdir_count_per_path = 256
-        storage_port = 23000
-        storage_http_port = 8888
-        current_write_path = 0
-        source storage id = 
-        if_trunk_server = 0
-        connection.alloc_count = 256
-        connection.current_count = 0
-        connection.max_count = 2
-        total_upload_count = 3
-        success_upload_count = 3
-        total_append_count = 0
-        success_append_count = 0
-        total_modify_count = 0
-        success_modify_count = 0
-        total_truncate_count = 0
-        success_truncate_count = 0
-        total_set_meta_count = 3
-        success_set_meta_count = 3
-        total_delete_count = 0
-        success_delete_count = 0
-        total_download_count = 0
-        success_download_count = 0
-        total_get_meta_count = 0
-        success_get_meta_count = 0
-        total_create_link_count = 0
-        success_create_link_count = 0
-        total_delete_link_count = 0
-        success_delete_link_count = 0
-        total_upload_bytes = 4738
-        success_upload_bytes = 4738
-        total_append_bytes = 0
-        success_append_bytes = 0
-        total_modify_bytes = 0
-        success_modify_bytes = 0
-        stotal_download_bytes = 0
-        success_download_bytes = 0
-        total_sync_in_bytes = 0
-        success_sync_in_bytes = 0
-        total_sync_out_bytes = 0
-        success_sync_out_bytes = 0
-        total_file_open_count = 3
-        success_file_open_count = 3
-        total_file_read_count = 0
-        success_file_read_count = 0
-        total_file_write_count = 3
-        success_file_write_count = 3
-        last_heart_beat_time = 2017-05-16 14:17:31
-        last_source_update = 2017-05-16 14:14:16
-        last_sync_update = 1970-01-01 08:00:00
-        last_synced_timestamp = 1970-01-01 08:00:00 
-</code></pre>
-
-    </div>
-
-<div class="meta">
-    
-    
-    <span class="comments"><a href="https://ningyu1.github.io/site/post/fastdfs-installer/#disqus_thread">Comments</a></span>
-    
     
 </div>
 </article>
 
 
+<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_button_google_plusone" g:plusone:size="midum"></a>
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+    
+     <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = 'https:\/\/ningyu1.github.io\/site\/post\/nginx-502-bad-gateway\/';
+            this.page.identifier = 'https:\/\/ningyu1.github.io\/site\/post\/nginx-502-bad-gateway\/';
+        };
+
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//wdicc.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+     </script>
+    
+
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
 
 
     </div>
