@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 凝雨 - Yun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ningyu1.github.io/site/tags/atom.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bad Gateway</title>
+      <link>https://ningyu1.github.io/site/tags/bad-gateway/</link>
+      <pubDate>Fri, 28 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/bad-gateway/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Fastdfs</title>
@@ -17,6 +26,15 @@
       <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ningyu1.github.io/site/tags/fastdfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://ningyu1.github.io/site/tags/nginx/</link>
+      <pubDate>Fri, 28 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/nginx/</guid>
       <description></description>
     </item>
     

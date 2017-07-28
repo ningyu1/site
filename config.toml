@@ -1,5 +1,6 @@
 # Site settings
 languageCode = "en-us"
+canonifyurls = true
 baseurl = "https://ningyu1.github.io/site"
 title = "凝雨 - Yun"
 theme = "hugo-fabric"
