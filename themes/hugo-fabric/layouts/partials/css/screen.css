@@ -73,7 +73,7 @@ a {
     clear: both; }
 
 .inner {
-  width: 800px;
+  width: 900px;
   margin: 0 auto; }
   @media screen and (max-width: 1040px) {
     .inner {
