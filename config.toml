@@ -2,6 +2,7 @@
 languageCode = "en-us"
 canonifyurls = true
 baseurl = "https://ningyu1.github.io/site"
+#baseurl = "http://127.0.0.1:8070/blog"
 title = "凝雨 - Yun"
 theme = "hugo-fabric"
 rssuri = "atom.xml"

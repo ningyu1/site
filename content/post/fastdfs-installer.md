@@ -1,6 +1,6 @@
 +++
-title = "FASTDFS安装手册"
-description = ""
+title = "Fastdfs安装说明与常见问题解决"
+description = "Fastdfs安装说明与常见问题解决"
 tags = [
     "FASTDFS"
 ]
@@ -12,9 +12,8 @@ categories = [
 menu = "main"
 +++
 
-# FASTDFS安装手册
+# Fastdfs安装说明与常见问题解决
 
-@(DFS)
 ## docker中安装
 ``` bash
 docker pull season/fastdfs
