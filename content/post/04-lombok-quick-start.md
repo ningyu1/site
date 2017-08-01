@@ -6,7 +6,7 @@ tags = [
     "Lombok",
     "Java"
 ]
-date = "2017-07-31"
+date = "2017-07-19 15:22:56"
 categories = [
     "Lombok",
     "Java",
@@ -196,7 +196,7 @@ ps.版本为：1.16.18，并且`scope`为：`provided`，我们只在编译时�
 4)javac使用修改后的抽象语法树(AST)生成字节码文件 
 
 详细的流程图如下： 
-![流程图](/img/lombok1.jpg)
+![流程图](/img/lombok/1.jpg)
 `lombok`本质上就是这样的一个实现了"JSR 269 API"的程序。在使用javac的过程中，它产生作用的具体流程如下：
 
 1)javac对源代码进行分析，生成一棵抽象语法树(AST) 
