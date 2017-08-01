@@ -15,9 +15,10 @@ menu = "main"
 +++
 
 # 一、管道（pipeline）提升效率
-Redis是一个cs模式的tcp server，使用和http类似的请求响应协议。一个client可以通过一个socket连接发起多个请求命令。每个请求命令发出后client通常会阻塞并等待redis服务处理，redis处理完后请求命令后会将结果通过响应报文返回给client。每执行一个命令需要2个tcp报文才能完成，由于通信会有网络延迟,假如从client和server之间的包传输时间需要0.125秒，那么执行四个命令8个报文至少会需要1秒才能完成，这样即使redis每秒能处理100k命令，而我们的client也只能一秒钟发出四个命令。这显示没有充分利用 redis的处理能力。因此我们需要使用管道（pipeline）的方式从client打包多条命令一起发出，不需要等待单条命令的响应返回，而redis服务端会处理完多条命令后会将多条命令的处理结果打包到一起返回给客户端（它能够让（多条）执行命令简单的，更加快速的发送给服务器，但是没有任何原子性的保证）官方资料:[https://redis.io/topics/pipelining](https://redis.io/topics/pipelining "https://redis.io/topics/pipelining")
+Redis是一个cs模式的tcp server，使用和http类似的请求响应协议。一个client可以通过一个socket连接发起多个请求命令。每个请求命令发出后client通常会阻塞并等待redis服务处理，redis处理完后请求命令后会将结果通过响应报文返回给client。每执行一个命令需要2个tcp报文才能完成，由于通信会有网络延迟,假如从client和server之间的包传输时间需要0.125秒，那么执行四个命令8个报文至少会需要1秒才能完成，这样即使redis每秒能处理100k命令，而我们的client也只能一秒钟发出四个命令。这显示没有充分利用 redis的处理能力。因此我们需要使用管道（pipeline）的方式从client打包多条命令一起发出，不需要等待单条命令的响应返回，而redis服务端会处理完多条命令后会将多条命令的处理结果打包到一起返回给客户端（它能够让（多条）执行命令简单的，更加快速的发送给服务器，但是没有任何原子性的保证）[官方资料](https://redis.io/topics/pipelining "https://redis.io/topics/pipelining")
 
 【反例】
+
 ![cache1](/img/cache/1.jpg)
 【正例】
 ```
@@ -38,8 +39,10 @@ pipelined.sync();//发送命令不接受返回值
 jedis客户端2.4版本以上对连接池资源使用上进行了优化，提供了更优雅的资源回收方法并且支持broken处理，提供close方法替换原来的回收资源方法（returnBrokenResource 、returnResource）
 
 【反例】
+
 ![cache2](/img/cache/2.jpg)
 【正例】
+
 ![cache3](/img/cache/3.jpg)
 
 # 三、使用key值前缀来作命名空间
@@ -48,6 +51,7 @@ jedis客户端2.4版本以上对连接池资源使用上进行了优化，提供
 命名分割符使用 “.” 分隔
 
 【正例】
+
 ![cache4](/img/cache/4.jpg)
 
 # 四、expire对于key过期时间来控制垃圾回收
@@ -82,6 +86,7 @@ redisClient.setex(bizkey, 60, value);//set一个key并设置ttl60秒
 Cache Aside Pattern
 
 这是最常用最常用的pattern了。其具体逻辑如下：
+
 ![cache5](/img/cache/Cache-Aside-Design-Pattern-Flow-Diagram.jpg)
 
 失效：应用程序先从cache取数据，没有得到，则从数据库中取数据，成功后，放到缓存中。
@@ -115,6 +120,7 @@ Write Through
 Write Through 套路和Read Through相仿，不过是在更新数据时发生。当有数据更新的时候，如果没有命中缓存，直接更新数据库，然后返回。如果命中了缓存，则更新缓存，然后再由Cache自己更新数据库（这是一个同步操作）
 
 下图自来Wikipedia的[Cache词条](https://en.wikipedia.org/wiki/Cache_&#40;computing&#41; "Cache词条")。其中的Memory你可以理解为就是我们例子里的数据库。
+
 ![cache6](/img/cache/Write-through_with_no-write-allocation.jpg)
 Write Behind Caching Pattern
 
@@ -127,6 +133,7 @@ Write Back套路，一句说就是，在更新数据的时候，只更新缓存�
 另外，Write Back实现逻辑比较复杂，因为他需要track有哪数据是被更新了的，需要刷到持久层上。操作系统的write back会在仅当这个cache需要失效的时候，才会被真正持久起来，比如，内存不够了，或是进程退出了等情况，这又叫lazy write。
 
 在wikipedia上有一张write back的流程图，基本逻辑如下：
+
 ![cache7](/img/cache/Write-back_with_write-allocation.jpg)
 
 

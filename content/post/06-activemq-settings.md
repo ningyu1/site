@@ -177,9 +177,12 @@ activemq.listener.concurrency=2-10
 	</jms:listener-container>
 	```
 	项目中有2个listener并且项目希望启动初始每个listener启动2个consumer最大10个consumer，如果e x e cutor corePoolSize配置为2，那么启动后只会给一个listener分配2个consumer，因为e x e cutor pool的初始配置数量不够，见下图
+
 	![activemq1](/img/activemq/1.jpg)
 	修改corePoolSize之后
-	`<property name="corePoolSize" value="5" />`
+	```
+	<property name="corePoolSize" value="5" />
+	```
 	![activemq2](/img/activemq/2.jpg)
 4. executor daemon
 	1. 是否创建守护线程
@@ -192,8 +195,8 @@ activemq.listener.concurrency=2-10
 6. message-converter 
 	1. 消息转换器，我们这里不配置特殊的转换器，使用Spring提供的org.springframework.jms.support.converter.SimpleMessageConverter.SimpleMessageConverter()简单转换器，支持对象（String、byte[]、Map、Serializable）
 	2. 结合org.springframework.jms.listener.adapter.MessageListenerAdapter做接受消息自动转换对象
-	3.  结合org.springframework.jms.core.JmsTemplate使用convertAndSend系列方法对象转换并发送，实现发送消息自动转换。
-	4.  我们为什么不使用json做消息转换，因为json转换在反序列话时需要明确序列化Class类型，丢失了消息转换器的通用性。
+	3. 结合org.springframework.jms.core.JmsTemplate使用convertAndSend系列方法对象转换并发送，实现发送消息自动转换。
+	4. 我们为什么不使用json做消息转换，因为json转换在反序列话时需要明确序列化Class类型，丢失了消息转换器的通用性。
 7. Listener
 	1. 支持实现JMS接口的类javax.jms.MessageListener，它是一个来自JMS规范的标准化接口，但是你要处理线程。。
 	2. 支持Spring SessionAwareMessageListener，这是一个Spring特定的接口，提供对JMS会话对象的访问。 这对于请求 - 响应消息传递非常有用。 只需要注意，你必须做自己的异常处理（即，重写handleListenerException方法，这样异常不会丢失）。
@@ -240,14 +243,16 @@ activemq.listener.concurrency=2-10
 	    }
 	}
 	```
-**ps.上面的示例主要是org.springframework.jms.core.JmsTemplate与org.springframework.jms.listener.adapter.MessageListenerAdapter和业务的POJO做消费者的一个结合使用示例，无需关注序列化，发送与接受对象直接使用业务POJO**
+
+	**ps.上面的示例主要是org.springframework.jms.core.JmsTemplate与org.springframework.jms.listener.adapter.MessageListenerAdapter和业务的POJO做消费者的一个结合使用示例，无需关注序列化，发送与接受对象直接使用业务POJO**
 9. Q名称的命名规则
 	1. 名称我们采用大写字母，多个单词之间分隔符使用“.”,例如：QUEUE.XXX、TOPIC.XXX
 	2. 根据产品线或项目名称增加namespace，例如：APP1.QUEUE.XXX、APP2.QUEUE.XXX
 10. Active MQ包使用说明
 	1. 不要使用activemq-all这个包，这个包打包了依赖（pool源码，spring源码，log4j源码，jms源码），会跟我们的日志框架产生冲突
 	2. 我们使用activemq-pool、activemq-client、activemq-broker、spring-jms去替换上面的activemq-all包
-![activemq3](/img/activemq/3.jpg)
+
+	![activemq3](/img/activemq/3.jpg)
 
 **Spring+Activemq使用配置非常灵活，我们不拘泥于一种形式，如果有更好的经验尽管提出来我们共同努力和进步。**
 

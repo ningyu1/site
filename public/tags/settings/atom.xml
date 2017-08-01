@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Settings on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/settings/</link>
+    <description>Recent content in Settings on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 May 2017 10:05:37 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/settings/atom.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Maven settings.xml详解</title>
+      <link>https://ningyu1.github.io/site/post/07-maven-settings/</link>
+      <pubDate>Wed, 10 May 2017 10:05:37 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/07-maven-settings/</guid>
+      <description>settings.xml有什么用 从settings.xml的文件名就可以看出，它是用来设置maven参数的配置文件。并且，settings.xml是maven的全局配置文件。而pom.xml文件是所在项目的局部配置。
+Settings.xml中包含类似本地仓储位置、修改远程仓储服务器、认证信息等配置。
+settings.xml文件位置 全局配置: ${M2_HOME}/conf/settings.xml
+用户配置: user.home/.m2/settings.xmlnote：用户配置优先于全局配置。user.home/.m2/settings.xmlnote：用户配置优先于全局配置。{user.home} 和和所有其他系统属性只能在3.0+版本上使用。请注意windows和Linux使用变量的区别。
+配置优先级 需要注意的是：局部配置优先于全局配置。
+配置优先级从高到低：pom.xml&amp;gt; user settings &amp;gt; global settings
+如果这些文件同时存在，在应用配置时，会合并它们的内容，如果有重复的配置，优先级高的配置会覆盖优先级低的。
+ps.修改了配置文件最好吧cmd和eclipse重开一下
+settings.xml元素详解 顶级元素概览 下面列举了settings.xml中的顶级元素
+&amp;lt;settings xmlns=&amp;quot;http://maven.apache.org/SETTINGS/1.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:schemaLocation=&amp;quot;http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd&amp;quot;&amp;gt; &amp;lt;localRepository/&amp;gt; &amp;lt;interactiveMode/&amp;gt; &amp;lt;usePluginRegistry/&amp;gt; &amp;lt;offline/&amp;gt; &amp;lt;pluginGroups/&amp;gt; &amp;lt;servers/&amp;gt; &amp;lt;mirrors/&amp;gt; &amp;lt;proxies/&amp;gt; &amp;lt;profiles/&amp;gt; &amp;lt;activeProfiles/&amp;gt; &amp;lt;/settings&amp;gt;  LocalRepository 作用：该值表示构建系统本地仓库的路径。
+其默认值：~/.m2/repository。 &amp;lt;localRepository&amp;gt;${user.home}/.m2/repository&amp;lt;/localRepository&amp;gt;
+InteractiveMode 作用：表示maven是否需要和用户交互以获得输入。
+如果maven需要和用户交互以获得输入，则设置成true，反之则应为false。默认为true。 &amp;lt;interactiveMode&amp;gt;true&amp;lt;/interactiveMode&amp;gt;
+UsePluginRegistry 作用：maven是否需要使用plugin-registry.xml文件来管理插件版本。
+如果需要让maven使用文件~/.m2/plugin-registry.xml来管理插件版本，则设为true。默认为false。 &amp;lt;usePluginRegistry&amp;gt;false&amp;lt;/usePluginRegistry&amp;gt;
+Offline 作用：表示maven是否需要在离线模式下运行。
+如果构建系统需要在离线模式下运行，则为true，默认为false。
+当由于网络设置原因或者安全因素，构建服务器不能连接远程仓库的时候，该配置就十分有用。 &amp;lt;offline&amp;gt;false&amp;lt;/offline&amp;gt;
+PluginGroups 作用：当插件的组织id（groupId）没有显式提供时，供搜寻插件组织Id（groupId）的列表。
+该元素包含一个pluginGroup元素列表，每个子元素包含了一个组织Id（groupId）。
+当我们使用某个插件，并且没有在命令行为其提供组织Id（groupId）的时候，Maven就会使用该列表。默认情况下该列表包含了org.apache.maven.plugins和org.codehaus.mojo。
+&amp;lt;settings xmlns=&amp;quot;http://maven.apache.org/SETTINGS/1.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:schemaLocation=&amp;quot;http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd&amp;quot;&amp;gt; ... &amp;lt;pluginGroups&amp;gt; &amp;lt;!--plugin的组织Id（groupId） --&amp;gt; &amp;lt;pluginGroup&amp;gt;org.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -15,21 +15,28 @@ menu = "main"
 
 # 一、 摘要（Abstract）
 
-RESTful API 已经非常成熟，也得到了大家的认可。我们按照 [https://martinfowler.com/articles/richardsonMaturityModel.html](https://martinfowler.com/articles/richardsonMaturityModel.html "Richardson Maturity") 对 REST 评价的模型，规范基于 level2 来设计
+RESTful API 已经非常成熟，也得到了大家的认可。我们按照 [Richardson Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html "Richardson Maturity Model") 对 REST 评价的模型，规范基于 level2 来设计
 
 # 二、版本（Versioning）
 
 API的版本号放入URL。例如：
-`https://api.jiuyescm.com/v1/`
-`https://api.jiuyescm.com/v1.2/`
+```
+https://api.jiuyescm.com/v1/
+https://api.jiuyescm.com/v1.2/
+```
 
 # 三、资源、路径（Endpoint）
 
 路径，API的具体地址。在REST中，每个地址都代表一个具体的资源（`Resource`）约定如下：
+
 - 路径仅表示资源的路径（位置），尽量不要有actions操作（一些特殊的`actions`操作除外）
 - 路径以 复数（名词） 进行命名资源，不管返回单个或者多个资源。
 - 使用 小写字母、数字以及下划线（“_”） 。（下划线是为了区分多个单词，如user_name）
-- 资源的路径从父到子依次如：`/{resource}/{resource_id}/{sub_resource}/{sub_resource_id}/{sub_resource_property}`
+- 资源的路径从父到子依次如：
+
+	```
+	/{resource}/{resource_id}/{sub_resource}/{sub_resource_id}/{sub_resource_property}
+	```
 - 使用 `?` 来进行资源的过滤、搜索以及分页等
 - 使用版本号，且版本号在资源路径之前
 - 优先使用内容协商来区分表述格式，而不是使用后缀来区分表述格式
@@ -73,6 +80,7 @@ DELETE /users/{user_id}/resources/{resources_id}：删除某个指定用户的�
 # 五、数据（Data Format）
 
 数据是对资源的具体描述，分为请求数据和返回数据。约定如下：
+
 - 查询，过滤条件使用query string，例如user?name=xxx
 - Content body 仅仅用来传输数据
 - 通过Content-Type指定请求与返回的数据格式。其中请求数据还要指定Accept。（我们暂时只使用Json）
@@ -85,8 +93,13 @@ DELETE /users/{user_id}/resources/{resources_id}：删除某个指定用户的�
 - 属性和字符串值必须使用双引号””（这个json转换默认规则）
 - 建议对每个字段设置默认值（数组型可设置为[],字符串型可设置为””，数值可设置为0，对象可设置为{}）,这一条是为了方便前端/客户端进行判断字段存不存在操作（这样json转换会自动转成相应的字符）
 - POST操作应该返回新建的资源；PUT/PATCH操作返回更新后的完整的资源；DELETE返回一个空文档；GET返回资源数组或当个资源
-- 为了方便以后的扩展兼容，如果返回的是数组，强烈建议用一个包含如items属性的对象进行包裹，如： {"items":[{},{}]}
+- 为了方便以后的扩展兼容，如果返回的是数组，强烈建议用一个包含如items属性的对象进行包裹，如：
 
+```
+{"items":[{},{}]}
+```
+
+示例：
 ```
 POST https://api.domain.com/v1/users
 Request

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/nginx/</link>
+    <description>Recent content in Nginx on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 Jun 2017 18:36:44 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/nginx/atom.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nginx 502 Bad Gateway问题分析与踩过的坑</title>
+      <link>https://ningyu1.github.io/site/post/03-nginx-502-bad-gateway/</link>
+      <pubDate>Fri, 30 Jun 2017 18:36:44 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/03-nginx-502-bad-gateway/</guid>
+      <description>我相信使用Nginx的都会遇到过502 504 这种bad gateway错误，下面我把碰到这个问题分析过程记录并分享出来。 先让我们看一下具体的错误信息
+502 Bad Gateway The proxy server received an invalid response from an upstream server  从字面上的意思理解，nginx从upstream没有接受到信息，第一感觉就是连接被close？还是超时了？超时的话一般错误信息是 timeout
+下面是尝试解决这个问题尝试过的手段
+1. 第一感觉是proxy返回超时，因此查找nginx官方文档，找到关于proxy的timeout设置 Syntax: proxy_connect_timeout time; Default: proxy_connect_timeout 60s; Context: http, server, location Defines a timeout for establishing a connection with a proxied server. It should be noted that this timeout cannot usually exceed 75 seconds.  ps. 这个时间不能超过75秒
+Syntax: proxy_read_timeout time; Default: proxy_read_timeout 60s; Context: http, server, location Defines a timeout for reading a response from the proxied server.</description>
+    </item>
+    
+  </channel>
+</rss>

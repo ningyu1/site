@@ -26,6 +26,7 @@ menu = "main"
 
 不好的方式（现在的方式）：
 现在本地调试，需要修改DubboServer.xml和DubboClient.xml配置文件
+
 ```
 将文件中的
 dubbo:registry protocol="zookeeper" address="${dubbo.registry}" />
@@ -33,11 +34,13 @@ dubbo:registry protocol="zookeeper" address="${dubbo.registry}" />
 <dubbo:registry address="N/A" />
 ```
 这种方式的弊端：
+
 1. 开发总是不注意将修改为address="N/A"的文件提交到svn，在其他环境打包run起来，总是没有Export Service。
 2. 文件经常被改来改去容易冲突，冲突解决不好容易丢失配置。
 3. 无法很好的将本地调试和各环境的相互依赖分离开
 
 最优的方式：
+
 1. 创建一个properties文件，名字可以随便命名，我命名为：dubbo-local.properties，这个文件可以放在任何地方。该文件不提交到svn，我建议不要放在工程目录里以避免自己提交了都不知道，建议放在用户目录下${user.home}(不知道用户目录的自己去 度娘、谷哥、必硬)
 2. dubbo-local.properties文件内容如下：
 	```
@@ -55,12 +58,14 @@ dubbo:registry protocol="zookeeper" address="${dubbo.registry}" />
 	com.domain.imprest.api.IImprestDeptService=dubbo://localhost:20812
 	```
 3. 接下来启动你的Dubbo服务，在启动之前需要添加一下启动参数
+
 ![dubbo1](/img/dubbo/1.png)
 ```
 参数：-Ddubbo.properties.file
 值：dubbo-local.properties文件的本地地址，绝对地址
 ```
 4. 接下来启动你的web服务，在启动之前需要添加一下启动参数
+
 ![dubbo2](/img/dubbo/2.png)
 ```
 参数：-Ddubbo.resolve.file

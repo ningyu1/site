@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Restful on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/restful/</link>
+    <description>Recent content in Restful on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Feb 2017 11:58:19 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/restful/atom.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RESTful设计规范</title>
+      <link>https://ningyu1.github.io/site/post/01-restful-design-specifications/</link>
+      <pubDate>Tue, 21 Feb 2017 11:58:19 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/01-restful-design-specifications/</guid>
+      <description>一、 摘要（Abstract） RESTful API 已经非常成熟，也得到了大家的认可。我们按照 Richardson Maturity Model 对 REST 评价的模型，规范基于 level2 来设计
+二、版本（Versioning） API的版本号放入URL。例如：
+https://api.jiuyescm.com/v1/ https://api.jiuyescm.com/v1.2/  三、资源、路径（Endpoint） 路径，API的具体地址。在REST中，每个地址都代表一个具体的资源（Resource）约定如下：
+ 路径仅表示资源的路径（位置），尽量不要有actions操作（一些特殊的actions操作除外） 路径以 复数（名词） 进行命名资源，不管返回单个或者多个资源。 使用 小写字母、数字以及下划线（“_”） 。（下划线是为了区分多个单词，如user_name） 资源的路径从父到子依次如：
+/{resource}/{resource_id}/{sub_resource}/{sub_resource_id}/{sub_resource_property}  使用 ? 来进行资源的过滤、搜索以及分页等
+ 使用版本号，且版本号在资源路径之前
+ 优先使用内容协商来区分表述格式，而不是使用后缀来区分表述格式
+ 应该放在一个专用的域名下，如：http：//api.jiuyescm.com
+ 使用SSL
+  综上，一个API路径可能会是
+https://api.domain.com/v1/{resource}/{resource_id}/{sub_resource}/{sub_resource_id}/{sub_resource_property} https://api.domain.com /v1/{resource}?page=1&amp;amp;page_size=10 https://api.domain.com /v1/{resource}?name=xx&amp;amp;sortby=name&amp;amp;order=asc  四、操作（HTTP Actions） 用HTTP动词（方法）表示对资源的具体操作。常用的HTTP动词有：
+GET（SELECT）：从服务器取出资源（一项或多项） POST（CREATE）：在服务器新建一个资源 PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源） PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性） DELETE（DELETE）：从服务器删除资源 还有两个不常用的HTTP动词 HEAD：获取资源的元数据 OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的  下面是一些例子
+GET /users：列出所有用户 POST /users：新建一个用户 GET /users/{user_id}：获取某个指定用户的信息 PUT /users/{user_id}：更新某个指定用户的信息（提供该用户的全部信息） PATCH /users/{user_id}：更新某个指定用户的信息（提供该用户的部分信息） DELETE /users/{user_id}：删除某个用户 GET /users/{user_id}/resources：列出某个指定用户的所有权限资源 DELETE /users/{user_id}/resources/{resources_id}：删除某个指定用户的指定权限资源  五、数据（Data Format） 数据是对资源的具体描述，分为请求数据和返回数据。约定如下：</description>
+    </item>
+    
+  </channel>
+</rss>

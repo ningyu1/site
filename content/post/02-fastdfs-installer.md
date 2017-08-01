@@ -24,15 +24,12 @@ docker push 192.168.0.34:5000/season/fastdfs
 `192.168.0.54:22122`
 
 monitor检测
-``` bash
+```
 /usr/local/bin/fdfs_monitor /etc/fdfs/storage.conf
 ```
 
 storage
 store_path0路径与base_path路径必须不同
-group1/M00/00/00/wKgANlkZguqAXkEWAAAHCocH0Uw633.xml
-group1/M00/00/00/wKgANlkZgxWAfY1YAAAHCocH0Uw396.xml
-group1/M00/00/00/wKgANlkZixuAUWv_AAAHCocH0Uw537.xml
 
 ## 物理机安装
 ### 1.安装git
@@ -70,16 +67,16 @@ cd /usr/local/nginx
 make 
 make install
 ```
-ps.安装nginx错误处理
+安装nginx错误处理
+错误信息：
 ```
-安装Nginx时报错误提示：
-./configure: error: the HTTP rewrite module requires the PCRE library.
- 
-安装pcre-devel与openssl-devel解决问题
- 
+./configure: error: the HTTP rewrite module requires the PCRE library. 
+```
+安装pcre-devel与openssl-devel解决问题，执行下面命令
+```
 yum -y install pcre-devel openssl openssl-devel
 ```
-nginx make时报错如下：
+错误信息：
 ```
 /data/soft/fastdfs-nginx-module/src/ngx_http_fastdfs_module.c:894: 错误：‘struct fdfs_http_context’没有名为‘if_modified_since’的成员
 /data/soft/fastdfs-nginx-module/src/ngx_http_fastdfs_module.c:897: 错误：‘struct fdfs_http_context’没有名为‘if_modified_since’的成员
@@ -93,15 +90,15 @@ make: *** [build] 错误 2
 解决办法
 执行以下2条命令，然后重新make
 ```
-# ln -sv /usr/include/fastcommon /usr/local/include/fastcommon
-# ln -sv /usr/include/fastdfs /usr/local/include/fastdfs
+ln -sv /usr/include/fastcommon /usr/local/include/fastcommon
+ln -sv /usr/include/fastdfs /usr/local/include/fastdfs
 ```
 拷贝相关文件到/etc/fdfs目录下：
 ```
-# cp /usr/local/fastdfs/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs/
-# cp /usr/local/fastdfs/fastdfs/conf/mime.types /etc/fdfs/
-# cp /usr/local/fastdfs/fastdfs/conf/http.conf /etc/fdfs/
-# cp /usr/local/fastdfs/fastdfs/conf/anti-steal.jpg /etc/fdfs/
+cp /usr/local/fastdfs/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs/
+cp /usr/local/fastdfs/fastdfs/conf/mime.types /etc/fdfs/
+cp /usr/local/fastdfs/fastdfs/conf/http.conf /etc/fdfs/
+cp /usr/local/fastdfs/fastdfs/conf/anti-steal.jpg /etc/fdfs/
 ```
 如果是下面错误，需要安装fastdfs最新版，直接从github上下载源码安装
 ```
@@ -119,28 +116,36 @@ mkdir fast_data
 cd fast_data
 ```
 ##### tracker基础数据和日志
-`mkdir tracker`
+```
+mkdir tracker
+```
 ##### storage基础数据和日志
-`mkdir storage`
+```
+mkdir storage
+```
 ##### storage 数据存放目录
-`mkdir store_path`
+```
+mkdir store_path
+```
 ##### fast nginx模块基础数据和日志
-`mkdir nginx_module`
+```
+mkdir nginx_module
+```
 #### 7.2 创建配置文件目录（用于存放使用的配置文件）
-``` bash
+```
 mkdir fast_conf
 cd /usr/local/fastdfs/fastdfs/conf
 cp ./* /usr/local/fastdfs/fast_conf/
 ```
-####7.3 配置tracker
-#####编辑basepath
-``` bash
+#### 7.3 配置tracker
+##### 编辑basepath
+```
 ＃basepath(用于存放tracker的基本数据，包括日志）
 base_path=/usr/local/fastdfs/fast_data/tracker
 ```
-####7.4 配置storage
-#####修改如下配置：
-``` bash
+#### 7.4 配置storage
+##### 修改如下配置：
+```
 ＃用于存储storage基本数据的目录（包括日志）
 base_path=/usr/local/fastdfs/fast_data/storage
 ＃数据存放的目录
@@ -150,13 +155,15 @@ group_name=group1
 # tracker地址
 tracker_server=10.30.193.163:22122
 ```
-#####这个是tracker的ip地址和端口号
+##### 这个是tracker的ip地址和端口号
 `tracker_server=192.168.0.48:22122`
-####7.5 修改nginx相关的fastdfs配置文件 
+#### 7.5 修改nginx相关的fastdfs配置文件 
 将nginx module的配置文件拷贝到fastdfs的配置目录
-`cp /usr/local/fastdfs/fastdfs-nginx-module/src/mod_fastdfs.conf /usr/local/fastdfs/fast_conf`
+```
+cp /usr/local/fastdfs/fastdfs-nginx-module/src/mod_fastdfs.conf /usr/local/fastdfs/fast_conf
+```
 修改mod_fastdfs.conf
-``` bash
+```
 #存放日志等文件
 base_path=/usr/local/fastdfs/fast_data/nginx_module
 #tracker的地址（这个是nginx中的plugin使用的）
@@ -168,12 +175,16 @@ store_path0=/usr/local/fastdfs/fast_data/store_path
 #这个是url是否需要带groupname
 url_have_group_name = true
 ```
-####9. 编写启动脚本
-`cd /usr/local/fastdfs`
-####9.1 创建 启动文件目录
-`mkdir bin`
+#### 9. 编写启动脚本
+```
+cd /usr/local/fastdfs
+```
+#### 9.1 创建 启动文件目录
+```
+mkdir bin
+```
 tracker的启动脚本 
-#####9.2 在bin目录下，创建tracker.sh 
+##### 9.2 在bin目录下，创建tracker.sh 
 ``` bash
 #!/bin/sh
 
@@ -196,8 +207,10 @@ esac
 exit 0
 ```
 将文件变成可执行
-`chmod +x tracker.sh`
-#####9.3 在bin目录下，创建storage.sh
+```
+chmod +x tracker.sh
+```
+##### 9.3 在bin目录下，创建storage.sh
 ``` bash
 #!/bin/sh
 
@@ -220,11 +233,16 @@ esac
 exit 0
 ```
 将文件变成可执行
-`chmod +x storage.sh`
-#####9.4 配置、启动nginx
+```
+chmod +x storage.sh
+```
+##### 9.4 配置、启动nginx
 修改`mod_fastdfs.conf`配置文件
-`cd /usr/local/fastdfs/fast_conf/`
-`vi mod_fastdfs.conf`
+```
+cd /usr/local/fastdfs/fast_conf/
+vi mod_fastdfs.conf
+```
+
 ``` bash
 # FastDFS tracker_server can ocur more than once, and tracker_server format is
 #  "host:port", host can be hostname or ip address
@@ -265,9 +283,13 @@ listen 8079;
 }
 ```
 创建软连接
-`ln -s /usr/local/fastdfs/fast_data/store_path/data /usr/local/fastdfs/fast_data/store_path/data/M00`
+```
+ln -s /usr/local/fastdfs/fast_data/store_path/data /usr/local/fastdfs/fast_data/store_path/data/M00
+```
 启动nginx之前先-t检查一下配置文件是否有错误
-`/usr/local/nginx/sbin/nginx -t`
+```
+/usr/local/nginx/sbin/nginx -t
+```
 输出一下信息表示正确
 ``` 
 [root@localhost bin]# /usr/local/nginx/sbin/nginx -t
@@ -276,7 +298,9 @@ nginx: the configuration file /usr/local/nginx/nginx.conf syntax is ok
 nginx: configuration file /usr/local/nginx/nginx.conf test is successful
 ```
 启动nginx
-`/usr/local/nginx/sbin/nginx`
+```
+/usr/local/nginx/sbin/nginx
+```
 启动 Nginx 后会打印出fastdfs模块的pid，看看日志是否报错，正常不会报错的
 ``` bash
 [root@localhost fdfs]# /usr/local/nginx/sbin/nginx
@@ -285,11 +309,17 @@ ngx_http_fastdfs_set pid=126276
 
 #### 遇到的错误
 错误：
-`ERROR - file: storage_ip_changed_dealer.c, line: 186, connect to tracker server 172.0.0.1:22122 fail, errno: 110, error info: Connection timed out`
+```
+ERROR - file: storage_ip_changed_dealer.c, line: 186, connect to tracker server 172.0.0.1:22122 fail, errno: 110, error info: Connection timed out
+```
 防火墙中打开tracker服务器端口（ 默认为 22122）
-`vi /etc/sysconfig/iptables `
+```
+vi /etc/sysconfig/iptables 
+```
 附加：若/etc/sysconfig 目录下没有iptables文件可随便写一条iptables命令配置个防火墙规则：如：
-`iptables -P OUTPUT ACCEPT`
+```
+iptables -P OUTPUT ACCEPT
+```
 然后用命令：service iptables save 进行保存，默认就保存到 /etc/sysconfig/iptables 文件里。这时既有了这个文件。防火墙也可以启动了。接下来要写策略，也可以直接写在/etc/sysconfig/iptables 里了。
 添加如下端口行： 
 ``` bash
@@ -301,11 +331,16 @@ ngx_http_fastdfs_set pid=126276
 # 8079 nginx listen端口
 ```
 重启防火墙
-`service iptables restart`
+```
+service iptables restart
+```
 
 #### Fastdfs Client测试
 
-`/usr/bin/fdfs_test /usr/local/fastdfs/fast_conf/client.conf  upload /usr/local/fastdfs/fast_conf/`
+执行命令
+```
+/usr/bin/fdfs_test /usr/local/fastdfs/fast_conf/client.conf  upload /usr/local/fastdfs/fast_conf/
+```
 输出
 ``` bash
 This is FastDFS client test program v5.11
@@ -340,7 +375,10 @@ example file url: http://192.168.0.48/group1/M00/00/00/wKgAMFkalhuARwsaAAAFvLZ-3
 ```
 
 #### 查看Fastdfs集群监控信息
-`/usr/bin/fdfs_monitor /usr/local/fastdfs/fast_conf/client.conf`
+执行命令
+```
+/usr/bin/fdfs_monitor /usr/local/fastdfs/fast_conf/client.conf
+```
 输出
 ``` bash
 [2017-05-16 14:17:38] DEBUG - base_path=/usr/local/fastdfs/fast_data, connect_timeout=30, network_timeout=60, tracker_server_count=1, anti_steal_token=0, anti_steal_secret_key length=0, use_connection_pool=0, g_connection_pool_max_idle_time=3600s, use_storage_id=0, storage server id count: 0

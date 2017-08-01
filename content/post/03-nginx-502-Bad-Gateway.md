@@ -104,6 +104,7 @@ ps. 1.1.4以后的版本nginx默认使用的是HTTP1.1
 修改好之后重启服务再次进行测试，依然有502的错误爆出，无解！！！，继续分析，为什么版本不生效呢？
 
 我们前端请求的报文：
+
 ![site Architecture](/img/nginx/3.jpg)
 请求的明明是HTTP 1.1为什么到nginx中成了HTTP 1.0？
 
@@ -118,9 +119,11 @@ receiverArea=&referenceNo=&receiverName=&page=1&pageSize=50&__preventCache=14987
 日志果然出现了HTTP/1.1，这个让我们找到了希望，但是还有个区别，直接访问走的是ip+port普通的http，slb访问走的是域名而且是ssl，这个会不会跟ssl有关系，于是查询了ssl的http版本支持情况排除了这个问题，那就是继续往SLB上怀疑，翻阿里云负载均衡的说明文档。
 
 让我找到了说明，查看如下信息
+
 ![site Architecture](/img/nginx/1.jpg)
 
-找了半天原来是SLB强制转换了协议版本，具体查看阿里云负载均衡的常见问题：https://help.aliyun.com/knowledge_detail/55201.html#httpversion
+找了半天原来是SLB强制转换了协议版本，具体查看阿里云负载均衡的[常见问题](https://help.aliyun.com/knowledge_detail/55201.html#httpversion "常见问题")
+
 
 问题没有解决，需要咨询阿里云工作人员看对于这类问题是否有好的解决方法，问题持续跟踪
 
