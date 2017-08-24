@@ -12,7 +12,7 @@ tags = [
     "Can't rewrite append only file in background"
 
 ]
-date = "2017-18-25 10:30:34"
+date = "2017-08-15 10:30:34"
 categories = [
     "Redis",
     "技术"
@@ -21,7 +21,7 @@ menu = "main"
 +++
 
 
-## 现状：
+## 问题现状：
 
 redis-cli 上去执行任何命令返回：connnection reset by peer
 
@@ -46,6 +46,7 @@ redis-cli 上去执行任何命令返回：connnection reset by peer
 ```
 
 上面有两种错误日志
+
 * Error opening /setting AOF rewrite IPC pipes: Numerical result out of range
 	* 写aof出错了，超限
 * Error registering fd event for the new client: Numerical result out of range (fd=10311)
@@ -190,7 +191,8 @@ return C_ERR;
 源码发现在报出Can't rewrite append only file in background: fork: %s这个错误的时候，没有关闭pipe连接
 
 因此看到了redis官方的修复说明已经修复了这个问题，翻出github上的提交记录，如下
-![](img/redis-pit/1.png)
+
+![redis1](/img/redis-pit/1.png)
 
 这个时候看到了希望
 
