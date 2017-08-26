@@ -79,48 +79,48 @@ boolean flag = TransactionSynchronizationManager.isActualTransactionActive();
 
 以下是嵌套事务的各种情况下的执行结果（前提数据库的AutoCommit为true）
 
-|No|External（Service）|Internal（Service）|Result|Memo|
-|--|------------------|------------------|--------|----|
+|编号|External（Service）|Internal（Service）|Result|Memo|
+|----|------------------|-------------------|------|----|
 |1|No Transactional|No Transactional|All Committed|Auto Commit = True|
-|2|No Transactional|Class Level ReadOnly   Transactional|External   Committed Internal TransientDataAccessResourceException|Can't update table|
-|3|No Transactional|Transactional(REQUIRED)|All Committed|-|
-|4|No Transactional|Transactional(REQUIRES_NEW)|All Committed|-|
-|5|No Transactional|Transactional(SUPPORTS)|All Committed|-|
-|6|No Transactional|Transactional(MANDATORY)|External   Committed Internal IllegalTransactionStateException|Must under   transaction|
-|7|No Transactional|Transactional(NOT_SUPPORTED)|All Committed|-|
-|8|No Transactional|Transactional(NEVER)|All Committed|-|
-|9|No Transactional|Transactional(NESTED)|All Committed|-|
-|10|No Transactional|Transactional(REQUIRED) rollackFor=Exception.class IOException|External   Committed Internal Rollbacked|-|
-|11|No Transactional|Transactional(REQUIRED) rollbackFor=RuntimeException.class IOException|All Committed|-|
-|12|No Transactional|Transactional(REQUIRED)|rollbackFor=Exception.class RuntimeException|External   Committed Internal Rollbacked|
-|13|No Transactional|Transactional(REQUIRED)|rollbackFor=RuntimeException.class RuntimeException	|External   Committed Internal Rollbacked|
-|14|Class Level ReadOnly Transactional|No   Transactional|External TransientDataAccessResourceException|Can't update table|
-|15|Class Level ReadOnly   Transactional|Class   Level ReadOnly Transactional |External   TransientDataAccessResourceException|Can't update table|
-|16|Transactional(REQUIRED)|No   Transactional|All   Committed|-|
-|17|Transactional(REQUIRES_NEW)|No   Transactional|All Committed|-|
-|18|Transactional(SUPPORTS)|No   Transactional|All Committed|-|
-|19|Transactional(MANDATORY)|No   Transactional|External IllegalTransactionStateException|Must under   transaction|
-|20|Transactional(NOT_SUPPORTED)|No   Transactional|All Committed|-|
-|21|Transactional(NEVER)|No   Transactional|All Committed|-|
-|22|Transactional(NESTED)|No   Transactional|All Committed|-|
-|23|Transactional(REQUIRED)|Transactional(REQUIRED)|All   Committed|-|
-|24|Transactional(REQUIRED)|Transactional(REQUIRES_NEW)|All Committed|-|
-|25|Transactional(REQUIRED)|Transactional(SUPPORTS)|All Committed|-|
-|26|Transactional(REQUIRED)|Transactional(MANDATORY)|All Committed|-|
-|27|Transactional(REQUIRED)|Transactional(NOT_SUPPORTED)|All Committed|-|
-|28|Transactional(REQUIRED)|Transactional(NEVER)|External   Rollbacked Internal IllegalTransactionStateException|Must under   transaction|
-|29|Transactional(REQUIRED)|Transactional(NESTED)|All Committed|-|
-|30|Transactional(REQUIRED)|rollackFor=Exception.class	Transactional(REQUIRED) rollackFor=Exception.class IOException|All Rollbacked|-|
-|31|Transactional(REQUIRED)|rollackFor=Exception.class	Transactional(REQUIRED) rollbackFor=RuntimeException.class IOException|All Rollbacked|-|
-|32|Transactional(REQUIRED)|rollackFor=RuntimeException.class	Transactional(REQUIRED) rollackFor=Exception.class IOException|All   Rollbacked UnexpectedRollbackException|-|
-|33|Transactional(REQUIRED)|rollackFor=RuntimeException.class	Transactional(REQUIRED) rollbackFor=RuntimeException.class IOException|All Committed|-|
-|34|Transactional(REQUIRED)|rollackFor=Exception.class	Transactional(REQUIRED) rollackFor=Exception.class RuntimeException|All Rollbacked|-|
-|35|Transactional(REQUIRED)|rollackFor=Exception.class	Transactional(REQUIRED) rollbackFor=RuntimeException.class RuntimeException|All Rollbacked|-|
-|36|Transactional(REQUIRED)|rollackFor=RuntimeException.class	Transactional(REQUIRED) rollackFor=Exception.class RuntimeException|All Rollbacked|-|
-|37|Transactional(REQUIRED)|rollackFor=RuntimeException.class	Transactional(REQUIRED) rollbackFor=RuntimeException.class RuntimeException|All Rollbacked|-|	
-|38|Transactional(REQUIRED)|rollackFor=Exception.class	Transactional(REQUIRED)   rollackFor=Exception.class IOException Catch IOException|All Committed|-|
-|39|Transactional(REQUIRED)|rollackFor=Exception.class Catch IOExceptio Transactional(REQUIRED) rollbackFor=Exception.class IOException|All   Rollbacked UnexpectedRollbackException|-|
-|40|Transactional(REQUIRED)|rollackFor=Exception.class Catch IOException Transactional(REQUIRED) rollbackFor=RuntimeException.class IOException|All Committed|-|
+|2|No Transactional|Class Level ReadOnly Transactional|External Committed Internal TransientDataAccessResourceException|Can't update table|
+|3|No Transactional|Transactional(REQUIRED)|All Committed| |
+|4|No Transactional|Transactional(REQUIRES_NEW)|All Committed| |
+|5|No Transactional|Transactional(SUPPORTS)|All Committed| |
+|6|No Transactional|Transactional(MANDATORY)|External Committed Internal IllegalTransactionStateException|Must under transaction|
+|7|No Transactional|Transactional(NOT_SUPPORTED)|All Committed| |
+|8|No Transactional|Transactional(NEVER)|All Committed| |
+|9|No Transactional|Transactional(NESTED)|All Committed| |
+|10|No Transactional|Transactional(REQUIRED) rollackFor=Exception.class IOException|External Committed Internal Rollbacked| |
+|11|No Transactional|Transactional(REQUIRED) rollbackFor=RuntimeException.class IOException|All Committed| |
+|12|No Transactional|Transactional(REQUIRED)|rollbackFor=Exception.class RuntimeException|External Committed Internal Rollbacked|
+|13|No Transactional|Transactional(REQUIRED)|rollbackFor=RuntimeException.class RuntimeException	|External Committed Internal Rollbacked|
+|14|Class Level ReadOnly Transactional|No Transactional|External TransientDataAccessResourceException|Can't update table|
+|15|Class Level ReadOnly Transactional|Class Level ReadOnly Transactional |External TransientDataAccessResourceException|Can't update table|
+|16|Transactional(REQUIRED)|No Transactional|All Committed| |
+|17|Transactional(REQUIRES_NEW)|No Transactional|All Committed| |
+|18|Transactional(SUPPORTS)|No Transactional|All Committed| |
+|19|Transactional(MANDATORY)|No Transactional|External IllegalTransactionStateException|Must under transaction|
+|20|Transactional(NOT_SUPPORTED)|No Transactional|All Committed| |
+|21|Transactional(NEVER)|No Transactional|All Committed| |
+|22|Transactional(NESTED)|No Transactional|All Committed| |
+|23|Transactional(REQUIRED)|Transactional(REQUIRED)|All Committed| |
+|24|Transactional(REQUIRED)|Transactional(REQUIRES_NEW)|All Committed| |
+|25|Transactional(REQUIRED)|Transactional(SUPPORTS)|All Committed| |
+|26|Transactional(REQUIRED)|Transactional(MANDATORY)|All Committed| |
+|27|Transactional(REQUIRED)|Transactional(NOT_SUPPORTED)|All Committed| |
+|28|Transactional(REQUIRED)|Transactional(NEVER)|External Rollbacked Internal IllegalTransactionStateException|Must under transaction|
+|29|Transactional(REQUIRED)|Transactional(NESTED)|All Committed| |
+|30|Transactional(REQUIRED)|rollackFor=Exception.class Transactional(REQUIRED) rollackFor=Exception.class IOException|All Rollbacked| |
+|31|Transactional(REQUIRED)|rollackFor=Exception.class Transactional(REQUIRED) rollbackFor=RuntimeException.class IOException|All Rollbacked| |
+|32|Transactional(REQUIRED)|rollackFor=RuntimeException.class Transactional(REQUIRED) rollackFor=Exception.class IOException|All Rollbacked UnexpectedRollbackException| |
+|33|Transactional(REQUIRED)|rollackFor=RuntimeException.class Transactional(REQUIRED) rollbackFor=RuntimeException.class IOException|All Committed| |
+|34|Transactional(REQUIRED)|rollackFor=Exception.class Transactional(REQUIRED) rollackFor=Exception.class RuntimeException|All Rollbacked| |
+|35|Transactional(REQUIRED)|rollackFor=Exception.class Transactional(REQUIRED) rollbackFor=RuntimeException.class RuntimeException|All Rollbacked| |
+|36|Transactional(REQUIRED)|rollackFor=RuntimeException.class Transactional(REQUIRED) rollackFor=Exception.class RuntimeException|All Rollbacked| |
+|37|Transactional(REQUIRED)|rollackFor=RuntimeException.class Transactional(REQUIRED) rollbackFor=RuntimeException.class RuntimeException|All Rollbacked| | 
+|38|Transactional(REQUIRED)|rollackFor=Exception.class Transactional(REQUIRED) rollackFor=Exception.class IOException Catch IOException|All Committed| |
+|39|Transactional(REQUIRED)|rollackFor=Exception.class Catch IOExceptio Transactional(REQUIRED) rollbackFor=Exception.class IOException|All Rollbacked UnexpectedRollbackException| |
+|40|Transactional(REQUIRED)|rollackFor=Exception.class Catch IOException Transactional(REQUIRED) rollbackFor=RuntimeException.class IOException|All Committed| |
 
 其他情况按照事务是否开启和是否抛出（捕获）对应异常来判断结果。
 
