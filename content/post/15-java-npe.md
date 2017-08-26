@@ -57,7 +57,7 @@ FROM table;
 ## 三、【推荐】高度注意 Map 类集合 K/V 能不能存储 null 值的情况，如下表格：
 
 |集合类|Key|Value|Super|说明|
-|-----|----|----|------|---|
+|:----|:---|:---|:-----|:--|
 |Hashtable|不允许为null|不允许为null|Dictionary|线程安全|
 |ConcurrentHashMap|不允许为null|不允许为null|AbstractMap|分段锁技术|
 |TreeMap|不允许为null|允许为null|AbstractMap|线程不安全|

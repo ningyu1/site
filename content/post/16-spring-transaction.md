@@ -80,7 +80,7 @@ boolean flag = TransactionSynchronizationManager.isActualTransactionActive();
 以下是嵌套事务的各种情况下的执行结果（前提数据库的AutoCommit为true）
 
 |编号|External（Service）|Internal（Service）|Result|Memo|
-|----|------------------|-------------------|------|----|
+|:---|:-----------------|:------------------|:-----|:---|
 |1|No Transactional|No Transactional|All Committed|Auto Commit = True|
 |2|No Transactional|Class Level ReadOnly Transactional|External Committed Internal TransientDataAccessResourceException|Can't update table|
 |3|No Transactional|Transactional(REQUIRED)|All Committed| |
