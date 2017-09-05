@@ -60,15 +60,15 @@ System.out.println("方式一：参数为：list"+sql);
  
 SqlSession sqlSession = mybatisSessionFactory.getObject().openSession();
 //方式二
-sql = SqlHelper.getMapperSql(sqlSession, "com.jiuyescm.account.mapper.UserMapper.mobileIsExists", 1L, "13800138000");
+sql = SqlHelper.getMapperSql(sqlSession, "cn.tsoft.account.mapper.UserMapper.mobileIsExists", 1L, "13800138000");
 System.out.println("方式二：参数为：@Param："+sql);
-sql = SqlHelper.getMapperSql(sqlSession, "com.jiuyescm.account.mapper.UserMapper.mobileIsExists");
+sql = SqlHelper.getMapperSql(sqlSession, "cn.tsoft.account.mapper.UserMapper.mobileIsExists");
 System.out.println("方式二：参数为：无参："+sql);
-sql = SqlHelper.getMapperSql(sqlSession, "com.jiuyescm.account.mapper.UserMapper.modifyPassword", entity);
+sql = SqlHelper.getMapperSql(sqlSession, "cn.tsoft.account.mapper.UserMapper.modifyPassword", entity);
 System.out.println("方式二：参数为：entity"+sql);
-sql = SqlHelper.getMapperSql(sqlSession, "com.jiuyescm.account.mapper.UserMapper.blockedArrays", ids);
+sql = SqlHelper.getMapperSql(sqlSession, "cn.tsoft.account.mapper.UserMapper.blockedArrays", ids);
 System.out.println("方式二：参数为：arrays"+sql);
-sql = SqlHelper.getMapperSql(sqlSession, "com.jiuyescm.account.mapper.UserMapper.blockedList", list);
+sql = SqlHelper.getMapperSql(sqlSession, "cn.tsoft.account.mapper.UserMapper.blockedList", list);
 System.out.println("方式二：参数为：list"+sql);
  
 //方式三
