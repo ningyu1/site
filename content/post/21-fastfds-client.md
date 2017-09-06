@@ -33,9 +33,11 @@ FastDfs-client是架构组提供的通过java语言编写的客户端操作程�
 ## 接口方法
 
 StorageClient
+
 ![1.png](/img/fastdfs-client/1.png)
 
 TrackerClient
+
 ![2.png](/img/fastdfs-client/2.png)
 
 ## Maven引入
