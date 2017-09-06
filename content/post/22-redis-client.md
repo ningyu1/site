@@ -47,7 +47,7 @@ ps.本次版本增加了namespace、泛型的支持（存、取直接使用java�
 
 ## 接口方法
 
-![1.png](/img/redis-client/1.ping)
+![1.png](/img/redis-client/1.png)
 
 ## 回调接口
 
