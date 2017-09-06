@@ -15,6 +15,10 @@ categories = [
 menu = "main"
 +++
 
+## 项目地址
+[tsoft-common](https://github.com/ningyu1/tsoft-parent/tree/master/tsoft-common "tsoft-common")
+
+[![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)
 
 ## 前言
 
@@ -211,9 +215,3 @@ UPDATE t_user t
          , 
             2
 ```
-
-## 项目地址
-[tsoft-common](https://github.com/ningyu1/tsoft-parent/tree/master/tsoft-common "tsoft-common")
-
-[![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)
-
