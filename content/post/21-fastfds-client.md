@@ -30,13 +30,12 @@ FastDfs-client是架构组提供的通过java语言编写的客户端操作程�
     2. 包装Storage和Tracker操作命令
     3. 增加连接池提升使用性能
 
-## 单元测试覆盖率
+## 接口方法
 
+StorageClient
 ![1.png](/img/fastdfs-client/1.png)
 
-**ps.ConnectionManagerTest测试配置：maxTotal：200，maxTotalPreKey：200，maxIdlePreKey：100，threadNum：50，每隔2秒dump一次pool信息**
-**DownloadFileCommandTest测试配置：循环1000次**
-
+TrackerClient
 ![2.png](/img/fastdfs-client/2.png)
 
 ## Maven引入
