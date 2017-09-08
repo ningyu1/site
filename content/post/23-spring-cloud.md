@@ -26,12 +26,14 @@ menu = "main"
 在有赞，我们基于Dubbo实施服务化，刚开始是基于ZooKeeper进行服务注册与发现，现在已经转成使用Etcd。我这次学习Spring Cloud，则是想成体系得学习下微服务架构的实现，也许能够对基于Dubbo实施微服务架构有所借鉴。
 
 Spring Cloud下有很多工程：
+
 * Spring Cloud Config：依靠git仓库实现的中心化配置管理。配置资源可以映射到Spring的不同开发环境中，但是也可以使用在非Spring应用中。
 * Spring Cloud Netflix：不同的Netflix OSS组件的集合：Eureka、Hystrix、Zuul、Archaius等。
 * Spring Cloud Bus：事件总线，利用分布式消息将多个服务连接起来。非常适合在集群中传播状态的改变事件（例如：配置变更事件）
 * Spring Cloud Consul：服务发现和配置管理，由Hashicorp团队开发。
 
 我决定先从Spring Cloud Netflix看起，它提供了如下的功能特性：
+
 * 服务发现：Eureka-server实例作为服务提供者，可以注册到服务注册中心，Eureka客户端可以通过Spring管理的bean发现实例；
 * 服务发现：嵌套式的Eureka服务可以通过声明式的Java配置文件创建；
 * 断路器：利用注解，可以创建一个简单的Hystrix客户端；
@@ -140,7 +142,7 @@ public class EurekaServiceRegisterApplication {
 
 在application.properties中还需要增加如下配置，才能创建一个真正可以使用的服务注册中心。
 
-```log
+```
 #注册服务的端口号
 server.port=8761
 
@@ -261,7 +263,7 @@ public class EurekaServerProducerApplication {
 
 配置文件的内容如下：
 
-```log
+```
 #服务提供者的名字
 spring.application.name=compute-service
 
@@ -430,7 +432,7 @@ public class EurekaConsumerApplication {
 
 application.properties中定义了服务注册中心的地址、消费者服务的端口号、消费者服务的名称这些内容：
 
-```log
+```
 #应用名称
 spring.application.name=ribbon-consumer
 
@@ -480,7 +482,7 @@ public class ConsumerController {
 
 ### 4. 服务消费者-Feign
 
-上一节中，使用类似`restTemplate.getForEntity("http://COMPUTE-SERVICE/add?a=10&b=20", String.class).getBody()`这样的语句进行服务间调用并非不可以，只是我们在服务化的过程中，希望跨服务调用能够看起来像本地调用，这也是我理解的Feign的使用场景。
+使用类似`restTemplate.getForEntity("http://COMPUTE-SERVICE/add?a=10&b=20",String.class).getBody()`这样的语句进行服务间调用并非不可以，只是我们在服务化的过程中，希望跨服务调用能够看起来像本地调用，这也是我理解的Feign的使用场景。
 
 创建一个spring boot工程，该工程的pom文件与上一节的类似，只是把ribbon的依赖换为feign的即可，代码如下：
 
@@ -640,7 +642,7 @@ public class ConsumerController {
 
 application.properties的内容如下：
 
-```log
+```
 #应用名称
 spring.application.name=fegin-consumer
 
@@ -663,17 +665,20 @@ eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
 
 源码下载
 
-[服务注册中心(Eureka服务端)](https://github.com/duqicauc/eureka-register/tree/master)
-[服务提供者(Eureka客户端)](https://github.com/duqicauc/eureka-producer/tree/master)
-[服务消费者-Ribbon(Eureka客户端)](https://github.com/duqicauc/eureka-consumer-ribbon/tree/master)
-[服务消费者-Feign(Eureka客户端)](https://github.com/duqicauc/eureka-consumer-feign/tree/master)
+* [服务注册中心(Eureka服务端)](https://github.com/duqicauc/eureka-register/tree/master)
+* [服务提供者(Eureka客户端)](https://github.com/duqicauc/eureka-producer/tree/master)
+* [服务消费者-Ribbon(Eureka客户端)](https://github.com/duqicauc/eureka-consumer-ribbon/tree/master)
+* [服务消费者-Feign(Eureka客户端)](https://github.com/duqicauc/eureka-consumer-feign/tree/master)
+
 参考资料
 
-[Spring Cloud构建微服务架构（一）服务注册与发现](http://blog.didispace.com/springcloud2/)
-[Spring Cloud实现服务注册于发现](http://www.cnblogs.com/skyblog/p/5133752.html)
-[spring-cloud-netflix官网](http://cloud.spring.io/spring-cloud-netflix/)
-[spring cloud 官网](http://projects.spring.io/spring-cloud/)
-[使用Spring Cloud Feign作为HTTP客户端调用远程HTTP服务](http://blog.csdn.net/neosmith/article/details/52449921)
+* [Spring Cloud构建微服务架构（一）服务注册与发现](http://blog.didispace.com/springcloud2/)
+* [Spring Cloud实现服务注册于发现](http://www.cnblogs.com/skyblog/p/5133752.html)
+* [spring-cloud-netflix官网](http://cloud.spring.io/spring-cloud-netflix/)
+* [spring cloud 官网](http://projects.spring.io/spring-cloud/)
+* [使用Spring Cloud Feign作为HTTP客户端调用远程HTTP服务](http://blog.csdn.net/neosmith/article/details/52449921)
+
+
 
 作者：杜琪
 链接：http://www.jianshu.com/p/0aef3724e6bc
