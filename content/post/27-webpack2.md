@@ -8,7 +8,7 @@ tags = [
 	"React",
 	"Angular"
 ]
-date = "2017-09-19 13:36:36"
+date = "2017-09-20 11:57:36"
 categories = [
     "Webpack",
 	"Vue",
