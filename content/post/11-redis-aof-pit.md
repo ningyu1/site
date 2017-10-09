@@ -4,8 +4,8 @@ title = "Redis踩过的坑"
 description = "Redis AOF踩过的坑"
 tags = [
     "Redis",
-    "Aof rewriting",
-    "Aof",
+    "AOF rewriting",
+    "AOF",
     "Connnection reset by peer",
     "Numerical result out of range",
     "Cannot allocate memory",
