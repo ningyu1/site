@@ -74,6 +74,7 @@ FF                          ## FF：RDB文件结束的标志
 ## Value类型
 
 Value类型用一个字节进行存储，目前包括以下一些值：
+
 * 0 = “String Encoding”
 * 1 = “List Encoding”
 * 2 = “Set Encoding”
@@ -92,6 +93,7 @@ Key值就是简单的 “String Encoding” 编码，具体可以看后面的描
 ## Value
 
 上面列举了Value的9种类型，实际上可以分为三大类
+
 * type = 0, 简单字符串
 * type 为  9, 10, 11 或 12, value字符串在读取出来后需要先解压
 * type 为 1, 2, 3 或 4, value是字符串序列，这一系列的字符串用于构建list，set，hash 和 zset 结构
