@@ -5,7 +5,8 @@ description = "Redis Asynchronous AOF fsync is taking too long (disk is busy?)Wr
 tags = [
     "Redis",
 	"AOF Block",
-	"AOF"
+	"AOF",
+	"Asynchronous AOF fsync is taking too long (disk is busy?)Writing the AOF buffer without waiting for fsync to complete, this may slow down Redis."
 
 ]
 date = "2017-10-09 09:53:36"
@@ -65,7 +66,7 @@ Redis提供了一个自救的方式，当发现文件有在执行fdatasync(2)时
 
 ## 解决方法
 
-最后发现，原来是AOF rewrite时一直埋头的调用write(2)，由系统自己去触发sync。在RedHat Enterprise 6里，默认配置vm.dirty_background_ratio=10，也就是占用了10%的可用内存才会开始后台flush，而我的服务器有64G内存。
+最后发现，原来是AOF rewrite时一直埋头的调用write(2)，由系统自己去触发sync。在RedHat Enterprise 6里，默认配置vm.dirty_background_ratio=10，也就是占用了10%的可用内存才会开始后台flush，而我的服务器有8G内存。
 
 很明显一次flush太多数据会造成阻塞，所以最后果断设置了sysctl vm.dirty_bytes=33554432(32M)，问题解决。
 

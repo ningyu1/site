@@ -1,6 +1,6 @@
 +++
 toc = true
-title = "Redis踩过的坑"
+title = "Trouble Shooting —— Redis AOF rewrite错误导致Redis被Block住"
 description = "Redis AOF踩过的坑"
 tags = [
     "Redis",
