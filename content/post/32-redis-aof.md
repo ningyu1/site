@@ -6,13 +6,15 @@ tags = [
     "Redis",
 	"AOF Block",
 	"AOF",
-	"Asynchronous AOF fsync is taking too long (disk is busy?)Writing the AOF buffer without waiting for fsync to complete, this may slow down Redis."
+	"Asynchronous AOF fsync is taking too long (disk is busy?)Writing the AOF buffer without waiting for fsync to complete, this may slow down Redis",
+	"调优"
 
 ]
 date = "2017-10-09 09:53:36"
 categories = [
     "Redis",
-    "技术"
+    "技术",
+	"案例分析"
 ]
 menu = "main"
 +++

@@ -9,13 +9,15 @@ tags = [
     "Connnection reset by peer",
     "Numerical result out of range",
     "Cannot allocate memory",
-    "Can't rewrite append only file in background"
+    "Can't rewrite append only file in background",
+	"调优"
 
 ]
 date = "2017-08-15 10:30:34"
 categories = [
     "Redis",
-    "技术"
+    "技术",
+	"案例分析"
 ]
 menu = "main"
 +++

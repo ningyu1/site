@@ -21,12 +21,11 @@
     </style>
 
     <link href="{{ .Site.BaseURL }}/css/custom.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<link href="{{ .Site.BaseURL }}/css/github-markdown.css" rel="stylesheet" type="text/css">
 
-    <link href='{{ .Site.BaseURL }}/css/Slackey.css' rel='stylesheet' type='text/css'>
-    <link href='{{ .Site.BaseURL }}/css/Fjallaone.css' rel='stylesheet' type='text/css'>
-    <link href='{{ .Site.BaseURL }}/css/Amethysta.css' rel='stylesheet' type='text/css'>
-	<script src="{{ .Site.BaseURL }}/js/jquery.min.js"></script>
+    <link href='//fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![}]-->
 
     <script type="text/javascript" src="{{ .Site.BaseURL }}/js/jquery-tapir.js"></script>
@@ -34,6 +33,6 @@
     {{ template "_internal/google_analytics_async.html" . }}
 
     <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/hljs.css">
-    <script src="{{ .Site.BaseURL }}/js/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 </head>

@@ -4,12 +4,14 @@ title = "Nginx 502 Bad Gateway问题分析与踩过的坑"
 description = "Nginx 502 Bad Gateway问题分析与踩过的坑"
 tags = [
     "Nginx",
-    "Bad Gateway"
+    "Bad Gateway",
+	"调优"
 ]
 date = "2017-06-30 18:36:44"
 categories = [
     "Nginx",
-    "技术"
+    "技术",
+	"案例分析"
 ]
 menu = "main"
 +++

@@ -18,12 +18,14 @@ rssuri = "atom.xml"
 
     # social account
     github_user = "ningyu1"
+    gitlab_user = "ningyu1"
     # twitter_user = "wd"
-    disqus_shortname = "wdicc"
+    disqus_shortname = "ningyu"
+    email = "ningbe111@163.com"
 
     # post sharing
     facebook_like = false
     twitter_tweet_button = false
     google_plus_one = true
     google_plus_one_size = "midum"
-    #addthis_profile_id = "wd"
+    addthis_profile_id = "ningyu1"

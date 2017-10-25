@@ -6,7 +6,7 @@ tags = [
     "Redis",
 	"AOF Block",
 	"AOF",
-	"Asynchronous AOF fsync is taking too long (disk is busy?)Writing the AOF buffer without waiting for fsync to complete, this may slow down Redis."
+	"Asynchronous AOF fsync is taking too long (disk is busy?)Writing the AOF buffer without waiting for fsync to complete, this may slow down Redis"
 
 ]
 date = "2017-10-09 12:00:36"

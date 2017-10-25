@@ -290,24 +290,6 @@ a.github {
 a.github:hover {
   background: url("{{ .Site.BaseURL }}/images/social/GithubH.png") center no-repeat; }
 
-a.gitlab {
-  background: url("{{ .Site.BaseURL }}/images/social/Gitlab.png") center no-repeat; }
-
-a.gitlab:hover {
-  background: url("{{ .Site.BaseURL }}/images/social/GitlabH.png") center no-repeat; }
-
-a.email {
-  background: url("{{ .Site.BaseURL }}/images/social/Email.png") center no-repeat; }
-
-a.email:hover {
-  background: url("{{ .Site.BaseURL }}/images/social/EmailH.png") center no-repeat; }
-
-a.rss {
-  background: url("{{ .Site.BaseURL }}/images/social/Rss.png") center no-repeat; }
-
-a.rss:hover {
-  background: url("{{ .Site.BaseURL }}/images/social/RssH.png") center no-repeat; }
-
 a.twitter {
   background: url("{{ .Site.BaseURL }}/images/social/Twitter.png") center no-repeat; }
 
@@ -402,10 +384,6 @@ a.lastfm:hover {
   text-align: center;
   position: relative;
   margin: 10px auto; }
-
-ul#nav *{
-	box-sizing:content-box
-}
 
 ul#nav li {
   display: inline-block; }
@@ -531,7 +509,7 @@ article {
         line-height: 1.6em;
         position: absolute;
         left: 0; }
-    article .entry-content p, article .entry-content blockquote, article .entry-content ul, article .entry-content ol, article .entry-content dl, article .entry-content iframe, article .entry-content h1, article .entry-content h2, article .entry-content h3, article .entry-content h4, article .entry-content h5, article .entry-content h6, article .entry-content .video-container {
+    article .entry-content p, article .entry-content blockquote, article .entry-content ul, article .entry-content ol, article .entry-content dl, article .entry-content table, article .entry-content iframe, article .entry-content h1, article .entry-content h2, article .entry-content h3, article .entry-content h4, article .entry-content h5, article .entry-content h6, article .entry-content .video-container {
       margin-top: 10px; }
     article .entry-content ul, article .entry-content ol, article .entry-content dl {
       margin-left: 20px; }
@@ -584,6 +562,18 @@ article {
         margin-top: 0; }
     article .entry-content iframe {
       border: none; }
+    article .entry-content table {
+      background: #dddddd;
+      border: 1px solid #cccccc;
+      border-spacing: 0;
+      margin-top: 10px; }
+      article .entry-content table th {
+        background: #cccccc;
+        padding: 0 15px; }
+      article .entry-content table td {
+        text-align: center; }
+      article .entry-content table tr:nth-of-type(2n) {
+        background: #d5d5d5; }
     article .entry-content .caption {
       display: block;
       font-size: 0.9em;

@@ -1,6 +1,6 @@
 {{ partial "head.html" . }}
 
-<body class="markdown-body">
+<body>
     <div id="wrapper">
         <header id="header" class="inner">{{ partial "header.html" . }}</header>
 
