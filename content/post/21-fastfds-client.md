@@ -14,6 +14,10 @@ categories = [
 menu = "main"
 +++
 
+## 概述
+
+[![GitHub release](https://img.shields.io/github/release/ningyu1/fastdfs-client.svg?style=social&label=Release)](https://github.com/ningyu1/fastdfs-client/releases)&nbsp;[![GitHub stars](https://img.shields.io/github/stars/ningyu1/fastdfs-client.svg?style=social&label=Star)](https://github.com/ningyu1/fastdfs-client/stargazers)&nbsp;[![GitHub forks](https://img.shields.io/github/forks/ningyu1/fastdfs-client.svg?style=social&label=Fork)](https://github.com/ningyu1/fastdfs-client/fork)&nbsp;[![GitHub watchers](https://img.shields.io/github/watchers/ningyu1/fastdfs-client.svg?style=social&label=Watch)](https://github.com/ningyu1/fastdfs-client/watchers)
+
 ## 项目地址
 [fastdfs-client](https://github.com/ningyu1/fastdfs-client "项目地址") 
 

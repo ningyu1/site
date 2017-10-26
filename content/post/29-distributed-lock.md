@@ -18,6 +18,10 @@ categories = [
 menu = "main"
 +++
 
+## 概述
+
+[![GitHub release](https://img.shields.io/github/release/ningyu1/distributed-lock.svg?style=social&label=Release)](https://github.com/ningyu1/distributed-lock/releases)&nbsp;[![GitHub stars](https://img.shields.io/github/stars/ningyu1/distributed-lock.svg?style=social&label=Star)](https://github.com/ningyu1/distributed-lock/stargazers)&nbsp;[![GitHub forks](https://img.shields.io/github/forks/ningyu1/distributed-lock.svg?style=social&label=Fork)](https://github.com/ningyu1/distributed-lock/fork)&nbsp;[![GitHub watchers](https://img.shields.io/github/watchers/ningyu1/distributed-lock.svg?style=social&label=Watch)](https://github.com/ningyu1/distributed-lock/watchers)
+
 ## 项目地址
 [distributed-lock](https://github.com/ningyu1/distributed-lock "项目地址") 
 
