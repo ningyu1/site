@@ -277,7 +277,16 @@ public void setProperties(Properties p) {
 
 ## <a name="solutions">解决方案</a>
 
-1. 升级pagehelper版本-->4.2.1,升级jsqlparser版本–>0.9.5,其余配置无需变更
+升级pagehelper版本-->4.2.1,升级jsqlparser版本–>0.9.5,其余配置无需变更
+
+<span style="color: rgb(255,0,0);">如果升级了4.2.1，如果出现SqlUtil.java(120)行报NullPointerException，具体异常如下：</span>
+
+![4.png](/img/connection-leak/4.png)
+
+<span style="color: rgb(255,0,0);">遇到上面问题，请修改pagehelper的配置参数，参数修改有两种方式，如下：</span>
+
+1. <span style="color: rgb(255,0,0);">直接配置dialect=目标数据源类型</span><span style="color: rgb(255,204,0);">**（适合使用场景：项目中只有一个固定的数据库类型，例如：mysql，无需开启自动发现dialect）**</span>
+2. <span style="color: rgb(255,0,0);">配置autoRuntimeDialect=true走自动获取，这个属性是替换老属性（autoDialect），老的属性为了向下兼容在并发获取dialect时会有bug存在。</span><span style="color: rgb(255,204,0);">**（适合使用场景：项目中有多个数据库类型，需要运行中自动发现时使用）**</span>
 
 ## <a name="summed">总结</a>
 
