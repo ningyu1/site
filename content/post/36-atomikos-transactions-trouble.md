@@ -195,9 +195,8 @@ private synchronized int incrementAndGet()
 
 从上面代码可以发现跟4.0.0的代码是有变化的
 
-<span style="color:red">**
-一、4.0.0版本在incrementAndGet方法同步的对lastcounter++之后，在拼接id的时候是直接使用属性lastcounter进行拼接
-二、4.0.1版本在incrementAndGet方法同步的对lastcounter++之后直接将lastcounter值返回，在拼接的时候使用返回的lastcounter值来进行拼接**</span>
+<span style="color:red">**一、4.0.0版本在incrementAndGet方法同步的对lastcounter++之后，在拼接id的时候是直接使用属性lastcounter进行拼接**</span>
+<span style="color:red">**二、4.0.1版本在incrementAndGet方法同步的对lastcounter++之后直接将lastcounter值返回，在拼接的时候使用返回的lastcounter值来进行拼接**</span>
 
 从代码上看好像是为了解决这个问题，那我们还需要进一步验证
 
