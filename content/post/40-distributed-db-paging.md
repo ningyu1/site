@@ -28,9 +28,11 @@ menu = "main"
 
 在数据量不大时，可以通过在排序字段time上建立索引，利用SQL提供的offset/limit功能就能满足分页查询需求： 
 
+```
 select * from t_msg order by time offset 200 limit 100   
 select * from t_order order by time offset 200 limit 100   
-select * from t_tiezi order by time offset 200 limit 100 
+select * from t_tiezi order by time offset 200 limit 100
+``` 
 
 此处假设一页数据为100条，均拉取第3页数据。
 
@@ -50,9 +52,9 @@ select * from t_tiezi order by time offset 200 limit 100
 
 ## 问题的提出 
 
-仍然是上述用户库的例子，如果业务要查询“最近注册的第3页用户”，该如何实现呢？单库上，可以select * from t_user order by time offset 200 limit 100，变成两个库后，分库依据是uid，排序依据是time，数据库层失去了time排序的全局视野，数据分布在两个库上，此时该怎么办呢？ 
+仍然是上述用户库的例子，如果业务要查询“最近注册的第3页用户”，该如何实现呢？单库上，可以`select * from t_user order by time offset 200 limit 100`，变成两个库后，分库依据是uid，排序依据是time，数据库层失去了time排序的全局视野，数据分布在两个库上，此时该怎么办呢？ 
 
-如何满足“跨越多个水平切分数据库，且分库依据与排序依据为不同属性，并需要进行分页”的查询需求，实现select*from T order by time offset X limit Y的跨库分页SQL，是本文将要讨论的技术问题。 
+如何满足“跨越多个水平切分数据库，且分库依据与排序依据为不同属性，并需要进行分页”的查询需求，实现`select*from T order by time offset X limit Y`的跨库分页SQL，是本文将要讨论的技术问题。 
 
 # 二、全局视野法 
 
@@ -84,7 +86,7 @@ select * from t_tiezi order by time offset 200 limit 100
 由于不清楚到底是哪种情况，所以必须每个库都返回3页数据，所得到的6页数据在服务层进行内存排序，得到数据全局视野，再取第3页数据，便能够得到想要的全局分页数据。 
 
 再总结一下这个方案的步骤： 
-* 将order by time offset X limit Y，改写成order by time offset 0 limit X+Y。
+* 将`order by time offset X limit Y`，改写成`order by time offset 0 limit X+Y`。
 * 服务层将改写后的SQL语句发往各个分库：即例子中的各取3页数据。
 * 假设共分为N个库，服务层将得到N*(X+Y)条数据：即例子中的6页数据。
 * 服务层对得到的N*(X+Y)条数据进行内存排序，内存排序后再取偏移量X后的Y条记录，就是全局视野所需的一页数据。
@@ -109,7 +111,7 @@ select * from t_tiezi order by time offset 200 limit 100
 ![](/img/rdb-paging/6.png)
 
 如上图，不能够跳页，那么第一次只能够查询第一页： 
-* 将查询order by time offset 0 limit 100，改写成order by time where time>0 limit 100。
+* 将查询`order by time offset 0 limit 100`，改写成`order by time where time>0 limit 100`。
 * 上述改写和offset 0 limit 100的效果相同，都是每个分库返回了一页数据（上图中粉色部分）。
 
 ![](/img/rdb-paging/7.png)
@@ -123,7 +125,8 @@ select * from t_tiezi order by time offset 200 limit 100
 ![](/img/rdb-paging/8.png)
 
 这个上一页记录的time_max，会作为第二页数据拉取的查询条件： 
-* 将查询order by time offset 100 limit 100，改写成order by time where time>$time_max limit 100。
+
+* 将查询`order by time offset 100 limit 100`，改写成`order by time where time>$time_max limit 100`。
 
 ![](/img/rdb-paging/9.png)
 
@@ -144,6 +147,7 @@ select * from t_tiezi order by time offset 200 limit 100
 使用patition key进行分库，在数据量较大，数据分布足够随机的情况下，各分库所有非patition key属性，在各个分库上的数据分布，统计概率情况应该是一致的。 
 
 例如，在uid随机的情况下，使用uid取模分两库，db0和db1： 
+
 * 性别属性，如果db0库上的男性用户占比70%，则db1上男性用户占比也应为70%；
 * 年龄属性，如果db0库上18-28岁少女用户比例占比15%，则db1上少女用户比例也应为15%；
 * 时间属性，如果db0库上每天10:00之前登录的用户占比为20%，则db1上应该是相同的统计规律；
@@ -159,7 +163,7 @@ select * from t_tiezi order by time offset 200 limit 100
 
 有没有一种技术方案，即能够满足业务的精确需要，无需业务折衷，又高性能的方法呢？这就是接下来要介绍的终极武器：“二次查询法”。 
 
-为了方便举例，假设一页只有5条数据，查询第200页的SQL语句为select*from T order by time offset 1000 limit 5。 
+为了方便举例，假设一页只有5条数据，查询第200页的SQL语句为`select*from T order by time offset 1000 limit 5`。 
 
 # 步骤一：查询改写 
 
@@ -196,6 +200,7 @@ select * from t_tiezi order by time offset 200 limit 100
 ![](/img/rdb-paging/14.png)
 
 可以看到： 
+
 * 由于time_min来自原来的分库一，所以分库一的返回结果集和第一次查询相同（所以其实这次查询是可以省略的）；
 * 分库二的结果集，比第一次多返回了1条数据，头部的1条记录（time最小的记录）是新的（上图中粉色记录）；
 * 分库三的结果集，比第一次多返回了2条数据，头部的2条记录（time最小的2条记录）是新的（上图中粉色记录）。
@@ -225,20 +230,24 @@ select * from t_tiezi order by time offset 200 limit 100
 今天分享了解决“夸N库分页”这一技术难题的四种方法，稍作总结： 
 
 方法一：全局视野法 
-* 将order by time offset X limit Y，改写成order by time offset 0 limit X+Y。
+
+* 将`order by time offset X limit Y`，改写成`order by time offset 0 limit X+Y`。
 * 服务层对得到的N*(X+Y)条数据进行内存排序，内存排序后再取偏移量X后的Y条记录。
 
 方法二：业务折衷法-禁止跳页查询 
+
 * 用正常的方法取得第一页数据，并得到第一页记录的time_max。
-* 每次翻页，将order by time offset X limit Y，改写成order by time where time>$time_max limit Y以保证每次只返回一页数据，性能为常量。
+* 每次翻页，将`order by time offset X limit Y`，改写成`order by time where time>$time_max limit Y`以保证每次只返回一页数据，性能为常量。
 
 方法三：业务折衷法-允许模糊数据
-* 将order by time offset X limit Y，改写成order by time offset X/N limit Y/N。
+
+* 将`order by time offset X limit Y`，改写成`order by time offset X/N limit Y/N`。
 
 方法四：二次查询法 
-* 将order by time offset X limit Y，改写成order by time offset X/N limit Y；
+
+* 将`order by time offset X limit Y`，改写成`order by time offset X/N limit Y`；
 * 找到最小值time_min；
-* between二次查询，order by time between $$time_min and $time_i_max；
+* between二次查询，`order by time between $$time_min and $time_i_max`；
 * 设置虚拟time_min，找到time_min在各个分库的offset，从而得到time_min在全局的offset；
 * 得到了time_min在全局的offset，自然得到了全局的offset X limit Y。
 
