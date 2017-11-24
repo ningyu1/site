@@ -86,6 +86,7 @@ select * from t_tiezi order by time offset 200 limit 100
 由于不清楚到底是哪种情况，所以必须每个库都返回3页数据，所得到的6页数据在服务层进行内存排序，得到数据全局视野，再取第3页数据，便能够得到想要的全局分页数据。 
 
 再总结一下这个方案的步骤： 
+
 * 将`order by time offset X limit Y`，改写成`order by time offset 0 limit X+Y`。
 * 服务层将改写后的SQL语句发往各个分库：即例子中的各取3页数据。
 * 假设共分为N个库，服务层将得到N*(X+Y)条数据：即例子中的6页数据。
