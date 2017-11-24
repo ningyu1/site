@@ -19,6 +19,7 @@ menu = "main"
 ## 分页需求 
 
 互联网很多业务都有分页拉取数据的需求，例如： 
+
 * 微信消息过多时，拉取第N页消息。
 * 京东下单过多时，拉取第N页订单。
 * 浏览58同城，查看第N页帖子。
@@ -113,6 +114,7 @@ select * from t_tiezi order by time offset 200 limit 100
 ![](/img/rdb-paging/6.png)
 
 如上图，不能够跳页，那么第一次只能够查询第一页： 
+
 * 将查询`order by time offset 0 limit 100`，改写成`order by time where time>0 limit 100`。
 * 上述改写和offset 0 limit 100的效果相同，都是每个分库返回了一页数据（上图中粉色部分）。
 
