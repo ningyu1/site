@@ -286,8 +286,8 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 
 Server sent 1 certificate(s):
 
- 1 Subject EMAILADDRESS=ningyu@jiuyescm.com, CN=login.qa.sh-jiuye.com.cn, OU=JY, O=JY, L=Shanghai, ST=Shanghai, C=CN
-   Issuer  EMAILADDRESS=ningyu@jiuyescm.com, CN=login.qa.sh-jiuye.com.cn, OU=JY, O=JY, L=Shanghai, ST=Shanghai, C=CN
+ 1 Subject EMAILADDRESS=ningyu@xxxxxx.com, CN=login.xxxxxxx.com, OU=JY, O=JY, L=Shanghai, ST=Shanghai, C=CN
+   Issuer  EMAILADDRESS=ningyu@xxxxxx.com, CN=login.xxxxxxx.com, OU=JY, O=JY, L=Shanghai, ST=Shanghai, C=CN
    sha1    18 fe a4 26 de 9f ef 9f d0 12 f9 1b da e8 f4 6e 46 a3 ca e2 
    md5     53 02 53 bc 1f 5d e3 0f c2 ce a5 fa 43 7b 53 83 
 
