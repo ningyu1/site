@@ -34,9 +34,9 @@ menu = "main"
 keytool -import -alias xstore -keystore "cacerts_path" -file a.cer
 ```
 
-`cacerts_path`: 你的cacerts文件路径，一般在%JAVA_HOME%jre\lib\security\cacerts
-`a.cer`: 你需要导入的cer文件路径，可以是InstallCert生成的文件
-密码使用jdk默认密码：`changeit`，或者在上面命令后增加`-storepass changeit`设置密码参数
+* `cacerts_path`: 你的cacerts文件路径，一般在%JAVA_HOME%jre\lib\security\cacerts
+* `a.cer`: 你需要导入的cer文件路径，可以是InstallCert生成的文件
+* 密码使用jdk默认密码：`changeit`，或者在上面命令后增加`-storepass changeit`设置密码参数
 
 通过上面两种方式可以将证书安装到jdk下，接下来就是java中如何访问ssl地址，不多说直接上代码。
 
