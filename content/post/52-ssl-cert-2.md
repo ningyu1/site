@@ -52,8 +52,6 @@ javax.net.ssl.SSLHandshakeException: Remote host closed connection during handsh
 # 通过InstallCert源码安装证书
 
 ```
-package com.jiuyescm.uam.main;
-
 /*
  * Copyright 2006 Sun Microsystems, Inc.  All Rights Reserved.
  *
@@ -266,7 +264,7 @@ javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: 
 	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1312)
 	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1339)
 	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1323)
-	at com.jiuyescm.uam.main.InstallCert.main(InstallCert.java:99)
+	at InstallCert.main(InstallCert.java:99)
 Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:385)
 	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:292)
@@ -274,7 +272,7 @@ Caused by: sun.security.validator.ValidatorException: PKIX path building failed:
 	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:326)
 	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:231)
 	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:107)
-	at com.jiuyescm.uam.main.InstallCert$SavingTrustManager.checkServerTrusted(InstallCert.java:195)
+	at InstallCert$SavingTrustManager.checkServerTrusted(InstallCert.java:195)
 	at sun.security.ssl.AbstractTrustManagerWrapper.checkServerTrusted(SSLContextImpl.java:813)
 	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1323)
 	... 8 more

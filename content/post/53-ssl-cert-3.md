@@ -321,8 +321,8 @@ javax.net.ssl.SSLHandshakeException: Remote host closed connection during handsh
 	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:563) ~[na:1.7.0_45]
 	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185) ~[na:1.7.0_45]
 	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:153) ~[na:1.7.0_45]
-	at com.jiuyescm.iaccount.utils.HttpDemo.httpGet(HttpDemo.java:59) [classes/:na]
-	at com.jiuyescm.iaccount.utils.HttpDemo.main(HttpDemo.java:122) [classes/:na]
+	at HttpDemo.httpGet(HttpDemo.java:59) [classes/:na]
+	at HttpDemo.main(HttpDemo.java:122) [classes/:na]
 Caused by: java.io.EOFException: SSL peer shut down incorrectly
 	at sun.security.ssl.InputRecord.read(InputRecord.java:482) ~[na:1.7.0_45]
 	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:927) ~[na:1.7.0_45]
@@ -352,8 +352,8 @@ javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No
 	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:563) ~[na:1.7.0_45]
 	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185) ~[na:1.7.0_45]
 	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:153) ~[na:1.7.0_45]
-	at com.jiuyescm.iaccount.utils.HttpsDemo.sendHttps(HttpsDemo.java:62) [classes/:na]
-	at com.jiuyescm.iaccount.utils.HttpsDemo.main(HttpsDemo.java:133) [classes/:na]
+	at HttpsDemo.sendHttps(HttpsDemo.java:62) [classes/:na]
+	at HttpsDemo.main(HttpsDemo.java:133) [classes/:na]
 Caused by: java.security.cert.CertificateException: No name matching xxxxxxx.com found
 	at sun.security.util.HostnameChecker.matchDNS(HostnameChecker.java:208) ~[na:1.7.0_45]
 	at sun.security.util.HostnameChecker.match(HostnameChecker.java:93) ~[na:1.7.0_45]
