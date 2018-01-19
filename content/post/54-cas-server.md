@@ -48,8 +48,9 @@ CAS它是什么？它能做什么？这些我就不概述了，自行去搜索�
 
 这里我将改造的CAS Server放到github上：
 
-项目地址：[cas-site](https://github.com/ningyu1/cas-site "项目地址") 
-[![GitHub release](https://img.shields.io/github/release/ningyu1/cas-site.svg?style=social&label=Release)](https://github.com/ningyu1/cas-site/releases)&nbsp;[![GitHub stars](https://img.shields.io/github/stars/ningyu1/cas-site.svg?style=social&label=Star)](https://github.com/ningyu1/cas-site/stargazers)&nbsp;[![GitHub forks](https://img.shields.io/github/forks/ningyu1/cas-site.svg?style=social&label=Fork)](https://github.com/ningyu1/cas-site/fork)&nbsp;[![GitHub watchers](https://img.shields.io/github/watchers/ningyu1/cas-site.svg?style=social&label=Watch)](https://github.com/ningyu1/cas-site/watchers) [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)
+项目地址：[cas-site](https://github.com/ningyu1/cas-site)
+
+<a href="https://github.com/ningyu1/cas-site/releases"><img src="https://img.shields.io/github/release/ningyu1/cas-site.svg?style=social&amp;label=Release" alt="GitHub release"></a>&nbsp;<a href="https://github.com/ningyu1/cas-site/stargazers"><img src="https://img.shields.io/github/stars/ningyu1/cas-site.svg?style=social&amp;label=Star" alt="GitHub stars"></a>&nbsp;<a href="https://github.com/ningyu1/cas-site/fork"><img src="https://img.shields.io/github/forks/ningyu1/cas-site.svg?style=social&amp;label=Fork" alt="GitHub forks"></a>&nbsp;<a href="https://github.com/ningyu1/cas-site/watchers"><img src="https://img.shields.io/github/watchers/ningyu1/cas-site.svg?style=social&amp;label=Watch" alt="GitHub watchers"></a> <a href="http://www.gnu.org/licenses/gpl-3.0.html"><img src="https://img.shields.io/badge/license-GPLv3-blue.svg" alt="License"></a>
 
 下面具体说一下上述的问题将如何来分析并解决
 
@@ -82,10 +83,10 @@ CAS它是什么？它能做什么？这些我就不概述了，自行去搜索�
 
 # Client接入配置
 
-接入cas的client端配置非常简单，可以使用spring framework对接cas方式，也可以使用spring security对接cas方式，或者其他支持cas的第三方框架，自己对接配置非常简单只需要配置`org.jasig.cas.client.session.SingleSignOutFilter`和`org.jasig.cas.client.session.SingleSignOutHttpSessionListener`
+接入cas的client端配置非常简单，可以使用spring framework对接cas方式，也可以使用spring security对接cas方式，或者其他支持cas的第三方框架，自己对接配置非常简单只需要配置`SingleSignOutFilter`和`SingleSignOutHttpSessionListener`
 
-* SingleSignOutFilter：解决Logout清空TGC和session信息
-* SingleSignOutHttpSessionListener：session监听
+* org.jasig.cas.client.session.SingleSignOutFilter：解决Logout清空TGC和session信息
+* org.jasig.cas.client.session.SingleSignOutHttpSessionListener：session监听
 
 这里在对接方面就不做过多的介绍了。
 
@@ -268,8 +269,11 @@ Ticket持久化方式也有很多中，目前我使用的默认保存方式（�
 我的APP服务部署了2台服务（S1、S2）采用loadbalance映射一个域名出去访问，当CAS授权回调时被loadbalance路由到S1上，SingleSignOutFilter以及SingleSignOutHandler进行了TGC和SessionMappingStorage，默认的持久化方式是hash的方式，也就是说本地map方式，这样在下次访问到APP时被loadbalance路由到S2上就会发生什么有意思的事情呢？我相信做过分布式服务的应该都能猜出来什么问题。
 
 APP：我没找到cas认证信息，跳转到cas login页面
+
 CAS：我找到了你APP已经做过认证了，跳转到APP并且给你上次认证的ticlet
+
 APP：我真没找到你的认证信息，跳转到cas login页面
+
 CAS：你真的已经做过认证了，跳转到APP并且给你上次认证的ticlet
 
 这样就会发生无线跳转死循环问题。
@@ -405,8 +409,9 @@ public class RedisBackedSessionMappingStorage implements SessionMappingStorage {
 
 这里使用的redis-client是我自己封装，使用文档在：[《RedisClient使用说明》](https://ningyu1.github.io/site/post/22-redis-client/)，支持redis集群模式：[《RedisClient升级支持Sentinel使用说明》](https://ningyu1.github.io/site/post/28-redis-client-sentinel/)，代码已经放到了github上：
 
-项目地址：[redis-client](https://github.com/ningyu1/redis-client "项目地址") 
-[![GitHub release](https://img.shields.io/github/release/ningyu1/redis-client.svg?style=social&label=Release)](https://github.com/ningyu1/redis-client/releases)&nbsp;[![GitHub stars](https://img.shields.io/github/stars/ningyu1/redis-client.svg?style=social&label=Star)](https://github.com/ningyu1/redis-client/stargazers)&nbsp;[![GitHub forks](https://img.shields.io/github/forks/ningyu1/redis-client.svg?style=social&label=Fork)](https://github.com/ningyu1/redis-client/fork)&nbsp;[![GitHub watchers](https://img.shields.io/github/watchers/ningyu1/redis-client.svg?style=social&label=Watch)](https://github.com/ningyu1/redis-client/watchers) [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)
+项目地址：[redis-client](https://github.com/ningyu1/redis-client)
+
+<a href="https://github.com/ningyu1/redis-client/releases"><img src="https://img.shields.io/github/release/ningyu1/redis-client.svg?style=social&amp;label=Release" alt="GitHub release"></a>&nbsp;<a href="https://github.com/ningyu1/redis-client/stargazers"><img src="https://img.shields.io/github/stars/ningyu1/redis-client.svg?style=social&amp;label=Star" alt="GitHub stars"></a>&nbsp;<a href="https://github.com/ningyu1/redis-client/fork"><img src="https://img.shields.io/github/forks/ningyu1/redis-client.svg?style=social&amp;label=Fork" alt="GitHub forks"></a>&nbsp;<a href="https://github.com/ningyu1/redis-client/watchers"><img src="https://img.shields.io/github/watchers/ningyu1/redis-client.svg?style=social&amp;label=Watch" alt="GitHub watchers"></a> <a href="http://www.gnu.org/licenses/gpl-3.0.html"><img src="https://img.shields.io/badge/license-GPLv3-blue.svg" alt="License"></a>
 
 
 把上面的`RedisBackedSessionMappingStorage`类注入到`org.jasig.cas.client.session.SingleSignOutFilter`中即可
