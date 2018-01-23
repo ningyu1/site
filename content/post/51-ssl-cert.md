@@ -51,6 +51,7 @@ openssl req -new -key server.key -out server.csr
 
 ![](/img/ssl-cert/1.png)
 
+<span style="color:red">**ps.Common Name可以输入：*.yourdomain.com，这种方式生成通配符域名证书**</span>
 
 使用私钥对证书申请进行签名从而生成证书
 
