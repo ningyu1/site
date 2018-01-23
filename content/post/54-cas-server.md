@@ -4,11 +4,16 @@ title = "CAS使用经验总结，纯干货"
 description = "CAS使用经验总结，纯干货"
 tags = [
 	"CAS",
-	"ssl",
-	"cert",
+	"SSL",
+	"Cert",
 	"SLO",
-	"ticket",
-	"Session"
+	"Single Logout",
+	"Ticket",
+	"Ticket Registry",
+	"Session Centralized Storage",
+	"Cookie",
+	"CAS Cluster",
+	"CAS Server"
 ]
 date = "2018-01-19 16:25:36"
 categories = [
@@ -229,32 +234,103 @@ CAS在这方面留了很多扩展的地方，而且很方便的配置就可以�
 
 # CAS Server Ticket持久化问题
 
-Ticket持久化方式也有很多中，目前我使用的默认保存方式（基于文件），后面会改造到DB或者Redis存储
+Ticket持久化方式也有很多中（JPA、Couchbase、Hazelcast、Infinispan、InMemory、Ehcache、Ignite、Memcached），默认方式（inMemory基于内存的），下面我给出JAP方式的配置参数：
 
 ```
-# cas.serviceRegistry.jpa.healthQuery=SELECT 1 FROM INFORMATION_SCHEMA.SYSTEM_USERS
-# cas.serviceRegistry.jpa.isolateInternalQueries=false
-# cas.serviceRegistry.jpa.url=jdbc:hsqldb:mem:cas-service-registry
-# cas.serviceRegistry.jpa.failFast=true
-# cas.serviceRegistry.jpa.dialect=org.hibernate.dialect.HSQLDialect
-# cas.serviceRegistry.jpa.leakThreshold=10
-# cas.serviceRegistry.jpa.batchSize=1
-# cas.serviceRegistry.jpa.defaultCatalog=
-# cas.serviceRegistry.jpa.defaultSchema=
-# cas.serviceRegistry.jpa.user=sa
-# cas.serviceRegistry.jpa.ddlAuto=create-drop
-# cas.serviceRegistry.jpa.password=
-# cas.serviceRegistry.jpa.autocommit=false
-# cas.serviceRegistry.jpa.driverClass=org.hsqldb.jdbcDriver
-# cas.serviceRegistry.jpa.idleTimeout=5000
+cas.ticket.registry.jpa.jpaLockingTimeout=3600
+cas.ticket.registry.jpa.healthQuery=SELECT 1
+cas.ticket.registry.jpa.isolateInternalQueries=false
+cas.ticket.registry.jpa.url=jdbc:mysql://127.0.0.1:3306/cas?useUnicode=true&characterEncoding=UTF-8&noAccessToProcedureBodies=true
+cas.ticket.registry.jpa.failFast=true
+cas.ticket.registry.jpa.dialect=org.hibernate.dialect.MySQL5Dialect
+cas.ticket.registry.jpa.leakThreshold=10
+cas.ticket.registry.jpa.jpaLockingTgtEnabled=false
+cas.ticket.registry.jpa.batchSize=1
+#cas.ticket.registry.jpa.defaultCatalog=
+cas.ticket.registry.jpa.defaultSchema=cas
+cas.ticket.registry.jpa.user=root
+cas.ticket.registry.jpa.ddlAuto=validate
+cas.ticket.registry.jpa.password=root@123456
+cas.ticket.registry.jpa.autocommit=true
+cas.ticket.registry.jpa.driverClass=com.mysql.jdbc.Driver
+cas.ticket.registry.jpa.idleTimeout=5000
 
-# cas.serviceRegistry.jpa.pool.suspension=false
-# cas.serviceRegistry.jpa.pool.minSize=6
-# cas.serviceRegistry.jpa.pool.maxSize=18
-# cas.serviceRegistry.jpa.pool.maxWait=2000
+# 下面的参数根据实际情况选择使用
+# 连接池
+# cas.ticket.registry.jpa.pool.suspension=false
+# cas.ticket.registry.jpa.pool.minSize=6
+# cas.ticket.registry.jpa.pool.maxSize=18
+# cas.ticket.registry.jpa.pool.maxWait=2000
+# 签名与数据加解密密钥和算法
+# cas.ticket.registry.jpa.crypto.signing.key=
+# cas.ticket.registry.jpa.crypto.signing.keySize=512
+# cas.ticket.registry.jpa.crypto.encryption.key=
+# cas.ticket.registry.jpa.crypto.encryption.keySize=16
+# cas.ticket.registry.jpa.crypto.alg=AES
 ```
 
-具体可以查看官方说明对应的配置：[https://apereo.github.io/cas/5.0.x/installation/Configuration-Properties.html#Database Service Registry](https://apereo.github.io/cas/5.0.x/installation/Configuration-Properties.html#Database Service Registry)
+这里需要注意的是，以上给出的配置参数是建议值，ddlauto默认值是create-drop，可选值有（create、create-drop、validate、update），具体含义可以查看官方文档：[https://apereo.github.io/cas/5.0.x/installation/JPA-Ticket-Registry.html](https://apereo.github.io/cas/5.0.x/installation/JPA-Ticket-Registry.html)，建议使用validate的方式，使用validate需要自己创建表，一共四张表下面贴出建表语句：
+
+```
+CREATE TABLE `locks` (
+`application_id` varchar(255) NOT NULL,
+`expiration_date` datetime DEFAULT NULL,
+`unique_id` varchar(255) DEFAULT NULL,
+`lockVer` int(11) NOT NULL DEFAULT '0',
+PRIMARY KEY (`application_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+
+CREATE TABLE `oauth_tokens` (
+`TYPE` varchar(31) NOT NULL,
+`ID` varchar(255) NOT NULL,
+`NUMBER_OF_TIMES_USED` int(11) DEFAULT NULL,
+`CREATION_TIME` datetime DEFAULT NULL,
+`EXPIRATION_POLICY` longblob NOT NULL,
+`LAST_TIME_USED` datetime DEFAULT NULL,
+`PREVIOUS_LAST_TIME_USED` datetime DEFAULT NULL,
+`AUTHENTICATION` longblob NOT NULL,
+`SERVICE` longblob NOT NULL,
+PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+CREATE TABLE `serviceticket` (
+`TYPE` varchar(31) NOT NULL,
+`ID` varchar(255) NOT NULL,
+`NUMBER_OF_TIMES_USED` int(11) DEFAULT NULL,
+`CREATION_TIME` datetime DEFAULT NULL,
+`EXPIRATION_POLICY` longblob NOT NULL,
+`LAST_TIME_USED` datetime DEFAULT NULL,
+`PREVIOUS_LAST_TIME_USED` datetime DEFAULT NULL,
+`FROM_NEW_LOGIN` bit(1) NOT NULL,
+`TICKET_ALREADY_GRANTED` bit(1) NOT NULL,
+`SERVICE` longblob NOT NULL,
+`ticketGrantingTicket_ID` varchar(255) DEFAULT NULL,
+PRIMARY KEY (`ID`),
+KEY `FK60oigifivx01ts3n8vboyqs38` (`ticketGrantingTicket_ID`),
+CONSTRAINT `FK60oigifivx01ts3n8vboyqs38` FOREIGN KEY (`ticketGrantingTicket_ID`) REFERENCES `ticketgrantingticket` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+CREATE TABLE `ticketgrantingticket` (
+`TYPE` varchar(31) NOT NULL,
+`ID` varchar(255) NOT NULL,
+`NUMBER_OF_TIMES_USED` int(11) DEFAULT NULL,
+`CREATION_TIME` datetime DEFAULT NULL,
+`EXPIRATION_POLICY` longblob NOT NULL,
+`LAST_TIME_USED` datetime DEFAULT NULL,
+`PREVIOUS_LAST_TIME_USED` datetime DEFAULT NULL,
+`AUTHENTICATION` longblob NOT NULL,
+`EXPIRED` bit(1) NOT NULL,
+`PROXIED_BY` longblob,
+`SERVICES_GRANTED_ACCESS_TO` longblob NOT NULL,
+`ticketGrantingTicket_ID` varchar(255) DEFAULT NULL,
+PRIMARY KEY (`ID`),
+KEY `FKiqyu3qw2fxf5qaqin02mox8r4` (`ticketGrantingTicket_ID`),
+CONSTRAINT `FKiqyu3qw2fxf5qaqin02mox8r4` FOREIGN KEY (`ticketGrantingTicket_ID`) REFERENCES `ticketgrantingticket` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+```
+
+其他参数含义可以查看官方配置说明：[https://apereo.github.io/cas/5.0.x/installation/JPA-Ticket-Registry.html](https://apereo.github.io/cas/5.0.x/installation/JPA-Ticket-Registry.html)
 
 # Client Server集群模式下session问题
 
