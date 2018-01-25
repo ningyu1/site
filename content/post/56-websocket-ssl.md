@@ -32,10 +32,8 @@ WebSocket connection to 'ws://domain.com/websocket' failed: Error in connection 
 于是找了mozilla.org的websocket支持说明如下：
 
 <span style="color:red">
-**
-Security considerations<br>
+**Security considerations**<br>
 WebSockets should not be used in a mixed content environment; that is, you shouldn't open a non-secure WebSocket connection from a page loaded using HTTPS or vice-versa. In fact, some browsers explicitly forbid this, including Firefox 8 and later.
-**
 </span>
 
 具体地址：[https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications)
@@ -83,6 +81,12 @@ server {
 将证书文件放到conf同级目录即可，如果证书放在其他目录，需要修改ssl_certificate、ssl_certificate_key指定的位置。
 
 这样就可以不用修改以前的ws服务来提供wss服务。
+
+# 修改ws的请求方式为wss
+
+```
+wss://your.domain.com
+```
 
 ws服务这里也简单的说一下，有很多服务都可以构建ws服务，nginx、Workerman都可以，或者自己写程序开启ws服务。方式很多看个人喜好和公司的项目背景。
 
