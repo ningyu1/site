@@ -33,7 +33,7 @@ WebSocket connection to 'ws://domain.com/websocket' failed: Error in connection 
 
 <span style="color:red">
 **
-Security considerations
+Security considerations<br>
 WebSockets should not be used in a mixed content environment; that is, you shouldn't open a non-secure WebSocket connection from a page loaded using HTTPS or vice-versa. In fact, some browsers explicitly forbid this, including Firefox 8 and later.
 **
 </span>
@@ -48,7 +48,7 @@ WebSockets should not be used in a mixed content environment; that is, you shoul
 
 如果你的wss服务是使用ip方式访问的，那么需要制作一个ip方式的证书，使用openssl生成自签名证书是可以使用的，但是不推荐这种使用方式
 
-如果你的wss服务是使用域名方式访问的，那么需要制作一个域名证书（最好是通配符域名证书），这样在构建wss服务的时候需要只定根证书。
+如果你的wss服务是使用域名方式访问的，那么需要制作一个域名证书（最好是通配符域名证书），这样在构建wss服务的时候需要指定根证书。
 
 构建wss服务有很多种方式，我这里提供一种比较简单的方式。
 
