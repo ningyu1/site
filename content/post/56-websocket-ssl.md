@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "Trouble Shooting —— SLL站点使用WebSocket(ws)出现SecurityError问题"
-description = "Trouble Shooting —— SLL站点使用WebSocket(ws)出现SecurityError问题"
+title = "Trouble Shooting —— HTTPS(SSL)站点使用WebSocket(ws)出现SecurityError问题"
+description = "Trouble Shooting —— HTTPS(SSL)站点使用WebSocket(ws)出现SecurityError问题"
 tags = [
 	"WebSocket",
 	"SSL",
