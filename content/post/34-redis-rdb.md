@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "Redis RDB文件格式全解析"
-description = "Redis RDB文件格式全解析"
+title = "[转]Redis RDB文件格式全解析"
+description = "[转]Redis RDB文件格式全解析"
 tags = [
     "Redis",
 	"RDB"

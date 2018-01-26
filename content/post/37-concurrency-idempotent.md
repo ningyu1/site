@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "并发与幂等性"
-description = "并发与幂等性"
+title = "[转]并发与幂等性"
+description = "[转]并发与幂等性"
 tags = [
 	"concurrency",
     "idempotent"

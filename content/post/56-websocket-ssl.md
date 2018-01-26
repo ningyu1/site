@@ -29,7 +29,9 @@ menu = "main"
 WebSocket connection to 'ws://domain.com/websocket' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
 ```
 
-于是找了mozilla.org的websocket支持说明如下：
+应该是每个浏览器对websocket的支持不一样或者说每个浏览器的安全沙箱不太一样，禁止了一些用法，各大浏览器对websocket的支持情况请看：[https://caniuse.com/#search=websocket](https://caniuse.com/#search=websocket)
+
+无意中看到了mozilla的websocket支持详细说明如下：
 
 <span style="color:red">
 **Security considerations**<br>
@@ -40,7 +42,7 @@ WebSockets should not be used in a mixed content environment; that is, you shoul
 
 意思呢就是，ws与http对应，wss与https对应，如果站点使用的是https那就必须使用wss来做websocket请求不能使用ws来请求，不允许混合的方式使用。
 
-其实每个浏览器对这块的支持都不太一样，ie算是比较变态的一个，不过大致知道问题所在了，最好不要混合使用避免奇怪的问题。
+看到这个就更加明确了问题所在：安全机制问题，最好不要混合使用避免奇怪的问题。
 
 于是就开启了wss服务的使用路程。
 
@@ -95,6 +97,9 @@ ws服务这里也简单的说一下，有很多服务都可以构建ws服务，n
 1. [nginx官方文档](http://nginx.org/en/docs/)
 2. [Openssl生成自签名证书，简单步骤](https://ningyu1.github.io/site/post/51-ssl-cert/)
 3. [mozilla的websocket支持说明](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications)
+4. [各大浏览器对websocket的支持情况](https://caniuse.com/#search=websocket)
+
+# 常见错误
 
 如果在ie下报如下错误：
 

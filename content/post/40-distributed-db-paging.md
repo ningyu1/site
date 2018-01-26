@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "跨库分页-架构技术实践"
-description = "跨库分页-架构技术实践"
+title = "[转]跨库分页-架构技术实践"
+description = "[转]跨库分页-架构技术实践"
 tags = [
 	"rdb-paging"
 

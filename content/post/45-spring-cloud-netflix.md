@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "Spring Cloud Netflix架构浅析"
-description = "Spring Cloud Netflix架构浅析"
+title = "[转]Spring Cloud Netflix架构浅析"
+description = "[转]Spring Cloud Netflix架构浅析"
 tags = [
 	"spring cloud",
 	"netflix"
