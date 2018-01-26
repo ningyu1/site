@@ -38,11 +38,11 @@ menu = "main"
 
 我这里直接引用官网的架构图：
 
-![](/img/1.png)
+![](/img/cas/1.png)
 
 CAS Server与应用的Session交互图：
 
-![](/img/2.png)
+![](/img/cas/2.png)
 
 其实CAS就是生成维护Ticket信息和应用session做绑定，当然它的Ticket实现还是比较复杂的，有树形关系以及和Service关联关系，从Ticket的源码能看的出来它有root的判断和Service的映射列表。
 
