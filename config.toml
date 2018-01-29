@@ -6,6 +6,7 @@ baseurl = "https://ningyu1.github.io/site"
 title = "凝雨 - Yun"
 theme = "hugo-fabric"
 rssuri = "atom.xml"
+googleAnalytics = "UA-113235655-1"
 
 [params]
   [params.theme]
