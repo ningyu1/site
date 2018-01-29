@@ -6,13 +6,17 @@ baseurl = "https://ningyu1.github.io/site"
 title = "凝雨 - Yun"
 theme = "hugo-fabric"
 rssuri = "atom.xml"
-googleAnalytics = "UA-113235655-1"
+# google analytics
+# googleAnalytics = "UA-113235655-1"
 
 [params]
   [params.theme]
     subtitle = "快乐编程每一天 - Happy Coding Every Days"
     post_type = "page" # For archive
     archive_post_type = "archives"
+
+    # google translate
+    # googleTranslate = true
 
     # According to https://discuss.gohugo.io/t/how-to-access-the-top-level-rsslink-from-a-post/2044, we have to set this ourself
     site_rsslink = "atom.xml"
@@ -21,12 +25,12 @@ googleAnalytics = "UA-113235655-1"
     github_user = "ningyu1"
     gitlab_user = "ningyu1"
     # twitter_user = "wd"
-    disqus_shortname = "ningyu"
+    # disqus_shortname = "ningyu"
     email = "ningbe111@163.com"
 
     # post sharing
-    facebook_like = false
-    twitter_tweet_button = false
-    google_plus_one = true
-    google_plus_one_size = "midum"
+    # facebook_like = true
+    # twitter_tweet_button = true
+    # google_plus_one = true
+    # google_plus_one_size = "midum"
     addthis_profile_id = "ningyu1"
