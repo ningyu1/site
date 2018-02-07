@@ -4,6 +4,7 @@
         {{ $year := .Date.Format "2006" | int }}
         {{ $post_date := .Date.Format "01-02" }}
         {{ $last := $.Scratch.Get "last" }}
+		{{ $about := add $.Site.BaseURL "/about/" }}
         {{ if ne $last $year }}
             {{ if ne $last 0 }}
             </section>
@@ -11,7 +12,8 @@
             {{ $.Scratch.Set "last" $year }}
             <section class="archives"><h1 class="year">{{ $year }}</h1><div class="top-border-padding"></div>
         {{ end }}
-
+		
+		{{ if ne .Permalink $about }}
         <article>
             <h2 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
         	<div class="meta">
@@ -22,6 +24,7 @@
                 {{ end }}
         	</div>
         </article>
+		{{ end }}
     {{ end }}
 {{ end }}
 </section>
