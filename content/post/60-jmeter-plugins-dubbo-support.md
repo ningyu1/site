@@ -63,7 +63,9 @@ org.apache.jmeter.samplers.gui.AbstractSamplerGui
 
 下面是我写的插件DubboSample，主要用于Dubbo RPC接口测试。
 
-## Jmeter Plugin for Dubbo Support
+## Dubbo Plugin for Apache JMeter
+
+
 
 [项目地址:jmeter-plugins-dubbo](https://github.com/ningyu1/jmeter-plugins-dubbo) 
 
