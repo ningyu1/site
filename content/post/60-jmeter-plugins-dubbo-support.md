@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "Dubbo接口如何在Jmeter中测试，自研Jmeter Plugins for Dubbo Support"
-description = "Dubbo接口如何在Jmeter中测试，自研Jmeter Plugins for Dubbo Support"
+title = "Dubbo接口如何在Jmeter中测试，自研Dubbo Plugin for Apache JMeter"
+description = "Dubbo接口如何在Jmeter中测试，自研Dubbo Plugin for Apache JMeter"
 tags = [
 	"jmeter",
 	"dubbo",
