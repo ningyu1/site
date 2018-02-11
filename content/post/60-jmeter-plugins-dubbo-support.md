@@ -35,7 +35,7 @@ menu = "main"
 8. `SampleListener` 负责处理监听，基于事件机制。一般用于保存sampler的结果等耗费时间的操作。
 
 Jmeter的插件机制比较简单，Jmeter提供了扩展类来支持自定义插件的开发。
-继承`org.apache.jmeter.samplers.gui.AbstractSamplerGui`和`com.jiuyescm.framework.testing.jmeter.plugin.dubbo.sample.DubboSample`就可以完成一个插件开发。
+继承`org.apache.jmeter.samplers.gui.AbstractSamplerGui`和`org.apache.jmeter.samplers.AbstractSampler`就可以完成一个插件开发。
 
 # JMeter的GUI机制
 
