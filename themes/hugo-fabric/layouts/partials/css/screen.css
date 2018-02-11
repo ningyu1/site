@@ -290,6 +290,12 @@ a.github {
 a.github:hover {
   background: url("{{ .Site.BaseURL }}/images/social/GithubH.png") center no-repeat; }
 
+a.gitee {
+  background: url("{{ .Site.BaseURL }}/images/social/Gitee.png") center no-repeat; }
+
+a.gitee:hover {
+  background: url("{{ .Site.BaseURL }}/images/social/GiteeH.png") center no-repeat; }
+
 a.gitlab {
   background: url("{{ .Site.BaseURL }}/images/social/Gitlab.png") center no-repeat; }
 

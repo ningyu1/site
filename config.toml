@@ -24,6 +24,7 @@ rssuri = "atom.xml"
     # social account
     github_user = "ningyu1"
     gitlab_user = "ningyu1"
+    gitee_user = "ningyu"
     # twitter_user = "wd"
     # disqus_shortname = "ningyu"
     email = "ningbe111@163.com"

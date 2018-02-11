@@ -59,6 +59,12 @@
     <a href="http://www.lastfm.com/user/{{ .theme.lastfm_user }}" class="lastfm" title="LastFM"></a>
     </li>
     {{ end }}
+	{{ if .theme.gitee_user }}
+    <!-- Gitee -->
+    <li>
+    <a href="https://gitee.com/{{ .theme.gitee_user }}" class="gitee" title="Gitee码云"></a>
+    </li>
+    {{ end }}
 	<li>
     <a href="{{ .Site.BaseURL }}/{{ .theme.site_rsslink }}" class="rss" title="RSS" target="_blank"></a>
     </li>
