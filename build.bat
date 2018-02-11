@@ -1,2 +1,2 @@
-rd public
+rd /s/q public
 hugo.exe --buildDrafts
