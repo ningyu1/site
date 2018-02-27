@@ -46,6 +46,7 @@ menu = "main"
 ## 权限资源类型
 
 资源分为如下两种类型：
+
 * `public`（公有）：`public`为不控制访问的资源
 * `private`（私有）：`private`为需要被控制访问的资源
 
@@ -97,10 +98,19 @@ menu = "main"
 
 ## 缓存结构
 
-* private资源数据，`cache key=${APPNAME}.METADATA.RESOURCE`，结构：`hash`，`field=${RESOURCE_ID}`，`value=Resource`对象
-* public资源数据，`cache key=${APPNAME}.METADATA.RESOURCE.PUBLIC`，结构：`hash`，`field=${SERVICE}`，`value=List<Resource>`
-* 用户关联角色数据，`cache key=${APPNAME}.METADATA.ROLE`，结构：`hash`，`field=${USER_ID}`，`value=List<ROLE_ID>`
-* 角色关联的资源数据，`cache key=${APPNAME}.METADATA.MAPPING`，结构：`hash`，`field=${SERVICE}`，`value=List<Metadata<Resource,List<ROLE_ID>>>`，这里存储的数据结构是反向的，获取服务下的资源列表，每个资源数据中会有拥有这个资源的角色列表。
+* private资源数据
+	* 结构：`hash`
+	* `cache key=${APPNAME}.METADATA.RESOURCE`，`field=${RESOURCE_ID}`，`value=Resource`对象
+* public资源数据
+	* 结构：`hash`
+	* `cache key=${APPNAME}.METADATA.RESOURCE.PUBLIC`，`field=${SERVICE}`，`value=List<Resource>`
+* 用户关联角色数据
+	* 结构：`hash`
+	* `cache key=${APPNAME}.METADATA.ROLE`，`field=${USER_ID}`，`value=List<ROLE_ID>`
+* 角色关联的资源数据
+	* 结构：`hash`
+	* `cache key=${APPNAME}.METADATA.MAPPING`，`field=${SERVICE}`，`value=List<Metadata<Resource,List<ROLE_ID>>>`
+	* 这里存储的数据结构是反向的，获取服务下的资源列表，每个资源数据中会有拥有这个资源的角色列表。
 
 <span style="color:blue">*ps.缓存可以使用分布式的`redis`、`redisson`、如果单机可以使用`jvm cache`。*</span>
 
