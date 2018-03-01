@@ -3,12 +3,12 @@ toc = true
 title = "如何直接操作Docker容器？"
 description = "如何直接操作Docker容器？"
 tags = [
-	"docker"
+	"docker",
+	"rancher"
 ]
 date = "2018-01-11 16:11:36"
 categories = [
-    "docker",
-    "技术"
+    "docker"
 ]
 menu = "main"
 +++

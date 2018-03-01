@@ -9,8 +9,7 @@ tags = [
 ]
 date = "2017-09-05 17:50:36"
 categories = [
-    "Mybatis",
-    "技术"
+    "Mybatis"
 ]
 menu = "main"
 +++

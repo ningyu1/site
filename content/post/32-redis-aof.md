@@ -13,8 +13,7 @@ tags = [
 date = "2017-10-09 09:53:36"
 categories = [
     "Redis",
-    "技术",
-	"案例分析"
+    "trouble shooting"
 ]
 menu = "main"
 +++

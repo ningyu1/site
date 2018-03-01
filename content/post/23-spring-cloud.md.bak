@@ -2,6 +2,7 @@
 toc = true
 title = "[转]Spring Cloud学习-Eureka、Ribbon和Feign"
 description = "[转]Spring Cloud学习-Eureka、Ribbon和Feign"
+zhuan = true
 tags = [
     "Spring Cloud",
 	"Eureka",

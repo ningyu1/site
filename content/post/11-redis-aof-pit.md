@@ -16,8 +16,8 @@ tags = [
 date = "2017-08-15 10:30:34"
 categories = [
     "Redis",
-    "技术",
-	"案例分析"
+	"Case analysis",
+	"trouble shooting"
 ]
 menu = "main"
 +++

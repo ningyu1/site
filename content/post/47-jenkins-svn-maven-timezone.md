@@ -10,10 +10,8 @@ tags = [
 date = "2018-01-09 18:30:36"
 categories = [
     "jenkins",
-	"jenkins",
 	"svn",
-	"maven",
-    "技术"
+	"maven"
 ]
 menu = "main"
 +++

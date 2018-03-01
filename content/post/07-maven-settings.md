@@ -8,8 +8,7 @@ tags = [
 ]
 date = "2017-05-10 10:05:37"
 categories = [
-    "Maven",
-    "技术"
+    "Maven"
 ]
 menu = "main"
 +++

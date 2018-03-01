@@ -8,9 +8,7 @@ tags = [
 ]
 date = "2018-01-12 17:06:36"
 categories = [
-    "ssl",
-	"openssl",
-    "技术"
+    "ssl"
 ]
 menu = "main"
 +++

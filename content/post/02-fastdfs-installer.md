@@ -2,12 +2,11 @@
 title = "Fastdfs安装说明与常见问题解决"
 description = "Fastdfs安装说明与常见问题解决"
 tags = [
-    "FASTDFS"
+    "fastdfs"
 ]
 date = "2017-07-04"
 categories = [
-    "分布式文件系统",
-    "技术"
+    "fastdfs"
 ]
 menu = "main"
 +++

@@ -4,15 +4,14 @@ title = "Trouble Shooting —— HTTPS(SSL)站点使用WebSocket(ws)出现Securi
 description = "Trouble Shooting —— HTTPS(SSL)站点使用WebSocket(ws)出现SecurityError问题"
 tags = [
 	"WebSocket",
-	"SSL",
+	"ssl",
 	"wss",
 	"ws",
 	"SecurityError"
 ]
 date = "2018-01-25 17:04:36"
 categories = [
-    "WebSocket",
-    "技术"
+    "WebSocket"
 ]
 menu = "main"
 +++

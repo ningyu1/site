@@ -2,6 +2,7 @@
 toc = true
 title = "[转]Redis数据结构使用以及注意事项，运维问题总结"
 description = "Redis数据结构使用以及注意事项，运维问题总结"
+zhuan = true
 tags = [
     "Redis",
 	"AOF Block",

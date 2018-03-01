@@ -9,8 +9,7 @@ tags = [
 ]
 date = "2016-12-20 14:32:41"
 categories = [
-    "dubbo",
-    "技术"
+    "dubbo"
 ]
 menu = "main"
 +++

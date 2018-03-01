@@ -1,6 +1,15 @@
 {{ define "body" }}
 <article class="post">{{ partial "article.html" (dict "post" . "index" false) }}</article>
 
+{{ $zhuanExists := hasPrefix .Title "[转]" }}
+{{ if .Params.zhuan }}
+	{{ if eq .Params.zhuan false }}
+		{{ partial "post/licenses.html" (dict "theme" $.Site.Params.theme "post" . "Site" $.Site) }}
+	{{ end }}
+{{ else }}
+	{{ partial "post/licenses.html" (dict "theme" $.Site.Params.theme "post" . "Site" $.Site) }}
+{{ end }}
+
 {{ partial "post/sharing.html" (dict "theme" $.Site.Params.theme) }}
 
 {{ partial "disqus.html" (dict "shortname" $.Site.Params.theme.disqus_shortname "index" false "post" .) }}

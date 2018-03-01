@@ -10,8 +10,7 @@ tags = [
 date = "2017-09-30 16:56:36"
 categories = [
     "google",
-	"zxing",
-    "技术"
+	"zxing"
 ]
 menu = "main"
 +++

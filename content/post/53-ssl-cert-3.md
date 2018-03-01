@@ -3,12 +3,12 @@ toc = true
 title = "Java访问SSL地址，使用证书方式和免验证证书方式"
 description = "Java访问SSL地址，使用证书方式和免验证证书方式"
 tags = [
-	"ssl"
+	"ssl",
+	"openssl"
 ]
 date = "2018-01-15 14:08:36"
 categories = [
-    "ssl",
-    "技术"
+    "ssl"
 ]
 menu = "main"
 +++

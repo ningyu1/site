@@ -7,8 +7,7 @@ tags = [
 ]
 date = "2017-02-21 11:58:19"
 categories = [
-    "RESTful",
-    "技术"
+    "RESTful"
 ]
 menu = "main"
 +++

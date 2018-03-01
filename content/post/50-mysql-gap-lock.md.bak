@@ -2,6 +2,7 @@
 toc = true
 title = "[转]MySQL Gap Lock问题"
 description = "[转]MySQL Gap Lock问题"
+zhuan = true
 tags = [
 	"mysql gap lock"
 ]

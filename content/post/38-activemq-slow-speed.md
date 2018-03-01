@@ -3,13 +3,13 @@ toc = true
 title = "ActiveMQ发送速度慢问题排查"
 description = "ActiveMQ发送速度慢问题排查"
 tags = [
-	"activemq"
+	"activemq",
+	"activemq slow speed"
 
 ]
 date = "2017-11-09 17:00:36"
 categories = [
-    "activemq",
-    "技术"
+    "trouble shooting"
 ]
 menu = "main"
 +++

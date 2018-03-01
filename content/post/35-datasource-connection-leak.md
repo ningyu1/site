@@ -4,13 +4,13 @@ title = "数据源连接泄漏问题分析"
 description = "数据源连接泄漏问题分析"
 tags = [
     "abandon connection",
-	"connection leak"
+	"connection leak",
+	"datasource"
 
 ]
 date = "2017-10-26 13:29:36"
 categories = [
-    "Redis",
-    "技术"
+    "trouble shooting"
 ]
 menu = "main"
 +++

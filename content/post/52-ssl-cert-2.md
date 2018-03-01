@@ -4,13 +4,12 @@ title = "使用自签名证书，简单步骤"
 description = "使用自签名证书，简单步骤"
 tags = [
 	"ssl",
-	"InstallCert"
+	"InstallCert",
+	"openssl"
 ]
 date = "2018-01-12 19:13:36"
 categories = [
-    "ssl",
-	"InstallCert",
-    "技术"
+    "ssl"
 ]
 menu = "main"
 +++

@@ -3,15 +3,14 @@ toc = true
 title = "Git SSH Key settings and passphrase reset"
 description = "Git SSH Key settings and passphrase reset"
 tags = [
-	"Git",
-	"Github",
+	"git",
+	"github",
 	"ssh key",
 	"passphrase"
 ]
 date = "2018-01-30 16:10:20"
 categories = [
-    "Git",
-    "技术"
+    "git"
 ]
 menu = "main"
 +++

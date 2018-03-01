@@ -9,8 +9,7 @@ tags = [
 ]
 date = "2016-12-20 14:32:41"
 categories = [
-    "SVN",
-    "技术"
+    "SVN"
 ]
 menu = "main"
 +++

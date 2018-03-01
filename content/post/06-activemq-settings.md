@@ -8,8 +8,7 @@ tags = [
 ]
 date = "2017-05-11 12:03:10"
 categories = [
-    "ActiveMQ",
-    "技术"
+    "ActiveMQ"
 ]
 menu = "main"
 +++

@@ -8,8 +8,7 @@ tags = [
 ]
 date = "2017-06-02 14:06:34"
 categories = [
-    "Redis",
-    "技术"
+    "Redis"
 ]
 menu = "main"
 +++

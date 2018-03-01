@@ -12,8 +12,7 @@ date = "2017-09-27 16:43:36"
 categories = [
     "Redis",
 	"Lock",
-	"Distributed",
-    "技术"
+	"Distributed"
 ]
 menu = "main"
 +++

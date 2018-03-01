@@ -8,8 +8,7 @@ tags = [
 ]
 date = "2017-12-15 15:42:36"
 categories = [
-    "Fastjson",
-    "技术"
+    "java"
 ]
 menu = "main"
 +++

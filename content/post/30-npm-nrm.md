@@ -10,8 +10,7 @@ tags = [
 date = "2017-09-29 14:16:36"
 categories = [
     "npm",
-	"nrm",
-    "技术"
+	"nrm"
 ]
 menu = "main"
 +++

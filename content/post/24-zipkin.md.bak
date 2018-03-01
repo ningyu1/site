@@ -2,6 +2,7 @@
 toc = true
 title = "[转]利用Zipkin对Spring Cloud应用进行服务追踪分析"
 description = "[转]利用Zipkin对Spring Cloud应用进行服务追踪分析"
+zhuan = true
 tags = [
     "Spring Cloud",
 	"Zipkin"

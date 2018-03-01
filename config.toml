@@ -10,6 +10,7 @@ rssuri = "atom.xml"
 # googleAnalytics = "UA-113235655-1"
 
 [params]
+ author = "凝雨-Yun"
   [params.theme]
     subtitle = "快乐编程每一天 - Happy Coding Every Days"
     post_type = "page" # For archive

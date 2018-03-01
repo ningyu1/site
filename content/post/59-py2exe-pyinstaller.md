@@ -12,8 +12,7 @@ tags = [
 ]
 date = "2018-02-07 11:57:49"
 categories = [
-    "python",
-    "技术"
+    "python"
 ]
 menu = "main"
 +++

@@ -8,8 +8,7 @@ tags = [
 ]
 date = "2018-02-27 16:15:49"
 categories = [
-	"restful",
-    "技术"
+	"restful"
 ]
 menu = "main"
 +++

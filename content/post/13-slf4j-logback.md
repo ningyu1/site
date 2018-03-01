@@ -10,8 +10,7 @@ tags = [
 date = "2015-04-10 10:15:03"
 categories = [
     "Java",
-	"Logger",
-    "技术"
+	"Logger"
 ]
 menu = "main"
 +++

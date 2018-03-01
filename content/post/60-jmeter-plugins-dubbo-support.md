@@ -9,10 +9,7 @@ tags = [
 ]
 date = "2018-02-09 15:39:49"
 categories = [
-    "test",
-	"jmeter",
-	"dubbo",
-    "技术"
+    "test"
 ]
 menu = "main"
 +++

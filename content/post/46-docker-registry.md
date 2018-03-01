@@ -3,13 +3,15 @@ toc = true
 title = "Docker Registry镜像清理问题"
 description = "Docker Registry镜像清理问题"
 tags = [
-	"docker"
+	"docker",
+	"docker registry",
+	"docker registry web",
+	"docker registry frontend"
 
 ]
 date = "2017-12-29 14:45:36"
 categories = [
-    "docker",
-    "技术"
+    "docker"
 ]
 menu = "main"
 +++

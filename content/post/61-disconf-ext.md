@@ -8,8 +8,7 @@ tags = [
 ]
 date = "2018-02-11 11:26:49"
 categories = [
-	"ucm",
-    "技术"
+	"ucm"
 ]
 menu = "main"
 +++

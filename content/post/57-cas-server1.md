@@ -16,8 +16,7 @@ tags = [
 ]
 date = "2018-01-26 15:07:36"
 categories = [
-    "CAS",
-    "技术"
+    "cas"
 ]
 menu = "main"
 +++

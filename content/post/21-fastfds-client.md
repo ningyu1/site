@@ -8,8 +8,7 @@ tags = [
 ]
 date = "2017-09-06 10:17:36"
 categories = [
-    "Fastdfs",
-    "技术"
+    "Fastdfs"
 ]
 menu = "main"
 +++

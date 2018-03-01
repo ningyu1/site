@@ -9,9 +9,7 @@ tags = [
 ]
 date = "2017-08-26 15:56:36"
 categories = [
-    "Java",
-	"JVM",
-    "技术"
+    "Java"
 ]
 menu = "main"
 +++

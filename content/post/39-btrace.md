@@ -8,8 +8,8 @@ tags = [
 ]
 date = "2017-11-15 11:00:36"
 categories = [
-    "btrace",
-    "技术"
+    "trace",
+	"java"
 ]
 menu = "main"
 +++

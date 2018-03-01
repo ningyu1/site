@@ -10,8 +10,7 @@ tags = [
 date = "2017-08-26 16:40:36"
 categories = [
     "Java",
-	"Spring",
-    "技术"
+	"Spring"
 ]
 menu = "main"
 +++

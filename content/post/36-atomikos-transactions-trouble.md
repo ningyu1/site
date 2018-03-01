@@ -11,8 +11,7 @@ tags = [
 ]
 date = "2017-11-02 15:52:36"
 categories = [
-    "atomikos",
-    "技术"
+    "trouble shooting"
 ]
 menu = "main"
 +++

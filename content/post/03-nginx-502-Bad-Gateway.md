@@ -10,8 +10,8 @@ tags = [
 date = "2017-06-30 18:36:44"
 categories = [
     "Nginx",
-    "技术",
-	"案例分析"
+	"Case analysis",
+	"trouble shooting"
 ]
 menu = "main"
 +++
