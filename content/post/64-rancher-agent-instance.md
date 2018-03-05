@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "Trouble Shooting —— agent-instance cannot start automatically"
-description = "Trouble Shooting —— agent-instance cannot start automatically"
+title = "Trouble Shooting —— Docker rancher/agent-instance cannot start automatically"
+description = "Trouble Shooting —— Docker rancher/agent-instance cannot start automatically"
 tags = [
 	"trouble shooting",
 	"docker",
