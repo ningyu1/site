@@ -1,6 +1,6 @@
 +++
 toc = true
-title = "[转]Redis数据结构使用以及注意事项，运维问题总结"
+title = "Redis数据结构使用以及注意事项，运维问题总结"
 description = "Redis数据结构使用以及注意事项，运维问题总结"
 zhuan = true
 tags = [
@@ -12,13 +12,13 @@ tags = [
 ]
 date = "2017-10-09 12:00:36"
 categories = [
-    "Redis",
-    "技术"
+    "Redis"
 ]
 menu = "main"
 +++
 
 文章转自：http://www.cnblogs.com/cnmenglang/p/6225987.html
+作者：@江南白衣
 
 ## 优缺点
 

@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "[转]Spring Cloud学习-Eureka、Ribbon和Feign"
-description = "[转]Spring Cloud学习-Eureka、Ribbon和Feign"
+title = "Spring Cloud学习-Eureka、Ribbon和Feign"
+description = "Spring Cloud学习-Eureka、Ribbon和Feign"
 zhuan = true
 tags = [
     "Spring Cloud",
@@ -17,6 +17,27 @@ categories = [
 ]
 menu = "main"
 +++
+
+# 前沿
+
+这篇文章比较适合入门，对于spring cloud生态的成员有一个大致的了解，其实spring cloud生态将netflix的产品进行了很好的整合，netflix早几年就在服务治理这块有很深入的研究，出品了很多服务治理的工具hystrix就是很有名的一个，具体可以查看：[https://github.com/netflix](https://github.com/netflix)，刚好在微服务盛行的年代服务治理是必不可少的一环，现在在微服务开发套件这块常用也就是下面这两种选择：
+
+1. spring cloud套件，成熟上手快
+2. 自建微服务架构
+	1. UCM，统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。
+	2. RPC，阿里的Dubbo、点评的Pigeon，当当改的DubboX，grpc，等等很多开源的，还有很多公司自研的。
+	3. 服务治理，netflix的hystrix老牌的功能强大的服务治理工具，有熔断、降级等功能，很多公司会结合监控套件开发自己的服务治理工具。
+	4. 开发框架（rpc、restful这个一般公司都有自研的开发框架）
+	5. 注册中心（zookeeper、redis、Consul、SmartStack、Eureka，其中一些已经是spring cloud生态的一员了）。
+	6. 网关，restful的使用nginx+lua，这也是openAPI网关常用的手段
+	7. 负载均衡，这个结合选用的rpc框架来选择。一般rpc框架都有负载均衡的功能。
+	7. 服务治理熔断，使用hystrix（也已经是spring cloud生态的一员了）
+	8. 监控，使用pinpoint、点评的cat、等其他开源的APM工具
+	9. DevOPS，持续交付一般也是自己构架的，采用jenkins打包docker镜像，使用docker生态的工具构建容器化发布平台。
+
+
+下面文章转自：https://www.jianshu.com/p/0aef3724e6bc
+作者：@杜琪
 
 ## Talk is cheap，show me the code ， 书上得来终觉浅，绝知此事要躬行。在自己真正实现的过程中，会遇到很多莫名其妙的问题，而正是在解决这些问题的过程中，你会发现自己之前思维的盲点。
 

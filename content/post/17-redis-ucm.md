@@ -16,6 +16,12 @@ categories = [
 menu = "main"
 +++
 
+# 点评
+
+虽然现在开源的UCM套件很多，UCM统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。但是很多人是知其然不知其所以然，刚好发现下面这篇文章可以作为原理的教程文章，使用JMS、Redis、Zookeeper简单的实现UCM基本功能，作为学习交流还是很不错的。
+
+文章转自：https://my.oschina.net/OutOfMemory/blog/1526063
+作者：@ksfzhaohui
 
 ## 前言
 

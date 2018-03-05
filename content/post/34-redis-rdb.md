@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "[转]Redis RDB文件格式全解析"
-description = "[转]Redis RDB文件格式全解析"
+title = "Redis RDB文件格式全解析"
+description = "Redis RDB文件格式全解析"
 zhuan = true
 tags = [
     "Redis",
@@ -15,6 +15,13 @@ categories = [
 ]
 menu = "main"
 +++
+
+# 点评
+
+这篇文章作为对RDB理解的教程文章，对RDB文件的原理理解有助于进行Redis高阶应用的设计与开发。
+
+文章转自：http://blog.nosqlfan.com/html/3734.html
+作者：@nosqlfan
 
 RDB文件是Redis持久化的一种方式，Redis通过制定好的策略，按期将内存中的数据以镜像的形式转存到RDB文件中。那么RDB文件内部格式是什么样的呢，Redis又做了哪些工作让RDB能够更快的dump和加载呢，下面我们深入RDB文件，来看一看其内部结构。
 首先我们来看一个RDB文件的概况图：

@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "[转]跨库分页-架构技术实践"
-description = "[转]跨库分页-架构技术实践"
+title = "跨库分页-架构技术实践"
+description = "跨库分页-架构技术实践"
 zhuan = true
 tags = [
 	"rdb-paging"
@@ -9,11 +9,14 @@ tags = [
 ]
 date = "2017-11-24 18:00:36"
 categories = [
-    "跨库分页",
-    "技术"
+    "跨库分页"
 ]
 menu = "main"
 +++
+
+文章来源：http://gitbook.cn/books/58a98f512bd83c246b6b8866/index.html
+作者：@58沈剑
+说明：文章转自沈老板的文章，分析的很不错
 
 # 一、需求缘起 
 

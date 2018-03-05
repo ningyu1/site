@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "[转]利用Zipkin对Spring Cloud应用进行服务追踪分析"
-description = "[转]利用Zipkin对Spring Cloud应用进行服务追踪分析"
+title = "利用Zipkin对Spring Cloud应用进行服务追踪分析"
+description = "利用Zipkin对Spring Cloud应用进行服务追踪分析"
 zhuan = true
 tags = [
     "Spring Cloud",
@@ -15,6 +15,10 @@ categories = [
 ]
 menu = "main"
 +++
+
+
+文章转自：https://yq.aliyun.com/articles/60165
+作者：@libinjingshan
 
 ## 摘要： 本文简单介绍了如何利用Zipkin对SpringCloud应用进行服务分析。在实际的应用场景中，Zipkin可以结合压力测试工具一起使用，分析系统在大压力下的可用性和性能。
 

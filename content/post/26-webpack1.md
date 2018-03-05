@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "[转]Webpack 打包优化之体积篇"
-description = "[转]Webpack 打包优化之体积篇"
+title = "Webpack 打包优化之体积篇"
+description = "Webpack 打包优化之体积篇"
 zhuan = true
 tags = [
     "Webpack",
@@ -19,6 +19,9 @@ categories = [
 ]
 menu = "main"
 +++
+
+文章来源：https://jeffjade.com/2017/08/06/124-webpack-packge-optimization-for-volume/
+作者：@晚晴幽草轩轩主
 
 谈及如今欣欣向荣的前端圈，不仅有各类框架百花齐放，如`Vue`， `React`， `Angular`等等，就打包工具而言，发展也是如火如荼，百家争鸣；从早期的王者`Browserify`, `Grun`t，到后来赢得宝座的 `Gulp`， 以及独树一帜的 `fis3`, 以及下一代打包神器 `Rollup` ；在 `browserify`,`grunt`,`gulp`,`rollup`,`webpack` 可以一窥其中部分对比。在本文要探究的是，当前打包工具绝对霸者 `Webpack`。
 

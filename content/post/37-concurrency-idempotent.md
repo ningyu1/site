@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "[转]并发与幂等性"
-description = "[转]并发与幂等性"
+title = "并发与幂等性"
+description = "并发与幂等性"
 zhuan = true
 tags = [
 	"concurrency",
@@ -11,11 +11,14 @@ tags = [
 date = "2017-11-06 17:40:36"
 categories = [
     "concurrency",
-	"idempotent",
-    "技术"
+	"idempotent"
 ]
 menu = "main"
 +++
+
+
+文章来源：https://my.oschina.net/wangen2009/blog/1560975
+作者：@码代码的小司机
 
 ![](/img/concurrency/1.jpg)
 ![](/img/concurrency/2.jpg)

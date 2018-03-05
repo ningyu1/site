@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "[转]Webpack 打包优化之速度篇"
-description = "[转]Webpack 打包优化之速度篇"
+title = "Webpack 打包优化之速度篇"
+description = "Webpack 打包优化之速度篇"
 zhuan = true
 tags = [
     "Webpack",
@@ -14,11 +14,13 @@ categories = [
     "Webpack",
 	"Vue",
 	"React",
-	"Angular",
-	"技术"
+	"Angular"
 ]
 menu = "main"
 +++
+
+文章来源：https://jeffjade.com/2017/08/12/125-webpack-package-optimization-for-speed/
+作者：@晚晴幽草轩轩主
 
 在前文 [Webpack 打包优化之体积](https://ningyu1.github.io/site/post/26-webpack1/)篇中，对如何减小 `Webpack` 打包体积，做了些探讨；当然，那些法子对于打包速度的提升，也是大有裨益。然而，打包速度之于**开发体验**和**及时构建**，相当重要；所以有必要对其做更为深入的研究，以便完善工作流，这就是本文存在的缘由。
 

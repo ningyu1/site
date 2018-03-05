@@ -1,20 +1,20 @@
 +++
 toc = true
-title = "[转]MySQL Gap Lock问题"
-description = "[转]MySQL Gap Lock问题"
+title = "MySQL Gap Lock问题"
+description = "MySQL Gap Lock问题"
 zhuan = true
 tags = [
 	"mysql gap lock"
 ]
 date = "2018-01-11 17:10:36"
 categories = [
-    "mysql",
-    "技术"
+    "mysql"
 ]
 menu = "main"
 +++
 
 文章来源：[http://blog.chinaunix.net/uid-20726500-id-5749804.html](http://blog.chinaunix.net/uid-20726500-id-5749804.html)
+作者：@小桥河西
 
 初识MySQL的gap，觉得这个设计比较独特，和其他数据库的做法不太一样，所以整理一个简单的memo（虽然关于gap锁，相关资料已经很多了）
 
