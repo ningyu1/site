@@ -1,4 +1,4 @@
-+
++++
 toc = true
 title = "Java中内部类使用注意事项，内部类对序列化与反序列化的影响"
 description = "Java中内部类使用注意事项，内部类对序列化与反序列化的影响"
@@ -6,7 +6,7 @@ tags = [
 	"inner class",
 	"static",
 	"non-static",
-	"innerClassSerialization"
+	"innerClassSerialization",
 	"fastjson",
 	"gson",
 	"dubbo json"
