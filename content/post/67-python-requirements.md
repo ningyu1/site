@@ -5,7 +5,8 @@ description = "Python项目生成requirements.txt的多种方式，用于类库�
 tags = [
 	"pip",
 	"freeze",
-	"pipreqs"
+	"pipreqs",
+	"python"
 ]
 date = "2018-03-09 14:19:54"
 categories = [
@@ -18,7 +19,9 @@ menu = "main"
 
 我们做开发时为何需要对依赖库进行管理？当依赖类库过多时，如何管理类库的版本？
 
-我相信大家都知道怎么回答这个问题，为了更加规范管理项目结构，提高开发效率所以我们需要对依赖库进行管理，不管使用任何开发语言，如今都有依赖库的管理工具，例如：`Java`有`Maven`、`Gradle`，`JS`有`NPM`，`Python`有`pip`、`easy_install`，`Linux`有`apt-get`、`yun` 等。
+我相信大家都知道怎么回答这个问题，为了更加规范管理项目结构，提高开发效率所以我们需要对依赖库进行管理，不管使用任何开发语言，如今都有依赖库的管理工具。
+
+例如：`Java`有`Maven`、`Gradle`，`JS`有`NPM`，`Python`有`pip`、`easy_install`，`Linux`有`apt-get`、`yun` 等。
 
 我们这里就对`Python`的依赖库管理来进一步说一说。
 
@@ -72,6 +75,8 @@ pipreqs requirements.txt
 # 上面两个方法的区别？
 
 使用`pip freeze`保存的是当前`Python`环境下所有的类库，如果你没有用`virtualenv`来对`Python`环境做虚拟化的话，类库就会很杂很多，在对项目进行迁移的时候我们只需关注项目中使用的类库，没有必要导出所有安装过的类库，因此我们一般迁移项目不会使用`pipreqs`，`pip freeze`更加适合迁移整个`python`环境下安装过的类库时使用。
+
+<span style="color:blue">*不知道`virtualenv`是什么或者不会使用它的可以查看：[《构建Python多个虚拟环境来进行不同版本开发之神器-virtualenv》](https://ningyu1.github.io/site/post/63-python-virtualenv/)*</span>
 
 使用`pipreqs`它会根据当前目录下的项目的依赖来导出三方类库，因此常用与项目的迁移中。
 

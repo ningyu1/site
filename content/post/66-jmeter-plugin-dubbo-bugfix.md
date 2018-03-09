@@ -18,6 +18,18 @@ menu = "main"
 
 他在使用`jmeter-plugin-dubbo`插件时发现`GUI`中输入的信息无法使用`Jmeter`变量`${var}`与函数来进行参数化，以下是我修复这个问题的记录。
 
+# 项目地址
+
+[github: jmeter-plugin-dubbo](https://github.com/ningyu1/jmeter-plugins-dubbo) 
+
+<a href="https://github.com/ningyu1/jmeter-plugins-dubbo/releases"><img src="https://img.shields.io/github/release/ningyu1/jmeter-plugins-dubbo.svg?style=social&amp;label=Release"></a>&nbsp;<a href="https://github.com/ningyu1/jmeter-plugins-dubbo/stargazers"><img src="https://img.shields.io/github/stars/ningyu1/jmeter-plugins-dubbo.svg?style=social&amp;label=Star"></a>&nbsp;<a href="https://github.com/ningyu1/jmeter-plugins-dubbo/fork"><img src="https://img.shields.io/github/forks/ningyu1/jmeter-plugins-dubbo.svg?style=social&amp;label=Fork"></a>&nbsp;<a href="https://github.com/ningyu1/jmeter-plugins-dubbo/watchers"><img src="https://img.shields.io/github/watchers/ningyu1/jmeter-plugins-dubbo.svg?style=social&amp;label=Watch"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+
+[码云: jmeter-plugin-dubbo]( https://gitee.com/ningyu/jmeter-plugins-dubbo)
+
+|release|star|fork|watch|license|
+|:-:|:-:|:-:|:-:|:-:|
+|[V1.1.0](https://gitee.com/ningyu/jmeter-plugins-dubbo/releases/V1.1.0)|[49](https://gitee.com/ningyu/jmeter-plugins-dubbo/stargazers)|[9](https://gitee.com/ningyu/jmeter-plugins-dubbo/members)|[26](https://gitee.com/ningyu/jmeter-plugins-dubbo/watchers)|[MIT](https://opensource.org/licenses/MIT)|
+
 # 问题描述
 
 1. `jmeter-plugin-dubbo`插件`GUI`输入的信息无法使用`${var}`变量来进行参数化
