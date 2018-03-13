@@ -341,3 +341,33 @@ public static <T> T formJson(String json, Type type) {
 4. 通过`Class.forName`得到`Class`，再获取Method，再通过`method.getGenericParameterTypes()`构造出来的参数类型和参数值，无法通过`Proxy`代理对象来进行`method.invoke`，其原因是：原始接口的方法参数定义和代理对象的方法参数定义不同导致。
 4. 放弃通过`Proxy`对象的`method.invoke`方式调用接口，通过`Dubbo`的通用服务接口（`GenericService`）来调用任何服务接口方法：`GenericService.$invoke(method, parameterTypes, args)`
 
+参数对照参考表如下
+
+|Java类型|paramType|paramValue|
+|:------|:--------|:---------|
+|int|int|1|
+|double|double|1.2|
+|short|short|1|
+|float|float|1.2|
+|long|long|1|
+|byte|byte|字节|
+|boolean|boolean|true或false|
+|char|char|A，如果字符过长取值为："STR".charAt(0)|
+|java.lang.String|java.lang.String或String或string|字符串|
+|java.lang.Integer|java.lang.Integer或Integer或integer|1|
+|java.lang.Double|java.lang.Double或Double|1.2|
+|java.lang.Short|java.lang.Short或Short|1|
+|java.lang.Long|java.lang.Long或Long|1|
+|java.lang.Float|java.lang.Float或Float|1.2|
+|java.lang.Byte|java.lang.Byte或Byte|字节|
+|java.lang.Boolean|java.lang.Boolean或Boolean|true或false|
+|JavaBean|com.package.Bean|{"service":"test1","url":"test","action":"GET","enabled":true,"isPublic":false,"appId":8,"menuId":30001}|
+|java.util.Map以及子类|java.util.Map以及子类|{"service":"test1","url":"test","action":"GET","enabled":true,"isPublic":false,"appId":8,"menuId":30001}|
+|java.util.Map&#60;String,JavaBean> |java.util.Map|{"name":{"service":"test1","url":"test","action":"GET","enabled":true,"isPublic":false,"appId":8,"menuId":30001},"value":{"service":"test1","url":"test","action":"GET","enabled":true,"isPublic":false,"appId":8,"menuId":30001}}|
+|java.util.HashMap&#60;Object,Object>|java.util.HashMap|{"name":{"service":"test1","url":"test","action":"GET","enabled":true,"isPublic":false,"appId":8,"menuId":30001},"value":{"service":"test1","url":"test","action":"GET","enabled":true,"isPublic":false,"appId":8,"menuId":30001}}|
+|java.util.Collection以及子类|java.util.Collection以及子类|["a","b"]|
+|java.util.List&#60;String>|java.util.List|["a","b"]|
+|java.util.List&#60;JavaBean>|java.util.List|[{"service":"test1","url":"test","action":"GET","enabled":true,"isPublic":false,"appId":8,"menuId":30001},{"service":"test1","url":"test","action":"GET","enabled":true,"isPublic":false,"appId":8,"menuId":30001}]|
+|java.util.List&#60;Map&#60;Object, JavaBean>>|java.util.List|[{"name":{"service":"test1","url":"test","action":"GET","enabled":true,"isPublic":false,"appId":8,"menuId":30001},"value":{"service":"test1","url":"test","action":"GET","enabled":true,"isPublic":false,"appId":8,"menuId":30001}},{"name":{"service":"test1","url":"test","action":"GET","enabled":true,"isPublic":false,"appId":8,"menuId":30001},"value":{"service":"test1","url":"test","action":"GET","enabled":true,"isPublic":false,"appId":8,"menuId":30001}}]|
+|java.util.List&#60;Long>|java.util.List| [1,2,3]|
+|java.util.ArrayList&#60;Object>|java.util.ArrayList|["ny",1,true]|
