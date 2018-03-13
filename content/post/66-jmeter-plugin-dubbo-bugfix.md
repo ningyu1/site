@@ -28,7 +28,7 @@ menu = "main"
 
 |release|star|fork|watch|license|
 |:-:|:-:|:-:|:-:|:-:|
-|[V1.1.0](https://gitee.com/ningyu/jmeter-plugins-dubbo/releases/V1.1.0)|[49](https://gitee.com/ningyu/jmeter-plugins-dubbo/stargazers)|[9](https://gitee.com/ningyu/jmeter-plugins-dubbo/members)|[26](https://gitee.com/ningyu/jmeter-plugins-dubbo/watchers)|[MIT](https://opensource.org/licenses/MIT)|
+|[V1.2.0](https://gitee.com/ningyu/jmeter-plugins-dubbo/releases/V1.2.0)|[51](https://gitee.com/ningyu/jmeter-plugins-dubbo/stargazers)|[10](https://gitee.com/ningyu/jmeter-plugins-dubbo/members)|[25](https://gitee.com/ningyu/jmeter-plugins-dubbo/watchers)|[MIT](https://opensource.org/licenses/MIT)|
 
 # 问题描述
 
