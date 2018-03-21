@@ -18,16 +18,23 @@ menu = "main"
 
 <a href="https://github.com/ningyu1/fastdfs-client/releases"><img src="https://img.shields.io/github/release/ningyu1/fastdfs-client.svg?style=social&amp;label=Release"></a>&nbsp;<a href="https://github.com/ningyu1/fastdfs-client/stargazers"><img src="https://img.shields.io/github/stars/ningyu1/fastdfs-client.svg?style=social&amp;label=Star"></a>&nbsp;<a href="https://github.com/ningyu1/fastdfs-client/fork"><img src="https://img.shields.io/github/forks/ningyu1/fastdfs-client.svg?style=social&amp;label=Fork"></a>&nbsp;<a href="https://github.com/ningyu1/fastdfs-client/watchers"><img src="https://img.shields.io/github/watchers/ningyu1/fastdfs-client.svg?style=social&amp;label=Watch"></a> <a href="http://www.gnu.org/licenses/gpl-3.0.html"><img src="https://img.shields.io/badge/license-GPLv3-blue.svg"></a>
 
-## FastDFS-client是什么
+## fastdfs-client是什么
 
-FastDfs-client是架构组提供的通过java语言编写的客户端操作程序，帮助开发人员快速使用分布式文件系统的工具，封装了TrackerClient操作来管理存储节点，封装了StorageClient操作来执行文件上传下载功能。
+fastdfs-client是一个访问fastdfs的Java客户端框架，帮助开发人员快速使用分布式文件系统的工具，封装了TrackerClient操作来管理存储节点，封装了StorageClient操作来执行文件上传下载功能。
 
 ## change log
 
-1.0.0-SNAPSHOT
-    1. 包装Request和Response报文解析
-    2. 包装Storage和Tracker操作命令
-    3. 增加连接池提升使用性能
+[V1.1.0](https://github.com/ningyu1/fastdfs-client/releases/tag/V1.1.0)
+
+1. 修改download文件receive时带入的inputStream对象，inputStream对象修改为克隆socket的inputstream，避免污染连接池中的socket对象，当业务回调不读取留时会影响下一次连接池中获取的socket对象。
+2. 在使用1.0.0版本进行download文件时，建议使用DownloadCallback的实现类：DownloadByteArray和DownloadFileWriter不要自己去实现，不要关闭receive方法传入的inputStream对象。
+3. 在使用1.1.0版本进行download文件时，receive传入的inputStream是克隆的，因此使用完后必须进行关闭操作。
+
+[V1.0.0](https://github.com/ningyu1/fastdfs-client/releases/tag/V1.0.0)
+
+1. 包装Request和Response报文解析
+2. 包装Storage和Tracker操作命令
+3. 增加连接池提升使用性能
 
 ## 接口方法
 
