@@ -53,7 +53,7 @@ menu = "main"
 
 # Zookeeper常用命令
 
-##启动服务
+## 启动服务
 
 ```
 [app@iZbp1dijzcfg8m0bcqfv9yZ zookeeper]$ ./bin/zkServer.sh start
