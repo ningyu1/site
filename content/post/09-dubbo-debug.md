@@ -72,3 +72,26 @@ dubbo:registry protocol="zookeeper" address="${dubbo.registry}" />
 ```
 **ps.当你不想连接本地服务调试时，只需将启动参数去掉即可，无需修改配置文件，让配置文件一直保持清爽干净。
 以后你就可以安心的本地调试你的程序了，再也不会因为服务没有Export出去、配置文件被修改而焦头烂额。**
+
+
+# Dubbo Plugin for Apache JMeter
+
+Dubbo Plugin for Apache JMeter是用来在Jmeter里更加方便的测试Dubbo接口而开发的插件，[马上使用](https://ningyu1.github.io/site/post/60-jmeter-plugins-dubbo-support)
+
+# 项目地址
+
+[github: jmeter-plugin-dubbo](https://github.com/ningyu1/jmeter-plugins-dubbo) 
+
+<a href="https://github.com/ningyu1/jmeter-plugins-dubbo/releases"><img src="https://img.shields.io/github/release/ningyu1/jmeter-plugins-dubbo.svg?style=social&amp;label=Release"></a>&nbsp;<a href="https://github.com/ningyu1/jmeter-plugins-dubbo/stargazers"><img src="https://img.shields.io/github/stars/ningyu1/jmeter-plugins-dubbo.svg?style=social&amp;label=Star"></a>&nbsp;<a href="https://github.com/ningyu1/jmeter-plugins-dubbo/fork"><img src="https://img.shields.io/github/forks/ningyu1/jmeter-plugins-dubbo.svg?style=social&amp;label=Fork"></a>&nbsp;<a href="https://github.com/ningyu1/jmeter-plugins-dubbo/watchers"><img src="https://img.shields.io/github/watchers/ningyu1/jmeter-plugins-dubbo.svg?style=social&amp;label=Watch"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+
+[码云: jmeter-plugin-dubbo]( https://gitee.com/ningyu/jmeter-plugins-dubbo)
+
+|release|star|fork|license|
+|:-:|:-:|:-:|:-:|
+|[V1.2.2](https://gitee.com/ningyu/jmeter-plugins-dubbo/releases/V1.2.0)|[![star](https://gitee.com/ningyu/jmeter-plugins-dubbo/badge/star.svg?theme=white)](https://gitee.com/ningyu/jmeter-plugins-dubbo/stargazers)|[![fork](https://gitee.com/ningyu/jmeter-plugins-dubbo/badge/fork.svg?theme=white)](https://gitee.com/ningyu/jmeter-plugins-dubbo/members)|[MIT](https://opensource.org/licenses/MIT)|
+
+# 相关博文
+
+* [Dubbo接口如何在Jmeter中测试，自研Dubbo Plugin for Apache JMeter](https://ningyu1.github.io/site/post/60-jmeter-plugins-dubbo-support/)
+* [Bug Fix Version V1.1.0, Dubbo Plugin for Apache JMeter](https://ningyu1.github.io/site/post/66-jmeter-plugin-dubbo-bugfix/)
+* [New Version V1.2.0, Dubbo Plugin for Apache JMeter](https://ningyu1.github.io/site/post/68-jmeter-plugin-dubbo-1.2.0/)

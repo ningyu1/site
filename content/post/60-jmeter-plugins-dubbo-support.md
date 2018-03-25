@@ -70,9 +70,9 @@ org.apache.jmeter.samplers.gui.AbstractSamplerGui
 
 [码云: jmeter-plugin-dubbo]( https://gitee.com/ningyu/jmeter-plugins-dubbo)
 
-|release|star|fork|watch|license|
-|:-:|:-:|:-:|:-:|:-:|
-|[V1.2.0](https://gitee.com/ningyu/jmeter-plugins-dubbo/releases/V1.2.0)|[51](https://gitee.com/ningyu/jmeter-plugins-dubbo/stargazers)|[10](https://gitee.com/ningyu/jmeter-plugins-dubbo/members)|[25](https://gitee.com/ningyu/jmeter-plugins-dubbo/watchers)|[MIT](https://opensource.org/licenses/MIT)|
+|release|star|fork|license|
+|:-:|:-:|:-:|:-:|
+|[V1.2.2](https://gitee.com/ningyu/jmeter-plugins-dubbo/releases/V1.2.0)|[![star](https://gitee.com/ningyu/jmeter-plugins-dubbo/badge/star.svg?theme=white)](https://gitee.com/ningyu/jmeter-plugins-dubbo/stargazers)|[![fork](https://gitee.com/ningyu/jmeter-plugins-dubbo/badge/fork.svg?theme=white)](https://gitee.com/ningyu/jmeter-plugins-dubbo/members)|[MIT](https://opensource.org/licenses/MIT)|
 
 ## DubboSample使用
 
