@@ -176,13 +176,23 @@ SERVER IP ADDRESS: xx.xx.xx.xx
 2018-03-23 14:58:01.531 [http-apr-8080-exec-1] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Constructing validation url: https://login.domain.com/serviceValidate?ticket=ST-153-RfpK0ACJHtPsSdnbYhVf-077adac8d80f&service=https%3A%2F%2Fapp.domain.com%2Fcas_security_check_
 2018-03-23 14:58:01.531 [http-apr-8080-exec-1] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Retrieving response from server.
 2018-03-23 14:58:01.602 [http-apr-8080-exec-1] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Server response: <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
-<cas:authenticationSuccess>
-	<cas:user>admin</cas:user>
-	</cas:authenticationSuccess>
+    <cas:authenticationSuccess>
+        <cas:user>admin</cas:user>
+    </cas:authenticationSuccess>
 </cas:serviceResponse>
 ```
 
 <span style="color:blue">*输出以上信息就是验证成功。到这里cas server端的所有验证都完成了。*</span>
+
+<span style="color:red">*ps.出现下面日志表示app后端接收到的是验证失败返回信息*</span>
+
+```
+2018-03-23 14:58:02.295 [http-bio-7051-exec-6] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Constructing validation url: https://login.domain.com/serviceValidate?ticket=ST-154-YA6KibaqHpOMGXbluz7V-077adac8d80f&service=https%3A%2F%2Fapp.domain.com%2Fcas_security_check_
+2018-03-23 14:58:02.295 [http-bio-7051-exec-6] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Retrieving response from server.
+2018-03-23 14:58:02.830 [http-bio-7051-exec-6] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Server response: <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+    <cas:authenticationFailure code="INVALID_TICKET">Ticket &#39;ST-154-YA6KibaqHpOMGXbluz7V-077adac8d80f&#39; not recognized</cas:authenticationFailure>
+</cas:serviceResponse>
+```
 
 第六步：app端登录成功进入主页面。
 
