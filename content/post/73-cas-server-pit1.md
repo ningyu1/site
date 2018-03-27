@@ -143,6 +143,21 @@ Hibernate: update TICKETGRANTINGTICKET set NUMBER_OF_TIMES_USED=?, CREATION_TIME
 第四步：cas server端收到service validate请求后会验证ST和TGC是否合法，并且验证TGC的时候cas server需要开启会话保持，让请求发送到生成TGC的机器上去，因为TGC中保存生成的服务端地址，具体问题我前面分析过查看：[《Trouble Shooting —— CAS Server集群环境下TGC验证问题排查，需要开启会话保持》](https://ningyu1.github.io/site/post/70-cas-server-pit/)，cas server验证过程会输出下面日志：
 
 ```
+2018-03-23 14:58:01,578 INFO [org.apereo.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - <Audit trail record BEGIN
+=============================================================
+WHO: admin
+WHAT: ST-153-RfpK0ACJHtPsSdnbYhVf-077adac8d80f
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Fri Mar 23 14:58:01 HKT 2018
+CLIENT IP ADDRESS: xx.xx.xx.xx
+SERVER IP ADDRESS: xx.xx.xx.xx
+=============================================================
+```
+
+第五步：app端接收到cas server端service验证成功的返回后，会生成session并且与TG进行关系绑定，绑定信息会保存起来，<span style="color:blue">*这里需要注意的是如果是集群环境需要保存到redis或者其他统一存储的地方。*</span>
+
+```
 2018-03-23 14:58:01.531 [http-apr-8080-exec-1] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Constructing validation url: https://login.domain.com/serviceValidate?ticket=ST-153-RfpK0ACJHtPsSdnbYhVf-077adac8d80f&service=https%3A%2F%2Fapp.domain.com%2Fcas_security_check_
 2018-03-23 14:58:01.531 [http-apr-8080-exec-1] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Retrieving response from server.
 2018-03-23 14:58:01.602 [http-apr-8080-exec-1] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Server response: <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
@@ -153,8 +168,6 @@ Hibernate: update TICKETGRANTINGTICKET set NUMBER_OF_TIMES_USED=?, CREATION_TIME
 ```
 
 <span style="color:blue">*输出以上信息就是验证成功。到这里cas server端的所有验证都完成了。*</span>
-
-第五步：app端接收到cas server端service验证成功的返回后，会生成session并且与TG进行关系绑定，绑定信息会保存起来，<span style="color:blue">*这里需要注意的是如果是集群环境需要保存到redis或者其他统一存储的地方。*</span>
 
 第六步：app端登录成功进入主页面。
 
