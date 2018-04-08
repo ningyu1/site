@@ -27,6 +27,40 @@ Mysql造成锁的情况有很多，下面我们就列举一些情况：
 * `Lock wait timeout exceeded`：后提交的事务等待前面处理的事务释放锁，但是在等待的时候超过了mysql的锁等待时间，就会引发这个异常。
 * `Dead Lock`：两个事务互相等待对方释放相同资源的锁，从而造成的死循环，就会引发这个异常。
 
+还有一个要注意的是`innodb_lock_wait_timeout`与`lock_wait_timeout`也是不一样的。
+
+* `innodb_lock_wait_timeout`：innodb的dml操作的行级锁的等待时间 
+* `lock_wait_timeout`：数据结构ddl操作的锁的等待时间
+
+如何查看innodb_lock_wait_timeout的具体值？
+
+```
+SHOW VARIABLES LIKE 'innodb_lock_wait_timeout'
+```
+
+如何修改innode lock wait timeout的值？
+
+参数修改的范围有Session和Global，并且支持动态修改，可以有两种方法修改：
+
+方法一：
+
+通过下面语句修改
+
+```
+set innodb_lock_wait_timeout=100;
+set global innodb_lock_wait_timeout=100;
+```
+
+<span style="color:red">*ps. 注意global的修改对当前线程是不生效的，只有建立新的连接才生效。*</span>
+
+方法二：
+
+修改参数文件`/etc/my.cnf`
+`innodb_lock_wait_timeout = 50`
+
+<span style="color:red">*ps. `innodb_lock_wait_timeout`指的是事务等待获取资源等待的最长时间，超过这个时间还未分配到资源则会返回应用失败； 当锁等待超过设置时间的时候，就会报如下的错误；`ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction`。其参数的时间单位是秒，最小可设置为1s(一般不会设置得这么小)，最大可设置1073741824秒，默认安装时这个值是50s(默认参数设置)。*</span>
+
+
 下面介绍在遇到这类问题该如何处理
 
 # 问题现象
