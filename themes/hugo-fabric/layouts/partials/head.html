@@ -50,10 +50,20 @@
 <!--边框标签图片 -->
 <a href="https://github.com/{{ .Site.Params.theme.github_user }}"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;" src="{{ .Site.BaseURL }}/images/right-graphite@2x.png" alt="Fork me on GitHub"></a>
 
+<!--google翻译 -->
 {{ if $.Site.Params.theme.googleTranslate }}
 <div id="google_translate_element"></div><script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'zh-CN', multilanguagePage: true, gaTrack: true, gaId: 'UA-113235655-1'}, 'google_translate_element');
 }
 </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+{{ end }}
+
+<!--网易音乐 -->
+{{ if $.Site.Params.theme.music }}
+{{ $musicId := .Site.Params.theme.music_id }}
+{{ $auto := .Site.Params.theme.auto_play }}
+<link href="{{ .Site.BaseURL }}/css/music-player.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{{ .Site.BaseURL }}/js/music-player.js"></script>
+<iframe class="player"  frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="https://music.163.com/outchain/player?type=2&id={{ $musicId }}&auto={{ $auto }}&height=66"></iframe>
 {{ end }}
