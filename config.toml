@@ -23,7 +23,7 @@ rssuri = "atom.xml"
     # 是否显示播放器
     music = true
     # 自动播放为1，不自动为0
-    auto_play = 0
+    auto_play = 1
     # 网易音乐id
     music_id = 540790446
 
