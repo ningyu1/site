@@ -18,14 +18,14 @@ categories = [
 menu = "main"
 +++
 
-当我们使用持续集成Jenkins的时候经常会结合一系列的插件使用，这里就说一下Jenkins集成Sonar做代码质量管理以及Junit（testng）、JaCoCo做单元测试和覆盖率的时候遇到的问题。
+当我们使用持续集成`Jenkins`的时候经常会结合一系列的插件使用，这里就说一下`Jenkins`集成`Sonar`做代码质量管理以及`Junit（testng）`、`JaCoCo`做单元测试和覆盖率的时候遇到的问题。
 
 
 # 前提
 
-首先我们的工程使用maven构建，单元测试使用testng编写，在使用jenkins之前我们应该在本地使用maven调通所有的单元测试以及test coverage的问题。
+首先我们的工程使用`maven`构建，单元测试使用`testng`编写，在使用`jenkins`之前我们应该在本地使用maven调通所有的单元测试以及`test coverage`的问题。
 
-我们使用`maven-surefire-plugin`来生成单元测试报告，使用`jacoco-maven-plugin`来生成test coverage报告。下面我给出以下我使用的标准配置
+我们使用`maven-surefire-plugin`来生成单元测试报告，使用`jacoco-maven-plugin`来生成`test coverage`报告。下面我给出以下我使用的标准配置
 
 # maven工程调通单元测试以及测试覆盖率报告生成
 
@@ -138,7 +138,7 @@ pom.xml的标准配置
 </plugin>
 ```
 
-<span style="color:blue">配置skipTests属性而不是skip属性这里需要注意一下，有很多人配置的skip属性</span>
+<span style="color:blue">配置`skipTests`属性而不是`skip`属性这里需要注意一下，有很多人配置的`skip`属性</span>
 
 ## 问题二：单元测试输出乱码
 
@@ -180,9 +180,9 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [INFO] Skipping JaCoCo execution due to missing execution data file.
 ```
 
-jacoco执行被跳过，原因是没有找到jacoco可执行文件`jacoco.exec`。
+`jacoco`执行被跳过，原因是没有找到`jacoco`可执行文件`jacoco.exec`。
 
-这个时候我们去target目录下是看不到jacoco.exec文件的，有的版本名字叫jacoco-junit.exec。
+这个时候我们去`target`目录下是看不到`jacoco.exec`文件的，有的版本名字叫`jacoco-junit.exec`。
 
 理论上执行的时候会自动生成exec文件，但是为什么没有生成？我们看一下执行日志
 
@@ -191,9 +191,9 @@ jacoco执行被跳过，原因是没有找到jacoco可执行文件`jacoco.exec`�
 [INFO] argLine set to -javaagent:D:\\javatools\\mvnrepository\\org\\jacoco\\org.jacoco.agent\\0.8.1\\org.jacoco.agent-0.8.1-runtime.jar=destfile=D:\\javatools\\workspace\\framework\\tools\\target\\jacoco.exec
 ```
 
-jacoco.exec的生成是根据`-javaagent`的方式来生成的，我们有可以看到`jacoco-maven-plugin`制定了argLine参数，但是为什么没有生效？
+`jacoco.exec`的生成是根据`-javaagent`的方式来生成的，我们有可以看到`jacoco-maven-plugin`指定了`argLine`参数，但是为什么没有生效？
 
-原因是我们上面指定过单元测试编码，使用的就是argLine增加参数，因此这个问题应该是上面的编码参数只定后导致jacoco的参数没有成功的添加进去，如何解决？查看下面配置：
+原因是我们上面指定过单元测试编码，使用的就是`argLine`参数，因此这个问题应该是上面的编码参数指定后没有带入插件添加的`-javaagent`参数，那如何解决？查看下面配置：
 
 ```
 <plugin>
@@ -207,9 +207,9 @@ jacoco.exec的生成是根据`-javaagent`的方式来生成的，我们有可以
 </plugin>
 ```
 
-<span style="color:blue">在argLine中增加变量${argLine}后面再增加自动以的参数</span>
+<span style="color:blue">在`argLine`中增加变量`${argLine}`后面再增加自动以的参数</span>
 
-如果通过配置手动的指定jacoco.exec文件的生成路径也需要注意也可能会出现这个问题，生成exec的路径指定在哪里，report执行的时候就需要通过dataFile来指定exec的路径，让程序知道正确的exec路径，比如说：
+如果通过配置手动的指定`jacoco.exec`文件的生成路径也需要注意也可能会出现这个问题，生成exec的路径指定在哪里，report执行的时候就需要通过`dataFile`来指定exec的路径，让程序知道正确的exec路径，比如说：
 
 ```
 <plugin>
@@ -241,11 +241,11 @@ jacoco.exec的生成是根据`-javaagent`的方式来生成的，我们有可以
 </plugin>
 ```
 
-上面通过`configuration`的`destFile`来自定义jacoco.exec的生成路径，下面在`report`的时候需要通过dataFile来指定对应的jacoco.exec的路径。
+上面通过`configuration`的`destFile`来自定义`jacoco.exec`的生成路径，下面在`report`的时候需要通过`dataFile`来指定对应的`jacoco.exec`的路径。
 
 # Jenkins使用JaCoCo plugin插件
 
-首先去Jenkins上安装JaCoCo plugin插件，插件的安装就跳过了，插件安装好后，在job中如何配置?
+首先去`Jenkins`上安装`JaCoCo plugin`插件，插件的安装就跳过了，插件安装好后，在job中如何配置?
 
 ![](/img/jenkins-sonar-jacoco/1.png)
 
@@ -254,8 +254,8 @@ jacoco.exec的生成是根据`-javaagent`的方式来生成的，我们有可以
 <span style="color:red">这里需要注意的配置</span>
 
 * Path to exec files: **/jacoco.exec 可执行文件路径
-* Path to class directories: 这个配置的是源代码编译后的字节码目录，也就是classes目录不是test-classes目录，如果有多个可以指定多个
-* Path to source directories: 这个配置的是源代码的目录，也就是src/main/java目录，如果有多个可以指定多个。
+* Path to class directories: 这个配置的是源代码编译后的字节码目录，也就是`classes`目录不是`test-classes`目录，如果有多个可以指定多个
+* Path to source directories: 这个配置的是源代码的目录，也就是`src/main/java`目录，如果有多个可以指定多个。
 
 配置好之后执行job会看到如下的日志：
 
@@ -296,11 +296,11 @@ Overall coverage: class: 0, method: 0, line: 0, branch: 0, instruction: 0
 
 # Jenkins使用Sonarqube plugin插件
 
-首先去Jenkins上安装Sonarqube plugin插件，插件的安装就跳过了，插件安装好后，在jenkins的系统配置中配置sonar服务器信息，如下
+首先去`Jenkins上`安装`SonarQube plugin`插件，插件的安装就跳过了，插件安装好后，在`jenkins`的系统配置中配置`sonar`服务器信息，如下
 
 ![](/img/jenkins-sonar-jacoco/4.png)
 
-配置好后在job的配置中增加sonarqube的支持，如下
+配置好后在job的配置中增加`SonarQube`的支持，如下
 
 * 在构建环境下添加`Prepare SonarQube Scanner environment`
 
@@ -344,7 +344,7 @@ sonar.jacoco.itReportPath=target/coverage-reports/jacoco.exec
 
 <span style="color:blue">具体的参数可以查看官方文档:[《Analysis Parameters》](https://docs.sonarqube.org/display/SONAR/Analysis+Parameters)</span>
 
-配置好之后执行job后去sonar上只看到了单元测试的信息，没有看到单元测试覆盖率的信息，关于这个问题我们分析job执行的日志，如下:
+配置好之后执行job后去`Sonar`上只看到了单元测试的信息，没有看到单元测试覆盖率的信息，关于这个问题我们分析job执行的日志，如下:
 
 ## 问题一：No JaCoCo analysis of project coverage can be done since there is no class files.
 
@@ -359,7 +359,7 @@ sonar.jacoco.itReportPath=target/coverage-reports/jacoco.exec
 16:01:17.482 INFO  - Sensor Code Colorizer Sensor
 ```
 
-说的是没找到class文件所以jacoco不能进行分析，问题很明显是没有找到class类，难道它不是去maven标准的target/classes下找文件么？
+说的是没找到class文件所以`jacoco`不能进行分析，问题很明显是没有找到class类，难道它不是去`maven`标准的`target/classes`下找文件么？
 
 但是找到了这篇文章：[《Jenkins, JaCoCo, and SonarQube Integration With Maven》](https://dzone.com/articles/integration-jenkins-jacoco-and-sonarqube)，看到里面在pom.xml中配置了一些参数给我了启发，发现有个参数`sonar.binaries`指定的是classes目录，可以插件的有些参数不兼容maven，在官方的配置中可以看到这样的字样: `Not compatible with Mave`和`Compatible with Maven`，能看到有写参数兼容maven默认路径有些不兼容。
 
@@ -402,7 +402,7 @@ jacoco.version=0.8.1
 sonar.jacoco.reportPath=target/coverage-reports/jacoco.exec
 ```
 
-全部配置修改完后执行job后去sonar上查看具体的信息如下：
+全部配置修改完后执行job后去`Sonar`上查看具体的信息如下：
 
 ![](/img/jenkins-sonar-jacoco/7.png)
 
