@@ -106,7 +106,7 @@ pom.xml的标准配置
 
 根据上面配置执行下来的报告生成的目录结构如下:
 
-![](/jenkins-sonar-jacoco/8.png)
+![](/img/jenkins-sonar-jacoco/8.png)
 
 * `classes`是源代码编译生成的字节码目录
 * `coverage-reports`是单元测试覆盖率报告生成目录
@@ -247,9 +247,9 @@ jacoco.exec的生成是根据`-javaagent`的方式来生成的，我们有可以
 
 首先去Jenkins上安装JaCoCo plugin插件，插件的安装就跳过了，插件安装好后，在job中如何配置?
 
-![](/jenkins-sonar-jacoco/1.png)
+![](/img/jenkins-sonar-jacoco/1.png)
 
-![](/jenkins-sonar-jacoco/2.png)
+![](/img/jenkins-sonar-jacoco/2.png)
 
 <span style="color:red">这里需要注意的配置</span>
 
@@ -291,24 +291,24 @@ Overall coverage: class: 0, method: 0, line: 0, branch: 0, instruction: 0
 
 最终结果如下图：
 
-![](/jenkins-sonar-jacoco/3.png)
+![](/img/jenkins-sonar-jacoco/3.png)
 
 
 # Jenkins使用Sonarqube plugin插件
 
 首先去Jenkins上安装Sonarqube plugin插件，插件的安装就跳过了，插件安装好后，在jenkins的系统配置中配置sonar服务器信息，如下
 
-![](/jenkins-sonar-jacoco/4.png)
+![](/img/jenkins-sonar-jacoco/4.png)
 
 配置好后在job的配置中增加sonarqube的支持，如下
 
 * 在构建环境下添加`Prepare SonarQube Scanner environment`
 
-![](/jenkins-sonar-jacoco/5.png)
+![](/img/jenkins-sonar-jacoco/5.png)
 
 * 在构建下添加`Execute SonarQube Scanner`
 
-![](/jenkins-sonar-jacoco/6.png)
+![](/img/jenkins-sonar-jacoco/6.png)
 
 * 在`Execute SonarQube Scanner`中增加`Analysis properties`
 
@@ -404,5 +404,5 @@ sonar.jacoco.reportPath=target/coverage-reports/jacoco.exec
 
 全部配置修改完后执行job后去sonar上查看具体的信息如下：
 
-![](/jenkins-sonar-jacoco/7.png)
+![](/img/jenkins-sonar-jacoco/7.png)
 
