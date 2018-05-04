@@ -247,137 +247,217 @@ Ljavax/validation/ParameterNameProvider;
 
 有兴趣的可以看一下我们常用的序列化反序列化类库的一些使用中的注意事项，可以参考这篇文章：[《java常用JSON库注意事项总结》](https://blog.fliaping.com/the-attention-of-json-serialization-and-deserialization-in-java/)
 
-回归话题，上面的问题我们如何解决，最终我们采用重写hibernate-validator无法序列化的类，继承`javax.validation.ConstraintViolationException`重写一个实现类，由于是数据校验信息会有多个因此里面会通过set来存储`ConstraintViolation`，所以这里还写了一个`javax.validation.ConstraintViolation<T>`的实现类用来存放数据校验具体的信息。
+回归话题，上面的问题我们如何解决，最终我们采用重写`javax.validation.ConstraintViolation<T>`的实现类，替换掉`hibernate-validation`的`org.hibernate.validator.internal.engine.ConstraintViolationImpl`，因为`ConstraintViolationImpl`中有部分对象无法通过hessian反序列化。
+
+我们最终的目标是不管是validation开启在provider端还是consumer端，调用方接收到的参数校验异常数据是一致的。
+
+修改的代码已经提交到`apache dubbo`，具体查看Pull request：https://github.com/apache/incubator-dubbo/pull/1708
+
 大概的代码如下：
 
-### 增加类：CustomConstraintViolation实现`javax.validation.ConstraintViolation`接口
+### 增加类：DubboConstraintViolation实现`javax.validation.ConstraintViolation`接口
 
 ```
-package org.hibernate.validator.internal.metadata.descriptor;
 import java.io.Serializable;
 import javax.validation.ConstraintViolation;
 import javax.validation.Path;
+import javax.validation.ValidationException;
 import javax.validation.metadata.ConstraintDescriptor;
-public class CustomConstraintViolation<T> implements ConstraintViolation<T>, Serializable {
+import com.alibaba.dubbo.common.logger.Logger;
+import com.alibaba.dubbo.common.logger.LoggerFactory;
+
+
+public class DubboConstraintViolation<T> implements ConstraintViolation<T>, Serializable {
+    
+    static final Logger logger = LoggerFactory.getLogger(DubboConstraintViolation.class.getName());
+
 	private static final long serialVersionUID = -8901791810611051795L;
-	private String message;
-	private Path path;
-	public CustomConstraintViolation() {
-	}
-	public CustomConstraintViolation(String message, Path path) {
-		this.message = message;
-		this.path = path;
-	}
-	public Path getPath() {
-		return path;
-	}
-	public void setPath(Path path) {
-		this.path = path;
-	}
-	public void setMessage(String message) {
-		this.message = message;
-	}
-	@Override
-	public String getMessage() {
-		return message;
-	}
-	@Override
-	public String getMessageTemplate() {
-		return null;
-	}
-	@Override
-	public T getRootBean() {
-		return null;
-	}
-	@Override
-	public Class<T> getRootBeanClass() {
-		return null;
-	}
-	@Override
-	public Object getLeafBean() {
-		return null;
-	}
-	@Override
-	public Object[] getExecutableParameters() {
-		return null;
-	}
-	@Override
-	public Object getExecutableReturnValue() {
-		return null;
-	}
-	@Override
-	public Path getPropertyPath() {
-		return this.path;
-	}
-	@Override
-	public Object getInvalidValue() {
-		return null;
-	}
-	@Override
-	public ConstraintDescriptor<?> getConstraintDescriptor() {
-		return null;
-	}
-	@Override
-	public <U> U unwrap(Class<U> type) {
-		return null;
-	}
-}
-```
 
-### 增加类：CustomConstraintViolationException继承`javax.validation.ConstraintViolationException`
+	private String interpolatedMessage;
+    private Object value;
+    private Path propertyPath;
+    private String messageTemplate;
+    private Object[] executableParameters;
+    private Object executableReturnValue;
+    private int hashCode;
 
-```
-package org.hibernate.validator.internal.metadata.descriptor;
-import java.util.Set;
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
-public class CustomConstraintViolationException extends ConstraintViolationException {
-	private static final long serialVersionUID = 8630014922849071455L;
-	private Set<? extends ConstraintViolation<?>> constraintViolations;
-	public CustomConstraintViolationException() {
-		super(null);
-	}
-	public CustomConstraintViolationException(Set<? extends ConstraintViolation<?>> constraintViolations) {
-		super(constraintViolations);
-		this.constraintViolations = constraintViolations;
-	}
-	@SuppressWarnings("unchecked")
-	public Set<ConstraintViolation<?>> getConstraintViolations() {
-		return (Set<ConstraintViolation<?>>) constraintViolations;
-	}
-	public void setConstraintViolations(Set<? extends ConstraintViolation<?>> constraintViolations) {
-		this.constraintViolations = constraintViolations;
-	}
+    public DubboConstraintViolation() {
+    }
+    
+    public DubboConstraintViolation(ConstraintViolation<T> violation) {
+        this(violation.getMessageTemplate(), violation.getMessage(), violation.getInvalidValue(), violation.getPropertyPath(),
+                violation.getExecutableParameters(), violation.getExecutableReturnValue());
+    }
+
+    public DubboConstraintViolation(String messageTemplate,
+            String interpolatedMessage,
+            Object value,
+            Path propertyPath,
+            Object[] executableParameters,
+            Object executableReturnValue) {
+        this.messageTemplate = messageTemplate;
+        this.interpolatedMessage = interpolatedMessage;
+        this.value = value;
+        this.propertyPath = propertyPath;
+        this.executableParameters = executableParameters;
+        this.executableReturnValue = executableReturnValue;
+        // pre-calculate hash code, the class is immutable and hashCode is needed often
+        this.hashCode = createHashCode();
+    }
+    
+    @Override
+    public final String getMessage() {
+        return interpolatedMessage;
+    }
+
+    @Override
+    public final String getMessageTemplate() {
+        return messageTemplate;
+    }
+
+    @Override
+    public final T getRootBean() {
+        return null;
+    }
+
+    @Override
+    public final Class<T> getRootBeanClass() {
+        return null;
+    }
+
+    @Override
+    public final Object getLeafBean() {
+        return null;
+    }
+
+    @Override
+    public final Object getInvalidValue() {
+        return value;
+    }
+
+    @Override
+    public final Path getPropertyPath() {
+        return propertyPath;
+    }
+
+    @Override
+    public final ConstraintDescriptor<?> getConstraintDescriptor() {
+        return null;
+    }
+
+    @Override
+    public <C> C unwrap(Class<C> type) {
+        if ( type.isAssignableFrom( ConstraintViolation.class ) ) {
+            return type.cast( this );
+        }
+        throw new ValidationException("Type " + type.toString() + " not supported for unwrapping.");
+    }
+
+    @Override
+    public Object[] getExecutableParameters() {
+        return executableParameters;
+    }
+
+    @Override
+    public Object getExecutableReturnValue() {
+        return executableReturnValue;
+    }
+
+    @Override
+    // IMPORTANT - some behaviour of Validator depends on the correct implementation of this equals method! (HF)
+
+    // Do not take expressionVariables into account here. If everything else matches, the two CV should be considered
+    // equals (and because of the scary comment above). After all, expressionVariables is just a hint about how we got
+    // to the actual CV. (NF)
+    public boolean equals(Object o) {
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+
+        DubboConstraintViolation<?> that = (DubboConstraintViolation<?>) o;
+
+        if ( interpolatedMessage != null ? !interpolatedMessage.equals( that.interpolatedMessage ) : that.interpolatedMessage != null ) {
+            return false;
+        }
+        if ( propertyPath != null ? !propertyPath.equals( that.propertyPath ) : that.propertyPath != null ) {
+            return false;
+        }
+        if ( messageTemplate != null ? !messageTemplate.equals( that.messageTemplate ) : that.messageTemplate != null ) {
+            return false;
+        }
+        if ( value != null ? !value.equals( that.value ) : that.value != null ) {
+            return false;
+        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return hashCode;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder();
+        sb.append( "DubboConstraintViolation" );
+        sb.append( "{interpolatedMessage='" ).append( interpolatedMessage ).append( '\'' );
+        sb.append( ", propertyPath=" ).append( propertyPath );
+        sb.append( ", messageTemplate='" ).append( messageTemplate ).append( '\'' );
+        sb.append( ", value='" ).append( value ).append( '\'' );
+        sb.append( '}' );
+        return sb.toString();
+    }
+
+    // Same as for equals, do not take expressionVariables into account here.
+    private int createHashCode() {
+        int result = interpolatedMessage != null ? interpolatedMessage.hashCode() : 0;
+        result = 31 * result + ( propertyPath != null ? propertyPath.hashCode() : 0 );
+        result = 31 * result + ( value != null ? value.hashCode() : 0 );
+        result = 31 * result + ( messageTemplate != null ? messageTemplate.hashCode() : 0 );
+        return result;
+    }
+
 }
+
 ```
 
 ### 修改`com.alibaba.dubbo.validation.filter.ValidationFilter`异常处理的部分
 
-原版是`throw e`，这里变更为捕捉`javax.validation.ConstraintViolationException`异常，使用我们自定义异常对象替换，copy `Set<ConstraintViolation<String>>`数据，最终包装到`RpcException`返回，`RpcException`中的cause替换为我们自定义的异常。具体代码如下：
+这里的变更为捕捉`javax.validation.ConstraintViolationException`异常，对异常中的`Set<ConstraintViolation<String>>`数据进行转换，去掉无法反序列化的对象,具体代码如下：
 
 ```
 public Result invoke(Invoker<?> invoker, Invocation invocation) throws RpcException {
-	if (validation != null && !invocation.getMethodName().startsWith("$") && ConfigUtils.isNotEmpty(
-			invoker.getUrl().getMethodParameter(invocation.getMethodName(), Constants.VALIDATION_KEY))) {
-		try {
-			Validator validator = validation.getValidator(invoker.getUrl());
-			if (validator != null) {
-				validator.validate(invocation.getMethodName(), invocation.getParameterTypes(),
-						invocation.getArguments());
-			}
-		} catch (ConstraintViolationException e) {
-			Set<ConstraintViolation<String>> set = new HashSet<>();
-			for (ConstraintViolation<?> v : e.getConstraintViolations()) {
-				set.add(new CustomConstraintViolation<String>(v.getMessage(), v.getPropertyPath()));
-			}
-
-			return new RpcResult(new RpcException(new CustomConstraintViolationException(set)));
-		} catch (Exception e) {
-			return new RpcResult(new RpcException(e));
-		}
-	}
-
-	return invoker.invoke(invocation);
+    if (validation != null && !invocation.getMethodName().startsWith("$")
+            && ConfigUtils.isNotEmpty(invoker.getUrl().getMethodParameter(invocation.getMethodName(), Constants.VALIDATION_KEY))) {
+        try {
+            Validator validator = validation.getValidator(invoker.getUrl());
+            if (validator != null) {
+                validator.validate(invocation.getMethodName(), invocation.getParameterTypes(), invocation.getArguments());
+            }
+        } catch (ConstraintViolationException e) {
+            Set<ConstraintViolation<?>> set = null;
+            //验证set中如果是hibernate-validation实现的类就处理，其他的实现类放过
+            Set<ConstraintViolation<?>> constraintViolations = e.getConstraintViolations();
+            for (ConstraintViolation<?> v : constraintViolations) {
+                if (!v.getClass().getName().equals("org.hibernate.validator.internal.engine.ConstraintViolationImpl")) {
+                    return new RpcResult(e);
+                } else {
+                    if (set == null) set = new HashSet<ConstraintViolation<?>>();
+                    set.add(new DubboConstraintViolation<>(v));
+                }
+            }
+            return new RpcResult(new ConstraintViolationException(e.getMessage(), set));
+        } catch (RpcException e) {
+            throw e;
+        } catch (Throwable t) {
+            return new RpcResult(t);
+        }
+    }
+    return invoker.invoke(invocation);
 }
 ```
 
@@ -385,4 +465,5 @@ public Result invoke(Invoker<?> invoker, Invocation invocation) throws RpcExcept
 
 # 总结
 
-我觉得这个方法并不是完美的方法，虽然这个问题是`hibernate-validator`框架的问题，`hibernate-validator`出生的年代分布式还不是特别的完善因此没有充分的考虑序列化反序列化问题也很正常，但是作为`Dubbo`框架在集成`jsr303`的时候也需要考虑这些问题，但是上面的修改太依赖`hibernate-validator`因此也不太适合给`Dubbo`提PR。后面有空再想想其他的解决方式。
+我觉得这个方法并不是完美的方法，虽然这个问题是`hibernate-validator`框架的问题，`hibernate-validator`出生的年代分布式还不是特别的完善因此没有充分的考虑序列化反序列化问题也很正常，但是作为`Dubbo`框架在集成`jsr303`的时候也需要考虑这些问题。具体可以查看`Apache Dubbo`的`Pull Request`：https://github.com/apache/incubator-dubbo/pull/1708
+
