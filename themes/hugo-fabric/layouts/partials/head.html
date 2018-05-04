@@ -48,7 +48,7 @@
 </head>
 
 <!--边框标签图片 -->
-<a href="https://github.com/{{ .Site.Params.theme.github_user }}"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;" src="{{ .Site.BaseURL }}/images/right-graphite@2x.png" alt="Fork me on GitHub"></a>
+<a href="https://github.com/{{ .Site.Params.theme.github_user }}"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; z-index:9999; background-color: rgba(0, 0, 0, 0)!important;" src="{{ .Site.BaseURL }}/images/right-graphite@2x.png" alt="Fork me on GitHub"></a>
 
 <!--google翻译 -->
 {{ if $.Site.Params.theme.googleTranslate }}
