@@ -148,7 +148,7 @@ character-set-server=utf8mb4
 collation-server=utf8mb4_general_ci
 ```
 
-<span style="color:red">**ps. character_set_server设置成utf8或使用默认latin1，在直接使用sql插入特殊字符和emoji表情时数据库显示？？？？？乱码，使用程序（mybatis）插入特殊字符和emoji表情时报错：java.sql.SQLException: Incorrect string value: '\xF0\xA5\x8A\x8D' for column '某某里' at row 1**</span>
+<span style="color:red">**ps. character_set_server设置成utf8或使用默认latin1，在直接使用sql插入特殊字符和emoji表情时数据库显示？？？？？乱码，使用程序（mybatis）插入特殊字符和emoji表情时报错：java.sql.SQLException: Incorrect string value: '\xF0\xA5\x8A\x8D' for column '某某列' at row 1**</span>
 
 ## java连接mysql驱动版本
 
