@@ -4,12 +4,12 @@ title = "Trouble Shooting —— Docker Pull Image : Filesystem layer verificati
 description = "Trouble Shooting —— Docker Pull Image : Filesystem layer verification failed for digest sha256错误"
 tags = [
 	"docker",
-	"dockerRegistry",
+	"docker pull",
 	"Filesystem layer verification failed for digest sha256"
 ]
 date = "2018-04-27 17:46:00"
 categories = [
-    "dubbo"
+    "docker"
 ]
 menu = "main"
 +++
