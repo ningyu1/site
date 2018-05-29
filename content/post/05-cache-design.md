@@ -78,6 +78,9 @@ redisClient.setex(bizkey, 60, value);//set一个key并设置ttl60秒
 我们试想一下如果取出为null不放入cache会有什么结果？很显然每次取cache没有走db返回null，很容易让攻击者利用这个漏洞搞垮你的服务器，利用洪水攻击让你的程序夯在这个地方导致你的正常流程抢不到资源。
 
 # 七、缓存更新的问题
+
+<span style="color:blue">***以下内容摘自[酷壳-COOLSHELL的文章《缓存更新的套路》](https://coolshell.cn/articles/17416.html)***</span>
+
 很多人在写更新缓存数据代码时，先删除缓存，然后再更新数据库，而后续的操作会把数据再装载的缓存中。然而，这个是逻辑是错误的。试想，两个并发操作，一个是更新操作，另一个是查询操作，更新操作删除缓存后，查询操作没有命中缓存，先把老数据读出来后放到缓存中，然后更新操作更新了数据库。于是，在缓存中的数据还是老的数据，导致缓存中的数据是脏的，而且还一直这样脏下去了。
 
 正确更新缓存的Design Pattern有四种：Cache aside, Read through, Write through, Write behind caching
