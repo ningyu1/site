@@ -5,7 +5,10 @@ description = "Dubbo接口如何在Jmeter中测试，自研Dubbo Plugin for Apac
 tags = [
 	"jmeter",
 	"dubbo",
-	"test"
+	"test",
+	"Dubbo可视化测试工具",
+	"Jmeter对Dubbo接口进行可视化压力测试",
+	"Dubbo Jmeter插件"
 ]
 date = "2018-02-09 15:39:49"
 categories = [

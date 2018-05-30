@@ -5,7 +5,10 @@ description = "New Version V1.2.0, Dubbo Plugin for Apache JMeter"
 tags = [
 	"jmeter",
 	"dubbo",
-	"test"
+	"test",
+	"Dubbo可视化测试工具",
+	"Jmeter对Dubbo接口进行可视化压力测试",
+	"Dubbo Jmeter插件"
 ]
 date = "2018-03-13 13:18:21"
 categories = [
