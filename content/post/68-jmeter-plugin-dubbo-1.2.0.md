@@ -22,13 +22,7 @@ menu = "main"
 
 [github: jmeter-plugin-dubbo](https://github.com/ningyu1/jmeter-plugins-dubbo) 
 
-<a href="https://github.com/ningyu1/jmeter-plugins-dubbo/releases"><img src="https://img.shields.io/github/release/ningyu1/jmeter-plugins-dubbo.svg?style=social&amp;label=Release"></a>&nbsp;<a href="https://github.com/ningyu1/jmeter-plugins-dubbo/stargazers"><img src="https://img.shields.io/github/stars/ningyu1/jmeter-plugins-dubbo.svg?style=social&amp;label=Star"></a>&nbsp;<a href="https://github.com/ningyu1/jmeter-plugins-dubbo/fork"><img src="https://img.shields.io/github/forks/ningyu1/jmeter-plugins-dubbo.svg?style=social&amp;label=Fork"></a>&nbsp;<a href="https://github.com/ningyu1/jmeter-plugins-dubbo/watchers"><img src="https://img.shields.io/github/watchers/ningyu1/jmeter-plugins-dubbo.svg?style=social&amp;label=Watch"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-
 [码云: jmeter-plugin-dubbo]( https://gitee.com/ningyu/jmeter-plugins-dubbo)
-
-|release|star|fork|license|
-|:-:|:-:|:-:|:-:|
-|[V1.2.2](https://gitee.com/ningyu/jmeter-plugins-dubbo/releases/V1.2.0)|[![star](https://gitee.com/ningyu/jmeter-plugins-dubbo/badge/star.svg?theme=white)](https://gitee.com/ningyu/jmeter-plugins-dubbo/stargazers)|[![fork](https://gitee.com/ningyu/jmeter-plugins-dubbo/badge/fork.svg?theme=white)](https://gitee.com/ningyu/jmeter-plugins-dubbo/members)|[MIT](https://opensource.org/licenses/MIT)|
 
 # V1.2.0
 
