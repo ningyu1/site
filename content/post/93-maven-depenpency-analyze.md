@@ -29,14 +29,8 @@ mvn dependency:analyze
 [INFO] --- maven-dependency-plugin:2.8:analyze (default-cli) @ xxxproject ---
 [WARNING] Used undeclared dependencies found:
 [WARNING]    org.springframework:spring-beans:jar:4.0.0.RELEASE:compile
-[WARNING]    com.jiuyescm.tenant:tenant-api:jar:1.4.1-SNAPSHOT:compile
 [WARNING]    org.springframework:spring-context:jar:4.0.0.RELEASE:compile
-[WARNING]    com.jiuyescm.scm:scm-beans:jar:1.0.1-SNAPSHOT:compile
 [WARNING] Unused declared dependencies found:
-[WARNING]    com.jiuyescm.framework:trace-support:jar:1.0.0-SNAPSHOT:compile
-[WARNING]    com.jiuyescm.tenant:tenant-service:jar:1.4.1-SNAPSHOT:compile
-[WARNING]    com.jiuyescm.framework:disconf-client-ext:jar:1.0.0-SNAPSHOT:compile
-[WARNING]    com.jiuyescm.scm:scm-common:jar:1.0.0-SNAPSHOT:compile
 [WARNING]    com.alibaba:dubbo:jar:2.5.3:compile
 [WARNING]    com.baidu.disconf:disconf-client:jar:2.6.32:compile
 [WARNING]    org.mybatis:mybatis:jar:3.2.7:compile
@@ -73,5 +67,5 @@ mvn dependency:analyze
 
 <span style="color:blue">
 *但是这里我们需要注意：
-这里说的实际代码没有用到，指的是在main/java和test里没有用的，但是并不是意味着真的没有用到这些包，有可能配置文件中引用或者其他扩展点自动加载这些包，所以我们在删除依赖的时候一定要小心，做好备份，因为这类应用maven是分析不出来的。*
+这里说的实际代码没有用到，指的是在main/java和test里没有用的，但是并不是意味着真的没有用到这些包，有可能配置文件中引用或者其他扩展点自动加载这些包，所以我们在删除依赖的时候一定要小心，做好备份，因为这类引用maven是分析不出来的。*
 </span>
