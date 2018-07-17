@@ -202,7 +202,7 @@ Please see the documentation included with the binary distributions for more det
 Redis can not continue, Exiting.
 ```
 
-这里的原因是我们启动的时候内存不够，redis server默认的`maxheap:1024000000`，当我们测试执行机器的内存不够时就会报这个错误，那如何解决这个错误呢？
+这里的原因是我们启动的时候`heap`不够，redis server默认的`maxheap:1024000000`，创建`.conf`文件时硬盘不够，那如何解决这个错误呢？
 
 ```
 @Test
@@ -226,6 +226,6 @@ public void testAuth() throws Exception {
 maxheap 51200000
 ```
 
-<span style="color:blue">*注意：指定这个参数时需要参考可用内存*</span>
+<span style="color:blue">*注意：修改时需要考虑可用量，常规情况都无需修改这个参数*</span>
 
 [更多查看官方文档](https://www.programcreek.com/java-api-examples/index.php?api=redis.embedded.RedisServer)
