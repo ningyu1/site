@@ -1,6 +1,6 @@
 +++
 toc = true
-title = ""
+title = "为什么手机浏览器打开word、excel文件部分文件能预览，部分文件不能预览？"
 description = "为什么手机浏览器打开word、excel文件部分文件能预览，部分文件不能预览？"
 tags = [
 	"word-xml"
