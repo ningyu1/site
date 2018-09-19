@@ -7,8 +7,7 @@ tags = [
 ]
 date = "2018-09-18 18:16:00"
 categories = [
-    "mybatis",
-	"trouble shooting"
+    "rpc"
 ]
 menu = "main"
 +++
