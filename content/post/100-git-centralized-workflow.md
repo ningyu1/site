@@ -121,9 +121,9 @@ git push origin master
 
 ```
 $ git push origin master
-To http://gitlab.sh-jiuye.com.cn/framework/gitflow-demo.git
+To http://gitlab.xxx.com/demo/gitflow-demo.git
  ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'http://gitlab.sh-jiuye.com.cn/framework/gitflow-demo.git'
+error: failed to push some refs to 'http://gitlab.xxx.com/demo/gitflow-demo.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -165,7 +165,7 @@ remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 0 (delta 0)
 Unpacking objects: 100% (3/3), done.
-From http://gitlab.sh-jiuye.com.cn/framework/gitflow-demo
+From http://gitlab.xxx.com/demo/gitflow-demo
  * branch            master     -> FETCH_HEAD
    788c7f3..9c7c9d2  master     -> origin/master
 First, rewinding head to replay your work on top of it...
@@ -205,7 +205,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 305 bytes | 305.00 KiB/s, done.
 Total 3 (delta 1), reused 0 (delta 0)
-To http://gitlab.sh-jiuye.com.cn/framework/gitflow-demo.git
+To http://gitlab.xxx.com/demo/gitflow-demo.git
    9c7c9d2..87aed2d  master -> master
 ```
 
@@ -227,7 +227,7 @@ To http://gitlab.sh-jiuye.com.cn/framework/gitflow-demo.git
 
 ```
 $ git pull origin master
-From http://gitlab.sh-jiuye.com.cn/framework/gitflow-demo
+From http://gitlab.xxx.com/demo/gitflow-demo
  * branch            master     -> FETCH_HEAD
 Auto-merging README.md
 CONFLICT (content): Merge conflict in README.md
@@ -242,7 +242,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (4/4), done.
 Writing objects: 100% (6/6), 581 bytes | 290.00 KiB/s, done.
 Total 6 (delta 2), reused 0 (delta 0)
-To http://gitlab.sh-jiuye.com.cn/framework/gitflow-demo.git
+To http://gitlab.xxx.com/demo/gitflow-demo.git
    f862f27..9fab0c8  master -> master
 ```
 
