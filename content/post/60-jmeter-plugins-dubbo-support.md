@@ -65,9 +65,9 @@ org.apache.jmeter.samplers.gui.AbstractSamplerGui
 
 ## Dubbo Plugin for Apache JMeter
 
+jmeter-plugin-dubbo项目已经transfer到dubbo group下
 
-
-[项目地址:jmeter-plugin-dubbo](https://github.com/ningyu1/jmeter-plugins-dubbo) 
+[github: jmeter-plugin-dubbo](https://github.com/dubbo/jmeter-plugins-dubbo) 
 
 [码云: jmeter-plugin-dubbo]( https://gitee.com/ningyu/jmeter-plugins-dubbo)
 

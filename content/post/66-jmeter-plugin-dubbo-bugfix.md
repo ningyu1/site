@@ -23,7 +23,9 @@ menu = "main"
 
 # 项目地址
 
-[github: jmeter-plugin-dubbo](https://github.com/ningyu1/jmeter-plugins-dubbo) 
+jmeter-plugin-dubbo项目已经transfer到dubbo group下
+
+[github: jmeter-plugin-dubbo](https://github.com/dubbo/jmeter-plugins-dubbo) 
 
 [码云: jmeter-plugin-dubbo]( https://gitee.com/ningyu/jmeter-plugins-dubbo)
 
