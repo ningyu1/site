@@ -272,3 +272,9 @@ Error registering fd event for the new client: Numerical result out of range (fd
 
 ## 本次分析的结论
 这个问题未解决需要继续跟踪，可能需要升级redis的版本，目前看到3.2.9以上才修复了这个bug，我们用的3.0.6版本的跨度有点大兼容性也需要考虑，还要对redis的配置在进一步研究，通过timeout配置让自动关闭无用的连接着也是一个解决问题的思路，这次只是先定位问题，具体解决还需要进一步研究
+
+这个问题的issue：[#2857](https://github.com/antirez/redis/issues/2857)，[#2883](https://github.com/antirez/redis/issues/2883)
+
+这个问题的提交记录：[fix #2883, #2857 pipe fds leak when fork() failed on bg aof rw](https://github.com/antirez/redis/commit/9b05aafb50348838f45bfddcd689e7d8d1d3c950)
+
+问题修改的文件：[3.2.9分支 -> aof.c文件](https://github.com/antirez/redis/blob/3.2.9/src/aof.c)
