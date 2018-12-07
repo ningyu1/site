@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "雪花算法-解析"
-description = "雪花算法-解析"
+title = "雪花算法-记录"
+description = "雪花算法-记录"
 tags = [
 	"snowflake"
 ]
