@@ -99,6 +99,12 @@ ps. 支持以上的两种不同的自定义格式并存
 
 数据库对Json类型的支持：Mysq5.7，PostgreSQL，MongoDB
 
+数据库对json类型的检索支持：
+
+1. Mysql5.7： 支持索引：通过虚拟列的功能可以对JSON中部分的数据进行索引。（相比PG和MongoDB弱一些，通过json_extract()函数做一些简单查询）
+2. PostgreSQL：支持检索，可以复杂查询
+3. MongoDB：支持检索，可以复杂查询，支持map reduce
+
 ORM框架对Json类型的支持：Mybatis、Hibernate均支持json格式字段映射到POJO，方便json格式的bean与数据库映射。
 
 优点：
