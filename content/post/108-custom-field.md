@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "自定义字段常用实现方式"
-description = "自定义字段常用实现方式"
+title = "谈一谈自定义字段实现的几种方式"
+description = "谈一谈自定义字段实现的几种方式"
 tags = [
 	"custom-field"
 ]
@@ -97,16 +97,6 @@ ps. 支持以上的两种不同的自定义格式并存
 
 ![](/img/custom-field/1.png)
 
-数据库对Json类型的支持：Mysq5.7，PostgreSQL，MongoDB
-
-数据库对json类型的检索支持：
-
-1. Mysql5.7： 支持索引：通过虚拟列的功能可以对JSON中部分的数据进行索引。（相比PG和MongoDB弱一些，通过json_extract()函数做一些简单查询）
-2. PostgreSQL：支持检索，可以复杂查询
-3. MongoDB：支持检索，可以复杂查询，支持map reduce
-
-ORM框架对Json类型的支持：Mybatis、Hibernate均支持json格式字段映射到POJO，方便json格式的bean与数据库映射。
-
 优点：
 
 1. 扩展能力强
@@ -119,5 +109,55 @@ ORM框架对Json类型的支持：Mybatis、Hibernate均支持json格式字段�
 1. 数据库需要支持json type，不建议使用text类型
 2. 不支持关联查询（mongodb除外）
 3. 自定义字段检索需要通过其他方式，例如搜索引擎。（mongodb除外）
+
+## 数据库对Json格式支持情况
+
+数据库对Json类型的支持：
+
+1. Mysq5.7（[CRUD参考](http://www.lnmp.cn/mysql-57-new-features-json.html)）
+2. PostgreSQL
+3. MongoDB
+
+数据库对json类型的检索支持：
+
+1. Mysql5.7： 支持索引：通过虚拟列的功能可以对JSON中部分的数据进行索引。（相比PG和MongoDB弱一些，通过json_extract()函数做一些简单查询）
+2. PostgreSQL：支持检索，可以复杂查询
+3. MongoDB：支持检索，可以复杂查询，支持map reduce
+
+ORM框架对Json类型的支持：
+
+1. Mybatis支持json格式字段映射到POJO，方便json格式的bean与数据库映射。
+2. Hibernate支持json格式字段映射到POJO，方便json格式的bean与数据库映射。
+
+Mysql5.7.x json操作官方文档：
+
+1. [json-creation-functions](https://dev.mysql.com/doc/refman/5.7/en/json-creation-functions.html)
+2. [json-search-functions](https://dev.mysql.com/doc/refman/5.7/en/json-search-functions.html)
+3. [json-modification-functions](https://dev.mysql.com/doc/refman/5.7/en/json-modification-functions.html)
+
+Mysql5.7.x 注意事项：
+
+1. JSON_UNQUOTE 、->、->> 之间的区别
+	* 下面三个表达式返回相同的值
+		* JSON_UNQUOTE( JSON_EXTRACT(column, path) )
+		* JSON_UNQUOTE(column -> path) 
+		* column->>path
+2. JSON_CONTAINS_PATH 参数说明
+	* 第二个参数为'one'或'all'的区别
+		* ‘one’：至少存在一个路径返回1，反之返回0
+		* ‘all’：全部路径存在返回1，反之返回0
+3. JSON_CONTAINS 参数说明
+	* 第二个参数是不接受整数的，无论 json 元素是整型还是字符串，否则会出现这个错误
+4. 5.7.x不同版本支持的程度：
+	* MySQL 5.7.13
+		* 支持操作符  ->> 
+	* MySQL 5.7.9 
+		* 支持操作符 -> （JSON_EXTRACT()函数别名）
+		* 重命名函数JSON_APPEND()为JSON_ARRAY_APPEND()，函数作用：将值追加到JSON文档中指定数组的末尾并返回结果，未来会删除'JSON_APPEND()'
+	* MySQL 5.7.22
+		* 支持JSON_ARRAYAGG()返回json数组形式结果集，JSON_OBJECTAGG()返回kson对象形式结果集
+		* 添加JSON_MERGE_PATCH()，作用：合并结果（相同path）
+		* 添加JSON_MERGE_PRESERVE()，作用：合并数据（不同path）
+		* 弃用JSON_MERGE()，使用JSON_MERGE_PRESERVE() / JSON_MERGE_PATCH()，未来会删除'JSON_MERGE()' 
 
 实现方式不局限于上面说到的方式，有更好的方式欢迎留言进行沟通。
