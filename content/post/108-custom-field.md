@@ -115,8 +115,8 @@ ps. 支持以上的两种不同的自定义格式并存
 数据库对Json类型的支持：
 
 1. Mysq5.7（[CRUD参考](http://www.lnmp.cn/mysql-57-new-features-json.html)）
-2. PostgreSQL
-3. MongoDB
+2. PostgreSQL（[CRUD参考](https://www.enterprisedb.com/blog/crud-json-postgresql)，[json与jsonb区别](https://blog.csdn.net/qwdafedv/article/details/68066802)）
+3. MongoDB（[CRUD参考](https://docs.mongodb.com/manual/crud/)）
 
 数据库对json类型的检索支持：
 
