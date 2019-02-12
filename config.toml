@@ -23,9 +23,9 @@ rssuri = "atom.xml"
     # 是否显示播放器
     music = true
     # 自动播放为1，不自动为0
-    auto_play = 1
+    auto_play = 0
     # 网易音乐id
-    music_id = 526470218
+    music_id = 1296583188
 
 
     # According to https://discuss.gohugo.io/t/how-to-access-the-top-level-rsslink-from-a-post/2044, we have to set this ourself
