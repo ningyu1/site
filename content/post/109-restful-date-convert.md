@@ -1,7 +1,7 @@
 +++
 toc = true
-title = "REST开发日期类型字段如何正确传递"
-description = "REST开发日期类型字段正确传递"
+title = "RESTful开发日期类型字段如何正确传递"
+description = "RESTful开发日期类型字段如何正确传递"
 tags = [
 	"restful",
 	"date-convert"
