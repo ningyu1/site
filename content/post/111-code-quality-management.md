@@ -4,6 +4,11 @@ title = "谈一谈开发团队代码质量如何管控与提升"
 description = "谈一谈开发团队代码质量如何管控与提升"
 tags = [
 	"代码质量管理",
+	"git flow",
+	"jira git",
+	"code review",
+	"git hook",
+	"check style"
 ]
 date = "2019-03-07 14:37:21"
 categories = [
