@@ -6,10 +6,11 @@ date = "2018-01-30 11:03:36"
 menu = "main"
 +++
 
-大家好，我是凝雨，我不是高手，我也不是牛人，我只是单纯的喜欢编程，我觉得做任何事情还是要跟着自己的心走。我以前的博客在新浪：[小小的芋头_凝雨的博客](http://blog.sina.com.cn/ningyukexingboke)，目前已不更新，博客转到[https://ningyu1.github.io/site/index.html](https://ningyu1.github.io/site/index.html)。
+大家好，我是凝雨，我不是高手，我也不是牛人，我只是单纯的喜欢编程，我觉得做任何事情还是要跟着自己的心走。
 
 # 网络信息
 
+* Blog: [https://ningyu1.github.io/blog/index.html](https://ningyu1.github.io/blog/index.html)
 * Email： ningbe111@163.com && ningbe111@gmail.com
 * GitHub：https://github.com/ningyu1
 * 座右铭：
