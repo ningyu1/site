@@ -15,7 +15,7 @@ touch .nojekyll
 git init
 git config user.name "ningyu1"
 git config user.email "ningbe111@163.com"
-git add -A
+git add -A .
 git commit -m "Update Blog By TravisCI With Build $TRAVIS_BUILD_NUMBER"
 git push -f "https://${access_token}@github.com/ningyu1/site.git" gh-pages:gh-pages
 
