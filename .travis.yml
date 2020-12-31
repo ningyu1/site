@@ -1,0 +1,14 @@
+language: go
+go:
+  - "1.8"
+install:
+  # 安装最新的hugo
+  - wget https://github.com/gohugoio/hugo/releases/download/v0.51/hugo_0.51_Linux-64bit.deb
+  - sudo dpkg -i hugo*.deb
+  # 安装主题 - git clone [你使用的主题的 Git 地址]
+script: bash ./deploy.sh
+branches:
+  only:
+    - master
+notifications:
+  email: false
