@@ -1,14 +1,22 @@
 <ul id="nav">
-    <li id="ajax"><a href="{{ .Site.BaseURL }}/index.html">Home</a></li>
-    <li id="ajax"><a href="{{ .Site.BaseURL }}/archives/index.html">Archives</a></li>
-	<li id="ajax"><a href="{{ .Site.BaseURL }}/categories/index.html">Categories</a></li>
-    <li id="ajax"><a href="{{ .Site.BaseURL }}/tags/index.html">Tags</a></li>
-	<li id="ajax"><a href="{{ .Site.BaseURL }}/about/index.html">About</a></li>
+<!--    <li id="ajax"><a href="{{ .Site.BaseURL }}/index.html">Home</a></li>-->
+<!--    <li id="ajax"><a href="{{ .Site.BaseURL }}/archives/index.html">Archives</a></li>-->
+<!--	<li id="ajax"><a href="{{ .Site.BaseURL }}/categories/index.html">Categories</a></li>-->
+<!--    <li id="ajax"><a href="{{ .Site.BaseURL }}/tags/index.html">Tags</a></li>-->
+<!--	<li id="ajax"><a href="{{ .Site.BaseURL }}/about/index.html">About</a></li>-->
+    <!--  流量引入新blog -->
+    <li id="ajax"><a href="https://ningyu1.github.io/">Home</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/archives/">Archives</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/categories/">Categories</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/tags/">Tags</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/about/">About</a></li>
     <!-- <li><a href="{{ .Site.BaseURL }}/{{ .Site.Params.theme.site_rsslink }}">RSS</a></li> -->
     <li>
     <div id="dark">
+        <!-- 搜索site切换到跟域名下 -->
         <form action="//www.google.com/search" method="get" accept-charset="UTF-8" id="search">
-            <input type="hidden" name="sitesearch" value="{{ .Site.BaseURL }}" />
+<!--            <input type="hidden" name="sitesearch" value="{{ .Site.BaseURL }}" />-->
+            <input type="hidden" name="sitesearch" value="https://ningyu1.github.io" />
             <input type="text" name="q" results="0" placeholder="Search..." x-webkit-speech />
         </form>
     </div>

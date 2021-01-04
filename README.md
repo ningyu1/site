@@ -11,4 +11,6 @@
 5. 优化google搜索，修改位置：themes/hugo-fabric/layouts/partials/navigation.html
 6. 修改了一些样式，修改位置：themes/hugo-fabric/layouts/partials/css/screen.css
 7. 增加采用知识共享署名-相同方式共享 4.0 国际许可协议许可文章
+8. 修改导航地址将流量引入新blog
+9. 修改搜索site为根域名
 
