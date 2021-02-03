@@ -12,7 +12,7 @@ rssuri = "atom.xml"
 [params]
  author = "凝雨-Yun"
   [params.theme]
-    subtitle = "快乐编程每一天 - Happy Coding Every Days"
+    subtitle = "快乐编程每一天 - Happy Coding Every Day"
     post_type = "page" # For archive
     archive_post_type = "archives"
 
