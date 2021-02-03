@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cert on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/cert/</link>
+    <description>Recent content in Cert on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Jan 2018 16:25:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/cert/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CAS使用经验总结，纯干货</title>
+      <link>https://ningyu1.github.io/site/post/54-cas-server/</link>
+      <pubDate>Fri, 19 Jan 2018 16:25:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/54-cas-server/</guid>
+      <description>最近在处理公司项目对接到CAS server，在使用CAS发生了很多问题，下面整理一下遇到的问题与解决方式，希望可以帮助到需要的工程师们
+CAS它是什么？它能做什么？这些我就不概述了，自行去搜索了解，https://baike.baidu.com/item/CAS/1329561
+我们在使用CAS的时候基本都会遇到如下的几种问题：
+ 证书问题 Client接入配置 SLO（Single Logout） CAS callback回调问题 Cookie问题 用户数据源以及认证问题 CAS Server Ticket持久化问题 Client Server集群模式下session问题  还有一些是公司内部项目框架集成问题这里就不多说了。
+以下总结都是基于CAS v5.0.4版本测试
+我用的CAS Server是通过overlays改造后的项目，为什么需要修改原有的CAS Server呢？
+我相信每个公司都有一些特殊的需求比如说：
+ 对登录页面的修改 自有的密码加密验证方式 新老项目架构参差不齐 使用公司自有用户数据源  等等很多问题都需要对CAS Server进行改造
+这里我将改造的CAS Server放到github上：
+项目地址：cas-site
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+下面具体说一下上述的问题将如何来分析并解决
+证书问题 如果你的服务不打算使用SSL那请跳过这段说明。
+一般公司项目会有很多域名大概都是子域名的方式，例如：account.xxxx.com,login.xxxx.com，那么最好使用通配符证书，为什么呢？这样你的cas server上配置一个通配符证书即可，如果没有使用通配符证书那cas server上要配置所有授信域名的证书，这样就很麻烦，除非一些历史问题没办法才会导入多个证书，一般使用通配符证书。
+我使用的是自签名的通配符证书，具体自签名证书如何生成可以查看我之前写的文章：
+《Openssl生成自签名证书，简单步骤》中讲述了如何生成自签名证书。
+《使用自签名证书，简单步骤》中讲述了如何使用自签名证书。
+《Java访问SSL地址，使用证书方式和免验证证书方式》中讲述了Java访问ssl使用证书方式和免验证证书方式。
+ps.这里需要注意的是在制作单域名证书和通配符域名证书的区别是在：Common Name输入的时候，例如：
+单域名证书：Common Name：account.xxxx.ccom 通配符域名证书：Common Name：*.xxxx.com
+将制作好的证书文件通过keytool导入到jdk下即可，或使用InstallCert来生成文件copy到jdk下，具体可以参考文章：《使用自签名证书，简单步骤》
+证书放在：%JAVA_HOME%\jre\lib\security
+我们cas server使用的jdk1.8，client服务大多是jdk1.7，因此在证书处理上要注意这个细节，上面文章中有明确说明
+如果需要使用Docker构建，可以参考我写好的Dockerfile，在cas-site项目下Dockerfile文件
+Client接入配置 接入cas的client端配置非常简单，可以使用spring framework对接cas方式，也可以使用spring security对接cas方式，或者其他支持cas的第三方框架，自己对接配置非常简单只需要配置SingleSignOutFilter和SingleSignOutHttpSessionListener
+ org.jasig.cas.client.session.SingleSignOutFilter：解决Logout清空TGC和session信息 org.jasig.cas.client.session.SingleSignOutHttpSessionListener：session监听  这里在对接方面就不做过多的介绍了。</description>
+    </item>
+    
+  </channel>
+</rss>

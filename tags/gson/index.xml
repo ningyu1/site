@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gson on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/gson/</link>
+    <description>Recent content in Gson on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Mar 2018 15:31:53 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/gson/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Json序列化、反序列化支持泛型，Dubbo对泛型参数方法进行反射调用</title>
+      <link>https://ningyu1.github.io/site/post/69-java-reflect/</link>
+      <pubDate>Tue, 13 Mar 2018 15:31:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/69-java-reflect/</guid>
+      <description>最近在对Dubbo接口进行反射调用时，遇到了参数类型较为复杂的情况下，使用反射方式无法调用的问题。
+由于Dubbo使用了proxy代理对象，因此在反射上调用是存在一定的问题，从反射对象上获取的方法和参数类型可能会导致无法正常的调用。
+首先先让我们看一个复杂参数的接口定义
+public String testMethod(Map&amp;lt;String,ResourceVo&amp;gt; map, List&amp;lt;Map&amp;lt;String,ResourceVo&amp;gt;&amp;gt; list) throws BizException;  Gson反序列化复杂类型 在对参数进行反序列化时，内部的类型容易丢失，我们可以使用gson的Type进行反序列化得到正确的参数值，让我们看一下gson反序列化的两个方法
+ /** * This method deserializes the specified Json into an object of the specified class. It is not * suitable to use if the specified class is a generic type since it will not have the generic * type information because of the Type Erasure feature of Java. Therefore, this method should not * be used if the desired type is a generic type.</description>
+    </item>
+    
+    <item>
+      <title>Java中内部类使用注意事项，内部类对序列化与反序列化的影响</title>
+      <link>https://ningyu1.github.io/site/post/65-java-inner-class/</link>
+      <pubDate>Tue, 06 Mar 2018 16:50:17 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/65-java-inner-class/</guid>
+      <description>现在很多服务架构都是微服务、分布式架构，开发模式也都是模块化开发，在分布式的开发方式下服务之间的调用不管是RPC还是RESTful或是其他SOA方案，均离不开序列化与反序列化，尤其是使用Java开发，Bean实现序列化接口几乎已经是必备的要求，而且这个要求已经纳入到很多大厂公司的开发规范中，开发规范中强制要求实现序列化接口和重写toString、hashCode方法。
+前面提到了序列化与反序列化，那序列化与反序列化的对象就是开发人员写的java bean，不同的java bean会给序列化反序列化带来什么问题呢？接下来就让我们看一下内部类对序列化反序列化的影响。
+在这之前我们先看一下常用的序列化工具：
+ JavaSerialize fastjson dubbo json google gson google protoBuf hessian kryo Avro fast-serialization jboss-serialization jboss-marshalling-river protostuff msgpack-databind json/jackson/databind json/jackson/db-afterburner xml/xstream+c xml/jackson/databind-aalto  工具太多了这里就不列了，让我们先做一个测试。
+测试 常规java bean 测试类：
+import java.io.Serializable; public class Test implements Serializable { private static final long serialVersionUID = 2010307013874058143L; private String name; public String getName() { return name; } public void setName(String name) { this.name = name; } }  调用序列化与反序列化:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Charles on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/charles/</link>
+    <description>Recent content in Charles on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 04 Jun 2018 17:28:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/charles/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何使用抓包调试工具 —— Charles</title>
+      <link>https://ningyu1.github.io/site/post/84-charles/</link>
+      <pubDate>Mon, 04 Jun 2018 17:28:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/84-charles/</guid>
+      <description>以下信息转自公司内网资料，觉得很实用就转载出来提供参考。
+一、Charles是什么？ Charles是在 Mac或Windows下常用的http协议网络包截取工具，在平常的测试与调式过程中，掌握此工具就基本可以不用其他抓包工具了。
+二、为什么是Charles？ 为什么要用抓包工具？大家在平常移动App调试测试中是如何进行抓包的？
+主要特点如下：
+ 支持SSL代理，可以截取分析SSL的请求 支持流量控制。可以模拟慢速网络(2G,3G)，以及等待时间较长的请求。 支持AJAX调试。可以自动把JSON或者XML数据格式化，方便查看。 支持重发网络请求，方便后端调试。 支持修改网络请求参数。 支持网络请求的截取和动态修改。 最重要的一个优点就是有不同平台的版本（Mac，Windows、Linux）即学一个打遍天下。  三、Charles基本工作原理 charles是通过网络代理来进行抓包的，下面先了解一下http代理的原理：
+ 普通http请求过程  一般情况下的HTTP请求与响应
+ 加入了Charles的HTTP代理的请求与响应过程  中间的代理服务器就是Charles
+四、Charles的下载与安装过程  官网下载地址：http://www.charlesproxy.com/download/ Mac下安装  是一个安装包是一个dmg后缀的文件。打开后将Charles拖到Application目录下即完成安装。
+在Mac下你打开Launchpad即可看到一个像花瓶一样的Charles程序图标
+ Windows下安装  下载后直接双击根据安装向导一步一步安装即可
+五、Http抓包操作步骤 Step 1: 开启Charleshttp代理  设置Charles代理  第一次启动默认会开启本机的系统代理，因为我们只是监控移动端的所以将此选去除（去掉选项前面的小钩）
+ 激活http代理功能  Step 2: 手机端Wifi添加代理 Android端  在手机端打开你的Wifi设置然后长按已经连接的Wifi在弹出来的菜单中选择【修改网络】 沟上[显示高级]选项&amp;ndash;【手动】 输入代理服务器的IP与端口，IP即安装了Charles的电脑IP地址，端口就是前面一步设置Charles时所设置的端口。  注意：手机所连接Wifi要与电脑在同一个LAN(局域网)
+iOS端  点击你所连接的wifi 输入代理服务器的IP与端口，  IP即安装了Charles的电脑IP地址，端口就是前面一步设置Charles时所设置的端口。
+注意：手机所连接Wifi要与电脑在同一个LAN(局域网)
+Step 3:开启Charles录制功能  当手机连接上代理后Charles会弹出相应的提示框，点击Allow即可 点击工具栏上的开始录制按钮，即启动了Charles的抓包功能了。  Step 4：启动应用开始抓包  在手机上操作相应的App进行抓包。 在Charles的主界面上就可看到相应的请求内容。  Step 5：分析抓取的数据包  Charles 主要提供两种查看封包的视图，分别名为 “Structure”和 “Sequence”：  Structure 视图将网络请求按访问的域名分类； Sequence 视图将网络请求按访问的时间排序。  大家可以根据具体的需要在这两种视图之前来回切换。请求多了有些时候会看不过来，Charles提供了一个简单的Filter功能，可以输入关键字来快速筛选出URL 中带指定关键字的网络请求。 对于某一个具体的网络请求，你可以查看其详细的请求内容和响应内容。如果请求内容是POST 的表单，Charles 会自动帮你将表单进行分项显示。如果响应内容是 JSON 格式的，那么 Charles可以自动帮你将JSON 内容格式化，方便你查看。如果响应内容是图片，那么 Charles可以显示出图片的预览。  六、Https抓包操作步骤 Step 1：了解一下https的基本原理； HTTPS其实是有两部分组成：HTTP+ SSL / TLS，也就是在HTTP上又加了一层处理加密信息的模块。服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据。具体是如何进行加密，解密，验证的，且看图,下面这个图的解说 详细说明，请参考：http://blog.</description>
+    </item>
+    
+  </channel>
+</rss>

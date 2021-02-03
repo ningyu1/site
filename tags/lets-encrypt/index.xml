@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lets Encrypt on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/lets-encrypt/</link>
+    <description>Recent content in Lets Encrypt on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 May 2018 15:57:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/lets-encrypt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何免费的让你的网站变得更加安全 - HTTPS</title>
+      <link>https://ningyu1.github.io/site/post/82-ssl-lets-encrypt/</link>
+      <pubDate>Mon, 28 May 2018 15:57:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/82-ssl-lets-encrypt/</guid>
+      <description>在这个数据不安全的世界里，很有可能你早上买了个东西下午就会有类似的推销电话打过来骚扰你，这些数据信息从哪里来的呢？当然很多时候是人为的贩卖信息造成的，但是数据来源很大一部分是来自于互联网。因此站点使用https已经是最基本的防护，当我去访问一个站点它如果不是https的我可能都不想访问它更别提输入一些个人信息了。那怎么才能让我们提供的网站安全的服务你的用户呢？当然是使用证书来保护网站来往的数据。
+如果不差钱的话还是使用收费的证书去给你的网站开启https。当然国内也有很多免费的证书，去谷哥或者度娘能检索到一大把的免费证书信息，各大云服务商上面也有免费的证书可以申请使用，我下面就介绍一个免费的使用方式。
+Let’s Encrypt
+Let&#39;s Encrypt是一个于2015年三季度推出的数字证书认证机构，旨在以自动化流程消除手动创建和安装证书的复杂流程，并推广使万维网服务器的加密连接无所不在，为安全网站提供免费的SSL/TLS证书。
+Let&#39;s Encrypt由互联网安全研究小组（缩写ISRG）提供服务。主要赞助商包括电子前哨基金会、Mozilla基金会、Akamai以及思科。2015年4月9日，ISRG与Linux基金会宣布合作。
+通过官网我们能看到赞助商还是蛮多的，赞助商列表
+上述来自于维基百科，查看原文
+从介绍中能了解到它是为了解决，以自动化流程消除手动创建和安装证书的复杂流程，让证书使用更加简单。
+我们通过Let&#39;s Encrypt官网的Getting Started中可以查看具体的使用说明
+下面我们简单介绍一下使用步骤：
+使用步骤 安装证书非常简单，只需要使用Certbot，就可以完成。
+ 打开Certbot，选择你的网站使用的应用服务器和操作系统。如下图：   选择完后会生成安装教程，不用想太多Step by step就好了，如下图：  安装基础环境 $ sudo apt-get update $ sudo apt-get install software-properties-common $ sudo add-apt-repository ppa:certbot/certbot $ sudo apt-get update $ sudo apt-get install python-certbot-nginx  安装证书 安装完之后直接运行sudo certbot --nginx即可
+certbot 会自动修改nginx配置文件(nginx.conf)并且列出你的虚拟站点让你选择是否开启HTTPS，当然你只用选择是否开启即可，选择完后它会自动下载证书并且修改nginx配置文件
+修改后的nginx.conf是什么样的？让我们看一下
+listen 443 ssl; # managed by Certbot ssl_certificate /etc/letsencrypt/live/your.domain/fullchain.pem; # managed by Certbot ssl_certificate_key /etc/letsencrypt/live/your.</description>
+    </item>
+    
+  </channel>
+</rss>

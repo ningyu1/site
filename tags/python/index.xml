@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/python/</link>
+    <description>Recent content in Python on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Mar 2018 14:19:54 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python项目生成requirements.txt的多种方式，用于类库迁移必备</title>
+      <link>https://ningyu1.github.io/site/post/67-python-requirements/</link>
+      <pubDate>Fri, 09 Mar 2018 14:19:54 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/67-python-requirements/</guid>
+      <description>我相信任何软件程序都会有依赖的类库，尤其现在开源如此的火爆，很多轮子可以拿来直接使用不再需要自己再去开发（拿来主义者），这样大大的提高开发效率。NPM就是轮子最多的地方，哈哈！开个玩笑！
+我们做开发时为何需要对依赖库进行管理？当依赖类库过多时，如何管理类库的版本？
+我相信大家都知道怎么回答这个问题，为了更加规范管理项目结构，提高开发效率所以我们需要对依赖库进行管理，不管使用任何开发语言，如今都有依赖库的管理工具。
+例如：Java有Maven、Gradle，JS有NPM，Python有pip、easy_install，Linux有apt-get、yun 等。
+我们这里就对Python的依赖库管理来进一步说一说。
+Python提供通过requirements.txt文件来进行项目中依赖的三方库进行整体安装导入。
+那首先让我们看一下requirements.txt的格式
+requests==1.2.0 Flask==0.10.1  Python安装依赖库使用pip可以很方便的安装，如果我们需要迁移一个项目，那我们就需要导出项目中依赖的所有三方类库的版本、名称等信息。
+接下来就看Python项目如何根据requirements.txt文件来安装三方类库
+方法一：pip freeze pip freeze &amp;gt; requirements.txt  pip freeze命令输出的格式和requirements.txt文件内容格式完全一样，因此我们可以将pip freeze的内容输出到文件requirements.txt中。在其他机器上可以根据导出的requirements.txt进行包安装。
+如果要安装requirements.txt中的类库内容，那么你可以执行
+pip install -r requirements.txt  注意：pip freeze输出的是本地环境中所有三方包信息，但是会比pip list少几个包，因为pip，wheel，setuptools等包，是自带的而无法(un)install的，如果要显示所有包可以加上参数-all，即pip freeze -all
+方法二：pipreqs 使用pipreqs生成requirements.txt
+首先先安装pipreqs
+pip install pipreqs  使用pipreqs生成requirements.txt
+pipreqs requirements.txt  注意：pipreqs生成指定目录下的依赖类库
+上面两个方法的区别？ 使用pip freeze保存的是当前Python环境下所有的类库，如果你没有用virtualenv来对Python环境做虚拟化的话，类库就会很杂很多，在对项目进行迁移的时候我们只需关注项目中使用的类库，没有必要导出所有安装过的类库，因此我们一般迁移项目不会使用pipreqs，pip freeze更加适合迁移整个python环境下安装过的类库时使用。
+不知道virtualenv是什么或者不会使用它的可以查看：《构建Python多个虚拟环境来进行不同版本开发之神器-virtualenv》
+使用pipreqs它会根据当前目录下的项目的依赖来导出三方类库，因此常用与项目的迁移中。
+这就是pip freeze、pipreqs的区别，前者是导出Python环境下所有安装的类库，后者导出项目中使用的类库。</description>
+    </item>
+    
+    <item>
+      <title>构建Python多个虚拟环境来进行不同版本开发之神器-virtualenv</title>
+      <link>https://ningyu1.github.io/site/post/63-python-virtualenv/</link>
+      <pubDate>Fri, 02 Mar 2018 11:22:28 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/63-python-virtualenv/</guid>
+      <description>我们都知道Python的类库很多，但是大多支持的版本还是Python2.x系列，Python3支持的类库相对较少，因此我们在开发的时候经常还使用的Python2系列的版本，Python3对语法进行了比较大的重构，Python3中将一些Python2的模块名称做了修改，虽然兼容Python2但还是需要我们做一些处理来保证代码在不同Python版本中能够正常运作，如果我们想同时使用Python2 和 Python3，这个时候大家最常用的做法就是机器上配置多个版本，虽然可以解决问题但是配合多个项目的各种杂乱的包依赖情况，问题就变的非常复杂了，可能升级某一个第三方依赖库会对很多项目产生影响。
+我们都知道在安装Python类库的时候它默认会安装到Python的目录下，有编程洁癖的人都会因此苦恼，因为它污染了Python的目录，并且在开发的时候不同的项目使用的类库差异也蛮大，为了使多个项目之间互相不影响，我们能不能根据项目来区分开Python环境目录？
+当然可以，virtualenv就能帮助我们解决上面的苦恼，它是一个可以创建多个隔绝Python环境的工具，virtualenv可以创建一个包含所有必要的可执行的文件夹，用来使用Python工程所需要的包，同时还不污染Python的原安装目录。
+这个工具简直就是给有开发洁癖的人送福音的。画外音：专业送快递
+上面大致说了一下我们使用virtualenv的初衷，接下来让我们看一下virtualenv如何使用，在使用之前先正式的了解一下virtualenv
+什么是virtualenv? Virtualenv是一个用来创建独立的Python环境的工具
+为什么我们需要一个独立的Python环境？ 引用virtualenv的文档
+virtualenv is a tool to create isolated Python environments. The basic problem being addressed is one of dependencies and versions, and indirectly permissions. Imagine you have an application that needs version 1 of LibFoo, but another application requires version 2. How can you use both these applications? If you install everything into /usr/lib/python2.7/site-packages (or whatever your platform’s standard location is), it’s easy to end up in a situation where you unintentionally upgrade an application that shouldn’t be upgraded.</description>
+    </item>
+    
+    <item>
+      <title>如何将Python脚本打包成可执行文件？</title>
+      <link>https://ningyu1.github.io/site/post/59-py2exe-pyinstaller/</link>
+      <pubDate>Wed, 07 Feb 2018 11:57:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/59-py2exe-pyinstaller/</guid>
+      <description>我们有时候经常会使用python写一些小工具，在Linux环境下可以很方便运行，因为Linux默认都会有python环境，我们只需要添加python脚本依赖的类库即可执行。但是有的时候我们需要把小工具给到一些麻瓜去用的时候就会出现一些问题，他们大多是在Windows上运行工具，那就必须要先准备python的可运行环境才行，这就给麻瓜们带来了使用成本，我们能否将python脚本打包成windows下可执行文件呢？
+接下来让我们先了解一下python有哪些类库可以帮助我们解决这个问题。
+这是一个来自Freezing Your Code的统计
+   Solution Windows Linux OS X Python 3 License One-file mode Zipfile import Eggs pkg_resources support     bbFreeze yes yes yes no MIT no yes yes yes   py2exe yes no no yes MIT yes yes no no   pyInstaller yes yes yes yes GPL yes no yes no   cx_Freeze yes yes yes yes PSF no yes yes no   py2app no no yes yes MIT no yes yes yes    我们能看到有很多类库都可以解决我们的问题，其中pyInstaller、cx_Freeze、bbFreeze都不错，pkg_resources新版的pyInstaller貌似是支持的。</description>
+    </item>
+    
+  </channel>
+</rss>

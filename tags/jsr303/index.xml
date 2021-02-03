@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jsr303 on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/jsr303/</link>
+    <description>Recent content in Jsr303 on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Apr 2018 13:25:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/jsr303/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dubbo使用jsr303框架hibernate-validator遇到的问题</title>
+      <link>https://ningyu1.github.io/site/post/78-dubbo-validation-jsr303-pit/</link>
+      <pubDate>Mon, 23 Apr 2018 13:25:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/78-dubbo-validation-jsr303-pit/</guid>
+      <description>Dubbo可以集成jsr303标准规范的验证框架，作为验证框架不二人选的hibernate-validator是大家都会经常在项目中使用的，但是在Dubbo使用是会发生下面这个问题。
+问题描述 背景：使用springmvc做restful，使用dubbo做rpc，restful中调用大量的rpc，数据验证会在这两个地方，一个是restful层面，一个是rpc层面，restful层面使用springmvc默认的集成hibernate-validator来实现，参数开启验证只需要加入@Validated param。
+rpc层面也使用hibernate-validator实现，dubbo中开启validation也有两个方式，一个是在consumer端，一个是在provider端。
+当我们在consumer端开启验证时: &amp;lt;dubbo:reference id=&amp;quot;serviceName&amp;quot; interface=&amp;quot;com.domain.package.TestService&amp;quot; registry=&amp;quot;registry&amp;quot; validation=&amp;quot;true&amp;quot;/&amp;gt;  没有任何问题，可以拿到所有的数据校验失败数据。
+当我们在provider端开启验证时： &amp;lt;dubbo:service interface=&amp;quot;com.domain.package.TestService&amp;quot; ref=&amp;quot;serviceName&amp;quot; validation=&amp;quot;true&amp;quot; /&amp;gt;  会发生如下异常：
+com.alibaba.dubbo.rpc.RpcException: Failed to invoke remote method: sayHello, provider: dubbo://127.0.0.1:20831/com.domain.package.TestService?application=dubbo-test- rest&amp;amp;default.check=false&amp;amp;default.cluster=failfast&amp;amp;default.retries=0&amp;amp;default.timeout=1200000&amp;amp;default.version=1.0 .0&amp;amp;dubbo=2.6.1&amp;amp;interface=com.domain.package.TestService&amp;amp;methods=sayHello&amp;amp;pid=29268&amp;amp;register.ip=192. 168.6.47&amp;amp;side=consumer&amp;amp;timestamp=1524453157718, cause: com.alibaba.com.caucho.hessian.io.HessianFieldException: org.hibernate.validator.internal.engine.ConstraintViolationImpl.constraintDescriptor: &#39;org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl&#39; could not be instantiated com.alibaba.com.caucho.hessian.io.HessianFieldException: org.hibernate.validator.internal.engine.ConstraintViolationImpl.constraintDescriptor: &#39;org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl&#39; could not be instantiated at com.alibaba.com.caucho.hessian.io.JavaDeserializer.logDeserializeError(JavaDeserializer.java:167) at com.alibaba.com.caucho.hessian.io.JavaDeserializer$ObjectFieldDeserializer.deserialize (JavaDeserializer.java:408) at com.alibaba.com.caucho.hessian.io.JavaDeserializer.readObject(JavaDeserializer.java:273) at com.alibaba.com.caucho.hessian.io.JavaDeserializer.readObject(JavaDeserializer.java:200) at com.alibaba.com.caucho.hessian.io.SerializerFactory.readObject(SerializerFactory.java:525) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObjectInstance(Hessian2Input.java:2791) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2731) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2260) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2705) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2260) at com.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Error Pulling Image Configuration Unexpected Eof on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/error-pulling-image-configuration-unexpected-eof/</link>
+    <description>Recent content in Error Pulling Image Configuration Unexpected Eof on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 May 2018 12:09:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/error-pulling-image-configuration-unexpected-eof/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Trouble Shooting —— Docker Pull Image : error pulling image configuration: unexpected EOF错误</title>
+      <link>https://ningyu1.github.io/site/post/83-docker-pull-error/</link>
+      <pubDate>Tue, 29 May 2018 12:09:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/83-docker-pull-error/</guid>
+      <description>问题现象 执行docker pull命令报错：
+docker@rancher-192:~$ docker pull 192.168.0.34:5000/imageName:latest latest: Pulling from imageName 75a822cd7888: Pulling fs layer 046e44ee6057: Download complete 8c47541cb10b: Waiting e17edf9a1bd4: Waiting error pulling image configuration: unexpected EOF  查看日志错误如下：
+docker@rancher-192:~$ journalctl -u docker.service -- Logs begin at Mon 2018-05-14 04:14:07 CST, end at Tue 2018-05-29 11:31:02 CST. -- May 29 11:28:22 rancher-192.168.0.83 docker[993]: time=&amp;quot;2018-05-29T11:28:22.601383366+08:00&amp;quot; level=error msg=&amp;quot;Not continuing with pull after error: error pulling image configuration: unexpected EOF&amp;quot; May 29 11:30:36 rancher-192.</description>
+    </item>
+    
+  </channel>
+</rss>

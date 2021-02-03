@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Forcelogout on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/forcelogout/</link>
+    <description>Recent content in Forcelogout on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Jan 2018 15:07:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/forcelogout/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CAS Server强制踢人功能实现方式</title>
+      <link>https://ningyu1.github.io/site/post/57-cas-server1/</link>
+      <pubDate>Fri, 26 Jan 2018 15:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/57-cas-server1/</guid>
+      <description>前面写过一篇关于CAS Server使用的经验总结，主要总结了CAS Server在使用的时候遇到的一些常见问题，比如说：证书、SLO、集群session处理、自定义用户认证、Ticket持久化等问题，传送门：CAS使用经验总结，纯干货，这次在基础上又增加了一个很常见很普通的问题，那就是踢人功能。
+在管理系统这个领域里面踢人功能并不陌生，为了更好的管理用户串用账号，安全等方面考虑，接下来我们就细说一下CAS如何实现踢人的功能。
+先说一下踢人功能的场景：
+用户A在机器A上登录了APP1，用户A在机器B上登录APP1，在这种情况下后者登录需要踢掉前者的登录状态。
+用户A在机器A上登录了APP1，用户B在机器B上登录了APP1，在这种情况下不存在踢人操作。
+用户A在机器A上登录了APP1，用户A在机器B上登录了APP2，在这种情况下要分情况了，可以踢也可以不踢，这个就根据产品情况来选择，我们本次测试不能解决这个场景，如何解决我还在摸索中。
+要做踢人功能之前先了解一下CAS的认证授权机制是如何完成的？
+我这里直接引用官网的架构图：
+CAS Server与应用的Session交互图：
+其实CAS就是生成维护Ticket信息和应用session做绑定，当然它的Ticket实现还是比较复杂的，有树形关系以及和Service关联关系，从Ticket的源码能看的出来它有root的判断和Service的映射列表。
+根据上面对CAS的理解，接下来我们说CAS怎么操作踢人功能？
+踢人功能实现思路 在登录认证的时候记录一下，在下次登录获取到登录的人员列表，然后去匹配找出是否存在相同的用户，如果存在相同的用户，就注销掉这个用户的登录信息，这个是常规的思路和做法，但是在CAS里如何去找到切入点来进行判断操作呢？
+我们在上一篇中提到了自定义认证逻辑，那么我们就可以继续在认证的这个切入点去进一步分析。
+这里要先搞清楚一个概念：Authentication和Authorization这两者是不同的。
+Authentication：字面意思认证，怎么理解这个认证呢？举个例子：我们每个人都有身份证，比如你去买火车票，买火车票需要出示身份证，那这个身份证就是证明你是你自己的凭证，那这个证明的过程就是认证。
+Authorization：字面意思授权，怎么理解这个授权呢？举个例子：继续拿买火车票来说，你刚才出示了身份证证明了你自己，然后给了钱买了一张火车票，铁道部给了你一张票，这个票授权了你可以乘坐X车次X座位的权限其他车次你无权乘坐，那么这张票就是证明你确实买了X车次X座位的凭证，这就是授权。
+换回系统的角度来说，认证就是验证用户名密码，授权就是验证你能不能操作某个功能的权限。
+理解完认证和授权的区别，我们就开始从认证这块的切入点去看如何操作，CAS提供了这个类TicketRegistry它是管理所有Ticket的接口，通过调用TicketRegistry.getTickets()方法可以获取到所有认证用户的凭证。
+/** * Retrieve all tickets from the registry. * * @return collection of tickets currently stored in the registry. Tickets * might or might not be valid i.e. expired. */ Collection&amp;lt;Ticket&amp;gt; getTickets();  那有了凭证信息就好更进一步操作。
+CAS提供了TicketGrantingTicket，这个类是Ticket接口的一个实现类，可以通过TicketGrantingTicket.getAuthentication().getPrincipal().getId()来获取用户的身份。
+/** * @return the unique id for the Principal */ String getId();  getId()返回的是登录的用户名，那拿到了用户名就要考虑如何注销的事情了。</description>
+    </item>
+    
+  </channel>
+</rss>

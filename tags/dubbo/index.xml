@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dubbo on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/dubbo/</link>
+    <description>Recent content in Dubbo on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Dec 2018 13:57:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/dubbo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Enhancement]Enumeration type support, Dubbo Plugin for Apache JMeter - V1.3.8</title>
+      <link>https://ningyu1.github.io/site/post/106-jmeter-plugin-dubbo-1.3.8/</link>
+      <pubDate>Tue, 18 Dec 2018 13:57:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/106-jmeter-plugin-dubbo-1.3.8/</guid>
+      <description>项目地址 github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+V1.3.8 What is new:  Enumeration type support. #34 Support group to zookeeper,redis registration center. #33  新版改进：  支持枚举类型参数。#34 zookeeper、redis作为注册中心时增加group支持。 #33  ps. 参数类型支持：枚举类型以及参数对象内属性为枚举类型
+截图 ps. dubbo:registry group: 服务注册分组，跨组的服务不会相互影响，也无法相互调用，适用于环境隔离。
+具体查看dubbo文档</description>
+    </item>
+    
+    <item>
+      <title>[Enhancement]Support to select provider from zookeeper, Dubbo Plugin for Apache JMeter - V1.3.7</title>
+      <link>https://ningyu1.github.io/site/post/104-jmeter-plugin-dubbo-1.3.7/</link>
+      <pubDate>Tue, 13 Nov 2018 18:51:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/104-jmeter-plugin-dubbo-1.3.7/</guid>
+      <description> 项目地址 github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+V1.3.7 What is new:  Support to select provider from zookeeper. issue: #31 Upgrade dubbo version to v2.6.4.  新版改进：  支持从zookeeper选择服务提供者，降低手动输入出错概率，issue: #31 升级dubbo版本到v2.6.4  截图 </description>
+    </item>
+    
+    <item>
+      <title>Dubbo使用jsr303框架hibernate-validator遇到的问题</title>
+      <link>https://ningyu1.github.io/site/post/78-dubbo-validation-jsr303-pit/</link>
+      <pubDate>Mon, 23 Apr 2018 13:25:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/78-dubbo-validation-jsr303-pit/</guid>
+      <description>Dubbo可以集成jsr303标准规范的验证框架，作为验证框架不二人选的hibernate-validator是大家都会经常在项目中使用的，但是在Dubbo使用是会发生下面这个问题。
+问题描述 背景：使用springmvc做restful，使用dubbo做rpc，restful中调用大量的rpc，数据验证会在这两个地方，一个是restful层面，一个是rpc层面，restful层面使用springmvc默认的集成hibernate-validator来实现，参数开启验证只需要加入@Validated param。
+rpc层面也使用hibernate-validator实现，dubbo中开启validation也有两个方式，一个是在consumer端，一个是在provider端。
+当我们在consumer端开启验证时: &amp;lt;dubbo:reference id=&amp;quot;serviceName&amp;quot; interface=&amp;quot;com.domain.package.TestService&amp;quot; registry=&amp;quot;registry&amp;quot; validation=&amp;quot;true&amp;quot;/&amp;gt;  没有任何问题，可以拿到所有的数据校验失败数据。
+当我们在provider端开启验证时： &amp;lt;dubbo:service interface=&amp;quot;com.domain.package.TestService&amp;quot; ref=&amp;quot;serviceName&amp;quot; validation=&amp;quot;true&amp;quot; /&amp;gt;  会发生如下异常：
+com.alibaba.dubbo.rpc.RpcException: Failed to invoke remote method: sayHello, provider: dubbo://127.0.0.1:20831/com.domain.package.TestService?application=dubbo-test- rest&amp;amp;default.check=false&amp;amp;default.cluster=failfast&amp;amp;default.retries=0&amp;amp;default.timeout=1200000&amp;amp;default.version=1.0 .0&amp;amp;dubbo=2.6.1&amp;amp;interface=com.domain.package.TestService&amp;amp;methods=sayHello&amp;amp;pid=29268&amp;amp;register.ip=192. 168.6.47&amp;amp;side=consumer&amp;amp;timestamp=1524453157718, cause: com.alibaba.com.caucho.hessian.io.HessianFieldException: org.hibernate.validator.internal.engine.ConstraintViolationImpl.constraintDescriptor: &#39;org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl&#39; could not be instantiated com.alibaba.com.caucho.hessian.io.HessianFieldException: org.hibernate.validator.internal.engine.ConstraintViolationImpl.constraintDescriptor: &#39;org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl&#39; could not be instantiated at com.alibaba.com.caucho.hessian.io.JavaDeserializer.logDeserializeError(JavaDeserializer.java:167) at com.alibaba.com.caucho.hessian.io.JavaDeserializer$ObjectFieldDeserializer.deserialize (JavaDeserializer.java:408) at com.alibaba.com.caucho.hessian.io.JavaDeserializer.readObject(JavaDeserializer.java:273) at com.alibaba.com.caucho.hessian.io.JavaDeserializer.readObject(JavaDeserializer.java:200) at com.alibaba.com.caucho.hessian.io.SerializerFactory.readObject(SerializerFactory.java:525) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObjectInstance(Hessian2Input.java:2791) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2731) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2260) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2705) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2260) at com.</description>
+    </item>
+    
+    <item>
+      <title>Json序列化、反序列化支持泛型，Dubbo对泛型参数方法进行反射调用</title>
+      <link>https://ningyu1.github.io/site/post/69-java-reflect/</link>
+      <pubDate>Tue, 13 Mar 2018 15:31:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/69-java-reflect/</guid>
+      <description>最近在对Dubbo接口进行反射调用时，遇到了参数类型较为复杂的情况下，使用反射方式无法调用的问题。
+由于Dubbo使用了proxy代理对象，因此在反射上调用是存在一定的问题，从反射对象上获取的方法和参数类型可能会导致无法正常的调用。
+首先先让我们看一个复杂参数的接口定义
+public String testMethod(Map&amp;lt;String,ResourceVo&amp;gt; map, List&amp;lt;Map&amp;lt;String,ResourceVo&amp;gt;&amp;gt; list) throws BizException;  Gson反序列化复杂类型 在对参数进行反序列化时，内部的类型容易丢失，我们可以使用gson的Type进行反序列化得到正确的参数值，让我们看一下gson反序列化的两个方法
+ /** * This method deserializes the specified Json into an object of the specified class. It is not * suitable to use if the specified class is a generic type since it will not have the generic * type information because of the Type Erasure feature of Java. Therefore, this method should not * be used if the desired type is a generic type.</description>
+    </item>
+    
+    <item>
+      <title>New Version V1.2.0, Dubbo Plugin for Apache JMeter</title>
+      <link>https://ningyu1.github.io/site/post/68-jmeter-plugin-dubbo-1.2.0/</link>
+      <pubDate>Tue, 13 Mar 2018 13:18:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/68-jmeter-plugin-dubbo-1.2.0/</guid>
+      <description>项目地址 jmeter-plugin-dubbo项目已经transfer到dubbo group下
+github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+V1.2.0  使用gson进行json序列化、反序列化 使用dubbo泛化调用方式重构反射调用方式 支持复杂类型、支持泛型，例如：&amp;rdquo;java.lang.List,Map map,List&amp;gt; list&amp;rdquo;  本次版本主要对反射参数类型进行了增强，支持复杂类型、支持参数泛型，可以参考如下的参数对照表：
+   Java类型 paramType paramValue     int int 1   double double 1.2   short short 1   float float 1.2   long long 1   byte byte 字节   boolean boolean true或false   char char A，如果字符过长取值为：&amp;rdquo;STR&amp;rdquo;.charAt(0)   java.lang.String java.lang.String或String或string 字符串   java.</description>
+    </item>
+    
+    <item>
+      <title>Bug Fix Version V1.1.0, Dubbo Plugin for Apache JMeter</title>
+      <link>https://ningyu1.github.io/site/post/66-jmeter-plugin-dubbo-bugfix/</link>
+      <pubDate>Wed, 07 Mar 2018 18:00:54 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/66-jmeter-plugin-dubbo-bugfix/</guid>
+      <description>首先先感谢网友 @流浪的云 提的bug，让我感觉到写这个工具没有白费还有点价值，非常感谢，
+他在使用jmeter-plugin-dubbo插件时发现GUI中输入的信息无法使用Jmeter变量${var}与函数来进行参数化，以下是我修复这个问题的记录。
+项目地址 jmeter-plugin-dubbo项目已经transfer到dubbo group下
+github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+问题描述  jmeter-plugin-dubbo插件GUI输入的信息无法使用${var}变量来进行参数化  问题修复 Jmeter的输出要想使用用户自定义变量、CSV变量、BeanShell、函数来进行参数化，必须将输入的参数通过JMeterProperty的子类add到Jmeter管理。如果使用的是Swing的Bean绑定机制可以很好的支持变量与函数参数化，如果是手写的GUI与Sample就需要注意这一点，可能写出来的插件不能使用变量${var}参数化。
+我之前在处理参数值在GUI和Sample之间传递时，没有使用org.apache.jmeter.testelement.property.JMeterProperty系列子类来处理参数，因此变量无法支持，让我们来看一下区别。
+先让我们看一下org.apache.jmeter.testelement.property.JMeterProperty都有哪些子类。
+我们之前使用的参数赋值是这样的：
+public String getVersion() { return this.getPropertyAsString(FIELD_DUBBO_VERSION, DEFAULT_VERSION); } public void setVersion(String version) { this.setProperty(FIELD_DUBBO_VERSION, version); }  这种方式是无法支持使用${var}变量来参数化赋值的（也就是动态赋值）。
+我们应该给setProperty传入JMeterProperty的子类来支持变量参数化，如下：
+public String getVersion() { return this.getPropertyAsString(FIELD_DUBBO_VERSION, DEFAULT_VERSION); } public void setVersion(String version) { this.setProperty(new StringProperty(FIELD_DUBBO_VERSION, version)); }  ps.注意setProperty的使用不一样，这里使用的是new StringProperty
+上面的参数还相对简单的普通字符串参数，当我们遇到集合或更加复杂的参数类型时如何处理？
+我本以为使用JMeterProperty的子类CollectionProperty是可以让集合参数支持变量参数化的，结果测试下来没有任何用，传入的${var}变量，在运行的时候还是变量没有变成相应的值。
+于是又换成MapProperty和ObjectProperty一样无法支持变量参数化。
+查看Jmeter Plugins的Http Sample源码，看他是如何处理的。
+org.apache.jmeter.protocol.http.util.HTTPArgument源码 package org.apache.jmeter.protocol.http.util; import java.</description>
+    </item>
+    
+    <item>
+      <title>Dubbo接口如何在Jmeter中测试，自研Dubbo Plugin for Apache JMeter</title>
+      <link>https://ningyu1.github.io/site/post/60-jmeter-plugins-dubbo-support/</link>
+      <pubDate>Fri, 09 Feb 2018 15:39:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/60-jmeter-plugins-dubbo-support/</guid>
+      <description>最近公司测试需要对Dubbo的RPC接口进行测试，测试工具使用的是Jmeter，按照常规的做法需要包装一个Java请求，再配合Jmeter的Java Sample去做测试，这种做法是最简单最普遍的，但是这个方法不够灵活和方便，那我们能不能写一个Jmeter Plugin来解决这个问题？让Dubbo RPC接口测试更为方便一些？
+那我们先了解一下Jmeter的插件机制
+Jmeter Plugin 先来看一下Jmeter的核心组件
+ Sample 取样器，这个是最主要的组件，测试的内容主要是靠Sample来实现，我们常见的Sample有，HttpSample、FTPSample、JavaSample、SMTPSample、LDAPSample等。 Timer 定时器，主要用于配置sample之间的等待时间，可以查看：org.apache.jmeter.timers.RandomTimer ConfigElement 配置组件，主要用于定义前置配置。如数据库连接，csv输入数据集等。主要功能是将配置转换为变量设置到JMeter context中。 Assertion 验证Sampler的结果是否符合预期 PostProcessor 一般用于对Sampler结果进行二次加工 Visualizer 将sampler的结果进行可视化展示。 Controller 对sampler进行逻辑控制。 SampleListener 负责处理监听，基于事件机制。一般用于保存sampler的结果等耗费时间的操作。  Jmeter的插件机制比较简单，Jmeter提供了扩展类来支持自定义插件的开发。 继承org.apache.jmeter.samplers.gui.AbstractSamplerGui和org.apache.jmeter.samplers.AbstractSampler就可以完成一个插件开发。
+JMeter的GUI机制 由于Jmeter是一个基于Swing的GUI工具,所以开发插件需要对Java Swing GUI框架有一定了解。 JMeter内部有两种GUI的实现方式。
+第一种方式： 直接继承JMeterGUIComponent接口的抽象实现类:
+org.apache.jmeter.config.gui.AbstractConfigGui org.apache.jmeter.assertions.gui.AbstractAssertionGui org.apache.jmeter.control.gui.AbstractControllerGui org.apache.jmeter.timers.gui.AbstractTimerGui org.apache.jmeter.visualizers.gui.AbstractVisualizer org.apache.jmeter.samplers.gui.AbstractSamplerGui  通过Swing的Bean绑定机制 前者的好处是自由度高，可定制性强，但需要开发者关心GUI控件布局,以及从控件到Model的转换。后者基本不需要开发者接触到GUI层的东西，定义好Bean以及BeanInfo即可。但SampleListener不支持BeanInfo方式定义。
+ps.如果java swing比较熟悉的话推荐使用第一种方式，自由度高。
+下面是我写的插件DubboSample，主要用于Dubbo RPC接口测试。
+Dubbo Plugin for Apache JMeter jmeter-plugin-dubbo项目已经transfer到dubbo group下
+github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+DubboSample使用 支持Jmeter版本 Jmeter版本：3.0
+插件安装 插件包可以去github上下载。将插件包放入Jmeter的lib的ext下。
+${Path}\apache-jmeter-3.0\lib\ext  如果使用的是:jmeter-plugins-dubbo-1.0.0-SNAPSHOT-jar-with-dependencies.jar包含所有依赖。
+如果使用的是：jmeter-plugins-dubbo-1.0.0-SNAPSHOT.jar需要自定添加插件的依赖包，推荐使用上面的包，依赖包版本如下：</description>
+    </item>
+    
+    <item>
+      <title>Dubbo本地调试最优方式，本地Server端调用本地Client端</title>
+      <link>https://ningyu1.github.io/site/post/09-dubbo-debug/</link>
+      <pubDate>Tue, 20 Dec 2016 14:32:41 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/09-dubbo-debug/</guid>
+      <description>分布式应用的调试总是比常规项目开发调试起来要麻烦很多。 我们还在为搞不清自己请求的服务是本地服务还是服务器服务而苦恼吗？ 我们还在为配置文件被修改导致服务器上版本服务不正常而苦恼吗？ 接下来我介绍一个Dubbo在多环境调试的最优调试方式，在介绍之前先说一下我们现在的调试方式。
+不好的方式（现在的方式）： 现在本地调试，需要修改DubboServer.xml和DubboClient.xml配置文件
+将文件中的 dubbo:registry protocol=&amp;quot;zookeeper&amp;quot; address=&amp;quot;${dubbo.registry}&amp;quot; /&amp;gt; 修改为 &amp;lt;dubbo:registry address=&amp;quot;N/A&amp;quot; /&amp;gt;  这种方式的弊端：
+ 开发总是不注意将修改为address=&amp;ldquo;N/A&amp;rdquo;的文件提交到svn，在其他环境打包run起来，总是没有Export Service。 文件经常被改来改去容易冲突，冲突解决不好容易丢失配置。 无法很好的将本地调试和各环境的相互依赖分离开  最优的方式：
+ 创建一个properties文件，名字可以随便命名，我命名为：dubbo-local.properties，这个文件可以放在任何地方。该文件不提交到svn，我建议不要放在工程目录里以避免自己提交了都不知道，建议放在用户目录下${user.home}(不知道用户目录的自己去 度娘、谷哥、必硬) dubbo-local.properties文件内容如下：
+&amp;lt;!--注册中心变量 --&amp;gt; dubbo.registry=N/A &amp;lt;!--以下是你们DubboServer.xml中配置的需要Export Service，这里我建议你有几个要Export Service都配置在这里，后面是请求本地的地址 地址格式：dubbo://ip:port，这里需要注意的是，需要修改为自己dubbo服务的端口 --&amp;gt; com.domain.imprest.api.IImprestRecordService=dubbo://localhost:20812 com.domain.imprest.api.IImprestRequestService=dubbo://localhost:20812 com.domain.imprest.api.IImprestTrackService=dubbo://localhost:20812 com.domain.imprest.api.IImprestWriteoffService=dubbo://localhost:20812 com.domain.imprest.api.IImprestIOCollectService=dubbo://localhost:20812 com.domain.imprest.api.ISystemService=dubbo://localhost:20812 com.domain.imprest.api.IImprestDeptService=dubbo://localhost:20812  接下来启动你的Dubbo服务，在启动之前需要添加一下启动参数
+  参数：-Ddubbo.properties.file 值：dubbo-local.properties文件的本地地址，绝对地址   接下来启动你的web服务，在启动之前需要添加一下启动参数  参数：-Ddubbo.resolve.file 值：dubbo-local.properties文件的本地地址，绝对地址  ps.当你不想连接本地服务调试时，只需将启动参数去掉即可，无需修改配置文件，让配置文件一直保持清爽干净。 以后你就可以安心的本地调试你的程序了，再也不会因为服务没有Export出去、配置文件被修改而焦头烂额。
+Dubbo Plugin for Apache JMeter Dubbo Plugin for Apache JMeter是用来在Jmeter里更加方便的测试Dubbo接口而开发的插件，马上使用
+项目地址 github: jmeter-plugin-dubbo</description>
+    </item>
+    
+  </channel>
+</rss>

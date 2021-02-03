@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Connection Leak on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/connection-leak/</link>
+    <description>Recent content in Connection Leak on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Oct 2017 13:29:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/connection-leak/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数据源连接泄漏问题分析</title>
+      <link>https://ningyu1.github.io/site/post/35-datasource-connection-leak/</link>
+      <pubDate>Thu, 26 Oct 2017 13:29:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/35-datasource-connection-leak/</guid>
+      <description>目录：  问题现象 问题分析 修改验证 解决方案 总结  问题现象 开启druid数据源的连接泄漏开关（removeAbandoned=true），设置强制回收非法连接的超时时间为120（removeAbandonedTimeout=120,2分钟，目的是调试方便，让非法连接快速close掉）。 启动程序，等待2分钟会有连接泄漏的异常爆出，具体日志如下：
+2017-10-25 17:19:52.858 [qtp365976330-72] WARN org.jasig.cas.client.session.SingleSignOutHandler - Front Channel single sign out redirects are disabled when the &#39;casServerUrlPrefix&#39; value is not set. 2017-10-25 17:21:56.531 [Druid-ConnectionPool-Destroy-678372234] ERROR com.alibaba.druid.pool.DruidDataSource - abandon connection, open stackTrace at java.lang.Thread.getStackTrace(Thread.java:1588) at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:995) at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4544) at com.alibaba.druid.filter.FilterAdapter.dataSource_getConnection(FilterAdapter.java:2723) at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4540) at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:661) at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4540) at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:919) at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:911) at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:98) at com.github.pagehelper.PageHelper.initSqlUtil(PageHelper.java:165) at com.github.pagehelper.PageHelper.intercept(PageHelper.java:148) at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:60) at com.</description>
+    </item>
+    
+  </channel>
+</rss>

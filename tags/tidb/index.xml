@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tidb on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/tidb/</link>
+    <description>Recent content in Tidb on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Apr 2018 20:13:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/tidb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TiDB使用笔记 —— 测试环境集群部署</title>
+      <link>https://ningyu1.github.io/site/post/76-tidb-notes/</link>
+      <pubDate>Tue, 10 Apr 2018 20:13:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/76-tidb-notes/</guid>
+      <description>TiDB是一个NewSql的分布式数据库，具体介绍我们引用官方的简介
+简介 TiDB 是 PingCAP 公司受 Google Spanner / F1 论文启发而设计的开源分布式 NewSQL 数据库。
+TiDB 具备如下 NewSQL 核心特性：
+SQL支持（TiDB 是 MySQL 兼容的） 水平弹性扩展（吞吐可线性扩展） 分布式事务 跨数据中心数据强一致性保证 故障自恢复的高可用 海量数据高并发实时写入与实时查询（HTAP 混合负载） TiDB 的设计目标是 100% 的 OLTP 场景和 80% 的 OLAP 场景，更复杂的 OLAP 分析可以通过 TiSpark 项目来完成。
+TiDB 对业务没有任何侵入性，能优雅的替换传统的数据库中间件、数据库分库分表等 Sharding 方案。同时它也让开发运维人员不用关注数据库 Scale 的细节问题，专注于业务开发，极大的提升研发的生产力。
+我们来看一下TiDB的架构图
+架构图 从架构图中可以看出TiDB的三大组件都支持水平扩展而且内部通信使用的是gRPC，关于TiDB和gRPC的那些事可以查看InfoQ的文章：《TiDB与gRPC的那点事》
+TiDB使用的TiKV作为存储，官方建议至少TiKV使用ssd硬盘，如果条件好pd模块最好也使用ssd硬盘。
+下来我们具体看一下三大组件分别都是干什么的
+TiDB Server TiDB Server 负责接收 SQL 请求，处理 SQL 相关的逻辑，并通过 PD 找到存储计算所需数据的 TiKV 地址，与 TiKV 交互获取数据，最终返回结果。 TiDB Server 是无状态的，其本身并不存储数据，只负责计算，可以无限水平扩展，可以通过负载均衡组件（如LVS、HAProxy 或 F5）对外提供统一的接入地址。</description>
+    </item>
+    
+  </channel>
+</rss>

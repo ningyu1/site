@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh Key on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/ssh-key/</link>
+    <description>Recent content in Ssh Key on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Jan 2018 16:10:20 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/ssh-key/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git SSH Key settings and passphrase reset</title>
+      <link>https://ningyu1.github.io/site/post/58-git-ssh/</link>
+      <pubDate>Tue, 30 Jan 2018 16:10:20 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/58-git-ssh/</guid>
+      <description>在使用github仓库的时候我们经常会看到clone有两种方式:https、ssh，https的方式使用起来非常简单但是每次在pull、push的时候需要输入密码，一两次还可以忍受但是作为常态是有点崩溃的，这个时候我们可以使用ssh的方式，ssh的好处就是在pull、push的时候可以使用密码也可以不使用密码，但是前提是要设置好ssh key，如果你是Repository的管理员那很好设置，如果不是管理员那就老老实实的使用https的方式，下来我们就说一下使用ssh遇到的问题。
+修改用户主目录（home） 当出现下图问题时：
+是说明你的.ssh目录设置的有问题，关于用户主目录（home）的问题，一般windows机器安装完git后home都会是C:\Users\用户名这种目录，但是打开Git bash时它无法识别home目录使用到了其他莫名其妙的目录（有的时候会是不存在的目录或是网络盘符），在这个时候就需要变更home目录，变更的方法如下：
+环境：windows
+Git version 1.x系列 如果是Git version 1.x系列，打开profile文件，文件位置：$\Git\etc\profile（$替换成你的盘符）。 在profile中找到：HOME=&amp;quot;$(cd &amp;quot;$HOME&amp;quot; ; pwd)&amp;quot;这个位置，在前面增加你想变成的home目录，例如：
+# normalize HOME to unix path HOME=&amp;quot;C:\Users\用户名&amp;quot; HOME=&amp;quot;$(cd &amp;quot;$HOME&amp;quot; ; pwd)&amp;quot; export PATH=&amp;quot;$HOME/bin:$PATH&amp;quot; export GNUPGHOME=~/.gnupg  当修改好之后，重启Git bash即可，输入cd ~/.ssh，会进入你设置好的目录，在这个目录下生成相关的配置文件，如：.ssh、.gnupg、.bash_history、.gitconfig等，如果以前已经有这些文件可以copy到这个目录下直接使用。
+Git version 2.x系列 如果是Git version 2.x系列，请设置环境变量，增加HOME的环境变量，目录为：C:\Users\用户名（你想设置的目录），随后重启Git bash即可，输入cd ~/.ssh，会进入你设置好的目录。
+按照上面步骤修改好之后，出现下图所示就证明修改完成了。如：
+ssh key设置 输入cd ~/.ssh进入home目录使用如下如下方法生成ssh key
+ 可以在Git bash中使用ssh-keygen生成ssh key 还可以使用eclipse的ssh2工具生成，操作如下：Window -&amp;gt; Preferences -&amp;gt; General -&amp;gt; Network Connections -&amp;gt; SSH -&amp;gt; Key Management -&amp;gt; Generate RSA Key 还可以使用TortoiseGit的PuTTY Key Generator工具生成。  方法有很多，生成好的private key用文本编辑器打开复制出来，粘贴到git hub的settings中即可，操作如下：github -&amp;gt; Settings -&amp;gt; SSH and GPG keys -&amp;gt; New SSH key，起个名字粘贴key然后保存即可。</description>
+    </item>
+    
+  </channel>
+</rss>

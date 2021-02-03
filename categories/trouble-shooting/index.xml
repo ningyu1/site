@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Trouble Shooting on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/categories/trouble-shooting/</link>
+    <description>Recent content in Trouble Shooting on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Oct 2018 18:40:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/categories/trouble-shooting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Trouble Shooting —— jms:listener-container配置queue的concurrency数量与预期不一致</title>
+      <link>https://ningyu1.github.io/site/post/103-activemq-listener-concurrency/</link>
+      <pubDate>Tue, 30 Oct 2018 18:40:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/103-activemq-listener-concurrency/</guid>
+      <description>问题描述  现象一 现象二  测试消费者 测试后结论  问题描述 测试程序时发现queue的consumer数量配置与预期不一致，具体如何不一致看下面的测试。
+现象一 当我们使用下面配置，listener使用同一个task-executor并且监听三个queue时，consumer使用20-20，只会有一个queue能达到20个consumer，其余两个queue的consumer=0
+&amp;lt;bean id=&amp;quot;queueMessageExecutor1&amp;quot; class=&amp;quot;org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;corePoolSize&amp;quot; value=&amp;quot;20&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;maxPoolSize&amp;quot; value=&amp;quot;20&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;daemon&amp;quot; value=&amp;quot;true&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;keepAliveSeconds&amp;quot; value=&amp;quot;120&amp;quot; /&amp;gt; &amp;lt;/bean&amp;gt; &amp;lt;jms:listener-container task-executor=&amp;quot;queueMessageExecutor1&amp;quot; destination-type=&amp;quot;queue&amp;quot; container-type=&amp;quot;default&amp;quot; connection-factory=&amp;quot;pooledConnectionFactory&amp;quot; concurrency=&amp;quot;20-20&amp;quot; acknowledge=&amp;quot;auto&amp;quot; receive-timeout=&amp;quot;60000&amp;quot;&amp;gt; &amp;lt;jms:listener destination=&amp;quot;QUEUE.EMAIL&amp;quot; ref=&amp;quot;mailMessageListener&amp;quot; /&amp;gt; &amp;lt;jms:listener destination=&amp;quot;QUEUE.SMS&amp;quot; ref=&amp;quot;smsMessageListener&amp;quot; /&amp;gt; &amp;lt;jms:listener destination=&amp;quot;QUEUE.WECHAT&amp;quot; ref=&amp;quot;wechatMessageListener&amp;quot; /&amp;gt; &amp;lt;/jms:listener-container&amp;gt;  效果如下图：
+现象二 当我们去掉listener-container的receive-timeout=&amp;quot;60000&amp;quot;的配置，三个queue的consumer都等于20。
+&amp;lt;bean id=&amp;quot;queueMessageExecutor1&amp;quot; class=&amp;quot;org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;corePoolSize&amp;quot; value=&amp;quot;20&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;maxPoolSize&amp;quot; value=&amp;quot;20&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;daemon&amp;quot; value=&amp;quot;true&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;keepAliveSeconds&amp;quot; value=&amp;quot;120&amp;quot; /&amp;gt; &amp;lt;/bean&amp;gt; &amp;lt;jms:listener-container task-executor=&amp;quot;queueMessageExecutor1&amp;quot; destination-type=&amp;quot;queue&amp;quot; container-type=&amp;quot;default&amp;quot; connection-factory=&amp;quot;pooledConnectionFactory&amp;quot; concurrency=&amp;quot;20-20&amp;quot; acknowledge=&amp;quot;auto&amp;quot;&amp;gt; &amp;lt;jms:listener destination=&amp;quot;QUEUE.</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— 莫名其妙的java.lang.NoClassDefFoundError: org.springframework.beans.FatalBeanException异常</title>
+      <link>https://ningyu1.github.io/site/post/102-noclassdeffounderror/</link>
+      <pubDate>Sat, 29 Sep 2018 15:30:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/102-noclassdeffounderror/</guid>
+      <description>问题描述 问题分析  尝试一 尝试二 尝试三 尝试四  解决方法  问题描述 最近运维在部署应用的时候偶尔会碰到下面的异常：
+Exception in thread &amp;quot;main&amp;quot; java.lang.NoClassDefFoundError: org.springframework.beans.FatalBeanException at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547) at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475) at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304) at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228) at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300) at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195) at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700) at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760) at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482) at org.springframework.context.support.ClassPathXmlApplicationContext.&amp;lt;init&amp;gt;(ClassPathXmlApplicationContext.java:139) at org.springframework.context.support.ClassPathXmlApplicationContext.&amp;lt;init&amp;gt;(ClassPathXmlApplicationContext.java:93) at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50) at com.alibaba.dubbo.container.Main.main(Main.java:80)  这个异常看上去是org.springframework.beans.FatalBeanException在运行时找不到class，但是调试起来很懵逼。
+问题分析 尝试一 怀疑这个类org.springframework.beans.FatalBeanException在classloader的时候无法找到。
+这个类org.springframework.beans.FatalBeanException在spring-beans包下，查看打包的lib下存在spring-beans包，查看运行jar中的META-INF下的MANIFEST.MF文件中也有lib/spring-beans-4.0.0.RELEASE.jar
+因此排除了这个怀疑。
+ps.这里要区分一下NoClassDefFoundError和ClassNotFoundException异常看这篇文章
+尝试二 这个类在spring-beans包中，那是不是这个jar包损坏无法读取？
+查看了jar包信息以及打开与解压也排除了jar包损坏的可能性。
+尝试三 修改log级别改为debug看会不会有更多的日志输出。
+通过日志级别的调整为debug后，除了都了一些debug的常规日志以外，错误相关的日志还是跟上面的输出一样，因此也是无济于事。
+尝试四 通过arthas观察org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory这个类的doCreateBean这个方法异常的输出。
+arthas ${pid} watch org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory doCreateBean &amp;quot;{params, throwExp}&amp;quot; -e -x 2  发现如下更多的日志：</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— MyBatis的PropertyTokenizer抛NPE异常</title>
+      <link>https://ningyu1.github.io/site/post/97-mybatis-npe/</link>
+      <pubDate>Mon, 20 Aug 2018 17:48:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/97-mybatis-npe/</guid>
+      <description>这个文章转自公司内网WIKI，同事调试的问题以及问题分析过程，我觉得挺好的所以转载出来。
+问题描述 多任务同时处理时会报出如下NPE异常，堆栈信息如下：
+2018-08-10 18:16:10.938 [xxxExecutor-2] ERROR c.j.bmc.mq.listener.xxxResultListener org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: ### Error querying database. Cause: java.lang.NullPointerException ### Cause: java.lang.NullPointerException at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:75) ~[mybatis-spring-1.2.2.jar:1.2.2] at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:371) ~[mybatis-spring-1.2.2.jar:1.2.2] at com.sun.proxy.$Proxy21.selectList(Unknown Source) ~[na:na] at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:198) ~[mybatis-spring-1.2.2.jar:1.2.2] at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:119) ~[mybatis-3.2.7.jar:3.2.7] at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:63) ~[mybatis-3.2.7.jar:3.2.7] at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52) ~[mybatis-3.2.7.jar:3.2.7] at com.sun.proxy.$Proxy49.findBillBillingTask(Unknown Source) ~[na:na] at com.xxx.service.impl.XXXServiceImpl.findBillBillingTask(XXXServiceImpl.java:118) ~[bmc-service-0.0.1-SNAPSHOT.jar:na] at com.xxx.service.impl.XXXServiceImpl$$FastClassByCGLIB$$7d4463f0.invoke(&amp;lt;generated&amp;gt;) ~[spring-core-4.0.0.RELEASE.jar:na] at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:713) ~[spring-aop-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98) ~[spring-tx-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262) ~[spring-tx-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.</description>
+    </item>
+    
+    <item>
+      <title>Mysql数据库字符集utf8mb4使用问题</title>
+      <link>https://ningyu1.github.io/site/post/81-mysql-utf8mb4/</link>
+      <pubDate>Mon, 14 May 2018 14:38:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/81-mysql-utf8mb4/</guid>
+      <description>问题发生在这个字上，首先先让我们看这个字的字符信息
+utf8字符集信息 Utf-8 Character
+Symbol information table
+   Name: Utf-8 Character     Unicode Subset: CJK Extension B   Unicode HEX: U+20046   ASCII value: 131142   HTML: &amp;#131142;   CSS: \20046    它属于utf8的字符集，具体可参考：传送门
+既然属于utf8的字符集那为什么数据库保存这个字会出现非法字符的错误呢？错误如下：
+### Cause: java.sql.SQLException: Incorrect string value: &#39;\xF0\xA5\x8A\x8D&#39; for column &#39;DESCRIPTION&#39; at row 1 ; uncategorized SQLException for SQL []; SQL state [HY000]; error code [1366]; Incorrect string value: &#39;\xF0\xA5\x8A\x8D&#39; for column &#39;DESCRIPTION&#39; at row 1; nested exception is java.</description>
+    </item>
+    
+    <item>
+      <title>ActiveMQ消息消费慢问题排查</title>
+      <link>https://ningyu1.github.io/site/post/80-activemq-consumer-slow-speed/</link>
+      <pubDate>Wed, 09 May 2018 15:38:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/80-activemq-consumer-slow-speed/</guid>
+      <description>问题现象 有的时候会发现ActiveMQ中某个个队列的消息在写入后，不是立刻就被调度消费，而是需要等待一小会才能被调度消费（大概时间是1分钟），而且还伴随着这样的现象，当消息写入速度很快时消费很快，当消息写入消息速度很慢时反而消费很慢，我们的理解就是当写入慢的时候很多消费者都是闲置的那为什么消费反而会变慢？
+问题原因 跟了一下代码发现了跟我们的设置有很大关系，因为我们设置的receiveTimeout=6000（1分钟）接受阻塞时间为1分钟。
+ActiveMQ在消费时每个consumer会独占一个Thread，Thead中通过consumer.receive()去阻塞，只有当consumer消费了maxMessagesPerTask个消息后，才会退出线程，由taskExecutor重新调度，maxMessagesPerTask这个值默认为10，可以通过下面代码得知：
+@Override public void initialize() { // Adapt default cache level. if (this.cacheLevel == CACHE_AUTO) { this.cacheLevel = (getTransactionManager() != null ? CACHE_NONE : CACHE_CONSUMER); } // Prepare taskExecutor and maxMessagesPerTask. synchronized (this.lifecycleMonitor) { if (this.taskExecutor == null) { this.taskExecutor = createDefaultTaskExecutor(); } else if (this.taskExecutor instanceof SchedulingTaskExecutor &amp;amp;&amp;amp; ((SchedulingTaskExecutor) this.taskExecutor).prefersShortLivedTasks() &amp;amp;&amp;amp; this.maxMessagesPerTask == Integer.MIN_VALUE) { // TaskExecutor indicated a preference for short-lived tasks. According to // setMaxMessagesPerTask javadoc, we&#39;ll use 10 message per task in this case // unless the user specified a custom value.</description>
+    </item>
+    
+    <item>
+      <title>ActiveMQ发送速度慢问题排查</title>
+      <link>https://ningyu1.github.io/site/post/38-activemq-slow-speed/</link>
+      <pubDate>Thu, 09 Nov 2017 17:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/38-activemq-slow-speed/</guid>
+      <description>目录：  关于使用发送消息给activemq的同步/异步发送问题需要注意 同步/异步发送使用场景 maxConnections配置问题注意事项 idleTimeout配置问题注意事项 关于Failover的问题  关于使用发送消息给activemq的同步/异步发送问题需要注意 activemq发送异步参数：useAsyncSend与发送超时参数：sendTimeout是存在冲突的， 1. 当useAsyncSend=true，没有sendTimeout参数时（sendTimeout默认值0秒），走异步发送 2. 当useAsyncSend=false，没有sendTimeout参数时（sendTimeout默认值0秒），走同步发送 3. 当useAsyncSend=true，sendTimeout=1000，优先根据sendTimeout参数走同步发送
+同步/异步发送使用场景 场景一：业务可以容忍消息丢失（日志记录）这样的场景使用： 使用：异步发送 配置：useAsyncSend=true，sendTimeout不配置（sendTimeout默认值0秒） 注意：可以不需要补偿机制
+场景二：业务不能容忍消息丢失，这样的场景使用： 使用1：异步发送 配置1：useAsyncSend=true，sendTimeout不配置（sendTimeout默认值0秒） 注意1：当异步发送消息失败或异常导致消息丢失时有补偿的做法（如：定时任务、重发消息、等） 使用2：同步发送 配置2：useAsyncSend=false（useAsyncSend默认值false），sendTimeout=2000（超时时间一定要配置） 注意2：可以不需要补偿机制
+场景三：业务必须将消息发送和jdbc事务放在一个事务内，保证数据的强一致性，这样的场景使用： 使用：同步发送 配置：useAsyncSend=false（useAsyncSend默认值false），sendTimeout=2000（超时时间一定要配置） 注意：消息发送的超时时间（sendTimeout）&amp;lt; jdbc事务超时时间
+禁止使用的配置： 配置：useAsyncSend=false（useAsyncSend默认值false），sendTimeout不配置（sendTimeout默认值0秒） 注意：上面不配置超时时间的同步发送会造成请求阻塞在这里。
+maxConnections配置问题注意事项 根据activemq的连接池实现代码，发现maxconnections不适合设置很大，除非并发非常高的情况下，因为现在activemq创建一个连接平均在1-2秒钟左右，根据activemq的连接实现发现
+if (getConnectionsPool().getNumIdle(key) &amp;lt; getMaxConnections()) { try { connectionsPool.addObject(key); connection = mostRecentlyCreated.getAndSet(null); connection.incrementReferenceCount(); } catch (Exception e) { throw createJmsException(&amp;quot;Error while attempting to add new Connection to the pool&amp;quot;, e); } } else { try { // We can race against other threads returning the connection when there is an // expiration or idle timeout.</description>
+    </item>
+    
+    <item>
+      <title>atomikos jta(xa) transaction问题：Already mapped: xxxx</title>
+      <link>https://ningyu1.github.io/site/post/36-atomikos-transactions-trouble/</link>
+      <pubDate>Thu, 02 Nov 2017 15:52:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/36-atomikos-transactions-trouble/</guid>
+      <description>目录：  问题现象 问题分析 修改验证 解决方案 总结  问题现象 库存中心在压测过程中会时不时的报错，错误如下：
+2017-11-02 11:38:37.620 [DubboServerHandler-10.27.69.168:20888-thread-156] ERROR xx.xx.inv.service.impl.OptionApiImpl - java.lang.IllegalStateException: Already mapped: 10.27.69.168.tm150959391756909559 xx.xx.exception.BizException: java.lang.IllegalStateException: Already mapped: 10.27.69.168.tm150959391756909559 at xx.xx.inv.service.impl.OptionApiImpl.invWmsOption(OptionApiImpl.java:290) ~[inv-api-impl-1.0.1-SNAPSHOT.jar:na] at com.alibaba.dubbo.common.bytecode.Wrapper1.invokeMethod(Wrapper1.java) [na:2.5.3] at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:46) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:72) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.filter.AccessLogFilter.invoke(AccessLogFilter.java:199) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.filter.ExceptionFilter.invoke(ExceptionFilter.java:64) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.filter.TimeoutFilter.invoke(TimeoutFilter.java:42) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.dubbo.filter.TraceFilter.invoke(TraceFilter.java:78) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.</description>
+    </item>
+    
+    <item>
+      <title>数据源连接泄漏问题分析</title>
+      <link>https://ningyu1.github.io/site/post/35-datasource-connection-leak/</link>
+      <pubDate>Thu, 26 Oct 2017 13:29:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/35-datasource-connection-leak/</guid>
+      <description>目录：  问题现象 问题分析 修改验证 解决方案 总结  问题现象 开启druid数据源的连接泄漏开关（removeAbandoned=true），设置强制回收非法连接的超时时间为120（removeAbandonedTimeout=120,2分钟，目的是调试方便，让非法连接快速close掉）。 启动程序，等待2分钟会有连接泄漏的异常爆出，具体日志如下：
+2017-10-25 17:19:52.858 [qtp365976330-72] WARN org.jasig.cas.client.session.SingleSignOutHandler - Front Channel single sign out redirects are disabled when the &#39;casServerUrlPrefix&#39; value is not set. 2017-10-25 17:21:56.531 [Druid-ConnectionPool-Destroy-678372234] ERROR com.alibaba.druid.pool.DruidDataSource - abandon connection, open stackTrace at java.lang.Thread.getStackTrace(Thread.java:1588) at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:995) at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4544) at com.alibaba.druid.filter.FilterAdapter.dataSource_getConnection(FilterAdapter.java:2723) at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4540) at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:661) at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4540) at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:919) at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:911) at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:98) at com.github.pagehelper.PageHelper.initSqlUtil(PageHelper.java:165) at com.github.pagehelper.PageHelper.intercept(PageHelper.java:148) at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:60) at com.</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Enable AOF可能导致整个Redis被Block住，在3.0.6版本仍然存在</title>
+      <link>https://ningyu1.github.io/site/post/32-redis-aof/</link>
+      <pubDate>Mon, 09 Oct 2017 09:53:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/32-redis-aof/</guid>
+      <description>Redis会有短暂的几秒Block，应用报：Jedis connection failed, retrying&amp;hellip; 这个问题现象是这样的，应用周期性的报：Jedis connection failed, retrying&amp;hellip;，Redis开启AOF会被Block住导致无法连接，查看redis的日志
+1486:M 09 Oct 09:33:18.072 * 10 changes in 300 seconds. Saving... 1486:M 09 Oct 09:33:18.075 * Background saving started by pid 20706 1486:M 09 Oct 09:33:34.011 * Asynchronous AOF fsync is taking too long (disk is busy?). Writing the AOF buffer without waiting for fsync to complete, this may slow down Redis. 20706:C 09 Oct 09:33:42.629 * DB saved on disk 20706:C 09 Oct 09:33:42.</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Redis AOF rewrite错误导致Redis被Block住</title>
+      <link>https://ningyu1.github.io/site/post/11-redis-aof-pit/</link>
+      <pubDate>Tue, 15 Aug 2017 10:30:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/11-redis-aof-pit/</guid>
+      <description>问题现状： redis-cli 上去执行任何命令返回：connnection reset by peer
+重启的应用无法连接到redis，已经建立连接的应用可以正常使用。
+分析过程： 第一反应查看redis 日志，如下：
+1838:M 16 Aug 01:07:39.319 # Error opening /setting AOF rewrite IPC pipes: Numerical result out of range 1838:M 16 Aug 01:07:39.319 * Starting automatic rewriting of AOF on 110% growth 1838:M 16 Aug 01:07:39.319 # Error opening /setting AOF rewrite IPC pipes: Numerical result out of range 1838:M 16 Aug 01:07:39.419 * Starting automatic rewriting of AOF on 110% growth 1838:M 16 Aug 01:07:39.</description>
+    </item>
+    
+    <item>
+      <title>Nginx 502 Bad Gateway问题分析与踩过的坑</title>
+      <link>https://ningyu1.github.io/site/post/03-nginx-502-bad-gateway/</link>
+      <pubDate>Fri, 30 Jun 2017 18:36:44 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/03-nginx-502-bad-gateway/</guid>
+      <description>我相信使用Nginx的都会遇到过502 504 这种bad gateway错误，下面我把碰到这个问题分析过程记录并分享出来。 先让我们看一下具体的错误信息
+502 Bad Gateway The proxy server received an invalid response from an upstream server  从字面上的意思理解，nginx从upstream没有接受到信息，第一感觉就是连接被close？还是超时了？超时的话一般错误信息是 timeout
+下面是尝试解决这个问题尝试过的手段
+1. 第一感觉是proxy返回超时，因此查找nginx官方文档，找到关于proxy的timeout设置 Syntax:	proxy_connect_timeout time; Default:	proxy_connect_timeout 60s; Context:	http, server, location Defines a timeout for establishing a connection with a proxied server. It should be noted that this timeout cannot usually exceed 75 seconds.  ps. 这个时间不能超过75秒
+Syntax:	proxy_read_timeout time; Default:	proxy_read_timeout 60s; Context:	http, server, location Defines a timeout for reading a response from the proxied server.</description>
+    </item>
+    
+  </channel>
+</rss>

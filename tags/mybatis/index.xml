@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mybatis on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/mybatis/</link>
+    <description>Recent content in Mybatis on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Feb 2019 14:34:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/mybatis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>疑似Batch处理事务问题，保存了该回滚的数据</title>
+      <link>https://ningyu1.github.io/site/post/110-mybatis-batch/</link>
+      <pubDate>Wed, 20 Feb 2019 14:34:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/110-mybatis-batch/</guid>
+      <description>这篇文章转自公司内网wiki中一篇不错的问题分析文章，
+问题描述  两个事物， 在第一个事务报错是则执行第二个事务 两个事物都是执行下面的批量操作 两个事务的批量操作是插入到相同的两张表中，如下代码 第一个事务预计在第一个表中插入3条记录， 第二个表中插入3条记录，但是第一个表的第一个记录就违反了约束，报错异常； 第一个事务失败后，执行第二个事务，第二个事务插入两个表中各一条记录。 实际结果：第一个表有一条记录（第二个事务中插入的），第二个表中有4条记录（除了第二个事务中的一条，还有第一个事务中的3条数据）  问题点是在第一个事务抛异常回滚了，第一个表成功回滚，但是第二个事务将第一个事务中的第二个表的数据提交了。
+问题原因  我们说明批量操作是指：如下的样例:insert into t(field) values(v1),(v2),(v3) sqlSession.commit();实际上并不是事务的commit，而只是执行sql 2个事务绑定的是同一个connection。 在一个mybatis的sqlSession 批量中操作两张表，则会生成两个prepareStatement， 而prepareStatement对象在mybatis中有cache。 回滚时回滚到savepoint  基于上面6点， 当第一个事务的第一个表执行是失败后（在第一个表的失败位置上设置一个savepoint，回滚时值回滚到这个savepoint，第二个preparestatement被缓存了）
+问题总结  本问题不设计到事务传播机制与隔离级别 本例为一个错误使用范例，即不能在一个mybatis的sqlSession批量中操作两张表  注意：PreparedStatement确实适合执行相同sql的批处理，Statement适合执行不同sql的批处理
+一些代码跟踪截图这里就不方便放出来请见谅。</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— 莫名其妙的java.lang.NoClassDefFoundError: org.springframework.beans.FatalBeanException异常</title>
+      <link>https://ningyu1.github.io/site/post/102-noclassdeffounderror/</link>
+      <pubDate>Sat, 29 Sep 2018 15:30:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/102-noclassdeffounderror/</guid>
+      <description>问题描述 问题分析  尝试一 尝试二 尝试三 尝试四  解决方法  问题描述 最近运维在部署应用的时候偶尔会碰到下面的异常：
+Exception in thread &amp;quot;main&amp;quot; java.lang.NoClassDefFoundError: org.springframework.beans.FatalBeanException at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547) at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475) at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304) at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228) at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300) at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195) at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700) at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760) at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482) at org.springframework.context.support.ClassPathXmlApplicationContext.&amp;lt;init&amp;gt;(ClassPathXmlApplicationContext.java:139) at org.springframework.context.support.ClassPathXmlApplicationContext.&amp;lt;init&amp;gt;(ClassPathXmlApplicationContext.java:93) at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50) at com.alibaba.dubbo.container.Main.main(Main.java:80)  这个异常看上去是org.springframework.beans.FatalBeanException在运行时找不到class，但是调试起来很懵逼。
+问题分析 尝试一 怀疑这个类org.springframework.beans.FatalBeanException在classloader的时候无法找到。
+这个类org.springframework.beans.FatalBeanException在spring-beans包下，查看打包的lib下存在spring-beans包，查看运行jar中的META-INF下的MANIFEST.MF文件中也有lib/spring-beans-4.0.0.RELEASE.jar
+因此排除了这个怀疑。
+ps.这里要区分一下NoClassDefFoundError和ClassNotFoundException异常看这篇文章
+尝试二 这个类在spring-beans包中，那是不是这个jar包损坏无法读取？
+查看了jar包信息以及打开与解压也排除了jar包损坏的可能性。
+尝试三 修改log级别改为debug看会不会有更多的日志输出。
+通过日志级别的调整为debug后，除了都了一些debug的常规日志以外，错误相关的日志还是跟上面的输出一样，因此也是无济于事。
+尝试四 通过arthas观察org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory这个类的doCreateBean这个方法异常的输出。
+arthas ${pid} watch org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory doCreateBean &amp;quot;{params, throwExp}&amp;quot; -e -x 2  发现如下更多的日志：</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— MyBatis的PropertyTokenizer抛NPE异常</title>
+      <link>https://ningyu1.github.io/site/post/97-mybatis-npe/</link>
+      <pubDate>Mon, 20 Aug 2018 17:48:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/97-mybatis-npe/</guid>
+      <description>这个文章转自公司内网WIKI，同事调试的问题以及问题分析过程，我觉得挺好的所以转载出来。
+问题描述 多任务同时处理时会报出如下NPE异常，堆栈信息如下：
+2018-08-10 18:16:10.938 [xxxExecutor-2] ERROR c.j.bmc.mq.listener.xxxResultListener org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: ### Error querying database. Cause: java.lang.NullPointerException ### Cause: java.lang.NullPointerException at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:75) ~[mybatis-spring-1.2.2.jar:1.2.2] at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:371) ~[mybatis-spring-1.2.2.jar:1.2.2] at com.sun.proxy.$Proxy21.selectList(Unknown Source) ~[na:na] at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:198) ~[mybatis-spring-1.2.2.jar:1.2.2] at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:119) ~[mybatis-3.2.7.jar:3.2.7] at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:63) ~[mybatis-3.2.7.jar:3.2.7] at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52) ~[mybatis-3.2.7.jar:3.2.7] at com.sun.proxy.$Proxy49.findBillBillingTask(Unknown Source) ~[na:na] at com.xxx.service.impl.XXXServiceImpl.findBillBillingTask(XXXServiceImpl.java:118) ~[bmc-service-0.0.1-SNAPSHOT.jar:na] at com.xxx.service.impl.XXXServiceImpl$$FastClassByCGLIB$$7d4463f0.invoke(&amp;lt;generated&amp;gt;) ~[spring-core-4.0.0.RELEASE.jar:na] at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:713) ~[spring-aop-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98) ~[spring-tx-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262) ~[spring-tx-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.</description>
+    </item>
+    
+    <item>
+      <title>MybatisSql获取工具类SqlHelper使用说明</title>
+      <link>https://ningyu1.github.io/site/post/20-mybatis-sqlhelper/</link>
+      <pubDate>Tue, 05 Sep 2017 17:50:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/20-mybatis-sqlhelper/</guid>
+      <description>项目地址 tsoft-common
+
+前言 有的时候我们想在代码中获取Mybatis方法的sql但是又不想去实际执行Mybatis的查询方法，可以使用该工具直接得到sql。
+Maven引入 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;cn.tsoft.framework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;tsoft-common&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  目标 SqlHelper是获取Mybatis方法的sql工具包，支持mybatis mapper方式和sqlmap方式，支持参数：entity，map，array，list，这个工具不需要你实际去执行Mybatis的查询方法就能得到sql，方法主要分两大类，使用命名空间namespace调用或者使用Mapper接口方式调用。
+测试方法 String sql = null; UserEntity entity = new UserEntity(); entity.setUserId(1L); entity.setPassword(&amp;quot;sdflkjsldjf&amp;quot;); entity.setPasswordExpire(new Date()); entity.setVersion(2L); List&amp;lt;Long&amp;gt; list = new ArrayList&amp;lt;Long&amp;gt;(); list.add(1L); list.add(2L); Long[] ids = new Long[]{1L,2L}; //方式一 sql = SqlHelper.getMapperSql(userMapper, &amp;quot;mobileIsExists&amp;quot;, 1L, &amp;quot;13800138000&amp;quot;); System.out.println(&amp;quot;方式一：参数为：@Param：&amp;quot;+sql); sql = SqlHelper.getMapperSql(userMapper, &amp;quot;mobileIsExists&amp;quot;); System.out.println(&amp;quot;方式一：参数为：无参：&amp;quot;+sql); sql = SqlHelper.getMapperSql(userMapper, &amp;quot;modifyPassword&amp;quot;, entity); System.out.println(&amp;quot;方式一：参数为：entity&amp;quot;+sql); sql = SqlHelper.getMapperSql(userMapper, &amp;quot;blockedArrays&amp;quot;, ids); System.out.println(&amp;quot;方式一：参数为：arrays&amp;quot;+sql); sql = SqlHelper.</description>
+    </item>
+    
+  </channel>
+</rss>

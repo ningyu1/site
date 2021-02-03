@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bbfreeze on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/bbfreeze/</link>
+    <description>Recent content in Bbfreeze on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 Feb 2018 11:57:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/bbfreeze/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何将Python脚本打包成可执行文件？</title>
+      <link>https://ningyu1.github.io/site/post/59-py2exe-pyinstaller/</link>
+      <pubDate>Wed, 07 Feb 2018 11:57:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/59-py2exe-pyinstaller/</guid>
+      <description>我们有时候经常会使用python写一些小工具，在Linux环境下可以很方便运行，因为Linux默认都会有python环境，我们只需要添加python脚本依赖的类库即可执行。但是有的时候我们需要把小工具给到一些麻瓜去用的时候就会出现一些问题，他们大多是在Windows上运行工具，那就必须要先准备python的可运行环境才行，这就给麻瓜们带来了使用成本，我们能否将python脚本打包成windows下可执行文件呢？
+接下来让我们先了解一下python有哪些类库可以帮助我们解决这个问题。
+这是一个来自Freezing Your Code的统计
+   Solution Windows Linux OS X Python 3 License One-file mode Zipfile import Eggs pkg_resources support     bbFreeze yes yes yes no MIT no yes yes yes   py2exe yes no no yes MIT yes yes no no   pyInstaller yes yes yes yes GPL yes no yes no   cx_Freeze yes yes yes yes PSF no yes yes no   py2app no no yes yes MIT no yes yes yes    我们能看到有很多类库都可以解决我们的问题，其中pyInstaller、cx_Freeze、bbFreeze都不错，pkg_resources新版的pyInstaller貌似是支持的。</description>
+    </item>
+    
+  </channel>
+</rss>

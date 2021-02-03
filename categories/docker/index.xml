@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/categories/docker/</link>
+    <description>Recent content in Docker on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Jun 2018 15:10:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker启动的容器如何清理日志？看这里</title>
+      <link>https://ningyu1.github.io/site/post/90-docker-container-cleanlog/</link>
+      <pubDate>Tue, 19 Jun 2018 15:10:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/90-docker-container-cleanlog/</guid>
+      <description>Docker run起来的容器随着时间久了，容器内的服务输出的日志也在日积月累，需要定期的进行日志清理。
+如果公司使用DevOps的话更加需要对容器内的日志进行定期清理，业务的镜像服务或许还好一些，因为开发同学每天都在用、每天都会upgrade服务，在upgrade的时候会删除老的容器，再重新run一个新容器去替换掉老的，但是有一些长期run的服务就很少有人关注了，比如说rancher、还有一些基础服务，可能很长时间也不会去做upgrade操作，因此容器内的日志就越来越多，如果不清理总有一天会撑爆服务器硬盘，到那个时候再去清理恢复服务的话，有可能会有磁盘文件损坏的风险。
+因此我们需要定期的对Docker容器内的日志进行清理。
+如何查看Docker内容器的日志？可以参考文章：《如何直接操作Docker容器？》
+在清理容器日志前，我们首先要知道Docker将容器的日志放在那里？
+Docker将容器的日志放在/var/lib/docker/containers/containerid/containerid-json.log
+ps. containerid是容器id一般是82bbc....这个风格，64位字符
+当然找不到的话也可以使用文件搜索的方式去查找Docker的容器日志放在那里，查找的时候按照上面的名称风格去查找，例如：
+find / -type f -name &amp;quot;*-json.log&amp;quot;  容器的id怎么查看呢？
+docker ps  通过ps找到容器id，也找到日志所在的位置后，接下来就是清理日志的操作了，日志文件不能直接删除，直接删除会影响正在运行的容器，可以通过清空文件内容的方式来处理。
+清空文件的方式有很多种如下：
+$ : &amp;gt; filename $ &amp;gt; filename $ echo &amp;quot;&amp;quot; &amp;gt; filename $ echo &amp;gt; filename $ cat /dev/null &amp;gt; filename  选一种即可
+cat /dev/null &amp;gt;/var/lib/docker/containers/containerid/containerid-json.log  </description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Docker Pull Image : error pulling image configuration: unexpected EOF错误</title>
+      <link>https://ningyu1.github.io/site/post/83-docker-pull-error/</link>
+      <pubDate>Tue, 29 May 2018 12:09:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/83-docker-pull-error/</guid>
+      <description>问题现象 执行docker pull命令报错：
+docker@rancher-192:~$ docker pull 192.168.0.34:5000/imageName:latest latest: Pulling from imageName 75a822cd7888: Pulling fs layer 046e44ee6057: Download complete 8c47541cb10b: Waiting e17edf9a1bd4: Waiting error pulling image configuration: unexpected EOF  查看日志错误如下：
+docker@rancher-192:~$ journalctl -u docker.service -- Logs begin at Mon 2018-05-14 04:14:07 CST, end at Tue 2018-05-29 11:31:02 CST. -- May 29 11:28:22 rancher-192.168.0.83 docker[993]: time=&amp;quot;2018-05-29T11:28:22.601383366+08:00&amp;quot; level=error msg=&amp;quot;Not continuing with pull after error: error pulling image configuration: unexpected EOF&amp;quot; May 29 11:30:36 rancher-192.</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Docker Pull Image : Filesystem layer verification failed for digest sha256错误</title>
+      <link>https://ningyu1.github.io/site/post/79-docker-registry-pull-filesystem-layer/</link>
+      <pubDate>Fri, 27 Apr 2018 17:46:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/79-docker-registry-pull-filesystem-layer/</guid>
+      <description>问题现象 除了打包镜像的服务器上可以执行docker pull 192.168.0.34:5000/sample:latest以外，其它任何服务器执行此命令时，都会出现以下错误信息：
+8b7054...: Verifying Checksum Filesystem layer verification failed for digest sha256: 8b7054.....  这使得无法正常使用最新的sample镜像文件。
+如果是按分析过程中的方式把8b7054文件夹迁移的话，docker会不断重试去拉取此文件信息，大概结果如下：
+8b7054...: (..Retry 10 seconds) Filesystem layer verification failed for digest sha256: 8b7054.....  分析过程 尝试在服务器上找日志，结果没有可用的日志。
+在/var/lib/registry下找该sha256的数据，能够找到，尝试移走该文件夹数据。结果执行docker pull命令时，依旧是报错。只好迁移回文件夹。
+尝试在网络上寻找解决方案，有的说与源有关系，有的说与docker版本有关系，需要升级版本，大多都没有很好的解决。如果实在搞不定，估计
+需要考虑这些方案了。
+尝试删除所有sample开发版本相关的image，并重新打包镜像，结果问题依旧。
+解决方案 docker build的过程中有很多选项可以使用，尝试将缓存关闭（默认否）、签名关闭（默认否）、清理过程文件（默认是）。
+因此切换到jenkins的workspace下，找到sample文件夹，执行以下命令:
+docker build --rm=true --no-cache --disable-content-trust=true -t sample . docker tag sample 192.168.0.34:5000/sample docker push --disable-content-trust=true 192.168.0.34:5000/sample  编译打包过程没有任何错误，可以正常发布镜像到registry上。
+于是，切换到其他服务器上去执行docker pull，结果一切正常。
+没有checksum？ 且没有原来失败的sha256 digest。
+看了下其他镜像成功过的pull日志，也是没有checksum。看来只有出现异常的时候，才会去checksum（待考证）
+既然已经成功过，那还是用正常的方式去打包编译及下载。于是删除现有镜像文件，在jenkins上进行工程打包（原始逻辑）。
+docker build -t sample:latest .</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Docker rancher/agent-instance cannot start automatically</title>
+      <link>https://ningyu1.github.io/site/post/64-rancher-agent-instance/</link>
+      <pubDate>Mon, 05 Mar 2018 17:23:11 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/64-rancher-agent-instance/</guid>
+      <description>今天发现一个docker机器莫名其妙的无工作了，于是进入宿主机查看信息如下：
+docker@xxx:~$ docker ps be4238200956 rancher/agent:v1.0.2 &amp;quot;/run.sh run&amp;quot; 5 months ago Up 34 minutes rancher-agent  发现只有一个rancher/agent容器是启动的，其余的都没有启动，查看rancher控制台，服务都在转圈圈Restaring状态，而且长时间一直这个状态没有变化。
+这是什么问题呢？
+查看机器上所有的容器
+docker@xxx:~$ docker ps -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES d9da7f16ef2d 192.168.0.34:5000/saas-erp:latest &amp;quot;./entrypoint.sh&amp;quot; 4 days ago Exited (0) 50 minutes ago r-erp_erp-dubbo_1 79e8e475db19 192.168.0.34:5000/tms2job:latest &amp;quot;./entrypoint.sh&amp;quot; 4 weeks ago Exited (0) 50 minutes ago r-tms_tms2-job_1 0995dabe324b 192.168.0.34:5000/customer-mq:latest &amp;quot;catalina.sh run&amp;quot; 8 weeks ago Exited (143) 7 weeks ago r-customer_customer-mq_1 65492930b132 192.</description>
+    </item>
+    
+    <item>
+      <title>如何直接操作Docker容器？</title>
+      <link>https://ningyu1.github.io/site/post/48-docker/</link>
+      <pubDate>Thu, 11 Jan 2018 16:11:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/48-docker/</guid>
+      <description>如果你想对Docker的容器进行操作，比如直接查看日志（Rancher无法看的时候），可以通过以下方式实现：
+执行命令docker ps，找到该容器
+第一种方式：
+执行命令docker exec -it [容器号前几位即可] /bin/bash，进入容器内部（类似Linux环境），如：
+如果/bin/bash不能执行，那就用/bin/sh。换一种shell。
+进入容器后我们就可以做任何事情，建议只在容器内做只读操作，必要进行修改操作。如果不想进入容器内部操作也可以：
+执行命令docker exec -it [容器号前几位即可] tailf -n 100 /xxxx/xxxxx.log，进入容器内部（类似Linux环境），如：
+第二种方式：
+执行命令docker logs [容器号前几位即可]，查看日志
+docker logs --tail=200 -f 容器id
+ps:&amp;ndash;tail=200 显示最近200行 ,all显示所有
+这个可以用于不知道日志存放在哪里，如：
+或者直接去宿主机器上查看容器日志文件，docker会在主机上面的/var/lib/docker/containers/[容器id]/生成每个容器的日志文件，以[容器id]-json.log命名，但是不推荐这种方式查看，如：
+在/var/lib/docker/containers能看到很多关于容器的信息比如说hostname等。
+docker还支持Log Driver可以将日志接入到日志分析工具，比如说：ELKB套件</description>
+    </item>
+    
+    <item>
+      <title>Docker Registry镜像清理问题</title>
+      <link>https://ningyu1.github.io/site/post/46-docker-registry/</link>
+      <pubDate>Fri, 29 Dec 2017 14:45:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/46-docker-registry/</guid>
+      <description>目录  修改Docker Registry配置 使用Registry V2 RestfulAPI 删除镜像 Docker Registry GC回收空间 使用UI管理Docker Registry  修改Docker Registry配置 配置开启删除功能:config.yml
+version: 0.1 log: fields: service: registry storage: delete: enabled: true cache: blobdescriptor: inmemory filesystem: rootdirectory: /var/lib/registry http: addr: :5000 headers: X-Content-Type-Options: [nosniff] health: storagedriver: enabled: true interval: 10s threshold: 3  主要在storage下增加delete开启状态 enabled:true
+具体配置参考官方配置详情：https://github.com/docker/distribution/blob/master/docs/configuration.md
+使用Registry V2 RestfulAPI 删除镜像 镜像删除之前需要获取镜像的digest值
+ 获取镜像digest值  curl --cacert /etc/docker/certs.d/192.168.0.34\:5000/ca.crt -H &amp;quot;Accept:application/vnd.docker.distribution.manifest.v2+json&amp;quot; https://192.168.0.34:5000/v2/messer/manifests/1.0  注意：
+我们配置了证书，所以必须要添加证书 &amp;ndash;cacert使用crt证书</description>
+    </item>
+    
+  </channel>
+</rss>

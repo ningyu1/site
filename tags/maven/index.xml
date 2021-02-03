@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maven on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/maven/</link>
+    <description>Recent content in Maven on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Jul 2018 14:11:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/maven/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>通过对Maven的依赖分析剔除无用的jar引用</title>
+      <link>https://ningyu1.github.io/site/post/93-maven-depenpency-analyze/</link>
+      <pubDate>Wed, 11 Jul 2018 14:11:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/93-maven-depenpency-analyze/</guid>
+      <description>当项目开发维护了一段时间时，经常会有项目打包速度慢，jar依赖多，依赖关系错综复杂，这种问题是项目维护最常见的问题，由于开发人员在bugfix或者feature开发时往往只是往项目中添加jar依赖，那我们如何分析出项目中哪些依赖是用到的，哪些依赖是不用的？
+使用Maven analyze来进行分析
+使用如下命令：
+mvn dependency:analyze  会输出如下的日志：
+[INFO] --- maven-dependency-plugin:2.8:analyze (default-cli) @ xxxproject --- [WARNING] Used undeclared dependencies found: [WARNING] org.springframework:spring-beans:jar:4.0.0.RELEASE:compile [WARNING] org.springframework:spring-context:jar:4.0.0.RELEASE:compile [WARNING] Unused declared dependencies found: [WARNING] com.alibaba:dubbo:jar:2.5.3:compile [WARNING] com.baidu.disconf:disconf-client:jar:2.6.32:compile [WARNING] org.mybatis:mybatis:jar:3.2.7:compile [WARNING] org.mybatis:mybatis-spring:jar:1.2.2:compile [WARNING] mysql:mysql-connector-java:jar:5.1.41:compile [WARNING] com.alibaba:druid:jar:1.0.9:compile [WARNING] com.github.sgroschupf:zkclient:jar:0.1:compile [WARNING] org.apache.zookeeper:zookeeper:jar:3.4.6:compile [WARNING] org.springframework:spring-jdbc:jar:4.0.0.RELEASE:compile [WARNING] org.slf4j:log4j-over-slf4j:jar:1.7.5:compile [WARNING] org.slf4j:jcl-over-slf4j:jar:1.7.5:runtime [WARNING] ch.qos.logback:logback-classic:jar:1.0.13:compile  我们就来说一下日志中的Used undeclared dependencies found和Unused declared dependencies found
+Used undeclared dependencies found 这个是指某些依赖的包在代码中有用到它的代码，但是它并不是直接的依赖（就是说没有在pom中直接声明），是通过引入传递下来的包。
+举个例子：
+project在pom中声明了A.jar的依赖（没有声明B.jar的依赖） A.jar的依赖关系：A.jar -&amp;gt; B.</description>
+    </item>
+    
+    <item>
+      <title>Jenkins、SVN、MAVEN打包时区问题解决方案</title>
+      <link>https://ningyu1.github.io/site/post/47-jenkins-svn-maven-timezone/</link>
+      <pubDate>Tue, 09 Jan 2018 18:30:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/47-jenkins-svn-maven-timezone/</guid>
+      <description>目录  Jenkins时区设置问题 SVN更新代码时区问题 MAVEN打包时区问题  一、Jenkins时区设置问题 docker@jenkins:~$ cat /etc/default/jenkins|grep 2048 JAVA_ARGS=&amp;quot;-Xmx2048m -Xms2048m -XX:PermSize=512m -XX:MaxPermSize=512m -Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Shanghai -Djava.awt.headless=true&amp;quot; # Allow graphs etc. to work even when an X server is present  增加时区参数：-Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Shanghai
+修改启动后查看jenkins系统参数：
+二、SVN更新代码时区问题 svn时区依赖jenkins的时区设置
+没有修改时区之前：
+能看的出来revision时间是有问题的跟我们机器时间不一致少了8小时
+修复这个问题有两个方法
+ 可以通过设置svn路径后增加@HEAD忽略掉revision来修复这个问题，具体设置如下   修改jenkins时区，参考第一个问题  jenkins时区设置完之后svn拉取代码会自动修改：revision，如图   三、MAVEN打包时区问题 我项目中使用的是maven自己的timestamp
+&amp;lt;timestamp&amp;gt;${maven.build.timestamp}&amp;lt;/timestamp&amp;gt;  它的问题是：时区是UTC而且无法修改，如果要使用GMT+8，就需要插件提供支持
+使用maven utc的timestamp构建出来的包名如下：
+我使用插件：build-helper-maven-plugin
+在pom中增加plugin build-helper-maven-plugin来覆盖maven的timestamp变量：
+&amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.codehaus.mojo&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;build-helper-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.0&amp;lt;/version&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;id&amp;gt;timestamp-property&amp;lt;/id&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;timestamp-property&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;name&amp;gt;timestamp&amp;lt;/name&amp;gt; &amp;lt;pattern&amp;gt;yyyyMMddHHmm&amp;lt;/pattern&amp;gt; &amp;lt;timeZone&amp;gt;GMT+8&amp;lt;/timeZone&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt;  然后打包测试：</description>
+    </item>
+    
+    <item>
+      <title>Maven settings.xml详解</title>
+      <link>https://ningyu1.github.io/site/post/07-maven-settings/</link>
+      <pubDate>Wed, 10 May 2017 10:05:37 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/07-maven-settings/</guid>
+      <description>settings.xml有什么用 从settings.xml的文件名就可以看出，它是用来设置maven参数的配置文件。并且，settings.xml是maven的全局配置文件。而pom.xml文件是所在项目的局部配置。
+Settings.xml中包含类似本地仓储位置、修改远程仓储服务器、认证信息等配置。
+settings.xml文件位置 全局配置: ${M2_HOME}/conf/settings.xml
+用户配置: user.home/.m2/settings.xmlnote：用户配置优先于全局配置。user.home/.m2/settings.xmlnote：用户配置优先于全局配置。{user.home} 和和所有其他系统属性只能在3.0+版本上使用。请注意windows和Linux使用变量的区别。
+配置优先级 需要注意的是：局部配置优先于全局配置。
+配置优先级从高到低：pom.xml&amp;gt; user settings &amp;gt; global settings
+如果这些文件同时存在，在应用配置时，会合并它们的内容，如果有重复的配置，优先级高的配置会覆盖优先级低的。
+ps.修改了配置文件最好吧cmd和eclipse重开一下
+settings.xml元素详解 顶级元素概览 下面列举了settings.xml中的顶级元素
+&amp;lt;settings xmlns=&amp;quot;http://maven.apache.org/SETTINGS/1.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:schemaLocation=&amp;quot;http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd&amp;quot;&amp;gt; &amp;lt;localRepository/&amp;gt; &amp;lt;interactiveMode/&amp;gt; &amp;lt;usePluginRegistry/&amp;gt; &amp;lt;offline/&amp;gt; &amp;lt;pluginGroups/&amp;gt; &amp;lt;servers/&amp;gt; &amp;lt;mirrors/&amp;gt; &amp;lt;proxies/&amp;gt; &amp;lt;profiles/&amp;gt; &amp;lt;activeProfiles/&amp;gt; &amp;lt;/settings&amp;gt;  LocalRepository 作用：该值表示构建系统本地仓库的路径。
+其默认值：~/.m2/repository。 &amp;lt;localRepository&amp;gt;${user.home}/.m2/repository&amp;lt;/localRepository&amp;gt;
+InteractiveMode 作用：表示maven是否需要和用户交互以获得输入。
+如果maven需要和用户交互以获得输入，则设置成true，反之则应为false。默认为true。 &amp;lt;interactiveMode&amp;gt;true&amp;lt;/interactiveMode&amp;gt;
+UsePluginRegistry 作用：maven是否需要使用plugin-registry.xml文件来管理插件版本。
+如果需要让maven使用文件~/.m2/plugin-registry.xml来管理插件版本，则设为true。默认为false。 &amp;lt;usePluginRegistry&amp;gt;false&amp;lt;/usePluginRegistry&amp;gt;
+Offline 作用：表示maven是否需要在离线模式下运行。
+如果构建系统需要在离线模式下运行，则为true，默认为false。
+当由于网络设置原因或者安全因素，构建服务器不能连接远程仓库的时候，该配置就十分有用。 &amp;lt;offline&amp;gt;false&amp;lt;/offline&amp;gt;
+PluginGroups 作用：当插件的组织id（groupId）没有显式提供时，供搜寻插件组织Id（groupId）的列表。
+该元素包含一个pluginGroup元素列表，每个子元素包含了一个组织Id（groupId）。
+当我们使用某个插件，并且没有在命令行为其提供组织Id（groupId）的时候，Maven就会使用该列表。默认情况下该列表包含了org.apache.maven.plugins和org.codehaus.mojo。
+&amp;lt;settings xmlns=&amp;quot;http://maven.apache.org/SETTINGS/1.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:schemaLocation=&amp;quot;http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd&amp;quot;&amp;gt; ... &amp;lt;pluginGroups&amp;gt; &amp;lt;!--plugin的组织Id（groupId） --&amp;gt; &amp;lt;pluginGroup&amp;gt;org.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>In Memory on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/in-memory/</link>
+    <description>Recent content in In Memory on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 Mar 2018 12:24:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/in-memory/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RediSearch基于Redis的高性能全文搜索引擎，资料整理</title>
+      <link>https://ningyu1.github.io/site/post/74-redisearch/</link>
+      <pubDate>Fri, 30 Mar 2018 12:24:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/74-redisearch/</guid>
+      <description>最近在参考CQRS DDD架构来进行公司的库存中心重构设计，在CQRS架构中需要一个in-memory的方式快速修改库存在通过消息驱动异步更新到DB，也就是说内存的数据是最新的，DB的数据是异步持久化的，在某一个时刻内存和DB的数据是存在不一致的，但是满足最终一致性。
+这样我们就需要内存当作前置DB在使用，因此不单纯的只满足修改数据，还需要满足Query的要求，内存结构的数据Query是比较麻烦的，它不像DB那样已经实现好了索引检索，需要我们自己来设计Key的机构和搜索索引的构建。
+当然行业里也有这样的做法，对数据修改的时候双写到内存(Redis)和ElasticSearch再异步到DB，这样Query全部走向ElasticSearch，但是我觉得这样做的复杂度会增加很多，所以就在看如何基于Redis来设计一个搜索引擎。
+看到了RedisLabs团队开发的基于Redis的搜索引擎：RediSearch
+RediSearch Github: RediSearch
+官方站点
+官方给出的描述
+Redisearch implements a search engine on top of redis, but unlike other redis search libraries, it does not use internal data structures like sorted sets. Inverted indexes are stored as a special compressed data type that allows for fast indexing and search speed, and low memory footprint. This also enables more advanced features, like exact phrase matching and numeric filtering for text queries, that are not possible or efficient with traditional redis search approaches.</description>
+    </item>
+    
+  </channel>
+</rss>

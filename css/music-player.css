@@ -1,0 +1,16 @@
+@charset "utf-8";
+.player{
+z-index:9999;
+position: fixed;
+right: 0;
+top: 180px;	
+width: 86px;
+transition: .218s;
+-moz-transition: .218s;
+-ms-transition: .218s;
+-o-transition: .218s;
+-webkit-transition: .218s;
+}
+.playerHover {
+width:	286px;
+}

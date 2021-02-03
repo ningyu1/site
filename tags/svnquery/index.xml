@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Svnquery on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/svnquery/</link>
+    <description>Recent content in Svnquery on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Mar 2018 10:44:53 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/svnquery/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Subversion库如何全文检索代码？</title>
+      <link>https://ningyu1.github.io/site/post/72-svn-query/</link>
+      <pubDate>Fri, 23 Mar 2018 10:44:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/72-svn-query/</guid>
+      <description>现在是Git流行的年代，在Git的套件里想要全文检索代码也有很多方案，Git也支持命令直接检索代码，但是当使用svn的用户代码检索应该如何处理呢？
+在回答前面问题之前我们还要搞清楚另外一个问题，我们为什么要检索代码？
+有的时候我们想从所有的代码库去寻找使用相同方法的代码，常规做法就是checkout下来所有的项目，然后通过IDE工具去关联检索使用到某个方法的代码，但是这样做比较耗费时间而且当项目过多IDE不一定能扛得住。还有的时候我们想从规范角度去check开发人员写的代码是否有违规的或者有问题的，就可以通过检索去寻找，当然规范的check有更好的工具，可以使用scm工具sonar去check代码它整合了很多check模版。
+鉴于上面种种的原因对代码做检索还是很有必要的，接下来我们就说一下使用svn时如何全文检索代码。
+我们可以先说一个思路，把代码灌入elasticsearch、lucene、solr，然后通过ui去搜索这是一条可行的路子。
+这两天发现了一个工具svnquery很好用，它使用ASP.net开发，采用Lucene生成索引，提供GUI和WEB工具通过索引文件来检索代码。
+svnquery官网
+它提供三个程序，一个svnindex用于通过svn库生成索引目录
+SvnIndex.exe %aciton% %index_path% %svn_path% -u 用户名 -p 密码  ps. action包括create、update，更新和修改
+执行后会生成一个索引目录，可以通过svnfind工具可以选择索引目录来进行代码搜索，svnfind是一个GUI工具。
+还可以通过SvnWebQuery来进行代码搜索，SvnWebQuery是一个.NET的web程序需要放入IIS服务器来使用
+引用官网的两张图
+唯一的缺点就是需要一个库一个库的生成索引，没有批量生成svn路径下所有有权限的库，如果有这个功能我个人觉得就完美了。
+好了工具介绍到这里，如果有用svn的想对代码进行检索的可以使用这个工具。</description>
+    </item>
+    
+  </channel>
+</rss>

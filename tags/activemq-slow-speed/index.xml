@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Activemq Slow Speed on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/activemq-slow-speed/</link>
+    <description>Recent content in Activemq Slow Speed on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 May 2018 15:38:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/activemq-slow-speed/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ActiveMQ消息消费慢问题排查</title>
+      <link>https://ningyu1.github.io/site/post/80-activemq-consumer-slow-speed/</link>
+      <pubDate>Wed, 09 May 2018 15:38:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/80-activemq-consumer-slow-speed/</guid>
+      <description>问题现象 有的时候会发现ActiveMQ中某个个队列的消息在写入后，不是立刻就被调度消费，而是需要等待一小会才能被调度消费（大概时间是1分钟），而且还伴随着这样的现象，当消息写入速度很快时消费很快，当消息写入消息速度很慢时反而消费很慢，我们的理解就是当写入慢的时候很多消费者都是闲置的那为什么消费反而会变慢？
+问题原因 跟了一下代码发现了跟我们的设置有很大关系，因为我们设置的receiveTimeout=6000（1分钟）接受阻塞时间为1分钟。
+ActiveMQ在消费时每个consumer会独占一个Thread，Thead中通过consumer.receive()去阻塞，只有当consumer消费了maxMessagesPerTask个消息后，才会退出线程，由taskExecutor重新调度，maxMessagesPerTask这个值默认为10，可以通过下面代码得知：
+@Override public void initialize() { // Adapt default cache level. if (this.cacheLevel == CACHE_AUTO) { this.cacheLevel = (getTransactionManager() != null ? CACHE_NONE : CACHE_CONSUMER); } // Prepare taskExecutor and maxMessagesPerTask. synchronized (this.lifecycleMonitor) { if (this.taskExecutor == null) { this.taskExecutor = createDefaultTaskExecutor(); } else if (this.taskExecutor instanceof SchedulingTaskExecutor &amp;amp;&amp;amp; ((SchedulingTaskExecutor) this.taskExecutor).prefersShortLivedTasks() &amp;amp;&amp;amp; this.maxMessagesPerTask == Integer.MIN_VALUE) { // TaskExecutor indicated a preference for short-lived tasks. According to // setMaxMessagesPerTask javadoc, we&#39;ll use 10 message per task in this case // unless the user specified a custom value.</description>
+    </item>
+    
+    <item>
+      <title>ActiveMQ发送速度慢问题排查</title>
+      <link>https://ningyu1.github.io/site/post/38-activemq-slow-speed/</link>
+      <pubDate>Thu, 09 Nov 2017 17:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/38-activemq-slow-speed/</guid>
+      <description>目录：  关于使用发送消息给activemq的同步/异步发送问题需要注意 同步/异步发送使用场景 maxConnections配置问题注意事项 idleTimeout配置问题注意事项 关于Failover的问题  关于使用发送消息给activemq的同步/异步发送问题需要注意 activemq发送异步参数：useAsyncSend与发送超时参数：sendTimeout是存在冲突的， 1. 当useAsyncSend=true，没有sendTimeout参数时（sendTimeout默认值0秒），走异步发送 2. 当useAsyncSend=false，没有sendTimeout参数时（sendTimeout默认值0秒），走同步发送 3. 当useAsyncSend=true，sendTimeout=1000，优先根据sendTimeout参数走同步发送
+同步/异步发送使用场景 场景一：业务可以容忍消息丢失（日志记录）这样的场景使用： 使用：异步发送 配置：useAsyncSend=true，sendTimeout不配置（sendTimeout默认值0秒） 注意：可以不需要补偿机制
+场景二：业务不能容忍消息丢失，这样的场景使用： 使用1：异步发送 配置1：useAsyncSend=true，sendTimeout不配置（sendTimeout默认值0秒） 注意1：当异步发送消息失败或异常导致消息丢失时有补偿的做法（如：定时任务、重发消息、等） 使用2：同步发送 配置2：useAsyncSend=false（useAsyncSend默认值false），sendTimeout=2000（超时时间一定要配置） 注意2：可以不需要补偿机制
+场景三：业务必须将消息发送和jdbc事务放在一个事务内，保证数据的强一致性，这样的场景使用： 使用：同步发送 配置：useAsyncSend=false（useAsyncSend默认值false），sendTimeout=2000（超时时间一定要配置） 注意：消息发送的超时时间（sendTimeout）&amp;lt; jdbc事务超时时间
+禁止使用的配置： 配置：useAsyncSend=false（useAsyncSend默认值false），sendTimeout不配置（sendTimeout默认值0秒） 注意：上面不配置超时时间的同步发送会造成请求阻塞在这里。
+maxConnections配置问题注意事项 根据activemq的连接池实现代码，发现maxconnections不适合设置很大，除非并发非常高的情况下，因为现在activemq创建一个连接平均在1-2秒钟左右，根据activemq的连接实现发现
+if (getConnectionsPool().getNumIdle(key) &amp;lt; getMaxConnections()) { try { connectionsPool.addObject(key); connection = mostRecentlyCreated.getAndSet(null); connection.incrementReferenceCount(); } catch (Exception e) { throw createJmsException(&amp;quot;Error while attempting to add new Connection to the pool&amp;quot;, e); } } else { try { // We can race against other threads returning the connection when there is an // expiration or idle timeout.</description>
+    </item>
+    
+  </channel>
+</rss>

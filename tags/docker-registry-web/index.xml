@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker Registry Web on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/docker-registry-web/</link>
+    <description>Recent content in Docker Registry Web on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Dec 2017 14:45:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/docker-registry-web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker Registry镜像清理问题</title>
+      <link>https://ningyu1.github.io/site/post/46-docker-registry/</link>
+      <pubDate>Fri, 29 Dec 2017 14:45:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/46-docker-registry/</guid>
+      <description>目录  修改Docker Registry配置 使用Registry V2 RestfulAPI 删除镜像 Docker Registry GC回收空间 使用UI管理Docker Registry  修改Docker Registry配置 配置开启删除功能:config.yml
+version: 0.1 log: fields: service: registry storage: delete: enabled: true cache: blobdescriptor: inmemory filesystem: rootdirectory: /var/lib/registry http: addr: :5000 headers: X-Content-Type-Options: [nosniff] health: storagedriver: enabled: true interval: 10s threshold: 3  主要在storage下增加delete开启状态 enabled:true
+具体配置参考官方配置详情：https://github.com/docker/distribution/blob/master/docs/configuration.md
+使用Registry V2 RestfulAPI 删除镜像 镜像删除之前需要获取镜像的digest值
+ 获取镜像digest值  curl --cacert /etc/docker/certs.d/192.168.0.34\:5000/ca.crt -H &amp;quot;Accept:application/vnd.docker.distribution.manifest.v2+json&amp;quot; https://192.168.0.34:5000/v2/messer/manifests/1.0  注意：
+我们配置了证书，所以必须要添加证书 &amp;ndash;cacert使用crt证书</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Websocket on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/categories/websocket/</link>
+    <description>Recent content in Websocket on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Jan 2018 17:04:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/categories/websocket/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Trouble Shooting —— HTTPS(SSL)站点使用WebSocket(ws)出现SecurityError问题</title>
+      <link>https://ningyu1.github.io/site/post/56-websocket-ssl/</link>
+      <pubDate>Thu, 25 Jan 2018 17:04:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/56-websocket-ssl/</guid>
+      <description>最近发生了一个问题我觉得挺有意思的，所以针对这个问题总结一下。
+最近公司服务上了https(SSL)，在https(SSL)的环境下呢本因为可以愉快的玩耍，但是后来发现程序有使用websocket（ws://domain.com），这里就有朋友想了使用ws跟ssl有什么关系？我可以很明确的告诉你当然有关系。
+当你的站点使用的是http的时候，使用ws可以很愉快的玩耍。当换成了https(SSL)那么问题来了。
+在chrome下是测试没有问题可以正常使用，但是在ie下就出现了问题，报SecurityError的错误，那这个错误是什么原因呢?
+WebSocket connection to &#39;ws://domain.com/websocket&#39; failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED  应该是每个浏览器对websocket的支持不一样或者说每个浏览器的安全沙箱不太一样，禁止了一些用法，各大浏览器对websocket的支持情况请看：https://caniuse.com/#search=websocket
+无意中看到了mozilla的websocket支持详细说明如下：
+Security considerations
+WebSockets should not be used in a mixed content environment; that is, you shouldn&amp;rsquo;t open a non-secure WebSocket connection from a page loaded using HTTPS or vice-versa. In fact, some browsers explicitly forbid this, including Firefox 8 and later. 
+具体地址：https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications
+意思呢就是，ws与http对应，wss与https对应，如果站点使用的是https那就必须使用wss来做websocket请求不能使用ws来请求，不允许混合的方式使用。
+看到这个就更加明确了问题所在：安全机制问题，最好不要混合使用避免奇怪的问题。
+于是就开启了wss服务的使用路程。
+如果你的wss服务是使用ip方式访问的，那么需要制作一个对应这个ip的证书，可以使用openssl生成自签名证书，但是不推荐使用ip的方式访问WebSocket。
+如果你的wss服务是使用域名方式访问的，那么需要制作一个对应这个域名证书（最好是通配符域名证书），这样在构建wss服务的时候将证书配置进去。
+构建wss服务有很多种方式，我这里提供一种比较简单的方式。
+使用nginx提供ssl代理 保留以前的ws服务提供方式不做任何变更，增加一个nginx开启ssl代理，配置跟常规的ssl配置有一些细微的变化，那就是header会有一些变化，websocket需要指定header：Upgrade和http version：1.1 ，因此我这里给出配置详情：</description>
+    </item>
+    
+  </channel>
+</rss>

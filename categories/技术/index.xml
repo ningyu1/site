@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术 on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/categories/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Oct 2017 14:30:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redis RDB文件格式全解析</title>
+      <link>https://ningyu1.github.io/site/post/34-redis-rdb/</link>
+      <pubDate>Mon, 09 Oct 2017 14:30:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/34-redis-rdb/</guid>
+      <description>点评 这篇文章作为对RDB理解的教程文章，对RDB文件的原理理解有助于进行Redis高阶应用的设计与开发。
+文章转自：http://blog.nosqlfan.com/html/3734.html 作者：@nosqlfan
+RDB文件是Redis持久化的一种方式，Redis通过制定好的策略，按期将内存中的数据以镜像的形式转存到RDB文件中。那么RDB文件内部格式是什么样的呢，Redis又做了哪些工作让RDB能够更快的dump和加载呢，下面我们深入RDB文件，来看一看其内部结构。 首先我们来看一个RDB文件的概况图：
+----------------------------# RDB文件是二进制的，所以并不存在回车换行来分隔一行一行. 52 45 44 49 53 # 以字符串 &amp;quot;REDIS&amp;quot; 开头 30 30 30 33 # RDB 的版本号，大端存储，比如左边这个表示版本号为0003 ---------------------------- FE 00 # FE = FE表示数据库编号，Redis支持多个库，以数字编号，这里00表示第0个数据库 ----------------------------# Key-Value 对存储开始了 FD $length-encoding # FD 表示过期时间，过期时间是用 length encoding 编码存储的，后面会讲到 $value-type # 1 个字节用于表示value的类型，比如set,hash,list,zset等 $string-encoded-key # Key 值，通过string encoding 编码，同样后面会讲到 $encoded-value # Value值，根据不同的Value类型采用不同的编码方式 ---------------------------- FC $length-encoding # FC 表示毫秒级的过期时间，后面的具体时间用length encoding编码存储 $value-type # 同上，也是一个字节的value类型 $string-encoded-key # 同样是以 string encoding 编码的 Key值 $encoded-value # 同样是以对应的数据类型编码的 Value 值 ---------------------------- $value-type # 下面是没有过期时间设置的 Key-Value对，为防止冲突，数据类型不会以 FD, FC, FE, FF 开头 $string-encoded-key $encoded-value ---------------------------- FE $length-encoding # 下一个库开始，库的编号用 length encoding 编码 ---------------------------- .</description>
+    </item>
+    
+    <item>
+      <title>Webpack 打包优化之体积篇</title>
+      <link>https://ningyu1.github.io/site/post/26-webpack1/</link>
+      <pubDate>Wed, 20 Sep 2017 10:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/26-webpack1/</guid>
+      <description>文章来源：https://jeffjade.com/2017/08/06/124-webpack-packge-optimization-for-volume/ 作者：@晚晴幽草轩轩主
+谈及如今欣欣向荣的前端圈，不仅有各类框架百花齐放，如Vue， React， Angular等等，就打包工具而言，发展也是如火如荼，百家争鸣；从早期的王者Browserify, Grunt，到后来赢得宝座的 Gulp， 以及独树一帜的 fis3, 以及下一代打包神器 Rollup ；在 browserify,grunt,gulp,rollup,webpack 可以一窥其中部分对比。在本文要探究的是，当前打包工具绝对霸者 Webpack。
+Webpack Package optimization
+Webpack，当前各大主流框架默认配备的打包方案，对其如何使用，已有较完备中英文文档；并且，各主流框架也有对应 CLI 予以基础配置，故不作为探讨范畴。从产品层来讲，如何使得构建的包体积小、运行快，这有必要不断摸索实践，提炼升级，使之臻于最佳。本文将从以下些许方面，对 Webpack 打包体积方面，做下优化探讨(备注： Webpack实践版本： 3.3.0)：
+定位 webpack 大的原因 这里推荐使用 webpack-bundle-analyzer —— Webpack 插件和 CLI 实用程序，她可以将内容束展示为方便交互的直观树状图，让你明白你所构建包中真正引入的内容；我们可以借助她，发现它大体有哪些模块组成，找到不合时宜的存在，然后优化它。我们可以在 项目的 package.json 文件中注入如下命令，以方便运行她(npm run analyz)，默认会打开 http://127.0.0.1:8888 作为展示。
+“analyz”: “NODE_ENV=production npm_config_report=true npm run build”  webpack-bundle-analyzer
+当然，同类型的还有 webpack-chart 以及 webpack-analyse，这两个站点也是以可视方式呈现构造的组件，可以让你清楚的看到模块的组成部分；不过稍显麻烦的是，你需要运行以下命令，生成工具分析所需要的 json 文件：
+webpack --profile --json &amp;gt; stats.json // 如果，运行指定的 weboack 文件，可用此命令 webpack --config build/webpack.prod.conf.js --profile --json &amp;gt; stats.</description>
+    </item>
+    
+    <item>
+      <title>利用Zipkin对Spring Cloud应用进行服务追踪分析</title>
+      <link>https://ningyu1.github.io/site/post/24-zipkin/</link>
+      <pubDate>Fri, 08 Sep 2017 13:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/24-zipkin/</guid>
+      <description>文章转自：https://yq.aliyun.com/articles/60165 作者：@libinjingshan
+摘要： 本文简单介绍了如何利用Zipkin对SpringCloud应用进行服务分析。在实际的应用场景中，Zipkin可以结合压力测试工具一起使用，分析系统在大压力下的可用性和性能。 设想这么一种情况，如果你的微服务数量逐渐增大，服务间的依赖关系越来越复杂，怎么分析它们之间的调用关系及相互的影响？
+服务追踪分析 一个由微服务构成的应用系统通过服务来划分问题域，通过REST请求服务API来连接服务来完成完整业务。对于入口的一个调用可能需要有多个后台服务协同完成，链路上任何一个调用超时或出错都可能造成前端请求的失败。服务的调用链也会越来越长，并形成一个树形的调用链。
+随着服务的增多，对调用链的分析也会越来越负责。设想你在负责下面这个系统，其中每个小点都是一个微服务，他们之间的调用关系形成了复杂的网络。
+有密集恐惧症的同学就忽略吧。
+针对服务化应用全链路追踪的问题，Google发表了Dapper论文，介绍了他们如何进行服务追踪分析。其基本思路是在服务调用的请求和响应中加入ID，标明上下游请求的关系。利用这些信息，可以可视化地分析服务调用链路和服务间的依赖关系。
+Spring Cloud Sleuth和Zipkin 对应Dpper的开源实现是Zipkin，支持多种语言包括JavaScript，Python，Java, Scala, Ruby, C#, Go等。其中Java由多种不同的库来支持。
+在这个示例中，我们准备开发两个基于Spring Cloud的应用，利用Spring Cloud Sleuth来和Zipkin进行集成。Spring Cloud Sleuth是对Zipkin的一个封装，对于Span、Trace等信息的生成、接入HTTP Request，以及向Zipkin Server发送采集信息等全部自动完成。
+这是Spring Cloud Sleuth的概念图。
+服务REST调用 本次演示的服务有两个：tracedemo做为前端服务接收用户的请求，tracebackend为后端服务，tracedemo通过http协议调用后端服务。
+利用RestTemplate进行HTTP请求调用 tracedemo应用通过restTemplate调用后端tracedemo服务，注意，URL中指明tracedemo的地址为backend。
+@RequestMapping(&amp;quot;/&amp;quot;) public String callHome(){ LOG.log(Level.INFO, &amp;quot;calling trace demo backend&amp;quot;); return restTemplate.getForObject(&amp;quot;http://backend:8090&amp;quot;, String.class); }  后端服务响应HTTP请求，输出一行日志后返回经典的“hello world”。
+@RequestMapping(&amp;quot;/&amp;quot;) public String home(){ LOG.log(Level.INFO, &amp;quot;trace demo backend is being called&amp;quot;); return &amp;quot;Hello World.&amp;quot;; }  引入Sleuth和Zipkin依赖包 可以看到，这是典型的两个spring应用通过RestTemplate进行访问的方式，哪在HTTP请求中注入追踪信息并把相关信息发送到Zipkin Server呢？答案在两个应用所加载的JAR包里。
+本示例采用gradle来构建应用，在build.gradle中加载了sleuth和zipkin相关的JAR包：</description>
+    </item>
+    
+    <item>
+      <title>Spring Cloud学习-Eureka、Ribbon和Feign</title>
+      <link>https://ningyu1.github.io/site/post/23-spring-cloud/</link>
+      <pubDate>Fri, 08 Sep 2017 09:09:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/23-spring-cloud/</guid>
+      <description>前沿 这篇文章比较适合入门，对于spring cloud生态的成员有一个大致的了解，其实spring cloud生态将netflix的产品进行了很好的整合，netflix早几年就在服务治理这块有很深入的研究，出品了很多服务治理的工具hystrix就是很有名的一个，具体可以查看：https://github.com/netflix，刚好在微服务盛行的年代服务治理是必不可少的一环，现在在微服务开发套件这块常用也就是下面这两种选择：
+ spring cloud套件，成熟上手快 自建微服务架构  UCM，统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。 RPC，阿里的Dubbo、点评的Pigeon，当当改的DubboX，grpc，等等很多开源的，还有很多公司自研的。 服务治理，netflix的hystrix老牌的功能强大的服务治理工具，有熔断、降级等功能，很多公司会结合监控套件开发自己的服务治理工具。 开发框架（rpc、restful这个一般公司都有自研的开发框架） 注册中心（zookeeper、redis、Consul、SmartStack、Eureka，其中一些已经是spring cloud生态的一员了）。 网关，restful的使用nginx+lua，这也是openAPI网关常用的手段 负载均衡，这个结合选用的rpc框架来选择。一般rpc框架都有负载均衡的功能。 服务治理熔断，使用hystrix（也已经是spring cloud生态的一员了） 监控，使用pinpoint、点评的cat、等其他开源的APM工具 DevOPS，持续交付一般也是自己构架的，采用jenkins打包docker镜像，使用docker生态的工具构建容器化发布平台。   下面文章转自：https://www.jianshu.com/p/0aef3724e6bc 作者：@杜琪
+Talk is cheap，show me the code ， 书上得来终觉浅，绝知此事要躬行。在自己真正实现的过程中，会遇到很多莫名其妙的问题，而正是在解决这些问题的过程中，你会发现自己之前思维的盲点。 引子 看完《微服务设计》后，算是补上了自己在服务化这块的理论知识，在业界，一般有两种微服务的实践方法：基于dubbo的微服务架构、基于Spring Cloud的微服务架构。从概念上来讲，Dubbo和Spring Cloud并不能放在一起对比，因为Dubbo仅仅是一个RPC框架，实现Java程序的远程调用，实施服务化的中间件则需要自己开发；而Spring Cloud则是实施微服务的一系列套件，包括：服务注册与发现、断路器、服务状态监控、配置管理、智能路由、一次性令牌、全局锁、分布式会话管理、集群状态管理等。
+在有赞，我们基于Dubbo实施服务化，刚开始是基于ZooKeeper进行服务注册与发现，现在已经转成使用Etcd。我这次学习Spring Cloud，则是想成体系得学习下微服务架构的实现，也许能够对基于Dubbo实施微服务架构有所借鉴。
+Spring Cloud下有很多工程：
+ Spring Cloud Config：依靠git仓库实现的中心化配置管理。配置资源可以映射到Spring的不同开发环境中，但是也可以使用在非Spring应用中。 Spring Cloud Netflix：不同的Netflix OSS组件的集合：Eureka、Hystrix、Zuul、Archaius等。 Spring Cloud Bus：事件总线，利用分布式消息将多个服务连接起来。非常适合在集群中传播状态的改变事件（例如：配置变更事件） Spring Cloud Consul：服务发现和配置管理，由Hashicorp团队开发。  我决定先从Spring Cloud Netflix看起，它提供了如下的功能特性：
+ 服务发现：Eureka-server实例作为服务提供者，可以注册到服务注册中心，Eureka客户端可以通过Spring管理的bean发现实例； 服务发现：嵌套式的Eureka服务可以通过声明式的Java配置文件创建； 断路器：利用注解，可以创建一个简单的Hystrix客户端； 断路器：通过Java配置文件可以创建内嵌的Hystrix控制面板； 声明式REST客户端：使用Feign可以创建声明式、模板化的HTTP客户端； 客户端负载均衡器：Ribbon 路由器和过滤器：Zuul可以在微服务架构中提供路由功能、身份验证、服务迁移、金丝雀发布等功能。  本文计划利用Eureka实现一个简答的服务注册于发现的例子，需要创建三个角色：服务注册中心、服务提供者、服务消费者。</description>
+    </item>
+    
+    <item>
+      <title>JMS实现参数的集中式管理</title>
+      <link>https://ningyu1.github.io/site/post/19-jms-ucm/</link>
+      <pubDate>Tue, 05 Sep 2017 17:12:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/19-jms-ucm/</guid>
+      <description>点评 虽然现在开源的UCM套件很多，UCM统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。但是很多人是知其然不知其所以然，刚好发现下面这篇文章可以作为原理的教程文章，使用JMS、Redis、Zookeeper简单的实现UCM基本功能，作为学习交流还是很不错的。
+文章转自：https://my.oschina.net/OutOfMemory/blog/1510101 作者：@ksfzhaohui
+前言 JMS的发布订阅机制也能实现类似的功能，集群节点通过订阅指定的节点，同时使用JMS对消息的过滤器功能，实现对指定参数的更新，本文将介绍通过JMS实现简单的参数集中式管理。
+Maven引入 Spring相关的jar引入参考上一篇文章
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.jms&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jms&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.activemq&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;activemq-all&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.10.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  目标  可以同时配置监听多个节点如/app1,/app2； 希望只需要配置如/app1，就能够监听其子节点如/app1/modual1以及子节点的子节点如/app1/modual1/xxx/…； 服务器启动能获取当前指定父节点下的所有子节点数据； 在添加节点或者在更新节点数据的时候能够动态通知，这样代码中就能够实时获取最新的数据； spring配置中可以从Zookeeper中读取参数进行初始化。  虽然在实现的方式上有点区别，但是最终达成的目标是一致的，同样列出了这5条目标
+实现 MQWatcher主要用来和JMS建立连接，同时订阅指定节点，建立点对点连接，过滤出需要监听的数据，更新数据，初始化数据，存储数据等 InitConfServer主要作为点对点连接的服务器端用来初始化数据
+1.同时配置监听多个节点 提供一个字符串数组给用户用来添加需要监听的节点：
+private String[] keyPatterns;  2.能够监听其子节点以及子节点的子节点 使用了一种和Zookeeper不一样的方式，JMS的方式是将所有的数据变更都发送到订阅者，然后订阅者通过过滤出需要的数据进行更新
+/** MQ的过滤器 **/ private StringBuffer keyFilter = new StringBuffer(); private final String TOPIC = &amp;quot;dynamicConfTopic&amp;quot;; private void watcherPaths() throws JMSException { Topic topic = session.createTopic(TOPIC); MessageConsumer consumer = session.createConsumer(topic, keyFilter.toString()); consumer.</description>
+    </item>
+    
+    <item>
+      <title>Zookeeper实现参数的集中式管理</title>
+      <link>https://ningyu1.github.io/site/post/18-zookeeper-ucm/</link>
+      <pubDate>Tue, 05 Sep 2017 17:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/18-zookeeper-ucm/</guid>
+      <description>点评 虽然现在开源的UCM套件很多，UCM统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。但是很多人是知其然不知其所以然，刚好发现下面这篇文章可以作为原理的教程文章，使用JMS、Redis、Zookeeper简单的实现UCM基本功能，作为学习交流还是很不错的。
+文章转自：https://my.oschina.net/OutOfMemory/blog/1503392 作者：@ksfzhaohui
+前言 应用项目中都会有一些参数，一般的做法通常可以选择将其存储在本地配置文件或者内存变量中；对于集群机器规模不大、配置变更不是特别频繁的情况下，这两种方式都能很好的解决；但是一旦集群机器规模变大，且配置信息越来越频繁，依靠这两种方式就越来越困难；我们希望能够快速的做到全局参数的变更，因此需要一种参数的集中式管理，下面利用Zookeeper的一些特性来实现简单的参数管理。
+准备 jdk:1.7.0_80 zookeeper:3.4.3 curator:2.6.0 spring:3.1.2  Maven引入 Spring相关的jar引入参考上一篇文章
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-core&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-context&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-beans&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.zookeeper&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;zookeeper&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.4.3&amp;lt;/version&amp;gt; &amp;lt;exclusions&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;com.sun.jmx&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jmxri&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;com.sun.jdmk&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jmxtools&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;javax.jms&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jms&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;/exclusions&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.curator&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;curator-framework&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.6.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.curator&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;curator-recipes&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.6.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  目标  可以同时配置监听多个节点如/app1,/app2； 希望只需要配置如/app1，就能够监听其子节点如/app1/modual1以及子节点的子节点如/app1/modual1/xxx/…； 服务器启动能获取当前指定父节点下的所有子节点数据； 在添加节点或者在更新节点数据的时候能够动态通知，这样代码中就能够实时获取最新的数据； spring配置中可以从Zookeeper中读取参数进行初始化。  实现 提供ZKWatcher类主要用来和Zookeeper建立连接，监听节点，初始化节点数据，更新节点数据，存储节点数据等</description>
+    </item>
+    
+    <item>
+      <title>[转]Redis实现参数的集中式管理</title>
+      <link>https://ningyu1.github.io/site/post/17-redis-ucm/</link>
+      <pubDate>Tue, 05 Sep 2017 16:40:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/17-redis-ucm/</guid>
+      <description>点评 虽然现在开源的UCM套件很多，UCM统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。但是很多人是知其然不知其所以然，刚好发现下面这篇文章可以作为原理的教程文章，使用JMS、Redis、Zookeeper简单的实现UCM基本功能，作为学习交流还是很不错的。
+文章转自：https://my.oschina.net/OutOfMemory/blog/1526063 作者：@ksfzhaohui
+前言 利用的Redis的发布订阅功能实现对参数的集中式管理；分布式缓存Redis提供了类似的发布订阅功能，并且Redis本身提供了缓存和持久化的功能，本文将介绍通过Redis实现简单的参数集中式管理。
+Maven引入 Spring相关的jar引入参考上一篇文章
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;redis.clients&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jedis&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.4.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  目标  可以同时配置监听多个节点如/app1,/app2； 希望只需要配置如/app1，就能够监听其子节点如/app1/modual1以及子节点的子节点如/app1/modual1/xxx/…； 服务器启动能获取当前指定父节点下的所有子节点数据； 在添加节点或者在更新节点数据的时候能够动态通知，这样代码中就能够实时获取最新的数据； spring配置中可以从Zookeeper中读取参数进行初始化。  虽然在实现的方式上有点区别，但是最终达成的目标是一致的，同样列出了这5条目标
+实现 RedisWatcher主要用来和Redis进行连接，然后对监听的节点进行初始化，模糊订阅需要监听的节点，最后接受数据的变更，更新本地数据，存储数据等。
+1.同时配置监听多个节点 提供一个字符串数组给用户用来添加需要监听的节点：
+private String[] keyPatterns;  2.能够监听其子节点以及子节点的子节点 使用Redis提供的psubscribe命令，订阅一个或多个符合给定模式的频道，提供了模糊订阅的功能
+private void watcherPaths() { new Thread(new Runnable() { @Override public void run() { jedis.psubscribe(new JedisPubSub() { @Override public void onMessage(String channel, String message) { try { keyValueMap.put(channel, message); LOGGER.info(&amp;quot;key = &amp;quot; + channel + &amp;quot;,value = &amp;quot; + message); } catch (Exception e) { LOGGER.</description>
+    </item>
+    
+  </channel>
+</rss>

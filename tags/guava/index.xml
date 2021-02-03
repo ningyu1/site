@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guava on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/guava/</link>
+    <description>Recent content in Guava on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Mar 2015 17:34:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/guava/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google Guava官方教程（中文版）</title>
+      <link>https://ningyu1.github.io/site/post/14-guava/</link>
+      <pubDate>Mon, 09 Mar 2015 17:34:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/14-guava/</guid>
+      <description>Guava 中文是石榴的意思，该项目是 Google 的一个开源项目，包含许多 Google 核心的 Java 常用库。
+引言 Guava工程包含了若干被Google的 Java项目广泛依赖 的核心库，例如：集合 [collections] 、缓存 [caching] 、原生类型支持 [primitives support] 、并发库 [concurrency libraries] 、通用注解 [common annotations] 、字符串处理 [string processing] 、I/O 等等。 所有这些工具每天都在被Google的工程师应用在产品服务中。
+查阅Javadoc并不一定是学习这些库最有效的方式。在此，我们希望通过此文档为Guava中最流行和最强大的功能，提供更具可读性和解释性的说明。
+译文格式说明
+Guava中的类被首次引用时，都会链接到Guava的API文档。如：Optional。 Guava和JDK中的方法被引用时，一般都会链接到Guava或JDK的API文档，一些人所共知的JDK方法除外。如：Optional.of(T), Map.get(key)。 译者对文档的额外说明以斜体显示，并且以“译者注：”开始。
+目录 1. 基本工具 [Basic utilities] 让使用Java语言变得更舒适 * 使用和避免null：null是模棱两可的，会引起令人困惑的错误，有些时候它让人很不舒服。很多Guava工具类用快速失败拒绝null值，而不是盲目地接受 * 前置条件: 让方法中的条件检查更简单 * 常见Object方法: 简化Object方法实现，如hashCode()和toString() * 排序: Guava强大的”流畅风格比较器” * Throwables：简化了异常和错误的传播与检查
+2. 集合[Collections] Guava对JDK集合的扩展，这是Guava最成熟和为人所知的部分 * 不可变集合: 用不变的集合进行防御性编程和性能提升。 * 新集合类型: multisets, multimaps, tables, bidirectional maps等 * 强大的集合工具类: 提供java.</description>
+    </item>
+    
+  </channel>
+</rss>

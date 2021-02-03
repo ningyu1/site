@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redis on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/redis/</link>
+    <description>Recent content in Redis on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Jul 2018 18:11:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Embedded RedisServer写UT</title>
+      <link>https://ningyu1.github.io/site/post/94-embedded-redisserver/</link>
+      <pubDate>Tue, 17 Jul 2018 18:11:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/94-embedded-redisserver/</guid>
+      <description>当我们在进行开发的时候经常会用到Redis，但是在写junit的时候往往引用了Redis造成test case很难写，我们需要mock一个localhost的Redis server来进行测试，因此我们可以借助embedded redisServer来实现，下面我们就看一下具体使用的示例
+代码示例 @Before public void setUp() throws IOException { initMocks(this); final Random random = new SecureRandom(); redisServer = new RedisServer(); redisServer.start(); pool = new JedisPool(); repository = new RedisKeyRepository(pool); manager = new RedisKeyManager(random, pool, repository); manager.setMaxActiveKeys(3); clearData(); manager.initialiseNewRepository(); resource = new ProtectedResource(repository, random); }  这是一个非常简单的使用示例，我们还可以更改配置以及增加密码
+@Before public void setUpRedis() throws IOException, SchedulerConfigException { port = getPort(); logger.debug(&amp;quot;Attempting to start embedded Redis server on port &amp;quot; + port); redisServer = RedisServer.</description>
+    </item>
+    
+    <item>
+      <title>RediSearch基于Redis的高性能全文搜索引擎，资料整理</title>
+      <link>https://ningyu1.github.io/site/post/74-redisearch/</link>
+      <pubDate>Fri, 30 Mar 2018 12:24:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/74-redisearch/</guid>
+      <description>最近在参考CQRS DDD架构来进行公司的库存中心重构设计，在CQRS架构中需要一个in-memory的方式快速修改库存在通过消息驱动异步更新到DB，也就是说内存的数据是最新的，DB的数据是异步持久化的，在某一个时刻内存和DB的数据是存在不一致的，但是满足最终一致性。
+这样我们就需要内存当作前置DB在使用，因此不单纯的只满足修改数据，还需要满足Query的要求，内存结构的数据Query是比较麻烦的，它不像DB那样已经实现好了索引检索，需要我们自己来设计Key的机构和搜索索引的构建。
+当然行业里也有这样的做法，对数据修改的时候双写到内存(Redis)和ElasticSearch再异步到DB，这样Query全部走向ElasticSearch，但是我觉得这样做的复杂度会增加很多，所以就在看如何基于Redis来设计一个搜索引擎。
+看到了RedisLabs团队开发的基于Redis的搜索引擎：RediSearch
+RediSearch Github: RediSearch
+官方站点
+官方给出的描述
+Redisearch implements a search engine on top of redis, but unlike other redis search libraries, it does not use internal data structures like sorted sets. Inverted indexes are stored as a special compressed data type that allows for fast indexing and search speed, and low memory footprint. This also enables more advanced features, like exact phrase matching and numeric filtering for text queries, that are not possible or efficient with traditional redis search approaches.</description>
+    </item>
+    
+    <item>
+      <title>Redis RDB文件格式全解析</title>
+      <link>https://ningyu1.github.io/site/post/34-redis-rdb/</link>
+      <pubDate>Mon, 09 Oct 2017 14:30:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/34-redis-rdb/</guid>
+      <description>点评 这篇文章作为对RDB理解的教程文章，对RDB文件的原理理解有助于进行Redis高阶应用的设计与开发。
+文章转自：http://blog.nosqlfan.com/html/3734.html 作者：@nosqlfan
+RDB文件是Redis持久化的一种方式，Redis通过制定好的策略，按期将内存中的数据以镜像的形式转存到RDB文件中。那么RDB文件内部格式是什么样的呢，Redis又做了哪些工作让RDB能够更快的dump和加载呢，下面我们深入RDB文件，来看一看其内部结构。 首先我们来看一个RDB文件的概况图：
+----------------------------# RDB文件是二进制的，所以并不存在回车换行来分隔一行一行. 52 45 44 49 53 # 以字符串 &amp;quot;REDIS&amp;quot; 开头 30 30 30 33 # RDB 的版本号，大端存储，比如左边这个表示版本号为0003 ---------------------------- FE 00 # FE = FE表示数据库编号，Redis支持多个库，以数字编号，这里00表示第0个数据库 ----------------------------# Key-Value 对存储开始了 FD $length-encoding # FD 表示过期时间，过期时间是用 length encoding 编码存储的，后面会讲到 $value-type # 1 个字节用于表示value的类型，比如set,hash,list,zset等 $string-encoded-key # Key 值，通过string encoding 编码，同样后面会讲到 $encoded-value # Value值，根据不同的Value类型采用不同的编码方式 ---------------------------- FC $length-encoding # FC 表示毫秒级的过期时间，后面的具体时间用length encoding编码存储 $value-type # 同上，也是一个字节的value类型 $string-encoded-key # 同样是以 string encoding 编码的 Key值 $encoded-value # 同样是以对应的数据类型编码的 Value 值 ---------------------------- $value-type # 下面是没有过期时间设置的 Key-Value对，为防止冲突，数据类型不会以 FD, FC, FE, FF 开头 $string-encoded-key $encoded-value ---------------------------- FE $length-encoding # 下一个库开始，库的编号用 length encoding 编码 ---------------------------- .</description>
+    </item>
+    
+    <item>
+      <title>Redis数据结构使用以及注意事项，运维问题总结</title>
+      <link>https://ningyu1.github.io/site/post/33-redis-considerations/</link>
+      <pubDate>Mon, 09 Oct 2017 12:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/33-redis-considerations/</guid>
+      <description>文章转自：http://www.cnblogs.com/cnmenglang/p/6225987.html 作者：@江南白衣
+优缺点 非常非常的快，有测评说比Memcached还快(当大家都是单CPU的时候)，而且是无短板的快，读写都一般的快，所有API都差不多快，也没有MySQL Cluster、MongoDB那样更新同一条记录如Counter时慢下去的毛病。
+丰富的数据结构，超越了一般的Key-Value数据库而被认为是一个数据结构服务器。组合各种结构，限制Redis用途的是你自己的想象力，作者自己捉刀写的用途入门。
+因为是个人作品，Redis目前只有2.3万行代码，Keep it simple的死硬做法，使得普通公司而不需淘宝那个级别的文艺公司也可以吃透它。
+Redis宣言就是作者的自白，我最喜欢其中的&amp;rdquo;代码像首诗&amp;rdquo;，&amp;rdquo;设计是一场与复杂性的战斗&amp;rdquo;，&amp;rdquo;Coding是一件艰苦的事情，唯一的办法是享受它。如果它已不能带来快乐就停止它。为了防止这一天的出现，我们要尽量避免把Redis往乏味的路上带。
+让人又爱又恨的单线程架构，使得代码不用处理平时最让人头痛的并发而大幅简化，也不用老是担心作者的并发有没有写对，但也带来CPU的瓶颈，而且单线程被慢操作所阻塞时，其他请求的延时变得不确定。
+那Redis不是什么？
+Redis 不是Big Data，数据都在内存中，无法以T为单位。
+在Redis-Cluster发布并被稳定使用之前，Redis没有真正的平滑水平扩展能力。
+Redis 不支持Ad-Hoc Query，提供的只是数据结构的API，没有SQL一样的查询能力。
+Feature速览 所有数据都在内存中。
+五种数据结构：String / Hash / List / Set / Ordered Set。
+数据过期时间支持。
+不完全的事务支持。
+服务端脚本：使用Lua Script编写，类似存储过程的作用。
+PubSub：捞过界的消息一对多发布订阅功能，起码Redis-Sentinel使用了它。
+持久化：支持定期导出内存的Snapshot 与 记录写操作日志的Append Only File两种模式。
+Replication：Master-Slave模式，Master可连接多个只读Slave，暂无专门的Geographic Replication支持。
+Fail-Over：Redis-Sentinel节点负责监控Master节点，在master失效时提升slave，独立的仲裁节点模式有效防止脑裂。
+Sharding：开发中的Redis-Cluser。
+动态配置：所有参数可用命令行动态配置不需重启，并重新写回配置文件中，对云上的大规模部署非常合适。
+八卦 作者是意大利的Salvatore Sanfilippo(antirez)，又是VMWare大善人聘请了他专心写Redis。
+EMC与VMWare将旗下的开源产品如Redis和Spring都整合到了孙公司Pivotal公司。
+Pivotal做的antirez访谈录，内含一切八卦，比如他的爱好是举重、跑步和品红酒。
+默认端口6379，是手机按键上MERZ对应的号码，意大利歌女Alessia Merz是antirez和朋友们认为愚蠢的代名词。
+数据结构 Key Key 不能太长，比如1024字节，但antirez也不喜欢太短如&amp;rdquo;u:1000:pwd&amp;rdquo;，要表达清楚意思才好。他私人建议用&amp;rdquo;:&amp;ldquo;分隔域，用&amp;rdquo;.&amp;ldquo;作为单词间的连接，如&amp;rdquo;comment:1234:reply.to&amp;rdquo;。
+Keys，返回匹配的key，支持通配符如 &amp;ldquo;keys a*&amp;rdquo; 、 &amp;ldquo;keys a?c&amp;rdquo;，但不建议在生产环境大数据量下使用。
+Sort，对集合按数字或字母顺序排序后返回或另存为list，还可以关联到外部key等。因为复杂度是最高的O(N+M*log(M))(N是集合大小，M 为返回元素的数量)，有时会安排到slave上执行。
+Expire/ExpireAt/Persist/TTL，关于Key超时的操作。默认以秒为单位，也有p字头的以毫秒为单位的版本， Redis的内部实现见2.9 过期数据清除。
+String 最普通的key-value类型，说是String，其实是任意的byte[]，比如图片，最大512M。 所有常用命令的复杂度都是O(1)，普通的Get/Set方法，可以用来做Cache，存Session，为了简化架构甚至可以替换掉Memcached。</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Enable AOF可能导致整个Redis被Block住，在3.0.6版本仍然存在</title>
+      <link>https://ningyu1.github.io/site/post/32-redis-aof/</link>
+      <pubDate>Mon, 09 Oct 2017 09:53:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/32-redis-aof/</guid>
+      <description>Redis会有短暂的几秒Block，应用报：Jedis connection failed, retrying&amp;hellip; 这个问题现象是这样的，应用周期性的报：Jedis connection failed, retrying&amp;hellip;，Redis开启AOF会被Block住导致无法连接，查看redis的日志
+1486:M 09 Oct 09:33:18.072 * 10 changes in 300 seconds. Saving... 1486:M 09 Oct 09:33:18.075 * Background saving started by pid 20706 1486:M 09 Oct 09:33:34.011 * Asynchronous AOF fsync is taking too long (disk is busy?). Writing the AOF buffer without waiting for fsync to complete, this may slow down Redis. 20706:C 09 Oct 09:33:42.629 * DB saved on disk 20706:C 09 Oct 09:33:42.</description>
+    </item>
+    
+    <item>
+      <title>分布式锁（Redis实现）使用说明</title>
+      <link>https://ningyu1.github.io/site/post/29-distributed-lock/</link>
+      <pubDate>Wed, 27 Sep 2017 16:43:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/29-distributed-lock/</guid>
+      <description>概述 &amp;nbsp;&amp;nbsp;&amp;nbsp;
+项目地址 distributed-lock
+
+分布式锁，默认是redis实现，可扩展接口增加zk、等其他实现,这个分布式锁采用redis实现，根据CAP理论保证了可用性、分区容错性、和最终一致性。
+实现的分布式锁特性  这把锁是非阻塞锁，可以根据超时时间和重试频率来定义重试次数 这把锁支持失效时间，极端情况下解锁失败，到达时间之后锁会自动删除 这把锁是非重入锁，一个线程获得锁之后，在释放锁之前，其他线程无法再次获得锁，只能根据获取锁超时时间和重试策略进行多次尝试获取锁。 因为这把锁是非阻塞的，所以性能很好，支持高并发 使用方无需手动获取锁和释放锁，锁的控制完全由框架控制操作，避免使用方由于没有释放锁或释放锁失败导致死锁的问题  实现的分布式锁缺点  通过超时时间来控制锁的失效时间其实并不完美，但是根据性能和CAP理论有做取舍 这把锁不支持阻塞，因为要达到高的性能阻塞的特性是要牺牲  使用步骤 Maven中引入 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;cn.tsoft.framework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;distributed-lock&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.1.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  spring中引入配置 &amp;lt;import resource=&amp;quot;classpath:spring-lock.xml&amp;quot; /&amp;gt;  使用到了RedisClient 具体可以查看《RedisCliet使用说明》
+&amp;lt;aop:aspectj-autoproxy /&amp;gt; &amp;lt;context:component-scan base-package=&amp;quot;cn.tsoft.framework&amp;quot; /&amp;gt; &amp;lt;context:property-placeholder location=&amp;quot;classpath:redis.properties&amp;quot;/&amp;gt; &amp;lt;import resource=&amp;quot;classpath:spring-redis.xml&amp;quot; /&amp;gt;  代码中使用 import cn.tsoft.framework.lock.Lock; import cn.tsoft.framework.lock.LockCallBack; import cn.tsoft.framework.lock.DefaultLockCallBack; @Autowired Lock lock; //方法一 T t = lock.lock(&amp;quot;Test_key_2&amp;quot;,20,60,new LockCallBack&amp;lt;T&amp;gt;(){ public T handleObtainLock(){ dosomething(); } public T handleNotObtainLock() throws LockCantObtainException{ return T;//throw new LockCantObtainException(); } public T handleException(LockInsideExecutedException e) throws LockInsideExecutedException{ return T;//throw new e; } }); //方法二 T t = lock.</description>
+    </item>
+    
+    <item>
+      <title>RedisClient升级支持Sentinel使用说明</title>
+      <link>https://ningyu1.github.io/site/post/28-redis-client-sentinel/</link>
+      <pubDate>Mon, 25 Sep 2017 13:29:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/28-redis-client-sentinel/</guid>
+      <description>项目地址 redis-client
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+RedisClient操作单点Redis使用文档：《RedisClient使用》 以下是支持Sentinel（哨兵）+Redis集群的RedisClient（架构封装的Java访问Redis的客户端程序）高级使用方式
+Redis集群方式：Master-Slave（1 - n 为一套集群可以多套） Sentinel集群方式：Sentinel（n台，n&amp;gt;=3），投票人数：n-1（参与Master是否宕机以及下一任Master选举的投票人数）
+1. Maven中引用（目前预览版） &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;cn.tsoft.framework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;redis-client&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  2. 配置说明 原始（基础）配置：
+redis.pool.maxTotal=1000 redis.pool.maxIdle=50 redis.pool.minIdle=10 redis.pool.testOnBorrow=true redis.pool.testOnReturn=true redis.ip=192.168.0.65 redis.port=6379 redis.timeout=2000 redis.password=123456  sentinel新增配置
+# sentinel redis.mastername=mymaster redis.sentinels=127.0.0.1:26379,127.0.0.1:26380,127.0.0.1:26381  redis.mastername指的是monitor master的名称 redis.sentinels指的是哨兵的ip：port集合（ip和port需要替换）
+删除配置
+#redis.ip=192.168.0.65 #redis.port=6379  ps.由于使用了sentinel自动发现redis服务因此不需要此配置，注释或删除即可
+3. spring配置说明 xml配置跟以前pool的配置方式有所不同，单节点redis的pool配置使用的是：redis.clients.jedis.JedisPoolConfig和redis.clients.jedis.JedisPool sentinel的配置替换为：redis.clients.jedis.JedisPoolConfig和cn.tsoft.framework.redis.pool.JedisSentinelPoolFactory
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xmlns:aop=&amp;quot;http://www.springframework.org/schema/aop&amp;quot; xmlns:context=&amp;quot;http://www.springframework.org/schema/context&amp;quot; xmlns:tx=&amp;quot;http://www.springframework.org/schema/tx&amp;quot; xsi:schemaLocation=&amp;quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd&amp;quot;&amp;gt; &amp;lt;aop:aspectj-autoproxy /&amp;gt; &amp;lt;context:component-scan base-package=&amp;quot;cn.</description>
+    </item>
+    
+    <item>
+      <title>RedisClient使用说明</title>
+      <link>https://ningyu1.github.io/site/post/22-redis-client/</link>
+      <pubDate>Wed, 06 Sep 2017 11:17:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/22-redis-client/</guid>
+      <description>项目地址 redis-client
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+Maven引入 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;cn.tsoft.framework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;redis-client&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.1.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  Spring引入 &amp;lt;import resource=&amp;quot;classpath:spring-redis.xml&amp;quot; /&amp;gt;  Api使用说明 ps.本次版本增加了namespace、泛型的支持（存、取直接使用java对象），namespace可以有效的避免key名称冲突和对以后做sharding提供了基础，泛型则是提升使用友好度，本次版本包装了驱动（jedis）的95%的方法，有一些性能不好的方法没有开放，新增了一些使用上更加友好的方法。
+常规操作的command实现：RedisClientImpl
+二进制操作的command实现：BinaryRedisClientImpl
+两者都支持直接存、取java对象，区别在于前者序列化为json以string的方式发送到redis服务器，后者序列化为byte[]以字节方式发送到redis服务，通过redis-cli工具前者可以很明确的看到存的值，后者看到的是二进制编码。
+接口方法 回调接口 cn.tsoft.framework.redis.callback.GetDataCallBack
+接口提供两个方法
+/** * ttl时间,不是所有命令都支持ttl设置 * */ int getExpiredTime(); /** * 执行回调方法 */ R invoke();  ps.int getExpiredTime();这个方法并不是所有命令都支持（hget系列不支持，因为hash的attr是不支持ttl设置的，ttl必须设置在hash的key上并不是hash的attr上），因此不支持ttl的命令就采用默认的空实现。 在使用get*和hget*方法时，如果key返回为null，则通过该接口的R invoke();方法获取数据并放到redis中。 hgetAllObjects方法上的GetDataCallBack gbs参数是无效的传入null即可。 如果在get方法获取不到值时不想走数据回调时传入null即可。
+示例：
+//不设置回调 Metadata resule = redisClient.get(bizkey, nameSpace, Metadata.class, null); List&amp;lt;Metadata &amp;gt; resule = redisClient.get(bizkey, nameSpace, new TypeReference&amp;lt;List&amp;lt;Metadata&amp;gt;&amp;gt;() {}, null); //设置回调 List&amp;lt;Long&amp;gt; resule = redisClient.</description>
+    </item>
+    
+    <item>
+      <title>[转]Redis实现参数的集中式管理</title>
+      <link>https://ningyu1.github.io/site/post/17-redis-ucm/</link>
+      <pubDate>Tue, 05 Sep 2017 16:40:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/17-redis-ucm/</guid>
+      <description>点评 虽然现在开源的UCM套件很多，UCM统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。但是很多人是知其然不知其所以然，刚好发现下面这篇文章可以作为原理的教程文章，使用JMS、Redis、Zookeeper简单的实现UCM基本功能，作为学习交流还是很不错的。
+文章转自：https://my.oschina.net/OutOfMemory/blog/1526063 作者：@ksfzhaohui
+前言 利用的Redis的发布订阅功能实现对参数的集中式管理；分布式缓存Redis提供了类似的发布订阅功能，并且Redis本身提供了缓存和持久化的功能，本文将介绍通过Redis实现简单的参数集中式管理。
+Maven引入 Spring相关的jar引入参考上一篇文章
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;redis.clients&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jedis&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.4.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  目标  可以同时配置监听多个节点如/app1,/app2； 希望只需要配置如/app1，就能够监听其子节点如/app1/modual1以及子节点的子节点如/app1/modual1/xxx/…； 服务器启动能获取当前指定父节点下的所有子节点数据； 在添加节点或者在更新节点数据的时候能够动态通知，这样代码中就能够实时获取最新的数据； spring配置中可以从Zookeeper中读取参数进行初始化。  虽然在实现的方式上有点区别，但是最终达成的目标是一致的，同样列出了这5条目标
+实现 RedisWatcher主要用来和Redis进行连接，然后对监听的节点进行初始化，模糊订阅需要监听的节点，最后接受数据的变更，更新本地数据，存储数据等。
+1.同时配置监听多个节点 提供一个字符串数组给用户用来添加需要监听的节点：
+private String[] keyPatterns;  2.能够监听其子节点以及子节点的子节点 使用Redis提供的psubscribe命令，订阅一个或多个符合给定模式的频道，提供了模糊订阅的功能
+private void watcherPaths() { new Thread(new Runnable() { @Override public void run() { jedis.psubscribe(new JedisPubSub() { @Override public void onMessage(String channel, String message) { try { keyValueMap.put(channel, message); LOGGER.info(&amp;quot;key = &amp;quot; + channel + &amp;quot;,value = &amp;quot; + message); } catch (Exception e) { LOGGER.</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Redis AOF rewrite错误导致Redis被Block住</title>
+      <link>https://ningyu1.github.io/site/post/11-redis-aof-pit/</link>
+      <pubDate>Tue, 15 Aug 2017 10:30:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/11-redis-aof-pit/</guid>
+      <description>问题现状： redis-cli 上去执行任何命令返回：connnection reset by peer
+重启的应用无法连接到redis，已经建立连接的应用可以正常使用。
+分析过程： 第一反应查看redis 日志，如下：
+1838:M 16 Aug 01:07:39.319 # Error opening /setting AOF rewrite IPC pipes: Numerical result out of range 1838:M 16 Aug 01:07:39.319 * Starting automatic rewriting of AOF on 110% growth 1838:M 16 Aug 01:07:39.319 # Error opening /setting AOF rewrite IPC pipes: Numerical result out of range 1838:M 16 Aug 01:07:39.419 * Starting automatic rewriting of AOF on 110% growth 1838:M 16 Aug 01:07:39.</description>
+    </item>
+    
+    <item>
+      <title>Cache设计和使用上的套路</title>
+      <link>https://ningyu1.github.io/site/post/05-cache-design/</link>
+      <pubDate>Fri, 02 Jun 2017 14:06:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/05-cache-design/</guid>
+      <description>一、管道（pipeline）提升效率 Redis是一个cs模式的tcp server，使用和http类似的请求响应协议。一个client可以通过一个socket连接发起多个请求命令。每个请求命令发出后client通常会阻塞并等待redis服务处理，redis处理完后请求命令后会将结果通过响应报文返回给client。每执行一个命令需要2个tcp报文才能完成，由于通信会有网络延迟,假如从client和server之间的包传输时间需要0.125秒，那么执行四个命令8个报文至少会需要1秒才能完成，这样即使redis每秒能处理100k命令，而我们的client也只能一秒钟发出四个命令。这显示没有充分利用 redis的处理能力。因此我们需要使用管道（pipeline）的方式从client打包多条命令一起发出，不需要等待单条命令的响应返回，而redis服务端会处理完多条命令后会将多条命令的处理结果打包到一起返回给客户端（它能够让（多条）执行命令简单的，更加快速的发送给服务器，但是没有任何原子性的保证）官方资料
+【反例】
+【正例】
+//管道，批量发送多条命令，但是不支持namespace需要手动添加namespace Pipeline pipelined = redisClient.pipelined(); pipelined.set(key, value); pipelined.get(key); pipelined.syncAndReturnAll(); //发送命令并接受返回值 pipelined.sync();//发送命令不接受返回值  使用管道注意事项： 1. tcp报文过长会被拆分。 2. 如果使用pipeline服务器会被迫使用内存队列来发送应答（服务器会在处理完命令前先缓存所有的命令处理结果） 3. 打包的命令越多，缓存消耗内存也越多，所以并不是打包命令越多越好，需要结合测试找到合适我们业务场景的量（双刃剑） 4. 不保证原子性，因此在Redis中没有数据需要走DB获取数据，Redis也支持事务（multi、watch）但是会影响性能（没有事务和有事务相差还是蛮大的），不是非要强一致的场景请不要使用。
+二、连接池使用问题 jedis客户端2.4版本以上对连接池资源使用上进行了优化，提供了更优雅的资源回收方法并且支持broken处理，提供close方法替换原来的回收资源方法（returnBrokenResource 、returnResource）
+【反例】
+【正例】
+三、使用key值前缀来作命名空间 虽然说Redis支持多个数据库（默认32个，可以配置更多），但是除了默认的0号库以外，其它的都需要通过一个额外请求才能使用。所以用前缀作为命名空间可能会更明智一点。另外，在使用前缀作为命名空间区隔不同key的时候，最好在程序中使用全局配置来实现，直接在代码里写前缀的做法要严格避免，这样可维护性实在太差了。
+命名分割符使用 “.” 分隔
+【正例】
+四、expire对于key过期时间来控制垃圾回收 Redis是一个提供持久化功能的内存数据库，如果你不指定上面值的过期时间（TTL），并且也不进行定期的清理工作，那么你的Redis内存占用会越来越大，当有一天它超过了系统可用内存，那么swap上场，离性能陡降的时间就不远了。所以在Redis中保存数据时，一定要预先考虑好数据的生命周期，这有很多方法可以实现。
+比如你可以采用Redis自带的过期时间（setEX）为你的数据设定过期时间。但是自动过期有一个问题，很有可能导致你还有大量内存可用时，就让key过期去释放内存，或者是内存已经不足了key还没有过期。
+（LRU）如果你想更精准的控制你的数据过期，你可以用一个ZSET来维护你的数据更新程度，你可以用时间戳作为score值，每次更新操作时更新一下score，这样你就得到了一个按更新时间排序序列串，你可以轻松地找到最老的数据，并且从最老的数据开始进行删除，一直删除到你的空间足够为止。
+【正例】
+redisClient.setex(bizkey, 60, value);//set一个key并设置ttl60秒  五、乱用（不要有个锤子看哪都是钉子） 当你使用Redis构建你的服务的时候，一定要记住，你只是找了一个合适的工具来实现你需要的功能。而不是说你在用Redis构建一个服务，这是很不同的，你把Redis当作你很多工具中的一个，只在合适使用的时候再使用它，在不合适的时候选择其它的方法。
+我们对它的定位更多是Cache服务而非DB
+六、缓存设计的误区 我们通常是这样设计的，应用程序先从cache取数据，没有得到，则从数据库中取数据，成功后，放到缓存中。
+那试想一下，如果取出来的null，需不需要放入cache呢？答案当然是需要的。
+我们试想一下如果取出为null不放入cache会有什么结果？很显然每次取cache没有走db返回null，很容易让攻击者利用这个漏洞搞垮你的服务器，利用洪水攻击让你的程序夯在这个地方导致你的正常流程抢不到资源。
+七、缓存更新的问题 以下内容摘自酷壳-COOLSHELL的文章《缓存更新的套路》
+很多人在写更新缓存数据代码时，先删除缓存，然后再更新数据库，而后续的操作会把数据再装载的缓存中。然而，这个是逻辑是错误的。试想，两个并发操作，一个是更新操作，另一个是查询操作，更新操作删除缓存后，查询操作没有命中缓存，先把老数据读出来后放到缓存中，然后更新操作更新了数据库。于是，在缓存中的数据还是老的数据，导致缓存中的数据是脏的，而且还一直这样脏下去了。
+正确更新缓存的Design Pattern有四种：Cache aside, Read through, Write through, Write behind caching
+Cache Aside Pattern</description>
+    </item>
+    
+  </channel>
+</rss>

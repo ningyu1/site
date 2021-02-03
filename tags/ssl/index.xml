@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssl on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/ssl/</link>
+    <description>Recent content in Ssl on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Jan 2018 17:04:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Trouble Shooting —— HTTPS(SSL)站点使用WebSocket(ws)出现SecurityError问题</title>
+      <link>https://ningyu1.github.io/site/post/56-websocket-ssl/</link>
+      <pubDate>Thu, 25 Jan 2018 17:04:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/56-websocket-ssl/</guid>
+      <description>最近发生了一个问题我觉得挺有意思的，所以针对这个问题总结一下。
+最近公司服务上了https(SSL)，在https(SSL)的环境下呢本因为可以愉快的玩耍，但是后来发现程序有使用websocket（ws://domain.com），这里就有朋友想了使用ws跟ssl有什么关系？我可以很明确的告诉你当然有关系。
+当你的站点使用的是http的时候，使用ws可以很愉快的玩耍。当换成了https(SSL)那么问题来了。
+在chrome下是测试没有问题可以正常使用，但是在ie下就出现了问题，报SecurityError的错误，那这个错误是什么原因呢?
+WebSocket connection to &#39;ws://domain.com/websocket&#39; failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED  应该是每个浏览器对websocket的支持不一样或者说每个浏览器的安全沙箱不太一样，禁止了一些用法，各大浏览器对websocket的支持情况请看：https://caniuse.com/#search=websocket
+无意中看到了mozilla的websocket支持详细说明如下：
+Security considerations
+WebSockets should not be used in a mixed content environment; that is, you shouldn&amp;rsquo;t open a non-secure WebSocket connection from a page loaded using HTTPS or vice-versa. In fact, some browsers explicitly forbid this, including Firefox 8 and later. 
+具体地址：https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications
+意思呢就是，ws与http对应，wss与https对应，如果站点使用的是https那就必须使用wss来做websocket请求不能使用ws来请求，不允许混合的方式使用。
+看到这个就更加明确了问题所在：安全机制问题，最好不要混合使用避免奇怪的问题。
+于是就开启了wss服务的使用路程。
+如果你的wss服务是使用ip方式访问的，那么需要制作一个对应这个ip的证书，可以使用openssl生成自签名证书，但是不推荐使用ip的方式访问WebSocket。
+如果你的wss服务是使用域名方式访问的，那么需要制作一个对应这个域名证书（最好是通配符域名证书），这样在构建wss服务的时候将证书配置进去。
+构建wss服务有很多种方式，我这里提供一种比较简单的方式。
+使用nginx提供ssl代理 保留以前的ws服务提供方式不做任何变更，增加一个nginx开启ssl代理，配置跟常规的ssl配置有一些细微的变化，那就是header会有一些变化，websocket需要指定header：Upgrade和http version：1.1 ，因此我这里给出配置详情：</description>
+    </item>
+    
+    <item>
+      <title>CAS使用经验总结，纯干货</title>
+      <link>https://ningyu1.github.io/site/post/54-cas-server/</link>
+      <pubDate>Fri, 19 Jan 2018 16:25:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/54-cas-server/</guid>
+      <description>最近在处理公司项目对接到CAS server，在使用CAS发生了很多问题，下面整理一下遇到的问题与解决方式，希望可以帮助到需要的工程师们
+CAS它是什么？它能做什么？这些我就不概述了，自行去搜索了解，https://baike.baidu.com/item/CAS/1329561
+我们在使用CAS的时候基本都会遇到如下的几种问题：
+ 证书问题 Client接入配置 SLO（Single Logout） CAS callback回调问题 Cookie问题 用户数据源以及认证问题 CAS Server Ticket持久化问题 Client Server集群模式下session问题  还有一些是公司内部项目框架集成问题这里就不多说了。
+以下总结都是基于CAS v5.0.4版本测试
+我用的CAS Server是通过overlays改造后的项目，为什么需要修改原有的CAS Server呢？
+我相信每个公司都有一些特殊的需求比如说：
+ 对登录页面的修改 自有的密码加密验证方式 新老项目架构参差不齐 使用公司自有用户数据源  等等很多问题都需要对CAS Server进行改造
+这里我将改造的CAS Server放到github上：
+项目地址：cas-site
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+下面具体说一下上述的问题将如何来分析并解决
+证书问题 如果你的服务不打算使用SSL那请跳过这段说明。
+一般公司项目会有很多域名大概都是子域名的方式，例如：account.xxxx.com,login.xxxx.com，那么最好使用通配符证书，为什么呢？这样你的cas server上配置一个通配符证书即可，如果没有使用通配符证书那cas server上要配置所有授信域名的证书，这样就很麻烦，除非一些历史问题没办法才会导入多个证书，一般使用通配符证书。
+我使用的是自签名的通配符证书，具体自签名证书如何生成可以查看我之前写的文章：
+《Openssl生成自签名证书，简单步骤》中讲述了如何生成自签名证书。
+《使用自签名证书，简单步骤》中讲述了如何使用自签名证书。
+《Java访问SSL地址，使用证书方式和免验证证书方式》中讲述了Java访问ssl使用证书方式和免验证证书方式。
+ps.这里需要注意的是在制作单域名证书和通配符域名证书的区别是在：Common Name输入的时候，例如：
+单域名证书：Common Name：account.xxxx.ccom 通配符域名证书：Common Name：*.xxxx.com
+将制作好的证书文件通过keytool导入到jdk下即可，或使用InstallCert来生成文件copy到jdk下，具体可以参考文章：《使用自签名证书，简单步骤》
+证书放在：%JAVA_HOME%\jre\lib\security
+我们cas server使用的jdk1.8，client服务大多是jdk1.7，因此在证书处理上要注意这个细节，上面文章中有明确说明
+如果需要使用Docker构建，可以参考我写好的Dockerfile，在cas-site项目下Dockerfile文件
+Client接入配置 接入cas的client端配置非常简单，可以使用spring framework对接cas方式，也可以使用spring security对接cas方式，或者其他支持cas的第三方框架，自己对接配置非常简单只需要配置SingleSignOutFilter和SingleSignOutHttpSessionListener
+ org.jasig.cas.client.session.SingleSignOutFilter：解决Logout清空TGC和session信息 org.jasig.cas.client.session.SingleSignOutHttpSessionListener：session监听  这里在对接方面就不做过多的介绍了。</description>
+    </item>
+    
+    <item>
+      <title>Java访问SSL地址，使用证书方式和免验证证书方式</title>
+      <link>https://ningyu1.github.io/site/post/53-ssl-cert-3/</link>
+      <pubDate>Mon, 15 Jan 2018 14:08:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/53-ssl-cert-3/</guid>
+      <description>前文回顾 《Openssl生成自签名证书，简单步骤》中讲述了如何生成自签名证书。
+《使用自签名证书，简单步骤》中讲述了如何使用自签名证书。
+下面讲述在Java中如何访问SSL地址，使用证书访问和免验证证书访问。
+Java安装证书访问SSL地址 使用InstallCert安装证书 《使用自签名证书，简单步骤》这篇文章中介绍的InstallCert生成jssecacerts文件。 将ssecacerts文件放入%JAVA_HOME%\jre\lib\security 下即可。
+使用keytool工具导入证书 keytool -import -alias xstore -keystore &amp;quot;cacerts_path&amp;quot; -file a.cer   cacerts_path: 你的cacerts文件路径，一般在%JAVA_HOME%jre\lib\security\cacerts a.cer: 你需要导入的cer文件路径，可以是InstallCert生成的文件 密码使用jdk默认密码：changeit，或者在上面命令后增加-storepass changeit设置密码参数  通过上面两种方式可以将证书安装到jdk下，接下来就是java中如何访问ssl地址，不多说直接上代码。
+自定义javax.net.ssl.X509TrustManager实现类 import java.security.cert.CertificateException; import java.security.cert.X509Certificate; import javax.net.ssl.X509TrustManager; public class MyX509TrustManager implements X509TrustManager { @Override public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException { } @Override public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException { } @Override public X509Certificate[] getAcceptedIssuers() { return null; } }  包装HttpsDemo类 HttpsDemo类中包装两个方法，sendHttps发起ssl地址请求，sendHttp发起普通地址请求</description>
+    </item>
+    
+    <item>
+      <title>使用自签名证书，简单步骤</title>
+      <link>https://ningyu1.github.io/site/post/52-ssl-cert-2/</link>
+      <pubDate>Fri, 12 Jan 2018 19:13:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/52-ssl-cert-2/</guid>
+      <description>在前文《Openssl生成自签名证书，简单步骤》中讲述了如何生成自签名证书，接下来整理证书使用遇到的问题。
+证书使用的方式也有很多中，可以使用keytool生成或导入导出证书，这里对keytool不做过多描述，可以通过&amp;ndash;help查看使用方法。
+证书文件可以放到应用服务器、负载均衡、jvm中使用，如：IIS、tomcat、nginx或者loadbalance、jdk等等。
+这里介绍一个简单的工具：InstallCert安装证书文件到jdk下，这个在本地调试连接ssl服务器代码的时候很有用。
+如果我们的服务端使用的是jdk1.8（比如说：cas服务），访问的客户端（业务系统）也是jdk1.8，那么直接使用InstallCert安装即可.
+如果我们的服务端使用的是jdk1.8，但是客户端使用jdk1.7会遇到什么问题？
+我们都知道jdk1.7默认的TLS版本是1.0但是支持1.1和1.2，如何查看jdk支持的TLS版本呢？
+可以使用jdk自带的jcp（java control panel）工具
+jcp（java control panel）路径：%JAVA_HOME%\jre\bin
+点击高级，勾选TLS1.1 TSL1.2开启支持。
+如果使用客户端程序（jdk1.7开发的）访问服务端程序（jdk1.8开发的），在使用InstallCert安装证书时会出现如下错误：
+javax.net.ssl.SSLHandshakeException: Remote host closed connection during handshake at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:946) ~[na:1.7.0_45] at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1312) ~[na:1.7.0_45]  上面错误的意思就是服务器把你拒绝了！把你拒绝了！把你拒绝了！拒绝你的理由就是TLS版本不对。
+下面我主要讲在客户端程序（jdk1.7开发的）访问服务端程序（jdk1.8开发的）的场景下安装证书如何解决上面的错误。
+通过InstallCert源码安装证书 /* * Copyright 2006 Sun Microsystems, Inc. All Rights Reserved. * * Redistribution and use in source and binary forms, with or without * modification, are permitted provided that the following conditions * are met: * * - Redistributions of source code must retain the above copyright * notice, this list of conditions and the following disclaimer.</description>
+    </item>
+    
+    <item>
+      <title>Openssl生成自签名证书，简单步骤</title>
+      <link>https://ningyu1.github.io/site/post/51-ssl-cert/</link>
+      <pubDate>Fri, 12 Jan 2018 17:06:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/51-ssl-cert/</guid>
+      <description>最近在调试服务时需要使用证书，因此对证书的生成和使用做了一些整理，网上关于这部分资料也很多，但是很杂乱，我整理出以下简单的步骤生成自签名证书，具体让我们来看一看吧。
+第一种方式 通过openssl生成私钥
+openssl genrsa -out server.key 1024  使用私钥生成自签名的cert证书文件，以下是通过参数只定证书需要的信息
+openssl req -new -x509 -days 3650 -key server.key -out server.crt -subj &amp;quot;/C=CN/ST=mykey/L=mykey/O=mykey/OU=mykey/CN=domain1/CN=domain2/CN=domain3&amp;quot;  如果对上面参数具体的说明不太了解的，可以使用不带参数的方式，通过命令行步骤生成，参考第二种方式。
+第二种方式 通过openssl生成私钥
+openssl genrsa -out server.key 1024  根据私钥生成证书申请文件csr
+openssl req -new -key server.key -out server.csr  这里根据命令行向导来进行信息输入：
+ps.Common Name可以输入：*.yourdomain.com，这种方式生成通配符域名证书
+使用私钥对证书申请进行签名从而生成证书
+openssl x509 -req -in server.csr -out server.crt -signkey server.key -days 3650  这样就生成了有效期为：10年的证书文件，对于自己内网服务使用足够。
+第三种方式 直接生成证书文件
+openssl req -new -x509 -keyout server.key -out server.crt -config openssl.</description>
+    </item>
+    
+  </channel>
+</rss>

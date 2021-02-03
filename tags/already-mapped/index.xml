@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Already Mapped on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/already-mapped/</link>
+    <description>Recent content in Already Mapped on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Nov 2017 15:52:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/already-mapped/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>atomikos jta(xa) transaction问题：Already mapped: xxxx</title>
+      <link>https://ningyu1.github.io/site/post/36-atomikos-transactions-trouble/</link>
+      <pubDate>Thu, 02 Nov 2017 15:52:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/36-atomikos-transactions-trouble/</guid>
+      <description>目录：  问题现象 问题分析 修改验证 解决方案 总结  问题现象 库存中心在压测过程中会时不时的报错，错误如下：
+2017-11-02 11:38:37.620 [DubboServerHandler-10.27.69.168:20888-thread-156] ERROR xx.xx.inv.service.impl.OptionApiImpl - java.lang.IllegalStateException: Already mapped: 10.27.69.168.tm150959391756909559 xx.xx.exception.BizException: java.lang.IllegalStateException: Already mapped: 10.27.69.168.tm150959391756909559 at xx.xx.inv.service.impl.OptionApiImpl.invWmsOption(OptionApiImpl.java:290) ~[inv-api-impl-1.0.1-SNAPSHOT.jar:na] at com.alibaba.dubbo.common.bytecode.Wrapper1.invokeMethod(Wrapper1.java) [na:2.5.3] at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:46) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:72) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.filter.AccessLogFilter.invoke(AccessLogFilter.java:199) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.filter.ExceptionFilter.invoke(ExceptionFilter.java:64) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.filter.TimeoutFilter.invoke(TimeoutFilter.java:42) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.dubbo.filter.TraceFilter.invoke(TraceFilter.java:78) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.</description>
+    </item>
+    
+  </channel>
+</rss>

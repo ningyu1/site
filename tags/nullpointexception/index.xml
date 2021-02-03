@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nullpointexception on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/nullpointexception/</link>
+    <description>Recent content in Nullpointexception on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Aug 2017 16:01:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/nullpointexception/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NPE（java.lang.NullPointerException）防范</title>
+      <link>https://ningyu1.github.io/site/post/15-java-npe/</link>
+      <pubDate>Sat, 26 Aug 2017 16:01:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/15-java-npe/</guid>
+      <description>我们程序中NPE还是比较多的，下面介绍良好的编码规范防止NPE的发生
+NPE（java.lang.NullPointerException）: 空指针异常
+一、【推荐】防止 NPE，是程序员的基本修养，注意 NPE 产生的场景： 1） 返回类型为基本数据类型， return 包装数据类型的对象时，自动拆箱有可能产生 NPE。
+反例： public int f() { return Integer 对象}， 如果为 null，自动解箱抛 NPE。
+2） 数据库的查询结果可能为 null。
+3） 集合里的元素即使 isNotEmpty，取出的数据元素也可能为 null。
+4） 远程调用返回对象时，一律要求进行空指针判断，防止 NPE。
+5） 对于 Session 中获取的数据，建议 NPE 检查，避免空指针。
+6） 级联调用 obj.getA().getB().getC()； 一连串调用，易产生 NPE。
+正例： 使用 JDK8 的 Optional 类来防止 NPE 问题。
+ps.我们现在开发规范jdk版本jdk1.7.0_45，对于jdk8里面的optional可以了解学习，它是一种友好的解决方式。
+二、【强制】当某一列的值全是 NULL 时， count(col)的返回结果为 0，但 sum(col)的返回结果为 NULL，因此使用 sum()时需注意 NPE 问题。
+正例： 可以使用如下方式来避免 sum 的 NPE 问题： SELECT IF(ISNULL(SUM(g)),0,SUM(g))</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dependencyanalyze on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/dependencyanalyze/</link>
+    <description>Recent content in Dependencyanalyze on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Jul 2018 14:11:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/dependencyanalyze/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>通过对Maven的依赖分析剔除无用的jar引用</title>
+      <link>https://ningyu1.github.io/site/post/93-maven-depenpency-analyze/</link>
+      <pubDate>Wed, 11 Jul 2018 14:11:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/93-maven-depenpency-analyze/</guid>
+      <description>当项目开发维护了一段时间时，经常会有项目打包速度慢，jar依赖多，依赖关系错综复杂，这种问题是项目维护最常见的问题，由于开发人员在bugfix或者feature开发时往往只是往项目中添加jar依赖，那我们如何分析出项目中哪些依赖是用到的，哪些依赖是不用的？
+使用Maven analyze来进行分析
+使用如下命令：
+mvn dependency:analyze  会输出如下的日志：
+[INFO] --- maven-dependency-plugin:2.8:analyze (default-cli) @ xxxproject --- [WARNING] Used undeclared dependencies found: [WARNING] org.springframework:spring-beans:jar:4.0.0.RELEASE:compile [WARNING] org.springframework:spring-context:jar:4.0.0.RELEASE:compile [WARNING] Unused declared dependencies found: [WARNING] com.alibaba:dubbo:jar:2.5.3:compile [WARNING] com.baidu.disconf:disconf-client:jar:2.6.32:compile [WARNING] org.mybatis:mybatis:jar:3.2.7:compile [WARNING] org.mybatis:mybatis-spring:jar:1.2.2:compile [WARNING] mysql:mysql-connector-java:jar:5.1.41:compile [WARNING] com.alibaba:druid:jar:1.0.9:compile [WARNING] com.github.sgroschupf:zkclient:jar:0.1:compile [WARNING] org.apache.zookeeper:zookeeper:jar:3.4.6:compile [WARNING] org.springframework:spring-jdbc:jar:4.0.0.RELEASE:compile [WARNING] org.slf4j:log4j-over-slf4j:jar:1.7.5:compile [WARNING] org.slf4j:jcl-over-slf4j:jar:1.7.5:runtime [WARNING] ch.qos.logback:logback-classic:jar:1.0.13:compile  我们就来说一下日志中的Used undeclared dependencies found和Unused declared dependencies found
+Used undeclared dependencies found 这个是指某些依赖的包在代码中有用到它的代码，但是它并不是直接的依赖（就是说没有在pom中直接声明），是通过引入传递下来的包。
+举个例子：
+project在pom中声明了A.jar的依赖（没有声明B.jar的依赖） A.jar的依赖关系：A.jar -&amp;gt; B.</description>
+    </item>
+    
+  </channel>
+</rss>

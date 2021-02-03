@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rancher on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/rancher/</link>
+    <description>Recent content in Rancher on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Mar 2018 17:23:11 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/rancher/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Trouble Shooting —— Docker rancher/agent-instance cannot start automatically</title>
+      <link>https://ningyu1.github.io/site/post/64-rancher-agent-instance/</link>
+      <pubDate>Mon, 05 Mar 2018 17:23:11 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/64-rancher-agent-instance/</guid>
+      <description>今天发现一个docker机器莫名其妙的无工作了，于是进入宿主机查看信息如下：
+docker@xxx:~$ docker ps be4238200956 rancher/agent:v1.0.2 &amp;quot;/run.sh run&amp;quot; 5 months ago Up 34 minutes rancher-agent  发现只有一个rancher/agent容器是启动的，其余的都没有启动，查看rancher控制台，服务都在转圈圈Restaring状态，而且长时间一直这个状态没有变化。
+这是什么问题呢？
+查看机器上所有的容器
+docker@xxx:~$ docker ps -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES d9da7f16ef2d 192.168.0.34:5000/saas-erp:latest &amp;quot;./entrypoint.sh&amp;quot; 4 days ago Exited (0) 50 minutes ago r-erp_erp-dubbo_1 79e8e475db19 192.168.0.34:5000/tms2job:latest &amp;quot;./entrypoint.sh&amp;quot; 4 weeks ago Exited (0) 50 minutes ago r-tms_tms2-job_1 0995dabe324b 192.168.0.34:5000/customer-mq:latest &amp;quot;catalina.sh run&amp;quot; 8 weeks ago Exited (143) 7 weeks ago r-customer_customer-mq_1 65492930b132 192.</description>
+    </item>
+    
+    <item>
+      <title>如何直接操作Docker容器？</title>
+      <link>https://ningyu1.github.io/site/post/48-docker/</link>
+      <pubDate>Thu, 11 Jan 2018 16:11:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/48-docker/</guid>
+      <description>如果你想对Docker的容器进行操作，比如直接查看日志（Rancher无法看的时候），可以通过以下方式实现：
+执行命令docker ps，找到该容器
+第一种方式：
+执行命令docker exec -it [容器号前几位即可] /bin/bash，进入容器内部（类似Linux环境），如：
+如果/bin/bash不能执行，那就用/bin/sh。换一种shell。
+进入容器后我们就可以做任何事情，建议只在容器内做只读操作，必要进行修改操作。如果不想进入容器内部操作也可以：
+执行命令docker exec -it [容器号前几位即可] tailf -n 100 /xxxx/xxxxx.log，进入容器内部（类似Linux环境），如：
+第二种方式：
+执行命令docker logs [容器号前几位即可]，查看日志
+docker logs --tail=200 -f 容器id
+ps:&amp;ndash;tail=200 显示最近200行 ,all显示所有
+这个可以用于不知道日志存放在哪里，如：
+或者直接去宿主机器上查看容器日志文件，docker会在主机上面的/var/lib/docker/containers/[容器id]/生成每个容器的日志文件，以[容器id]-json.log命名，但是不推荐这种方式查看，如：
+在/var/lib/docker/containers能看到很多关于容器的信息比如说hostname等。
+docker还支持Log Driver可以将日志接入到日志分析工具，比如说：ELKB套件</description>
+    </item>
+    
+  </channel>
+</rss>

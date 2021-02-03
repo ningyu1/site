@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualenvwrapper on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/virtualenvwrapper/</link>
+    <description>Recent content in Virtualenvwrapper on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 02 Mar 2018 11:22:28 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/virtualenvwrapper/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>构建Python多个虚拟环境来进行不同版本开发之神器-virtualenv</title>
+      <link>https://ningyu1.github.io/site/post/63-python-virtualenv/</link>
+      <pubDate>Fri, 02 Mar 2018 11:22:28 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/63-python-virtualenv/</guid>
+      <description>我们都知道Python的类库很多，但是大多支持的版本还是Python2.x系列，Python3支持的类库相对较少，因此我们在开发的时候经常还使用的Python2系列的版本，Python3对语法进行了比较大的重构，Python3中将一些Python2的模块名称做了修改，虽然兼容Python2但还是需要我们做一些处理来保证代码在不同Python版本中能够正常运作，如果我们想同时使用Python2 和 Python3，这个时候大家最常用的做法就是机器上配置多个版本，虽然可以解决问题但是配合多个项目的各种杂乱的包依赖情况，问题就变的非常复杂了，可能升级某一个第三方依赖库会对很多项目产生影响。
+我们都知道在安装Python类库的时候它默认会安装到Python的目录下，有编程洁癖的人都会因此苦恼，因为它污染了Python的目录，并且在开发的时候不同的项目使用的类库差异也蛮大，为了使多个项目之间互相不影响，我们能不能根据项目来区分开Python环境目录？
+当然可以，virtualenv就能帮助我们解决上面的苦恼，它是一个可以创建多个隔绝Python环境的工具，virtualenv可以创建一个包含所有必要的可执行的文件夹，用来使用Python工程所需要的包，同时还不污染Python的原安装目录。
+这个工具简直就是给有开发洁癖的人送福音的。画外音：专业送快递
+上面大致说了一下我们使用virtualenv的初衷，接下来让我们看一下virtualenv如何使用，在使用之前先正式的了解一下virtualenv
+什么是virtualenv? Virtualenv是一个用来创建独立的Python环境的工具
+为什么我们需要一个独立的Python环境？ 引用virtualenv的文档
+virtualenv is a tool to create isolated Python environments. The basic problem being addressed is one of dependencies and versions, and indirectly permissions. Imagine you have an application that needs version 1 of LibFoo, but another application requires version 2. How can you use both these applications? If you install everything into /usr/lib/python2.7/site-packages (or whatever your platform’s standard location is), it’s easy to end up in a situation where you unintentionally upgrade an application that shouldn’t be upgraded.</description>
+    </item>
+    
+  </channel>
+</rss>
