@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jms on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/jms/</link>
+    <description>Recent content in Jms on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Sep 2017 17:12:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/jms/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JMS实现参数的集中式管理</title>
+      <link>https://ningyu1.github.io/site/post/19-jms-ucm/</link>
+      <pubDate>Tue, 05 Sep 2017 17:12:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/19-jms-ucm/</guid>
+      <description>点评 虽然现在开源的UCM套件很多，UCM统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。但是很多人是知其然不知其所以然，刚好发现下面这篇文章可以作为原理的教程文章，使用JMS、Redis、Zookeeper简单的实现UCM基本功能，作为学习交流还是很不错的。
+文章转自：https://my.oschina.net/OutOfMemory/blog/1510101 作者：@ksfzhaohui
+前言 JMS的发布订阅机制也能实现类似的功能，集群节点通过订阅指定的节点，同时使用JMS对消息的过滤器功能，实现对指定参数的更新，本文将介绍通过JMS实现简单的参数集中式管理。
+Maven引入 Spring相关的jar引入参考上一篇文章
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.jms&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jms&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.activemq&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;activemq-all&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.10.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  目标  可以同时配置监听多个节点如/app1,/app2； 希望只需要配置如/app1，就能够监听其子节点如/app1/modual1以及子节点的子节点如/app1/modual1/xxx/…； 服务器启动能获取当前指定父节点下的所有子节点数据； 在添加节点或者在更新节点数据的时候能够动态通知，这样代码中就能够实时获取最新的数据； spring配置中可以从Zookeeper中读取参数进行初始化。  虽然在实现的方式上有点区别，但是最终达成的目标是一致的，同样列出了这5条目标
+实现 MQWatcher主要用来和JMS建立连接，同时订阅指定节点，建立点对点连接，过滤出需要监听的数据，更新数据，初始化数据，存储数据等 InitConfServer主要作为点对点连接的服务器端用来初始化数据
+1.同时配置监听多个节点 提供一个字符串数组给用户用来添加需要监听的节点：
+private String[] keyPatterns;  2.能够监听其子节点以及子节点的子节点 使用了一种和Zookeeper不一样的方式，JMS的方式是将所有的数据变更都发送到订阅者，然后订阅者通过过滤出需要的数据进行更新
+/** MQ的过滤器 **/ private StringBuffer keyFilter = new StringBuffer(); private final String TOPIC = &amp;quot;dynamicConfTopic&amp;quot;; private void watcherPaths() throws JMSException { Topic topic = session.createTopic(TOPIC); MessageConsumer consumer = session.createConsumer(topic, keyFilter.toString()); consumer.</description>
+    </item>
+    
+  </channel>
+</rss>

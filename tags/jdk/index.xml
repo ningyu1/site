@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jdk on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/jdk/</link>
+    <description>Recent content in Jdk on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Dec 2017 18:15:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/jdk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JDK1.8新特性详解</title>
+      <link>https://ningyu1.github.io/site/post/44-jdk1.8-feature/</link>
+      <pubDate>Fri, 15 Dec 2017 18:15:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/44-jdk1.8-feature/</guid>
+      <description>将Java8的新特新逐一列出，并将使用简单的代码示例来指导你如何使用默认接口方法，lambda表达式，方法引用以及多重Annotation，之后你将会学到最新的API上的改进，比如流，函数式接口，Map以及全新的日期API
+一、接口的默认方法 Java 8允许我们给接口添加一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法，示例如下：
+interface Formula { double calculate(int a); default double sqrt(int a) { return Math.sqrt(a); } }  Formula接口在拥有calculate方法之外同时还定义了sqrt方法，实现了Formula接口的子类只需要实现一个calculate方法，默认方法sqrt将在子类上可以直接使用。
+Formula formula = new Formula() { @Override public double calculate(int a) { return sqrt(a * 100); } }; formula.calculate(100); // 100.0 formula.sqrt(16); // 4.0  文中的formula被实现为一个匿名类的实例，该代码非常容易理解，6行代码实现了计算 sqrt(a * 100)。在下一节中，我们将会看到实现单方法接口的更简单的做法。
+二、Lambda 表达式 首先看看在老版本的Java中是如何排列字符串的：
+List&amp;lt;String&amp;gt; names = Arrays.asList(&amp;quot;peter&amp;quot;, &amp;quot;anna&amp;quot;, &amp;quot;mike&amp;quot;, &amp;quot;xenia&amp;quot;); Collections.sort(names, new Comparator&amp;lt;String&amp;gt;() { @Override public int compare(String a, String b) { return b.</description>
+    </item>
+    
+    <item>
+      <title>JDK1.7新特性详解</title>
+      <link>https://ningyu1.github.io/site/post/43-jdk1.7-feature/</link>
+      <pubDate>Fri, 15 Dec 2017 18:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/43-jdk1.7-feature/</guid>
+      <description>JDK7对Java语法有少量更新，重点是在易用性和便捷性的改进。
+1.二进制字面量 JDK7开始，终于可以用二进制来表示整数（byte,short,int和long）。使用二进制字面量的好处是，可以是代码更容易被理解。语法非常简单，只要在二进制数值前面加 0b或者0B
+byte nByte = (byte)0b0001; short nShort = (short)0B0010; int nInt = 0b0011; long nLong = 0b0100L;  2.数字字面量可以出现下划线 对于一些比较大的数字，我们定义起来总是不方面，经常缺少或者增加位数。JDK7为我们提供了一种解决方案，下划线可以出现在数字字面量。
+int a = 10_0000_0000; long b = 0xffff_ffff_ffff_ffffl; byte c = 0b0001_1000;  注意：你只能将下划线置于数字之间，以下使用方法是错误的，
+ 数字的开头或者结尾 小数点的前后 ‘F’或者‘f’的后缀 只能用数字的位置  nt err1 = _11,err2=11_; float err3=3._4,err4=3_.4; long err5=0x888_f;  3.switch 语句可以用字符串了 这个功能千呼万唤，终于出来了
+private static void switchString(String str){ switch(str){ case &amp;quot;one&amp;quot;: System.err.println(&amp;quot;1&amp;quot;); break; case &amp;quot;two&amp;quot;: System.out.println(&amp;quot;2&amp;quot;); break; default : System.</description>
+    </item>
+    
+  </channel>
+</rss>

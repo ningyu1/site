@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tomcatredissessionmanager on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/tomcatredissessionmanager/</link>
+    <description>Recent content in Tomcatredissessionmanager on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Mar 2018 16:01:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/tomcatredissessionmanager/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Trouble Shooting —— CAS Server集群环境下报错：Server redirected too many  times (20)</title>
+      <link>https://ningyu1.github.io/site/post/73-cas-server-pit1/</link>
+      <pubDate>Fri, 23 Mar 2018 16:01:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/73-cas-server-pit1/</guid>
+      <description>当我们使用cas做单点登录的时候往往会使用集群方式部署，不管是cas server或者是接入的app server都会采用集群的方式部署。
+在对cas server做集群实现无状态化，需要注意一下几点，也是我上一篇cas遇到的TGC验证问题中总结出来的：
+ cas的ticket需要做到集中存储，可以使用redis、jpa、或者其他方式，这个官方文章上有详细介绍：ticket-registry cas的session信息需要做到集中存储，如果使用的是tomcat可以使用TomcatRedisSessionMananger插件来通过redis做session集中存储。 还有一个就是上面遇到的问题，客户端cookie信息：TGC，TGC采用cookie方式存在客户端，因此需要开启会话保持，使得相同客户端每次都会被路由到同一个cas server上去做TGC验证。 最后一个就是需要接入sso的client应用端的session信息也需要做集中存储，因此cas server会和client进行通信去验证ticket，验证完后会生成信息并存储到sesson中，因此也需要使用TomcatRedisSessionMananger插件来通过redis做session集中存储。 cas server端和接入的app服务端需要保证网络通畅。  cas使用总结博文目录 最近cas遇到的问题我都总结到了blog中，这里整理一下目录如下：
+ 《CAS使用经验总结，纯干货》 《CAS Server强制踢人功能实现方式》 《Trouble Shooting —— CAS Server集群环境下TGC验证问题排查，需要开启会话保持》  接下来我们就说一下这次遇到的问题。
+问题现象 通过上面的方式可以将cas server做到集群无状态化，但是避免不了其他的问题，下面就是最近与到的问题，现象是这样的，一部分人可以正常登陆，一部分人登陆时报错，错误如下：
+2018-03-23 10:33:22.768 [http-nio-7051-exec-1] ERROR org.jasig.cas.client.util.CommonUtils - Server redirected too many times (20) java.net.ProtocolException: Server redirected too many times (20) at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1637) ~[na:1.7.0_79] at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:254) ~[na:1.7.0_79] at org.jasig.cas.client.util.CommonUtils.getResponseFromServer(CommonUtils.java:393) ~[cas-client-core-3.3.3.jar:3.3.3] at org.jasig.cas.client.validation.AbstractCasProtocolUrlBasedTicketValidator.retrieveResponseFromServer(AbstractCasProtocolUrlBasedTicketValidator.java:45) [cas-client-core-3.3.3.jar:3.3.3] at org.jasig.cas.client.validation.AbstractUrlBasedTicketValidator.validate(AbstractUrlBasedTicketValidator.java:200) [cas-client-core-3.3.3.jar:3.3.3] at org.springframework.security.cas.authentication.CasAuthenticationProvider.authenticateNow(CasAuthenticationProvider.java:140) [spring-security-cas-3.1.7.RELEASE.jar:3.1.7.RELEASE] at org.</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— CAS Server集群环境下TGC验证问题排查，需要开启会话保持</title>
+      <link>https://ningyu1.github.io/site/post/70-cas-server-pit/</link>
+      <pubDate>Fri, 16 Mar 2018 12:02:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/70-cas-server-pit/</guid>
+      <description>问题现象 CAS部署结构：
+两台cas server通过nginx做负载均衡，两个cas server的ticket registry配置的jpa方式，指向同一个库。两个cas server的tomcat做了TomcatRedisSessionManager，使用redis集中存储session。
+目前的现象：
+页面上请求cas登录地址，登录过后频繁刷新登录页面，有时返回已登录，有时返回未登录，当返回未登录时去后台查看日志发现有如下错误，验证cookie发现请求的源IP与第一次访问的源IP不一致。这个很明显是cas集群环境下的问题。
+2018-03-16 10:02:44,418 DEBUG [org.apereo.cas.web.support.TGCCookieRetrievingCookieGenerator] - &amp;lt;Invalid cookie. Required remote address does not match ${ip}&amp;gt; java.lang.IllegalStateException: Invalid cookie. Required remote address does not match ${ip} at org.apereo.cas.web.support.DefaultCasCookieValueManager.obtainCookieValue(DefaultCasCookieValueManager.java:84) ~[cas-server-support-cookie-5.0.4.jar:5.0.4] at org.apereo.cas.web.support.CookieRetrievingCookieGenerator.retrieveCookieValue(CookieRetrievingCookieGenerator.java:93) ~[cas-server-support-cookie-5.0.4.jar:5.0.4] at org.apereo.cas.web.support.CookieRetrievingCookieGenerator$$FastClassBySpringCGLIB$$25dba342.invoke(&amp;lt;generated&amp;gt;) ~[cas-server-support-cookie-5.0.4.jar:5.0.4] at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:720) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:133) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:121) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:655) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.apereo.cas.web.support.CookieRetrievingCookieGenerator$$EnhancerBySpringCGLIB$$10d36968.retrieveCookieValue(&amp;lt;generated&amp;gt;) ~[cas-server-support-cookie-5.0.4.jar:5.0.4] at org.apereo.cas.logging.web.ThreadContextMDCServletFilter.doFilter(ThreadContextMDCServletFilter.java:83) ~[cas-server-core-logging-5.0.4.jar:5.0.4] at org.</description>
+    </item>
+    
+  </channel>
+</rss>

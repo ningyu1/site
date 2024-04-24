@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql Gap Lock on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/mysql-gap-lock/</link>
+    <description>Recent content in Mysql Gap Lock on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 11 Jan 2018 17:10:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/mysql-gap-lock/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MySQL Gap Lock问题</title>
+      <link>https://ningyu1.github.io/site/post/50-mysql-gap-lock/</link>
+      <pubDate>Thu, 11 Jan 2018 17:10:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/50-mysql-gap-lock/</guid>
+      <description>文章来源：http://blog.chinaunix.net/uid-20726500-id-5749804.html 作者：@小桥河西
+初识MySQL的gap，觉得这个设计比较独特，和其他数据库的做法不太一样，所以整理一个简单的memo（虽然关于gap锁，相关资料已经很多了）
+一、什么是gap A place in an InnoDB index data structure where new values could be inserted.
+说白了gap就是索引树中插入新记录的空隙。相应的gap lock就是加在gap上的锁，还有一个next-key锁，是记录+记录前面的gap的组合的锁。
+二、gap锁或next-key锁的作用 http://dev.mysql.com/doc/refman/5.7/en/innodb-next-key-locking.html
+To prevent phantoms, InnoDB uses an algorithm called next-key locking that combines index-row locking with gap locking. InnoDB performs row-level locking in such a way that when it searches or scans a table index, it sets shared or exclusive locks on the index records it encounters. Thus, the row-level locks are actually index-record locks.</description>
+    </item>
+    
+  </channel>
+</rss>

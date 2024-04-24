@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zookeeper on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/zookeeper/</link>
+    <description>Recent content in Zookeeper on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 28 Sep 2018 11:20:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/zookeeper/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>zookeeper数据迁移及恢复</title>
+      <link>https://ningyu1.github.io/site/post/101-zookeeper-data-migrate/</link>
+      <pubDate>Fri, 28 Sep 2018 11:20:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/101-zookeeper-data-migrate/</guid>
+      <description>在做环境迁移的时候经常会遇到中间件的数据迁移，今天我们说一下zookeeper的数据如何迁移与恢复。
+比如说我们使用prd环境数据迁移到st环境为例来叙述一下具体的步骤。
+第一步：从prd环境zookeeper服务器的数据目录下复制最新的日志和快照文件。
+先去zookeeper的安装目录下找到zookeeper的conf文件，例如：
+$&amp;gt; cd /usr/local/zookeeper/conf $&amp;gt; cat zoo.cfg  打开zoo.cfg文件找到具体配置的zookeeper的data目录，例如：
+# the directory where the snapshot is stored. # do not use /tmp for storage, /tmp here is just # example sakes. dataDir=/var/zookeeper  进入到dataDir下的version-2文件夹，version-2文件夹下存放的是zookeeper的日志和镜像文件，我们找到最新的日志和镜像文件，例如：
+$&amp;gt; cd /var/zookeeper/version-2 $&amp;gt; ls -ah -rw-r--r-- 1 zookeeper zookeeper 67108880 Sep 27 17:20 log.909e2d252 -rw-r--r-- 1 zookeeper zookeeper 10408329 Sep 27 17:01 snapshot.909e2d250  找到最新的日志和快照文件，例如上面的：log.909e2d252和snapshot.909e2d250
+日志文件存放zookeeper全部数据记录 ，快照文件则是内存增量文件。
+ps.这里要注意找最新的日志和快照文件
+zookeeper的日志和镜像文件的清理可以看这篇文章：Zookeeper事务日志和snapshot清理方式
+第二步：传输日志和快照文件
+如果st和prd网络是通的话可以通过scp的方式复制过去，如果网络不通通过中转站来过渡。
+第三步：停掉需要恢复数据的zk服务，删除数据目录下的文件，复制刚才的两个文件到数据目录下</description>
+    </item>
+    
+    <item>
+      <title>Zookeeper事务日志和snapshot清理方式</title>
+      <link>https://ningyu1.github.io/site/post/89-zookeeper-cleanlog/</link>
+      <pubDate>Fri, 15 Jun 2018 17:15:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/89-zookeeper-cleanlog/</guid>
+      <description>Zookeeper运行过程会产生大量的事务日志和snapshot镜像文件，文件的目录是通过zoo.conf的datadir参数指定的，下面我们就说一下如何清理事务日志和snapshot。
+清理的方式有如下三种：
+ 一、zookeeper配置自动清理 二、使用自定义清理脚本 三、使用zkCleanup.sh清理  下面我们一一介绍每种清理方式是如何使用的。
+zookeeper配置自动清理 zookeeper在3.4.0版本以后提供了自动清理snapshot和事务日志的功能通过配置 autopurge.snapRetainCount 和 autopurge.purgeInterval 这两个参数能够实现定时清理了。这两个参数都是在zoo.cfg中配置的：
+我们使用的zk版本是：3.4.6，因此可以使用自带的清理功能
+autopurge.purgeInterval 这个参数指定了清理频率，单位是小时，需要填写一个1或更大的整数，默认是0，表示不开启自己清理功能。
+autopurge.snapRetainCount 这个参数和上面的参数搭配使用，这个参数指定了需要保留的文件数目。默认是保留3个。
+示例：
+autopurge.snapRetainCount=60 autopurge.purgeInterval=48  保留48小时内的日志，并且保留60个文件
+ps.但是修改conf需要重启服务，生产可能不会考虑重启服务因此使用其他方法。
+使用自定义清理脚本 clean_zook_log.sh脚本内容如下
+#!/bin/bash #snapshot file dir dataDir=/var/zookeeper/version-2 #tran log dir dataLogDir=/var/zookeeper/version-2 logDir=/usr/local/zookeeper/logs #Leave 60 files count=60 count=$[$count+1] ls -t $dataLogDir/log.* | tail -n +$count | xargs rm -f ls -t $dataDir/snapshot.* | tail -n +$count | xargs rm -f ls -t $logDir/zookeeper.log.* | tail -n +$count | xargs rm -f  这个脚本保留最新的60个文件，可以将他写到 将这个脚本添加到crontab中，设置为每天凌晨2点？或者其他时间执行即可。</description>
+    </item>
+    
+    <item>
+      <title>Zookeeper常用命令与注意事项</title>
+      <link>https://ningyu1.github.io/site/post/71-zookeeper-considerations/</link>
+      <pubDate>Wed, 21 Mar 2018 15:26:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/71-zookeeper-considerations/</guid>
+      <description>Zookeeper在互联网行业和分布式环境下是最常用的集群协调工具，那我们今天就对Zookeeper的常用命令和使用注意事项进一步说明，在这之前我们先看一下Zookeeper是什么，它能做什么？
+Zookeeper是什么？ ZooKeeper是一个开源的分布式应用程序协调服务，是Google的Chubby一个开源的实现，是Hadoop和Hbase的重要组件。它是一个为分布式应用提供一致性服务的软件，提供的功能包括：配置维护、域名服务、分布式同步、组服务等。
+它的这些特性可以让我们在很多场景下使用它，可以用它做注册中心、分布式锁、选举、队列等。
+Zookeeper的原理 ZooKeeper是以Fast Paxos算法为基础的，Paxos 算法存在活锁的问题，即当有多个proposer交错提交时，有可能互相排斥导致没有一个proposer能提交成功，而Fast Paxos作了一些优化，通过选举产生一个leader (领导者)，只有leader才能提交proposer，具体算法可见Fast Paxos。因此，要想弄懂ZooKeeper首先得对Fast Paxos有所了解
+ZooKeeper的基本运转流程：
+ 选举Leader。 同步数据。 选举Leader过程中算法有很多，但要达到的选举标准是一致的。 Leader要具有最高的执行ID，类似root权限。 集群中大多数的机器得到响应并接受选出的Leader。  Zookeeper数据结构 与普通的文件系统极其类似，如下：
+其中每个节点称为一个znode. 每个znode由3部分组成:
+ stat. 此为状态信息, 描述该znode的版本, 权限等信息. data. 与该znode关联的数据. children. 该znode下的子节点.  Zookeeper节点类型  persistent： persistent节点不和特定的session绑定, 不会随着创建该节点的session的结束而消失, 而是一直存在, 除非该节点被显式删除. ephemeral： ephemeral节点是临时性的, 如果创建该节点的session结束了, 该节点就会被自动删除. ephemeral节点不能拥有子节点. 虽然ephemeral节点与创建它的session绑定, 但只要该该节点没有被删除, 其他session就可以读写该节点中关联的数据. 使用-e参数指定创建ephemeral节点. sequence： 严格的说, sequence并非节点类型中的一种. sequence节点既可以是ephemeral的, 也可以是persistent的. 创建sequence节点时, ZooKeeper server会在指定的节点名称后加上一个数字序列, 该数字序列是递增的. 因此可以多次创建相同的sequence节点, 而得到不同的节点. 使用-s参数指定创建sequence节点.  Zookeeper常用命令 启动服务 [app@iZbp1dijzcfg8m0bcqfv9yZ zookeeper]$ ./bin/zkServer.sh start ZooKeeper JMX enabled by default Using config: /usr/local/servers/zookeeper/zookeeper/bin/.</description>
+    </item>
+    
+    <item>
+      <title>Zookeeper实现参数的集中式管理</title>
+      <link>https://ningyu1.github.io/site/post/18-zookeeper-ucm/</link>
+      <pubDate>Tue, 05 Sep 2017 17:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/18-zookeeper-ucm/</guid>
+      <description>点评 虽然现在开源的UCM套件很多，UCM统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。但是很多人是知其然不知其所以然，刚好发现下面这篇文章可以作为原理的教程文章，使用JMS、Redis、Zookeeper简单的实现UCM基本功能，作为学习交流还是很不错的。
+文章转自：https://my.oschina.net/OutOfMemory/blog/1503392 作者：@ksfzhaohui
+前言 应用项目中都会有一些参数，一般的做法通常可以选择将其存储在本地配置文件或者内存变量中；对于集群机器规模不大、配置变更不是特别频繁的情况下，这两种方式都能很好的解决；但是一旦集群机器规模变大，且配置信息越来越频繁，依靠这两种方式就越来越困难；我们希望能够快速的做到全局参数的变更，因此需要一种参数的集中式管理，下面利用Zookeeper的一些特性来实现简单的参数管理。
+准备 jdk:1.7.0_80 zookeeper:3.4.3 curator:2.6.0 spring:3.1.2  Maven引入 Spring相关的jar引入参考上一篇文章
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-core&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-context&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-beans&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.zookeeper&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;zookeeper&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.4.3&amp;lt;/version&amp;gt; &amp;lt;exclusions&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;com.sun.jmx&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jmxri&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;com.sun.jdmk&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jmxtools&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;javax.jms&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jms&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;/exclusions&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.curator&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;curator-framework&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.6.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.curator&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;curator-recipes&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.6.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  目标  可以同时配置监听多个节点如/app1,/app2； 希望只需要配置如/app1，就能够监听其子节点如/app1/modual1以及子节点的子节点如/app1/modual1/xxx/…； 服务器启动能获取当前指定父节点下的所有子节点数据； 在添加节点或者在更新节点数据的时候能够动态通知，这样代码中就能够实时获取最新的数据； spring配置中可以从Zookeeper中读取参数进行初始化。  实现 提供ZKWatcher类主要用来和Zookeeper建立连接，监听节点，初始化节点数据，更新节点数据，存储节点数据等</description>
+    </item>
+    
+  </channel>
+</rss>

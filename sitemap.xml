@@ -1,0 +1,2190 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/blog-migration/</loc>
+    <lastmod>2019-04-03T15:30:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/113-object-copy/</loc>
+    <lastmod>2019-03-22T16:03:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/112-front-end-and-back-end-separation/</loc>
+    <lastmod>2019-03-11T19:11:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/111-code-quality-management/</loc>
+    <lastmod>2019-03-07T14:37:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/110-mybatis-batch/</loc>
+    <lastmod>2019-02-20T14:34:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/109-restful-date-convert/</loc>
+    <lastmod>2019-02-12T15:30:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/108-custom-field/</loc>
+    <lastmod>2019-01-03T15:50:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/107-best-paper/</loc>
+    <lastmod>2018-12-28T17:38:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/106-jmeter-plugin-dubbo-1.3.8/</loc>
+    <lastmod>2018-12-18T13:57:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/105-snowflake/</loc>
+    <lastmod>2018-12-07T11:51:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/104-jmeter-plugin-dubbo-1.3.7/</loc>
+    <lastmod>2018-11-13T18:51:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/103-activemq-listener-concurrency/</loc>
+    <lastmod>2018-10-30T18:40:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/102-noclassdeffounderror/</loc>
+    <lastmod>2018-09-29T15:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/101-zookeeper-data-migrate/</loc>
+    <lastmod>2018-09-28T11:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/100-git-centralized-workflow/</loc>
+    <lastmod>2018-09-26T20:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/99-rpc-benchmark1/</loc>
+    <lastmod>2018-09-19T12:01:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/98-rpc-benchmark/</loc>
+    <lastmod>2018-09-18T18:16:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/97-mybatis-npe/</loc>
+    <lastmod>2018-08-20T17:48:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/96-word-xml/</loc>
+    <lastmod>2018-08-09T09:48:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/95-downloadjs-cors/</loc>
+    <lastmod>2018-08-02T14:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/94-embedded-redisserver/</loc>
+    <lastmod>2018-07-17T18:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/93-maven-depenpency-analyze/</loc>
+    <lastmod>2018-07-11T14:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/92-cors-ajax/</loc>
+    <lastmod>2018-06-27T12:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/90-docker-container-cleanlog/</loc>
+    <lastmod>2018-06-19T15:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/89-zookeeper-cleanlog/</loc>
+    <lastmod>2018-06-15T17:15:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/85-wechat/</loc>
+    <lastmod>2018-06-08T13:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/84-charles/</loc>
+    <lastmod>2018-06-04T17:28:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/83-docker-pull-error/</loc>
+    <lastmod>2018-05-29T12:09:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/82-ssl-lets-encrypt/</loc>
+    <lastmod>2018-05-28T15:57:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/81-mysql-utf8mb4/</loc>
+    <lastmod>2018-05-14T14:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/80-activemq-consumer-slow-speed/</loc>
+    <lastmod>2018-05-09T15:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/79-docker-registry-pull-filesystem-layer/</loc>
+    <lastmod>2018-04-27T17:46:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/78-dubbo-validation-jsr303-pit/</loc>
+    <lastmod>2018-04-23T13:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/77-jenkins-sonarqube-jacoco-junit/</loc>
+    <lastmod>2018-04-12T17:03:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/76-tidb-notes/</loc>
+    <lastmod>2018-04-10T20:13:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/75-mysql-lock-wait-timeout-exceeded/</loc>
+    <lastmod>2018-04-08T18:02:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/74-redisearch/</loc>
+    <lastmod>2018-03-30T12:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/73-cas-server-pit1/</loc>
+    <lastmod>2018-03-23T16:01:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/72-svn-query/</loc>
+    <lastmod>2018-03-23T10:44:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/71-zookeeper-considerations/</loc>
+    <lastmod>2018-03-21T15:26:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/70-cas-server-pit/</loc>
+    <lastmod>2018-03-16T12:02:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/69-java-reflect/</loc>
+    <lastmod>2018-03-13T15:31:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/68-jmeter-plugin-dubbo-1.2.0/</loc>
+    <lastmod>2018-03-13T13:18:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/67-python-requirements/</loc>
+    <lastmod>2018-03-09T14:19:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/66-jmeter-plugin-dubbo-bugfix/</loc>
+    <lastmod>2018-03-07T18:00:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/65-java-inner-class/</loc>
+    <lastmod>2018-03-06T16:50:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/64-rancher-agent-instance/</loc>
+    <lastmod>2018-03-05T17:23:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/63-python-virtualenv/</loc>
+    <lastmod>2018-03-02T11:22:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/62-ant-path-matcher/</loc>
+    <lastmod>2018-02-27T16:15:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/61-disconf-ext/</loc>
+    <lastmod>2018-02-11T11:26:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/60-jmeter-plugins-dubbo-support/</loc>
+    <lastmod>2018-02-09T15:39:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/59-py2exe-pyinstaller/</loc>
+    <lastmod>2018-02-07T11:57:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/58-git-ssh/</loc>
+    <lastmod>2018-01-30T16:10:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/about/</loc>
+    <lastmod>2018-01-30T11:03:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/57-cas-server1/</loc>
+    <lastmod>2018-01-26T15:07:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/56-websocket-ssl/</loc>
+    <lastmod>2018-01-25T17:04:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/55-java-jvm-analysis/</loc>
+    <lastmod>2018-01-23T14:36:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/54-cas-server/</loc>
+    <lastmod>2018-01-19T16:25:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/53-ssl-cert-3/</loc>
+    <lastmod>2018-01-15T14:08:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/52-ssl-cert-2/</loc>
+    <lastmod>2018-01-12T19:13:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/51-ssl-cert/</loc>
+    <lastmod>2018-01-12T17:06:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/50-mysql-gap-lock/</loc>
+    <lastmod>2018-01-11T17:10:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/49-java-test/</loc>
+    <lastmod>2018-01-11T16:52:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/48-docker/</loc>
+    <lastmod>2018-01-11T16:11:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/47-jenkins-svn-maven-timezone/</loc>
+    <lastmod>2018-01-09T18:30:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/46-docker-registry/</loc>
+    <lastmod>2017-12-29T14:45:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/45-spring-cloud-netflix/</loc>
+    <lastmod>2017-12-25T13:58:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/44-jdk1.8-feature/</loc>
+    <lastmod>2017-12-15T18:15:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/43-jdk1.7-feature/</loc>
+    <lastmod>2017-12-15T18:00:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/42-fastjson/</loc>
+    <lastmod>2017-12-15T15:42:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/41-apm/</loc>
+    <lastmod>2017-12-11T10:00:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/40-distributed-db-paging/</loc>
+    <lastmod>2017-11-24T18:00:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/39-btrace/</loc>
+    <lastmod>2017-11-15T11:00:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/38-activemq-slow-speed/</loc>
+    <lastmod>2017-11-09T17:00:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/37-concurrency-idempotent/</loc>
+    <lastmod>2017-11-06T17:40:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/36-atomikos-transactions-trouble/</loc>
+    <lastmod>2017-11-02T15:52:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/35-datasource-connection-leak/</loc>
+    <lastmod>2017-10-26T13:29:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/34-redis-rdb/</loc>
+    <lastmod>2017-10-09T14:30:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/33-redis-considerations/</loc>
+    <lastmod>2017-10-09T12:00:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/32-redis-aof/</loc>
+    <lastmod>2017-10-09T09:53:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/31-zxing/</loc>
+    <lastmod>2017-09-30T16:56:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/30-npm-nrm/</loc>
+    <lastmod>2017-09-29T14:16:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/29-distributed-lock/</loc>
+    <lastmod>2017-09-27T16:43:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/28-redis-client-sentinel/</loc>
+    <lastmod>2017-09-25T13:29:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/27-webpack2/</loc>
+    <lastmod>2017-09-20T11:57:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/26-webpack1/</loc>
+    <lastmod>2017-09-20T10:36:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/25-licence/</loc>
+    <lastmod>2017-09-19T13:36:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/24-zipkin/</loc>
+    <lastmod>2017-09-08T13:36:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/23-spring-cloud/</loc>
+    <lastmod>2017-09-08T09:09:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/22-redis-client/</loc>
+    <lastmod>2017-09-06T11:17:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/21-fastfds-client/</loc>
+    <lastmod>2017-09-06T10:17:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/20-mybatis-sqlhelper/</loc>
+    <lastmod>2017-09-05T17:50:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/19-jms-ucm/</loc>
+    <lastmod>2017-09-05T17:12:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/18-zookeeper-ucm/</loc>
+    <lastmod>2017-09-05T17:07:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/17-redis-ucm/</loc>
+    <lastmod>2017-09-05T16:40:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/16-spring-transaction/</loc>
+    <lastmod>2017-08-26T16:40:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/15-java-npe/</loc>
+    <lastmod>2017-08-26T16:01:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/15-java-jvm/</loc>
+    <lastmod>2017-08-26T15:56:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/12-vue-axios/</loc>
+    <lastmod>2017-08-24T10:51:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/11-redis-aof-pit/</loc>
+    <lastmod>2017-08-15T10:30:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/04-lombok-quick-start/</loc>
+    <lastmod>2017-07-19T15:22:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/02-fastdfs-installer/</loc>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/03-nginx-502-bad-gateway/</loc>
+    <lastmod>2017-06-30T18:36:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/05-cache-design/</loc>
+    <lastmod>2017-06-02T14:06:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/06-activemq-settings/</loc>
+    <lastmod>2017-05-11T12:03:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/07-maven-settings/</loc>
+    <lastmod>2017-05-10T10:05:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/archives/</loc>
+    <lastmod>2017-03-28T15:58:20+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/01-restful-design-specifications/</loc>
+    <lastmod>2017-02-21T11:58:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/09-dubbo-debug/</loc>
+    <lastmod>2016-12-20T14:32:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/08-svn-trunk-branche/</loc>
+    <lastmod>2016-12-20T14:32:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/10-svn-ignore/</loc>
+    <lastmod>2016-11-26T10:30:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/13-slf4j-logback/</loc>
+    <lastmod>2015-04-10T10:15:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/14-guava/</loc>
+    <lastmod>2015-03-09T17:34:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/abandon-connection/</loc>
+    <lastmod>2017-10-26T13:29:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/activemq/</loc>
+    <lastmod>2018-10-30T18:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/activemq/</loc>
+    <lastmod>2018-10-30T18:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/activemq-slow-speed/</loc>
+    <lastmod>2018-05-09T15:38:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/ajax%E8%B7%A8%E5%9F%9F/</loc>
+    <lastmod>2018-06-27T12:20:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/already-mapped/</loc>
+    <lastmod>2017-11-02T15:52:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/angular/</loc>
+    <lastmod>2017-09-20T11:57:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/angular/</loc>
+    <lastmod>2017-09-20T11:57:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/antpathmatcher/</loc>
+    <lastmod>2018-02-27T16:15:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/aof/</loc>
+    <lastmod>2017-10-09T12:00:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/aof-block/</loc>
+    <lastmod>2017-10-09T12:00:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/aof-rewriting/</loc>
+    <lastmod>2017-08-15T10:30:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/apache/</loc>
+    <lastmod>2017-09-19T13:36:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/apm/</loc>
+    <lastmod>2017-12-11T10:00:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/apm/</loc>
+    <lastmod>2017-12-11T10:00:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/asynchronous-aof-fsync-is-taking-too-long-disk-is-busywriting-the-aof-buffer-without-waiting-for-fsync-to-complete-this-may-slow-down-redis/</loc>
+    <lastmod>2017-10-09T12:00:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/atomikos/</loc>
+    <lastmod>2017-11-02T15:52:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/axios/</loc>
+    <lastmod>2017-08-24T10:51:30+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/bad-gateway/</loc>
+    <lastmod>2017-06-30T18:36:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/batch/</loc>
+    <lastmod>2019-02-20T14:34:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/bbfreeze/</loc>
+    <lastmod>2018-02-07T11:57:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/best-paper/</loc>
+    <lastmod>2018-12-28T17:38:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/best-paper/</loc>
+    <lastmod>2018-12-28T17:38:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/branche/</loc>
+    <lastmod>2016-12-20T14:32:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/bsd/</loc>
+    <lastmod>2017-09-19T13:36:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/btrace/</loc>
+    <lastmod>2017-11-15T11:00:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/cache/</loc>
+    <lastmod>2017-06-02T14:06:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/cannot-allocate-memory/</loc>
+    <lastmod>2017-08-15T10:30:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/cant-rewrite-append-only-file-in-background/</loc>
+    <lastmod>2017-08-15T10:30:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/cant-start-redis-server.-check-logs-for-details./</loc>
+    <lastmod>2018-07-17T18:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/cas/</loc>
+    <lastmod>2018-03-23T16:01:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/cas/</loc>
+    <lastmod>2018-03-23T16:01:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/cas-cluster/</loc>
+    <lastmod>2018-01-26T15:07:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/cas-server/</loc>
+    <lastmod>2018-01-26T15:07:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/case-analysis/</loc>
+    <lastmod>2018-08-09T09:48:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/cat/</loc>
+    <lastmod>2017-12-11T10:00:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/</loc>
+    <lastmod>2018-10-30T18:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/cert/</loc>
+    <lastmod>2018-01-19T16:25:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/charles/</loc>
+    <lastmod>2018-06-04T17:28:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/charles/</loc>
+    <lastmod>2018-06-04T17:28:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/check-style/</loc>
+    <lastmod>2019-03-07T14:37:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/code-review/</loc>
+    <lastmod>2019-03-07T14:37:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/concurrency/</loc>
+    <lastmod>2017-11-06T17:40:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/concurrency/</loc>
+    <lastmod>2017-11-06T17:40:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/connection-leak/</loc>
+    <lastmod>2017-10-26T13:29:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/connnection-reset-by-peer/</loc>
+    <lastmod>2017-08-15T10:30:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/cookie/</loc>
+    <lastmod>2018-01-26T15:07:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/cors/</loc>
+    <lastmod>2018-08-02T14:50:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/cors/</loc>
+    <lastmod>2018-08-02T14:50:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/cpu-top/</loc>
+    <lastmod>2018-01-23T14:36:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/crossdomain/</loc>
+    <lastmod>2018-06-27T12:20:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/custom-field/</loc>
+    <lastmod>2019-01-03T15:50:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/custom-field/</loc>
+    <lastmod>2019-01-03T15:50:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/cx_freeze/</loc>
+    <lastmod>2018-02-07T11:57:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/datasource/</loc>
+    <lastmod>2017-10-26T13:29:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/date-convert/</loc>
+    <lastmod>2019-02-12T15:30:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/debug/</loc>
+    <lastmod>2016-12-20T14:32:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/dependencyanalyze/</loc>
+    <lastmod>2018-07-11T14:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/devops/</loc>
+    <lastmod>2017-12-25T13:58:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/disconf/</loc>
+    <lastmod>2018-02-11T11:26:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/distributed/</loc>
+    <lastmod>2017-09-27T16:43:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/distributed/</loc>
+    <lastmod>2017-09-27T16:43:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/docker/</loc>
+    <lastmod>2018-06-19T15:10:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/docker/</loc>
+    <lastmod>2018-06-19T15:10:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/docker-pull/</loc>
+    <lastmod>2018-05-29T12:09:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/docker-registry/</loc>
+    <lastmod>2017-12-29T14:45:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/docker-registry-frontend/</loc>
+    <lastmod>2017-12-29T14:45:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/docker-registry-web/</loc>
+    <lastmod>2017-12-29T14:45:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/downloadjs/</loc>
+    <lastmod>2018-08-02T14:50:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/dubbo/</loc>
+    <lastmod>2018-12-18T13:57:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/dubbo/</loc>
+    <lastmod>2018-04-23T13:25:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/dubbo-jmeter%E6%8F%92%E4%BB%B6/</loc>
+    <lastmod>2018-12-18T13:57:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/dubbo-json/</loc>
+    <lastmod>2018-03-06T16:50:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/dubbo%E5%8F%AF%E8%A7%86%E5%8C%96%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2018-12-18T13:57:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/error-pulling-image-configuration-unexpected-eof/</loc>
+    <lastmod>2018-05-29T12:09:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/eureka/</loc>
+    <lastmod>2017-12-25T13:58:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/fastdfs/</loc>
+    <lastmod>2017-09-06T10:17:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/fastdfs/</loc>
+    <lastmod>2017-09-06T10:17:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/fastjson/</loc>
+    <lastmod>2018-03-06T16:50:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/feign/</loc>
+    <lastmod>2017-09-08T09:09:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/filesystem-layer-verification-failed-for-digest-sha256/</loc>
+    <lastmod>2018-04-27T17:46:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/forcelogout/</loc>
+    <lastmod>2018-01-26T15:07:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/freeze/</loc>
+    <lastmod>2018-03-09T14:19:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/genericservice/</loc>
+    <lastmod>2018-03-13T15:31:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/git/</loc>
+    <lastmod>2018-01-30T16:10:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/git/</loc>
+    <lastmod>2018-09-26T20:50:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/git-flow/</loc>
+    <lastmod>2019-03-07T14:37:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/git-hook/</loc>
+    <lastmod>2019-03-07T14:37:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/git-svn-style/</loc>
+    <lastmod>2018-09-26T20:50:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/github/</loc>
+    <lastmod>2018-01-30T16:10:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/google/</loc>
+    <lastmod>2017-09-30T16:56:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/google/</loc>
+    <lastmod>2017-09-30T16:56:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/gpl/</loc>
+    <lastmod>2017-09-19T13:36:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/gson/</loc>
+    <lastmod>2018-03-13T15:31:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/guava/</loc>
+    <lastmod>2015-03-09T17:34:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/hibernate-validator/</loc>
+    <lastmod>2018-04-23T13:25:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/highly-available-full-text-search/</loc>
+    <lastmod>2018-03-30T12:24:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/https/</loc>
+    <lastmod>2018-05-28T15:57:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/https/</loc>
+    <lastmod>2018-05-28T15:57:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/hystrix/</loc>
+    <lastmod>2017-12-25T13:58:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/idempotent/</loc>
+    <lastmod>2017-11-06T17:40:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/idempotent/</loc>
+    <lastmod>2017-11-06T17:40:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/ignore/</loc>
+    <lastmod>2016-11-26T10:30:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/in-memory/</loc>
+    <lastmod>2018-03-30T12:24:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/inner-class/</loc>
+    <lastmod>2018-03-06T16:50:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/innerclassserialization/</loc>
+    <lastmod>2018-03-06T16:50:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/installcert/</loc>
+    <lastmod>2018-01-12T19:13:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/invalid-cookie.-required-remote-address-does-not-match-ip/</loc>
+    <lastmod>2018-03-16T12:02:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/iphash/</loc>
+    <lastmod>2018-03-23T16:01:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/jacoco/</loc>
+    <lastmod>2018-04-12T17:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/java/</loc>
+    <lastmod>2019-03-22T16:03:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/java/</loc>
+    <lastmod>2019-03-22T16:03:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/jdk/</loc>
+    <lastmod>2017-12-15T18:15:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/jenkins/</loc>
+    <lastmod>2018-04-12T17:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/jenkins/</loc>
+    <lastmod>2018-04-12T17:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/jira-git/</loc>
+    <lastmod>2019-03-07T14:37:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/jmap/</loc>
+    <lastmod>2018-01-23T14:36:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/jmeter/</loc>
+    <lastmod>2018-12-18T13:57:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/jmeter%E5%AF%B9dubbo%E6%8E%A5%E5%8F%A3%E8%BF%9B%E8%A1%8C%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2018-12-18T13:57:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/jms/</loc>
+    <lastmod>2017-09-05T17:12:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/jms/</loc>
+    <lastmod>2017-09-05T17:12:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/js/</loc>
+    <lastmod>2018-08-02T14:50:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/js/</loc>
+    <lastmod>2018-08-02T14:50:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/json/</loc>
+    <lastmod>2018-03-13T15:31:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/json/</loc>
+    <lastmod>2018-03-13T15:31:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/jsr303/</loc>
+    <lastmod>2018-04-23T13:25:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/jstack/</loc>
+    <lastmod>2018-01-23T14:36:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/jta-xa/</loc>
+    <lastmod>2017-11-02T15:52:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/junit/</loc>
+    <lastmod>2018-04-12T17:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/jvm/</loc>
+    <lastmod>2018-01-23T14:36:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/jvm-dump/</loc>
+    <lastmod>2018-01-23T14:36:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/lets-encrypt/</loc>
+    <lastmod>2018-05-28T15:57:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/lgpl/</loc>
+    <lastmod>2017-09-19T13:36:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/licence/</loc>
+    <lastmod>2017-09-19T13:36:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/licence/</loc>
+    <lastmod>2017-09-19T13:36:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/lock/</loc>
+    <lastmod>2017-09-27T16:43:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/lock/</loc>
+    <lastmod>2017-09-27T16:43:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/lock-wait-timeout-exceeded/</loc>
+    <lastmod>2018-04-08T18:02:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/logback/</loc>
+    <lastmod>2015-04-10T10:15:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/logger/</loc>
+    <lastmod>2015-04-10T10:15:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/lombok/</loc>
+    <lastmod>2017-07-19T15:22:56+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/lombok/</loc>
+    <lastmod>2017-07-19T15:22:56+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/maven/</loc>
+    <lastmod>2018-07-11T14:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/maven/</loc>
+    <lastmod>2018-07-11T14:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/mit/</loc>
+    <lastmod>2017-09-19T13:36:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/monitor/</loc>
+    <lastmod>2017-12-25T13:58:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/mq/</loc>
+    <lastmod>2017-05-11T12:03:10+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/mybatis/</loc>
+    <lastmod>2019-02-20T14:34:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/mybatis/</loc>
+    <lastmod>2019-02-20T14:34:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/mysql/</loc>
+    <lastmod>2018-05-14T14:38:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/mysql/</loc>
+    <lastmod>2018-04-08T18:02:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/mysql-gap-lock/</loc>
+    <lastmod>2018-01-11T17:10:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/netflix/</loc>
+    <lastmod>2017-12-25T13:58:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/netflix/</loc>
+    <lastmod>2017-12-25T13:58:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/nginx/</loc>
+    <lastmod>2017-06-30T18:36:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/nginx/</loc>
+    <lastmod>2017-06-30T18:36:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/non-static/</loc>
+    <lastmod>2018-03-06T16:50:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/npe/</loc>
+    <lastmod>2017-08-26T16:01:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/npm/</loc>
+    <lastmod>2017-09-29T14:16:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/npm/</loc>
+    <lastmod>2017-09-29T14:16:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/nrm/</loc>
+    <lastmod>2017-09-29T14:16:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/nrm/</loc>
+    <lastmod>2017-09-29T14:16:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/nullpointexception/</loc>
+    <lastmod>2017-08-26T16:01:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/numerical-result-out-of-range/</loc>
+    <lastmod>2017-08-15T10:30:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/openssl/</loc>
+    <lastmod>2018-01-15T14:08:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/other/</loc>
+    <lastmod>2019-04-03T15:30:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/other/</loc>
+    <lastmod>2019-04-03T15:30:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/passphrase/</loc>
+    <lastmod>2018-01-30T16:10:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/pd/</loc>
+    <lastmod>2018-04-10T20:13:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/pinpoint/</loc>
+    <lastmod>2017-12-11T10:00:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/pip/</loc>
+    <lastmod>2018-03-09T14:19:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/pipreqs/</loc>
+    <lastmod>2018-03-09T14:19:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/post/</loc>
+    <lastmod>2019-04-03T15:30:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/py2app/</loc>
+    <lastmod>2018-02-07T11:57:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/py2exe/</loc>
+    <lastmod>2018-02-07T11:57:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/pyinstaller/</loc>
+    <lastmod>2018-02-07T11:57:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/python/</loc>
+    <lastmod>2018-03-09T14:19:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/python/</loc>
+    <lastmod>2018-03-09T14:19:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/rancher/</loc>
+    <lastmod>2018-03-05T17:23:11+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/rancher/</loc>
+    <lastmod>2018-03-05T17:23:11+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/rancher-agent-instancev0.8.3/</loc>
+    <lastmod>2018-03-05T17:23:11+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/rancher-agentv1.0.2/</loc>
+    <lastmod>2018-03-05T17:23:11+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/rdb/</loc>
+    <lastmod>2017-10-09T14:30:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/rdb-paging/</loc>
+    <lastmod>2017-11-24T18:00:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/react/</loc>
+    <lastmod>2017-09-20T11:57:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/react/</loc>
+    <lastmod>2017-09-20T11:57:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/redis/</loc>
+    <lastmod>2018-07-17T18:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/redis/</loc>
+    <lastmod>2018-07-17T18:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/redisearch/</loc>
+    <lastmod>2018-03-30T12:24:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/redisearch/</loc>
+    <lastmod>2018-03-30T12:24:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/restful/</loc>
+    <lastmod>2019-02-12T15:30:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/restful/</loc>
+    <lastmod>2019-02-12T15:30:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/ribbon/</loc>
+    <lastmod>2017-12-25T13:58:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/rpc/</loc>
+    <lastmod>2017-12-25T13:58:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/rpc/</loc>
+    <lastmod>2018-09-19T12:01:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/rpc-benchmark/</loc>
+    <lastmod>2018-09-19T12:01:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/securityerror/</loc>
+    <lastmod>2018-01-25T17:04:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/server-redirected-too-many-times-20/</loc>
+    <lastmod>2018-03-23T16:01:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/session-centralized-storage/</loc>
+    <lastmod>2018-01-26T15:07:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/settings/</loc>
+    <lastmod>2017-05-10T10:05:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/single-logout/</loc>
+    <lastmod>2018-01-26T15:07:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/sky-walking/</loc>
+    <lastmod>2017-12-11T10:00:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/slf4j/</loc>
+    <lastmod>2015-04-10T10:15:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/slo/</loc>
+    <lastmod>2018-01-26T15:07:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/snowflake/</loc>
+    <lastmod>2018-12-07T11:51:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/snowflake/</loc>
+    <lastmod>2018-12-07T11:51:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/sonar/</loc>
+    <lastmod>2018-04-12T17:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/sonarqube/</loc>
+    <lastmod>2018-04-12T17:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/spring/</loc>
+    <lastmod>2017-08-26T16:40:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/spring/</loc>
+    <lastmod>2017-08-26T16:40:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/spring-cloud/</loc>
+    <lastmod>2017-12-25T13:58:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/spring-cloud/</loc>
+    <lastmod>2017-12-25T13:58:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/sqlhelper/</loc>
+    <lastmod>2017-09-05T17:50:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/ssh-key/</loc>
+    <lastmod>2018-01-30T16:10:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/ssl/</loc>
+    <lastmod>2018-01-25T17:04:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/ssl/</loc>
+    <lastmod>2018-01-15T14:08:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/static/</loc>
+    <lastmod>2018-03-06T16:50:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/subversion/</loc>
+    <lastmod>2018-03-23T10:44:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/svn/</loc>
+    <lastmod>2018-03-23T10:44:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/svn/</loc>
+    <lastmod>2018-03-23T10:44:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/svnquery/</loc>
+    <lastmod>2018-03-23T10:44:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/</loc>
+    <lastmod>2017-10-26T13:29:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/test/</loc>
+    <lastmod>2018-12-18T13:57:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/test/</loc>
+    <lastmod>2018-12-18T13:57:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/testng/</loc>
+    <lastmod>2018-04-12T17:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/ticket/</loc>
+    <lastmod>2018-01-26T15:07:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/ticket-registry/</loc>
+    <lastmod>2018-01-26T15:07:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/tidb/</loc>
+    <lastmod>2018-04-10T20:13:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/tidb/</loc>
+    <lastmod>2018-04-10T20:13:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/tikv/</loc>
+    <lastmod>2018-04-10T20:13:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/tomcatredissessionmanager/</loc>
+    <lastmod>2018-03-23T16:01:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/trace/</loc>
+    <lastmod>2017-11-15T11:00:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/transaction/</loc>
+    <lastmod>2017-11-02T15:52:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/trouble-shooting/</loc>
+    <lastmod>2018-03-23T16:01:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/trouble-shooting/</loc>
+    <lastmod>2018-10-30T18:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/trunk/</loc>
+    <lastmod>2016-12-20T14:32:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/ucm/</loc>
+    <lastmod>2018-02-11T11:26:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/ucm/</loc>
+    <lastmod>2018-02-11T11:26:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/utf8mb4/</loc>
+    <lastmod>2018-05-14T14:38:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/virtualenv/</loc>
+    <lastmod>2018-03-02T11:22:28+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/virtualenvwrapper/</loc>
+    <lastmod>2018-03-02T11:22:28+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/vue/</loc>
+    <lastmod>2017-09-20T11:57:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/vue/</loc>
+    <lastmod>2017-09-20T11:57:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/vue.js/</loc>
+    <lastmod>2017-08-24T10:51:30+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/webpack/</loc>
+    <lastmod>2017-09-20T11:57:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/webpack/</loc>
+    <lastmod>2017-09-20T11:57:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/websocket/</loc>
+    <lastmod>2018-01-25T17:04:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/websocket/</loc>
+    <lastmod>2018-01-25T17:04:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/wechat/</loc>
+    <lastmod>2018-06-08T13:38:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/wechat/</loc>
+    <lastmod>2018-06-08T13:38:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/word-xml/</loc>
+    <lastmod>2018-08-09T09:48:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/ws/</loc>
+    <lastmod>2018-01-25T17:04:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/wss/</loc>
+    <lastmod>2018-01-25T17:04:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/xhr.withcredentials/</loc>
+    <lastmod>2018-06-27T12:20:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/zipkin/</loc>
+    <lastmod>2017-09-08T13:36:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/zookeeper/</loc>
+    <lastmod>2018-09-28T11:20:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/zookeeper/</loc>
+    <lastmod>2018-09-28T11:20:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/zuul/</loc>
+    <lastmod>2017-12-25T13:58:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/zxing/</loc>
+    <lastmod>2017-09-30T16:56:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/zxing/</loc>
+    <lastmod>2017-09-30T16:56:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2019-03-07T14:37:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2019-03-07T14:37:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/</loc>
+    <lastmod>2019-04-03T15:30:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/</loc>
+    <lastmod>2019-03-11T19:11:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/</loc>
+    <lastmod>2019-03-11T19:11:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D/</loc>
+    <lastmod>2019-03-22T16:03:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2017-10-09T14:30:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2018-06-04T17:28:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/tags/%E8%B0%83%E4%BC%98/</loc>
+    <lastmod>2017-10-09T09:53:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ningyu1.github.io/site/categories/%E8%B7%A8%E5%BA%93%E5%88%86%E9%A1%B5/</loc>
+    <lastmod>2017-11-24T18:00:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git Svn Style on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/git-svn-style/</link>
+    <description>Recent content in Git Svn Style on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Sep 2018 20:50:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/git-svn-style/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git常用开发流程 —— 中心化的工作流</title>
+      <link>https://ningyu1.github.io/site/post/100-git-centralized-workflow/</link>
+      <pubDate>Wed, 26 Sep 2018 20:50:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/100-git-centralized-workflow/</guid>
+      <description>一、中心化的工作流  为什么会有冲突，冲突的原因 举例说明  rebase实操记录 示例总结以及注意事项    一、中心化的工作流 中心化的工作流又叫做SVN-style,适用于熟悉svn的管理流程来过渡到git（分布式版本控制系统），如果你的开发团队成员已经很熟悉svn，集中式工作流让你无需去适应一个全新流程就可以体验Git带来的收益。这个工作流也可以作为向更Git风格工作流迁移的友好过渡，入下图所示：
+像SVN一样，集中式工作流以中央仓库作为项目所有修改的单点实体。相比SVN缺省的开发分支trunk，Git叫做master，所有修改提交到这个分支上。该工作流只用到master这一个分支。 开发者开始先克隆中央仓库。在自己的项目拷贝中，像SVN一样的编辑文件和提交修改；但修改是存在本地的，和中央仓库是完全隔离的。开发者可以把和上游的同步延后到一个方便时间点。 要发布修改到正式项目中时，开发者要把本地master分支的修改『推（push）』到中央仓库中。这相当于svn commit操作，但push操作会把所有还不在中央仓库的本地提交都推上去，下图所示：
+为什么会有冲突，冲突的原因 使用svn-style的方式避免不了会遇到冲突，冲突的解决尤为重要，中央仓库代表了正式项目（git里是master，svn里是trunk），所以提交历史应该被尊重且是稳定不变的。如果开发者本地的提交历史和中央仓库有分歧，Git会拒绝push提交否则会覆盖已经在中央库的正式提交。
+在开发者提交自己功能修改到中央库前，需要先fetch在中央库的新增提交，rebase自己提交到中央库提交历史之上。这样做的意思是在说，我要把自己的修改加到别人已经完成的修改上，最终的结果是一个完美的线性历史，就像以前的SVN的工作流中一样。如果本地修改和上游提交有冲突，Git会暂停rebase过程，给你手动解决冲突的机会。
+举例说明 让我们举一个例子来理解一下中心化工作流-svn-style
+比如说：wms项目组有两个开发人员：小明、小健，看他们是如何开发自己的功能并提交到中央仓库上的。
+第一步：小明、小健从中央仓库克隆代码
+git clone http://gitlab.xxx.com/demo/gitflow-demo.git  ps.克隆仓库时Git会自动添加远程别名origin指向中央仓库，不动请参考：git clone --help
+克隆代码入下图示例：
+小明开发新功能：
+小明使用标准的Git过程开发功能：编辑、暂存（Stage）和提交，这里注意不进行push操作，只做本地commit提交到本地仓库
+git status # 查看本地仓库的修改状态 git add # 暂存文件 git commit # 提交文件  这些操作都是本地的提交操作，小明可以反复的按照需求来进行代码修改，不需要担心中央仓库的改变和小健自己本地的改变。
+小明开发功能都在本地上进行就如下图示例：
+小健开发新功能
+小健也是一样使用标准的Git过程开发功能，编辑、暂存、提交，他和小明一样不需要关系中央仓库的改变和小明自己本地的改变，所有的提交都是私有的，都是在自己的本地仓库中。
+小健开发功能都在本地上进行就如下图所示：
+小明开发好了功能想发布了
+小明把他的本地仓库修改的代码push到中央仓库，使用下面命令
+git push origin master  ps. origin是在小明克隆仓库时Git创建的远程中央仓库别名。master参数告诉Git推送的分支
+ps. 我们这里假设团队中只有两个人（小明、小健），由于中央仓库自从小明克隆以来还没有被更新过，所以push操作不会有冲突，成功完成。
+小明把他自己的本地代码push到中央仓库就如下图所示：
+小健开发好了功能也想发布了
+小健也是使用git push命令来推送自己本地仓库的改动到中央仓库，使用下面命令
+git push origin master  但是此时origin已经由于小明在之前推送了小明本地的代码上去，因此已经和小健本地的代码产生了分歧，推送会被拒绝，入下图所示：</description>
+    </item>
+    
+  </channel>
+</rss>

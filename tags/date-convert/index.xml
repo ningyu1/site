@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Date Convert on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/date-convert/</link>
+    <description>Recent content in Date Convert on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Feb 2019 15:30:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/date-convert/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RESTful开发日期类型字段如何正确传递</title>
+      <link>https://ningyu1.github.io/site/post/109-restful-date-convert/</link>
+      <pubDate>Tue, 12 Feb 2019 15:30:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/109-restful-date-convert/</guid>
+      <description>RESTful开发时经常会遇到参数传入日期类型及返回的日期类型值，日期和时间戳如果没有适当和一致地处理，就会给人带来头痛的问题，我这里建议大家使用统一格式化的时间字符串yyyy-MM-dd HH:mm:ss，为什么建议这个呢？这样看起来比较直观，前后端联调起来比较高效。
+下面我们就细说一下日期类型的参数将如何处理。
+GET方法时参数传入日期类型该如何处理 举例
+url如下：
+http://localhost:8081/test/time_get?time=2018-07-09 10:38:57  Controller代码：
+import java.util.Date; @RequestMapping(value = &amp;quot;/time_get&amp;quot;, method = RequestMethod.GET) @ResponseBody public Response&amp;lt;Date&amp;gt; time_get(Date time) { logger.info(&amp;quot;time:{}&amp;quot;, time); return Response.createResponse(time); }  在这种情况下日期参数是无法成功的传入到controller方法里，会爆出如下的异常：
+org.springframework.core.convert.ConversionFailedException: Failed to convert from type java.lang.String to type java.util.Date for value &#39;2018-07-09 10:38:57&#39;; nested exception is java.lang.IllegalArgumentException at org.springframework.core.convert.support.ObjectToObjectConverter.convert(ObjectToObjectConverter.java:81) ~[spring-core-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:35) ~[spring-core-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.core.convert.support.GenericConversionService.convert(GenericConversionService.java:178) ~[spring-core-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:161) ~[spring-beans-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:93) ~[spring-beans-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.beans.TypeConverterSupport.doConvert(TypeConverterSupport.java:64) ~[spring-beans-4.0.0.RELEASE.jar:4.0.0.RELEASE] ... 43 common frames omitted Caused by: java.</description>
+    </item>
+    
+  </channel>
+</rss>

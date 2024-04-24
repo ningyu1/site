@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Btrace on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/btrace/</link>
+    <description>Recent content in Btrace on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Nov 2017 11:00:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/btrace/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BTrace使用笔记</title>
+      <link>https://ningyu1.github.io/site/post/39-btrace/</link>
+      <pubDate>Wed, 15 Nov 2017 11:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/39-btrace/</guid>
+      <description>BTrace是什么？ Btrace是由sundararajan在2009年6月开发的一个开源项目，是一种动态跟踪分析一个运行中的Java应用程序的工具。 BTrace是一个为Java平台开发的安全、动态的追踪工具。BTrace动态地向目标应用程序的字节码注入追踪代码（字节码追踪），这些追踪字节码追踪代码使用Java语言表达，也就是BTrace的脚本。
+BTrace能做什么？ BTrace可以用来帮我们做运行时的JAVA程序分析，监控等等操作，BTrace也有一些使用上的限制，如：不能在脚本中新建类等。 Btrace是通过Attach API中提供的VirtualMachine.attach(PID)方法来获得要监控的JVM，然后使用VirtualMachine.loadAgent(&amp;rdquo;*.jar&amp;rdquo;)方法来加载jar文件。
+特别注意 BTrace植入过的代码，会一直在，直到应用重启为止。所以即使Btrace退出了，业务函数每次执行时都会执行Btrace植入的代码
+Btrace术语 Probe Point(探测点) 追踪语句（或者一组追踪语句）被触发执行的“位置”或“事件”。也就是我们想要执行一些追踪语句的“位置”或“事件”。 Trace Actions or Actions（追踪动作） probe被触发时，执行的追踪语句。 Action Methods（动作方法） 我的理解是定义追踪动作的方法，当然根据官方的说明这个方法应该是静态的。 在静态方法中定义probe触发所调用的trace语句，那么这种定义了trace脚本的静态方法就是”动作方法”
+BTrace程序结构 一个BTrace程序是其实就是一个普通的java类，特别之处就是由一个或者多个被(public static void)组合修饰的方法并且这些方法被BTrace对应的annotations注解。注解用来指出被追踪程序的位置（probe point）。追踪动作须书写在静态方法体中，也就是action方法（可以有多个action方法）。
+BTrace约束 为了保证追踪动作是“只读”的（也就是这些动作不可以修改被追踪程序的状态）和有限度的（比如在固定时间里结束）。一个BTrace程序只允许完成一些指定的动作。下面是BTrace一些不可以完成的事情：
+ 不能创建新的对象 不能创建新的数组 不能抛出异常 不能捕获异常 不能进行任何的实例函数或者静态函数 – 只有com.sun.btrace.BTraceUtils类中的静态函数或者BTrace程序自己声明的函数才可以被BTrace调用 不可以在目标程序的类，或者对象的静态或者实例级别的field进行赋值。但是，BTrace自身的类是可以给它的静态field进行赋值的 不能有outer，inner,嵌套的或者本地类。 不能有同步代码块或者同步的函数 不能有循环语句（for,while, do..while） 不能继承其它类（父类只能是java.lang.Object） 不能实现接口 不能包含断言(assert)语句 不能使用类字面值  这上面的种种限制可以通过一个配置改变：unsafe=true，在使用BTrace注解时修改该属性的默认值（false）为true，即@BTrace（unsafe=true）；也可以启动选项中显式声明-Dcom.sun.btrace.unsafe=true（响应也有-u参数）；现在你可以为所欲为了。BUT，这样做之前最好考虑好风险并再三检查脚本，请斟酌使用！
+BTrace安装 btrace git下载地址 下载下来直接解压就可以使用
+基本语法 btrace &amp;lt;pid&amp;gt; &amp;lt;btrace-script&amp;gt;脚本  btrace命令行工具运行命令如下：
+btrace &amp;lt;options&amp;gt; &amp;lt;pid&amp;gt; &amp;lt;btrace source or .class file&amp;gt; &amp;lt;btrace arguments&amp;gt; 常用选项： [-I &amp;lt;include-path&amp;gt;] [-p &amp;lt;port&amp;gt;] [-cp &amp;lt;classpath&amp;gt;]  参数说明：</description>
+    </item>
+    
+  </channel>
+</rss>

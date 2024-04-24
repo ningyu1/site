@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>调优 on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/%E8%B0%83%E4%BC%98/</link>
+    <description>Recent content in 调优 on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Oct 2017 09:53:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/%E8%B0%83%E4%BC%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Trouble Shooting —— Enable AOF可能导致整个Redis被Block住，在3.0.6版本仍然存在</title>
+      <link>https://ningyu1.github.io/site/post/32-redis-aof/</link>
+      <pubDate>Mon, 09 Oct 2017 09:53:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/32-redis-aof/</guid>
+      <description>Redis会有短暂的几秒Block，应用报：Jedis connection failed, retrying&amp;hellip; 这个问题现象是这样的，应用周期性的报：Jedis connection failed, retrying&amp;hellip;，Redis开启AOF会被Block住导致无法连接，查看redis的日志
+1486:M 09 Oct 09:33:18.072 * 10 changes in 300 seconds. Saving... 1486:M 09 Oct 09:33:18.075 * Background saving started by pid 20706 1486:M 09 Oct 09:33:34.011 * Asynchronous AOF fsync is taking too long (disk is busy?). Writing the AOF buffer without waiting for fsync to complete, this may slow down Redis. 20706:C 09 Oct 09:33:42.629 * DB saved on disk 20706:C 09 Oct 09:33:42.</description>
+    </item>
+    
+    <item>
+      <title>JVM调优总结 -Xms -Xmx -Xmn -Xss</title>
+      <link>https://ningyu1.github.io/site/post/15-java-jvm/</link>
+      <pubDate>Sat, 26 Aug 2017 15:56:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/15-java-jvm/</guid>
+      <description>堆大小设置 JVM 中最大堆大小有三方面限制：相关操作系统的数据模型（32-bt还是64-bit）限制；系统的可用虚拟内存限制；系统的可用物理内存限制。32位系统下，一般限制在1.5G~2G；64为操作系统对内存无限制。我在Windows Server 2003 系统，3.5G物理内存，JDK5.0下测试，最大可设置为1478m。
+典型设置  java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -Xmx3550m：设置JVM最大可用内存为3550M。 -Xms3550m：设置JVM促使内存为3550m。此值可以设置与-Xmx相同，以避免每次垃圾回收完成后JVM重新分配内存。 -Xmn2g：设置年轻代大小为2G。整个JVM内存大小=年轻代大小 + 年老代大小 + 持久代大小。持久代一般固定大小为64m，所以增大年轻代后，将会减小年老代大小。此值对系统性能影响较大，Sun官方推荐配置为整个堆的3/8。 -Xss128k：设置每个线程的堆栈大小。JDK5.0以后每个线程堆栈大小为1M，以前每个线程堆栈大小为256K。更具应用的线程所需内存大小进行调整。在相同物理内存下，减小这个值能生成更多的线程。但是操作系统对一个进程内的线程数还是有限制的，不能无限生成，经验值在3000~5000左右。
+ java -Xmx3550m -Xms3550m -Xss128k -XX:NewRatio=4 -XX:SurvivorRatio=4 -XX:MaxPermSize=16m -XX:MaxTenuringThreshold=0 -XX:NewRatio=4:设置年轻代（包括Eden和两个Survivor区）与年老代的比值（除去持久代）。设置为4，则年轻代与年老代所占比值为1：4，年轻代占整个堆栈的1/5 -XX:SurvivorRatio=4：设置年轻代中Eden区与Survivor区的大小比值。设置为4，则两个Survivor区与一个Eden区的比值为2:4，一个Survivor区占整个年轻代的1/6 -XX:MaxPermSize=16m:设置持久代大小为16m。 -XX:MaxTenuringThreshold=0：设置垃圾最大年龄。如果设置为0的话，则年轻代对象不经过Survivor区，直接进入年老代。对于年老代比较多的应用，可以提高效率。如果将此值设置为一个较大值，则年轻代对象会在Survivor区进行多次复制，这样可以增加对象再年轻代的存活时间，增加在年轻代即被回收的概论。
+  回收器选择 JVM给了三种选择：串行收集器、并行收集器、并发收集器，但是串行收集器只适用于小数据量的情况，所以这里的选择主要针对并行收集器和并发收集器。默认情况下，JDK5.0以前都是使用串行收集器，如果想使用其他收集器需要在启动时加入相应参数。JDK5.0以后，JVM会根据当前系统配置进行判断。
+ java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:ParallelGCThreads=20 -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+UseConcMarkSweepGC：设置年老代为并发收集。测试中配置这个以后，-XX:NewRatio=4的配置失效了，原因不明。所以，此时年轻代大小最好用-Xmn设置。 -XX:+UseParNewGC:设置年轻代为并行收集。可与CMS收集同时使用。JDK5.0以上，JVM会根据系统配置自行设置，所以无需再设置此值。
+ java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:+UseConcMarkSweepGC -XX:CMSFullGCsBeforeCompaction=5 -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction：由于并发收集器不对内存空间进行压缩、整理，所以运行一段时间以后会产生“碎片”，使得运行效率降低。此值设置运行多少次GC以后对内存空间进行压缩、整理。 -XX:+UseCMSCompactAtFullCollection：打开对年老代的压缩。可能会影响性能，但是可以消除碎片
+ java -Xmx3800m -Xms3800m -Xmn2g -Xss128k -XX:+UseParallelGC -XX:ParallelGCThreads=20 -XX:+UseParallelGC：选择垃圾收集器为并行收集器。此配置仅对年轻代有效。即上述配置下，年轻代使用并发收集，而年老代仍旧使用串行收集。 -XX:ParallelGCThreads=20：配置并行收集器的线程数，即：同时多少个线程一起进行垃圾回收。此值最好配置与处理器数目相等。</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Redis AOF rewrite错误导致Redis被Block住</title>
+      <link>https://ningyu1.github.io/site/post/11-redis-aof-pit/</link>
+      <pubDate>Tue, 15 Aug 2017 10:30:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/11-redis-aof-pit/</guid>
+      <description>问题现状： redis-cli 上去执行任何命令返回：connnection reset by peer
+重启的应用无法连接到redis，已经建立连接的应用可以正常使用。
+分析过程： 第一反应查看redis 日志，如下：
+1838:M 16 Aug 01:07:39.319 # Error opening /setting AOF rewrite IPC pipes: Numerical result out of range 1838:M 16 Aug 01:07:39.319 * Starting automatic rewriting of AOF on 110% growth 1838:M 16 Aug 01:07:39.319 # Error opening /setting AOF rewrite IPC pipes: Numerical result out of range 1838:M 16 Aug 01:07:39.419 * Starting automatic rewriting of AOF on 110% growth 1838:M 16 Aug 01:07:39.</description>
+    </item>
+    
+    <item>
+      <title>Nginx 502 Bad Gateway问题分析与踩过的坑</title>
+      <link>https://ningyu1.github.io/site/post/03-nginx-502-bad-gateway/</link>
+      <pubDate>Fri, 30 Jun 2017 18:36:44 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/03-nginx-502-bad-gateway/</guid>
+      <description>我相信使用Nginx的都会遇到过502 504 这种bad gateway错误，下面我把碰到这个问题分析过程记录并分享出来。 先让我们看一下具体的错误信息
+502 Bad Gateway The proxy server received an invalid response from an upstream server  从字面上的意思理解，nginx从upstream没有接受到信息，第一感觉就是连接被close？还是超时了？超时的话一般错误信息是 timeout
+下面是尝试解决这个问题尝试过的手段
+1. 第一感觉是proxy返回超时，因此查找nginx官方文档，找到关于proxy的timeout设置 Syntax:	proxy_connect_timeout time; Default:	proxy_connect_timeout 60s; Context:	http, server, location Defines a timeout for establishing a connection with a proxied server. It should be noted that this timeout cannot usually exceed 75 seconds.  ps. 这个时间不能超过75秒
+Syntax:	proxy_read_timeout time; Default:	proxy_read_timeout 60s; Context:	http, server, location Defines a timeout for reading a response from the proxied server.</description>
+    </item>
+    
+  </channel>
+</rss>

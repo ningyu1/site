@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/categories/java/</link>
+    <description>Recent content in Java on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Mar 2019 16:03:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java对象复制类库性能对比</title>
+      <link>https://ningyu1.github.io/site/post/113-object-copy/</link>
+      <pubDate>Fri, 22 Mar 2019 16:03:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/113-object-copy/</guid>
+      <description>背景 在开发中我们经常会用到对象之间的互相拷贝，Java中对象拷贝的类库也比较多，常见的有Spring BeanUtils，Apache BeanUtils，等并且在很多大厂公司对对象拷贝也有详尽的说明，避免大家踩坑。
+功能对比    耗时(毫秒) 1000次 10,000次 100,100次     Apache BeanUtils 298 983 4211   Cglib BeanCopier 89 120 203   Spring BeanUtils 92 160 524    性能对比     Apache BeanUtils Cglib BeanCopier Spring BeanUtils     非public类 不支持 支持 支持   基本类型与装箱类型，int-&amp;gt;Integer，Integer-&amp;gt;int 支持，可以copy 不支持，不copy 不支持，不copy   int-&amp;gt;long，long-&amp;gt;int，int-&amp;gt;Long，Integer-&amp;gt;long 不支持 不支持 不支持   源对象相同属性无get方法 不支持 不copy 不支持 不copy 不支持 不copy   目标对象相同属性无get方法 支持 不支持 支持   目标对象相同属性无set方法 不copy，不报错 报错 不copy，不报错   源对象相同属性无set方法 支持 支持 支持   目标对象相同属性set方法返回非void 不设置，其他正常属性可以copy 不设置，导致其他属性都无法copy 支持，能够copy   目标对象多字段 支持 支持 支持   目标对象少字段 支持 支持 支持    结论 从性能对比来看：</description>
+    </item>
+    
+    <item>
+      <title>Java中内部类使用注意事项，内部类对序列化与反序列化的影响</title>
+      <link>https://ningyu1.github.io/site/post/65-java-inner-class/</link>
+      <pubDate>Tue, 06 Mar 2018 16:50:17 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/65-java-inner-class/</guid>
+      <description>现在很多服务架构都是微服务、分布式架构，开发模式也都是模块化开发，在分布式的开发方式下服务之间的调用不管是RPC还是RESTful或是其他SOA方案，均离不开序列化与反序列化，尤其是使用Java开发，Bean实现序列化接口几乎已经是必备的要求，而且这个要求已经纳入到很多大厂公司的开发规范中，开发规范中强制要求实现序列化接口和重写toString、hashCode方法。
+前面提到了序列化与反序列化，那序列化与反序列化的对象就是开发人员写的java bean，不同的java bean会给序列化反序列化带来什么问题呢？接下来就让我们看一下内部类对序列化反序列化的影响。
+在这之前我们先看一下常用的序列化工具：
+ JavaSerialize fastjson dubbo json google gson google protoBuf hessian kryo Avro fast-serialization jboss-serialization jboss-marshalling-river protostuff msgpack-databind json/jackson/databind json/jackson/db-afterburner xml/xstream+c xml/jackson/databind-aalto  工具太多了这里就不列了，让我们先做一个测试。
+测试 常规java bean 测试类：
+import java.io.Serializable; public class Test implements Serializable { private static final long serialVersionUID = 2010307013874058143L; private String name; public String getName() { return name; } public void setName(String name) { this.name = name; } }  调用序列化与反序列化:</description>
+    </item>
+    
+    <item>
+      <title>生产环境如何快速跟踪、分析、定位问题-Java</title>
+      <link>https://ningyu1.github.io/site/post/55-java-jvm-analysis/</link>
+      <pubDate>Tue, 23 Jan 2018 14:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/55-java-jvm-analysis/</guid>
+      <description>我相信做技术的都会遇到过这样的问题，生产环境服务遇到宕机的情况下如何去分析问题？比如说JVM内存爆掉、CPU持续高位运行、线程被夯住或线程deadlocks，面对这样的问题，如何在生产环境第一时间跟踪分析与定位问题很关键。下来让我们看看通过如下步骤在第一时间分析问题。
+CPU占用较高场景 收集当前CPU占用较高的线程信息，执行如下命令：
+top -H -p PID -b -d 1 -n 1 &amp;gt; top.log 或 top -H -p PID  结果如下：
+上图显示的都是某一个进程内的线程信息，找到cpu消耗最高的线程id，再配合jstack来分析耗cpu的代码位置，那如何分析呢？
+先执行jstack获取线程信息
+jstack -l PID &amp;gt; jstackl.log  将PID（29978）转成16进制：0x751a，16进制转换工具很多可以在线随便搜索一个或者基本功好的自己计算。
+打开jstackl.log，查找nid=0x751a的信息，这样就定位到了具体的代码位置，这里由于是安全原因我就不贴图了。
+通过上面的步骤就可以轻松的定位那个线程导致cpu过高，当然也可以通过其他方式来定位，下面介绍一个快捷的方式
+#线程cpu占用 #!/bin/bash [ $# -ne 1 ] &amp;amp;&amp;amp; exit 1 jstack $1 &amp;gt;/tmp/jstack.log for cpu_tid in `ps -mp $1 -o THREAD,tid,time|sort -k2nr| sed -n &#39;2,15p&#39; |awk &#39;{print$2&amp;quot;_&amp;quot;$(NF-1)}&#39;`;do cpu=`echo $cpu_tid | cut -d_ -f1` tid=`echo $cpu_tid | cut -d_ -f2` xtid=`printf &amp;quot;%x\n&amp;quot; $tid` echo -e &amp;quot;\033[31m========================$xtid $cpu%\033[0m&amp;quot; cat /tmp/jstack.</description>
+    </item>
+    
+    <item>
+      <title>推荐一个性能测试工具包（适用于单元测试）</title>
+      <link>https://ningyu1.github.io/site/post/49-java-test/</link>
+      <pubDate>Thu, 11 Jan 2018 16:52:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/49-java-test/</guid>
+      <description>给大家推荐一个做单元测试非常好用的性能测试工具包，contiperf，很方便的进行并发压力测试
+ pom引用  &amp;lt;!-- 单元测试 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.7&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- 性能测试 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.databene&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;contiperf&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.1.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt;   使用示例  /** * &amp;lt;功能描述&amp;gt; * * @author ningyu * @date 2017年10月24日 下午2:40:58 */ public class MyPerfTest { private IRedisSequenceService sequenceService; @Rule public ContiPerfRule i = new ContiPerfRule(); @Before public void init() { ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(&amp;quot;test-spring-context.xml&amp;quot;); sequenceService = (IRedisSequenceService) context.getBean(&amp;quot;redisSequenceService&amp;quot;); } @Test @PerfTest(threads=10, invocations=10000)//threads并发线程数量，invocations总调用次数,还有其他参数可以设置查看文档或者源码 public void test() { try { long res = sequenceService.</description>
+    </item>
+    
+    <item>
+      <title>JDK1.8新特性详解</title>
+      <link>https://ningyu1.github.io/site/post/44-jdk1.8-feature/</link>
+      <pubDate>Fri, 15 Dec 2017 18:15:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/44-jdk1.8-feature/</guid>
+      <description>将Java8的新特新逐一列出，并将使用简单的代码示例来指导你如何使用默认接口方法，lambda表达式，方法引用以及多重Annotation，之后你将会学到最新的API上的改进，比如流，函数式接口，Map以及全新的日期API
+一、接口的默认方法 Java 8允许我们给接口添加一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法，示例如下：
+interface Formula { double calculate(int a); default double sqrt(int a) { return Math.sqrt(a); } }  Formula接口在拥有calculate方法之外同时还定义了sqrt方法，实现了Formula接口的子类只需要实现一个calculate方法，默认方法sqrt将在子类上可以直接使用。
+Formula formula = new Formula() { @Override public double calculate(int a) { return sqrt(a * 100); } }; formula.calculate(100); // 100.0 formula.sqrt(16); // 4.0  文中的formula被实现为一个匿名类的实例，该代码非常容易理解，6行代码实现了计算 sqrt(a * 100)。在下一节中，我们将会看到实现单方法接口的更简单的做法。
+二、Lambda 表达式 首先看看在老版本的Java中是如何排列字符串的：
+List&amp;lt;String&amp;gt; names = Arrays.asList(&amp;quot;peter&amp;quot;, &amp;quot;anna&amp;quot;, &amp;quot;mike&amp;quot;, &amp;quot;xenia&amp;quot;); Collections.sort(names, new Comparator&amp;lt;String&amp;gt;() { @Override public int compare(String a, String b) { return b.</description>
+    </item>
+    
+    <item>
+      <title>JDK1.7新特性详解</title>
+      <link>https://ningyu1.github.io/site/post/43-jdk1.7-feature/</link>
+      <pubDate>Fri, 15 Dec 2017 18:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/43-jdk1.7-feature/</guid>
+      <description>JDK7对Java语法有少量更新，重点是在易用性和便捷性的改进。
+1.二进制字面量 JDK7开始，终于可以用二进制来表示整数（byte,short,int和long）。使用二进制字面量的好处是，可以是代码更容易被理解。语法非常简单，只要在二进制数值前面加 0b或者0B
+byte nByte = (byte)0b0001; short nShort = (short)0B0010; int nInt = 0b0011; long nLong = 0b0100L;  2.数字字面量可以出现下划线 对于一些比较大的数字，我们定义起来总是不方面，经常缺少或者增加位数。JDK7为我们提供了一种解决方案，下划线可以出现在数字字面量。
+int a = 10_0000_0000; long b = 0xffff_ffff_ffff_ffffl; byte c = 0b0001_1000;  注意：你只能将下划线置于数字之间，以下使用方法是错误的，
+ 数字的开头或者结尾 小数点的前后 ‘F’或者‘f’的后缀 只能用数字的位置  nt err1 = _11,err2=11_; float err3=3._4,err4=3_.4; long err5=0x888_f;  3.switch 语句可以用字符串了 这个功能千呼万唤，终于出来了
+private static void switchString(String str){ switch(str){ case &amp;quot;one&amp;quot;: System.err.println(&amp;quot;1&amp;quot;); break; case &amp;quot;two&amp;quot;: System.out.println(&amp;quot;2&amp;quot;); break; default : System.</description>
+    </item>
+    
+    <item>
+      <title>Fastjson反序列化java.lang.VerifyError错误</title>
+      <link>https://ningyu1.github.io/site/post/42-fastjson/</link>
+      <pubDate>Fri, 15 Dec 2017 15:42:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/42-fastjson/</guid>
+      <description>现象 当反序列化目标对象属性超过32个时会报如下错误：
+Exception in thread &amp;quot;main&amp;quot; java.lang.VerifyError: (class: com/alibaba/fastjson/parser/deserializer/FastjsonASMDeserializer_1_OmsMaterialStorageReconciliationEntity, method: deserialze signature: (Lcom/alibaba/fastjson/parser/DefaultJSONParser;Ljava/lang/reflect/Type;Ljava/lang/Object;I)Ljava/lang/Object;) Accessing value from uninitialized register 48 at java.lang.Class.getDeclaredConstructors0(Native Method) at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493) at java.lang.Class.getConstructor0(Class.java:2803) at java.lang.Class.getConstructor(Class.java:1718) at com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory.createJavaBeanDeserializer(ASMDeserializerFactory.java:82) at com.alibaba.fastjson.parser.ParserConfig.createJavaBeanDeserializer(ParserConfig.java:639) at com.alibaba.fastjson.parser.ParserConfig.getDeserializer(ParserConfig.java:491) at com.alibaba.fastjson.parser.ParserConfig.getDeserializer(ParserConfig.java:348) at com.alibaba.fastjson.parser.DefaultJSONParser.parseObject(DefaultJSONParser.java:639) at com.alibaba.fastjson.JSON.parseObject(JSON.java:350) at com.alibaba.fastjson.JSON.parseObject(JSON.java:254) at com.alibaba.fastjson.JSON.parseObject(JSON.java:467) at com.jiuyescm.uam.main.Main.main(Main.java:29)  查看我们使用的fastjson包版本：
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.alibaba&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;fastjson&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2.28&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  查看官方issues是否有同样的问题
+找到问题：https://github.com/alibaba/fastjson/issues/1071
+是一个反序列化的bug，在1.2.29版本修复
+升级我们使用的fastjson版本验证是否修复问题
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.alibaba&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;fastjson&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2.29&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  测试代码：
+public static void main(String[] args) throws IOException { String a = &amp;quot;{\&amp;quot;region\&amp;quot;:\&amp;quot;aaa\&amp;quot;,\&amp;quot;weight\&amp;quot;:null,\&amp;quot;outqty\&amp;quot;:null,\&amp;quot;inVolume\&amp;quot;:null,\&amp;quot;qtyMax\&amp;quot;:null,\&amp;quot;creTime\&amp;quot;:null,\&amp;quot;lastStock\&amp;quot;:null,\&amp;quot;inHeight\&amp;quot;:null,\&amp;quot;wallThickness\&amp;quot;:null,\&amp;quot;id\&amp;quot;:null,\&amp;quot;height\&amp;quot;:null,\&amp;quot;length\&amp;quot;:null,\&amp;quot;materialType\&amp;quot;:null,\&amp;quot;inqty\&amp;quot;:null,\&amp;quot;materialTypeName\&amp;quot;:null,\&amp;quot;materialName\&amp;quot;:null,\&amp;quot;supplierId\&amp;quot;:null,\&amp;quot;status\&amp;quot;:null,\&amp;quot;width\&amp;quot;:null,\&amp;quot;barcode\&amp;quot;:null,\&amp;quot;qtyMin\&amp;quot;:null,\&amp;quot;crePersonId\&amp;quot;:null,\&amp;quot;unit\&amp;quot;:null,\&amp;quot;changeDate\&amp;quot;:null,\&amp;quot;initStock\&amp;quot;:null,\&amp;quot;materialNo\&amp;quot;:null,\&amp;quot;crePerson\&amp;quot;:null,\&amp;quot;inLength\&amp;quot;:null,\&amp;quot;materialPrice\&amp;quot;:null,\&amp;quot;volume\&amp;quot;:null,\&amp;quot;inWidth\&amp;quot;:null,\&amp;quot;warehouseNo\&amp;quot;:null}&amp;quot;; OmsMaterialStorageReconciliationEntity t2 = JSON.</description>
+    </item>
+    
+    <item>
+      <title>BTrace使用笔记</title>
+      <link>https://ningyu1.github.io/site/post/39-btrace/</link>
+      <pubDate>Wed, 15 Nov 2017 11:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/39-btrace/</guid>
+      <description>BTrace是什么？ Btrace是由sundararajan在2009年6月开发的一个开源项目，是一种动态跟踪分析一个运行中的Java应用程序的工具。 BTrace是一个为Java平台开发的安全、动态的追踪工具。BTrace动态地向目标应用程序的字节码注入追踪代码（字节码追踪），这些追踪字节码追踪代码使用Java语言表达，也就是BTrace的脚本。
+BTrace能做什么？ BTrace可以用来帮我们做运行时的JAVA程序分析，监控等等操作，BTrace也有一些使用上的限制，如：不能在脚本中新建类等。 Btrace是通过Attach API中提供的VirtualMachine.attach(PID)方法来获得要监控的JVM，然后使用VirtualMachine.loadAgent(&amp;rdquo;*.jar&amp;rdquo;)方法来加载jar文件。
+特别注意 BTrace植入过的代码，会一直在，直到应用重启为止。所以即使Btrace退出了，业务函数每次执行时都会执行Btrace植入的代码
+Btrace术语 Probe Point(探测点) 追踪语句（或者一组追踪语句）被触发执行的“位置”或“事件”。也就是我们想要执行一些追踪语句的“位置”或“事件”。 Trace Actions or Actions（追踪动作） probe被触发时，执行的追踪语句。 Action Methods（动作方法） 我的理解是定义追踪动作的方法，当然根据官方的说明这个方法应该是静态的。 在静态方法中定义probe触发所调用的trace语句，那么这种定义了trace脚本的静态方法就是”动作方法”
+BTrace程序结构 一个BTrace程序是其实就是一个普通的java类，特别之处就是由一个或者多个被(public static void)组合修饰的方法并且这些方法被BTrace对应的annotations注解。注解用来指出被追踪程序的位置（probe point）。追踪动作须书写在静态方法体中，也就是action方法（可以有多个action方法）。
+BTrace约束 为了保证追踪动作是“只读”的（也就是这些动作不可以修改被追踪程序的状态）和有限度的（比如在固定时间里结束）。一个BTrace程序只允许完成一些指定的动作。下面是BTrace一些不可以完成的事情：
+ 不能创建新的对象 不能创建新的数组 不能抛出异常 不能捕获异常 不能进行任何的实例函数或者静态函数 – 只有com.sun.btrace.BTraceUtils类中的静态函数或者BTrace程序自己声明的函数才可以被BTrace调用 不可以在目标程序的类，或者对象的静态或者实例级别的field进行赋值。但是，BTrace自身的类是可以给它的静态field进行赋值的 不能有outer，inner,嵌套的或者本地类。 不能有同步代码块或者同步的函数 不能有循环语句（for,while, do..while） 不能继承其它类（父类只能是java.lang.Object） 不能实现接口 不能包含断言(assert)语句 不能使用类字面值  这上面的种种限制可以通过一个配置改变：unsafe=true，在使用BTrace注解时修改该属性的默认值（false）为true，即@BTrace（unsafe=true）；也可以启动选项中显式声明-Dcom.sun.btrace.unsafe=true（响应也有-u参数）；现在你可以为所欲为了。BUT，这样做之前最好考虑好风险并再三检查脚本，请斟酌使用！
+BTrace安装 btrace git下载地址 下载下来直接解压就可以使用
+基本语法 btrace &amp;lt;pid&amp;gt; &amp;lt;btrace-script&amp;gt;脚本  btrace命令行工具运行命令如下：
+btrace &amp;lt;options&amp;gt; &amp;lt;pid&amp;gt; &amp;lt;btrace source or .class file&amp;gt; &amp;lt;btrace arguments&amp;gt; 常用选项： [-I &amp;lt;include-path&amp;gt;] [-p &amp;lt;port&amp;gt;] [-cp &amp;lt;classpath&amp;gt;]  参数说明：</description>
+    </item>
+    
+    <item>
+      <title>Spring框架-事务管理注意事项</title>
+      <link>https://ningyu1.github.io/site/post/16-spring-transaction/</link>
+      <pubDate>Sat, 26 Aug 2017 16:40:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/16-spring-transaction/</guid>
+      <description>常见事务问题  事务不起作用  可能是配置不起效，如扫描问题  事务自动提交了（批量操作中）  可能是在没事务的情况下，利用了数据库的隐式提交   事务配置说明 通常情况下我们的Spring Component扫描分为两部分，一部分是Spring Servlet(MVC)，一部分是其他Context Config的内容。主要扫描Annotation定义，包括@Controller、@Autowired、@Resource、@Service、@Component、@Repository等。
+Spring Servlet部分的扫描配置可以通过web.xml中DispatchServlet的init-param节点配置确定。
+Context Config部分的扫描配置为非以上配置的其他Spring配置文件确定。
+为了能够使用事务，需要防止因Spring Servlet的扫描导致@Service事务配置失效。可以调整DispatchServlet中的配置文件，排除对@Service的扫描。
+配置如下：
+&amp;lt;context:component-scan base-package=&amp;quot;com.jiuyescm.xxx&amp;quot;&amp;gt; &amp;lt;context:exclude-filter type=&amp;quot;annotation&amp;quot; expression=&amp;quot;org.springframework.stereotype.Service&amp;quot; /&amp;gt; &amp;lt;/context:component-scan&amp;gt;  如何通过日志判断事务是否已经被Spring所管理？  在logback或者log4j中对org.springframework.aop、org.springframework.transaction、org.springframework.jdbc、org.mybatis.spring.transaction进行DEBUG级别日志跟踪（开发期） 查看日志中是否有事务管理、开启、提交、回滚等字符，如：
+DEBUG o.m.spring.transaction.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@28cfe912] will be managed by Spring  没有被控制的时候，日志如下：
+DEBUG o.m.spring.transaction.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@28cfe912] will not be managed by Spring   如何通过程序判断是否存在事务？ boolean flag = TransactionSynchronizationManager.isActualTransactionActive();  返回true，则在事务控制下，否则不在控制下</description>
+    </item>
+    
+    <item>
+      <title>NPE（java.lang.NullPointerException）防范</title>
+      <link>https://ningyu1.github.io/site/post/15-java-npe/</link>
+      <pubDate>Sat, 26 Aug 2017 16:01:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/15-java-npe/</guid>
+      <description>我们程序中NPE还是比较多的，下面介绍良好的编码规范防止NPE的发生
+NPE（java.lang.NullPointerException）: 空指针异常
+一、【推荐】防止 NPE，是程序员的基本修养，注意 NPE 产生的场景： 1） 返回类型为基本数据类型， return 包装数据类型的对象时，自动拆箱有可能产生 NPE。
+反例： public int f() { return Integer 对象}， 如果为 null，自动解箱抛 NPE。
+2） 数据库的查询结果可能为 null。
+3） 集合里的元素即使 isNotEmpty，取出的数据元素也可能为 null。
+4） 远程调用返回对象时，一律要求进行空指针判断，防止 NPE。
+5） 对于 Session 中获取的数据，建议 NPE 检查，避免空指针。
+6） 级联调用 obj.getA().getB().getC()； 一连串调用，易产生 NPE。
+正例： 使用 JDK8 的 Optional 类来防止 NPE 问题。
+ps.我们现在开发规范jdk版本jdk1.7.0_45，对于jdk8里面的optional可以了解学习，它是一种友好的解决方式。
+二、【强制】当某一列的值全是 NULL 时， count(col)的返回结果为 0，但 sum(col)的返回结果为 NULL，因此使用 sum()时需注意 NPE 问题。
+正例： 可以使用如下方式来避免 sum 的 NPE 问题： SELECT IF(ISNULL(SUM(g)),0,SUM(g))</description>
+    </item>
+    
+    <item>
+      <title>JVM调优总结 -Xms -Xmx -Xmn -Xss</title>
+      <link>https://ningyu1.github.io/site/post/15-java-jvm/</link>
+      <pubDate>Sat, 26 Aug 2017 15:56:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/15-java-jvm/</guid>
+      <description>堆大小设置 JVM 中最大堆大小有三方面限制：相关操作系统的数据模型（32-bt还是64-bit）限制；系统的可用虚拟内存限制；系统的可用物理内存限制。32位系统下，一般限制在1.5G~2G；64为操作系统对内存无限制。我在Windows Server 2003 系统，3.5G物理内存，JDK5.0下测试，最大可设置为1478m。
+典型设置  java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -Xmx3550m：设置JVM最大可用内存为3550M。 -Xms3550m：设置JVM促使内存为3550m。此值可以设置与-Xmx相同，以避免每次垃圾回收完成后JVM重新分配内存。 -Xmn2g：设置年轻代大小为2G。整个JVM内存大小=年轻代大小 + 年老代大小 + 持久代大小。持久代一般固定大小为64m，所以增大年轻代后，将会减小年老代大小。此值对系统性能影响较大，Sun官方推荐配置为整个堆的3/8。 -Xss128k：设置每个线程的堆栈大小。JDK5.0以后每个线程堆栈大小为1M，以前每个线程堆栈大小为256K。更具应用的线程所需内存大小进行调整。在相同物理内存下，减小这个值能生成更多的线程。但是操作系统对一个进程内的线程数还是有限制的，不能无限生成，经验值在3000~5000左右。
+ java -Xmx3550m -Xms3550m -Xss128k -XX:NewRatio=4 -XX:SurvivorRatio=4 -XX:MaxPermSize=16m -XX:MaxTenuringThreshold=0 -XX:NewRatio=4:设置年轻代（包括Eden和两个Survivor区）与年老代的比值（除去持久代）。设置为4，则年轻代与年老代所占比值为1：4，年轻代占整个堆栈的1/5 -XX:SurvivorRatio=4：设置年轻代中Eden区与Survivor区的大小比值。设置为4，则两个Survivor区与一个Eden区的比值为2:4，一个Survivor区占整个年轻代的1/6 -XX:MaxPermSize=16m:设置持久代大小为16m。 -XX:MaxTenuringThreshold=0：设置垃圾最大年龄。如果设置为0的话，则年轻代对象不经过Survivor区，直接进入年老代。对于年老代比较多的应用，可以提高效率。如果将此值设置为一个较大值，则年轻代对象会在Survivor区进行多次复制，这样可以增加对象再年轻代的存活时间，增加在年轻代即被回收的概论。
+  回收器选择 JVM给了三种选择：串行收集器、并行收集器、并发收集器，但是串行收集器只适用于小数据量的情况，所以这里的选择主要针对并行收集器和并发收集器。默认情况下，JDK5.0以前都是使用串行收集器，如果想使用其他收集器需要在启动时加入相应参数。JDK5.0以后，JVM会根据当前系统配置进行判断。
+ java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:ParallelGCThreads=20 -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+UseConcMarkSweepGC：设置年老代为并发收集。测试中配置这个以后，-XX:NewRatio=4的配置失效了，原因不明。所以，此时年轻代大小最好用-Xmn设置。 -XX:+UseParNewGC:设置年轻代为并行收集。可与CMS收集同时使用。JDK5.0以上，JVM会根据系统配置自行设置，所以无需再设置此值。
+ java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:+UseConcMarkSweepGC -XX:CMSFullGCsBeforeCompaction=5 -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction：由于并发收集器不对内存空间进行压缩、整理，所以运行一段时间以后会产生“碎片”，使得运行效率降低。此值设置运行多少次GC以后对内存空间进行压缩、整理。 -XX:+UseCMSCompactAtFullCollection：打开对年老代的压缩。可能会影响性能，但是可以消除碎片
+ java -Xmx3800m -Xms3800m -Xmn2g -Xss128k -XX:+UseParallelGC -XX:ParallelGCThreads=20 -XX:+UseParallelGC：选择垃圾收集器为并行收集器。此配置仅对年轻代有效。即上述配置下，年轻代使用并发收集，而年老代仍旧使用串行收集。 -XX:ParallelGCThreads=20：配置并行收集器的线程数，即：同时多少个线程一起进行垃圾回收。此值最好配置与处理器数目相等。</description>
+    </item>
+    
+    <item>
+      <title>Lombok使用说明</title>
+      <link>https://ningyu1.github.io/site/post/04-lombok-quick-start/</link>
+      <pubDate>Wed, 19 Jul 2017 15:22:56 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/04-lombok-quick-start/</guid>
+      <description>一、项目背景 在写Java程序的时候经常会遇到如下情形：
+新建了一个Class类，然后在其中设置了几个字段，最后还需要花费很多时间来建立getter和setter方法
+lombok项目的产生就是为了省去我们手动创建getter和setter方法的麻烦，它能够在我们编译源码的时候自动帮我们生成getter和setter方法。即它最终能够达到的效果是：在源码中没有getter和setter方法，但是在编译生成的字节码文件中有getter和setter方法
+比如源码文件：
+import java.io.Serializable; import lombok.AllArgsConstructor; import lombok.Data; import lombok.NoArgsConstructor; import lombok.extern.slf4j.Slf4j; @Data @Slf4j @NoArgsConstructor @AllArgsConstructor public class TestUserVo implements Serializable{ private static final long serialVersionUID = -5648809805573016853L; private Long id; private Long userId; /** * 获取 id * @return the id */ public Long getId() { System.out.println(&amp;quot;getId&amp;quot;); return id; } /** * 设置 id * @param id the id to set */ public void setId(Long id) { System.</description>
+    </item>
+    
+    <item>
+      <title>SLF4J和Logback日志框架详解</title>
+      <link>https://ningyu1.github.io/site/post/13-slf4j-logback/</link>
+      <pubDate>Fri, 10 Apr 2015 10:15:03 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/13-slf4j-logback/</guid>
+      <description>本文讲述SLF4J和Logback日志框架。 SLF4J是一套简单的日志外观模式的Java API，帮助在项目部署时对接各种日志实现。 LogBack在运行时使用JMX帮助修改日志配置，在生产状态下无需重启应用程序。
+SLF4J SLF4J是简单的日志外观模式框架，抽象了各种日志框架例如Logback、Log4j、Commons-logging和JDK自带的logging实现接口。它使得用户可以在部署时使用自己想要的日志框架。SLF4J是轻量级的，在性能方面几乎是零消耗的。
+SLF4J没有替代任何日志框架，它仅仅是标准日志框架的外观模式。如果在类路径下除了SLF4J再没有任何日志框架，那么默认状态是在控制台输出日志。
+Logback Logback是Log4j的改进版本，而且原生支持SLF4J（因为是同一作者开发的），因此从其它日志框架如Log4j或JDK的logging迁移到Logback是完全可行的。
+由于Logback原生支持SLF4J，因此Logback＋SLF4J的组合是日志框架的最佳选择，比SLF4J+其它日志框架的组合要快一些。而且Logback的配置可以是XML或Groovy代码。
+注意一个重要的特性，Logback通过JMX修改日志配置（比如日志级别从Debug调整到INFO），可以从JMX控制台直接操作，无需重启应用程序。
+此外，Logback的异常堆栈跟踪的信息，有助于调试。
+java.lang.NullPointerException: null at com.fimt.poc.LoggingSample.(LoggingSample.java:16) [classes/:na] at com.fimt.poc.LoggingSample.main(LoggingSample.java:23) [fimt-logging-poc-1.0.jar/:1.0  SLF4J API用法  从org.slf4j包导入Logger和LoggerFactory  import org.slf4j.Logger; import org.slf4j.LoggerFactory;   声明日志类  private final Logger logger = LoggerFactory.getLogger(LoggingSample.class);   使用debug、warn、info、error方法并跟踪适合的参数。  所有的方法默认都使用字符串作为输入。
+logger.info(&amp;quot;This is sample info statement&amp;quot;);  SLF4J结合Logback 在pom.xml包含下面的依赖：它会自动包含所有的依赖包logback-core、slf4j-api……
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;ch.qos.logback&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;logback-classic&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  SLF4J能用于现有的日志框架如Log4j、Commons-logging、java.util.logging(JUL)。
+SLF4J结合Log4j 在pom.xml包含下面的依赖
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;slf4j-log4j12&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.7.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  SLF4J结合JUL (java.</description>
+    </item>
+    
+    <item>
+      <title>Google Guava官方教程（中文版）</title>
+      <link>https://ningyu1.github.io/site/post/14-guava/</link>
+      <pubDate>Mon, 09 Mar 2015 17:34:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/14-guava/</guid>
+      <description>Guava 中文是石榴的意思，该项目是 Google 的一个开源项目，包含许多 Google 核心的 Java 常用库。
+引言 Guava工程包含了若干被Google的 Java项目广泛依赖 的核心库，例如：集合 [collections] 、缓存 [caching] 、原生类型支持 [primitives support] 、并发库 [concurrency libraries] 、通用注解 [common annotations] 、字符串处理 [string processing] 、I/O 等等。 所有这些工具每天都在被Google的工程师应用在产品服务中。
+查阅Javadoc并不一定是学习这些库最有效的方式。在此，我们希望通过此文档为Guava中最流行和最强大的功能，提供更具可读性和解释性的说明。
+译文格式说明
+Guava中的类被首次引用时，都会链接到Guava的API文档。如：Optional。 Guava和JDK中的方法被引用时，一般都会链接到Guava或JDK的API文档，一些人所共知的JDK方法除外。如：Optional.of(T), Map.get(key)。 译者对文档的额外说明以斜体显示，并且以“译者注：”开始。
+目录 1. 基本工具 [Basic utilities] 让使用Java语言变得更舒适 * 使用和避免null：null是模棱两可的，会引起令人困惑的错误，有些时候它让人很不舒服。很多Guava工具类用快速失败拒绝null值，而不是盲目地接受 * 前置条件: 让方法中的条件检查更简单 * 常见Object方法: 简化Object方法实现，如hashCode()和toString() * 排序: Guava强大的”流畅风格比较器” * Throwables：简化了异常和错误的传播与检查
+2. 集合[Collections] Guava对JDK集合的扩展，这是Guava最成熟和为人所知的部分 * 不可变集合: 用不变的集合进行防御性编程和性能提升。 * 新集合类型: multisets, multimaps, tables, bidirectional maps等 * 强大的集合工具类: 提供java.</description>
+    </item>
+    
+  </channel>
+</rss>

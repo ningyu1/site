@@ -1,0 +1,6702 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.51" />
+	<meta charset="utf-8">
+    
+    
+    <title>凝雨 - Yun</title>
+    <meta name="author" content="凝雨-Yun">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://ningyu1.github.io/site/index.xml" rel="alternate" title="凝雨 - Yun" type="application/atom+xml">
+    <link href="https://ningyu1.github.io/site/images/fav.ico" rel="shortcut icon">
+    <style>
+    @charset "UTF-8";
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("https://ningyu1.github.io/site/font/fontawesome-webfont.eot");
+  src: url("https://ningyu1.github.io/site/font/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.woff") format("woff"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.ttf") format("truetype"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.svgz#FontAwesomeRegular") format("svg"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face{
+    font-family: 'MyHermit';
+    src: url('https://ningyu1.github.io/site/font/hermit-medium-webfont.eot');
+    src: url('https://ningyu1.github.io/site/font/hermit-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://ningyu1.github.io/site/font/hermit-medium-webfont.woff') format('woff'),
+         url('https://ningyu1.github.io/site/font/hermit-medium-webfont.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'PingFang SC', serif;
+  font-weight: 300;
+  font-size: 16px;
+  /*background: url("https://ningyu1.github.io/site/images/retina_dust.png");*/
+  color: #444;
+  colori: #666666; }
+  @media screen and (max-width: 1040px) {
+    body {
+      margin: 0 20px; } }
+  @media screen and (max-width: 600px) {
+    body {
+      font-size: 13px; } }
+
+.bBackground {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: -moz-radial-gradient(50% 50%, farthest-side, white, #efefef);
+  background: -webkit-gradient(radial, 50% 50%, 250, 50% 50%, 750, from(white), to(#bbbbbb));
+  z-index: -100; }
+
+h1 {
+  font-size: 1.8em; }
+
+h2 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.3em; }
+
+a {
+  text-decoration: none;
+  outline-width: 0;
+  color: #258fb8; }
+
+.alignleft {
+  float: left; }
+
+.alignright {
+  float: right; }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.inner {
+  width: 900px;
+  margin: 0 auto; }
+  @media screen and (max-width: 1040px) {
+    .inner {
+      width: 100%; } }
+
+#w2btoTop {
+  display: none;
+  text-decoration: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  overflow: hidden;
+  width: 51px;
+  height: 51px;
+  border: none;
+  text-indent: -999px;
+  background: url(https://ningyu1.github.io/site/images/totop.png) no-repeat left top; }
+
+#w2btoTopHover {
+  background: url(https://ningyu1.github.io/site/images/totop.png) no-repeat left -51px;
+  width: 51px;
+  height: 51px;
+  display: block;
+  overflow: hidden;
+  float: left;
+  opacity: 0;
+  -moz-opacity: 0;
+  filter: alpha(opacity=0); }
+
+#w2btoTop:active, #w2btoTop:focus {
+  outline: none; }
+
+.basic-alignment.left, article .entry-content img.left, article .entry-content video.left {
+  float: left;
+  margin-right: 1.5em; }
+.basic-alignment.right, article .entry-content img.right, article .entry-content video.right {
+  float: right;
+  margin-left: 1.5em; }
+.basic-alignment.center, article .entry-content img.center, article .entry-content video.center {
+  display: block;
+  margin: 0 auto 1.5em; }
+.basic-alignment.left, article .entry-content img.left, article .entry-content video.left, .basic-alignment.right, article .entry-content img.right, article .entry-content video.right {
+  margin-bottom: .8em; }
+
+/* changes tooltip, to use, make elements 'class' as 'tooltip' and 'title' would be shown in tooltip */
+.tooltip {
+  display: inline;
+  position: relative; }
+
+.tooltip:hover {
+  text-decoration: none; }
+
+.tooltip:hover:after {
+  background: #111;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  bottom: 18px;
+  color: #fff;
+  content: attr(title);
+  display: block;
+  left: 50%;
+  padding: 5px 15px;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 98; }
+
+.tooltip:hover:before {
+  border: solid;
+  border-color: #111 transparent;
+  border-width: 6px 6px 0 6px;
+  bottom: 12px;
+  content: "";
+  display: block;
+  left: 75%;
+  position: absolute;
+  z-index: 99; }
+
+.pullquote-right:before,
+.pullquote-left:before {
+  /* Reset metrics. */
+  padding: 0;
+  border: none;
+  /* Content */
+  content: attr(data-pullquote);
+  /* Pull out to the right, modular scale based margins. */
+  float: right;
+  width: 45%;
+  margin: .5em 0 1em 1.5em;
+  /* Baseline correction */
+  position: relative;
+  top: 7px;
+  font-size: 1.4em;
+  line-height: 1.45em; }
+
+.pullquote-left:before {
+  /* Make left pullquotes align properly. */
+  float: left;
+  margin: .5em 1.5em 1em 0; }
+
+#header {
+  padding: 20px 0 20px 0; }
+  @media screen and (max-width: 1040px) {
+    #header {
+      height: auto;
+      position: relative;
+      padding-bottom: 10px; } }
+  #header a {
+    color: #666666;
+    -webkit-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(color 0.3s, false, false, false, false, false, false, false, false, false); }
+    #header a:hover {
+      color: #258fb8; }
+  #header h1 {
+    font-family: 'Slackey', cursive;
+    font-weight: 300;
+    font-size: 52px; }
+    @media screen and (max-width: 1040px) {
+      #header h1 {
+        float: none; } }
+
+#headerbg {
+  text-align: center;
+  background: #444;
+  padding: 10px 10px;
+  display: table;
+  color: #fff;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-weight: bold;
+  -webkit-mask-image: -webkit-linear-gradient(black, rgba(0, 0, 0, 0.9));
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .2s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: .2s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: 1s;
+  -ms-animation-delay: .2s;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  -o-animation-duration: 1s;
+  -o-animation-delay: .2s;
+  -o-animation-timing-function: ease;
+  -o-animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: .2s;
+  animation-timing-function: ease;
+  animation-fill-mode: both; }
+
+#load {
+  display: none;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  background: url("https://ningyu1.github.io/site/images/loading.gif");
+  width: 50px;
+  height: 50px;
+  text-indent: -9999em; }
+
+#social-links li {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  margin-top: 20px;
+  margin-right: 9px;
+  background-color: #ddd;
+  text-align: center;
+  line-height: 35px;
+  -webkit-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false);
+  -moz-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false false);
+  -o-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false false);
+  transition: compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false); }
+  #social-links li:hover {
+    background-color: #555; }
+#social-links a {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  #social-links a svg {
+    position: absolute; }
+  #social-links a .github {
+    top: 3px;
+    left: 2px; }
+  #social-links a .sina-weibo {
+    top: 8px;
+    left: 6px; }
+  #social-links a .tencent-weibo {
+    top: 6px;
+    left: 4px; }
+  #social-links a .twitter {
+    top: 2px;
+    left: 3px; }
+
+a.facebook {
+  background: url("https://ningyu1.github.io/site/images/social/Facebook.png") center no-repeat; }
+
+a.facebook:hover {
+  background: url("https://ningyu1.github.io/site/images/social/FacebookH.png") center no-repeat; }
+
+a.github {
+  background: url("https://ningyu1.github.io/site/images/social/Github.png") center no-repeat; }
+
+a.github:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GithubH.png") center no-repeat; }
+
+a.gitee {
+  background: url("https://ningyu1.github.io/site/images/social/Gitee.png") center no-repeat; }
+
+a.gitee:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GiteeH.png") center no-repeat; }
+
+a.gitlab {
+  background: url("https://ningyu1.github.io/site/images/social/Gitlab.png") center no-repeat; }
+
+a.gitlab:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GitlabH.png") center no-repeat; }
+
+a.email {
+  background: url("https://ningyu1.github.io/site/images/social/Email.png") center no-repeat; }
+
+a.email:hover {
+  background: url("https://ningyu1.github.io/site/images/social/EmailH.png") center no-repeat; }
+
+a.rss {
+  background: url("https://ningyu1.github.io/site/images/social/Rss.png") center no-repeat; }
+
+a.rss:hover {
+  background: url("https://ningyu1.github.io/site/images/social/RssH.png") center no-repeat; }
+
+a.twitter {
+  background: url("https://ningyu1.github.io/site/images/social/Twitter.png") center no-repeat; }
+
+a.twitter:hover {
+  background: url("https://ningyu1.github.io/site/images/social/TwitterH.png") center no-repeat; }
+
+a.google {
+  background: url("https://ningyu1.github.io/site/images/social/Picasa.png") center no-repeat; }
+
+a.google:hover {
+  background: url("https://ningyu1.github.io/site/images/social/PicasaH.png") center no-repeat; }
+
+a.skype {
+  background: url("https://ningyu1.github.io/site/images/social/Skype.png") center no-repeat; }
+
+a.skype:hover {
+  background: url("https://ningyu1.github.io/site/images/social/SkypeH.png") center no-repeat; }
+
+a.linkedin {
+  background: url("https://ningyu1.github.io/site/images/social/LinkedIn.png") center no-repeat; }
+
+a.linkedin:hover {
+  background: url("https://ningyu1.github.io/site/images/social/LinkedInH.png") center no-repeat; }
+
+a.youtube {
+  background: url("https://ningyu1.github.io/site/images/social/Youtube.png") center no-repeat; }
+
+a.youtube:hover {
+  background: url("https://ningyu1.github.io/site/images/social/YoutubeH.png") center no-repeat; }
+
+a.lastfm {
+  background: url("https://ningyu1.github.io/site/images/social/LastFM.png") center no-repeat; }
+
+a.lastfm:hover {
+  background: url("https://ningyu1.github.io/site/images/social/LastFMH.png") center no-repeat; }
+
+/* search bar */
+#search {
+  display: inline; }
+
+#search input[type="text"] {
+  background: url("https://ningyu1.github.io/site/images/search-dark.png") no-repeat 10px 6px #444444;
+  border: 0 none;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #777;
+  width: 110px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s; }
+
+#search input[type="text"]:focus {
+  width: 160px; }
+
+#dark {
+  display: inline-block;
+  height: 70px; }
+
+#dark #search input[type="text"] {
+  background: url("https://ningyu1.github.io/site/images/search-dark.png") no-repeat 10px 6px #444444;
+  border: 0 none;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #ddd;
+  width: 110px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s; }
+
+#dark #search input[type="text"]:focus {
+  width: 160px;
+  outline: 0; }
+
+/* nav */
+#nav {
+  text-align: center;
+  position: relative;
+  margin: 10px auto; }
+
+ul#nav *{
+	box-sizing:content-box
+}
+
+ul#nav li {
+  display: inline-block; }
+
+ul#nav li {
+  list-style-type: none;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-right: 1px; }
+
+ul#nav li a {
+  display: inline-block;
+  width: 110px;
+  height: 40px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #222;
+  font-weight: normal;
+  text-decoration: none;
+  font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-style: normal;
+  text-shadow: 1px 1px 10px #222;
+  overflow: hidden; }
+
+ul#nav li a:hover {
+  color: #fff;
+  font-style: normal;
+  font-weight: normal;
+  background-image: url("https://ningyu1.github.io/site/images/hover.png");
+  background-repeat: no-repeat;
+  background-position: center top; }
+
+ul#nav li a:active {
+  position: relative;
+  top: 2px; }
+
+ul#nav li#active a {
+  color: #FFF;
+  background-image: url("https://ningyu1.github.io/site/images/active.png");
+  background-repeat: no-repeat;
+  background-position: center top; }
+
+#pagenavi {
+  padding: 20px 0;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #pagenavi a:hover {
+    text-decoration: underline; }
+  #pagenavi .prev, #pagenavi .next {
+    position: absolute; }
+  #pagenavi .prev {
+    padding-left: 30px;
+    left: 0; }
+    #pagenavi .prev:before {
+      content: "\f060";
+      font: 1.3em FontAwesome;
+      position: absolute;
+      left: 0; }
+  #pagenavi .next {
+    padding-right: 30px;
+    right: 0; }
+    #pagenavi .next:before {
+      content: "\f061";
+      font: 1.3em FontAwesome;
+      position: absolute;
+      right: 0; }
+  #pagenavi .center {
+    text-align: center;
+    width: 100%;
+    display: block; }
+    @media screen and (max-width: 400px) {
+      #pagenavi .center {
+        display: none; } }
+
+article {
+  border-bottom: 1px solid #dddddd;
+  padding: 30px 0;
+  position: relative; }
+  @media screen and (max-width: 800px) {
+    article {
+      padding-bottom: 15px; } }
+  @media screen and (max-width: 600px) {
+    article {
+      padding: 15px 0; } }
+  article h2.title {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 20px; }
+    article h2.title a {
+      color: #1094e8; }
+  article .title a {
+    color: #7c7873;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out; }
+  article .title a:hover {
+    color: #084B8A;
+    text-shadow: 3px 3px 12px #888;
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3); }
+  article .entry-content {
+    line-height: 2;
+    text-align: justify; }
+    article .entry-content a:hover {
+      text-decoration: underline; }
+    article .entry-content .more-link {
+      display: block;
+      margin-top: 16px;
+      padding-left: 30px;
+      position: relative; }
+      article .entry-content .more-link:before {
+        content: "\f061";
+        font: 1.3em FontAwesome;
+        line-height: 1.6em;
+        position: absolute;
+        left: 0; }
+    article .entry-content p, article .entry-content blockquote, article .entry-content ul, article .entry-content ol, article .entry-content dl, article .entry-content iframe, article .entry-content h1, article .entry-content h2, article .entry-content h3, article .entry-content h4, article .entry-content h5, article .entry-content h6, article .entry-content .video-container {
+      margin-top: 10px; }
+    article .entry-content ul, article .entry-content ol, article .entry-content dl {
+      margin-left: 20px; }
+      article .entry-content ul ul, article .entry-content ul ol, article .entry-content ul dl, article .entry-content ol ul, article .entry-content ol ol, article .entry-content ol dl, article .entry-content dl ul, article .entry-content dl ol, article .entry-content dl dl {
+        margin-top: 0; }
+    article .entry-content strong {
+      font-weight: bold; }
+    article .entry-content em {
+      font-style: italic; }
+    article .entry-content p {
+      margin-top: 10px; }
+    article .entry-content h2 {
+      font-weight: 300;
+      border-bottom: 1px solid #dddddd;
+      position: relative; }
+      article .entry-content h2:before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        border-bottom: 1px solid white;
+        width: 100%; }
+    article .entry-content img, article .entry-content video {
+      margin: 10px 0;
+      max-width: 100%;
+      height: auto;
+      -moz-border-radius: 0.3em;
+      -webkit-border-radius: 0.3em;
+      -o-border-radius: 0.3em;
+      -ms-border-radius: 0.3em;
+      -khtml-border-radius: 0.3em;
+      border-radius: 0.3em;
+      -moz-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -o-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+      border: #fff 0.3em solid; }
+    article .entry-content img.noborder, article .entry-content video.noborder {
+      border: none;
+      box-shadow: none; }
+    article .entry-content blockquote {
+      background: #dddddd;
+      border-left: 5px solid #cccccc;
+      padding: 15px 20px;
+      margin-top: 10px; }
+      article .entry-content blockquote > p:first-of-type {
+        margin-top: 0; }
+    article .entry-content iframe {
+      border: none; }
+    article .entry-content .caption {
+      display: block;
+      font-size: 0.9em;
+      color: #999999;
+      padding-left: 25px;
+      position: relative; }
+      article .entry-content .caption:before {
+        content: "\f040";
+        color: #cccccc;
+        font: 1.3em FontAwesome;
+        line-height: 1.6em;
+        position: absolute;
+        left: 0; }
+    article .entry-content .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden; }
+      article .entry-content .video-container iframe, article .entry-content .video-container object, article .entry-content .video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 0; }
+
+.share {
+  padding: 15px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+
+@media screen and (max-width: 800px) {
+  .post h2.title, .post .entry-content {
+    margin-left: 0; } }
+.post .meta {
+  line-height: 2;
+  color: #999999;
+  width: 370px; }
+  @media screen and (max-width: 800px) {
+    .post .meta {
+      margin-top: 15px;
+      position: static;
+      width: auto; } }
+  .post .meta a {
+    color: #999999;
+    -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+    .post .meta a:hover {
+      color: #666666; }
+  .post .meta .date, .post .meta .tags, .post .meta .comments {
+    padding-left: 30px;
+    position: relative; }
+    .post .meta .date:before, .post .meta .tags:before, .post .meta .comments:before {
+      color: #cccccc;
+      font: 1.3em FontAwesome;
+      line-height: 1.6em;
+      position: absolute;
+      left: 0; }
+    @media screen and (max-width: 800px) {
+      .post .meta .date, .post .meta .tags, .post .meta .comments {
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline;
+        margin-right: 30px; } }
+  .post .meta .date:before {
+    content: "\f073"; }
+  .post .meta .tags:before {
+    content: "\f02c"; }
+  .post .meta .comments:before {
+    content: "\f075"; }
+
+.archives {
+  position: relative; }
+  .archives:last-of-type:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    border-top: 1px solid #dddddd; }
+  .archives .top-border-padding {
+    border-top: 1px solid #fff; }
+    .archives .top-border-padding:before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      width: 100%;
+      border-top: 1px solid #dddddd; }
+  .archives .year {
+    line-height: 35px;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    padding-top: 15px;
+    border-top: 1px solid #fff; }
+    .archives .year:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      width: 100%;
+      border-top: 1px solid #dddddd; }
+    @media screen and (max-width: 600px) {
+      .archives .year {
+        position: relative;
+        width: 100%; } }
+  .archives article {
+    margin-left: 200px;
+    padding: 10px 0; }
+    @media screen and (max-width: 600px) {
+      .archives article {
+        margin-left: 0; }
+        .archives article:first-of-type {
+          border-top: none;
+          padding-top: 30px; } }
+    .archives article .title {
+      margin-bottom: 0;
+      font-size: 25px; }
+    .archives article .meta {
+      color: #999999;
+      font-size: 0.9em;
+      line-height: 2;
+      margin-top: 10px; }
+      @media screen and (max-width: 600px) {
+        .archives article .meta {
+          display: none; } }
+      .archives article .meta span {
+        margin-right: 30px;
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline; }
+        .archives article .meta span:before {
+          color: #cccccc;
+          font: 1.3em FontAwesome;
+          padding-right: 10px; }
+      .archives article .meta a {
+        color: #999999;
+        -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+        -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+        -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+        transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+        .archives article .meta a:hover {
+          color: #666666; }
+      .archives article .meta .date:before {
+        content: "\f073"; }
+      .archives article .meta .tags:before {
+        content: "\f02c"; }
+      .archives article .meta .comments:before {
+        content: "\f075"; }
+
+#comment {
+  padding: 30px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #comment h2.title {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 20px; }
+
+footer {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.6em;
+  color: #666; }
+
+footer a {
+  color: #123; }
+
+footer a:hover {
+  color: #456; }
+
+#banner {
+  color: #999999;
+  padding: 30px 0;
+  line-height: 30px;
+  text-align: center;
+  position: relative;
+  display: none;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #banner:hover a {
+    color: #258fb8; }
+  #banner a {
+    color: #999999;
+    -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+    #banner a:hover {
+      text-decoration: underline; }
+  #banner small {
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+  #banner .loading {
+    background: image-url("loading_pacman.gif") center no-repeat;
+    text-indent: -9999px; }
+  #banner .container {
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    display: none; }
+    #banner .container .feed {
+      list-style: none;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+      #banner .container .feed li {
+        position: relative; }
+        #banner .container .feed li small {
+          position: absolute;
+          right: 0; }
+
+/*! fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license */
+.fancybox-tmp iframe, .fancybox-tmp object {
+  vertical-align: top;
+  padding: 0;
+  margin: 0; }
+
+.fancybox-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8020; }
+
+.fancybox-skin {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: #f9f9f9;
+  color: #444;
+  text-shadow: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px; }
+
+.fancybox-opened {
+  z-index: 8030; }
+
+.fancybox-opened .fancybox-skin {
+  -webkit-box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false);
+  -moz-box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false);
+  box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false); }
+
+.fancybox-outer, .fancybox-inner {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  outline: none; }
+
+.fancybox-inner {
+  overflow: hidden; }
+
+.fancybox-type-iframe .fancybox-inner {
+  -webkit-overflow-scrolling: touch; }
+
+.fancybox-error {
+  color: #444;
+  font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 10px; }
+
+.fancybox-image, .fancybox-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  vertical-align: top; }
+
+.fancybox-image {
+  max-width: 100%;
+  max-height: 100%; }
+
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+  background-image: image-url("fancybox/fancybox_sprite.png"); }
+
+#fancybox-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -22px;
+  margin-left: -22px;
+  background-position: 0 -108px;
+  opacity: 0.8;
+  cursor: pointer;
+  z-index: 8020; }
+
+#fancybox-loading div {
+  width: 44px;
+  height: 44px;
+  background: image-url("fancybox/fancybox_loading.gif") center center no-repeat; }
+
+.fancybox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 8040; }
+
+.fancybox-nav {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  cursor: pointer;
+  background: transparent image-url("fancybox/blank.gif");
+  /* helps IE */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  z-index: 8040; }
+
+.fancybox-prev {
+  left: 0; }
+
+.fancybox-next {
+  right: 0; }
+
+.fancybox-nav span {
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 34px;
+  margin-top: -18px;
+  cursor: pointer;
+  z-index: 8040;
+  visibility: hidden; }
+
+.fancybox-prev span {
+  left: 20px;
+  background-position: 0 -36px; }
+
+.fancybox-next span {
+  right: 20px;
+  background-position: 0 -72px; }
+
+.fancybox-nav:hover span {
+  visibility: visible; }
+
+.fancybox-tmp {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  padding: 0;
+  overflow: visible;
+  visibility: hidden; }
+
+/* Overlay helper */
+#fancybox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: none;
+  z-index: 8010;
+  background: #000; }
+
+#fancybox-overlay.overlay-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0; }
+
+/* Title helper */
+.fancybox-title {
+  visibility: hidden;
+  font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+  text-shadow: none;
+  z-index: 8050; }
+
+.fancybox-opened .fancybox-title {
+  visibility: visible; }
+
+.fancybox-title-float-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  margin-bottom: -35px;
+  z-index: 8030;
+  text-align: center; }
+
+.fancybox-title-float-wrap .child {
+  display: inline-block;
+  margin-right: -100%;
+  padding: 2px 20px;
+  background: transparent;
+  /* Fallback for web browsers that doesn't support RGBa */
+  background: rgba(0, 0, 0, 0.8);
+  text-shadow: 0 1px 2px #222;
+  color: #FFF;
+  font-weight: bold;
+  line-height: 24px;
+  white-space: nowrap;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px; }
+
+.fancybox-title-outside-wrap {
+  position: relative;
+  margin-top: 10px;
+  color: #fff; }
+
+.fancybox-title-inside-wrap {
+  margin-top: 10px; }
+
+.fancybox-title-over-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  padding: 10px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8); }
+
+/*
+Animate.css - http://daneden.me/animate
+Licensed under the ☺ license (http://licence.visualidiot.com/)
+
+Copyright (c) 2012 Dan Eden
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+body {
+  /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
+  -webkit-backface-visibility: hidden; }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  animation-duration: 2s; }
+
+@-webkit-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@-moz-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@-o-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+.flash {
+  -webkit-animation-name: flash;
+  -moz-animation-name: flash;
+  -o-animation-name: flash;
+  animation-name: flash; }
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px); } }
+
+@-moz-keyframes shake {
+  0%, 100% {
+    -moz-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -moz-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -moz-transform: translateX(10px); } }
+
+@-o-keyframes shake {
+  0%, 100% {
+    -o-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -o-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -o-transform: translateX(10px); } }
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px); } }
+
+.shake {
+  -webkit-animation-name: shake;
+  -moz-animation-name: shake;
+  -o-animation-name: shake;
+  animation-name: shake; }
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0); }
+
+  40% {
+    -webkit-transform: translateY(-30px); }
+
+  60% {
+    -webkit-transform: translateY(-15px); } }
+
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0); }
+
+  40% {
+    -moz-transform: translateY(-30px); }
+
+  60% {
+    -moz-transform: translateY(-15px); } }
+
+@-o-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -o-transform: translateY(0); }
+
+  40% {
+    -o-transform: translateY(-30px); }
+
+  60% {
+    -o-transform: translateY(-15px); } }
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); }
+
+  40% {
+    transform: translateY(-30px); }
+
+  60% {
+    transform: translateY(-15px); } }
+
+.bounce {
+  -webkit-animation-name: bounce;
+  -moz-animation-name: bounce;
+  -o-animation-name: bounce;
+  animation-name: bounce; }
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1); }
+
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0); } }
+
+@-moz-keyframes tada {
+  0% {
+    -moz-transform: scale(1); }
+
+  10%, 20% {
+    -moz-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -moz-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -moz-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -moz-transform: scale(1) rotate(0); } }
+
+@-o-keyframes tada {
+  0% {
+    -o-transform: scale(1); }
+
+  10%, 20% {
+    -o-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -o-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -o-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -o-transform: scale(1) rotate(0); } }
+
+@keyframes tada {
+  0% {
+    transform: scale(1); }
+
+  10%, 20% {
+    transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    transform: scale(1) rotate(0); } }
+
+.tada {
+  -webkit-animation-name: tada;
+  -moz-animation-name: tada;
+  -o-animation-name: tada;
+  animation-name: tada; }
+
+@-webkit-keyframes swing {
+  20%, 40%, 60%, 80%, 100% {
+    -webkit-transform-origin: top center; }
+
+  20% {
+    -webkit-transform: rotate(15deg); }
+
+  40% {
+    -webkit-transform: rotate(-10deg); }
+
+  60% {
+    -webkit-transform: rotate(5deg); }
+
+  80% {
+    -webkit-transform: rotate(-5deg); }
+
+  100% {
+    -webkit-transform: rotate(0deg); } }
+
+@-moz-keyframes swing {
+  20% {
+    -moz-transform: rotate(15deg); }
+
+  40% {
+    -moz-transform: rotate(-10deg); }
+
+  60% {
+    -moz-transform: rotate(5deg); }
+
+  80% {
+    -moz-transform: rotate(-5deg); }
+
+  100% {
+    -moz-transform: rotate(0deg); } }
+
+@-o-keyframes swing {
+  20% {
+    -o-transform: rotate(15deg); }
+
+  40% {
+    -o-transform: rotate(-10deg); }
+
+  60% {
+    -o-transform: rotate(5deg); }
+
+  80% {
+    -o-transform: rotate(-5deg); }
+
+  100% {
+    -o-transform: rotate(0deg); } }
+
+@keyframes swing {
+  20% {
+    transform: rotate(15deg); }
+
+  40% {
+    transform: rotate(-10deg); }
+
+  60% {
+    transform: rotate(5deg); }
+
+  80% {
+    transform: rotate(-5deg); }
+
+  100% {
+    transform: rotate(0deg); } }
+
+.swing {
+  -webkit-transform-origin: top center;
+  -moz-transform-origin: top center;
+  -o-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  -moz-animation-name: swing;
+  -o-animation-name: swing;
+  animation-name: swing; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%); }
+
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -webkit-transform: translateX(0%); } }
+
+@-moz-keyframes wobble {
+  0% {
+    -moz-transform: translateX(0%); }
+
+  15% {
+    -moz-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -moz-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -moz-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -moz-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -moz-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -moz-transform: translateX(0%); } }
+
+@-o-keyframes wobble {
+  0% {
+    -o-transform: translateX(0%); }
+
+  15% {
+    -o-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -o-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -o-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -o-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -o-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -o-transform: translateX(0%); } }
+
+@keyframes wobble {
+  0% {
+    transform: translateX(0%); }
+
+  15% {
+    transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    transform: translateX(0%); } }
+
+.wobble {
+  -webkit-animation-name: wobble;
+  -moz-animation-name: wobble;
+  -o-animation-name: wobble;
+  animation-name: wobble; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1); }
+
+  50% {
+    -webkit-transform: scale(1.1); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes pulse {
+  0% {
+    -moz-transform: scale(1); }
+
+  50% {
+    -moz-transform: scale(1.1); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@-o-keyframes pulse {
+  0% {
+    -o-transform: scale(1); }
+
+  50% {
+    -o-transform: scale(1.1); }
+
+  100% {
+    -o-transform: scale(1); } }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+
+  50% {
+    transform: scale(1.1); }
+
+  100% {
+    transform: scale(1); } }
+
+.pulse {
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -o-animation-name: pulse;
+  animation-name: pulse; }
+
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0);
+    -webkit-animation-timing-function: ease-out; }
+
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -webkit-animation-timing-function: ease-out; }
+
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -webkit-animation-timing-function: ease-in; }
+
+  80% {
+    -webkit-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -webkit-animation-timing-function: ease-in; }
+
+  100% {
+    -webkit-transform: perspective(400px) scale(1);
+    -webkit-animation-timing-function: ease-in; } }
+
+@-moz-keyframes flip {
+  0% {
+    -moz-transform: perspective(400px) rotateY(0);
+    -moz-animation-timing-function: ease-out; }
+
+  40% {
+    -moz-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -moz-animation-timing-function: ease-out; }
+
+  50% {
+    -moz-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -moz-animation-timing-function: ease-in; }
+
+  80% {
+    -moz-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -moz-animation-timing-function: ease-in; }
+
+  100% {
+    -moz-transform: perspective(400px) scale(1);
+    -moz-animation-timing-function: ease-in; } }
+
+@-o-keyframes flip {
+  0% {
+    -o-transform: perspective(400px) rotateY(0);
+    -o-animation-timing-function: ease-out; }
+
+  40% {
+    -o-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -o-animation-timing-function: ease-out; }
+
+  50% {
+    -o-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -o-animation-timing-function: ease-in; }
+
+  80% {
+    -o-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -o-animation-timing-function: ease-in; }
+
+  100% {
+    -o-transform: perspective(400px) scale(1);
+    -o-animation-timing-function: ease-in; } }
+
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+    animation-timing-function: ease-out; }
+
+  40% {
+    transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    animation-timing-function: ease-out; }
+
+  50% {
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    animation-timing-function: ease-in; }
+
+  80% {
+    transform: perspective(400px) rotateY(360deg) scale(0.95);
+    animation-timing-function: ease-in; }
+
+  100% {
+    transform: perspective(400px) scale(1);
+    animation-timing-function: ease-in; } }
+
+.flip {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flip;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flip;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flip;
+  backface-visibility: visible !important;
+  animation-name: flip; }
+
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes flipInX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -moz-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -moz-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@-o-keyframes flipInX {
+  0% {
+    -o-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -o-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -o-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -o-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInX;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInX;
+  backface-visibility: visible !important;
+  animation-name: flipInX; }
+
+@-webkit-keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes flipOutX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@-o-keyframes flipOutX {
+  0% {
+    -o-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@keyframes flipOutX {
+  0% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+.flipOutX {
+  -webkit-animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
+  -moz-animation-name: flipOutX;
+  -moz-backface-visibility: visible !important;
+  -o-animation-name: flipOutX;
+  -o-backface-visibility: visible !important;
+  animation-name: flipOutX;
+  backface-visibility: visible !important; }
+
+@-webkit-keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes flipInY {
+  0% {
+    -moz-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -moz-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -moz-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -moz-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@-o-keyframes flipInY {
+  0% {
+    -o-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -o-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -o-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -o-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@keyframes flipInY {
+  0% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+.flipInY {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInY;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInY;
+  backface-visibility: visible !important;
+  animation-name: flipInY; }
+
+@-webkit-keyframes flipOutY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes flipOutY {
+  0% {
+    -moz-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@-o-keyframes flipOutY {
+  0% {
+    -o-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@keyframes flipOutY {
+  0% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+.flipOutY {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipOutY;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipOutY;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipOutY;
+  backface-visibility: visible !important;
+  animation-name: flipOutY; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  -moz-animation-name: fadeInUp;
+  -o-animation-name: fadeInUp;
+  animation-name: fadeInUp; }
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  -moz-animation-name: fadeInDown;
+  -o-animation-name: fadeInDown;
+  animation-name: fadeInDown; }
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  -moz-animation-name: fadeInLeft;
+  -o-animation-name: fadeInLeft;
+  animation-name: fadeInLeft; }
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  -moz-animation-name: fadeInRight;
+  -o-animation-name: fadeInRight;
+  animation-name: fadeInRight; }
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  -moz-animation-name: fadeInUpBig;
+  -o-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig; }
+
+@-webkit-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInDownBig {
+  -webkit-animation-name: fadeInDownBig;
+  -moz-animation-name: fadeInDownBig;
+  -o-animation-name: fadeInDownBig;
+  animation-name: fadeInDownBig; }
+
+@-webkit-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInLeftBig {
+  -webkit-animation-name: fadeInLeftBig;
+  -moz-animation-name: fadeInLeftBig;
+  -o-animation-name: fadeInLeftBig;
+  animation-name: fadeInLeftBig; }
+
+@-webkit-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInRightBig {
+  -webkit-animation-name: fadeInRightBig;
+  -moz-animation-name: fadeInRightBig;
+  -o-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig; }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  -moz-animation-name: fadeOut;
+  -o-animation-name: fadeOut;
+  animation-name: fadeOut; }
+
+@-webkit-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px); } }
+
+@-moz-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-20px); } }
+
+@-o-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-20px); } }
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px); } }
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  -moz-animation-name: fadeOutUp;
+  -o-animation-name: fadeOutUp;
+  animation-name: fadeOutUp; }
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px); } }
+
+@-moz-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(20px); } }
+
+@-o-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(20px); } }
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px); } }
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  -moz-animation-name: fadeOutDown;
+  -o-animation-name: fadeOutDown;
+  animation-name: fadeOutDown; }
+
+@-webkit-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px); } }
+
+@-moz-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-20px); } }
+
+@-o-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-20px); } }
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-20px); } }
+
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  -moz-animation-name: fadeOutLeft;
+  -o-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft; }
+
+@-webkit-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px); } }
+
+@-moz-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(20px); } }
+
+@-o-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(20px); } }
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(20px); } }
+
+.fadeOutRight {
+  -webkit-animation-name: fadeOutRight;
+  -moz-animation-name: fadeOutRight;
+  -o-animation-name: fadeOutRight;
+  animation-name: fadeOutRight; }
+
+@-webkit-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); } }
+
+@-moz-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); } }
+
+@-o-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); } }
+
+@keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px); } }
+
+.fadeOutUpBig {
+  -webkit-animation-name: fadeOutUpBig;
+  -moz-animation-name: fadeOutUpBig;
+  -o-animation-name: fadeOutUpBig;
+  animation-name: fadeOutUpBig; }
+
+@-webkit-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); } }
+
+@-moz-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); } }
+
+@-o-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(2000px); } }
+
+@keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(2000px); } }
+
+.fadeOutDownBig {
+  -webkit-animation-name: fadeOutDownBig;
+  -moz-animation-name: fadeOutDownBig;
+  -o-animation-name: fadeOutDownBig;
+  animation-name: fadeOutDownBig; }
+
+@-webkit-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); } }
+
+@-moz-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); } }
+
+@-o-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); } }
+
+@keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-2000px); } }
+
+.fadeOutLeftBig {
+  -webkit-animation-name: fadeOutLeftBig;
+  -moz-animation-name: fadeOutLeftBig;
+  -o-animation-name: fadeOutLeftBig;
+  animation-name: fadeOutLeftBig; }
+
+@-webkit-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); } }
+
+@-moz-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); } }
+
+@-o-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(2000px); } }
+
+@keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(2000px); } }
+
+.fadeOutRightBig {
+  -webkit-animation-name: fadeOutRightBig;
+  -moz-animation-name: fadeOutRightBig;
+  -o-animation-name: fadeOutRightBig;
+  animation-name: fadeOutRightBig; }
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05); }
+
+  70% {
+    -webkit-transform: scale(0.9); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.05); }
+
+  70% {
+    -moz-transform: scale(0.9); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@-o-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -o-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -o-transform: scale(1.05); }
+
+  70% {
+    -o-transform: scale(0.9); }
+
+  100% {
+    -o-transform: scale(1); } }
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05); }
+
+  70% {
+    transform: scale(0.9); }
+
+  100% {
+    transform: scale(1); } }
+
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  -moz-animation-name: bounceIn;
+  -o-animation-name: bounceIn;
+  animation-name: bounceIn; }
+
+@-webkit-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px); }
+
+  80% {
+    -webkit-transform: translateY(10px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(-30px); }
+
+  80% {
+    -moz-transform: translateY(10px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateY(-30px); }
+
+  80% {
+    -o-transform: translateY(10px); }
+
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-30px); }
+
+  80% {
+    transform: translateY(10px); }
+
+  100% {
+    transform: translateY(0); } }
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  -moz-animation-name: bounceInUp;
+  -o-animation-name: bounceInUp;
+  animation-name: bounceInUp; }
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px); }
+
+  80% {
+    -webkit-transform: translateY(-10px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(30px); }
+
+  80% {
+    -moz-transform: translateY(-10px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateY(30px); }
+
+  80% {
+    -o-transform: translateY(-10px); }
+
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateY(30px); }
+
+  80% {
+    transform: translateY(-10px); }
+
+  100% {
+    transform: translateY(0); } }
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  -moz-animation-name: bounceInDown;
+  -o-animation-name: bounceInDown;
+  animation-name: bounceInDown; }
+
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px); }
+
+  80% {
+    -webkit-transform: translateX(-10px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(30px); }
+
+  80% {
+    -moz-transform: translateX(-10px); }
+
+  100% {
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateX(30px); }
+
+  80% {
+    -o-transform: translateX(-10px); }
+
+  100% {
+    -o-transform: translateX(0); } }
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateX(30px); }
+
+  80% {
+    transform: translateX(-10px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  -moz-animation-name: bounceInLeft;
+  -o-animation-name: bounceInLeft;
+  animation-name: bounceInLeft; }
+
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px); }
+
+  80% {
+    -webkit-transform: translateX(10px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(-30px); }
+
+  80% {
+    -moz-transform: translateX(10px); }
+
+  100% {
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateX(-30px); }
+
+  80% {
+    -o-transform: translateX(10px); }
+
+  100% {
+    -o-transform: translateX(0); } }
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateX(-30px); }
+
+  80% {
+    transform: translateX(10px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  -moz-animation-name: bounceInRight;
+  -o-animation-name: bounceInRight;
+  animation-name: bounceInRight; }
+
+@-webkit-keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1); }
+
+  25% {
+    -webkit-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.3); } }
+
+@-moz-keyframes bounceOut {
+  0% {
+    -moz-transform: scale(1); }
+
+  25% {
+    -moz-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.3); } }
+
+@-o-keyframes bounceOut {
+  0% {
+    -o-transform: scale(1); }
+
+  25% {
+    -o-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -o-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -o-transform: scale(0.3); } }
+
+@keyframes bounceOut {
+  0% {
+    transform: scale(1); }
+
+  25% {
+    transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.3); } }
+
+.bounceOut {
+  -webkit-animation-name: bounceOut;
+  -moz-animation-name: bounceOut;
+  -o-animation-name: bounceOut;
+  animation-name: bounceOut; }
+
+@-webkit-keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); } }
+
+@-moz-keyframes bounceOutUp {
+  0% {
+    -moz-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); } }
+
+@-o-keyframes bounceOutUp {
+  0% {
+    -o-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); } }
+
+@keyframes bounceOutUp {
+  0% {
+    transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px); } }
+
+.bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  -moz-animation-name: bounceOutUp;
+  -o-animation-name: bounceOutUp;
+  animation-name: bounceOutUp; }
+
+@-webkit-keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); } }
+
+@-moz-keyframes bounceOutDown {
+  0% {
+    -moz-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); } }
+
+@-o-keyframes bounceOutDown {
+  0% {
+    -o-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(2000px); } }
+
+@keyframes bounceOutDown {
+  0% {
+    transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(2000px); } }
+
+.bounceOutDown {
+  -webkit-animation-name: bounceOutDown;
+  -moz-animation-name: bounceOutDown;
+  -o-animation-name: bounceOutDown;
+  animation-name: bounceOutDown; }
+
+@-webkit-keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); } }
+
+@-moz-keyframes bounceOutLeft {
+  0% {
+    -moz-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); } }
+
+@-o-keyframes bounceOutLeft {
+  0% {
+    -o-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); } }
+
+@keyframes bounceOutLeft {
+  0% {
+    transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-2000px); } }
+
+.bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  -moz-animation-name: bounceOutLeft;
+  -o-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft; }
+
+@-webkit-keyframes bounceOutRight {
+  0% {
+    -webkit-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); } }
+
+@-moz-keyframes bounceOutRight {
+  0% {
+    -moz-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); } }
+
+@-o-keyframes bounceOutRight {
+  0% {
+    -o-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(2000px); } }
+
+@keyframes bounceOutRight {
+  0% {
+    transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(2000px); } }
+
+.bounceOutRight {
+  -webkit-animation-name: bounceOutRight;
+  -moz-animation-name: bounceOutRight;
+  -o-animation-name: bounceOutRight;
+  animation-name: bounceOutRight; }
+
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateIn {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateIn {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateIn {
+  0% {
+    transform-origin: center center;
+    transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  -moz-animation-name: rotateIn;
+  -o-animation-name: rotateIn;
+  animation-name: rotateIn; }
+
+@-webkit-keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInUpLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInUpLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInUpLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInUpLeft {
+  -webkit-animation-name: rotateInUpLeft;
+  -moz-animation-name: rotateInUpLeft;
+  -o-animation-name: rotateInUpLeft;
+  animation-name: rotateInUpLeft; }
+
+@-webkit-keyframes rotateInDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInDownLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInDownLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInDownLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInDownLeft {
+  -webkit-animation-name: rotateInDownLeft;
+  -moz-animation-name: rotateInDownLeft;
+  -o-animation-name: rotateInDownLeft;
+  animation-name: rotateInDownLeft; }
+
+@-webkit-keyframes rotateInUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInUpRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInUpRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInUpRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInUpRight {
+  -webkit-animation-name: rotateInUpRight;
+  -moz-animation-name: rotateInUpRight;
+  -o-animation-name: rotateInUpRight;
+  animation-name: rotateInUpRight; }
+
+@-webkit-keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInDownRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInDownRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInDownRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInDownRight {
+  -webkit-animation-name: rotateInDownRight;
+  -moz-animation-name: rotateInDownRight;
+  -o-animation-name: rotateInDownRight;
+  animation-name: rotateInDownRight; }
+
+@-webkit-keyframes rotateOut {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOut {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(200deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOut {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(200deg);
+    opacity: 0; } }
+
+@keyframes rotateOut {
+  0% {
+    transform-origin: center center;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(200deg);
+    opacity: 0; } }
+
+.rotateOut {
+  -webkit-animation-name: rotateOut;
+  -moz-animation-name: rotateOut;
+  -o-animation-name: rotateOut;
+  animation-name: rotateOut; }
+
+@-webkit-keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutUpLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutUpLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutUpLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    opacity: 0; } }
+
+.rotateOutUpLeft {
+  -webkit-animation-name: rotateOutUpLeft;
+  -moz-animation-name: rotateOutUpLeft;
+  -o-animation-name: rotateOutUpLeft;
+  animation-name: rotateOutUpLeft; }
+
+@-webkit-keyframes rotateOutDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutDownLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutDownLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutDownLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+    opacity: 0; } }
+
+.rotateOutDownLeft {
+  -webkit-animation-name: rotateOutDownLeft;
+  -moz-animation-name: rotateOutDownLeft;
+  -o-animation-name: rotateOutDownLeft;
+  animation-name: rotateOutDownLeft; }
+
+@-webkit-keyframes rotateOutUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutUpRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutUpRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutUpRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0; } }
+
+.rotateOutUpRight {
+  -webkit-animation-name: rotateOutUpRight;
+  -moz-animation-name: rotateOutUpRight;
+  -o-animation-name: rotateOutUpRight;
+  animation-name: rotateOutUpRight; }
+
+@-webkit-keyframes rotateOutDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutDownRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutDownRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutDownRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(-90deg);
+    opacity: 0; } }
+
+.rotateOutDownRight {
+  -webkit-animation-name: rotateOutDownRight;
+  -moz-animation-name: rotateOutDownRight;
+  -o-animation-name: rotateOutDownRight;
+  animation-name: rotateOutDownRight; }
+
+@-webkit-keyframes hinge {
+  0% {
+    -webkit-transform: rotate(0);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -webkit-transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  40% {
+    -webkit-transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  100% {
+    -webkit-transform: translateY(700px);
+    opacity: 0; } }
+
+@-moz-keyframes hinge {
+  0% {
+    -moz-transform: rotate(0);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -moz-transform: rotate(80deg);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  40% {
+    -moz-transform: rotate(60deg);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  80% {
+    -moz-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  100% {
+    -moz-transform: translateY(700px);
+    opacity: 0; } }
+
+@-o-keyframes hinge {
+  0% {
+    -o-transform: rotate(0);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -o-transform: rotate(80deg);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  40% {
+    -o-transform: rotate(60deg);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  80% {
+    -o-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  100% {
+    -o-transform: translateY(700px);
+    opacity: 0; } }
+
+@keyframes hinge {
+  0% {
+    transform: rotate(0);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    transform: rotate(80deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  40% {
+    transform: rotate(60deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  80% {
+    transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  100% {
+    transform: translateY(700px);
+    opacity: 0; } }
+
+.hinge {
+  -webkit-animation-name: hinge;
+  -moz-animation-name: hinge;
+  -o-animation-name: hinge;
+  animation-name: hinge; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg); } }
+
+@-moz-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0px) rotate(0deg); } }
+
+@-o-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0px) rotate(0deg); } }
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg); } }
+
+.rollIn {
+  -webkit-animation-name: rollIn;
+  -moz-animation-name: rollIn;
+  -o-animation-name: rollIn;
+  animation-name: rollIn; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg); } }
+
+@-moz-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(100%) rotate(120deg); } }
+
+@-o-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(100%) rotate(120deg); } }
+
+@keyframes rollOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%) rotate(120deg); } }
+
+.rollOut {
+  -webkit-animation-name: rollOut;
+  -moz-animation-name: rollOut;
+  -o-animation-name: rollOut;
+  animation-name: rollOut; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes lightSpeedIn {
+  0% {
+    -moz-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -moz-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -moz-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@-o-keyframes lightSpeedIn {
+  0% {
+    -o-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -o-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -o-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@keyframes lightSpeedIn {
+  0% {
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+.lightSpeedIn {
+  -webkit-animation-name: lightSpeedIn;
+  -moz-animation-name: lightSpeedIn;
+  -o-animation-name: lightSpeedIn;
+  animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  animation-timing-function: ease-out; }
+
+.animated.lightSpeedIn {
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes lightSpeedOut {
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@-moz-keyframes lightSpeedOut {
+  0% {
+    -moz-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@-o-keyframes lightSpeedOut {
+  0% {
+    -o-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@keyframes lightSpeedOut {
+  0% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+.lightSpeedOut {
+  -webkit-animation-name: lightSpeedOut;
+  -moz-animation-name: lightSpeedOut;
+  -o-animation-name: lightSpeedOut;
+  animation-name: lightSpeedOut;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in; }
+
+.animated.lightSpeedOut {
+  -webkit-animation-duration: 0.25s;
+  -moz-animation-duration: 0.25s;
+  -o-animation-duration: 0.25s;
+  animation-duration: 0.25s; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: skewX(9deg); }
+
+  10% {
+    -webkit-transform: skewX(-8deg); }
+
+  20% {
+    -webkit-transform: skewX(7deg); }
+
+  30% {
+    -webkit-transform: skewX(-6deg); }
+
+  40% {
+    -webkit-transform: skewX(5deg); }
+
+  50% {
+    -webkit-transform: skewX(-4deg); }
+
+  60% {
+    -webkit-transform: skewX(3deg); }
+
+  70% {
+    -webkit-transform: skewX(-2deg); }
+
+  80% {
+    -webkit-transform: skewX(1deg); }
+
+  90% {
+    -webkit-transform: skewX(0deg); }
+
+  100% {
+    -webkit-transform: skewX(0deg); } }
+
+@-moz-keyframes wiggle {
+  0% {
+    -moz-transform: skewX(9deg); }
+
+  10% {
+    -moz-transform: skewX(-8deg); }
+
+  20% {
+    -moz-transform: skewX(7deg); }
+
+  30% {
+    -moz-transform: skewX(-6deg); }
+
+  40% {
+    -moz-transform: skewX(5deg); }
+
+  50% {
+    -moz-transform: skewX(-4deg); }
+
+  60% {
+    -moz-transform: skewX(3deg); }
+
+  70% {
+    -moz-transform: skewX(-2deg); }
+
+  80% {
+    -moz-transform: skewX(1deg); }
+
+  90% {
+    -moz-transform: skewX(0deg); }
+
+  100% {
+    -moz-transform: skewX(0deg); } }
+
+@-o-keyframes wiggle {
+  0% {
+    -o-transform: skewX(9deg); }
+
+  10% {
+    -o-transform: skewX(-8deg); }
+
+  20% {
+    -o-transform: skewX(7deg); }
+
+  30% {
+    -o-transform: skewX(-6deg); }
+
+  40% {
+    -o-transform: skewX(5deg); }
+
+  50% {
+    -o-transform: skewX(-4deg); }
+
+  60% {
+    -o-transform: skewX(3deg); }
+
+  70% {
+    -o-transform: skewX(-2deg); }
+
+  80% {
+    -o-transform: skewX(1deg); }
+
+  90% {
+    -o-transform: skewX(0deg); }
+
+  100% {
+    -o-transform: skewX(0deg); } }
+
+@keyframes wiggle {
+  0% {
+    transform: skewX(9deg); }
+
+  10% {
+    transform: skewX(-8deg); }
+
+  20% {
+    transform: skewX(7deg); }
+
+  30% {
+    transform: skewX(-6deg); }
+
+  40% {
+    transform: skewX(5deg); }
+
+  50% {
+    transform: skewX(-4deg); }
+
+  60% {
+    transform: skewX(3deg); }
+
+  70% {
+    transform: skewX(-2deg); }
+
+  80% {
+    transform: skewX(1deg); }
+
+  90% {
+    transform: skewX(0deg); }
+
+  100% {
+    transform: skewX(0deg); } }
+
+.wiggle {
+  -webkit-animation-name: wiggle;
+  -moz-animation-name: wiggle;
+  -o-animation-name: wiggle;
+  animation-name: wiggle;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in; }
+
+.animated.wiggle {
+  -webkit-animation-duration: 0.75s;
+  -moz-animation-duration: 0.75s;
+  -o-animation-duration: 0.75s;
+  animation-duration: 0.75s; }
+  
+
+    </style>
+
+    <link href="https://ningyu1.github.io/site/css/custom.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="https://ningyu1.github.io/site/css/github-markdown.css" rel="stylesheet" type="text/css">
+
+    <link href='https://ningyu1.github.io/site/css/Slackey.css' rel='stylesheet' type='text/css'>
+    <link href='https://ningyu1.github.io/site/css/Fjallaone.css' rel='stylesheet' type='text/css'>
+    <link href='https://ningyu1.github.io/site/css/Amethysta.css' rel='stylesheet' type='text/css'>
+	<script src="https://ningyu1.github.io/site/js/jquery.min.js"></script>
+    
+
+    <script type="text/javascript" src="https://ningyu1.github.io/site/js/jquery-tapir.js"></script>
+
+    
+
+    <link rel="stylesheet" href="https://ningyu1.github.io/site/css/hljs.css">
+    <script src="https://ningyu1.github.io/site/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?5bb9b9d406e3381971859973a2ca3583";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+</head>
+
+
+<a href="https://github.com/ningyu1"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; z-index:9999; background-color: rgba(0, 0, 0, 0)!important;" src="https://ningyu1.github.io/site/images/right-graphite@2x.png" alt="Fork me on GitHub"></a>
+
+
+
+
+
+
+
+
+<link href="https://ningyu1.github.io/site/css/music-player.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://ningyu1.github.io/site/js/music-player.js"></script>
+<iframe class="player"  frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="https://music.163.com/outchain/player?type=2&id=1296583188&auto=0&height=66"></iframe>
+
+
+
+<body class="markdown-body">
+    <div id="wrapper">
+        <header id="header" class="inner">
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        凝雨 - Yun
+    </div>
+</h1>
+
+<span class="subtitle">快乐编程每一天 - Happy Coding Every Day</span>
+<br>
+
+
+<ul id="social-links" style="text-align:center; clear:both;">
+	
+    
+    <li>
+    <a href="mailto:ningbe111@163.com" class="email" title="Email"></a>
+    </li>
+    
+    
+    
+    <li>
+    <a href="https://github.com/ningyu1" class="github" title="Github"></a>
+    </li>
+    
+	
+    
+    <li>
+    <a href="https://gitlab.com/ningyu1" class="gitlab" title="Gitlab"></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+    
+	
+    
+    <li>
+    <a href="https://gitee.com/ningyu" class="gitee" title="Gitee码云"></a>
+    </li>
+    
+	<li>
+
+    <a href="https://ningyu1.github.io/atom.xml" class="rss" title="RSS" target="_blank"></a>
+    </li>
+</ul>
+
+
+
+<ul id="nav">
+
+
+
+
+
+    
+    <li id="ajax"><a href="https://ningyu1.github.io/">Home</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/archives/">Archives</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/categories/">Categories</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/tags/">Tags</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/about/">About</a></li>
+    <li id="ajax"><a href="https://g2.okk.dog/?path=register&code=qn7nOwdj">科学上网</a></li>
+    
+    <li>
+    <div id="dark">
+        
+        <form action="//www.google.com/search" method="get" accept-charset="UTF-8" id="search">
+
+            <input type="hidden" name="sitesearch" value="https://ningyu1.github.io" />
+            <input type="text" name="q" results="0" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+</ul>
+
+</header>
+
+<div id="toload">
+
+    <div id="content" class="inner">
+        
+
+
+
+
+    
+    <script id="dsq-count-scr" src="//ningyu.disqus.com/count.js" async></script>
+    
+
+
+
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/80-activemq-consumer-slow-speed/">ActiveMQ消息消费慢问题排查</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-05-09T15:38:00.000&#43;00:00' itemprop="datePublished">2018-05-09</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/activemq">activemq</a>
+
+<a href="https://ningyu1.github.io/site/tags/activemq-slow-speed">activemq slow speed</a>
+
+
+</div>
+    </div>
+        
+
+<h1 id="问题现象">问题现象</h1>
+
+<p>有的时候会发现<code>ActiveMQ</code>中某个个队列的消息在写入后，不是立刻就被调度消费，而是需要等待一小会才能被调度消费（大概时间是1分钟），而且还伴随着这样的现象，当消息写入速度很快时消费很快，当消息写入消息速度很慢时反而消费很慢，我们的理解就是当写入慢的时候很多消费者都是闲置的那为什么消费反而会变慢？</p>
+
+<h1 id="问题原因">问题原因</h1>
+
+<p>跟了一下代码发现了跟我们的设置有很大关系，因为我们设置的<code>receiveTimeout=6000</code>（1分钟）接受阻塞时间为1分钟。</p>
+
+<p><code>ActiveMQ</code>在消费时每个<code>consumer</code>会独占一个<code>Thread</code>，<code>Thead</code>中通过<code>consumer.receive()</code>去阻塞，只有当<code>consumer</code>消费了<code>maxMessagesPerTask</code>个消息后，才会退出线程，由<code>taskExecutor</code>重新调度，<code>maxMessagesPerTask</code>这个值默认为10，可以通过下面代码得知：</p>
+
+<pre><code>@Override
+public void initialize() {
+    // Adapt default cache level.
+    if (this.cacheLevel == CACHE_AUTO) {
+        this.cacheLevel = (getTransactionManager() != null ? CACHE_NONE : CACHE_CONSUMER);
+    }
+    // Prepare taskExecutor and maxMessagesPerTask.
+    synchronized (this.lifecycleMonitor) {
+        if (this.taskExecutor == null) {
+            this.taskExecutor = createDefaultTaskExecutor();
+        }
+        else if (this.taskExecutor instanceof SchedulingTaskExecutor &amp;&amp;
+                ((SchedulingTaskExecutor) this.taskExecutor).prefersShortLivedTasks() &amp;&amp;
+                this.maxMessagesPerTask == Integer.MIN_VALUE) {
+            // TaskExecutor indicated a preference for short-lived tasks. According to
+            // setMaxMessagesPerTask javadoc, we'll use 10 message per task in this case
+            // unless the user specified a custom value.
+            this.maxMessagesPerTask = 10;
+        }
+    }
+    // Proceed with actual listener initialization.
+    super.initialize();
+}
+</code></pre>
+
+<p><span style="color:red"><strong>ps. 我们使用的taskExecutor为：org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor，因此上面代码走到else if中设置this.maxMessagesPerTask = 10;</strong></span></p>
+
+<p><span style="color:blue"><strong>如果消息写入很快的时候，你会发现消费的很快，只有当消息写入很慢的时候（比如说：1分钟写入不到10条）的时候，才会发现消息消费的有些慢</strong></span></p>
+
+<h1 id="解决方案">解决方案</h1>
+
+<p>如果有这类情况，可以调整<code>receiveTime</code>这个参数，具体参数设置多少合理自己去结合业务场景去权衡，可以根据消息写入的速度和写入量来设置该参数（<strong><code>maxMessagesPerTask</code></strong> 和 <strong><code>receiveTimeout</code></strong>），调整这个参数有两种方式：</p>
+
+<h2 id="第一种使用jms消费消息">第一种使用JMS消费消息：</h2>
+
+<p>使用JMS消费消息时调整：<code>jmsTemplate</code>的<code>receiveTimeout</code>参数（以毫秒为单位，0表示阻塞接收不超时，默认值为0毫秒表示阻塞接受没有超时）</p>
+
+<h2 id="第二种使用listener-container消费消息">第二种使用listener-container消费消息：</h2>
+
+<p>使用<code>jms:listener-container</code>消费消息时调整：<code>receive-timeout</code>参数（以毫秒为单位， 默认值为1000毫秒（1秒）; -1指示器根本没有超时。）</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/80-activemq-consumer-slow-speed/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/79-docker-registry-pull-filesystem-layer/">Trouble Shooting —— Docker Pull Image : Filesystem layer verification failed for digest sha256错误</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-04-27T17:46:00.000&#43;00:00' itemprop="datePublished">2018-04-27</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/docker">docker</a>
+
+<a href="https://ningyu1.github.io/site/tags/docker-pull">docker pull</a>
+
+<a href="https://ningyu1.github.io/site/tags/filesystem-layer-verification-failed-for-digest-sha256">Filesystem layer verification failed for digest sha256</a>
+
+
+</div>
+    </div>
+        
+
+<h1 id="问题现象">问题现象</h1>
+
+<p>除了打包镜像的服务器上可以执行<code>docker pull 192.168.0.34:5000/sample:latest</code>以外，其它任何服务器执行此命令时，都会出现以下错误信息：</p>
+
+<pre><code>8b7054...: Verifying Checksum
+Filesystem layer verification failed for digest sha256: 8b7054.....
+</code></pre>
+
+<p>这使得无法正常使用最新的<code>sample</code>镜像文件。</p>
+
+<p>如果是按分析过程中的方式把<code>8b7054</code>文件夹迁移的话，<code>docker</code>会不断重试去拉取此文件信息，大概结果如下：</p>
+
+<pre><code>8b7054...: (..Retry 10 seconds)
+Filesystem layer verification failed for digest sha256: 8b7054.....
+</code></pre>
+
+<h1 id="分析过程">分析过程</h1>
+
+<p>尝试在服务器上找日志，结果没有可用的日志。</p>
+
+<p>在<code>/var/lib/registry</code>下找该<code>sha256</code>的数据，能够找到，尝试移走该文件夹数据。结果执行<code>docker pull</code>命令时，依旧是报错。只好迁移回文件夹。</p>
+
+<p>尝试在网络上寻找解决方案，有的说与源有关系，有的说与<code>docker</code>版本有关系，需要升级版本，大多都没有很好的解决。如果实在搞不定，估计</p>
+
+<p>需要考虑这些方案了。</p>
+
+<p>尝试删除所有<code>sample</code>开发版本相关的<code>image</code>，并重新打包镜像，结果问题依旧。</p>
+
+<h1 id="解决方案">解决方案</h1>
+
+<p><code>docker build</code>的过程中有很多选项可以使用，尝试将缓存关闭（默认否）、签名关闭（默认否）、清理过程文件（默认是）。</p>
+
+<p>因此切换到<code>jenkins</code>的<code>workspace</code>下，找到<code>sample</code>文件夹，执行以下命令:</p>
+
+<pre><code>docker build --rm=true --no-cache --disable-content-trust=true -t sample .
+docker tag sample 192.168.0.34:5000/sample
+docker push --disable-content-trust=true 192.168.0.34:5000/sample
+</code></pre>
+
+<p>编译打包过程没有任何错误，可以正常发布镜像到<code>registry</code>上。</p>
+
+<p>于是，切换到其他服务器上去执行<code>docker pull</code>，结果一切正常。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/docker-registry/8.png" alt="" /></p>
+
+<p>没有<code>checksum</code>？ 且没有原来失败的<code>sha256 digest</code>。</p>
+
+<p>看了下其他镜像成功过的pull日志，也是没有<code>checksum</code>。看来只有出现异常的时候，才会去<code>checksum</code>（待考证）</p>
+
+<p>既然已经成功过，那还是用正常的方式去打包编译及下载。于是删除现有镜像文件，在<code>jenkins</code>上进行工程打包（原始逻辑）。</p>
+
+<pre><code>docker build -t sample:latest .
+docker tag sample:latest 192.168.0.34:5000/sample:latest
+docker push 192.168.0.34:5000/sample:latest
+</code></pre>
+
+<p>打包好后，在其它服务器上执行<code>docker pull</code>，一样可以正常使用了。</p>
+
+<h1 id="总结">总结</h1>
+
+<p>问题最终通过<code>docker</code>创建镜像时增加了关闭缓存、关闭校验的参数（<code>--rm=true --no-cache --disable-content-trust=true</code>），然后构建出来的镜像<code>push</code>到<code>registry</code>去重写这个镜像的最新<code>digest</code>值，再重新去掉这些参数再次构建镜像（恢复成正常构建镜像命令）后重新<code>push</code>到<code>registry</code>。这个问题看样子是由于新构建的镜像无法修改<code>registry</code>上的<code>digest</code>值导致<code>pull</code>的时候报错。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/79-docker-registry-pull-filesystem-layer/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/78-dubbo-validation-jsr303-pit/">Dubbo使用jsr303框架hibernate-validator遇到的问题</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-04-23T13:25:00.000&#43;00:00' itemprop="datePublished">2018-04-23</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/dubbo">dubbo</a>
+
+<a href="https://ningyu1.github.io/site/tags/jsr303">jsr303</a>
+
+<a href="https://ningyu1.github.io/site/tags/hibernate-validator">hibernate-validator</a>
+
+
+</div>
+    </div>
+        
+
+<p><code>Dubbo</code>可以集成jsr303标准规范的验证框架，作为验证框架不二人选的<code>hibernate-validator</code>是大家都会经常在项目中使用的，但是在<code>Dubbo</code>使用是会发生下面这个问题。</p>
+
+<h1 id="问题描述">问题描述</h1>
+
+<p>背景：使用<code>springmvc</code>做<code>restful</code>，使用<code>dubbo</code>做rpc，<code>restful</code>中调用大量的rpc，数据验证会在这两个地方，一个是<code>restful</code>层面，一个是rpc层面，<code>restful</code>层面使用<code>springmvc</code>默认的集成<code>hibernate-validator</code>来实现，参数开启验证只需要加入<code>@Validated param</code>。</p>
+
+<p>rpc层面也使用<code>hibernate-validator</code>实现，dubbo中开启validation也有两个方式，一个是在<code>consumer</code>端，一个是在<code>provider</code>端。</p>
+
+<h2 id="当我们在consumer端开启验证时">当我们在consumer端开启验证时:</h2>
+
+<pre><code>&lt;dubbo:reference id=&quot;serviceName&quot; interface=&quot;com.domain.package.TestService&quot; registry=&quot;registry&quot; validation=&quot;true&quot;/&gt;
+</code></pre>
+
+<p>没有任何问题，可以拿到所有的数据校验失败数据。</p>
+
+<h2 id="当我们在provider端开启验证时">当我们在provider端开启验证时：</h2>
+
+<pre><code>&lt;dubbo:service interface=&quot;com.domain.package.TestService&quot; ref=&quot;serviceName&quot; validation=&quot;true&quot; /&gt;
+</code></pre>
+
+<p>会发生如下异常：</p>
+
+<pre><code>com.alibaba.dubbo.rpc.RpcException: Failed to invoke remote method: sayHello, provider: 
+
+dubbo://127.0.0.1:20831/com.domain.package.TestService?application=dubbo-test-
+
+rest&amp;default.check=false&amp;default.cluster=failfast&amp;default.retries=0&amp;default.timeout=1200000&amp;default.version=1.0
+
+.0&amp;dubbo=2.6.1&amp;interface=com.domain.package.TestService&amp;methods=sayHello&amp;pid=29268&amp;register.ip=192.
+
+168.6.47&amp;side=consumer&amp;timestamp=1524453157718, cause: com.alibaba.com.caucho.hessian.io.HessianFieldException: 
+
+org.hibernate.validator.internal.engine.ConstraintViolationImpl.constraintDescriptor: 
+
+'org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl' could not be instantiated
+com.alibaba.com.caucho.hessian.io.HessianFieldException: 
+
+org.hibernate.validator.internal.engine.ConstraintViolationImpl.constraintDescriptor: 
+
+'org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl' could not be instantiated
+	at com.alibaba.com.caucho.hessian.io.JavaDeserializer.logDeserializeError(JavaDeserializer.java:167)
+	at com.alibaba.com.caucho.hessian.io.JavaDeserializer$ObjectFieldDeserializer.deserialize
+
+(JavaDeserializer.java:408)
+	at com.alibaba.com.caucho.hessian.io.JavaDeserializer.readObject(JavaDeserializer.java:273)
+	at com.alibaba.com.caucho.hessian.io.JavaDeserializer.readObject(JavaDeserializer.java:200)
+	at com.alibaba.com.caucho.hessian.io.SerializerFactory.readObject(SerializerFactory.java:525)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObjectInstance(Hessian2Input.java:2791)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2731)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2260)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2705)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2260)
+	at com.alibaba.com.caucho.hessian.io.CollectionDeserializer.readLengthList
+
+(CollectionDeserializer.java:119)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2186)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2057)
+	at com.alibaba.com.caucho.hessian.io.JavaDeserializer$ObjectFieldDeserializer.deserialize
+
+(JavaDeserializer.java:404)
+	at com.alibaba.com.caucho.hessian.io.JavaDeserializer.readObject(JavaDeserializer.java:273)
+	at com.alibaba.com.caucho.hessian.io.JavaDeserializer.readObject(JavaDeserializer.java:200)
+	at com.alibaba.com.caucho.hessian.io.SerializerFactory.readObject(SerializerFactory.java:525)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObjectInstance(Hessian2Input.java:2791)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2731)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2260)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2705)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2260)
+	at com.alibaba.dubbo.common.serialize.hessian2.Hessian2ObjectInput.readObject
+
+(Hessian2ObjectInput.java:74)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DecodeableRpcResult.decode(DecodeableRpcResult.java:90)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DecodeableRpcResult.decode(DecodeableRpcResult.java:110)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboCodec.decodeBody(DubboCodec.java:88)
+	at com.alibaba.dubbo.remoting.exchange.codec.ExchangeCodec.decode(ExchangeCodec.java:121)
+	at com.alibaba.dubbo.remoting.exchange.codec.ExchangeCodec.decode(ExchangeCodec.java:82)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboCountCodec.decode(DubboCountCodec.java:44)
+	at com.alibaba.dubbo.remoting.transport.netty.NettyCodecAdapter$InternalDecoder.messageReceived
+
+(NettyCodecAdapter.java:133)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream
+
+(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:109)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:90)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: com.alibaba.com.caucho.hessian.io.HessianProtocolException: 
+
+'org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl' could not be instantiated
+	at com.alibaba.com.caucho.hessian.io.JavaDeserializer.instantiate(JavaDeserializer.java:313)
+	at com.alibaba.com.caucho.hessian.io.JavaDeserializer.readObject(JavaDeserializer.java:198)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObjectInstance(Hessian2Input.java:2789)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2128)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2057)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2101)
+	at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2057)
+	at com.alibaba.com.caucho.hessian.io.JavaDeserializer$ObjectFieldDeserializer.deserialize
+
+(JavaDeserializer.java:404)
+	... 43 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.alibaba.com.caucho.hessian.io.JavaDeserializer.instantiate(JavaDeserializer.java:309)
+	... 50 more
+Caused by: java.lang.NullPointerException
+	at org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl.&lt;init&gt;
+
+(ConstraintDescriptorImpl.java:158)
+	at org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl.&lt;init&gt;
+
+(ConstraintDescriptorImpl.java:211)
+	... 55 more
+</code></pre>
+
+<h1 id="问题分析">问题分析</h1>
+
+<p>上面的问题从异常面来看已经很直观了，<code>'org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl' could not be instantiated</code>，这个类无法实例化，那是什么原因导致它无法实例化呢？</p>
+
+<p><code>Dubbo</code>的序列化协议，默认是<code>hessian</code>，如果没有进行其他协议配置的话，默认使用的就是<code>hessian</code>，<code>hessian</code>在反序列化时有个特点需要注意一下，它会在反序列化时取<span style="color:red"><strong>参数最少的构造器来创建对象</strong></span>，有的时候会有很多重载的构造器，因此会有一些参数直接给<code>null</code>，因此可能就会造成一些莫名其妙的问题，就像我们这个问题一样。</p>
+
+<p>那这个问题如何解决呢？接着往下看</p>
+
+<h1 id="解决方案">解决方案</h1>
+
+<p>由于这个是<code>Hessian</code>反序列化问题，因此与<code>Dubbo</code>的版本关系不大，为了验证这个我还专门使用<code>apache dubbo</code> <code>2.6.1</code>版本测试了一下，问题依旧存在。</p>
+
+<h2 id="方法一-使用无参构造方法来创建对象">方法一：使用无参构造方法来创建对象</h2>
+
+<p>既然是<code>hessian</code>反序列化问题，而且它在反序列化时根据构造函数参数个数优先级来取参数最少的，那我们就可以增加一个<span style="color:red"><strong>无参的构造方法</strong></span>来解决这个问题。</p>
+
+<p>但是有的时候我们使用的是第三方的包，不太好增加无参的构造方法，那怎么办的，我们能不能使用其他方法，继续往下看。</p>
+
+<h2 id="方法二-替换jsr303实现框架">方法二：替换jsr303实现框架</h2>
+
+<p>既然<code>hibernate-validator</code>的<code>org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl</code>这个类在使用hessian反序列化存在问题，那我们使用其他jsr303的框架来试试。</p>
+
+<p>jsr303的实现框架有哪些？</p>
+
+<ul>
+<li>org.hibernate : hibernate-validator : 5.2.4.Final</li>
+<li>org.apache.bval : bval-jsr303 : 0.5</li>
+<li>jersery</li>
+</ul>
+
+<p>bval是apache的一个bean validator的实现，jersery是一个restful的框架为了满足自身的数据验证功能因此增加了jsr303的实现。</p>
+
+<p>由于我们使用的springmvc构建restful因此这里就不考虑jersery，我们就从bval下手来试一试。</p>
+
+<p>在进行了一番配置后（都有哪些配置？）</p>
+
+<ul>
+<li>增加bval包，现在版本是：0.5</li>
+</ul>
+
+<pre><code>&lt;dependency&gt;
+	&lt;groupId&gt;org.apache.bval&lt;/groupId&gt;
+	&lt;artifactId&gt;bval-jsr303&lt;/artifactId&gt;
+	&lt;version&gt;0.5&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<ul>
+<li>将bval集成到spring框架中，作为spring的验证框架</li>
+</ul>
+
+<p>这里有两种方式，一种xml配置，一种java config</p>
+
+<p>xml方式：</p>
+
+<pre><code>&lt;mvc:annotation-driven validator=&quot;validator&quot;/&gt;  
+  
+&lt;!-- 数据验证 Validator bean --&gt;  
+&lt;bean id=&quot;validator&quot; class=&quot;org.springframework.validation.beanvalidation.LocalValidatorFactoryBean&quot;&gt;  
+    &lt;property name=&quot;providerClass&quot; value=&quot;org.apache.bval.jsr.ApacheValidationProvider&quot; /&gt;  
+&lt;/bean&gt;  
+</code></pre>
+
+<p>java config方式:
+重写mvcValidator方法</p>
+
+<pre><code>    @Override
+    public Validator mvcValidator() {
+        Validator validator = super.mvcValidator();
+        if (validator instanceof LocalValidatorFactoryBean) {
+            LocalValidatorFactoryBean lvfb = (LocalValidatorFactoryBean) validator;
+            try {
+                String className = &quot;org.apache.bval.jsr303.ApacheValidationProvider&quot;;
+                Class&lt;?&gt; clazz = ClassUtils.forName(className, WebMvcConfigurationSupport.class.getClassLoader());
+                lvfb.setProviderClass(clazz);
+            }
+            catch (ClassNotFoundException e) {
+                //没有找到bval验证框架，走spring默认整合的验证框架：hibernate-validator
+                //这里异常没有必要跑出去，直接吃掉
+            }
+        }
+        return validator;
+    }
+</code></pre>
+
+<p>启动后验证功能</p>
+
+<p>但是不好的事情发生了，无法启动报错，错误如下：</p>
+
+<pre><code>java.lang.AbstractMethodError: org.apache.bval.jsr303.ConfigurationImpl.getDefaultParameterNameProvider()
+
+Ljavax/validation/ParameterNameProvider;
+</code></pre>
+
+<p>经过对<code>spring</code>的资料查找，发现<code>spring</code>从4.0版本往后不在支持集成其他jsr303的框架了，只能使用<code>hibernate-validator</code>，我擦这个有点暴力了。即使自己实现一个jsr303框架也无法再<code>spring</code>中使用，除非不使用<code>spring</code> <code>validator</code>功能，直接使用自己的验证框架来进行验证，这样就无法使用<code>@Validated param</code>方式。</p>
+
+<p>那这种方法只能放弃了。</p>
+
+<h2 id="方法三-修改hibernate-validator的原声类-修改dubbo-validationfilter-这也是我最终采用的方法">方法三：修改hibernate-validator的原声类，修改Dubbo ValidationFilter，这也是我最终采用的方法</h2>
+
+<p>其实替换jsr303框架不能成功，替换序列化协议应该也可以避免这个问题，只不过替换协议这个一般在维护的项目中不太会选择这样的方式来动刀子，现在开发很多都是分布式服务，序列化反序列化已经无处不在了，因此我建议编写代码时都增加一个无参数的构造方法，养成这样的一个好习惯可以避免很多序列化反序列化框架的坑。而且还有那些有匿名内部类的这种在序列化反序列化也需要注意，不是所有的序列化反序列化框架都支持有匿名类，gson是支持的这个为测试过，我前面也写过一篇博文里面就主要说这个问题，可以查看：<a href="https://ningyu1.github.io/site/post/65-java-inner-class/">《Java中内部类使用注意事项，内部类对序列化与反序列化的影响》</a></p>
+
+<p>有兴趣的可以看一下我们常用的序列化反序列化类库的一些使用中的注意事项，可以参考这篇文章：<a href="https://blog.fliaping.com/the-attention-of-json-serialization-and-deserialization-in-java/">《java常用JSON库注意事项总结》</a></p>
+
+<p>回归话题，上面的问题我们如何解决，最终我们采用重写<code>javax.validation.ConstraintViolation&lt;T&gt;</code>的实现类，替换掉<code>hibernate-validation</code>的<code>org.hibernate.validator.internal.engine.ConstraintViolationImpl</code>，因为<code>ConstraintViolationImpl</code>中有部分对象无法通过hessian反序列化。</p>
+
+<p>我们最终的目标是不管是validation开启在provider端还是consumer端，调用方接收到的参数校验异常数据是一致的。</p>
+
+<p>修改的代码已经提交到<code>apache dubbo</code>，具体查看Pull request：<a href="https://github.com/apache/incubator-dubbo/pull/1708">https://github.com/apache/incubator-dubbo/pull/1708</a></p>
+
+<p>大概的代码如下：</p>
+
+<h3 id="增加类-dubboconstraintviolation实现-javax-validation-constraintviolation-接口">增加类：DubboConstraintViolation实现<code>javax.validation.ConstraintViolation</code>接口</h3>
+
+<pre><code>import java.io.Serializable;
+import javax.validation.ConstraintViolation;
+import javax.validation.Path;
+import javax.validation.ValidationException;
+import javax.validation.metadata.ConstraintDescriptor;
+import com.alibaba.dubbo.common.logger.Logger;
+import com.alibaba.dubbo.common.logger.LoggerFactory;
+
+
+public class DubboConstraintViolation&lt;T&gt; implements ConstraintViolation&lt;T&gt;, Serializable {
+    
+    static final Logger logger = LoggerFactory.getLogger(DubboConstraintViolation.class.getName());
+
+	private static final long serialVersionUID = -8901791810611051795L;
+
+	private String interpolatedMessage;
+    private Object value;
+    private Path propertyPath;
+    private String messageTemplate;
+    private Object[] executableParameters;
+    private Object executableReturnValue;
+    private int hashCode;
+
+    public DubboConstraintViolation() {
+    }
+    
+    public DubboConstraintViolation(ConstraintViolation&lt;T&gt; violation) {
+        this(violation.getMessageTemplate(), violation.getMessage(), violation.getInvalidValue(), violation.getPropertyPath(),
+                violation.getExecutableParameters(), violation.getExecutableReturnValue());
+    }
+
+    public DubboConstraintViolation(String messageTemplate,
+            String interpolatedMessage,
+            Object value,
+            Path propertyPath,
+            Object[] executableParameters,
+            Object executableReturnValue) {
+        this.messageTemplate = messageTemplate;
+        this.interpolatedMessage = interpolatedMessage;
+        this.value = value;
+        this.propertyPath = propertyPath;
+        this.executableParameters = executableParameters;
+        this.executableReturnValue = executableReturnValue;
+        // pre-calculate hash code, the class is immutable and hashCode is needed often
+        this.hashCode = createHashCode();
+    }
+    
+    @Override
+    public final String getMessage() {
+        return interpolatedMessage;
+    }
+
+    @Override
+    public final String getMessageTemplate() {
+        return messageTemplate;
+    }
+
+    @Override
+    public final T getRootBean() {
+        return null;
+    }
+
+    @Override
+    public final Class&lt;T&gt; getRootBeanClass() {
+        return null;
+    }
+
+    @Override
+    public final Object getLeafBean() {
+        return null;
+    }
+
+    @Override
+    public final Object getInvalidValue() {
+        return value;
+    }
+
+    @Override
+    public final Path getPropertyPath() {
+        return propertyPath;
+    }
+
+    @Override
+    public final ConstraintDescriptor&lt;?&gt; getConstraintDescriptor() {
+        return null;
+    }
+
+    @Override
+    public &lt;C&gt; C unwrap(Class&lt;C&gt; type) {
+        if ( type.isAssignableFrom( ConstraintViolation.class ) ) {
+            return type.cast( this );
+        }
+        throw new ValidationException(&quot;Type &quot; + type.toString() + &quot; not supported for unwrapping.&quot;);
+    }
+
+    @Override
+    public Object[] getExecutableParameters() {
+        return executableParameters;
+    }
+
+    @Override
+    public Object getExecutableReturnValue() {
+        return executableReturnValue;
+    }
+
+    @Override
+    // IMPORTANT - some behaviour of Validator depends on the correct implementation of this equals method! (HF)
+
+    // Do not take expressionVariables into account here. If everything else matches, the two CV should be considered
+    // equals (and because of the scary comment above). After all, expressionVariables is just a hint about how we got
+    // to the actual CV. (NF)
+    public boolean equals(Object o) {
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+
+        DubboConstraintViolation&lt;?&gt; that = (DubboConstraintViolation&lt;?&gt;) o;
+
+        if ( interpolatedMessage != null ? !interpolatedMessage.equals( that.interpolatedMessage ) : that.interpolatedMessage != null ) {
+            return false;
+        }
+        if ( propertyPath != null ? !propertyPath.equals( that.propertyPath ) : that.propertyPath != null ) {
+            return false;
+        }
+        if ( messageTemplate != null ? !messageTemplate.equals( that.messageTemplate ) : that.messageTemplate != null ) {
+            return false;
+        }
+        if ( value != null ? !value.equals( that.value ) : that.value != null ) {
+            return false;
+        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return hashCode;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder();
+        sb.append( &quot;DubboConstraintViolation&quot; );
+        sb.append( &quot;{interpolatedMessage='&quot; ).append( interpolatedMessage ).append( '\'' );
+        sb.append( &quot;, propertyPath=&quot; ).append( propertyPath );
+        sb.append( &quot;, messageTemplate='&quot; ).append( messageTemplate ).append( '\'' );
+        sb.append( &quot;, value='&quot; ).append( value ).append( '\'' );
+        sb.append( '}' );
+        return sb.toString();
+    }
+
+    // Same as for equals, do not take expressionVariables into account here.
+    private int createHashCode() {
+        int result = interpolatedMessage != null ? interpolatedMessage.hashCode() : 0;
+        result = 31 * result + ( propertyPath != null ? propertyPath.hashCode() : 0 );
+        result = 31 * result + ( value != null ? value.hashCode() : 0 );
+        result = 31 * result + ( messageTemplate != null ? messageTemplate.hashCode() : 0 );
+        return result;
+    }
+
+}
+
+</code></pre>
+
+<h3 id="修改-com-alibaba-dubbo-validation-filter-validationfilter-异常处理的部分">修改<code>com.alibaba.dubbo.validation.filter.ValidationFilter</code>异常处理的部分</h3>
+
+<p>这里的变更为捕捉<code>javax.validation.ConstraintViolationException</code>异常，对异常中的<code>Set&lt;ConstraintViolation&lt;String&gt;&gt;</code>数据进行转换，去掉无法反序列化的对象,具体代码如下：</p>
+
+<pre><code>public Result invoke(Invoker&lt;?&gt; invoker, Invocation invocation) throws RpcException {
+    if (validation != null &amp;&amp; !invocation.getMethodName().startsWith(&quot;$&quot;)
+            &amp;&amp; ConfigUtils.isNotEmpty(invoker.getUrl().getMethodParameter(invocation.getMethodName(), Constants.VALIDATION_KEY))) {
+        try {
+            Validator validator = validation.getValidator(invoker.getUrl());
+            if (validator != null) {
+                validator.validate(invocation.getMethodName(), invocation.getParameterTypes(), invocation.getArguments());
+            }
+        } catch (ConstraintViolationException e) {
+            Set&lt;ConstraintViolation&lt;?&gt;&gt; set = null;
+            //验证set中如果是hibernate-validation实现的类就处理，其他的实现类放过
+            Set&lt;ConstraintViolation&lt;?&gt;&gt; constraintViolations = e.getConstraintViolations();
+            for (ConstraintViolation&lt;?&gt; v : constraintViolations) {
+                if (!v.getClass().getName().equals(&quot;org.hibernate.validator.internal.engine.ConstraintViolationImpl&quot;)) {
+                    return new RpcResult(e);
+                } else {
+                    if (set == null) set = new HashSet&lt;ConstraintViolation&lt;?&gt;&gt;();
+                    set.add(new DubboConstraintViolation&lt;&gt;(v));
+                }
+            }
+            return new RpcResult(new ConstraintViolationException(e.getMessage(), set));
+        } catch (RpcException e) {
+            throw e;
+        } catch (Throwable t) {
+            return new RpcResult(t);
+        }
+    }
+    return invoker.invoke(invocation);
+}
+</code></pre>
+
+<p>使用这个方法后，在<code>provider</code>端设置<code>validation=true</code>，<code>consumer</code>端可以正常拿到所有校验数据的异常信息。</p>
+
+<h1 id="总结">总结</h1>
+
+<p>我觉得这个方法并不是完美的方法，虽然这个问题是<code>hibernate-validator</code>框架的问题，<code>hibernate-validator</code>出生的年代分布式还不是特别的完善因此没有充分的考虑序列化反序列化问题也很正常，但是作为<code>Dubbo</code>框架在集成<code>jsr303</code>的时候也需要考虑这些问题。具体可以查看<code>Apache Dubbo</code>的<code>Pull Request</code>：<a href="https://github.com/apache/incubator-dubbo/pull/1708">https://github.com/apache/incubator-dubbo/pull/1708</a></p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/78-dubbo-validation-jsr303-pit/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/77-jenkins-sonarqube-jacoco-junit/">单元测试以及代码覆盖率——Jenkins集成SonarQube、JaCoCo、Junit使用问题汇总</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-04-12T17:03:00.000&#43;00:00' itemprop="datePublished">2018-04-12</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/jenkins">jenkins</a>
+
+<a href="https://ningyu1.github.io/site/tags/sonar">sonar</a>
+
+<a href="https://ningyu1.github.io/site/tags/sonarqube">sonarqube</a>
+
+<a href="https://ningyu1.github.io/site/tags/jacoco">jacoco</a>
+
+<a href="https://ningyu1.github.io/site/tags/junit">junit</a>
+
+<a href="https://ningyu1.github.io/site/tags/testng">testng</a>
+
+
+</div>
+    </div>
+        
+
+<p>当我们使用持续集成<code>Jenkins</code>的时候经常会结合一系列的插件使用，这里就说一下<code>Jenkins</code>集成<code>Sonar</code>做代码质量管理以及<code>Junit（testng）</code>、<code>JaCoCo</code>做单元测试和覆盖率的时候遇到的问题。</p>
+
+<h1 id="前提">前提</h1>
+
+<p>首先我们的工程使用<code>maven</code>构建，单元测试使用<code>testng</code>编写，在使用<code>jenkins</code>之前我们应该在本地使用maven调通所有的单元测试以及<code>test coverage</code>的问题。</p>
+
+<p>我们使用<code>maven-surefire-plugin</code>来生成单元测试报告，使用<code>jacoco-maven-plugin</code>来生成<code>test coverage</code>报告。下面我给出以下我使用的标准配置</p>
+
+<h1 id="maven工程调通单元测试以及测试覆盖率报告生成">maven工程调通单元测试以及测试覆盖率报告生成</h1>
+
+<p>pom.xml的标准配置</p>
+
+<pre><code>&lt;dependencies&gt;
+	&lt;dependency&gt;
+		&lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+		&lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
+	&lt;/dependency&gt;
+	&lt;dependency&gt;
+		&lt;groupId&gt;org.testng&lt;/groupId&gt;
+		&lt;artifactId&gt;testng&lt;/artifactId&gt;
+		&lt;version&gt;6.4&lt;/version&gt;
+		&lt;scope&gt;test&lt;/scope&gt;
+		&lt;optional&gt;true&lt;/optional&gt;
+	&lt;/dependency&gt;
+	&lt;dependency&gt;
+		&lt;groupId&gt;junit&lt;/groupId&gt;
+		&lt;artifactId&gt;junit&lt;/artifactId&gt;
+		&lt;scope&gt;test&lt;/scope&gt;
+		&lt;optional&gt;true&lt;/optional&gt;
+	&lt;/dependency&gt;
+	&lt;dependency&gt;
+		&lt;groupId&gt;org.jacoco&lt;/groupId&gt;
+		&lt;artifactId&gt;jacoco-maven-plugin&lt;/artifactId&gt;
+		&lt;version&gt;0.8.1&lt;/version&gt;
+	&lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+&lt;build&gt;
+	&lt;plugins&gt;
+		&lt;plugin&gt;
+			&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+			&lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+			&lt;version&gt;2.5&lt;/version&gt;
+			&lt;configuration&gt;
+				&lt;skipTests&gt;false&lt;/skipTests&gt;
+				&lt;argLine&gt;${argLine} -Dfile.encoding=UTF-8&lt;/argLine&gt;
+			&lt;/configuration&gt;
+		&lt;/plugin&gt;
+		&lt;plugin&gt;
+			&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+			&lt;artifactId&gt;maven-deploy-plugin&lt;/artifactId&gt;
+			&lt;configuration&gt;
+				&lt;skip&gt;false&lt;/skip&gt;
+			&lt;/configuration&gt;
+		&lt;/plugin&gt;
+		&lt;plugin&gt;
+			&lt;groupId&gt;org.jacoco&lt;/groupId&gt;
+			&lt;artifactId&gt;jacoco-maven-plugin&lt;/artifactId&gt;
+			&lt;version&gt;0.8.1&lt;/version&gt;
+			&lt;configuration&gt;
+				&lt;skip&gt;false&lt;/skip&gt;
+			&lt;/configuration&gt;
+			&lt;executions&gt;
+				&lt;execution&gt;
+					&lt;goals&gt;
+						&lt;goal&gt;prepare-agent&lt;/goal&gt;
+					&lt;/goals&gt;
+				&lt;/execution&gt;
+				&lt;execution&gt;
+					&lt;configuration&gt;
+						&lt;outputDirectory&gt;${basedir}/target/coverage-reports&lt;/outputDirectory&gt;
+					&lt;/configuration&gt;
+					&lt;id&gt;report&lt;/id&gt;
+					&lt;phase&gt;test&lt;/phase&gt;
+					&lt;goals&gt;
+						&lt;goal&gt;report&lt;/goal&gt;
+					&lt;/goals&gt;
+				&lt;/execution&gt;
+			&lt;/executions&gt;
+		&lt;/plugin&gt;
+	&lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+
+<p>根据上面配置执行下来的报告生成的目录结构如下:</p>
+
+<p><img src="https://ningyu1.github.io/site/img/jenkins-sonar-jacoco/8.png" alt="" /></p>
+
+<ul>
+<li><code>classes</code>是源代码编译生成的字节码目录</li>
+<li><code>coverage-reports</code>是单元测试覆盖率报告生成目录</li>
+<li><code>surefire-reports</code>是单元测试报告生成目录</li>
+<li><code>test-classes</code>是单元测试代码编译生成的字节码目录</li>
+<li><code>jacoco.exec</code>是用于生成单元测试可执行文件</li>
+</ul>
+
+<p>下面我说一下我们会遇到的常规问题</p>
+
+<h1 id="上步操作会遇到的常规问题">上步操作会遇到的常规问题</h1>
+
+<h2 id="问题一-tests-are-skipped">问题一：Tests are skipped.</h2>
+
+<pre><code>[INFO] --- maven-surefire-plugin:2.5:test (default-test) @ tools ---
+[INFO] Tests are skipped.
+</code></pre>
+
+<p>单元测试被跳过，这个可以通过<code>maven-surefire-plugin</code>插件的<code>configuration</code>来配置不跳过，如下配置：</p>
+
+<pre><code>&lt;plugin&gt;
+	&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+	&lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+	&lt;version&gt;2.5&lt;/version&gt;
+	&lt;configuration&gt;
+		&lt;skipTests&gt;false&lt;/skipTests&gt;
+	&lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre>
+
+<p><span style="color:blue">配置<code>skipTests</code>属性而不是<code>skip</code>属性这里需要注意一下，有很多人配置的<code>skip</code>属性</span></p>
+
+<h2 id="问题二-单元测试输出乱码">问题二：单元测试输出乱码</h2>
+
+<pre><code>-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+=====��һ��===============
+
+=====��һ��===============
+
+=====���¼���===============
+</code></pre>
+
+<p>单元测试输出信息乱码，这个可以通过<code>maven-surefire-plugin</code>插件的<code>configuration</code>来配置字符编码，如下配置：</p>
+
+<pre><code>&lt;plugin&gt;
+	&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+	&lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+	&lt;version&gt;2.5&lt;/version&gt;
+	&lt;configuration&gt;
+		&lt;skipTests&gt;false&lt;/skipTests&gt;
+		&lt;argLine&gt;-Dfile.encoding=UTF-8&lt;/argLine&gt;
+	&lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre>
+
+<p><span style="color:blue">到这里我们就可以去<code>taget/surefire-reports</code>目录下查看单元测试报告。</span></p>
+
+<h2 id="问题三-skipping-jacoco-execution-due-to-missing-execution-data-file">问题三：Skipping JaCoCo execution due to missing execution data file.</h2>
+
+<pre><code>[INFO] --- jacoco-maven-plugin:0.8.1:report (report) @ tools ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+</code></pre>
+
+<p><code>jacoco</code>执行被跳过，原因是没有找到<code>jacoco</code>可执行文件<code>jacoco.exec</code>。</p>
+
+<p>这个时候我们去<code>target</code>目录下是看不到<code>jacoco.exec</code>文件的，有的版本名字叫<code>jacoco-junit.exec</code>。</p>
+
+<p>理论上执行的时候会自动生成exec文件，但是为什么没有生成？我们看一下执行日志</p>
+
+<pre><code>[INFO] --- jacoco-maven-plugin:0.8.1:prepare-agent (default) @ tools ---
+[INFO] argLine set to -javaagent:D:\\javatools\\mvnrepository\\org\\jacoco\\org.jacoco.agent\\0.8.1\\org.jacoco.agent-0.8.1-runtime.jar=destfile=D:\\javatools\\workspace\\framework\\tools\\target\\jacoco.exec
+</code></pre>
+
+<p><code>jacoco.exec</code>的生成是根据<code>-javaagent</code>的方式来生成的，我们有可以看到<code>jacoco-maven-plugin</code>指定了<code>argLine</code>参数，但是为什么没有生效？</p>
+
+<p>原因是我们上面指定过单元测试编码，使用的就是<code>argLine</code>参数，因此这个问题应该是上面的编码参数指定后没有带入插件添加的<code>-javaagent</code>参数，那如何解决？查看下面配置：</p>
+
+<pre><code>&lt;plugin&gt;
+	&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+	&lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+	&lt;version&gt;2.5&lt;/version&gt;
+	&lt;configuration&gt;
+		&lt;skipTests&gt;false&lt;/skipTests&gt;
+		&lt;argLine&gt;${argLine} -Dfile.encoding=UTF-8&lt;/argLine&gt;
+	&lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre>
+
+<p><span style="color:blue">在<code>argLine</code>中增加变量<code>${argLine}</code>后面再增加自动以的参数</span></p>
+
+<p>如果通过配置手动的指定<code>jacoco.exec</code>文件的生成路径也需要注意也可能会出现这个问题，生成exec的路径指定在哪里，report执行的时候就需要通过<code>dataFile</code>来指定exec的路径，让程序知道正确的exec路径，比如说：</p>
+
+<pre><code>&lt;plugin&gt;
+	&lt;groupId&gt;org.jacoco&lt;/groupId&gt;
+	&lt;artifactId&gt;jacoco-maven-plugin&lt;/artifactId&gt;
+	&lt;version&gt;0.8.1&lt;/version&gt;
+	&lt;configuration&gt;
+		&lt;skip&gt;false&lt;/skip&gt;
+		&lt;destFile&gt;${basedir}/target/coverage-reports/jacoco.exec&lt;/destFile&gt;
+	&lt;/configuration&gt;
+	&lt;executions&gt;
+		&lt;execution&gt;
+			&lt;goals&gt;
+				&lt;goal&gt;prepare-agent&lt;/goal&gt;
+			&lt;/goals&gt;
+		&lt;/execution&gt;
+		&lt;execution&gt;
+			&lt;configuration&gt;
+				&lt;dataFile&gt;${basedir}/target/coverage-reports/jacoco.exec&lt;/dataFile&gt;
+				&lt;outputDirectory&gt;${basedir}/target/coverage-reports&lt;/outputDirectory&gt;
+			&lt;/configuration&gt;
+			&lt;id&gt;report&lt;/id&gt;
+			&lt;phase&gt;test&lt;/phase&gt;
+			&lt;goals&gt;
+				&lt;goal&gt;report&lt;/goal&gt;
+			&lt;/goals&gt;
+		&lt;/execution&gt;
+	&lt;/executions&gt;
+&lt;/plugin&gt;
+</code></pre>
+
+<p>上面通过<code>configuration</code>的<code>destFile</code>来自定义<code>jacoco.exec</code>的生成路径，下面在<code>report</code>的时候需要通过<code>dataFile</code>来指定对应的<code>jacoco.exec</code>的路径。</p>
+
+<h1 id="jenkins使用jacoco-plugin插件">Jenkins使用JaCoCo plugin插件</h1>
+
+<p>首先去<code>Jenkins</code>上安装<code>JaCoCo plugin</code>插件，插件的安装就跳过了，插件安装好后，在job中如何配置?</p>
+
+<p><img src="https://ningyu1.github.io/site/img/jenkins-sonar-jacoco/1.png" alt="" /></p>
+
+<p><img src="https://ningyu1.github.io/site/img/jenkins-sonar-jacoco/2.png" alt="" /></p>
+
+<p><span style="color:red">这里需要注意的配置</span></p>
+
+<ul>
+<li>Path to exec files: **/jacoco.exec 可执行文件路径</li>
+<li>Path to class directories: 这个配置的是源代码编译后的字节码目录，也就是<code>classes</code>目录不是<code>test-classes</code>目录，如果有多个可以指定多个</li>
+<li>Path to source directories: 这个配置的是源代码的目录，也就是<code>src/main/java</code>目录，如果有多个可以指定多个。</li>
+</ul>
+
+<p>配置好之后执行job会看到如下的日志：</p>
+
+<pre><code>INFO: ------------------------------------------------------------------------
+Injecting SonarQube environment variables using the configuration: SonarQube
+[JaCoCo plugin] Collecting JaCoCo coverage data...
+[JaCoCo plugin] **/jacoco.exec;**/classes;src/main/java; locations are configured
+Injecting SonarQube environment variables using the configuration: SonarQube
+Injecting SonarQube environment variables using the configuration: SonarQube
+[JaCoCo plugin] Number of found exec files for pattern **/jacoco.exec: 1
+[JaCoCo plugin] Saving matched execfiles:  /var/lib/jenkins/workspace/cc-framework-tools/target/coverage-reports/jacoco.exec
+[JaCoCo plugin] Saving matched class directories for class-pattern: **/classes: 
+[JaCoCo plugin]  - /var/lib/jenkins/workspace/cc-framework-tools/target/classes 5 files
+[JaCoCo plugin] Saving matched source directories for source-pattern: src/main/java: 
+[JaCoCo plugin] - /var/lib/jenkins/workspace/cc-framework-tools/src/main/java 5 files
+[JaCoCo plugin] Loading inclusions files..
+[JaCoCo plugin] inclusions: []
+[JaCoCo plugin] exclusions: []
+[JaCoCo plugin] Thresholds: JacocoHealthReportThresholds [minClass=0, maxClass=0, minMethod=0, maxMethod=0, minLine=0, maxLine=0, minBranch=0, maxBranch=0, minInstruction=0, maxInstruction=0, minComplexity=0, maxComplexity=0]
+[JaCoCo plugin] Publishing the results..
+[JaCoCo plugin] Loading packages..
+[JaCoCo plugin] Done.
+[JaCoCo plugin] Overall coverage: class: 50, method: 54, line: 48, branch: 40, instruction: 55
+Finished: SUCCESS
+</code></pre>
+
+<p>出现上面日志就证明配置成功并且可以看到报告，如果出现下面的日志就证明配置的目录没有扫到classes，需要修改<code>Path to class directories</code>目录的配置</p>
+
+<pre><code>Overall coverage: class: 0, method: 0, line: 0, branch: 0, instruction: 0
+</code></pre>
+
+<p>最终结果如下图：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/jenkins-sonar-jacoco/3.png" alt="" /></p>
+
+<h1 id="jenkins使用sonarqube-plugin插件">Jenkins使用Sonarqube plugin插件</h1>
+
+<p>首先去<code>Jenkins上</code>安装<code>SonarQube plugin</code>插件，插件的安装就跳过了，插件安装好后，在<code>jenkins</code>的系统配置中配置<code>sonar</code>服务器信息，如下</p>
+
+<p><img src="https://ningyu1.github.io/site/img/jenkins-sonar-jacoco/4.png" alt="" /></p>
+
+<p>配置好后在job的配置中增加<code>SonarQube</code>的支持，如下</p>
+
+<ul>
+<li>在构建环境下添加<code>Prepare SonarQube Scanner environment</code></li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/jenkins-sonar-jacoco/5.png" alt="" /></p>
+
+<ul>
+<li>在构建下添加<code>Execute SonarQube Scanner</code></li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/jenkins-sonar-jacoco/6.png" alt="" /></p>
+
+<ul>
+<li>在<code>Execute SonarQube Scanner</code>中增加<code>Analysis properties</code></li>
+</ul>
+
+<pre><code># required metadata
+# 项目key
+sonar.projectKey=com.domian.package:projectName
+# 项目名称
+sonar.projectName=tools
+# 项目版本，可以写死，也可以引用变量
+sonar.projectVersion=${VER}
+# 源文件编码
+sonar.sourceEncoding=UTF-8
+# 源文件语言
+sonar.language=java
+# path to source directories (required)
+# 源代码目录，如果多个使用&quot;,&quot;分割 例如：mode1/src/main,mode2/src/main
+sonar.sources=src/main
+# 单元测试目录，如果多个使用&quot;,&quot;分割 例如：mode1/src/test,mode2/src/test
+sonar.tests=src/test
+# Exclude the test source
+# 忽略的目录
+#sonar.exclusions=*/src/test/**/*
+# 单元测试报告目录
+sonar.junit.reportsPath=target/surefire-reports
+# 代码覆盖率插件
+sonar.java.coveragePlugin=jacoco
+# jacoco.exec文件路径
+sonar.jacoco.reportPath=target/coverage-reports/jacoco.exec
+# 这个没搞懂，官方示例是配置成jacoco.exec文件路径
+sonar.jacoco.itReportPath=target/coverage-reports/jacoco.exec
+</code></pre>
+
+<p><span style="color:blue">具体的参数可以查看官方文档:<a href="https://docs.sonarqube.org/display/SONAR/Analysis+Parameters">《Analysis Parameters》</a></span></p>
+
+<p>配置好之后执行job后去<code>Sonar</code>上只看到了单元测试的信息，没有看到单元测试覆盖率的信息，关于这个问题我们分析job执行的日志，如下:</p>
+
+<h2 id="问题一-no-jacoco-analysis-of-project-coverage-can-be-done-since-there-is-no-class-files">问题一：No JaCoCo analysis of project coverage can be done since there is no class files.</h2>
+
+<pre><code>16:01:17.455 INFO  - Sensor JaCoCoOverallSensor
+16:01:17.470 INFO  - Analysing /var/lib/jenkins/workspace/cc-framework-tools/target/coverage-reports/jacoco.exec
+16:01:17.481 INFO  - No JaCoCo analysis of project coverage can be done since there is no class files.
+16:01:17.481 INFO  - Sensor JaCoCoOverallSensor (done) | time=26ms
+16:01:17.482 INFO  - Sensor JaCoCoSensor
+16:01:17.482 INFO  - No JaCoCo analysis of project coverage can be done since there is no class files.
+16:01:17.482 INFO  - Sensor JaCoCoSensor (done) | time=0ms
+16:01:17.482 INFO  - Sensor Code Colorizer Sensor
+</code></pre>
+
+<p>说的是没找到class文件所以<code>jacoco</code>不能进行分析，问题很明显是没有找到class类，难道它不是去<code>maven</code>标准的<code>target/classes</code>下找文件么？</p>
+
+<p>但是找到了这篇文章：<a href="https://dzone.com/articles/integration-jenkins-jacoco-and-sonarqube">《Jenkins, JaCoCo, and SonarQube Integration With Maven》</a>，看到里面在pom.xml中配置了一些参数给我了启发，发现有个参数<code>sonar.binaries</code>指定的是classes目录，可以插件的有些参数不兼容maven，在官方的配置中可以看到这样的字样: <code>Not compatible with Mave</code>和<code>Compatible with Maven</code>，能看到有写参数兼容maven默认路径有些不兼容。</p>
+
+<p>随后再官方文档中也找到了与jenkins继承的properties配置说明：<a href="https://docs.sonarqube.org/display/PLUG/Triggering+Analysis+on+Hudson+Job">《Triggering Analysis on Hudson Job》</a></p>
+
+<pre><code># path to project binaries (optional), for example directory of Java bytecode
+# java字节码目录
+sonar.binaries=binDir
+</code></pre>
+
+<p>最终给出<code>Execute SonarQube Scanner</code>中的<code>Analysis properties</code>完成配置参数如下：</p>
+
+<pre><code># required metadata
+# 项目key
+sonar.projectKey=com.domian.package:projectName
+# 项目名称
+sonar.projectName=tools
+# 项目版本，可以写死，也可以引用变量
+sonar.projectVersion=${VER}
+# 源文件编码
+sonar.sourceEncoding=UTF-8
+# 源文件语言
+sonar.language=java
+# path to source directories (required)
+# 源代码目录，如果多个使用&quot;,&quot;分割 例如：mode1/src/main,mode2/src/main
+sonar.sources=src/main/java
+# 单元测试目录，如果多个使用&quot;,&quot;分割 例如：mode1/src/test,mode2/src/test
+sonar.tests=src/test/java
+# java字节码目录
+sonar.binaries=target/classes
+# 单元测试报告目录
+sonar.junit.reportsPath=target/surefire-reports
+# 代码覆盖率插件
+sonar.java.coveragePlugin=jacoco
+# jacoco插件版本
+jacoco.version=0.8.1
+# jacoco.exec文件路径
+sonar.jacoco.reportPath=target/coverage-reports/jacoco.exec
+</code></pre>
+
+<p>全部配置修改完后执行job后去<code>Sonar</code>上查看具体的信息如下：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/jenkins-sonar-jacoco/7.png" alt="" /></p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/77-jenkins-sonarqube-jacoco-junit/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/76-tidb-notes/">TiDB使用笔记 —— 测试环境集群部署</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-04-10T20:13:00.000&#43;00:00' itemprop="datePublished">2018-04-10</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/tidb">TiDB</a>
+
+<a href="https://ningyu1.github.io/site/tags/tikv">TiKV</a>
+
+<a href="https://ningyu1.github.io/site/tags/pd">pd</a>
+
+
+</div>
+    </div>
+        
+
+<p>TiDB是一个NewSql的分布式数据库，具体介绍我们引用官方的简介</p>
+
+<h2 id="简介">简介</h2>
+
+<p>TiDB 是 PingCAP 公司受 Google <a href="http://research.google.com/archive/spanner.html">Spanner</a> / <a href="http://research.google.com/pubs/pub41344.html">F1</a> 论文启发而设计的开源分布式 NewSQL 数据库。</p>
+
+<p>TiDB 具备如下 NewSQL 核心特性：</p>
+
+<p>SQL支持（TiDB 是 MySQL 兼容的）
+水平弹性扩展（吞吐可线性扩展）
+分布式事务
+跨数据中心数据强一致性保证
+故障自恢复的高可用
+海量数据高并发实时写入与实时查询（HTAP 混合负载）
+TiDB 的设计目标是 100% 的 OLTP 场景和 80% 的 OLAP 场景，更复杂的 OLAP 分析可以通过 TiSpark 项目来完成。</p>
+
+<p>TiDB 对业务没有任何侵入性，能优雅的替换传统的数据库中间件、数据库分库分表等 Sharding 方案。同时它也让开发运维人员不用关注数据库 Scale 的细节问题，专注于业务开发，极大的提升研发的生产力。</p>
+
+<p>我们来看一下TiDB的架构图</p>
+
+<h2 id="架构图">架构图</h2>
+
+<p><img src="https://ningyu1.github.io/site/img/tidb/1.png" alt="" /></p>
+
+<p>从架构图中可以看出TiDB的三大组件都支持水平扩展而且内部通信使用的是gRPC，关于TiDB和gRPC的那些事可以查看InfoQ的文章：<a href="http://www.infoq.com/cn/articles/tidb-and-grpc">《TiDB与gRPC的那点事》</a></p>
+
+<p>TiDB使用的TiKV作为存储，官方建议至少TiKV使用ssd硬盘，如果条件好pd模块最好也使用ssd硬盘。</p>
+
+<p>下来我们具体看一下三大组件分别都是干什么的</p>
+
+<h2 id="tidb-server">TiDB Server</h2>
+
+<p>TiDB Server 负责接收 SQL 请求，处理 SQL 相关的逻辑，并通过 PD 找到存储计算所需数据的 TiKV 地址，与 TiKV 交互获取数据，最终返回结果。 TiDB Server 是无状态的，其本身并不存储数据，只负责计算，可以无限水平扩展，可以通过负载均衡组件（如LVS、HAProxy 或 F5）对外提供统一的接入地址。</p>
+
+<h2 id="pd-server">PD Server</h2>
+
+<p>Placement Driver (简称 PD) 是整个集群的管理模块，其主要工作有三个： 一是存储集群的元信息（某个 Key 存储在哪个 TiKV 节点）；二是对 TiKV 集群进行调度和负载均衡（如数据的迁移、Raft group leader 的迁移等）；三是分配全局唯一且递增的事务 ID。</p>
+
+<p>PD 是一个集群，需要部署奇数个节点，一般线上推荐至少部署 3 个节点。</p>
+
+<h2 id="tikv-server">TiKV Server</h2>
+
+<p>TiKV Server 负责存储数据，从外部看 TiKV 是一个分布式的提供事务的 Key-Value 存储引擎。存储数据的基本单位是 Region，每个 Region 负责存储一个 Key Range （从 StartKey 到 EndKey 的左闭右开区间）的数据，每个 TiKV 节点会负责多个 Region 。TiKV 使用 Raft 协议做复制，保持数据的一致性和容灾。副本以 Region 为单位进行管理，不同节点上的多个 Region 构成一个 Raft Group，互为副本。数据在多个 TiKV 之间的负载均衡由 PD 调度，这里也是以 Region 为单位进行调度。</p>
+
+<h2 id="特性">特性</h2>
+
+<p>可以无限水平扩展而且三大组件都是高可用，TiDB/TiKV/PD 这三个组件都能容忍部分实例失效，不影响整个集群的可用性。关于三大组件出现问题后如何恢复可以查看：<a href="https://pingcap.com/docs-cn/overview/#tidb-%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84">《tidb-整体架构中的高可用章节》</a></p>
+
+<h2 id="官方的部署建议">官方的部署建议</h2>
+
+<p>TiDB使用的TiKV作为存储，官方建议至少TiKV使用ssd硬盘，如果条件好pd模块最好也使用ssd硬盘。</p>
+
+<p>建议 4 台及以上，TiKV 至少 3 实例，且与 TiDB、PD 模块不位于同一主机。</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">组件</th>
+<th align="center">CPU</th>
+<th align="center">内存</th>
+<th align="center">本地存储</th>
+<th align="center">网络</th>
+<th align="center">实例数量(最低要求)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">TiDB</td>
+<td align="center">8核+</td>
+<td align="center">16 GB+</td>
+<td align="center">SAS, 200 GB+</td>
+<td align="center">千兆网卡</td>
+<td align="center">1（可与 PD 同机器）</td>
+</tr>
+
+<tr>
+<td align="center">PD</td>
+<td align="center">8核+</td>
+<td align="center">16 GB+</td>
+<td align="center">SAS, 200 GB+</td>
+<td align="center">千兆网卡</td>
+<td align="center">1（可与 TiDB 同机器）</td>
+</tr>
+
+<tr>
+<td align="center">TiKV</td>
+<td align="center">8核+</td>
+<td align="center">32 GB+</td>
+<td align="center">SSD, 200 GB+</td>
+<td align="center">千兆网卡</td>
+<td align="center">3</td>
+</tr>
+
+<tr>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">服务器总计</td>
+<td align="center">4</td>
+</tr>
+</tbody>
+</table>
+
+<p>个人觉得这个使用的成本还是蛮高的。具体可以看<a href="https://pingcap.com/docs-cn/op-guide/recommendation/">《软、硬件环境要求》</a></p>
+
+<h2 id="测试部署">测试部署</h2>
+
+<p>TiDB的部署方式还是蛮丰富的，可以使用Ansible在线以及离线的部署集群，<a href="https://github.com/pingcap/tidb-ansible">TiDB-Ansible</a> 是 PingCAP 基于 Ansible playbook 功能编写的集群部署工具。使用 TiDB-Ansible 可以快速部署一个完整的 TiDB 集群（包括 PD、TiDB、TiKV 和集群监控模块)。</p>
+
+<p>TiDB同时也支持Docker部署方案，由于我们公司内网使用docker容器的方式管理所有服务，所以我这里使用docker方式部署。</p>
+
+<p>我们使用Rancher来做企业级的容器管理平台，没有使用k8s、mesos来进行编排管理，使用的是Rancher自带的Cattle，Cattle不光有编排管理还包含了应用、服务、卷、负载均衡、健康检查、服务升级、dns服务、等功能，有兴趣的可以查看：<a href="https://rancher.com/docs/rancher/v1.6/zh/cattle/stacks/">《Rancher官方文档-Cattle》</a></p>
+
+<p>在进行部署之前需要先去Docker官方镜像库中拉TiDB集群所需要的三大组件的镜像： <a href="https://hub.docker.com/u/pingcap/">Docker 官方镜像仓库</a></p>
+
+<pre><code>docker pull pingcap/tidb:latest
+docker pull pingcap/tikv:latest
+docker pull pingcap/pd:latest
+</code></pre>
+
+<p>这三个组件的镜像都不大，TiKV只有54MB，PD只有21MB，TiDB只有17MB</p>
+
+<p><span style="color:blue"><em>这个我需要说一下他们这块做的还是很不错的，将镜像压缩的都比较小，去除了很多无用的东西。</em></span></p>
+
+<p>我们需要创建7个容器来部署一个TiDB集群：</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">容器</th>
+<th align="center">容器IP</th>
+<th align="center">宿主机IP</th>
+<th align="center">部署服务</th>
+<th align="center">数据盘挂载</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">PD1</td>
+<td align="center">10.42.59.28</td>
+<td align="center">192.168.18.108</td>
+<td align="center">PD1</td>
+<td align="center">/home/docker/TiDB</td>
+</tr>
+
+<tr>
+<td align="center">PD2</td>
+<td align="center">10.42.202.152</td>
+<td align="center">192.168.18.108</td>
+<td align="center">PD2</td>
+<td align="center">/home/docker/TiDB</td>
+</tr>
+
+<tr>
+<td align="center">PD3</td>
+<td align="center">10.42.214.245</td>
+<td align="center">192.168.18.108</td>
+<td align="center">PD3</td>
+<td align="center">/home/docker/TiDB</td>
+</tr>
+
+<tr>
+<td align="center">TiDB</td>
+<td align="center">10.42.188.35</td>
+<td align="center">192.168.18.109</td>
+<td align="center">TiDB</td>
+<td align="center">/home/docker/TiDB</td>
+</tr>
+
+<tr>
+<td align="center">TiKV1</td>
+<td align="center">10.42.106.167</td>
+<td align="center">192.168.18.109</td>
+<td align="center">TiKV1</td>
+<td align="center">/home/docker/TiDB</td>
+</tr>
+
+<tr>
+<td align="center">TiKV2</td>
+<td align="center">10.42.34.97</td>
+<td align="center">192.168.18.109</td>
+<td align="center">TiKV2</td>
+<td align="center">/home/docker/TiDB</td>
+</tr>
+
+<tr>
+<td align="center">TiKV3</td>
+<td align="center">10.42.170.152</td>
+<td align="center">192.168.18.109</td>
+<td align="center">TiKV3</td>
+<td align="center">/home/docker/TiDB</td>
+</tr>
+</tbody>
+</table>
+
+<p><span style="color:blue"><em>用docker的好处就是资源可以压缩到最小，我6个容器可以放在一到两台虚机上</em></span></p>
+
+<p>查看pd集群信息</p>
+
+<pre><code>http://192.168.18.108:2379/v2/members
+http://192.168.18.108:2479/v2/members
+http://192.168.18.108:2579/v2/members
+</code></pre>
+
+<p>返回信息以json格式，三台pd返回集群信息都是一样的</p>
+
+<pre><code>{&quot;members&quot;:[{&quot;id&quot;:&quot;969b7171b723b804&quot;,&quot;name&quot;:&quot;pd3&quot;,&quot;peerURLs&quot;:[&quot;http://192.168.18.108:2580&quot;],&quot;clientURLs&quot;:[&quot;http://192.168.18.108:2579&quot;]},{&quot;id&quot;:&quot;d141f07798663b47&quot;,&quot;name&quot;:&quot;pd2&quot;,&quot;peerURLs&quot;:[&quot;http://192.168.18.108:2480&quot;],&quot;clientURLs&quot;:[&quot;http://192.168.18.108:2479&quot;]},{&quot;id&quot;:&quot;e5e987f33a60e672&quot;,&quot;name&quot;:&quot;pd1&quot;,&quot;peerURLs&quot;:[&quot;http://192.168.18.108:2380&quot;],&quot;clientURLs&quot;:[&quot;http://192.168.18.108:2379&quot;]}]}
+</code></pre>
+
+<p>具体的docker容器创建命令可以参考官方文档：<a href="https://pingcap.com/docs-cn/op-guide/docker-deployment/">《Docker部署方案》</a></p>
+
+<p>TiDB支持mysql协议可以使用任意mysql客户端连接，默认安装好的集群使用mysql登录，端口：4000，用户名：root，密码为空，修改密码跟mysql修改密码方式完全一样。</p>
+
+<pre><code>SET PASSWORD FOR 'root'@'%' = 'xxx';
+</code></pre>
+
+<p>下面说几个我们必须要关心的东西。</p>
+
+<p>事务隔离级别可以查看：<a href="https://pingcap.com/docs-cn/sql/transaction-isolation/">《TiDB 事务隔离级别》</a></p>
+
+<p>SQL语法没有什么变化，具体可以查看：<a href="https://pingcap.com/docs-cn/sql/ddl/">《SQL语句语法》</a></p>
+
+<p>SQL执行计划什么的都有跟使用mysql几乎一样，还增加了json的支持，可以设置字段列存储类型为json格式。</p>
+
+<p>具体与MySQL有什么差异可以查看：<a href="https://pingcap.com/docs-cn/sql/mysql-compatibility/">《与MySQL兼容性对比》</a></p>
+
+<p>历史数据回溯问题可以查看：<a href="https://pingcap.com/docs-cn/op-guide/history-read/">《TiDB 历史数据回溯》</a></p>
+
+<p>Binlog可以使用：<a href="https://pingcap.com/docs-cn/tools/tidb-binlog-kafka/">《TiDB-Binlog 部署方案》</a></p>
+
+<p>还有<a href="https://pingcap.com/docs-cn/op-guide/backup-restore/">《备份与恢复》</a> 和 <a href="https://pingcap.com/docs-cn/op-guide/migration-overview/">《数据迁移》</a>。</p>
+
+<p>好了今天的大致介绍和测试环境集群搭建都到这里，后面会总结使用中遇到的问题。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/76-tidb-notes/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/75-mysql-lock-wait-timeout-exceeded/">MySql Lock wait timeout exceeded该如何处理？</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-04-08T18:02:00.000&#43;00:00' itemprop="datePublished">2018-04-08</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/mysql">mysql</a>
+
+<a href="https://ningyu1.github.io/site/tags/lock-wait-timeout-exceeded">Lock wait timeout exceeded</a>
+
+
+</div>
+    </div>
+        
+
+<p>这个问题我相信大家对它并不陌生，但是有很多人对它产生的原因以及处理吃的不是特别透，很多情况都是交给DBA去定位和处理问题，接下来我们就针对这个问题来展开讨论。</p>
+
+<p>Mysql造成锁的情况有很多，下面我们就列举一些情况：</p>
+
+<ol>
+<li>执行DML操作没有commit，再执行删除操作就会锁表。</li>
+<li>在同一事务内先后对同一条数据进行插入和更新操作。</li>
+<li>表索引设计不当，导致数据库出现死锁。</li>
+<li>长事物，阻塞DDL，继而阻塞所有同表的后续操作。</li>
+</ol>
+
+<p>但是要区分的是<code>Lock wait timeout exceeded</code>与<code>Dead Lock</code>是不一样。</p>
+
+<ul>
+<li><code>Lock wait timeout exceeded</code>：后提交的事务等待前面处理的事务释放锁，但是在等待的时候超过了mysql的锁等待时间，就会引发这个异常。</li>
+<li><code>Dead Lock</code>：两个事务互相等待对方释放相同资源的锁，从而造成的死循环，就会引发这个异常。</li>
+</ul>
+
+<p>还有一个要注意的是<code>innodb_lock_wait_timeout</code>与<code>lock_wait_timeout</code>也是不一样的。</p>
+
+<ul>
+<li><code>innodb_lock_wait_timeout</code>：innodb的dml操作的行级锁的等待时间</li>
+<li><code>lock_wait_timeout</code>：数据结构ddl操作的锁的等待时间</li>
+</ul>
+
+<p>如何查看innodb_lock_wait_timeout的具体值？</p>
+
+<pre><code>SHOW VARIABLES LIKE 'innodb_lock_wait_timeout'
+</code></pre>
+
+<p>如何修改innode lock wait timeout的值？</p>
+
+<p>参数修改的范围有Session和Global，并且支持动态修改，可以有两种方法修改：</p>
+
+<p>方法一：</p>
+
+<p>通过下面语句修改</p>
+
+<pre><code>set innodb_lock_wait_timeout=100;
+set global innodb_lock_wait_timeout=100;
+</code></pre>
+
+<p><span style="color:red"><em>ps. 注意global的修改对当前线程是不生效的，只有建立新的连接才生效。</em></span></p>
+
+<p>方法二：</p>
+
+<p>修改参数文件<code>/etc/my.cnf</code>
+<code>innodb_lock_wait_timeout = 50</code></p>
+
+<p><span style="color:red"><em>ps. <code>innodb_lock_wait_timeout</code>指的是事务等待获取资源等待的最长时间，超过这个时间还未分配到资源则会返回应用失败； 当锁等待超过设置时间的时候，就会报如下的错误；<code>ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction</code>。其参数的时间单位是秒，最小可设置为1s(一般不会设置得这么小)，最大可设置1073741824秒，默认安装时这个值是50s(默认参数设置)。</em></span></p>
+
+<p>下面介绍在遇到这类问题该如何处理</p>
+
+<h1 id="问题现象">问题现象</h1>
+
+<ul>
+<li>数据更新或新增后数据经常自动回滚。</li>
+<li>表操作总报 <code>Lock wait timeout exceeded</code> 并长时间无反应</li>
+</ul>
+
+<h1 id="解决方法">解决方法</h1>
+
+<ul>
+<li>应急方法：<code>show full processlist;</code> <code>kill</code>掉出现问题的进程。 <span style="color:blue"><em>ps.有的时候通过processlist是看不出哪里有锁等待的，当两个事务都在commit阶段是无法体现在processlist上</em></span></li>
+<li>根治方法：<code>select * from innodb_trx;</code>查看有是哪些事务占据了表资源。 <span style="color:blue"><em>ps.通过这个办法就需要对innodb有一些了解才好处理</em></span></li>
+</ul>
+
+<p><span style="color:blue">说起来很简单找到它杀掉它就搞定了，但是实际上并没有想象的这么简单，当问题出现要分析问题的原因，通过原因定位业务代码可能某些地方实现的有问题，从而来避免今后遇到同样的问题。</span></p>
+
+<h1 id="innodb-表的解释">innodb_*表的解释</h1>
+
+<p><code>Mysql</code>的<code>InnoDB</code>存储引擎是支持事务的，事务开启后没有被主动<code>Commit</code>。导致该资源被长期占用，其他事务在抢占该资源时，因上一个事务的锁而导致抢占失败！因此出现 <code>Lock wait timeout exceeded</code></p>
+
+<p>下面几张表是innodb的事务和锁的信息表，理解这些表就能很好的定位问题。</p>
+
+<p><code>innodb_trx</code> ## 当前运行的所有事务
+<code>innodb_locks</code> ## 当前出现的锁
+<code>innodb_lock_waits</code> ## 锁等待的对应关系</p>
+
+<p>下面对 <code>innodb_trx</code> 表的每个字段进行解释：</p>
+
+<pre><code>trx_id：事务ID。
+trx_state：事务状态，有以下几种状态：RUNNING、LOCK WAIT、ROLLING BACK 和 COMMITTING。
+trx_started：事务开始时间。
+trx_requested_lock_id：事务当前正在等待锁的标识，可以和 INNODB_LOCKS 表 JOIN 以得到更多详细信息。
+trx_wait_started：事务开始等待的时间。
+trx_weight：事务的权重。
+trx_mysql_thread_id：事务线程 ID，可以和 PROCESSLIST 表 JOIN。
+trx_query：事务正在执行的 SQL 语句。
+trx_operation_state：事务当前操作状态。
+trx_tables_in_use：当前事务执行的 SQL 中使用的表的个数。
+trx_tables_locked：当前执行 SQL 的行锁数量。
+trx_lock_structs：事务保留的锁数量。
+trx_lock_memory_bytes：事务锁住的内存大小，单位为 BYTES。
+trx_rows_locked：事务锁住的记录数。包含标记为 DELETED，并且已经保存到磁盘但对事务不可见的行。
+trx_rows_modified：事务更改的行数。
+trx_concurrency_tickets：事务并发票数。
+trx_isolation_level：当前事务的隔离级别。
+trx_unique_checks：是否打开唯一性检查的标识。
+trx_foreign_key_checks：是否打开外键检查的标识。
+trx_last_foreign_key_error：最后一次的外键错误信息。
+trx_adaptive_hash_latched：自适应散列索引是否被当前事务锁住的标识。
+trx_adaptive_hash_timeout：是否立刻放弃为自适应散列索引搜索 LATCH 的标识。
+</code></pre>
+
+<p>下面对 <code>innodb_locks</code> 表的每个字段进行解释：</p>
+
+<pre><code>lock_id：锁 ID。
+lock_trx_id：拥有锁的事务 ID。可以和 INNODB_TRX 表 JOIN 得到事务的详细信息。
+lock_mode：锁的模式。有如下锁类型：行级锁包括：S、X、IS、IX，分别代表：共享锁、排它锁、意向共享锁、意向排它锁。表级锁包括：S_GAP、X_GAP、IS_GAP、IX_GAP 和 AUTO_INC，分别代表共享间隙锁、排它间隙锁、意向共享间隙锁、意向排它间隙锁和自动递增锁。
+lock_type：锁的类型。RECORD 代表行级锁，TABLE 代表表级锁。
+lock_table：被锁定的或者包含锁定记录的表的名称。
+lock_index：当 LOCK_TYPE=’RECORD’ 时，表示索引的名称；否则为 NULL。
+lock_space：当 LOCK_TYPE=’RECORD’ 时，表示锁定行的表空间 ID；否则为 NULL。
+lock_page：当 LOCK_TYPE=’RECORD’ 时，表示锁定行的页号；否则为 NULL。
+lock_rec：当 LOCK_TYPE=’RECORD’ 时，表示一堆页面中锁定行的数量，亦即被锁定的记录号；否则为 NULL。
+lock_data：当 LOCK_TYPE=’RECORD’ 时，表示锁定行的主键；否则为NULL。
+</code></pre>
+
+<p>下面对 innodb_lock_waits 表的每个字段进行解释：</p>
+
+<pre><code>requesting_trx_id：请求事务的 ID。
+requested_lock_id：事务所等待的锁定的 ID。可以和 INNODB_LOCKS 表 JOIN。
+blocking_trx_id：阻塞事务的 ID。
+blocking_lock_id：某一事务的锁的 ID，该事务阻塞了另一事务的运行。可以和 INNODB_LOCKS 表 JOIN。
+</code></pre>
+
+<h1 id="锁等待的处理步骤">锁等待的处理步骤</h1>
+
+<ul>
+<li>直接查看 innodb_lock_waits 表</li>
+</ul>
+
+<pre><code>SELECT * FROM innodb_lock_waits;
+</code></pre>
+
+<ul>
+<li>innodb_locks 表和 innodb_lock_waits 表结合：</li>
+</ul>
+
+<pre><code>SELECT * FROM innodb_locks WHERE lock_trx_id IN (SELECT blocking_trx_id FROM innodb_lock_waits);
+</code></pre>
+
+<ul>
+<li>innodb_locks 表 JOIN innodb_lock_waits 表:</li>
+</ul>
+
+<pre><code>SELECT innodb_locks.* FROM innodb_locks JOIN innodb_lock_waits ON (innodb_locks.lock_trx_id = innodb_lock_waits.blocking_trx_id);
+</code></pre>
+
+<ul>
+<li>查询 innodb_trx 表:</li>
+</ul>
+
+<pre><code>SELECT trx_id, trx_requested_lock_id, trx_mysql_thread_id, trx_query FROM innodb_trx WHERE trx_state = 'LOCK WAIT';
+</code></pre>
+
+<ul>
+<li>trx_mysql_thread_id 即kill掉事务线程 ID</li>
+</ul>
+
+<pre><code>SHOW ENGINE INNODB STATUS ;
+SHOW PROCESSLIST ;
+</code></pre>
+
+<p>从上述方法中得到了相关信息，我们可以得到发生锁等待的线程 ID，然后将其 KILL 掉。
+KILL 掉发生锁等待的线程。</p>
+
+<pre><code>kill ID;
+</code></pre>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/75-mysql-lock-wait-timeout-exceeded/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/74-redisearch/">RediSearch基于Redis的高性能全文搜索引擎，资料整理</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-03-30T12:24:00.000&#43;00:00' itemprop="datePublished">2018-03-30</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/redisearch">redisearch</a>
+
+<a href="https://ningyu1.github.io/site/tags/redis">redis</a>
+
+<a href="https://ningyu1.github.io/site/tags/in-memory">in-memory</a>
+
+<a href="https://ningyu1.github.io/site/tags/highly-available-full-text-search">highly available full text search</a>
+
+
+</div>
+    </div>
+        
+
+<p>最近在参考<a href="http://www.cnblogs.com/netfocus/p/4055346.html">CQRS DDD架构</a>来进行公司的库存中心重构设计，在<code>CQRS</code>架构中需要一个<code>in-memory</code>的方式快速修改库存在通过消息驱动异步更新到<code>DB</code>，也就是说内存的数据是最新的，<code>DB</code>的数据是异步持久化的，在某一个时刻内存和<code>DB</code>的数据是存在不一致的，但是满足最终一致性。</p>
+
+<p>这样我们就需要内存当作前置<code>DB</code>在使用，因此不单纯的只满足修改数据，还需要满足<code>Query</code>的要求，内存结构的数据<code>Query</code>是比较麻烦的，它不像<code>DB</code>那样已经实现好了索引检索，需要我们自己来设计<code>Key</code>的机构和搜索索引的构建。</p>
+
+<p>当然行业里也有这样的做法，对数据修改的时候双写到内存(<code>Redis</code>)和<code>ElasticSearch</code>再异步到<code>DB</code>，这样<code>Query</code>全部走向<code>ElasticSearch</code>，但是我觉得这样做的复杂度会增加很多，所以就在看如何基于<code>Redis</code>来设计一个搜索引擎。</p>
+
+<p>看到了<code>RedisLabs</code>团队开发的基于<code>Redis</code>的搜索引擎：<code>RediSearch</code></p>
+
+<h1 id="redisearch">RediSearch</h1>
+
+<p><a href="https://github.com/RedisLabsModules/RediSearch">Github: RediSearch</a></p>
+
+<p><a href="http://redisearch.io">官方站点</a></p>
+
+<p>官方给出的描述</p>
+
+<pre><code>Redisearch implements a search engine on top of redis, but unlike other redis search libraries, it does not use internal data structures like sorted sets.
+Inverted indexes are stored as a special compressed data type that allows for fast indexing and search speed, and low memory footprint.
+This also enables more advanced features, like exact phrase matching and numeric filtering for text queries, that are not possible or efficient with traditional redis search approaches.
+</code></pre>
+
+<h2 id="主要特点">主要特点</h2>
+
+<p>高性能的全文搜索引擎（Faster, in-memory, highly available full text search），可作为Redis Module运行在Redis上。但是它与其他Redis搜索库不同的是，它不使用Redis内部数据结构，例如：集合、排序集（ps.后面会写一篇基于Redis的数据结构来设计搜索引擎），Redis原声的搜索还是有很大的局限性，简单的分词搜索是可以满足，但是应用到复杂的场景就不太适合。</p>
+
+<ul>
+<li>Full-Text indexing of multiple fields in documents.</li>
+<li>Incremental indexing without performance loss.</li>
+<li>Document ranking (provided manually by the user at index time).</li>
+<li>Field weights.</li>
+<li>Complex boolean queries with AND, OR, NOT operators between sub-queries.</li>
+<li>Prefix matching in full-text queries.</li>
+<li>Auto-complete suggestions (with fuzzy prefix suggestions)</li>
+<li>Exact Phrase Search.</li>
+<li>Stemming based query expansion in many languages (using Snowball).</li>
+<li>Support for logographic (Chinese, etc.) tokenization and querying (using Friso)</li>
+<li>Limiting searches to specific document fields (up to 128 fields supported).</li>
+<li>Numeric filters and ranges.</li>
+<li>Geographical search utilizing redis&rsquo; own GEO commands.</li>
+<li>Supports any utf-8 encoded text.</li>
+<li>Retrieve full document content or just ids.</li>
+<li>Automatically index existing HASH keys as documents.</li>
+<li>Document Deletion (Update can be done by deletion and then re-insertion).</li>
+<li>Sortable properties (i.e. sorting users by age or name).</li>
+</ul>
+
+<p>下面是中文版本</p>
+
+<ul>
+<li>多个字段的文档的全文索引。</li>
+<li>没有性能损失增量索引。</li>
+<li>文档排名(由用户提供手动指数时间)。</li>
+<li>字段权重。</li>
+<li>在子查询之间使用AND，OR，NOT运算符进行复杂的布尔查询。</li>
+<li>前缀匹配全文查询。</li>
+<li>自动完成建议以模糊前缀(建议)</li>
+<li>准确短语搜索。</li>
+<li>阻止基于查询扩展多种语言(使用Snowball)。</li>
+<li>支持语标的(中国等)标记和查询(使用Friso)</li>
+<li>将搜索限制在特定的文档字段(128字段支持)。</li>
+<li>数字过滤器和范围。</li>
+<li>利用redis自己的GEO命令进行地理搜索。</li>
+<li>支持任何utf-8编码的文本。</li>
+<li>获取完整的文档内容或者只是id。</li>
+<li>自动索引现有HASH keys文件。</li>
+<li>文档删除(更新可以通过删除然后re-insertion)。</li>
+<li>可排序属性（即按年龄或名称对用户进行排序）。</li>
+</ul>
+
+<h2 id="集群">集群</h2>
+
+<p><span style="color:blue"><em>当然还支持分布式集群，只不过集群还是试验阶段还不建议正式应用到企业级应用上。</em></span></p>
+
+<h2 id="暂不支持">暂不支持</h2>
+
+<ul>
+<li>Spelling correction（拼写更正）</li>
+<li>Aggregations（集合）</li>
+</ul>
+
+<h2 id="支持的client类库">支持的Client类库</h2>
+
+<p>Official (Redis Labs) and community Clients:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Language</th>
+<th align="center">Library</th>
+<th align="center">Author</th>
+<th align="center">License</th>
+<th align="center">Comments</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">Python</td>
+<td align="center">redisearch-py</td>
+<td align="center">Redis Labs</td>
+<td align="center">BSD</td>
+<td align="center">Usually the most up-to-date client library</td>
+</tr>
+
+<tr>
+<td align="center">Java</td>
+<td align="center">JRediSearch</td>
+<td align="center">Redis Labs</td>
+<td align="center">BSD</td>
+<td align="center">-</td>
+</tr>
+
+<tr>
+<td align="center">Go</td>
+<td align="center">redisearch-go</td>
+<td align="center">Redis Labs</td>
+<td align="center">BSD</td>
+<td align="center">Incomplete API</td>
+</tr>
+
+<tr>
+<td align="center">JavaScript</td>
+<td align="center">RedRediSearch</td>
+<td align="center">Kyle J. Davis</td>
+<td align="center">MIT</td>
+<td align="center">Partial API, compatible with Reds</td>
+</tr>
+
+<tr>
+<td align="center">C#</td>
+<td align="center">NRediSearch</td>
+<td align="center">Marc Gravell</td>
+<td align="center">MIT</td>
+<td align="center">Part of StackExchange.Redis</td>
+</tr>
+
+<tr>
+<td align="center">PHP</td>
+<td align="center">redisearch-php</td>
+<td align="center">Ethan Hann</td>
+<td align="center">MIT</td>
+<td align="center">-</td>
+</tr>
+
+<tr>
+<td align="center">Ruby on Rails</td>
+<td align="center">redi_search_rails</td>
+<td align="center">Dmitry Polyakovsky</td>
+<td align="center">MIT</td>
+<td align="center">-</td>
+</tr>
+
+<tr>
+<td align="center">Ruby</td>
+<td align="center">redisearch-rb</td>
+<td align="center">Victor Ruiz</td>
+<td align="center">MIT</td>
+<td align="center">-</td>
+</tr>
+</tbody>
+</table>
+
+<p>类库支持的还算丰富，可以尝试使用一下。</p>
+
+<h2 id="性能">性能</h2>
+
+<p>性能对比是以ElasticSearch、Solr来进行对比，官方的benchmark数据，<a href="https://github.com/RedisLabs/RediSearchBenchmark">benchmark程序地址</a></p>
+
+<p><img src="https://ningyu1.github.io/site/img/redisearch/1.jpg" alt="" /></p>
+
+<p><img src="https://ningyu1.github.io/site/img/redisearch/2.jpg" alt="" /></p>
+
+<p><img src="https://ningyu1.github.io/site/img/redisearch/3.jpg" alt="" /></p>
+
+<h2 id="总结">总结：</h2>
+
+<p>从数据上看，使用RediSearch的吞吐量高、延迟低，但是相比于ElasticSearch和Solr支持的特性上还有些欠缺比如：中文的模糊搜索支持的不是很好，但是其性能很高在某些场景是可以作为搜索引擎的替代方案来试用。</p>
+
+<h2 id="案例资料">案例资料：</h2>
+
+<ol>
+<li><a href="https://www.csdn.net/article/a/2011-11-11/307327?bsh_bid=36806832">利用RediSearch构建高效实时搜索案例</a></li>
+<li><a href="https://segmentfault.com/a/1190000009821423">一步步实现 Redis 搜索引擎</a></li>
+<li><a href="https://www.v2ex.com/t/334928">我们做了一个支持全文搜索和关系查询的 Redis</a></li>
+</ol>
+
+<p>上述就是关于RediSearch的资料整理，后面会尝试使用它来构建搜索引擎，会记录使用过程经历。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/74-redisearch/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/73-cas-server-pit1/">Trouble Shooting —— CAS Server集群环境下报错：Server redirected too many  times (20)</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-03-23T16:01:00.000&#43;00:00' itemprop="datePublished">2018-03-23</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/cas">CAS</a>
+
+<a href="https://ningyu1.github.io/site/tags/trouble-shooting">trouble shooting</a>
+
+<a href="https://ningyu1.github.io/site/tags/iphash">iphash</a>
+
+<a href="https://ningyu1.github.io/site/tags/tomcatredissessionmanager">TomcatRedisSessionManager</a>
+
+<a href="https://ningyu1.github.io/site/tags/server-redirected-too-many-times-20">Server redirected too many  times (20)</a>
+
+
+</div>
+    </div>
+        
+
+<p>当我们使用<code>cas</code>做单点登录的时候往往会使用集群方式部署，不管是<code>cas server</code>或者是接入的<code>app server</code>都会采用集群的方式部署。</p>
+
+<p>在对<code>cas server</code>做集群实现无状态化，需要注意一下几点，也是我上一篇<code>cas</code>遇到的<code>TGC</code>验证问题中总结出来的：</p>
+
+<ol>
+<li><code>cas</code>的<code>ticket</code>需要做到集中存储，可以使用<code>redis</code>、<code>jpa</code>、或者其他方式，这个官方文章上有详细介绍：<a href="https://apereo.github.io/cas/5.0.x/installation/Configuration-Properties.html#ticket-registry">ticket-registry</a></li>
+<li><code>cas</code>的<code>session</code>信息需要做到集中存储，如果使用的是<code>tomcat</code>可以使用<a href="https://github.com/ran-jit/tomcat-cluster-redis-session-manager">TomcatRedisSessionMananger</a>插件来通过<code>redis</code>做<code>session</code>集中存储。</li>
+<li>还有一个就是上面遇到的问题，客户端<code>cookie</code>信息：<code>TGC</code>，<code>TGC</code>采用<code>cookie</code>方式存在客户端，因此需要开启会话保持，使得相同客户端每次都会被路由到同一个<code>cas server</code>上去做<code>TGC</code>验证。</li>
+<li>最后一个就是需要接入<code>sso</code>的<code>client</code>应用端的<code>session</code>信息也需要做集中存储，因此<code>cas server</code>会和<code>client</code>进行通信去验证<code>ticket</code>，验证完后会生成信息并存储到<code>sesson</code>中，因此也需要使用<a href="https://github.com/ran-jit/tomcat-cluster-redis-session-manager">TomcatRedisSessionMananger</a>插件来通过<code>redis</code>做<code>session</code>集中存储。</li>
+<li>cas server端和接入的app服务端需要保证网络通畅。</li>
+</ol>
+
+<h1 id="cas使用总结博文目录">cas使用总结博文目录</h1>
+
+<p>最近<code>cas</code>遇到的问题我都总结到了blog中，这里整理一下目录如下：</p>
+
+<ul>
+<li><a href="https://ningyu1.github.io/site/post/54-cas-server/">《CAS使用经验总结，纯干货》</a></li>
+<li><a href="https://ningyu1.github.io/site/post/57-cas-server1/">《CAS Server强制踢人功能实现方式》</a></li>
+<li><a href="https://ningyu1.github.io/site/post/70-cas-server-pit/">《Trouble Shooting —— CAS Server集群环境下TGC验证问题排查，需要开启会话保持》</a></li>
+</ul>
+
+<p>接下来我们就说一下这次遇到的问题。</p>
+
+<h1 id="问题现象">问题现象</h1>
+
+<p>通过上面的方式可以将<code>cas server</code>做到集群无状态化，但是避免不了其他的问题，下面就是最近与到的问题，现象是这样的，一部分人可以正常登陆，一部分人登陆时报错，错误如下：</p>
+
+<pre><code>2018-03-23 10:33:22.768 [http-nio-7051-exec-1] ERROR org.jasig.cas.client.util.CommonUtils - Server redirected too many  times (20)
+java.net.ProtocolException: Server redirected too many  times (20)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1637) ~[na:1.7.0_79]
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:254) ~[na:1.7.0_79]
+	at org.jasig.cas.client.util.CommonUtils.getResponseFromServer(CommonUtils.java:393) ~[cas-client-core-3.3.3.jar:3.3.3]
+	at org.jasig.cas.client.validation.AbstractCasProtocolUrlBasedTicketValidator.retrieveResponseFromServer(AbstractCasProtocolUrlBasedTicketValidator.java:45) [cas-client-core-3.3.3.jar:3.3.3]
+	at org.jasig.cas.client.validation.AbstractUrlBasedTicketValidator.validate(AbstractUrlBasedTicketValidator.java:200) [cas-client-core-3.3.3.jar:3.3.3]
+	at org.springframework.security.cas.authentication.CasAuthenticationProvider.authenticateNow(CasAuthenticationProvider.java:140) [spring-security-cas-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.springframework.security.cas.authentication.CasAuthenticationProvider.authenticate(CasAuthenticationProvider.java:126) [spring-security-cas-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:156) [spring-security-core-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.springframework.security.cas.web.CasAuthenticationFilter.attemptAuthentication(CasAuthenticationFilter.java:242) [spring-security-cas-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:195) [spring-security-web-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.jasig.cas.client.session.SingleSignOutFilter.doFilter(SingleSignOutFilter.java:100) [cas-client-core-3.3.3.jar:3.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at com.bstek.bdf2.core.security.filter.PreAuthenticatedProcessingFilter.doFilter(PreAuthenticatedProcessingFilter.java:41) [scm-bdf2-core-1.1.0-SNAPSHOT.jar:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:105) [spring-security-web-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:125) [spring-security-web-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at com.bstek.bdf2.core.security.filter.ContextFilter.doFilter(ContextFilter.java:36) [scm-bdf2-core-1.1.0-SNAPSHOT.jar:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87) [spring-security-web-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342) [spring-security-web-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192) [spring-security-web-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160) [spring-security-web-3.1.7.RELEASE.jar:3.1.7.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344) [spring-web-4.0.0.RELEASE.jar:4.0.0.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261) [spring-web-4.0.0.RELEASE.jar:4.0.0.RELEASE]
+</code></pre>
+
+<p>从异常的描述来看是服务器端多次<code>redirected</code>超过了20次导致的问题，什么原因会造成这个问题？</p>
+
+<h1 id="cas单点登录过程剖析">cas单点登录过程剖析</h1>
+
+<p><code>cas</code>的单点登录的过程大致是这样的。</p>
+
+<p>第一步：访问app地址，例如：<code>https://app.domain.com</code>，app端的<code>cas-client-core</code>会判断是否已经登录，如果没有登录会重定向到如下地址：<code>https://login.domain.com/login?service=https%3A%2F%2Fapp.domain.com%2Fcas_security_check_</code></p>
+
+<p>第二步：当重定向到<code>cas</code>登录页面后，我们输入用户名密码，<code>cas server</code>端会进行如下操作</p>
+
+<ul>
+<li>先进行<code>AUTHENTICATION</code>过程，这个过程是验证我们的用户名密码是否正确，会输出如下日志：</li>
+</ul>
+
+<pre><code>2018-03-23 14:58:01,429 INFO [org.apereo.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - &lt;Audit trail record BEGIN
+=============================================================
+WHO: admin
+WHAT: Supplied credentials: [admin]
+ACTION: AUTHENTICATION_SUCCESS
+APPLICATION: CAS
+WHEN: Fri Mar 23 14:58:01 HKT 2018
+CLIENT IP ADDRESS: xx.xx.xx.xx
+SERVER IP ADDRESS: xx.xx.xx.xx
+=============================================================
+</code></pre>
+
+<ul>
+<li>当<code>AUTHENTICATION</code>通过以后会生成TGT（TICKET_GRANTING_TICKET），这个是换取服务票据的预授票据，并且将TGT保存起来，我这里使用的是jpa方式保存到db，会输出如下日志：</li>
+</ul>
+
+<pre><code>=============================================================
+WHO: admin
+WHAT: TGT-***********************************************1VX72iaQBZ-077adac8d80f
+ACTION: TICKET_GRANTING_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Fri Mar 23 14:58:01 HKT 2018
+CLIENT IP ADDRESS: 10.42.37.135
+SERVER IP ADDRESS: 10.42.185.88
+=============================================================
+
+&gt;
+Hibernate: insert into TICKETGRANTINGTICKET (NUMBER_OF_TIMES_USED, CREATION_TIME, EXPIRATION_POLICY, LAST_TIME_USED, PREVIOUS_LAST_TIME_USED, AUTHENTICATION, EXPIRED, PROXIED_BY, SERVICES_GRANTED_ACCESS_TO, ticketGrantingTicket_ID, TYPE, ID) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'TGT', ?)
+</code></pre>
+
+<ul>
+<li>当<code>TGT</code>生成完后会生成ST（SERVICE_TICKET），这个是服务票据，是授权这个服务的票据，并且会将ST保存起来和更新TGT信息，我这里使用的是jpa方式保存到db，会输出如下日志：</li>
+</ul>
+
+<pre><code>2018-03-23 14:58:01,504 INFO [org.apereo.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - &lt;Audit trail record BEGIN
+=============================================================
+WHO: admin
+WHAT: ST-153-RfpK0ACJHtPsSdnbYhVf-077adac8d80f for https://app.domain.com/cas_security_check_
+ACTION: SERVICE_TICKET_CREATED
+APPLICATION: CAS
+WHEN: Fri Mar 23 14:58:01 HKT 2018
+CLIENT IP ADDRESS: xx.xx.xx.xx
+SERVER IP ADDRESS: xx.xx.xx.xx
+=============================================================
+
+&gt;
+Hibernate: insert into SERVICETICKET (NUMBER_OF_TIMES_USED, CREATION_TIME, EXPIRATION_POLICY, LAST_TIME_USED, PREVIOUS_LAST_TIME_USED, FROM_NEW_LOGIN, TICKET_ALREADY_GRANTED, SERVICE, ticketGrantingTicket_ID, TYPE, ID) values (?, ?, ?, ?, ?, ?, ?, ?, ?, 'ST', ?)
+Hibernate: update TICKETGRANTINGTICKET set NUMBER_OF_TIMES_USED=?, CREATION_TIME=?, EXPIRATION_POLICY=?, LAST_TIME_USED=?, PREVIOUS_LAST_TIME_USED=?, AUTHENTICATION=?, EXPIRED=?, PROXIED_BY=?, SERVICES_GRANTED_ACCESS_TO=?, ticketGrantingTicket_ID=? where ID=?
+</code></pre>
+
+<p>这个时候服务端生成的票据就完成了，会将ST信息生成TGC（TICKET_GRANTING_COOKIE）返回给app端。</p>
+
+<p>第三步：app端接收到cas server端的返回，TGC会直接写入到浏览器cookie中，app端会再发起一次ST验证，这个过程是在app的后端发起请求的，url如下：</p>
+
+<p><code>https://login.domain.com/serviceValidate?ticket=ST-153-RfpK0ACJHtPsSdnbYhVf-077adac8d80f&amp;service=https%3A%2F%2Fapp.domain.com%2Fcas_security_check_</code></p>
+
+<p>第四步：cas server端收到service validate请求后会验证ST和TGC是否合法，并且验证TGC的时候cas server需要开启会话保持，让请求发送到生成TGC的机器上去，因为TGC中保存生成的服务端地址，具体问题我前面分析过查看：<a href="https://ningyu1.github.io/site/post/70-cas-server-pit/">《Trouble Shooting —— CAS Server集群环境下TGC验证问题排查，需要开启会话保持》</a>，cas server验证成功后会输出如下的日志：</p>
+
+<pre><code>2018-03-23 14:58:01,578 INFO [org.apereo.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - &lt;Audit trail record BEGIN
+=============================================================
+WHO: admin
+WHAT: ST-153-RfpK0ACJHtPsSdnbYhVf-077adac8d80f
+ACTION: SERVICE_TICKET_VALIDATED
+APPLICATION: CAS
+WHEN: Fri Mar 23 14:58:01 HKT 2018
+CLIENT IP ADDRESS: xx.xx.xx.xx
+SERVER IP ADDRESS: xx.xx.xx.xx
+=============================================================
+</code></pre>
+
+<p><span style="color:red"><em>ps.出现下面日志表示验证失败</em></span></p>
+
+<pre><code>2018-03-23 14:58:01,580 INFO [org.apereo.inspektr.audit.support.Slf4jLoggingAuditTrailManager] - &lt;Audit trail record BEGIN
+=============================================================
+WHO: audit:unknown
+WHAT: ST-154-YA6KibaqHpOMGXbluz7V-077adac8d80f
+ACTION: SERVICE_TICKET_VALIDATE_FAILED
+APPLICATION: CAS
+WHEN: Fri Mar 23 14:58:01 HKT 2018
+CLIENT IP ADDRESS: xx.xx.xx.xx
+SERVER IP ADDRESS: xx.xx.xx.xx
+=============================================================
+</code></pre>
+
+<p>第五步：app后端接收到cas server端service验证成功的返回后，会生成session并且与TG进行关系绑定，绑定信息会保存起来，<span style="color:blue"><em>这里需要注意的是如果是集群环境需要保存到redis或者其他统一存储的地方。</em></span>，app后端接收验证成功后的输出日志如下：</p>
+
+<pre><code>2018-03-23 14:58:01.531 [http-apr-8080-exec-1] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Constructing validation url: https://login.domain.com/serviceValidate?ticket=ST-153-RfpK0ACJHtPsSdnbYhVf-077adac8d80f&amp;service=https%3A%2F%2Fapp.domain.com%2Fcas_security_check_
+2018-03-23 14:58:01.531 [http-apr-8080-exec-1] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Retrieving response from server.
+2018-03-23 14:58:01.602 [http-apr-8080-exec-1] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Server response: &lt;cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'&gt;
+    &lt;cas:authenticationSuccess&gt;
+        &lt;cas:user&gt;admin&lt;/cas:user&gt;
+    &lt;/cas:authenticationSuccess&gt;
+&lt;/cas:serviceResponse&gt;
+</code></pre>
+
+<p><span style="color:blue"><em>输出以上信息就是验证成功。到这里cas server端的所有验证都完成了。</em></span></p>
+
+<p><span style="color:red"><em>ps.出现下面日志表示app后端接收到的是验证失败返回信息</em></span></p>
+
+<pre><code>2018-03-23 14:58:02.295 [http-bio-7051-exec-6] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Constructing validation url: https://login.domain.com/serviceValidate?ticket=ST-154-YA6KibaqHpOMGXbluz7V-077adac8d80f&amp;service=https%3A%2F%2Fapp.domain.com%2Fcas_security_check_
+2018-03-23 14:58:02.295 [http-bio-7051-exec-6] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Retrieving response from server.
+2018-03-23 14:58:02.830 [http-bio-7051-exec-6] DEBUG o.j.c.c.validation.Cas20ServiceTicketValidator - Server response: &lt;cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'&gt;
+    &lt;cas:authenticationFailure code=&quot;INVALID_TICKET&quot;&gt;Ticket &amp;#39;ST-154-YA6KibaqHpOMGXbluz7V-077adac8d80f&amp;#39; not recognized&lt;/cas:authenticationFailure&gt;
+&lt;/cas:serviceResponse&gt;
+</code></pre>
+
+<p>第六步：app端登录成功进入主页面。</p>
+
+<p>根据这个流程我们再来分析上面的异常是那个环节出现了问题。</p>
+
+<h1 id="问题分析">问题分析</h1>
+
+<p>首先上面的异常是app的后端出现的异常，app后端发起请求是在cas server生成完ticket之后才发起的，并且发起的是service validate验证请求，这个请求导致重定向超过20次。</p>
+
+<p>而且还有一个重要的信息就是，一部分人可以正常登录，一部分人不能登录，我们部署的结构是2台cas server，2台app服务。</p>
+
+<p>通过日志排查，2台app服务，其中一台没有出现过一场，另外一台爆出异常。这个时候问题已经有些明朗了，当负载均衡路由到出错的这台服务时，后台服务发起service validate验证时出现了问题，那接下来就让我们对比两台服务器上的配置。</p>
+
+<p>我们采用的是阿里云的SLB映射到后台的nginx，app的后台服务要和cas server通信那首先网络需要是通的，理论上网络应该是没问题的，但是为了验证问题，我们就从网络这块开始排查。</p>
+
+<p>因为我们使用的是阿里云而且app服务没有开通外网，app后天和cas服务通信走的是内网的SLB，接下来我们就ping一下登录地址看一下返回的slb地址是否相同。</p>
+
+<p>两台机器上ping login.domain.com ，果然返回的ip不一致，其中报错的那台机器返回的是本机ip，奥这就是问题的根源，<code>cat /etc/hosts</code>果然域名映射的ip不一致，应该是运维配置失误导致的问题。</p>
+
+<p>通过修改host配置之后再次验证错误解决。</p>
+
+<h1 id="问题总结">问题总结</h1>
+
+<p>最终定位的到的问题感觉很白痴的问题，是因为运维配置失误导致，但是值得回味的是，通过这个问题我们对cas的单点登录机制理解的更加深刻，这就是一种收获，往往通过繁琐的分析后定位到的问题都很easy，所以当我们分析问题、定位问题的时候一定要先理解其中的原理，再结合现象去一步一步分析，这是仔细和关注度是否全面的一种考验。好了问题就说到这里，希望能够帮助到需要的人。</p>
+
+<p>世界和平、Keep Real！</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/73-cas-server-pit1/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/72-svn-query/">Subversion库如何全文检索代码？</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-03-23T10:44:53.000&#43;00:00' itemprop="datePublished">2018-03-23</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/svn">svn</a>
+
+<a href="https://ningyu1.github.io/site/tags/subversion">subversion</a>
+
+<a href="https://ningyu1.github.io/site/tags/svnquery">svnquery</a>
+
+
+</div>
+    </div>
+        <p>现在是<code>Git</code>流行的年代，在<code>Git</code>的套件里想要全文检索代码也有很多方案，<code>Git</code>也支持命令直接检索代码，但是当使用<code>svn</code>的用户代码检索应该如何处理呢？</p>
+
+<p>在回答前面问题之前我们还要搞清楚另外一个问题，我们为什么要检索代码？</p>
+
+<p>有的时候我们想从所有的代码库去寻找使用相同方法的代码，常规做法就是<code>checkout</code>下来所有的项目，然后通过<code>IDE</code>工具去关联检索使用到某个方法的代码，但是这样做比较耗费时间而且当项目过多<code>IDE</code>不一定能扛得住。还有的时候我们想从规范角度去<code>check</code>开发人员写的代码是否有违规的或者有问题的，就可以通过检索去寻找，当然规范的<code>check</code>有更好的工具，可以使用<code>scm</code>工具<code>sonar</code>去<code>check</code>代码它整合了很多<code>check</code>模版。</p>
+
+<p>鉴于上面种种的原因对代码做检索还是很有必要的，接下来我们就说一下使用<code>svn</code>时如何全文检索代码。</p>
+
+<p>我们可以先说一个思路，把代码灌入<code>elasticsearch</code>、<code>lucene</code>、<code>solr</code>，然后通过ui去搜索这是一条可行的路子。</p>
+
+<p>这两天发现了一个工具<code>svnquery</code>很好用，它使用<code>ASP.net</code>开发，采用<code>Lucene</code>生成索引，提供<code>GUI</code>和<code>WEB</code>工具通过索引文件来检索代码。</p>
+
+<p><a href="http://svnquery.tigris.org/servlets/ProjectProcess?pageID=o0dpdE">svnquery官网</a></p>
+
+<p>它提供三个程序，一个<code>svnindex</code>用于通过<code>svn</code>库生成索引目录</p>
+
+<pre><code>SvnIndex.exe %aciton% %index_path% %svn_path% -u 用户名 -p 密码
+</code></pre>
+
+<p><span style="color:blue"><em>ps. <code>action</code>包括<code>create</code>、<code>update</code>，更新和修改</em></span></p>
+
+<p>执行后会生成一个索引目录，可以通过<code>svnfind</code>工具可以选择索引目录来进行代码搜索，<code>svnfind</code>是一个<code>GUI</code>工具。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/svnquery/1.png" alt="" /></p>
+
+<p>还可以通过<code>SvnWebQuery</code>来进行代码搜索，<code>SvnWebQuery</code>是一个<code>.NET</code>的<code>web</code>程序需要放入<code>IIS</code>服务器来使用</p>
+
+<p><img src="https://ningyu1.github.io/site/img/svnquery/2.png" alt="" /></p>
+
+<p><span style="color:blue"><em>引用官网的两张图</em></span></p>
+
+<p>唯一的缺点就是需要一个库一个库的生成索引，没有批量生成<code>svn</code>路径下所有有权限的库，如果有这个功能我个人觉得就完美了。</p>
+
+<p>好了工具介绍到这里，如果有用<code>svn</code>的想对代码进行检索的可以使用这个工具。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/72-svn-query/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/71-zookeeper-considerations/">Zookeeper常用命令与注意事项</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-03-21T15:26:53.000&#43;00:00' itemprop="datePublished">2018-03-21</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/zookeeper">zookeeper</a>
+
+
+</div>
+    </div>
+        
+
+<p><code>Zookeeper</code>在互联网行业和分布式环境下是最常用的集群协调工具，那我们今天就对<code>Zookeeper</code>的常用命令和使用注意事项进一步说明，在这之前我们先看一下<code>Zookeeper</code>是什么，它能做什么？</p>
+
+<h1 id="zookeeper是什么">Zookeeper是什么？</h1>
+
+<p><code>ZooKeeper</code>是一个开源的分布式应用程序协调服务，是<code>Google</code>的<code>Chubby</code>一个开源的实现，是<code>Hadoop</code>和Hbase的重要组件。它是一个为分布式应用提供一致性服务的软件，提供的功能包括：配置维护、域名服务、分布式同步、组服务等。</p>
+
+<p>它的这些特性可以让我们在很多场景下使用它，可以用它做注册中心、分布式锁、选举、队列等。</p>
+
+<h1 id="zookeeper的原理">Zookeeper的原理</h1>
+
+<p><code>ZooKeeper</code>是以<code>Fast Paxos</code>算法为基础的，<a href="https://baike.baidu.com/item/Paxos%20%E7%AE%97%E6%B3%95"><code>Paxos</code> 算法</a>存在活锁的问题，即当有多个<code>proposer</code>交错提交时，有可能互相排斥导致没有一个<code>proposer</code>能提交成功，而<code>Fast Paxos</code>作了一些优化，通过选举产生一个<code>leader</code> (领导者)，只有<code>leader</code>才能提交<code>proposer</code>，具体算法可见<code>Fast Paxos</code>。因此，要想弄懂<code>ZooKeeper</code>首先得对<code>Fast Paxos</code>有所了解</p>
+
+<p><code>ZooKeeper</code>的基本运转流程：</p>
+
+<ol>
+<li>选举<code>Leader</code>。</li>
+<li>同步数据。</li>
+<li>选举<code>Leader</code>过程中算法有很多，但要达到的选举标准是一致的。</li>
+<li><code>Leader</code>要具有最高的执行<code>ID</code>，类似<code>root</code>权限。</li>
+<li>集群中大多数的机器得到响应并接受选出的<code>Leader</code>。</li>
+</ol>
+
+<h1 id="zookeeper数据结构">Zookeeper数据结构</h1>
+
+<p>与普通的文件系统极其类似，如下：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/zookeeper/1.png" alt="" /></p>
+
+<p>其中每个节点称为一个znode. 每个znode由3部分组成:</p>
+
+<ul>
+<li>stat. 此为状态信息, 描述该znode的版本, 权限等信息.</li>
+<li>data. 与该znode关联的数据.</li>
+<li>children. 该znode下的子节点.</li>
+</ul>
+
+<h1 id="zookeeper节点类型">Zookeeper节点类型</h1>
+
+<ul>
+<li><code>persistent</code>： <code>persistent</code>节点不和特定的<code>session</code>绑定, 不会随着创建该节点的<code>session</code>的结束而消失, 而是一直存在, 除非该节点被显式删除.</li>
+<li><code>ephemeral</code>： <code>ephemeral</code>节点是临时性的, 如果创建该节点的<code>session</code>结束了, 该节点就会被自动删除.    <code>ephemeral</code>节点不能拥有子节点. 虽然<code>ephemeral</code>节点与创建它的<code>session</code>绑定, 但只要该该节点没有被删除, 其他<code>session</code>就可以读写该节点中关联的数据. 使用<code>-e</code>参数指定创建<code>ephemeral</code>节点.</li>
+<li><code>sequence</code>： 严格的说, <code>sequence</code>并非节点类型中的一种. <code>sequence</code>节点既可以是<code>ephemeral</code>的, 也可以是<code>persistent</code>的. 创建<code>sequence</code>节点时, <code>ZooKeeper server</code>会在指定的节点名称后加上一个数字序列, 该数字序列是递增的. 因此可以多次创建相同的<code>sequence</code>节点, 而得到不同的节点. 使用-s参数指定创建<code>sequence</code>节点.</li>
+</ul>
+
+<h1 id="zookeeper常用命令">Zookeeper常用命令</h1>
+
+<h2 id="启动服务">启动服务</h2>
+
+<pre><code>[app@iZbp1dijzcfg8m0bcqfv9yZ zookeeper]$ ./bin/zkServer.sh start
+ZooKeeper JMX enabled by default
+Using config: /usr/local/servers/zookeeper/zookeeper/bin/../conf/zoo.cfg
+Starting zookeeper ... STARTED
+</code></pre>
+
+<h2 id="查看当前zk节点状态">查看当前zk节点状态</h2>
+
+<pre><code>[zk@iZbp1dijzcfg8m0bcqfv9yZ bin]$ ./zkServer.sh status
+JMX enabled by default
+Using config: /usr/local/servers/zookeeper/zookeeper/bin/../conf/zoo.cfg
+Mode: standalone
+</code></pre>
+
+<p><span style="color:blue">ps. <code>standalone</code>代表单机模式，</span></p>
+
+<pre><code>[zk@iZ23np2fk60Z bin]$ ./zkServer.sh status
+JMX enabled by default
+Using config: /usr/local/zookeeper/bin/../conf/zoo.cfg
+Mode: leader
+</code></pre>
+
+<p><span style="color:blue">ps. 集群模式下会显示的状态，<code>leader</code>节点，集群中其他机器会从leader节点同步数据</span></p>
+
+<pre><code>[zk@iZ237ydkhyiZ bin]$ ./zkServer.sh status
+JMX enabled by default
+Using config: /usr/local/zookeeper/bin/../conf/zoo.cfg
+Mode: follower
+</code></pre>
+
+<p><span style="color:blue">ps. 集群模式下会显示的状态，<code>follower</code>节点在启动过程中会从leader节点同步所有数据</span></p>
+
+<h2 id="连接服务">连接服务</h2>
+
+<pre><code>[app@iZbp1dijzcfg8m0bcqfv9yZ zookeeper]$ ./bin/zkCli.sh -server ip:port  
+</code></pre>
+
+<p><span style="color:blue">ps. 不写ip端口默认连接本机服务.</span></p>
+
+<h2 id="查看节点信息">查看节点信息</h2>
+
+<pre><code>[zk: localhost:2181(CONNECTED) 0] ls /
+[seq, dubbo, disconf, otter, pinpoint-cluster, zookeeper]
+</code></pre>
+
+<h2 id="查看指定node的子node">查看指定node的子node</h2>
+
+<pre><code>[zk: localhost:2181(CONNECTED) 3] ls /zookeeper
+[quota]
+</code></pre>
+
+<h2 id="创建一个普通节点">创建一个普通节点</h2>
+
+<pre><code>[zk: localhost:2181(CONNECTED) 6] create /hello world
+Created /hello
+</code></pre>
+
+<h2 id="获取hello节点的数据与状态">获取hello节点的数据与状态</h2>
+
+<pre><code>[zk: localhost:2181(CONNECTED) 8] get /hello
+world
+cZxid = 0x262ea76
+ctime = Wed Mar 21 14:39:12 CST 2018
+mZxid = 0x262ea76
+mtime = Wed Mar 21 14:39:12 CST 2018
+pZxid = 0x262ea76
+cversion = 0
+dataVersion = 0
+aclVersion = 0
+ephemeralOwner = 0x0
+dataLength = 5
+numChildren = 0
+</code></pre>
+
+<h2 id="删除hello节点">删除hello节点</h2>
+
+<pre><code>[zk: localhost:2181(CONNECTED) 9] delete /hello
+[zk: localhost:2181(CONNECTED) 10] get /hello
+Node does not exist: /hello
+</code></pre>
+
+<p><span style="color:blue">ps. 使用delete命令可以删除指定znode. 当该znode拥有子znode时, 必须先删除其所有子znode, 否则操作将失败. rmr命令可用于代替delete命令, rmr是一个递归删除命令, 如果发生指定节点拥有子节点时, rmr命令会首先删除子节点.</span></p>
+
+<h2 id="znode节点的状态信息">znode节点的状态信息</h2>
+
+<p>使用get命令获取指定节点的数据时, 同时也将返回该节点的状态信息, 称为Stat. 其包含如下字段:</p>
+
+<ul>
+<li>czxid. 节点创建时的zxid.</li>
+<li>mzxid. 节点最新一次更新发生时的zxid.</li>
+<li>ctime. 节点创建时的时间戳.</li>
+<li>mtime. 节点最新一次更新发生时的时间戳.</li>
+<li>dataVersion. 节点数据的更新次数.</li>
+<li>cversion. 其子节点的更新次数.</li>
+<li>aclVersion. 节点ACL(授权信息)的更新次数.</li>
+<li>ephemeralOwner. 如果该节点为ephemeral节点, ephemeralOwner值表示与该节点绑定的session id. 如果该节点不是ephemeral节点, ephemeralOwner值为0. 至于什么是ephemeral节点, 请看后面的讲述.</li>
+<li>dataLength. 节点数据的字节数.</li>
+<li>numChildren. 子节点个数.</li>
+</ul>
+
+<h2 id="zxid">zxid</h2>
+
+<p>znode节点的状态信息中包含czxid和mzxid, 那么什么是zxid呢?
+ZooKeeper状态的每一次改变, 都对应着一个递增的Transaction id, 该id称为zxid. 由于zxid的递增性质, 如果zxid1小于zxid2, 那么zxid1肯定先于zxid2发生. 创建任意节点, 或者更新任意节点的数据, 或者删除任意节点, 都会导致Zookeeper状态发生改变, 从而导致zxid的值增加.</p>
+
+<h2 id="session">session</h2>
+
+<p>在client和server通信之前, 首先需要建立连接, 该连接称为session. 连接建立后, 如果发生连接超时, 授权失败, 或者显式关闭连接, 连接便处于CLOSED状态, 此时session结束.</p>
+
+<h2 id="创建不同类型的节点">创建不同类型的节点</h2>
+
+<p>节点的类型前面已经讲过。</p>
+
+<p>创建一个临时节点</p>
+
+<pre><code>[zk: localhost:2181(CONNECTED) 12] create -e /hello world   
+Created /hello
+[zk: localhost:2181(CONNECTED) 13] get /hello
+world
+cZxid = 0x262ea78
+ctime = Wed Mar 21 14:45:23 CST 2018
+mZxid = 0x262ea78
+mtime = Wed Mar 21 14:45:23 CST 2018
+pZxid = 0x262ea78
+cversion = 0
+dataVersion = 0
+aclVersion = 0
+ephemeralOwner = 0x15c150a650f066c
+dataLength = 5
+numChildren = 0
+</code></pre>
+
+<p>创建一个序列节点</p>
+
+<pre><code>[zk: localhost:2181(CONNECTED) 14] create -s /hello1 world
+Created /hello10000000007
+[zk: localhost:2181(CONNECTED) 15] create -s /hello1 world
+Created /hello10000000008
+[zk: localhost:2181(CONNECTED) 16] ls /
+[hello, dubbo, otter, zookeeper, seq, disconf, hello10000000007, hello10000000008, pinpoint-cluster]
+[zk: localhost:2181(CONNECTED) 17] get /hello10000000007
+world
+cZxid = 0x262ea7e
+ctime = Wed Mar 21 14:47:51 CST 2018
+mZxid = 0x262ea7e
+mtime = Wed Mar 21 14:47:51 CST 2018
+pZxid = 0x262ea7e
+cversion = 0
+dataVersion = 0
+aclVersion = 0
+ephemeralOwner = 0x0
+dataLength = 5
+numChildren = 0
+</code></pre>
+
+<h2 id="watch">watch</h2>
+
+<p>watch的意思是监听感兴趣的事件. 在命令行中, 以下几个命令可以指定是否监听相应的事件.</p>
+
+<h3 id="ls命令">ls命令</h3>
+
+<p>ls命令. ls命令的第一个参数指定znode, 第二个参数如果为true, 则说明监听该znode的子节点的增减, 以及该znode本身的删除事件.</p>
+
+<pre><code>[zk: localhost:2181(CONNECTED) 27] create /hello world
+Created /hello
+[zk: localhost:2181(CONNECTED) 28] ls /hello true
+[]
+[zk: localhost:2181(CONNECTED) 29] create /hello/test item001
+
+WATCHER::
+
+WatchedEvent state:SyncConnected type:NodeChildrenChanged path:/hello
+Created /hello/test
+</code></pre>
+
+<h3 id="get命令">get命令</h3>
+
+<p>get命令. get命令的第一个参数指定znode, 第二个参数如果为true, 则说明监听该znode的更新和删除事件.</p>
+
+<pre><code>[zk: localhost:2181(CONNECTED) 30] get /hello true
+world
+cZxid = 0x262ef5d
+ctime = Wed Mar 21 14:52:16 CST 2018
+mZxid = 0x262ef5d
+mtime = Wed Mar 21 14:52:16 CST 2018
+pZxid = 0x262ef5e
+cversion = 1
+dataVersion = 0
+aclVersion = 0
+ephemeralOwner = 0x0
+dataLength = 5
+numChildren = 1
+[zk: localhost:2181(CONNECTED) 31] create /hello/test1 item001
+Created /hello/test1
+[zk: localhost:2181(CONNECTED) 32] rmr /hello
+
+WATCHER::
+
+WatchedEvent state:SyncConnected type:NodeDeleted path:/hello
+</code></pre>
+
+<h3 id="stat命令">stat命令</h3>
+
+<p>stat命令. stat命令用于获取znode的状态信息. 第一个参数指定znode, 如果第二个参数为true.</p>
+
+<pre><code>[zk: localhost:2181(CONNECTED) 35] create /hello world
+
+WATCHER::
+
+WatchedEvent state:SyncConnected type:NodeCreated path:/hello
+Created /hello
+[zk: localhost:2181(CONNECTED) 36] stat /hello true
+cZxid = 0x262f0f0
+ctime = Wed Mar 21 14:56:31 CST 2018
+mZxid = 0x262f0f0
+mtime = Wed Mar 21 14:56:31 CST 2018
+pZxid = 0x262f0f0
+cversion = 0
+dataVersion = 0
+aclVersion = 0
+ephemeralOwner = 0x0
+dataLength = 5
+numChildren = 0
+</code></pre>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/71-zookeeper-considerations/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+
+
+  <nav id="pagenavi">
+    
+        <a href="https://ningyu1.github.io/site/page/3/" class="prev">Prev</a>
+    
+    
+        <a href="https://ningyu1.github.io/site/page/5/" class="next">Next</a>
+    
+    <div class="center"><a href="https://ningyu1.github.io/site/archives/index.html">Blog Archives</a></div>
+  </nav>
+
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2024
+    
+    凝雨-Yun
+    . Powered by <a href="http://gohugo.io" target="_blank">Hugo</a> |
+    Theme is <a href="https://github.com/wd/hugo-fabric">hugo-fabric</a>
+</div>
+
+    </footer>
+    <script src="https://ningyu1.github.io/site/js/fabric.js"></script>
+
+
+</div>
+</div>
+<script src="https://ningyu1.github.io/site/js/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+ 
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery);
+ 
+</script>
+</body>
+</html>

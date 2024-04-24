@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/java/</link>
+    <description>Recent content in Java on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Mar 2019 16:03:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java对象复制类库性能对比</title>
+      <link>https://ningyu1.github.io/site/post/113-object-copy/</link>
+      <pubDate>Fri, 22 Mar 2019 16:03:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/113-object-copy/</guid>
+      <description>背景 在开发中我们经常会用到对象之间的互相拷贝，Java中对象拷贝的类库也比较多，常见的有Spring BeanUtils，Apache BeanUtils，等并且在很多大厂公司对对象拷贝也有详尽的说明，避免大家踩坑。
+功能对比    耗时(毫秒) 1000次 10,000次 100,100次     Apache BeanUtils 298 983 4211   Cglib BeanCopier 89 120 203   Spring BeanUtils 92 160 524    性能对比     Apache BeanUtils Cglib BeanCopier Spring BeanUtils     非public类 不支持 支持 支持   基本类型与装箱类型，int-&amp;gt;Integer，Integer-&amp;gt;int 支持，可以copy 不支持，不copy 不支持，不copy   int-&amp;gt;long，long-&amp;gt;int，int-&amp;gt;Long，Integer-&amp;gt;long 不支持 不支持 不支持   源对象相同属性无get方法 不支持 不copy 不支持 不copy 不支持 不copy   目标对象相同属性无get方法 支持 不支持 支持   目标对象相同属性无set方法 不copy，不报错 报错 不copy，不报错   源对象相同属性无set方法 支持 支持 支持   目标对象相同属性set方法返回非void 不设置，其他正常属性可以copy 不设置，导致其他属性都无法copy 支持，能够copy   目标对象多字段 支持 支持 支持   目标对象少字段 支持 支持 支持    结论 从性能对比来看：</description>
+    </item>
+    
+    <item>
+      <title>生产环境如何快速跟踪、分析、定位问题-Java</title>
+      <link>https://ningyu1.github.io/site/post/55-java-jvm-analysis/</link>
+      <pubDate>Tue, 23 Jan 2018 14:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/55-java-jvm-analysis/</guid>
+      <description>我相信做技术的都会遇到过这样的问题，生产环境服务遇到宕机的情况下如何去分析问题？比如说JVM内存爆掉、CPU持续高位运行、线程被夯住或线程deadlocks，面对这样的问题，如何在生产环境第一时间跟踪分析与定位问题很关键。下来让我们看看通过如下步骤在第一时间分析问题。
+CPU占用较高场景 收集当前CPU占用较高的线程信息，执行如下命令：
+top -H -p PID -b -d 1 -n 1 &amp;gt; top.log 或 top -H -p PID  结果如下：
+上图显示的都是某一个进程内的线程信息，找到cpu消耗最高的线程id，再配合jstack来分析耗cpu的代码位置，那如何分析呢？
+先执行jstack获取线程信息
+jstack -l PID &amp;gt; jstackl.log  将PID（29978）转成16进制：0x751a，16进制转换工具很多可以在线随便搜索一个或者基本功好的自己计算。
+打开jstackl.log，查找nid=0x751a的信息，这样就定位到了具体的代码位置，这里由于是安全原因我就不贴图了。
+通过上面的步骤就可以轻松的定位那个线程导致cpu过高，当然也可以通过其他方式来定位，下面介绍一个快捷的方式
+#线程cpu占用 #!/bin/bash [ $# -ne 1 ] &amp;amp;&amp;amp; exit 1 jstack $1 &amp;gt;/tmp/jstack.log for cpu_tid in `ps -mp $1 -o THREAD,tid,time|sort -k2nr| sed -n &#39;2,15p&#39; |awk &#39;{print$2&amp;quot;_&amp;quot;$(NF-1)}&#39;`;do cpu=`echo $cpu_tid | cut -d_ -f1` tid=`echo $cpu_tid | cut -d_ -f2` xtid=`printf &amp;quot;%x\n&amp;quot; $tid` echo -e &amp;quot;\033[31m========================$xtid $cpu%\033[0m&amp;quot; cat /tmp/jstack.</description>
+    </item>
+    
+    <item>
+      <title>推荐一个性能测试工具包（适用于单元测试）</title>
+      <link>https://ningyu1.github.io/site/post/49-java-test/</link>
+      <pubDate>Thu, 11 Jan 2018 16:52:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/49-java-test/</guid>
+      <description>给大家推荐一个做单元测试非常好用的性能测试工具包，contiperf，很方便的进行并发压力测试
+ pom引用  &amp;lt;!-- 单元测试 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.7&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- 性能测试 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.databene&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;contiperf&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.1.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt;   使用示例  /** * &amp;lt;功能描述&amp;gt; * * @author ningyu * @date 2017年10月24日 下午2:40:58 */ public class MyPerfTest { private IRedisSequenceService sequenceService; @Rule public ContiPerfRule i = new ContiPerfRule(); @Before public void init() { ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(&amp;quot;test-spring-context.xml&amp;quot;); sequenceService = (IRedisSequenceService) context.getBean(&amp;quot;redisSequenceService&amp;quot;); } @Test @PerfTest(threads=10, invocations=10000)//threads并发线程数量，invocations总调用次数,还有其他参数可以设置查看文档或者源码 public void test() { try { long res = sequenceService.</description>
+    </item>
+    
+    <item>
+      <title>Lombok使用说明</title>
+      <link>https://ningyu1.github.io/site/post/04-lombok-quick-start/</link>
+      <pubDate>Wed, 19 Jul 2017 15:22:56 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/04-lombok-quick-start/</guid>
+      <description>一、项目背景 在写Java程序的时候经常会遇到如下情形：
+新建了一个Class类，然后在其中设置了几个字段，最后还需要花费很多时间来建立getter和setter方法
+lombok项目的产生就是为了省去我们手动创建getter和setter方法的麻烦，它能够在我们编译源码的时候自动帮我们生成getter和setter方法。即它最终能够达到的效果是：在源码中没有getter和setter方法，但是在编译生成的字节码文件中有getter和setter方法
+比如源码文件：
+import java.io.Serializable; import lombok.AllArgsConstructor; import lombok.Data; import lombok.NoArgsConstructor; import lombok.extern.slf4j.Slf4j; @Data @Slf4j @NoArgsConstructor @AllArgsConstructor public class TestUserVo implements Serializable{ private static final long serialVersionUID = -5648809805573016853L; private Long id; private Long userId; /** * 获取 id * @return the id */ public Long getId() { System.out.println(&amp;quot;getId&amp;quot;); return id; } /** * 设置 id * @param id the id to set */ public void setId(Long id) { System.</description>
+    </item>
+    
+  </channel>
+</rss>

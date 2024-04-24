@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rpc Benchmark on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/rpc-benchmark/</link>
+    <description>Recent content in Rpc Benchmark on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 19 Sep 2018 12:01:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/rpc-benchmark/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何编写高性能的 RPC 框架</title>
+      <link>https://ningyu1.github.io/site/post/99-rpc-benchmark1/</link>
+      <pubDate>Wed, 19 Sep 2018 12:01:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/99-rpc-benchmark1/</guid>
+      <description>最近看相关rpc-benchmark相关的东西发现这篇文章挺好的，所以转载出来，下面是文章出处。
+作者：鲁小憨 链接：https://www.jianshu.com/p/7182b8751e75 來源：简书 简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+在 RPC Benchmark Round 1 中，Turbo 性能炸裂表现强悍，并且在 listUser 这一项目中，取得了 10x dubbo 性能的好成绩。本文将介绍 Turbo 强悍性能背后的原理，并探讨如何编写高性能的 RPC 框架。
+过早的优化是万恶之源？ 这句话是 The Art of Computer Programming 作者，图领奖得主 Donald Knuth 大神说的。不过对于框架设计者而言，这句话并不正确。在设计一款高性能的基础框架时，必须始终重视性能优化，并将性能测试贯穿于整个设计开发过程中。这方面做到极致的类库有 Disruptor JCTools Agrona DSL-JSON 等等，这几个高性能类库都坚持一个原则：不了解性能的外部类库坚决不用，如果现有的类库不能满足性能要求，那就重新设计一个。作为 Turbo 的设计者，我也尽量坚持这一原则，努力做到 Benchmark 驱动开发。
+JMH 让 Benchmark 驱动开发成为可能 在 JMH 出现之前，要对某个类库进行微基准性能测试是一件非常困难的事情。很难保证公平的测试条件，预热次数难以确定，预热效果也不好观察。JMH 的出现让性能测试变得 标准化 简单化，也让 Benchmark 驱动开发成为可能。Turbo 在开发过程中用 JMH 进行了充分的 Benchmark，以确定核心环节的性能开销，选择合适的实现方案。更多关于 JMH 的介绍请参考下面的链接：
+ OpenJDK: jmh JMH - Java Microbenchmark Harness ImportNew JMH简介  RPC 的主要流程  客户端 获取到 UserService 接口的 Refer: userServiceRefer 客户端 调用 userServiceRefer.</description>
+    </item>
+    
+    <item>
+      <title>怎样对RPC进行有效的性能测试</title>
+      <link>https://ningyu1.github.io/site/post/98-rpc-benchmark/</link>
+      <pubDate>Tue, 18 Sep 2018 18:16:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/98-rpc-benchmark/</guid>
+      <description>最近看相关rpc-benchmark相关的东西发现这篇文章挺好的，所以转载出来，下面是文章出处。
+作者：鲁小憨 链接：https://www.jianshu.com/p/cbcdf05eaa5c 來源：简书 简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+在 RPC Benchmark Round 1 中 turbo 的成绩一骑绝尘，实力碾压众 rpc 框架。对此，很多人表示不服气，认为作者既是运动员又是裁判员有失公平。所以我认为有必要解释一下 rpc-benchmark 的公正性，以及为什么 turbo 能够如此强悍。
+参考对象 rpc-benchmark 灵感源自 techempower-benchmarks，为了能够评测众多服务器框架，techempower-benchmarks 提供了6个测试用例：
+ JSON serialization  This test exercises the framework fundamentals including keep-alive support, request routing, request header parsing, object instantiation, JSON serialization, response header generation, and request count throughput.
+ Single database query  This test exercises the framework&amp;rsquo;s object-relational mapper (ORM), random number generator, database driver, and database connection pool.</description>
+    </item>
+    
+  </channel>
+</rss>

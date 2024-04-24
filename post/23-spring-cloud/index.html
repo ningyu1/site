@@ -1,0 +1,5057 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+    
+    
+    
+    
+    <title>Spring Cloud学习-Eureka、Ribbon和Feign - 凝雨 - Yun</title>
+    <meta name="author" content="凝雨-Yun">
+    <meta name="description" content="Spring Cloud学习-Eureka、Ribbon和Feign">
+    <meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="" rel="alternate" title="凝雨 - Yun" type="application/atom+xml">
+    <link href="https://ningyu1.github.io/site/images/fav.ico" rel="shortcut icon">
+    <style>
+    @charset "UTF-8";
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("https://ningyu1.github.io/site/font/fontawesome-webfont.eot");
+  src: url("https://ningyu1.github.io/site/font/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.woff") format("woff"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.ttf") format("truetype"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.svgz#FontAwesomeRegular") format("svg"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face{
+    font-family: 'MyHermit';
+    src: url('https://ningyu1.github.io/site/font/hermit-medium-webfont.eot');
+    src: url('https://ningyu1.github.io/site/font/hermit-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://ningyu1.github.io/site/font/hermit-medium-webfont.woff') format('woff'),
+         url('https://ningyu1.github.io/site/font/hermit-medium-webfont.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'PingFang SC', serif;
+  font-weight: 300;
+  font-size: 16px;
+  /*background: url("https://ningyu1.github.io/site/images/retina_dust.png");*/
+  color: #444;
+  colori: #666666; }
+  @media screen and (max-width: 1040px) {
+    body {
+      margin: 0 20px; } }
+  @media screen and (max-width: 600px) {
+    body {
+      font-size: 13px; } }
+
+.bBackground {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: -moz-radial-gradient(50% 50%, farthest-side, white, #efefef);
+  background: -webkit-gradient(radial, 50% 50%, 250, 50% 50%, 750, from(white), to(#bbbbbb));
+  z-index: -100; }
+
+h1 {
+  font-size: 1.8em; }
+
+h2 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.3em; }
+
+a {
+  text-decoration: none;
+  outline-width: 0;
+  color: #258fb8; }
+
+.alignleft {
+  float: left; }
+
+.alignright {
+  float: right; }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.inner {
+  width: 900px;
+  margin: 0 auto; }
+  @media screen and (max-width: 1040px) {
+    .inner {
+      width: 100%; } }
+
+#w2btoTop {
+  display: none;
+  text-decoration: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  overflow: hidden;
+  width: 51px;
+  height: 51px;
+  border: none;
+  text-indent: -999px;
+  background: url(https://ningyu1.github.io/site/images/totop.png) no-repeat left top; }
+
+#w2btoTopHover {
+  background: url(https://ningyu1.github.io/site/images/totop.png) no-repeat left -51px;
+  width: 51px;
+  height: 51px;
+  display: block;
+  overflow: hidden;
+  float: left;
+  opacity: 0;
+  -moz-opacity: 0;
+  filter: alpha(opacity=0); }
+
+#w2btoTop:active, #w2btoTop:focus {
+  outline: none; }
+
+.basic-alignment.left, article .entry-content img.left, article .entry-content video.left {
+  float: left;
+  margin-right: 1.5em; }
+.basic-alignment.right, article .entry-content img.right, article .entry-content video.right {
+  float: right;
+  margin-left: 1.5em; }
+.basic-alignment.center, article .entry-content img.center, article .entry-content video.center {
+  display: block;
+  margin: 0 auto 1.5em; }
+.basic-alignment.left, article .entry-content img.left, article .entry-content video.left, .basic-alignment.right, article .entry-content img.right, article .entry-content video.right {
+  margin-bottom: .8em; }
+
+/* changes tooltip, to use, make elements 'class' as 'tooltip' and 'title' would be shown in tooltip */
+.tooltip {
+  display: inline;
+  position: relative; }
+
+.tooltip:hover {
+  text-decoration: none; }
+
+.tooltip:hover:after {
+  background: #111;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  bottom: 18px;
+  color: #fff;
+  content: attr(title);
+  display: block;
+  left: 50%;
+  padding: 5px 15px;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 98; }
+
+.tooltip:hover:before {
+  border: solid;
+  border-color: #111 transparent;
+  border-width: 6px 6px 0 6px;
+  bottom: 12px;
+  content: "";
+  display: block;
+  left: 75%;
+  position: absolute;
+  z-index: 99; }
+
+.pullquote-right:before,
+.pullquote-left:before {
+  /* Reset metrics. */
+  padding: 0;
+  border: none;
+  /* Content */
+  content: attr(data-pullquote);
+  /* Pull out to the right, modular scale based margins. */
+  float: right;
+  width: 45%;
+  margin: .5em 0 1em 1.5em;
+  /* Baseline correction */
+  position: relative;
+  top: 7px;
+  font-size: 1.4em;
+  line-height: 1.45em; }
+
+.pullquote-left:before {
+  /* Make left pullquotes align properly. */
+  float: left;
+  margin: .5em 1.5em 1em 0; }
+
+#header {
+  padding: 20px 0 20px 0; }
+  @media screen and (max-width: 1040px) {
+    #header {
+      height: auto;
+      position: relative;
+      padding-bottom: 10px; } }
+  #header a {
+    color: #666666;
+    -webkit-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(color 0.3s, false, false, false, false, false, false, false, false, false); }
+    #header a:hover {
+      color: #258fb8; }
+  #header h1 {
+    font-family: 'Slackey', cursive;
+    font-weight: 300;
+    font-size: 52px; }
+    @media screen and (max-width: 1040px) {
+      #header h1 {
+        float: none; } }
+
+#headerbg {
+  text-align: center;
+  background: #444;
+  padding: 10px 10px;
+  display: table;
+  color: #fff;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-weight: bold;
+  -webkit-mask-image: -webkit-linear-gradient(black, rgba(0, 0, 0, 0.9));
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .2s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: .2s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: 1s;
+  -ms-animation-delay: .2s;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  -o-animation-duration: 1s;
+  -o-animation-delay: .2s;
+  -o-animation-timing-function: ease;
+  -o-animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: .2s;
+  animation-timing-function: ease;
+  animation-fill-mode: both; }
+
+#load {
+  display: none;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  background: url("https://ningyu1.github.io/site/images/loading.gif");
+  width: 50px;
+  height: 50px;
+  text-indent: -9999em; }
+
+#social-links li {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  margin-top: 20px;
+  margin-right: 9px;
+  background-color: #ddd;
+  text-align: center;
+  line-height: 35px;
+  -webkit-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false);
+  -moz-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false false);
+  -o-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false false);
+  transition: compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false); }
+  #social-links li:hover {
+    background-color: #555; }
+#social-links a {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  #social-links a svg {
+    position: absolute; }
+  #social-links a .github {
+    top: 3px;
+    left: 2px; }
+  #social-links a .sina-weibo {
+    top: 8px;
+    left: 6px; }
+  #social-links a .tencent-weibo {
+    top: 6px;
+    left: 4px; }
+  #social-links a .twitter {
+    top: 2px;
+    left: 3px; }
+
+a.facebook {
+  background: url("https://ningyu1.github.io/site/images/social/Facebook.png") center no-repeat; }
+
+a.facebook:hover {
+  background: url("https://ningyu1.github.io/site/images/social/FacebookH.png") center no-repeat; }
+
+a.github {
+  background: url("https://ningyu1.github.io/site/images/social/Github.png") center no-repeat; }
+
+a.github:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GithubH.png") center no-repeat; }
+
+a.gitee {
+  background: url("https://ningyu1.github.io/site/images/social/Gitee.png") center no-repeat; }
+
+a.gitee:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GiteeH.png") center no-repeat; }
+
+a.gitlab {
+  background: url("https://ningyu1.github.io/site/images/social/Gitlab.png") center no-repeat; }
+
+a.gitlab:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GitlabH.png") center no-repeat; }
+
+a.email {
+  background: url("https://ningyu1.github.io/site/images/social/Email.png") center no-repeat; }
+
+a.email:hover {
+  background: url("https://ningyu1.github.io/site/images/social/EmailH.png") center no-repeat; }
+
+a.rss {
+  background: url("https://ningyu1.github.io/site/images/social/Rss.png") center no-repeat; }
+
+a.rss:hover {
+  background: url("https://ningyu1.github.io/site/images/social/RssH.png") center no-repeat; }
+
+a.twitter {
+  background: url("https://ningyu1.github.io/site/images/social/Twitter.png") center no-repeat; }
+
+a.twitter:hover {
+  background: url("https://ningyu1.github.io/site/images/social/TwitterH.png") center no-repeat; }
+
+a.google {
+  background: url("https://ningyu1.github.io/site/images/social/Picasa.png") center no-repeat; }
+
+a.google:hover {
+  background: url("https://ningyu1.github.io/site/images/social/PicasaH.png") center no-repeat; }
+
+a.skype {
+  background: url("https://ningyu1.github.io/site/images/social/Skype.png") center no-repeat; }
+
+a.skype:hover {
+  background: url("https://ningyu1.github.io/site/images/social/SkypeH.png") center no-repeat; }
+
+a.linkedin {
+  background: url("https://ningyu1.github.io/site/images/social/LinkedIn.png") center no-repeat; }
+
+a.linkedin:hover {
+  background: url("https://ningyu1.github.io/site/images/social/LinkedInH.png") center no-repeat; }
+
+a.youtube {
+  background: url("https://ningyu1.github.io/site/images/social/Youtube.png") center no-repeat; }
+
+a.youtube:hover {
+  background: url("https://ningyu1.github.io/site/images/social/YoutubeH.png") center no-repeat; }
+
+a.lastfm {
+  background: url("https://ningyu1.github.io/site/images/social/LastFM.png") center no-repeat; }
+
+a.lastfm:hover {
+  background: url("https://ningyu1.github.io/site/images/social/LastFMH.png") center no-repeat; }
+
+/* search bar */
+#search {
+  display: inline; }
+
+#search input[type="text"] {
+  background: url("https://ningyu1.github.io/site/images/search-dark.png") no-repeat 10px 6px #444444;
+  border: 0 none;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #777;
+  width: 110px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s; }
+
+#search input[type="text"]:focus {
+  width: 160px; }
+
+#dark {
+  display: inline-block;
+  height: 70px; }
+
+#dark #search input[type="text"] {
+  background: url("https://ningyu1.github.io/site/images/search-dark.png") no-repeat 10px 6px #444444;
+  border: 0 none;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #ddd;
+  width: 110px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s; }
+
+#dark #search input[type="text"]:focus {
+  width: 160px;
+  outline: 0; }
+
+/* nav */
+#nav {
+  text-align: center;
+  position: relative;
+  margin: 10px auto; }
+
+ul#nav *{
+	box-sizing:content-box
+}
+
+ul#nav li {
+  display: inline-block; }
+
+ul#nav li {
+  list-style-type: none;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-right: 1px; }
+
+ul#nav li a {
+  display: inline-block;
+  width: 110px;
+  height: 40px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #222;
+  font-weight: normal;
+  text-decoration: none;
+  font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-style: normal;
+  text-shadow: 1px 1px 10px #222;
+  overflow: hidden; }
+
+ul#nav li a:hover {
+  color: #fff;
+  font-style: normal;
+  font-weight: normal;
+  background-image: url("https://ningyu1.github.io/site/images/hover.png");
+  background-repeat: no-repeat;
+  background-position: center top; }
+
+ul#nav li a:active {
+  position: relative;
+  top: 2px; }
+
+ul#nav li#active a {
+  color: #FFF;
+  background-image: url("https://ningyu1.github.io/site/images/active.png");
+  background-repeat: no-repeat;
+  background-position: center top; }
+
+#pagenavi {
+  padding: 20px 0;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #pagenavi a:hover {
+    text-decoration: underline; }
+  #pagenavi .prev, #pagenavi .next {
+    position: absolute; }
+  #pagenavi .prev {
+    padding-left: 30px;
+    left: 0; }
+    #pagenavi .prev:before {
+      content: "\f060";
+      font: 1.3em FontAwesome;
+      position: absolute;
+      left: 0; }
+  #pagenavi .next {
+    padding-right: 30px;
+    right: 0; }
+    #pagenavi .next:before {
+      content: "\f061";
+      font: 1.3em FontAwesome;
+      position: absolute;
+      right: 0; }
+  #pagenavi .center {
+    text-align: center;
+    width: 100%;
+    display: block; }
+    @media screen and (max-width: 400px) {
+      #pagenavi .center {
+        display: none; } }
+
+article {
+  border-bottom: 1px solid #dddddd;
+  padding: 30px 0;
+  position: relative; }
+  @media screen and (max-width: 800px) {
+    article {
+      padding-bottom: 15px; } }
+  @media screen and (max-width: 600px) {
+    article {
+      padding: 15px 0; } }
+  article h2.title {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 20px; }
+    article h2.title a {
+      color: #1094e8; }
+  article .title a {
+    color: #7c7873;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out; }
+  article .title a:hover {
+    color: #084B8A;
+    text-shadow: 3px 3px 12px #888;
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3); }
+  article .entry-content {
+    line-height: 2;
+    text-align: justify; }
+    article .entry-content a:hover {
+      text-decoration: underline; }
+    article .entry-content .more-link {
+      display: block;
+      margin-top: 16px;
+      padding-left: 30px;
+      position: relative; }
+      article .entry-content .more-link:before {
+        content: "\f061";
+        font: 1.3em FontAwesome;
+        line-height: 1.6em;
+        position: absolute;
+        left: 0; }
+    article .entry-content p, article .entry-content blockquote, article .entry-content ul, article .entry-content ol, article .entry-content dl, article .entry-content iframe, article .entry-content h1, article .entry-content h2, article .entry-content h3, article .entry-content h4, article .entry-content h5, article .entry-content h6, article .entry-content .video-container {
+      margin-top: 10px; }
+    article .entry-content ul, article .entry-content ol, article .entry-content dl {
+      margin-left: 20px; }
+      article .entry-content ul ul, article .entry-content ul ol, article .entry-content ul dl, article .entry-content ol ul, article .entry-content ol ol, article .entry-content ol dl, article .entry-content dl ul, article .entry-content dl ol, article .entry-content dl dl {
+        margin-top: 0; }
+    article .entry-content strong {
+      font-weight: bold; }
+    article .entry-content em {
+      font-style: italic; }
+    article .entry-content p {
+      margin-top: 10px; }
+    article .entry-content h2 {
+      font-weight: 300;
+      border-bottom: 1px solid #dddddd;
+      position: relative; }
+      article .entry-content h2:before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        border-bottom: 1px solid white;
+        width: 100%; }
+    article .entry-content img, article .entry-content video {
+      margin: 10px 0;
+      max-width: 100%;
+      height: auto;
+      -moz-border-radius: 0.3em;
+      -webkit-border-radius: 0.3em;
+      -o-border-radius: 0.3em;
+      -ms-border-radius: 0.3em;
+      -khtml-border-radius: 0.3em;
+      border-radius: 0.3em;
+      -moz-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -o-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+      border: #fff 0.3em solid; }
+    article .entry-content img.noborder, article .entry-content video.noborder {
+      border: none;
+      box-shadow: none; }
+    article .entry-content blockquote {
+      background: #dddddd;
+      border-left: 5px solid #cccccc;
+      padding: 15px 20px;
+      margin-top: 10px; }
+      article .entry-content blockquote > p:first-of-type {
+        margin-top: 0; }
+    article .entry-content iframe {
+      border: none; }
+    article .entry-content .caption {
+      display: block;
+      font-size: 0.9em;
+      color: #999999;
+      padding-left: 25px;
+      position: relative; }
+      article .entry-content .caption:before {
+        content: "\f040";
+        color: #cccccc;
+        font: 1.3em FontAwesome;
+        line-height: 1.6em;
+        position: absolute;
+        left: 0; }
+    article .entry-content .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden; }
+      article .entry-content .video-container iframe, article .entry-content .video-container object, article .entry-content .video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 0; }
+
+.share {
+  padding: 15px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+
+@media screen and (max-width: 800px) {
+  .post h2.title, .post .entry-content {
+    margin-left: 0; } }
+.post .meta {
+  line-height: 2;
+  color: #999999;
+  width: 370px; }
+  @media screen and (max-width: 800px) {
+    .post .meta {
+      margin-top: 15px;
+      position: static;
+      width: auto; } }
+  .post .meta a {
+    color: #999999;
+    -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+    .post .meta a:hover {
+      color: #666666; }
+  .post .meta .date, .post .meta .tags, .post .meta .comments {
+    padding-left: 30px;
+    position: relative; }
+    .post .meta .date:before, .post .meta .tags:before, .post .meta .comments:before {
+      color: #cccccc;
+      font: 1.3em FontAwesome;
+      line-height: 1.6em;
+      position: absolute;
+      left: 0; }
+    @media screen and (max-width: 800px) {
+      .post .meta .date, .post .meta .tags, .post .meta .comments {
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline;
+        margin-right: 30px; } }
+  .post .meta .date:before {
+    content: "\f073"; }
+  .post .meta .tags:before {
+    content: "\f02c"; }
+  .post .meta .comments:before {
+    content: "\f075"; }
+
+.archives {
+  position: relative; }
+  .archives:last-of-type:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    border-top: 1px solid #dddddd; }
+  .archives .top-border-padding {
+    border-top: 1px solid #fff; }
+    .archives .top-border-padding:before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      width: 100%;
+      border-top: 1px solid #dddddd; }
+  .archives .year {
+    line-height: 35px;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    padding-top: 15px;
+    border-top: 1px solid #fff; }
+    .archives .year:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      width: 100%;
+      border-top: 1px solid #dddddd; }
+    @media screen and (max-width: 600px) {
+      .archives .year {
+        position: relative;
+        width: 100%; } }
+  .archives article {
+    margin-left: 200px;
+    padding: 10px 0; }
+    @media screen and (max-width: 600px) {
+      .archives article {
+        margin-left: 0; }
+        .archives article:first-of-type {
+          border-top: none;
+          padding-top: 30px; } }
+    .archives article .title {
+      margin-bottom: 0;
+      font-size: 25px; }
+    .archives article .meta {
+      color: #999999;
+      font-size: 0.9em;
+      line-height: 2;
+      margin-top: 10px; }
+      @media screen and (max-width: 600px) {
+        .archives article .meta {
+          display: none; } }
+      .archives article .meta span {
+        margin-right: 30px;
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline; }
+        .archives article .meta span:before {
+          color: #cccccc;
+          font: 1.3em FontAwesome;
+          padding-right: 10px; }
+      .archives article .meta a {
+        color: #999999;
+        -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+        -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+        -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+        transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+        .archives article .meta a:hover {
+          color: #666666; }
+      .archives article .meta .date:before {
+        content: "\f073"; }
+      .archives article .meta .tags:before {
+        content: "\f02c"; }
+      .archives article .meta .comments:before {
+        content: "\f075"; }
+
+#comment {
+  padding: 30px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #comment h2.title {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 20px; }
+
+footer {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.6em;
+  color: #666; }
+
+footer a {
+  color: #123; }
+
+footer a:hover {
+  color: #456; }
+
+#banner {
+  color: #999999;
+  padding: 30px 0;
+  line-height: 30px;
+  text-align: center;
+  position: relative;
+  display: none;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #banner:hover a {
+    color: #258fb8; }
+  #banner a {
+    color: #999999;
+    -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+    #banner a:hover {
+      text-decoration: underline; }
+  #banner small {
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+  #banner .loading {
+    background: image-url("loading_pacman.gif") center no-repeat;
+    text-indent: -9999px; }
+  #banner .container {
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    display: none; }
+    #banner .container .feed {
+      list-style: none;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+      #banner .container .feed li {
+        position: relative; }
+        #banner .container .feed li small {
+          position: absolute;
+          right: 0; }
+
+/*! fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license */
+.fancybox-tmp iframe, .fancybox-tmp object {
+  vertical-align: top;
+  padding: 0;
+  margin: 0; }
+
+.fancybox-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8020; }
+
+.fancybox-skin {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: #f9f9f9;
+  color: #444;
+  text-shadow: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px; }
+
+.fancybox-opened {
+  z-index: 8030; }
+
+.fancybox-opened .fancybox-skin {
+  -webkit-box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false);
+  -moz-box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false);
+  box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false); }
+
+.fancybox-outer, .fancybox-inner {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  outline: none; }
+
+.fancybox-inner {
+  overflow: hidden; }
+
+.fancybox-type-iframe .fancybox-inner {
+  -webkit-overflow-scrolling: touch; }
+
+.fancybox-error {
+  color: #444;
+  font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 10px; }
+
+.fancybox-image, .fancybox-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  vertical-align: top; }
+
+.fancybox-image {
+  max-width: 100%;
+  max-height: 100%; }
+
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+  background-image: image-url("fancybox/fancybox_sprite.png"); }
+
+#fancybox-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -22px;
+  margin-left: -22px;
+  background-position: 0 -108px;
+  opacity: 0.8;
+  cursor: pointer;
+  z-index: 8020; }
+
+#fancybox-loading div {
+  width: 44px;
+  height: 44px;
+  background: image-url("fancybox/fancybox_loading.gif") center center no-repeat; }
+
+.fancybox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 8040; }
+
+.fancybox-nav {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  cursor: pointer;
+  background: transparent image-url("fancybox/blank.gif");
+  /* helps IE */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  z-index: 8040; }
+
+.fancybox-prev {
+  left: 0; }
+
+.fancybox-next {
+  right: 0; }
+
+.fancybox-nav span {
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 34px;
+  margin-top: -18px;
+  cursor: pointer;
+  z-index: 8040;
+  visibility: hidden; }
+
+.fancybox-prev span {
+  left: 20px;
+  background-position: 0 -36px; }
+
+.fancybox-next span {
+  right: 20px;
+  background-position: 0 -72px; }
+
+.fancybox-nav:hover span {
+  visibility: visible; }
+
+.fancybox-tmp {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  padding: 0;
+  overflow: visible;
+  visibility: hidden; }
+
+/* Overlay helper */
+#fancybox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: none;
+  z-index: 8010;
+  background: #000; }
+
+#fancybox-overlay.overlay-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0; }
+
+/* Title helper */
+.fancybox-title {
+  visibility: hidden;
+  font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+  text-shadow: none;
+  z-index: 8050; }
+
+.fancybox-opened .fancybox-title {
+  visibility: visible; }
+
+.fancybox-title-float-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  margin-bottom: -35px;
+  z-index: 8030;
+  text-align: center; }
+
+.fancybox-title-float-wrap .child {
+  display: inline-block;
+  margin-right: -100%;
+  padding: 2px 20px;
+  background: transparent;
+  /* Fallback for web browsers that doesn't support RGBa */
+  background: rgba(0, 0, 0, 0.8);
+  text-shadow: 0 1px 2px #222;
+  color: #FFF;
+  font-weight: bold;
+  line-height: 24px;
+  white-space: nowrap;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px; }
+
+.fancybox-title-outside-wrap {
+  position: relative;
+  margin-top: 10px;
+  color: #fff; }
+
+.fancybox-title-inside-wrap {
+  margin-top: 10px; }
+
+.fancybox-title-over-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  padding: 10px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8); }
+
+/*
+Animate.css - http://daneden.me/animate
+Licensed under the ☺ license (http://licence.visualidiot.com/)
+
+Copyright (c) 2012 Dan Eden
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+body {
+  /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
+  -webkit-backface-visibility: hidden; }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  animation-duration: 2s; }
+
+@-webkit-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@-moz-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@-o-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+.flash {
+  -webkit-animation-name: flash;
+  -moz-animation-name: flash;
+  -o-animation-name: flash;
+  animation-name: flash; }
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px); } }
+
+@-moz-keyframes shake {
+  0%, 100% {
+    -moz-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -moz-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -moz-transform: translateX(10px); } }
+
+@-o-keyframes shake {
+  0%, 100% {
+    -o-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -o-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -o-transform: translateX(10px); } }
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px); } }
+
+.shake {
+  -webkit-animation-name: shake;
+  -moz-animation-name: shake;
+  -o-animation-name: shake;
+  animation-name: shake; }
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0); }
+
+  40% {
+    -webkit-transform: translateY(-30px); }
+
+  60% {
+    -webkit-transform: translateY(-15px); } }
+
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0); }
+
+  40% {
+    -moz-transform: translateY(-30px); }
+
+  60% {
+    -moz-transform: translateY(-15px); } }
+
+@-o-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -o-transform: translateY(0); }
+
+  40% {
+    -o-transform: translateY(-30px); }
+
+  60% {
+    -o-transform: translateY(-15px); } }
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); }
+
+  40% {
+    transform: translateY(-30px); }
+
+  60% {
+    transform: translateY(-15px); } }
+
+.bounce {
+  -webkit-animation-name: bounce;
+  -moz-animation-name: bounce;
+  -o-animation-name: bounce;
+  animation-name: bounce; }
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1); }
+
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0); } }
+
+@-moz-keyframes tada {
+  0% {
+    -moz-transform: scale(1); }
+
+  10%, 20% {
+    -moz-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -moz-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -moz-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -moz-transform: scale(1) rotate(0); } }
+
+@-o-keyframes tada {
+  0% {
+    -o-transform: scale(1); }
+
+  10%, 20% {
+    -o-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -o-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -o-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -o-transform: scale(1) rotate(0); } }
+
+@keyframes tada {
+  0% {
+    transform: scale(1); }
+
+  10%, 20% {
+    transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    transform: scale(1) rotate(0); } }
+
+.tada {
+  -webkit-animation-name: tada;
+  -moz-animation-name: tada;
+  -o-animation-name: tada;
+  animation-name: tada; }
+
+@-webkit-keyframes swing {
+  20%, 40%, 60%, 80%, 100% {
+    -webkit-transform-origin: top center; }
+
+  20% {
+    -webkit-transform: rotate(15deg); }
+
+  40% {
+    -webkit-transform: rotate(-10deg); }
+
+  60% {
+    -webkit-transform: rotate(5deg); }
+
+  80% {
+    -webkit-transform: rotate(-5deg); }
+
+  100% {
+    -webkit-transform: rotate(0deg); } }
+
+@-moz-keyframes swing {
+  20% {
+    -moz-transform: rotate(15deg); }
+
+  40% {
+    -moz-transform: rotate(-10deg); }
+
+  60% {
+    -moz-transform: rotate(5deg); }
+
+  80% {
+    -moz-transform: rotate(-5deg); }
+
+  100% {
+    -moz-transform: rotate(0deg); } }
+
+@-o-keyframes swing {
+  20% {
+    -o-transform: rotate(15deg); }
+
+  40% {
+    -o-transform: rotate(-10deg); }
+
+  60% {
+    -o-transform: rotate(5deg); }
+
+  80% {
+    -o-transform: rotate(-5deg); }
+
+  100% {
+    -o-transform: rotate(0deg); } }
+
+@keyframes swing {
+  20% {
+    transform: rotate(15deg); }
+
+  40% {
+    transform: rotate(-10deg); }
+
+  60% {
+    transform: rotate(5deg); }
+
+  80% {
+    transform: rotate(-5deg); }
+
+  100% {
+    transform: rotate(0deg); } }
+
+.swing {
+  -webkit-transform-origin: top center;
+  -moz-transform-origin: top center;
+  -o-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  -moz-animation-name: swing;
+  -o-animation-name: swing;
+  animation-name: swing; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%); }
+
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -webkit-transform: translateX(0%); } }
+
+@-moz-keyframes wobble {
+  0% {
+    -moz-transform: translateX(0%); }
+
+  15% {
+    -moz-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -moz-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -moz-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -moz-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -moz-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -moz-transform: translateX(0%); } }
+
+@-o-keyframes wobble {
+  0% {
+    -o-transform: translateX(0%); }
+
+  15% {
+    -o-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -o-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -o-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -o-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -o-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -o-transform: translateX(0%); } }
+
+@keyframes wobble {
+  0% {
+    transform: translateX(0%); }
+
+  15% {
+    transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    transform: translateX(0%); } }
+
+.wobble {
+  -webkit-animation-name: wobble;
+  -moz-animation-name: wobble;
+  -o-animation-name: wobble;
+  animation-name: wobble; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1); }
+
+  50% {
+    -webkit-transform: scale(1.1); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes pulse {
+  0% {
+    -moz-transform: scale(1); }
+
+  50% {
+    -moz-transform: scale(1.1); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@-o-keyframes pulse {
+  0% {
+    -o-transform: scale(1); }
+
+  50% {
+    -o-transform: scale(1.1); }
+
+  100% {
+    -o-transform: scale(1); } }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+
+  50% {
+    transform: scale(1.1); }
+
+  100% {
+    transform: scale(1); } }
+
+.pulse {
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -o-animation-name: pulse;
+  animation-name: pulse; }
+
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0);
+    -webkit-animation-timing-function: ease-out; }
+
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -webkit-animation-timing-function: ease-out; }
+
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -webkit-animation-timing-function: ease-in; }
+
+  80% {
+    -webkit-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -webkit-animation-timing-function: ease-in; }
+
+  100% {
+    -webkit-transform: perspective(400px) scale(1);
+    -webkit-animation-timing-function: ease-in; } }
+
+@-moz-keyframes flip {
+  0% {
+    -moz-transform: perspective(400px) rotateY(0);
+    -moz-animation-timing-function: ease-out; }
+
+  40% {
+    -moz-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -moz-animation-timing-function: ease-out; }
+
+  50% {
+    -moz-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -moz-animation-timing-function: ease-in; }
+
+  80% {
+    -moz-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -moz-animation-timing-function: ease-in; }
+
+  100% {
+    -moz-transform: perspective(400px) scale(1);
+    -moz-animation-timing-function: ease-in; } }
+
+@-o-keyframes flip {
+  0% {
+    -o-transform: perspective(400px) rotateY(0);
+    -o-animation-timing-function: ease-out; }
+
+  40% {
+    -o-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -o-animation-timing-function: ease-out; }
+
+  50% {
+    -o-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -o-animation-timing-function: ease-in; }
+
+  80% {
+    -o-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -o-animation-timing-function: ease-in; }
+
+  100% {
+    -o-transform: perspective(400px) scale(1);
+    -o-animation-timing-function: ease-in; } }
+
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+    animation-timing-function: ease-out; }
+
+  40% {
+    transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    animation-timing-function: ease-out; }
+
+  50% {
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    animation-timing-function: ease-in; }
+
+  80% {
+    transform: perspective(400px) rotateY(360deg) scale(0.95);
+    animation-timing-function: ease-in; }
+
+  100% {
+    transform: perspective(400px) scale(1);
+    animation-timing-function: ease-in; } }
+
+.flip {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flip;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flip;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flip;
+  backface-visibility: visible !important;
+  animation-name: flip; }
+
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes flipInX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -moz-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -moz-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@-o-keyframes flipInX {
+  0% {
+    -o-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -o-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -o-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -o-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInX;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInX;
+  backface-visibility: visible !important;
+  animation-name: flipInX; }
+
+@-webkit-keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes flipOutX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@-o-keyframes flipOutX {
+  0% {
+    -o-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@keyframes flipOutX {
+  0% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+.flipOutX {
+  -webkit-animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
+  -moz-animation-name: flipOutX;
+  -moz-backface-visibility: visible !important;
+  -o-animation-name: flipOutX;
+  -o-backface-visibility: visible !important;
+  animation-name: flipOutX;
+  backface-visibility: visible !important; }
+
+@-webkit-keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes flipInY {
+  0% {
+    -moz-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -moz-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -moz-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -moz-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@-o-keyframes flipInY {
+  0% {
+    -o-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -o-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -o-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -o-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@keyframes flipInY {
+  0% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+.flipInY {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInY;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInY;
+  backface-visibility: visible !important;
+  animation-name: flipInY; }
+
+@-webkit-keyframes flipOutY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes flipOutY {
+  0% {
+    -moz-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@-o-keyframes flipOutY {
+  0% {
+    -o-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@keyframes flipOutY {
+  0% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+.flipOutY {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipOutY;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipOutY;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipOutY;
+  backface-visibility: visible !important;
+  animation-name: flipOutY; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  -moz-animation-name: fadeInUp;
+  -o-animation-name: fadeInUp;
+  animation-name: fadeInUp; }
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  -moz-animation-name: fadeInDown;
+  -o-animation-name: fadeInDown;
+  animation-name: fadeInDown; }
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  -moz-animation-name: fadeInLeft;
+  -o-animation-name: fadeInLeft;
+  animation-name: fadeInLeft; }
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  -moz-animation-name: fadeInRight;
+  -o-animation-name: fadeInRight;
+  animation-name: fadeInRight; }
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  -moz-animation-name: fadeInUpBig;
+  -o-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig; }
+
+@-webkit-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInDownBig {
+  -webkit-animation-name: fadeInDownBig;
+  -moz-animation-name: fadeInDownBig;
+  -o-animation-name: fadeInDownBig;
+  animation-name: fadeInDownBig; }
+
+@-webkit-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInLeftBig {
+  -webkit-animation-name: fadeInLeftBig;
+  -moz-animation-name: fadeInLeftBig;
+  -o-animation-name: fadeInLeftBig;
+  animation-name: fadeInLeftBig; }
+
+@-webkit-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInRightBig {
+  -webkit-animation-name: fadeInRightBig;
+  -moz-animation-name: fadeInRightBig;
+  -o-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig; }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  -moz-animation-name: fadeOut;
+  -o-animation-name: fadeOut;
+  animation-name: fadeOut; }
+
+@-webkit-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px); } }
+
+@-moz-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-20px); } }
+
+@-o-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-20px); } }
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px); } }
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  -moz-animation-name: fadeOutUp;
+  -o-animation-name: fadeOutUp;
+  animation-name: fadeOutUp; }
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px); } }
+
+@-moz-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(20px); } }
+
+@-o-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(20px); } }
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px); } }
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  -moz-animation-name: fadeOutDown;
+  -o-animation-name: fadeOutDown;
+  animation-name: fadeOutDown; }
+
+@-webkit-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px); } }
+
+@-moz-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-20px); } }
+
+@-o-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-20px); } }
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-20px); } }
+
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  -moz-animation-name: fadeOutLeft;
+  -o-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft; }
+
+@-webkit-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px); } }
+
+@-moz-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(20px); } }
+
+@-o-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(20px); } }
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(20px); } }
+
+.fadeOutRight {
+  -webkit-animation-name: fadeOutRight;
+  -moz-animation-name: fadeOutRight;
+  -o-animation-name: fadeOutRight;
+  animation-name: fadeOutRight; }
+
+@-webkit-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); } }
+
+@-moz-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); } }
+
+@-o-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); } }
+
+@keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px); } }
+
+.fadeOutUpBig {
+  -webkit-animation-name: fadeOutUpBig;
+  -moz-animation-name: fadeOutUpBig;
+  -o-animation-name: fadeOutUpBig;
+  animation-name: fadeOutUpBig; }
+
+@-webkit-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); } }
+
+@-moz-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); } }
+
+@-o-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(2000px); } }
+
+@keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(2000px); } }
+
+.fadeOutDownBig {
+  -webkit-animation-name: fadeOutDownBig;
+  -moz-animation-name: fadeOutDownBig;
+  -o-animation-name: fadeOutDownBig;
+  animation-name: fadeOutDownBig; }
+
+@-webkit-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); } }
+
+@-moz-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); } }
+
+@-o-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); } }
+
+@keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-2000px); } }
+
+.fadeOutLeftBig {
+  -webkit-animation-name: fadeOutLeftBig;
+  -moz-animation-name: fadeOutLeftBig;
+  -o-animation-name: fadeOutLeftBig;
+  animation-name: fadeOutLeftBig; }
+
+@-webkit-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); } }
+
+@-moz-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); } }
+
+@-o-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(2000px); } }
+
+@keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(2000px); } }
+
+.fadeOutRightBig {
+  -webkit-animation-name: fadeOutRightBig;
+  -moz-animation-name: fadeOutRightBig;
+  -o-animation-name: fadeOutRightBig;
+  animation-name: fadeOutRightBig; }
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05); }
+
+  70% {
+    -webkit-transform: scale(0.9); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.05); }
+
+  70% {
+    -moz-transform: scale(0.9); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@-o-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -o-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -o-transform: scale(1.05); }
+
+  70% {
+    -o-transform: scale(0.9); }
+
+  100% {
+    -o-transform: scale(1); } }
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05); }
+
+  70% {
+    transform: scale(0.9); }
+
+  100% {
+    transform: scale(1); } }
+
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  -moz-animation-name: bounceIn;
+  -o-animation-name: bounceIn;
+  animation-name: bounceIn; }
+
+@-webkit-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px); }
+
+  80% {
+    -webkit-transform: translateY(10px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(-30px); }
+
+  80% {
+    -moz-transform: translateY(10px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateY(-30px); }
+
+  80% {
+    -o-transform: translateY(10px); }
+
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-30px); }
+
+  80% {
+    transform: translateY(10px); }
+
+  100% {
+    transform: translateY(0); } }
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  -moz-animation-name: bounceInUp;
+  -o-animation-name: bounceInUp;
+  animation-name: bounceInUp; }
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px); }
+
+  80% {
+    -webkit-transform: translateY(-10px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(30px); }
+
+  80% {
+    -moz-transform: translateY(-10px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateY(30px); }
+
+  80% {
+    -o-transform: translateY(-10px); }
+
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateY(30px); }
+
+  80% {
+    transform: translateY(-10px); }
+
+  100% {
+    transform: translateY(0); } }
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  -moz-animation-name: bounceInDown;
+  -o-animation-name: bounceInDown;
+  animation-name: bounceInDown; }
+
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px); }
+
+  80% {
+    -webkit-transform: translateX(-10px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(30px); }
+
+  80% {
+    -moz-transform: translateX(-10px); }
+
+  100% {
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateX(30px); }
+
+  80% {
+    -o-transform: translateX(-10px); }
+
+  100% {
+    -o-transform: translateX(0); } }
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateX(30px); }
+
+  80% {
+    transform: translateX(-10px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  -moz-animation-name: bounceInLeft;
+  -o-animation-name: bounceInLeft;
+  animation-name: bounceInLeft; }
+
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px); }
+
+  80% {
+    -webkit-transform: translateX(10px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(-30px); }
+
+  80% {
+    -moz-transform: translateX(10px); }
+
+  100% {
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateX(-30px); }
+
+  80% {
+    -o-transform: translateX(10px); }
+
+  100% {
+    -o-transform: translateX(0); } }
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateX(-30px); }
+
+  80% {
+    transform: translateX(10px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  -moz-animation-name: bounceInRight;
+  -o-animation-name: bounceInRight;
+  animation-name: bounceInRight; }
+
+@-webkit-keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1); }
+
+  25% {
+    -webkit-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.3); } }
+
+@-moz-keyframes bounceOut {
+  0% {
+    -moz-transform: scale(1); }
+
+  25% {
+    -moz-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.3); } }
+
+@-o-keyframes bounceOut {
+  0% {
+    -o-transform: scale(1); }
+
+  25% {
+    -o-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -o-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -o-transform: scale(0.3); } }
+
+@keyframes bounceOut {
+  0% {
+    transform: scale(1); }
+
+  25% {
+    transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.3); } }
+
+.bounceOut {
+  -webkit-animation-name: bounceOut;
+  -moz-animation-name: bounceOut;
+  -o-animation-name: bounceOut;
+  animation-name: bounceOut; }
+
+@-webkit-keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); } }
+
+@-moz-keyframes bounceOutUp {
+  0% {
+    -moz-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); } }
+
+@-o-keyframes bounceOutUp {
+  0% {
+    -o-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); } }
+
+@keyframes bounceOutUp {
+  0% {
+    transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px); } }
+
+.bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  -moz-animation-name: bounceOutUp;
+  -o-animation-name: bounceOutUp;
+  animation-name: bounceOutUp; }
+
+@-webkit-keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); } }
+
+@-moz-keyframes bounceOutDown {
+  0% {
+    -moz-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); } }
+
+@-o-keyframes bounceOutDown {
+  0% {
+    -o-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(2000px); } }
+
+@keyframes bounceOutDown {
+  0% {
+    transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(2000px); } }
+
+.bounceOutDown {
+  -webkit-animation-name: bounceOutDown;
+  -moz-animation-name: bounceOutDown;
+  -o-animation-name: bounceOutDown;
+  animation-name: bounceOutDown; }
+
+@-webkit-keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); } }
+
+@-moz-keyframes bounceOutLeft {
+  0% {
+    -moz-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); } }
+
+@-o-keyframes bounceOutLeft {
+  0% {
+    -o-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); } }
+
+@keyframes bounceOutLeft {
+  0% {
+    transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-2000px); } }
+
+.bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  -moz-animation-name: bounceOutLeft;
+  -o-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft; }
+
+@-webkit-keyframes bounceOutRight {
+  0% {
+    -webkit-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); } }
+
+@-moz-keyframes bounceOutRight {
+  0% {
+    -moz-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); } }
+
+@-o-keyframes bounceOutRight {
+  0% {
+    -o-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(2000px); } }
+
+@keyframes bounceOutRight {
+  0% {
+    transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(2000px); } }
+
+.bounceOutRight {
+  -webkit-animation-name: bounceOutRight;
+  -moz-animation-name: bounceOutRight;
+  -o-animation-name: bounceOutRight;
+  animation-name: bounceOutRight; }
+
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateIn {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateIn {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateIn {
+  0% {
+    transform-origin: center center;
+    transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  -moz-animation-name: rotateIn;
+  -o-animation-name: rotateIn;
+  animation-name: rotateIn; }
+
+@-webkit-keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInUpLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInUpLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInUpLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInUpLeft {
+  -webkit-animation-name: rotateInUpLeft;
+  -moz-animation-name: rotateInUpLeft;
+  -o-animation-name: rotateInUpLeft;
+  animation-name: rotateInUpLeft; }
+
+@-webkit-keyframes rotateInDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInDownLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInDownLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInDownLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInDownLeft {
+  -webkit-animation-name: rotateInDownLeft;
+  -moz-animation-name: rotateInDownLeft;
+  -o-animation-name: rotateInDownLeft;
+  animation-name: rotateInDownLeft; }
+
+@-webkit-keyframes rotateInUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInUpRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInUpRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInUpRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInUpRight {
+  -webkit-animation-name: rotateInUpRight;
+  -moz-animation-name: rotateInUpRight;
+  -o-animation-name: rotateInUpRight;
+  animation-name: rotateInUpRight; }
+
+@-webkit-keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInDownRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInDownRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInDownRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInDownRight {
+  -webkit-animation-name: rotateInDownRight;
+  -moz-animation-name: rotateInDownRight;
+  -o-animation-name: rotateInDownRight;
+  animation-name: rotateInDownRight; }
+
+@-webkit-keyframes rotateOut {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOut {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(200deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOut {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(200deg);
+    opacity: 0; } }
+
+@keyframes rotateOut {
+  0% {
+    transform-origin: center center;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(200deg);
+    opacity: 0; } }
+
+.rotateOut {
+  -webkit-animation-name: rotateOut;
+  -moz-animation-name: rotateOut;
+  -o-animation-name: rotateOut;
+  animation-name: rotateOut; }
+
+@-webkit-keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutUpLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutUpLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutUpLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    opacity: 0; } }
+
+.rotateOutUpLeft {
+  -webkit-animation-name: rotateOutUpLeft;
+  -moz-animation-name: rotateOutUpLeft;
+  -o-animation-name: rotateOutUpLeft;
+  animation-name: rotateOutUpLeft; }
+
+@-webkit-keyframes rotateOutDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutDownLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutDownLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutDownLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+    opacity: 0; } }
+
+.rotateOutDownLeft {
+  -webkit-animation-name: rotateOutDownLeft;
+  -moz-animation-name: rotateOutDownLeft;
+  -o-animation-name: rotateOutDownLeft;
+  animation-name: rotateOutDownLeft; }
+
+@-webkit-keyframes rotateOutUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutUpRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutUpRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutUpRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0; } }
+
+.rotateOutUpRight {
+  -webkit-animation-name: rotateOutUpRight;
+  -moz-animation-name: rotateOutUpRight;
+  -o-animation-name: rotateOutUpRight;
+  animation-name: rotateOutUpRight; }
+
+@-webkit-keyframes rotateOutDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutDownRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutDownRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutDownRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(-90deg);
+    opacity: 0; } }
+
+.rotateOutDownRight {
+  -webkit-animation-name: rotateOutDownRight;
+  -moz-animation-name: rotateOutDownRight;
+  -o-animation-name: rotateOutDownRight;
+  animation-name: rotateOutDownRight; }
+
+@-webkit-keyframes hinge {
+  0% {
+    -webkit-transform: rotate(0);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -webkit-transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  40% {
+    -webkit-transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  100% {
+    -webkit-transform: translateY(700px);
+    opacity: 0; } }
+
+@-moz-keyframes hinge {
+  0% {
+    -moz-transform: rotate(0);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -moz-transform: rotate(80deg);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  40% {
+    -moz-transform: rotate(60deg);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  80% {
+    -moz-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  100% {
+    -moz-transform: translateY(700px);
+    opacity: 0; } }
+
+@-o-keyframes hinge {
+  0% {
+    -o-transform: rotate(0);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -o-transform: rotate(80deg);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  40% {
+    -o-transform: rotate(60deg);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  80% {
+    -o-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  100% {
+    -o-transform: translateY(700px);
+    opacity: 0; } }
+
+@keyframes hinge {
+  0% {
+    transform: rotate(0);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    transform: rotate(80deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  40% {
+    transform: rotate(60deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  80% {
+    transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  100% {
+    transform: translateY(700px);
+    opacity: 0; } }
+
+.hinge {
+  -webkit-animation-name: hinge;
+  -moz-animation-name: hinge;
+  -o-animation-name: hinge;
+  animation-name: hinge; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg); } }
+
+@-moz-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0px) rotate(0deg); } }
+
+@-o-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0px) rotate(0deg); } }
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg); } }
+
+.rollIn {
+  -webkit-animation-name: rollIn;
+  -moz-animation-name: rollIn;
+  -o-animation-name: rollIn;
+  animation-name: rollIn; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg); } }
+
+@-moz-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(100%) rotate(120deg); } }
+
+@-o-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(100%) rotate(120deg); } }
+
+@keyframes rollOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%) rotate(120deg); } }
+
+.rollOut {
+  -webkit-animation-name: rollOut;
+  -moz-animation-name: rollOut;
+  -o-animation-name: rollOut;
+  animation-name: rollOut; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes lightSpeedIn {
+  0% {
+    -moz-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -moz-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -moz-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@-o-keyframes lightSpeedIn {
+  0% {
+    -o-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -o-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -o-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@keyframes lightSpeedIn {
+  0% {
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+.lightSpeedIn {
+  -webkit-animation-name: lightSpeedIn;
+  -moz-animation-name: lightSpeedIn;
+  -o-animation-name: lightSpeedIn;
+  animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  animation-timing-function: ease-out; }
+
+.animated.lightSpeedIn {
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes lightSpeedOut {
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@-moz-keyframes lightSpeedOut {
+  0% {
+    -moz-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@-o-keyframes lightSpeedOut {
+  0% {
+    -o-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@keyframes lightSpeedOut {
+  0% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+.lightSpeedOut {
+  -webkit-animation-name: lightSpeedOut;
+  -moz-animation-name: lightSpeedOut;
+  -o-animation-name: lightSpeedOut;
+  animation-name: lightSpeedOut;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in; }
+
+.animated.lightSpeedOut {
+  -webkit-animation-duration: 0.25s;
+  -moz-animation-duration: 0.25s;
+  -o-animation-duration: 0.25s;
+  animation-duration: 0.25s; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: skewX(9deg); }
+
+  10% {
+    -webkit-transform: skewX(-8deg); }
+
+  20% {
+    -webkit-transform: skewX(7deg); }
+
+  30% {
+    -webkit-transform: skewX(-6deg); }
+
+  40% {
+    -webkit-transform: skewX(5deg); }
+
+  50% {
+    -webkit-transform: skewX(-4deg); }
+
+  60% {
+    -webkit-transform: skewX(3deg); }
+
+  70% {
+    -webkit-transform: skewX(-2deg); }
+
+  80% {
+    -webkit-transform: skewX(1deg); }
+
+  90% {
+    -webkit-transform: skewX(0deg); }
+
+  100% {
+    -webkit-transform: skewX(0deg); } }
+
+@-moz-keyframes wiggle {
+  0% {
+    -moz-transform: skewX(9deg); }
+
+  10% {
+    -moz-transform: skewX(-8deg); }
+
+  20% {
+    -moz-transform: skewX(7deg); }
+
+  30% {
+    -moz-transform: skewX(-6deg); }
+
+  40% {
+    -moz-transform: skewX(5deg); }
+
+  50% {
+    -moz-transform: skewX(-4deg); }
+
+  60% {
+    -moz-transform: skewX(3deg); }
+
+  70% {
+    -moz-transform: skewX(-2deg); }
+
+  80% {
+    -moz-transform: skewX(1deg); }
+
+  90% {
+    -moz-transform: skewX(0deg); }
+
+  100% {
+    -moz-transform: skewX(0deg); } }
+
+@-o-keyframes wiggle {
+  0% {
+    -o-transform: skewX(9deg); }
+
+  10% {
+    -o-transform: skewX(-8deg); }
+
+  20% {
+    -o-transform: skewX(7deg); }
+
+  30% {
+    -o-transform: skewX(-6deg); }
+
+  40% {
+    -o-transform: skewX(5deg); }
+
+  50% {
+    -o-transform: skewX(-4deg); }
+
+  60% {
+    -o-transform: skewX(3deg); }
+
+  70% {
+    -o-transform: skewX(-2deg); }
+
+  80% {
+    -o-transform: skewX(1deg); }
+
+  90% {
+    -o-transform: skewX(0deg); }
+
+  100% {
+    -o-transform: skewX(0deg); } }
+
+@keyframes wiggle {
+  0% {
+    transform: skewX(9deg); }
+
+  10% {
+    transform: skewX(-8deg); }
+
+  20% {
+    transform: skewX(7deg); }
+
+  30% {
+    transform: skewX(-6deg); }
+
+  40% {
+    transform: skewX(5deg); }
+
+  50% {
+    transform: skewX(-4deg); }
+
+  60% {
+    transform: skewX(3deg); }
+
+  70% {
+    transform: skewX(-2deg); }
+
+  80% {
+    transform: skewX(1deg); }
+
+  90% {
+    transform: skewX(0deg); }
+
+  100% {
+    transform: skewX(0deg); } }
+
+.wiggle {
+  -webkit-animation-name: wiggle;
+  -moz-animation-name: wiggle;
+  -o-animation-name: wiggle;
+  animation-name: wiggle;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in; }
+
+.animated.wiggle {
+  -webkit-animation-duration: 0.75s;
+  -moz-animation-duration: 0.75s;
+  -o-animation-duration: 0.75s;
+  animation-duration: 0.75s; }
+  
+
+    </style>
+
+    <link href="https://ningyu1.github.io/site/css/custom.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="https://ningyu1.github.io/site/css/github-markdown.css" rel="stylesheet" type="text/css">
+
+    <link href='https://ningyu1.github.io/site/css/Slackey.css' rel='stylesheet' type='text/css'>
+    <link href='https://ningyu1.github.io/site/css/Fjallaone.css' rel='stylesheet' type='text/css'>
+    <link href='https://ningyu1.github.io/site/css/Amethysta.css' rel='stylesheet' type='text/css'>
+	<script src="https://ningyu1.github.io/site/js/jquery.min.js"></script>
+    
+
+    <script type="text/javascript" src="https://ningyu1.github.io/site/js/jquery-tapir.js"></script>
+
+    
+
+    <link rel="stylesheet" href="https://ningyu1.github.io/site/css/hljs.css">
+    <script src="https://ningyu1.github.io/site/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?5bb9b9d406e3381971859973a2ca3583";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+</head>
+
+
+<a href="https://github.com/ningyu1"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; z-index:9999; background-color: rgba(0, 0, 0, 0)!important;" src="https://ningyu1.github.io/site/images/right-graphite@2x.png" alt="Fork me on GitHub"></a>
+
+
+
+
+
+
+
+
+<link href="https://ningyu1.github.io/site/css/music-player.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://ningyu1.github.io/site/js/music-player.js"></script>
+<iframe class="player"  frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="https://music.163.com/outchain/player?type=2&id=1296583188&auto=0&height=66"></iframe>
+
+
+
+<body class="markdown-body">
+    <div id="wrapper">
+        <header id="header" class="inner">
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        凝雨 - Yun
+    </div>
+</h1>
+
+<span class="subtitle">快乐编程每一天 - Happy Coding Every Day</span>
+<br>
+
+
+<ul id="social-links" style="text-align:center; clear:both;">
+	
+    
+    <li>
+    <a href="mailto:ningbe111@163.com" class="email" title="Email"></a>
+    </li>
+    
+    
+    
+    <li>
+    <a href="https://github.com/ningyu1" class="github" title="Github"></a>
+    </li>
+    
+	
+    
+    <li>
+    <a href="https://gitlab.com/ningyu1" class="gitlab" title="Gitlab"></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+    
+	
+    
+    <li>
+    <a href="https://gitee.com/ningyu" class="gitee" title="Gitee码云"></a>
+    </li>
+    
+	<li>
+
+    <a href="https://ningyu1.github.io/atom.xml" class="rss" title="RSS" target="_blank"></a>
+    </li>
+</ul>
+
+
+
+<ul id="nav">
+
+
+
+
+
+    
+    <li id="ajax"><a href="https://ningyu1.github.io/">Home</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/archives/">Archives</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/categories/">Categories</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/tags/">Tags</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/about/">About</a></li>
+    <li id="ajax"><a href="https://g2.okk.dog/?path=register&code=qn7nOwdj">科学上网</a></li>
+    
+    <li>
+    <div id="dark">
+        
+        <form action="//www.google.com/search" method="get" accept-charset="UTF-8" id="search">
+
+            <input type="hidden" name="sitesearch" value="https://ningyu1.github.io" />
+            <input type="text" name="q" results="0" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+</ul>
+
+</header>
+
+<div id="toload">
+
+    <div id="content" class="inner">
+        
+<article class="post">
+    <h2 class="title">Spring Cloud学习-Eureka、Ribbon和Feign</h2>
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-09-08T09:09:36.000&#43;00:00' itemprop="datePublished">2017-09-08</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/spring-cloud">Spring Cloud</a>
+
+<a href="https://ningyu1.github.io/site/tags/eureka">Eureka</a>
+
+<a href="https://ningyu1.github.io/site/tags/ribbon">Ribbon</a>
+
+<a href="https://ningyu1.github.io/site/tags/feign">Feign</a>
+
+
+</div>
+    </div>
+    <div class="entry-content">
+
+<h1 id="前沿">前沿</h1>
+
+<p>这篇文章比较适合入门，对于spring cloud生态的成员有一个大致的了解，其实spring cloud生态将netflix的产品进行了很好的整合，netflix早几年就在服务治理这块有很深入的研究，出品了很多服务治理的工具hystrix就是很有名的一个，具体可以查看：<a href="https://github.com/netflix">https://github.com/netflix</a>，刚好在微服务盛行的年代服务治理是必不可少的一环，现在在微服务开发套件这块常用也就是下面这两种选择：</p>
+
+<ol>
+<li>spring cloud套件，成熟上手快</li>
+<li>自建微服务架构
+
+<ol>
+<li>UCM，统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。</li>
+<li>RPC，阿里的Dubbo、点评的Pigeon，当当改的DubboX，grpc，等等很多开源的，还有很多公司自研的。</li>
+<li>服务治理，netflix的hystrix老牌的功能强大的服务治理工具，有熔断、降级等功能，很多公司会结合监控套件开发自己的服务治理工具。</li>
+<li>开发框架（rpc、restful这个一般公司都有自研的开发框架）</li>
+<li>注册中心（zookeeper、redis、Consul、SmartStack、Eureka，其中一些已经是spring cloud生态的一员了）。</li>
+<li>网关，restful的使用nginx+lua，这也是openAPI网关常用的手段</li>
+<li>负载均衡，这个结合选用的rpc框架来选择。一般rpc框架都有负载均衡的功能。</li>
+<li>服务治理熔断，使用hystrix（也已经是spring cloud生态的一员了）</li>
+<li>监控，使用pinpoint、点评的cat、等其他开源的APM工具</li>
+<li>DevOPS，持续交付一般也是自己构架的，采用jenkins打包docker镜像，使用docker生态的工具构建容器化发布平台。</li>
+</ol></li>
+</ol>
+
+<p>下面文章转自：<a href="https://www.jianshu.com/p/0aef3724e6bc">https://www.jianshu.com/p/0aef3724e6bc</a>
+作者：@杜琪</p>
+
+<h2 id="talk-is-cheap-show-me-the-code-书上得来终觉浅-绝知此事要躬行-在自己真正实现的过程中-会遇到很多莫名其妙的问题-而正是在解决这些问题的过程中-你会发现自己之前思维的盲点">Talk is cheap，show me the code ， 书上得来终觉浅，绝知此事要躬行。在自己真正实现的过程中，会遇到很多莫名其妙的问题，而正是在解决这些问题的过程中，你会发现自己之前思维的盲点。</h2>
+
+<h2 id="引子">引子</h2>
+
+<p>看完《微服务设计》后，算是补上了自己在服务化这块的理论知识，在业界，一般有两种微服务的实践方法：基于dubbo的微服务架构、基于Spring Cloud的微服务架构。从概念上来讲，Dubbo和Spring Cloud并不能放在一起对比，因为Dubbo仅仅是一个RPC框架，实现Java程序的远程调用，实施服务化的中间件则需要自己开发；而Spring Cloud则是实施微服务的一系列套件，包括：服务注册与发现、断路器、服务状态监控、配置管理、智能路由、一次性令牌、全局锁、分布式会话管理、集群状态管理等。</p>
+
+<p>在有赞，我们基于Dubbo实施服务化，刚开始是基于ZooKeeper进行服务注册与发现，现在已经转成使用Etcd。我这次学习Spring Cloud，则是想成体系得学习下微服务架构的实现，也许能够对基于Dubbo实施微服务架构有所借鉴。</p>
+
+<p>Spring Cloud下有很多工程：</p>
+
+<ul>
+<li>Spring Cloud Config：依靠git仓库实现的中心化配置管理。配置资源可以映射到Spring的不同开发环境中，但是也可以使用在非Spring应用中。</li>
+<li>Spring Cloud Netflix：不同的Netflix OSS组件的集合：Eureka、Hystrix、Zuul、Archaius等。</li>
+<li>Spring Cloud Bus：事件总线，利用分布式消息将多个服务连接起来。非常适合在集群中传播状态的改变事件（例如：配置变更事件）</li>
+<li>Spring Cloud Consul：服务发现和配置管理，由Hashicorp团队开发。</li>
+</ul>
+
+<p>我决定先从Spring Cloud Netflix看起，它提供了如下的功能特性：</p>
+
+<ul>
+<li>服务发现：Eureka-server实例作为服务提供者，可以注册到服务注册中心，Eureka客户端可以通过Spring管理的bean发现实例；</li>
+<li>服务发现：嵌套式的Eureka服务可以通过声明式的Java配置文件创建；</li>
+<li>断路器：利用注解，可以创建一个简单的Hystrix客户端；</li>
+<li>断路器：通过Java配置文件可以创建内嵌的Hystrix控制面板；</li>
+<li>声明式REST客户端：使用Feign可以创建声明式、模板化的HTTP客户端；</li>
+<li>客户端负载均衡器：Ribbon</li>
+<li>路由器和过滤器：Zuul可以在微服务架构中提供路由功能、身份验证、服务迁移、金丝雀发布等功能。</li>
+</ul>
+
+<p>本文计划利用Eureka实现一个简答的服务注册于发现的例子，需要创建三个角色：服务注册中心、服务提供者、服务消费者。</p>
+
+<h2 id="实践">实践</h2>
+
+<h3 id="1-服务注册中心">1. 服务注册中心</h3>
+
+<p>在IDEA中创建一个Spring Cloud工程，引入Eureka-Server包，pom文件整体如下：</p>
+
+<pre><code class="language-java">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;org.example.springcloud&lt;/groupId&gt;
+    &lt;artifactId&gt;service-register&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+
+    &lt;!-- spring boot的parent 配置文件，有大部分spring boot需要用的Jar包 --&gt;
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;
+    &lt;/parent&gt;
+
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+    &lt;/properties&gt;
+
+    &lt;!-- spring boot的maven打包插件 --&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+    &lt;dependencies&gt;
+        &lt;!-- eureka-server --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-eureka-server&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- spring boot test--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;Camden.SR5&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+&lt;/project&gt;
+</code></pre>
+
+<p>在src/main/java包下创建一个名为hello的包，然后创建<code>EurekaServiceRegisterApplication</code>类，并用@EnableEurekaServer和@SpringBootApplication两个注解修饰，后者是Spring Boot应用都需要用的，这里不作过多解释；@EnableEurekaServer注解的作用是触发Spring Boot的自动配置机制，由于我们之前在pom文件中导入了eureka-server，spring boot会在容器中创建对应的bean。EurekaServiceRegisterApplication的代码如下：</p>
+
+<pre><code class="language-java">package hello;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/2
+ * Time: 20:02
+ */
+
+@EnableEurekaServer //通过@EnableEurekaServer启动一个服务注册中心给其他应用使用
+@SpringBootApplication
+public class EurekaServiceRegisterApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(EurekaServiceRegisterApplication.class, args);
+    }
+}
+</code></pre>
+
+<p>在application.properties中还需要增加如下配置，才能创建一个真正可以使用的服务注册中心。</p>
+
+<pre><code>#注册服务的端口号
+server.port=8761
+
+#是否需要注册到注册中心，因为该项目本身作为服务注册中心，所以为false
+eureka.client.register-with-eureka=false
+#是否需要从注册中心获取服务列表，原因同上，为false
+eureka.client.fetch-registry=false
+#注册服务器的地址：服务提供者和服务消费者都要依赖这个地址
+eureka.client.service-url.defaultZone=http://localhost:${server.port}/eureka
+
+logging.level.com.netflix.eureka=OFF
+logging.level.com.netflix.discovery=OFF
+</code></pre>
+
+<p>启动注册服务，并访问：<code>http://localhost:8761</code>，就可以看到如下界面。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/spring-cloud/1.png" alt="eureka" /></p>
+
+<p>服务注册中心后台</p>
+
+<h3 id="2-服务提供者">2. 服务提供者</h3>
+
+<p>创建一个Spring Boot工程，代表服务提供者，该服务提供者会暴露一个加法服务，接受客户端传来的加数和被加数，并返回两者的和。</p>
+
+<p>工程的pom文件内容如下：</p>
+
+<pre><code class="language-java">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;org.example.springcloud&lt;/groupId&gt;
+    &lt;artifactId&gt;service-client&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;
+        &lt;relativePath/&gt; 
+    &lt;/parent&gt;
+
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+    &lt;/properties&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-eureka&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-eureka-server&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;Camden.SR5&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+&lt;/project&gt;
+</code></pre>
+
+<p>其中的关键在于spring-cloud-starter-eureka这个Jar包，其中包含了eureka的客户端实现。</p>
+
+<p>在src/main/java/hello下创建工程的主类EurekaServerProducerApplication，使用@EnableDiscoveryClient注解修饰，该注解在服务启动的时候，可以触发服务注册的过程，向配置文件中指定的服务注册中心（Eureka-Server）的地址注册自己提供的服务。EurekaServerProducerApplication的源码如下：</p>
+
+<pre><code class="language-java">package hello;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/2
+ * Time: 20:34
+ */
+@EnableDiscoveryClient
+@SpringBootApplication
+public class EurekaServerProducerApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(EurekaServerProducerApplication.class, args);
+    }
+
+}
+</code></pre>
+
+<p>配置文件的内容如下：</p>
+
+<pre><code>#服务提供者的名字
+spring.application.name=compute-service
+
+#服务提供者的端口号
+server.port=8888
+
+#服务注册中心的地址
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+</code></pre>
+
+<p>服务提供者的基本框架搭好后，需要实现服务的具体内容，在ServiceInstanceRestController类中实现，它的具体代码如下：</p>
+
+<pre><code class="language-java">package hello;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/2
+ * Time: 20:36
+ */
+@RestController
+public class ServiceInstanceRestController {
+
+    private static final Logger logger = LoggerFactory.getLogger(ServiceInstanceRestController.class);
+
+    @Autowired
+    private DiscoveryClient discoveryClient; //服务发现客户端
+
+    @GetMapping(value = &quot;/add&quot;)
+    public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
+        ServiceInstance instance = discoveryClient.getLocalServiceInstance();
+        Integer r = a + b;
+        logger.info(&quot;/add, host:&quot; + instance.getHost() + &quot;, service_id:&quot; + instance.getServiceId() + &quot;, result:&quot; + r);
+        return r;
+    }
+}
+</code></pre>
+
+<p>先启动服务注册中心的工程，然后再启动服务提供者，在访问：<code>localhost:8761</code>，如下图所示，服务提供者已经注册到服务注册中心啦。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/spring-cloud/2.png" alt="eureka2" /></p>
+
+<p>服务提供者注册到服务注册中心</p>
+
+<p>在Spring Cloud Netflix中，使用Ribbon实现客户端负载均衡，使用Feign实现声明式HTTP客户端调用——即写得像本地函数调用一样。</p>
+
+<h3 id="3-服务消费者-ribbon">3. 服务消费者-Ribbon</h3>
+
+<p>创建一个Spring boot工程，引入ribbon和eureka，pom文件内容如下：</p>
+
+<pre><code class="language-java">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;org.example.springcloud&lt;/groupId&gt;
+    &lt;artifactId&gt;serviceconsumer&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;
+    &lt;/parent&gt;
+
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+    &lt;/properties&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+    &lt;dependencies&gt;
+        &lt;!-- 客户端负载均衡 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-ribbon&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- eureka客户端 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-eureka&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- spring boot实现Java Web服务--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;Camden.SR5&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+&lt;/project&gt;
+</code></pre>
+
+<p>创建EurekaConsumerApplication类，定义REST客户端实例，代码如下：</p>
+
+<pre><code class="language-java">package hello;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/2
+ * Time: 22:55
+ */
+@EnableDiscoveryClient //开启服务发现的能力
+@SpringBootApplication
+public class EurekaConsumerApplication {
+
+    @Bean //定义REST客户端，RestTemplate实例
+    @LoadBalanced //开启负债均衡的能力
+    RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(EurekaConsumerApplication.class, args);
+    }
+}
+</code></pre>
+
+<p>application.properties中定义了服务注册中心的地址、消费者服务的端口号、消费者服务的名称这些内容：</p>
+
+<pre><code>#应用名称
+spring.application.name=ribbon-consumer
+
+#端口号
+server.port=9000
+
+#注册中心的地址
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+</code></pre>
+
+<p>消费者服务的入口为：ConsumerController，我们通过这个实例进行测试。消费者服务启动过程中，会从服务注册中心中拉最新的服务列表，当浏览器触发对应的请求，就会根据COMPUTE-SERVICE查找服务提供者的IP和端口号，然后发起调用。</p>
+
+<pre><code class="language-java">package hello;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/2
+ * Time: 22:58
+ */
+@RestController
+public class ConsumerController {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @GetMapping(value = &quot;/add&quot;)
+    public String add() {
+        return restTemplate.getForEntity(&quot;http://COMPUTE-SERVICE/add?a=10&amp;b=20&quot;, String.class).getBody();
+    }
+}
+</code></pre>
+
+<p>首先启动服务注册中心，第二分别启动两个服务提供者（IP相同、端口不同即可），然后启动服务消费者。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/spring-cloud/3.png" alt="eureka3" /></p>
+
+<p>两个服务提供者</p>
+
+<p>在浏览器里访问<code>localhost:9000/add</code>两次，可以看到请求有时候会在8888端口的服务，有时候会到8889的服务。具体背后选择的原理，还有待后续研究。</p>
+
+<h3 id="4-服务消费者-feign">4. 服务消费者-Feign</h3>
+
+<p>使用类似<code>restTemplate.getForEntity(&quot;http://COMPUTE-SERVICE/add?a=10&amp;b=20&quot;,String.class).getBody()</code>这样的语句进行服务间调用并非不可以，只是我们在服务化的过程中，希望跨服务调用能够看起来像本地调用，这也是我理解的Feign的使用场景。</p>
+
+<p>创建一个spring boot工程，该工程的pom文件与上一节的类似，只是把ribbon的依赖换为feign的即可，代码如下：</p>
+
+<pre><code class="language-java">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;org.example.springcloud&lt;/groupId&gt;
+    &lt;artifactId&gt;serviceconsumer&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;
+    &lt;/parent&gt;
+
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+    &lt;/properties&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+    &lt;dependencies&gt;
+        &lt;!-- Feign实现声明式HTTP客户端 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-feign&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- eureka客户端 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-eureka&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- spring boot实现Java Web服务--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;Camden.SR5&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+&lt;/project&gt;
+</code></pre>
+
+<p>首先创建应用程序启动类：EurekaConsumerApplication，代码如下：</p>
+
+<pre><code class="language-java">package hello;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
+
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/19
+ * Time: 16:59
+ */
+@EnableDiscoveryClient //用于启动服务发现功能
+@EnableFeignClients //用于启动Fegin功能
+@SpringBootApplication
+public class EurekaConsumerApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(EurekaConsumerApplication.class);
+    }
+}
+</code></pre>
+
+<p>然后定义远程调用的接口，在hello包下创建depend包，然后创建ComputeClient接口，使用@FeignClient(&ldquo;COMPUTE-SERVICE&rdquo;)注解修饰，COMPUTE-SERVICE就是服务提供者的名称，然后定义要使用的服务，代码如下：</p>
+
+<pre><code class="language-java">package hello.depend;
+
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/19
+ * Time: 17:02
+ */
+@FeignClient(&quot;COMPUTE-SERVICE&quot;)
+public interface ComputeClient {
+
+    @RequestMapping(method = RequestMethod.GET, value = &quot;/add&quot;)
+    Integer add(@RequestParam(value = &quot;a&quot;) Integer a, @RequestParam(value = &quot;b&quot;) Integer b);
+}
+</code></pre>
+
+<p>在ConsumerController中，像引入普通的spring bean一样引入ComputeClient对象，其他的和Ribbon的类似。</p>
+
+<pre><code class="language-java">package hello;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import hello.depend.ComputeClient;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/19
+ * Time: 17:06
+ */
+@RestController
+public class ConsumerController {
+
+    @Autowired
+    private ComputeClient computeClient;
+
+    @RequestMapping(value = &quot;/add&quot;, method = RequestMethod.GET)
+    public Integer add() {
+        return computeClient.add(10, 20);
+    }
+}
+</code></pre>
+
+<p>application.properties的内容如下：</p>
+
+<pre><code>#应用名称
+spring.application.name=fegin-consumer
+
+#端口号
+server.port=9000
+
+#注册中心的地址
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+</code></pre>
+
+<p>启动fegin消费者，访问<code>localhost:9000/add</code>，也可以看到服务提供者已经收到了消费者发来的请求。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/spring-cloud/4.png" alt="log1" /></p>
+
+<p>请求到达服务提供者1</p>
+
+<p><img src="https://ningyu1.github.io/site/img/spring-cloud/5.png" alt="log2" /></p>
+
+<p>请求到达服务提供者2</p>
+
+<p>源码下载</p>
+
+<ul>
+<li><a href="https://github.com/duqicauc/eureka-register/tree/master">服务注册中心(Eureka服务端)</a></li>
+<li><a href="https://github.com/duqicauc/eureka-producer/tree/master">服务提供者(Eureka客户端)</a></li>
+<li><a href="https://github.com/duqicauc/eureka-consumer-ribbon/tree/master">服务消费者-Ribbon(Eureka客户端)</a></li>
+<li><a href="https://github.com/duqicauc/eureka-consumer-feign/tree/master">服务消费者-Feign(Eureka客户端)</a></li>
+</ul>
+
+<p>参考资料</p>
+
+<ul>
+<li><a href="http://blog.didispace.com/springcloud2/">Spring Cloud构建微服务架构（一）服务注册与发现</a></li>
+<li><a href="http://www.cnblogs.com/skyblog/p/5133752.html">Spring Cloud实现服务注册于发现</a></li>
+<li><a href="http://cloud.spring.io/spring-cloud-netflix/">spring-cloud-netflix官网</a></li>
+<li><a href="http://projects.spring.io/spring-cloud/">spring cloud 官网</a></li>
+<li><a href="http://blog.csdn.net/neosmith/article/details/52449921">使用Spring Cloud Feign作为HTTP客户端调用远程HTTP服务</a></li>
+</ul>
+
+<p>作者：杜琪
+链接：<a href="http://www.jianshu.com/p/0aef3724e6bc">http://www.jianshu.com/p/0aef3724e6bc</a>
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</div>
+
+<div class="meta">
+    
+</div>
+</article>
+
+
+
+	
+
+
+
+<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=ningyu1"></script>
+</div>
+
+
+
+    
+     <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = 'https:\/\/ningyu1.github.io\/site\/post\/23-spring-cloud\/';
+            this.page.identifier = 'https:\/\/ningyu1.github.io\/site\/post\/23-spring-cloud\/';
+        };
+
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//ningyu.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+     </script>
+    
+
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2024
+    
+    凝雨-Yun
+    . Powered by <a href="http://gohugo.io" target="_blank">Hugo</a> |
+    Theme is <a href="https://github.com/wd/hugo-fabric">hugo-fabric</a>
+</div>
+
+    </footer>
+    <script src="https://ningyu1.github.io/site/js/fabric.js"></script>
+
+
+</div>
+</div>
+<script src="https://ningyu1.github.io/site/js/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+ 
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery);
+ 
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/spring/</link>
+    <description>Recent content in Spring on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Aug 2017 16:40:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring框架-事务管理注意事项</title>
+      <link>https://ningyu1.github.io/site/post/16-spring-transaction/</link>
+      <pubDate>Sat, 26 Aug 2017 16:40:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/16-spring-transaction/</guid>
+      <description>常见事务问题  事务不起作用  可能是配置不起效，如扫描问题  事务自动提交了（批量操作中）  可能是在没事务的情况下，利用了数据库的隐式提交   事务配置说明 通常情况下我们的Spring Component扫描分为两部分，一部分是Spring Servlet(MVC)，一部分是其他Context Config的内容。主要扫描Annotation定义，包括@Controller、@Autowired、@Resource、@Service、@Component、@Repository等。
+Spring Servlet部分的扫描配置可以通过web.xml中DispatchServlet的init-param节点配置确定。
+Context Config部分的扫描配置为非以上配置的其他Spring配置文件确定。
+为了能够使用事务，需要防止因Spring Servlet的扫描导致@Service事务配置失效。可以调整DispatchServlet中的配置文件，排除对@Service的扫描。
+配置如下：
+&amp;lt;context:component-scan base-package=&amp;quot;com.jiuyescm.xxx&amp;quot;&amp;gt; &amp;lt;context:exclude-filter type=&amp;quot;annotation&amp;quot; expression=&amp;quot;org.springframework.stereotype.Service&amp;quot; /&amp;gt; &amp;lt;/context:component-scan&amp;gt;  如何通过日志判断事务是否已经被Spring所管理？  在logback或者log4j中对org.springframework.aop、org.springframework.transaction、org.springframework.jdbc、org.mybatis.spring.transaction进行DEBUG级别日志跟踪（开发期） 查看日志中是否有事务管理、开启、提交、回滚等字符，如：
+DEBUG o.m.spring.transaction.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@28cfe912] will be managed by Spring  没有被控制的时候，日志如下：
+DEBUG o.m.spring.transaction.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@28cfe912] will not be managed by Spring   如何通过程序判断是否存在事务？ boolean flag = TransactionSynchronizationManager.isActualTransactionActive();  返回true，则在事务控制下，否则不在控制下</description>
+    </item>
+    
+  </channel>
+</rss>

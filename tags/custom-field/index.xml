@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Custom Field on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/custom-field/</link>
+    <description>Recent content in Custom Field on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Jan 2019 15:50:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/custom-field/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>谈一谈自定义字段实现的几种方式</title>
+      <link>https://ningyu1.github.io/site/post/108-custom-field/</link>
+      <pubDate>Thu, 03 Jan 2019 15:50:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/108-custom-field/</guid>
+      <description>我们经常会遇到项目中很多对表单进行自定义，比如说saas应用针对租户自定义表单字段名称，自定义列表名称。 还有更高级自定义，比如说自定义的模块，表单、字段、字段类型、流程等自定义。
+提供自定义也是一个系统扩展性的体现，自定义功能的强大自然能适应更多的用户场景。
+接下来我们就看看自定义的实现方案通常都有哪些方式。
+常见的自定义字段的实现方式分为三种由简到繁，扩展性、复杂性也是逐渐增强的，每个方式各有优劣解决的场景也有所不同，具体往下看。
+列式存储自定义字段（扩展字段 ext field） 模型如下：
+   ID Name Ext1(性别) Ext2(地区) Ext3(QQ) Ext4(WECHAT)     1 韩梅梅 女 Shanghai 10000    2 李磊 男 Beijing  abc001    优点：
+ 实现成本最低 可以直接表连接进行检索  缺点：
+ 扩展能力一般，有上限 浪费资源，比如说有20个扩展字段，一行只用到2个，其余的18个都要存储null来浪费空间。 能解决的场景比较有限。  EAV模型 Entity-Attribute-Value（实体、属性、值） 对象属性存储在一个有三列的表中：实体，属性和值（entity，attribute，value)。实体（entiry）表示所描述的数据项，例如一个产品或汽车。属性（attribute）表示描述实体的数据，例如一个产品将有价格，重量和许多其他属性。值（value）是属性的值，例如产品可能有一个9.99英镑的价格属性。此外值可以基于数据类型进行分割，所以可将EAV表分为字符串、整数、日期和长文本（long text）表。依据数据类型分割是为了支持索引,使得数据库执行可能的类型检查验证。
+EAV表模型带来了数据的灵活性，是的增加对象的属性不需要用增加数据库的字段，有很高的灵活性。但是EAV表也有较大的性能问题。通常，EAV表带来的一个问题是当查找多个字段时，需要进行关联查询join,这样的查询效率比较低。为了提高查询效率，我们可以对商品属性表进行矩阵转积处理(pivoting)。
+一种方式是在代码中读出后存入cache中,当修改attributes表后触发更新cache或用cron定期更新;另一种方法是将关联信息组成一张大的临时表，数据的更新可以用数据库的触发器触发更新。由于大量数据在代码中进行处理会带来了DB的额外IO和服务器性能问题。当使用EAV表模型时，InnoDB比MYISAM的性能要好不少。
+ps. 我们常用的行模型（纵向）存储就是EAV模型实现的一种方式。
+模型如下：
+人员表（Entity）
+   ID Name     1 韩梅梅   2 李磊    扩展映射（Entities）</description>
+    </item>
+    
+  </channel>
+</rss>

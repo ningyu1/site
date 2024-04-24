@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rpc on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/rpc/</link>
+    <description>Recent content in Rpc on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Dec 2017 13:58:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/rpc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring Cloud Netflix架构浅析</title>
+      <link>https://ningyu1.github.io/site/post/45-spring-cloud-netflix/</link>
+      <pubDate>Mon, 25 Dec 2017 13:58:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/45-spring-cloud-netflix/</guid>
+      <description>点评 这篇文章比较适合入门，对于spring cloud生态的成员有一个大致的了解，其实spring cloud生态将netflix的产品进行了很好的整合，netflix早几年就在服务治理这块有很深入的研究，出品了很多服务治理的工具hystrix就是很有名的一个，具体可以查看：https://github.com/netflix，刚好在微服务盛行的年代服务治理是必不可少的一环，现在在微服务开发套件这块常用也就是下面这两种选择：
+ spring cloud套件，成熟上手快 自建微服务架构  UCM，统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。 RPC，阿里的Dubbo、点评的Pigeon，当当改的DubboX，grpc，等等很多开源的，还有很多公司自研的。 服务治理，netflix的hystrix老牌的功能强大的服务治理工具，有熔断、降级等功能，很多公司会结合监控套件开发自己的服务治理工具。 开发框架（rpc、restful这个一般公司都有自研的开发框架） 注册中心（zookeeper、redis、Consul、SmartStack、Eureka，其中一些已经是spring cloud生态的一员了）。 网关，restful的使用nginx+lua，这也是openAPI网关常用的手段 负载均衡，这个结合选用的rpc框架来选择。一般rpc框架都有负载均衡的功能。 服务治理熔断，使用hystrix（也已经是spring cloud生态的一员了） 监控，使用pinpoint、点评的cat、等其他开源的APM工具 DevOPS，持续交付一般也是自己构架的，采用jenkins打包docker镜像，使用docker生态的工具构建容器化发布平台。   下面文章转自：https://my.oschina.net/u/3747963/blog/1592777 作者：@海岸线的曙光
+微服务框架Spring Boot+Spring Cloud Spring Cloud是基于Spring Boot的一整套实现微服务的框架，可以说，Spring Boot作为框架，Spring Cloud作为微服务，一起构成了一种不可忽视的、新生的框架体系。它提供了微服务开发所需的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态管理等组件，方便易用。Spring Cloud包含了非常多的子框架，其中，Spring Cloud Netflix是其中一套框架，它主要提供的模块包括：服务发现、断路器和监控、智能路由、客户端负载均衡等。
+Spring Cloud Netflix组件以及部署  Eureka，服务注册和发现，它提供了一个服务注册中心、服务发现的客户端，还有一个方便的查看所有注册的服务的界面。 所有的服务使用Eureka的服务发现客户端来将自己注册到Eureka的服务器上。 Zuul，网关，所有的客户端请求通过这个网关访问后台的服务。他可以使用一定的路由配置来判断某一个URL由哪个服务来处理。并从Eureka获取注册的服务来转发请求。 Ribbon，即负载均衡，Zuul网关将一个请求发送给某一个服务的应用的时候，如果一个服务启动了多个实例，就会通过Ribbon来通过一定的负载均衡策略来发送给某一个服务实例。 Feign，服务客户端，服务之间如果需要相互访问，可以使用RestTemplate，也可以使用Feign客户端访问。它默认会使用Ribbon来实现负载均衡。 Hystrix，监控和断路器。我们只需要在服务接口上添加Hystrix标签，就可以实现对这个接口的监控和断路器功能。 Hystrix Dashboard，监控面板，他提供了一个界面，可以监控各个服务上的服务调用所消耗的时间等。 Turbine，监控聚合，使用Hystrix监控，我们需要打开每一个服务实例的监控信息来查看。而Turbine可以帮助我们把所有的服务实例的监控信息聚合到一个地方统一查看。  Spring Cloud Netflix组件开发 可以参考其中文文档：https://springcloud.cc/spring-cloud-netflix.html
+ 服务注册与监控中心：  @SpringBootApplication @EnableEurekaServer @EnableHystrixDashboard public class ApplicationRegistry { public static void main(String[] args) { new SpringApplicationBuilder(Application.</description>
+    </item>
+    
+    <item>
+      <title>Dubbo本地调试最优方式，本地Server端调用本地Client端</title>
+      <link>https://ningyu1.github.io/site/post/09-dubbo-debug/</link>
+      <pubDate>Tue, 20 Dec 2016 14:32:41 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/09-dubbo-debug/</guid>
+      <description>分布式应用的调试总是比常规项目开发调试起来要麻烦很多。 我们还在为搞不清自己请求的服务是本地服务还是服务器服务而苦恼吗？ 我们还在为配置文件被修改导致服务器上版本服务不正常而苦恼吗？ 接下来我介绍一个Dubbo在多环境调试的最优调试方式，在介绍之前先说一下我们现在的调试方式。
+不好的方式（现在的方式）： 现在本地调试，需要修改DubboServer.xml和DubboClient.xml配置文件
+将文件中的 dubbo:registry protocol=&amp;quot;zookeeper&amp;quot; address=&amp;quot;${dubbo.registry}&amp;quot; /&amp;gt; 修改为 &amp;lt;dubbo:registry address=&amp;quot;N/A&amp;quot; /&amp;gt;  这种方式的弊端：
+ 开发总是不注意将修改为address=&amp;ldquo;N/A&amp;rdquo;的文件提交到svn，在其他环境打包run起来，总是没有Export Service。 文件经常被改来改去容易冲突，冲突解决不好容易丢失配置。 无法很好的将本地调试和各环境的相互依赖分离开  最优的方式：
+ 创建一个properties文件，名字可以随便命名，我命名为：dubbo-local.properties，这个文件可以放在任何地方。该文件不提交到svn，我建议不要放在工程目录里以避免自己提交了都不知道，建议放在用户目录下${user.home}(不知道用户目录的自己去 度娘、谷哥、必硬) dubbo-local.properties文件内容如下：
+&amp;lt;!--注册中心变量 --&amp;gt; dubbo.registry=N/A &amp;lt;!--以下是你们DubboServer.xml中配置的需要Export Service，这里我建议你有几个要Export Service都配置在这里，后面是请求本地的地址 地址格式：dubbo://ip:port，这里需要注意的是，需要修改为自己dubbo服务的端口 --&amp;gt; com.domain.imprest.api.IImprestRecordService=dubbo://localhost:20812 com.domain.imprest.api.IImprestRequestService=dubbo://localhost:20812 com.domain.imprest.api.IImprestTrackService=dubbo://localhost:20812 com.domain.imprest.api.IImprestWriteoffService=dubbo://localhost:20812 com.domain.imprest.api.IImprestIOCollectService=dubbo://localhost:20812 com.domain.imprest.api.ISystemService=dubbo://localhost:20812 com.domain.imprest.api.IImprestDeptService=dubbo://localhost:20812  接下来启动你的Dubbo服务，在启动之前需要添加一下启动参数
+  参数：-Ddubbo.properties.file 值：dubbo-local.properties文件的本地地址，绝对地址   接下来启动你的web服务，在启动之前需要添加一下启动参数  参数：-Ddubbo.resolve.file 值：dubbo-local.properties文件的本地地址，绝对地址  ps.当你不想连接本地服务调试时，只需将启动参数去掉即可，无需修改配置文件，让配置文件一直保持清爽干净。 以后你就可以安心的本地调试你的程序了，再也不会因为服务没有Export出去、配置文件被修改而焦头烂额。
+Dubbo Plugin for Apache JMeter Dubbo Plugin for Apache JMeter是用来在Jmeter里更加方便的测试Dubbo接口而开发的插件，马上使用
+项目地址 github: jmeter-plugin-dubbo</description>
+    </item>
+    
+  </channel>
+</rss>

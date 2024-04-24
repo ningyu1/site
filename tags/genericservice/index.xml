@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Genericservice on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/genericservice/</link>
+    <description>Recent content in Genericservice on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Mar 2018 15:31:53 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/genericservice/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Json序列化、反序列化支持泛型，Dubbo对泛型参数方法进行反射调用</title>
+      <link>https://ningyu1.github.io/site/post/69-java-reflect/</link>
+      <pubDate>Tue, 13 Mar 2018 15:31:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/69-java-reflect/</guid>
+      <description>最近在对Dubbo接口进行反射调用时，遇到了参数类型较为复杂的情况下，使用反射方式无法调用的问题。
+由于Dubbo使用了proxy代理对象，因此在反射上调用是存在一定的问题，从反射对象上获取的方法和参数类型可能会导致无法正常的调用。
+首先先让我们看一个复杂参数的接口定义
+public String testMethod(Map&amp;lt;String,ResourceVo&amp;gt; map, List&amp;lt;Map&amp;lt;String,ResourceVo&amp;gt;&amp;gt; list) throws BizException;  Gson反序列化复杂类型 在对参数进行反序列化时，内部的类型容易丢失，我们可以使用gson的Type进行反序列化得到正确的参数值，让我们看一下gson反序列化的两个方法
+ /** * This method deserializes the specified Json into an object of the specified class. It is not * suitable to use if the specified class is a generic type since it will not have the generic * type information because of the Type Erasure feature of Java. Therefore, this method should not * be used if the desired type is a generic type.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Numerical Result Out of Range on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/numerical-result-out-of-range/</link>
+    <description>Recent content in Numerical Result Out of Range on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Aug 2017 10:30:34 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/numerical-result-out-of-range/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Trouble Shooting —— Redis AOF rewrite错误导致Redis被Block住</title>
+      <link>https://ningyu1.github.io/site/post/11-redis-aof-pit/</link>
+      <pubDate>Tue, 15 Aug 2017 10:30:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/11-redis-aof-pit/</guid>
+      <description>问题现状： redis-cli 上去执行任何命令返回：connnection reset by peer
+重启的应用无法连接到redis，已经建立连接的应用可以正常使用。
+分析过程： 第一反应查看redis 日志，如下：
+1838:M 16 Aug 01:07:39.319 # Error opening /setting AOF rewrite IPC pipes: Numerical result out of range 1838:M 16 Aug 01:07:39.319 * Starting automatic rewriting of AOF on 110% growth 1838:M 16 Aug 01:07:39.319 # Error opening /setting AOF rewrite IPC pipes: Numerical result out of range 1838:M 16 Aug 01:07:39.419 * Starting automatic rewriting of AOF on 110% growth 1838:M 16 Aug 01:07:39.</description>
+    </item>
+    
+  </channel>
+</rss>

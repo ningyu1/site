@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ignore on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/ignore/</link>
+    <description>Recent content in Ignore on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Nov 2016 10:30:34 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/ignore/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SVN设置文件忽略的多种方法</title>
+      <link>https://ningyu1.github.io/site/post/10-svn-ignore/</link>
+      <pubDate>Sat, 26 Nov 2016 10:30:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/10-svn-ignore/</guid>
+      <description>方法一： 在svn客户端（小乌龟），想设置忽略提交.class文件，通过 properties -&amp;gt; New -&amp;gt; Other 添加一个忽略的属性，，还是不行：部分屏蔽了，部分class还是在列表中
+方法二： 在svn客户端（小乌龟）：Settings -&amp;gt; General -&amp;gt; Global ignore pattern 添加了一个 *.class就行了
+方法三： 在 Eclipse 中点击菜单 window -&amp;gt; Preferences -&amp;gt; Team -&amp;gt; Ignored Resources
+点击 Add Pattern… 按钮添加你要忽略的文件或目录
+方法四： 在Eclipse的导航视图中，选中尚未加入版本控制的文件或目录，右键 -&amp;gt; Team -&amp;gt; 添加至SVN:ignore
+方法五： 在资源管理器中，右键一个未加入版本控制文件或目录，并从弹出菜单选择TortoiseSVN -&amp;gt; Add to Ignore List，会出现一个子菜单，允许你仅选择该文件或者所有具有相同后缀的文件。
+如果你想从忽略列表中移除一个或多个条目，右击这些条目，选择TortoiseSVN -&amp;gt; 从忽略列表删除。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1851 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/</link>
+    <description>Recent content in Tags on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Oct 2017 13:29:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Abandon Connection</title>
+      <link>https://ningyu1.github.io/site/tags/abandon-connection/</link>
+      <pubDate>Thu, 26 Oct 2017 13:29:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/abandon-connection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Activemq</title>
+      <link>https://ningyu1.github.io/site/tags/activemq/</link>
+      <pubDate>Tue, 30 Oct 2018 18:40:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/activemq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Activemq Slow Speed</title>
+      <link>https://ningyu1.github.io/site/tags/activemq-slow-speed/</link>
+      <pubDate>Wed, 09 May 2018 15:38:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/activemq-slow-speed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ajax跨域</title>
+      <link>https://ningyu1.github.io/site/tags/ajax%E8%B7%A8%E5%9F%9F/</link>
+      <pubDate>Wed, 27 Jun 2018 12:20:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/ajax%E8%B7%A8%E5%9F%9F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Already Mapped</title>
+      <link>https://ningyu1.github.io/site/tags/already-mapped/</link>
+      <pubDate>Thu, 02 Nov 2017 15:52:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/already-mapped/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular</title>
+      <link>https://ningyu1.github.io/site/tags/angular/</link>
+      <pubDate>Wed, 20 Sep 2017 11:57:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/angular/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Antpathmatcher</title>
+      <link>https://ningyu1.github.io/site/tags/antpathmatcher/</link>
+      <pubDate>Tue, 27 Feb 2018 16:15:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/antpathmatcher/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Aof</title>
+      <link>https://ningyu1.github.io/site/tags/aof/</link>
+      <pubDate>Mon, 09 Oct 2017 12:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/aof/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Aof Block</title>
+      <link>https://ningyu1.github.io/site/tags/aof-block/</link>
+      <pubDate>Mon, 09 Oct 2017 12:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/aof-block/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Aof Rewriting</title>
+      <link>https://ningyu1.github.io/site/tags/aof-rewriting/</link>
+      <pubDate>Tue, 15 Aug 2017 10:30:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/aof-rewriting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apache</title>
+      <link>https://ningyu1.github.io/site/tags/apache/</link>
+      <pubDate>Tue, 19 Sep 2017 13:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/apache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apm</title>
+      <link>https://ningyu1.github.io/site/tags/apm/</link>
+      <pubDate>Mon, 11 Dec 2017 10:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/apm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Asynchronous Aof Fsync Is Taking Too Long Disk Is Busywriting the Aof Buffer Without Waiting for Fsync to Complete This May Slow Down Redis</title>
+      <link>https://ningyu1.github.io/site/tags/asynchronous-aof-fsync-is-taking-too-long-disk-is-busywriting-the-aof-buffer-without-waiting-for-fsync-to-complete-this-may-slow-down-redis/</link>
+      <pubDate>Mon, 09 Oct 2017 12:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/asynchronous-aof-fsync-is-taking-too-long-disk-is-busywriting-the-aof-buffer-without-waiting-for-fsync-to-complete-this-may-slow-down-redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Atomikos</title>
+      <link>https://ningyu1.github.io/site/tags/atomikos/</link>
+      <pubDate>Thu, 02 Nov 2017 15:52:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/atomikos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Axios</title>
+      <link>https://ningyu1.github.io/site/tags/axios/</link>
+      <pubDate>Thu, 24 Aug 2017 10:51:30 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/axios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bad Gateway</title>
+      <link>https://ningyu1.github.io/site/tags/bad-gateway/</link>
+      <pubDate>Fri, 30 Jun 2017 18:36:44 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/bad-gateway/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Batch</title>
+      <link>https://ningyu1.github.io/site/tags/batch/</link>
+      <pubDate>Wed, 20 Feb 2019 14:34:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/batch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bbfreeze</title>
+      <link>https://ningyu1.github.io/site/tags/bbfreeze/</link>
+      <pubDate>Wed, 07 Feb 2018 11:57:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/bbfreeze/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Best Paper</title>
+      <link>https://ningyu1.github.io/site/tags/best-paper/</link>
+      <pubDate>Fri, 28 Dec 2018 17:38:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/best-paper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Branche</title>
+      <link>https://ningyu1.github.io/site/tags/branche/</link>
+      <pubDate>Tue, 20 Dec 2016 14:32:41 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/branche/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bsd</title>
+      <link>https://ningyu1.github.io/site/tags/bsd/</link>
+      <pubDate>Tue, 19 Sep 2017 13:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/bsd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Btrace</title>
+      <link>https://ningyu1.github.io/site/tags/btrace/</link>
+      <pubDate>Wed, 15 Nov 2017 11:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/btrace/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cache</title>
+      <link>https://ningyu1.github.io/site/tags/cache/</link>
+      <pubDate>Fri, 02 Jun 2017 14:06:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/cache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cannot Allocate Memory</title>
+      <link>https://ningyu1.github.io/site/tags/cannot-allocate-memory/</link>
+      <pubDate>Tue, 15 Aug 2017 10:30:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/cannot-allocate-memory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cant Rewrite Append Only File in Background</title>
+      <link>https://ningyu1.github.io/site/tags/cant-rewrite-append-only-file-in-background/</link>
+      <pubDate>Tue, 15 Aug 2017 10:30:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/cant-rewrite-append-only-file-in-background/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cant Start Redis Server. Check Logs for Details.</title>
+      <link>https://ningyu1.github.io/site/tags/cant-start-redis-server.-check-logs-for-details./</link>
+      <pubDate>Tue, 17 Jul 2018 18:11:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/cant-start-redis-server.-check-logs-for-details./</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cas</title>
+      <link>https://ningyu1.github.io/site/tags/cas/</link>
+      <pubDate>Fri, 23 Mar 2018 16:01:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/cas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cas Cluster</title>
+      <link>https://ningyu1.github.io/site/tags/cas-cluster/</link>
+      <pubDate>Fri, 26 Jan 2018 15:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/cas-cluster/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cas Server</title>
+      <link>https://ningyu1.github.io/site/tags/cas-server/</link>
+      <pubDate>Fri, 26 Jan 2018 15:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/cas-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cat</title>
+      <link>https://ningyu1.github.io/site/tags/cat/</link>
+      <pubDate>Mon, 11 Dec 2017 10:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/cat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cert</title>
+      <link>https://ningyu1.github.io/site/tags/cert/</link>
+      <pubDate>Fri, 19 Jan 2018 16:25:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/cert/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Charles</title>
+      <link>https://ningyu1.github.io/site/tags/charles/</link>
+      <pubDate>Mon, 04 Jun 2018 17:28:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/charles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Check Style</title>
+      <link>https://ningyu1.github.io/site/tags/check-style/</link>
+      <pubDate>Thu, 07 Mar 2019 14:37:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/check-style/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code Review</title>
+      <link>https://ningyu1.github.io/site/tags/code-review/</link>
+      <pubDate>Thu, 07 Mar 2019 14:37:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/code-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Concurrency</title>
+      <link>https://ningyu1.github.io/site/tags/concurrency/</link>
+      <pubDate>Mon, 06 Nov 2017 17:40:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Connection Leak</title>
+      <link>https://ningyu1.github.io/site/tags/connection-leak/</link>
+      <pubDate>Thu, 26 Oct 2017 13:29:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/connection-leak/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Connnection Reset by Peer</title>
+      <link>https://ningyu1.github.io/site/tags/connnection-reset-by-peer/</link>
+      <pubDate>Tue, 15 Aug 2017 10:30:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/connnection-reset-by-peer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cookie</title>
+      <link>https://ningyu1.github.io/site/tags/cookie/</link>
+      <pubDate>Fri, 26 Jan 2018 15:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/cookie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cors</title>
+      <link>https://ningyu1.github.io/site/tags/cors/</link>
+      <pubDate>Thu, 02 Aug 2018 14:50:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/cors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cpu Top</title>
+      <link>https://ningyu1.github.io/site/tags/cpu-top/</link>
+      <pubDate>Tue, 23 Jan 2018 14:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/cpu-top/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Crossdomain</title>
+      <link>https://ningyu1.github.io/site/tags/crossdomain/</link>
+      <pubDate>Wed, 27 Jun 2018 12:20:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/crossdomain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Custom Field</title>
+      <link>https://ningyu1.github.io/site/tags/custom-field/</link>
+      <pubDate>Thu, 03 Jan 2019 15:50:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/custom-field/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cx_freeze</title>
+      <link>https://ningyu1.github.io/site/tags/cx_freeze/</link>
+      <pubDate>Wed, 07 Feb 2018 11:57:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/cx_freeze/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Datasource</title>
+      <link>https://ningyu1.github.io/site/tags/datasource/</link>
+      <pubDate>Thu, 26 Oct 2017 13:29:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/datasource/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Date Convert</title>
+      <link>https://ningyu1.github.io/site/tags/date-convert/</link>
+      <pubDate>Tue, 12 Feb 2019 15:30:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/date-convert/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Debug</title>
+      <link>https://ningyu1.github.io/site/tags/debug/</link>
+      <pubDate>Tue, 20 Dec 2016 14:32:41 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dependencyanalyze</title>
+      <link>https://ningyu1.github.io/site/tags/dependencyanalyze/</link>
+      <pubDate>Wed, 11 Jul 2018 14:11:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/dependencyanalyze/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devops</title>
+      <link>https://ningyu1.github.io/site/tags/devops/</link>
+      <pubDate>Mon, 25 Dec 2017 13:58:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Disconf</title>
+      <link>https://ningyu1.github.io/site/tags/disconf/</link>
+      <pubDate>Sun, 11 Feb 2018 11:26:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/disconf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distributed</title>
+      <link>https://ningyu1.github.io/site/tags/distributed/</link>
+      <pubDate>Wed, 27 Sep 2017 16:43:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/distributed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://ningyu1.github.io/site/tags/docker/</link>
+      <pubDate>Tue, 19 Jun 2018 15:10:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker Pull</title>
+      <link>https://ningyu1.github.io/site/tags/docker-pull/</link>
+      <pubDate>Tue, 29 May 2018 12:09:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/docker-pull/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker Registry</title>
+      <link>https://ningyu1.github.io/site/tags/docker-registry/</link>
+      <pubDate>Fri, 29 Dec 2017 14:45:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/docker-registry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker Registry Frontend</title>
+      <link>https://ningyu1.github.io/site/tags/docker-registry-frontend/</link>
+      <pubDate>Fri, 29 Dec 2017 14:45:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/docker-registry-frontend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker Registry Web</title>
+      <link>https://ningyu1.github.io/site/tags/docker-registry-web/</link>
+      <pubDate>Fri, 29 Dec 2017 14:45:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/docker-registry-web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Downloadjs</title>
+      <link>https://ningyu1.github.io/site/tags/downloadjs/</link>
+      <pubDate>Thu, 02 Aug 2018 14:50:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/downloadjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dubbo</title>
+      <link>https://ningyu1.github.io/site/tags/dubbo/</link>
+      <pubDate>Tue, 18 Dec 2018 13:57:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/dubbo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dubbo Jmeter插件</title>
+      <link>https://ningyu1.github.io/site/tags/dubbo-jmeter%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Tue, 18 Dec 2018 13:57:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/dubbo-jmeter%E6%8F%92%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dubbo Json</title>
+      <link>https://ningyu1.github.io/site/tags/dubbo-json/</link>
+      <pubDate>Tue, 06 Mar 2018 16:50:17 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/dubbo-json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dubbo可视化测试工具</title>
+      <link>https://ningyu1.github.io/site/tags/dubbo%E5%8F%AF%E8%A7%86%E5%8C%96%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Tue, 18 Dec 2018 13:57:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/dubbo%E5%8F%AF%E8%A7%86%E5%8C%96%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Error Pulling Image Configuration Unexpected Eof</title>
+      <link>https://ningyu1.github.io/site/tags/error-pulling-image-configuration-unexpected-eof/</link>
+      <pubDate>Tue, 29 May 2018 12:09:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/error-pulling-image-configuration-unexpected-eof/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Eureka</title>
+      <link>https://ningyu1.github.io/site/tags/eureka/</link>
+      <pubDate>Mon, 25 Dec 2017 13:58:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/eureka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fastdfs</title>
+      <link>https://ningyu1.github.io/site/tags/fastdfs/</link>
+      <pubDate>Wed, 06 Sep 2017 10:17:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/fastdfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fastjson</title>
+      <link>https://ningyu1.github.io/site/tags/fastjson/</link>
+      <pubDate>Tue, 06 Mar 2018 16:50:17 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/fastjson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Feign</title>
+      <link>https://ningyu1.github.io/site/tags/feign/</link>
+      <pubDate>Fri, 08 Sep 2017 09:09:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/feign/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Filesystem Layer Verification Failed for Digest Sha256</title>
+      <link>https://ningyu1.github.io/site/tags/filesystem-layer-verification-failed-for-digest-sha256/</link>
+      <pubDate>Fri, 27 Apr 2018 17:46:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/filesystem-layer-verification-failed-for-digest-sha256/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forcelogout</title>
+      <link>https://ningyu1.github.io/site/tags/forcelogout/</link>
+      <pubDate>Fri, 26 Jan 2018 15:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/forcelogout/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Freeze</title>
+      <link>https://ningyu1.github.io/site/tags/freeze/</link>
+      <pubDate>Fri, 09 Mar 2018 14:19:54 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/freeze/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Genericservice</title>
+      <link>https://ningyu1.github.io/site/tags/genericservice/</link>
+      <pubDate>Tue, 13 Mar 2018 15:31:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/genericservice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://ningyu1.github.io/site/tags/git/</link>
+      <pubDate>Tue, 30 Jan 2018 16:10:20 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git Flow</title>
+      <link>https://ningyu1.github.io/site/tags/git-flow/</link>
+      <pubDate>Thu, 07 Mar 2019 14:37:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/git-flow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git Hook</title>
+      <link>https://ningyu1.github.io/site/tags/git-hook/</link>
+      <pubDate>Thu, 07 Mar 2019 14:37:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/git-hook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git Svn Style</title>
+      <link>https://ningyu1.github.io/site/tags/git-svn-style/</link>
+      <pubDate>Wed, 26 Sep 2018 20:50:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/git-svn-style/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>https://ningyu1.github.io/site/tags/github/</link>
+      <pubDate>Tue, 30 Jan 2018 16:10:20 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google</title>
+      <link>https://ningyu1.github.io/site/tags/google/</link>
+      <pubDate>Sat, 30 Sep 2017 16:56:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gpl</title>
+      <link>https://ningyu1.github.io/site/tags/gpl/</link>
+      <pubDate>Tue, 19 Sep 2017 13:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/gpl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gson</title>
+      <link>https://ningyu1.github.io/site/tags/gson/</link>
+      <pubDate>Tue, 13 Mar 2018 15:31:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/gson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Guava</title>
+      <link>https://ningyu1.github.io/site/tags/guava/</link>
+      <pubDate>Mon, 09 Mar 2015 17:34:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/guava/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hibernate Validator</title>
+      <link>https://ningyu1.github.io/site/tags/hibernate-validator/</link>
+      <pubDate>Mon, 23 Apr 2018 13:25:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/hibernate-validator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Highly Available Full Text Search</title>
+      <link>https://ningyu1.github.io/site/tags/highly-available-full-text-search/</link>
+      <pubDate>Fri, 30 Mar 2018 12:24:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/highly-available-full-text-search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Https</title>
+      <link>https://ningyu1.github.io/site/tags/https/</link>
+      <pubDate>Mon, 28 May 2018 15:57:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/https/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hystrix</title>
+      <link>https://ningyu1.github.io/site/tags/hystrix/</link>
+      <pubDate>Mon, 25 Dec 2017 13:58:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/hystrix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Idempotent</title>
+      <link>https://ningyu1.github.io/site/tags/idempotent/</link>
+      <pubDate>Mon, 06 Nov 2017 17:40:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/idempotent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ignore</title>
+      <link>https://ningyu1.github.io/site/tags/ignore/</link>
+      <pubDate>Sat, 26 Nov 2016 10:30:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/ignore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>In Memory</title>
+      <link>https://ningyu1.github.io/site/tags/in-memory/</link>
+      <pubDate>Fri, 30 Mar 2018 12:24:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/in-memory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Inner Class</title>
+      <link>https://ningyu1.github.io/site/tags/inner-class/</link>
+      <pubDate>Tue, 06 Mar 2018 16:50:17 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/inner-class/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Innerclassserialization</title>
+      <link>https://ningyu1.github.io/site/tags/innerclassserialization/</link>
+      <pubDate>Tue, 06 Mar 2018 16:50:17 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/innerclassserialization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Installcert</title>
+      <link>https://ningyu1.github.io/site/tags/installcert/</link>
+      <pubDate>Fri, 12 Jan 2018 19:13:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/installcert/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Invalid Cookie. Required Remote Address Does Not Match Ip</title>
+      <link>https://ningyu1.github.io/site/tags/invalid-cookie.-required-remote-address-does-not-match-ip/</link>
+      <pubDate>Fri, 16 Mar 2018 12:02:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/invalid-cookie.-required-remote-address-does-not-match-ip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iphash</title>
+      <link>https://ningyu1.github.io/site/tags/iphash/</link>
+      <pubDate>Fri, 23 Mar 2018 16:01:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/iphash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jacoco</title>
+      <link>https://ningyu1.github.io/site/tags/jacoco/</link>
+      <pubDate>Thu, 12 Apr 2018 17:03:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/jacoco/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://ningyu1.github.io/site/tags/java/</link>
+      <pubDate>Fri, 22 Mar 2019 16:03:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jdk</title>
+      <link>https://ningyu1.github.io/site/tags/jdk/</link>
+      <pubDate>Fri, 15 Dec 2017 18:15:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/jdk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>https://ningyu1.github.io/site/tags/jenkins/</link>
+      <pubDate>Thu, 12 Apr 2018 17:03:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jira Git</title>
+      <link>https://ningyu1.github.io/site/tags/jira-git/</link>
+      <pubDate>Thu, 07 Mar 2019 14:37:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/jira-git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jmap</title>
+      <link>https://ningyu1.github.io/site/tags/jmap/</link>
+      <pubDate>Tue, 23 Jan 2018 14:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/jmap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jmeter</title>
+      <link>https://ningyu1.github.io/site/tags/jmeter/</link>
+      <pubDate>Tue, 18 Dec 2018 13:57:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/jmeter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jmeter对dubbo接口进行可视化压力测试</title>
+      <link>https://ningyu1.github.io/site/tags/jmeter%E5%AF%B9dubbo%E6%8E%A5%E5%8F%A3%E8%BF%9B%E8%A1%8C%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Tue, 18 Dec 2018 13:57:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/jmeter%E5%AF%B9dubbo%E6%8E%A5%E5%8F%A3%E8%BF%9B%E8%A1%8C%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jms</title>
+      <link>https://ningyu1.github.io/site/tags/jms/</link>
+      <pubDate>Tue, 05 Sep 2017 17:12:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/jms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Js</title>
+      <link>https://ningyu1.github.io/site/tags/js/</link>
+      <pubDate>Thu, 02 Aug 2018 14:50:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Json</title>
+      <link>https://ningyu1.github.io/site/tags/json/</link>
+      <pubDate>Tue, 13 Mar 2018 15:31:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jsr303</title>
+      <link>https://ningyu1.github.io/site/tags/jsr303/</link>
+      <pubDate>Mon, 23 Apr 2018 13:25:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/jsr303/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jstack</title>
+      <link>https://ningyu1.github.io/site/tags/jstack/</link>
+      <pubDate>Tue, 23 Jan 2018 14:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/jstack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jta Xa</title>
+      <link>https://ningyu1.github.io/site/tags/jta-xa/</link>
+      <pubDate>Thu, 02 Nov 2017 15:52:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/jta-xa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Junit</title>
+      <link>https://ningyu1.github.io/site/tags/junit/</link>
+      <pubDate>Thu, 12 Apr 2018 17:03:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/junit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jvm</title>
+      <link>https://ningyu1.github.io/site/tags/jvm/</link>
+      <pubDate>Tue, 23 Jan 2018 14:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/jvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jvm Dump</title>
+      <link>https://ningyu1.github.io/site/tags/jvm-dump/</link>
+      <pubDate>Tue, 23 Jan 2018 14:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/jvm-dump/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lets Encrypt</title>
+      <link>https://ningyu1.github.io/site/tags/lets-encrypt/</link>
+      <pubDate>Mon, 28 May 2018 15:57:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/lets-encrypt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lgpl</title>
+      <link>https://ningyu1.github.io/site/tags/lgpl/</link>
+      <pubDate>Tue, 19 Sep 2017 13:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/lgpl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Licence</title>
+      <link>https://ningyu1.github.io/site/tags/licence/</link>
+      <pubDate>Tue, 19 Sep 2017 13:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/licence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lock</title>
+      <link>https://ningyu1.github.io/site/tags/lock/</link>
+      <pubDate>Wed, 27 Sep 2017 16:43:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/lock/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lock Wait Timeout Exceeded</title>
+      <link>https://ningyu1.github.io/site/tags/lock-wait-timeout-exceeded/</link>
+      <pubDate>Sun, 08 Apr 2018 18:02:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/lock-wait-timeout-exceeded/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logback</title>
+      <link>https://ningyu1.github.io/site/tags/logback/</link>
+      <pubDate>Fri, 10 Apr 2015 10:15:03 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/logback/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lombok</title>
+      <link>https://ningyu1.github.io/site/tags/lombok/</link>
+      <pubDate>Wed, 19 Jul 2017 15:22:56 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/lombok/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maven</title>
+      <link>https://ningyu1.github.io/site/tags/maven/</link>
+      <pubDate>Wed, 11 Jul 2018 14:11:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/maven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mit</title>
+      <link>https://ningyu1.github.io/site/tags/mit/</link>
+      <pubDate>Tue, 19 Sep 2017 13:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/mit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitor</title>
+      <link>https://ningyu1.github.io/site/tags/monitor/</link>
+      <pubDate>Mon, 25 Dec 2017 13:58:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/monitor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mq</title>
+      <link>https://ningyu1.github.io/site/tags/mq/</link>
+      <pubDate>Thu, 11 May 2017 12:03:10 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/mq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mybatis</title>
+      <link>https://ningyu1.github.io/site/tags/mybatis/</link>
+      <pubDate>Wed, 20 Feb 2019 14:34:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/mybatis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>https://ningyu1.github.io/site/tags/mysql/</link>
+      <pubDate>Mon, 14 May 2018 14:38:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mysql Gap Lock</title>
+      <link>https://ningyu1.github.io/site/tags/mysql-gap-lock/</link>
+      <pubDate>Thu, 11 Jan 2018 17:10:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/mysql-gap-lock/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Netflix</title>
+      <link>https://ningyu1.github.io/site/tags/netflix/</link>
+      <pubDate>Mon, 25 Dec 2017 13:58:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/netflix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://ningyu1.github.io/site/tags/nginx/</link>
+      <pubDate>Fri, 30 Jun 2017 18:36:44 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Non Static</title>
+      <link>https://ningyu1.github.io/site/tags/non-static/</link>
+      <pubDate>Tue, 06 Mar 2018 16:50:17 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/non-static/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Npe</title>
+      <link>https://ningyu1.github.io/site/tags/npe/</link>
+      <pubDate>Sat, 26 Aug 2017 16:01:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/npe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Npm</title>
+      <link>https://ningyu1.github.io/site/tags/npm/</link>
+      <pubDate>Fri, 29 Sep 2017 14:16:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/npm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nrm</title>
+      <link>https://ningyu1.github.io/site/tags/nrm/</link>
+      <pubDate>Fri, 29 Sep 2017 14:16:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/nrm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nullpointexception</title>
+      <link>https://ningyu1.github.io/site/tags/nullpointexception/</link>
+      <pubDate>Sat, 26 Aug 2017 16:01:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/nullpointexception/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Numerical Result Out of Range</title>
+      <link>https://ningyu1.github.io/site/tags/numerical-result-out-of-range/</link>
+      <pubDate>Tue, 15 Aug 2017 10:30:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/numerical-result-out-of-range/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Openssl</title>
+      <link>https://ningyu1.github.io/site/tags/openssl/</link>
+      <pubDate>Mon, 15 Jan 2018 14:08:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/openssl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Other</title>
+      <link>https://ningyu1.github.io/site/tags/other/</link>
+      <pubDate>Wed, 03 Apr 2019 15:30:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/other/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Passphrase</title>
+      <link>https://ningyu1.github.io/site/tags/passphrase/</link>
+      <pubDate>Tue, 30 Jan 2018 16:10:20 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/passphrase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pd</title>
+      <link>https://ningyu1.github.io/site/tags/pd/</link>
+      <pubDate>Tue, 10 Apr 2018 20:13:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/pd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pinpoint</title>
+      <link>https://ningyu1.github.io/site/tags/pinpoint/</link>
+      <pubDate>Mon, 11 Dec 2017 10:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/pinpoint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pip</title>
+      <link>https://ningyu1.github.io/site/tags/pip/</link>
+      <pubDate>Fri, 09 Mar 2018 14:19:54 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/pip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pipreqs</title>
+      <link>https://ningyu1.github.io/site/tags/pipreqs/</link>
+      <pubDate>Fri, 09 Mar 2018 14:19:54 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/pipreqs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Py2app</title>
+      <link>https://ningyu1.github.io/site/tags/py2app/</link>
+      <pubDate>Wed, 07 Feb 2018 11:57:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/py2app/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Py2exe</title>
+      <link>https://ningyu1.github.io/site/tags/py2exe/</link>
+      <pubDate>Wed, 07 Feb 2018 11:57:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/py2exe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pyinstaller</title>
+      <link>https://ningyu1.github.io/site/tags/pyinstaller/</link>
+      <pubDate>Wed, 07 Feb 2018 11:57:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/pyinstaller/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://ningyu1.github.io/site/tags/python/</link>
+      <pubDate>Fri, 09 Mar 2018 14:19:54 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rancher</title>
+      <link>https://ningyu1.github.io/site/tags/rancher/</link>
+      <pubDate>Mon, 05 Mar 2018 17:23:11 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/rancher/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rancher/Agent Instancev0.8.3</title>
+      <link>https://ningyu1.github.io/site/tags/rancher-agent-instancev0.8.3/</link>
+      <pubDate>Mon, 05 Mar 2018 17:23:11 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/rancher-agent-instancev0.8.3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rancher/Agentv1.0.2</title>
+      <link>https://ningyu1.github.io/site/tags/rancher-agentv1.0.2/</link>
+      <pubDate>Mon, 05 Mar 2018 17:23:11 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/rancher-agentv1.0.2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rdb</title>
+      <link>https://ningyu1.github.io/site/tags/rdb/</link>
+      <pubDate>Mon, 09 Oct 2017 14:30:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/rdb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rdb Paging</title>
+      <link>https://ningyu1.github.io/site/tags/rdb-paging/</link>
+      <pubDate>Fri, 24 Nov 2017 18:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/rdb-paging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>https://ningyu1.github.io/site/tags/react/</link>
+      <pubDate>Wed, 20 Sep 2017 11:57:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>https://ningyu1.github.io/site/tags/redis/</link>
+      <pubDate>Tue, 17 Jul 2018 18:11:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redisearch</title>
+      <link>https://ningyu1.github.io/site/tags/redisearch/</link>
+      <pubDate>Fri, 30 Mar 2018 12:24:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/redisearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Restful</title>
+      <link>https://ningyu1.github.io/site/tags/restful/</link>
+      <pubDate>Tue, 12 Feb 2019 15:30:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/restful/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ribbon</title>
+      <link>https://ningyu1.github.io/site/tags/ribbon/</link>
+      <pubDate>Mon, 25 Dec 2017 13:58:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/ribbon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rpc</title>
+      <link>https://ningyu1.github.io/site/tags/rpc/</link>
+      <pubDate>Mon, 25 Dec 2017 13:58:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/rpc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rpc Benchmark</title>
+      <link>https://ningyu1.github.io/site/tags/rpc-benchmark/</link>
+      <pubDate>Wed, 19 Sep 2018 12:01:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/rpc-benchmark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Securityerror</title>
+      <link>https://ningyu1.github.io/site/tags/securityerror/</link>
+      <pubDate>Thu, 25 Jan 2018 17:04:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/securityerror/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Server Redirected Too Many Times 20</title>
+      <link>https://ningyu1.github.io/site/tags/server-redirected-too-many-times-20/</link>
+      <pubDate>Fri, 23 Mar 2018 16:01:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/server-redirected-too-many-times-20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Session Centralized Storage</title>
+      <link>https://ningyu1.github.io/site/tags/session-centralized-storage/</link>
+      <pubDate>Fri, 26 Jan 2018 15:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/session-centralized-storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Settings</title>
+      <link>https://ningyu1.github.io/site/tags/settings/</link>
+      <pubDate>Wed, 10 May 2017 10:05:37 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/settings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Single Logout</title>
+      <link>https://ningyu1.github.io/site/tags/single-logout/</link>
+      <pubDate>Fri, 26 Jan 2018 15:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/single-logout/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sky Walking</title>
+      <link>https://ningyu1.github.io/site/tags/sky-walking/</link>
+      <pubDate>Mon, 11 Dec 2017 10:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/sky-walking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slf4j</title>
+      <link>https://ningyu1.github.io/site/tags/slf4j/</link>
+      <pubDate>Fri, 10 Apr 2015 10:15:03 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/slf4j/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slo</title>
+      <link>https://ningyu1.github.io/site/tags/slo/</link>
+      <pubDate>Fri, 26 Jan 2018 15:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/slo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Snowflake</title>
+      <link>https://ningyu1.github.io/site/tags/snowflake/</link>
+      <pubDate>Fri, 07 Dec 2018 11:51:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/snowflake/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sonar</title>
+      <link>https://ningyu1.github.io/site/tags/sonar/</link>
+      <pubDate>Thu, 12 Apr 2018 17:03:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/sonar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sonarqube</title>
+      <link>https://ningyu1.github.io/site/tags/sonarqube/</link>
+      <pubDate>Thu, 12 Apr 2018 17:03:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/sonarqube/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring</title>
+      <link>https://ningyu1.github.io/site/tags/spring/</link>
+      <pubDate>Sat, 26 Aug 2017 16:40:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/spring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring Cloud</title>
+      <link>https://ningyu1.github.io/site/tags/spring-cloud/</link>
+      <pubDate>Mon, 25 Dec 2017 13:58:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/spring-cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sqlhelper</title>
+      <link>https://ningyu1.github.io/site/tags/sqlhelper/</link>
+      <pubDate>Tue, 05 Sep 2017 17:50:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/sqlhelper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ssh Key</title>
+      <link>https://ningyu1.github.io/site/tags/ssh-key/</link>
+      <pubDate>Tue, 30 Jan 2018 16:10:20 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/ssh-key/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ssl</title>
+      <link>https://ningyu1.github.io/site/tags/ssl/</link>
+      <pubDate>Thu, 25 Jan 2018 17:04:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/ssl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Static</title>
+      <link>https://ningyu1.github.io/site/tags/static/</link>
+      <pubDate>Tue, 06 Mar 2018 16:50:17 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/static/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Subversion</title>
+      <link>https://ningyu1.github.io/site/tags/subversion/</link>
+      <pubDate>Fri, 23 Mar 2018 10:44:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/subversion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Svn</title>
+      <link>https://ningyu1.github.io/site/tags/svn/</link>
+      <pubDate>Fri, 23 Mar 2018 10:44:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/svn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Svnquery</title>
+      <link>https://ningyu1.github.io/site/tags/svnquery/</link>
+      <pubDate>Fri, 23 Mar 2018 10:44:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/svnquery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>https://ningyu1.github.io/site/tags/test/</link>
+      <pubDate>Tue, 18 Dec 2018 13:57:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testng</title>
+      <link>https://ningyu1.github.io/site/tags/testng/</link>
+      <pubDate>Thu, 12 Apr 2018 17:03:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/testng/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ticket</title>
+      <link>https://ningyu1.github.io/site/tags/ticket/</link>
+      <pubDate>Fri, 26 Jan 2018 15:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/ticket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ticket Registry</title>
+      <link>https://ningyu1.github.io/site/tags/ticket-registry/</link>
+      <pubDate>Fri, 26 Jan 2018 15:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/ticket-registry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tidb</title>
+      <link>https://ningyu1.github.io/site/tags/tidb/</link>
+      <pubDate>Tue, 10 Apr 2018 20:13:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/tidb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tikv</title>
+      <link>https://ningyu1.github.io/site/tags/tikv/</link>
+      <pubDate>Tue, 10 Apr 2018 20:13:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/tikv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tomcatredissessionmanager</title>
+      <link>https://ningyu1.github.io/site/tags/tomcatredissessionmanager/</link>
+      <pubDate>Fri, 23 Mar 2018 16:01:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/tomcatredissessionmanager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Transaction</title>
+      <link>https://ningyu1.github.io/site/tags/transaction/</link>
+      <pubDate>Thu, 02 Nov 2017 15:52:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/transaction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting</title>
+      <link>https://ningyu1.github.io/site/tags/trouble-shooting/</link>
+      <pubDate>Fri, 23 Mar 2018 16:01:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/trouble-shooting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trunk</title>
+      <link>https://ningyu1.github.io/site/tags/trunk/</link>
+      <pubDate>Tue, 20 Dec 2016 14:32:41 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/trunk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ucm</title>
+      <link>https://ningyu1.github.io/site/tags/ucm/</link>
+      <pubDate>Sun, 11 Feb 2018 11:26:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/ucm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Utf8mb4</title>
+      <link>https://ningyu1.github.io/site/tags/utf8mb4/</link>
+      <pubDate>Mon, 14 May 2018 14:38:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/utf8mb4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virtualenv</title>
+      <link>https://ningyu1.github.io/site/tags/virtualenv/</link>
+      <pubDate>Fri, 02 Mar 2018 11:22:28 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/virtualenv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virtualenvwrapper</title>
+      <link>https://ningyu1.github.io/site/tags/virtualenvwrapper/</link>
+      <pubDate>Fri, 02 Mar 2018 11:22:28 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/virtualenvwrapper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue</title>
+      <link>https://ningyu1.github.io/site/tags/vue/</link>
+      <pubDate>Wed, 20 Sep 2017 11:57:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/vue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue.js</title>
+      <link>https://ningyu1.github.io/site/tags/vue.js/</link>
+      <pubDate>Thu, 24 Aug 2017 10:51:30 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/vue.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Webpack</title>
+      <link>https://ningyu1.github.io/site/tags/webpack/</link>
+      <pubDate>Wed, 20 Sep 2017 11:57:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/webpack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Websocket</title>
+      <link>https://ningyu1.github.io/site/tags/websocket/</link>
+      <pubDate>Thu, 25 Jan 2018 17:04:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/websocket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wechat</title>
+      <link>https://ningyu1.github.io/site/tags/wechat/</link>
+      <pubDate>Fri, 08 Jun 2018 13:38:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/wechat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Word Xml</title>
+      <link>https://ningyu1.github.io/site/tags/word-xml/</link>
+      <pubDate>Thu, 09 Aug 2018 09:48:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/word-xml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ws</title>
+      <link>https://ningyu1.github.io/site/tags/ws/</link>
+      <pubDate>Thu, 25 Jan 2018 17:04:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/ws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wss</title>
+      <link>https://ningyu1.github.io/site/tags/wss/</link>
+      <pubDate>Thu, 25 Jan 2018 17:04:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/wss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xhr.withcredentials</title>
+      <link>https://ningyu1.github.io/site/tags/xhr.withcredentials/</link>
+      <pubDate>Wed, 27 Jun 2018 12:20:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/xhr.withcredentials/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zipkin</title>
+      <link>https://ningyu1.github.io/site/tags/zipkin/</link>
+      <pubDate>Fri, 08 Sep 2017 13:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/zipkin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zookeeper</title>
+      <link>https://ningyu1.github.io/site/tags/zookeeper/</link>
+      <pubDate>Fri, 28 Sep 2018 11:20:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/zookeeper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zuul</title>
+      <link>https://ningyu1.github.io/site/tags/zuul/</link>
+      <pubDate>Mon, 25 Dec 2017 13:58:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/zuul/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zxing</title>
+      <link>https://ningyu1.github.io/site/tags/zxing/</link>
+      <pubDate>Sat, 30 Sep 2017 16:56:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/zxing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>代码质量管理</title>
+      <link>https://ningyu1.github.io/site/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Thu, 07 Mar 2019 14:37:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>前后端分离</title>
+      <link>https://ningyu1.github.io/site/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/</link>
+      <pubDate>Mon, 11 Mar 2019 19:11:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>对象拷贝</title>
+      <link>https://ningyu1.github.io/site/tags/%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D/</link>
+      <pubDate>Fri, 22 Mar 2019 16:03:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>移动端测试</title>
+      <link>https://ningyu1.github.io/site/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Mon, 04 Jun 2018 17:28:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>调优</title>
+      <link>https://ningyu1.github.io/site/tags/%E8%B0%83%E4%BC%98/</link>
+      <pubDate>Mon, 09 Oct 2017 09:53:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/tags/%E8%B0%83%E4%BC%98/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

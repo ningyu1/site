@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nrm on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/categories/nrm/</link>
+    <description>Recent content in Nrm on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Sep 2017 14:16:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/categories/nrm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>npm registry太慢？怎么办？使用nrm</title>
+      <link>https://ningyu1.github.io/site/post/30-npm-nrm/</link>
+      <pubDate>Fri, 29 Sep 2017 14:16:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/30-npm-nrm/</guid>
+      <description> 转载自：http://cnodejs.org/topic/5326e78c434e04172c006826
+开发的npm registry 管理工具 nrm, 能够查看和切换当前使用的registry, 最近NPM经常 down 掉, 这个还是很有用的哈哈
+Install $ npm install -g nrm  Example $ nrm ls * npm ---- https://registry.npmjs.org/ cnpm --- http://r.cnpmjs.org/ eu ----- http://registry.npmjs.eu/ au ----- http://registry.npmjs.org.au/ sl ----- http://npm.strongloop.com/ nj ----- https://registry.nodejitsu.com/  $ nrm use cnpm //switch registry to cnpm Registry has been set to: http://r.cnpmjs.org/  cmd nrm help // show help nrm list // show all registries nrm use cnpm // switch to cnpm nrm home // go to a registry home page  Registries  npm cnpm strongloop european australia nodejitsu  </description>
+    </item>
+    
+  </channel>
+</rss>

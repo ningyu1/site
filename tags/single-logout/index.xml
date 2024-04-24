@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Single Logout on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/single-logout/</link>
+    <description>Recent content in Single Logout on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Jan 2018 15:07:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/single-logout/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CAS Server强制踢人功能实现方式</title>
+      <link>https://ningyu1.github.io/site/post/57-cas-server1/</link>
+      <pubDate>Fri, 26 Jan 2018 15:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/57-cas-server1/</guid>
+      <description>前面写过一篇关于CAS Server使用的经验总结，主要总结了CAS Server在使用的时候遇到的一些常见问题，比如说：证书、SLO、集群session处理、自定义用户认证、Ticket持久化等问题，传送门：CAS使用经验总结，纯干货，这次在基础上又增加了一个很常见很普通的问题，那就是踢人功能。
+在管理系统这个领域里面踢人功能并不陌生，为了更好的管理用户串用账号，安全等方面考虑，接下来我们就细说一下CAS如何实现踢人的功能。
+先说一下踢人功能的场景：
+用户A在机器A上登录了APP1，用户A在机器B上登录APP1，在这种情况下后者登录需要踢掉前者的登录状态。
+用户A在机器A上登录了APP1，用户B在机器B上登录了APP1，在这种情况下不存在踢人操作。
+用户A在机器A上登录了APP1，用户A在机器B上登录了APP2，在这种情况下要分情况了，可以踢也可以不踢，这个就根据产品情况来选择，我们本次测试不能解决这个场景，如何解决我还在摸索中。
+要做踢人功能之前先了解一下CAS的认证授权机制是如何完成的？
+我这里直接引用官网的架构图：
+CAS Server与应用的Session交互图：
+其实CAS就是生成维护Ticket信息和应用session做绑定，当然它的Ticket实现还是比较复杂的，有树形关系以及和Service关联关系，从Ticket的源码能看的出来它有root的判断和Service的映射列表。
+根据上面对CAS的理解，接下来我们说CAS怎么操作踢人功能？
+踢人功能实现思路 在登录认证的时候记录一下，在下次登录获取到登录的人员列表，然后去匹配找出是否存在相同的用户，如果存在相同的用户，就注销掉这个用户的登录信息，这个是常规的思路和做法，但是在CAS里如何去找到切入点来进行判断操作呢？
+我们在上一篇中提到了自定义认证逻辑，那么我们就可以继续在认证的这个切入点去进一步分析。
+这里要先搞清楚一个概念：Authentication和Authorization这两者是不同的。
+Authentication：字面意思认证，怎么理解这个认证呢？举个例子：我们每个人都有身份证，比如你去买火车票，买火车票需要出示身份证，那这个身份证就是证明你是你自己的凭证，那这个证明的过程就是认证。
+Authorization：字面意思授权，怎么理解这个授权呢？举个例子：继续拿买火车票来说，你刚才出示了身份证证明了你自己，然后给了钱买了一张火车票，铁道部给了你一张票，这个票授权了你可以乘坐X车次X座位的权限其他车次你无权乘坐，那么这张票就是证明你确实买了X车次X座位的凭证，这就是授权。
+换回系统的角度来说，认证就是验证用户名密码，授权就是验证你能不能操作某个功能的权限。
+理解完认证和授权的区别，我们就开始从认证这块的切入点去看如何操作，CAS提供了这个类TicketRegistry它是管理所有Ticket的接口，通过调用TicketRegistry.getTickets()方法可以获取到所有认证用户的凭证。
+/** * Retrieve all tickets from the registry. * * @return collection of tickets currently stored in the registry. Tickets * might or might not be valid i.e. expired. */ Collection&amp;lt;Ticket&amp;gt; getTickets();  那有了凭证信息就好更进一步操作。
+CAS提供了TicketGrantingTicket，这个类是Ticket接口的一个实现类，可以通过TicketGrantingTicket.getAuthentication().getPrincipal().getId()来获取用户的身份。
+/** * @return the unique id for the Principal */ String getId();  getId()返回的是登录的用户名，那拿到了用户名就要考虑如何注销的事情了。</description>
+    </item>
+    
+    <item>
+      <title>CAS使用经验总结，纯干货</title>
+      <link>https://ningyu1.github.io/site/post/54-cas-server/</link>
+      <pubDate>Fri, 19 Jan 2018 16:25:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/54-cas-server/</guid>
+      <description>最近在处理公司项目对接到CAS server，在使用CAS发生了很多问题，下面整理一下遇到的问题与解决方式，希望可以帮助到需要的工程师们
+CAS它是什么？它能做什么？这些我就不概述了，自行去搜索了解，https://baike.baidu.com/item/CAS/1329561
+我们在使用CAS的时候基本都会遇到如下的几种问题：
+ 证书问题 Client接入配置 SLO（Single Logout） CAS callback回调问题 Cookie问题 用户数据源以及认证问题 CAS Server Ticket持久化问题 Client Server集群模式下session问题  还有一些是公司内部项目框架集成问题这里就不多说了。
+以下总结都是基于CAS v5.0.4版本测试
+我用的CAS Server是通过overlays改造后的项目，为什么需要修改原有的CAS Server呢？
+我相信每个公司都有一些特殊的需求比如说：
+ 对登录页面的修改 自有的密码加密验证方式 新老项目架构参差不齐 使用公司自有用户数据源  等等很多问题都需要对CAS Server进行改造
+这里我将改造的CAS Server放到github上：
+项目地址：cas-site
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+下面具体说一下上述的问题将如何来分析并解决
+证书问题 如果你的服务不打算使用SSL那请跳过这段说明。
+一般公司项目会有很多域名大概都是子域名的方式，例如：account.xxxx.com,login.xxxx.com，那么最好使用通配符证书，为什么呢？这样你的cas server上配置一个通配符证书即可，如果没有使用通配符证书那cas server上要配置所有授信域名的证书，这样就很麻烦，除非一些历史问题没办法才会导入多个证书，一般使用通配符证书。
+我使用的是自签名的通配符证书，具体自签名证书如何生成可以查看我之前写的文章：
+《Openssl生成自签名证书，简单步骤》中讲述了如何生成自签名证书。
+《使用自签名证书，简单步骤》中讲述了如何使用自签名证书。
+《Java访问SSL地址，使用证书方式和免验证证书方式》中讲述了Java访问ssl使用证书方式和免验证证书方式。
+ps.这里需要注意的是在制作单域名证书和通配符域名证书的区别是在：Common Name输入的时候，例如：
+单域名证书：Common Name：account.xxxx.ccom 通配符域名证书：Common Name：*.xxxx.com
+将制作好的证书文件通过keytool导入到jdk下即可，或使用InstallCert来生成文件copy到jdk下，具体可以参考文章：《使用自签名证书，简单步骤》
+证书放在：%JAVA_HOME%\jre\lib\security
+我们cas server使用的jdk1.8，client服务大多是jdk1.7，因此在证书处理上要注意这个细节，上面文章中有明确说明
+如果需要使用Docker构建，可以参考我写好的Dockerfile，在cas-site项目下Dockerfile文件
+Client接入配置 接入cas的client端配置非常简单，可以使用spring framework对接cas方式，也可以使用spring security对接cas方式，或者其他支持cas的第三方框架，自己对接配置非常简单只需要配置SingleSignOutFilter和SingleSignOutHttpSessionListener
+ org.jasig.cas.client.session.SingleSignOutFilter：解决Logout清空TGC和session信息 org.jasig.cas.client.session.SingleSignOutHttpSessionListener：session监听  这里在对接方面就不做过多的介绍了。</description>
+    </item>
+    
+  </channel>
+</rss>

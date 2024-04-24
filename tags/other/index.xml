@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Other on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/other/</link>
+    <description>Recent content in Other on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Apr 2019 15:30:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/other/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>博客迁移</title>
+      <link>https://ningyu1.github.io/site/post/blog-migration/</link>
+      <pubDate>Wed, 03 Apr 2019 15:30:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/blog-migration/</guid>
+      <description>由于旧的站点分类、标签、归档中没有分页，也无法搜索本站内的博文，移动端支持的不好，所以现在将站点迁移到https://ningyu1.github.io
+新的博客显示风格更加友好，支持移动端显示，支持搜索本站内的所有博文，首页、归档、分类、标签均支持分页，支持分享到wechat、qq、weibo等。
+Peace yo. 谢谢</description>
+    </item>
+    
+  </channel>
+</rss>

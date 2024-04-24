@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sqlhelper on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/sqlhelper/</link>
+    <description>Recent content in Sqlhelper on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Sep 2017 17:50:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/sqlhelper/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MybatisSql获取工具类SqlHelper使用说明</title>
+      <link>https://ningyu1.github.io/site/post/20-mybatis-sqlhelper/</link>
+      <pubDate>Tue, 05 Sep 2017 17:50:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/20-mybatis-sqlhelper/</guid>
+      <description>项目地址 tsoft-common
+
+前言 有的时候我们想在代码中获取Mybatis方法的sql但是又不想去实际执行Mybatis的查询方法，可以使用该工具直接得到sql。
+Maven引入 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;cn.tsoft.framework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;tsoft-common&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  目标 SqlHelper是获取Mybatis方法的sql工具包，支持mybatis mapper方式和sqlmap方式，支持参数：entity，map，array，list，这个工具不需要你实际去执行Mybatis的查询方法就能得到sql，方法主要分两大类，使用命名空间namespace调用或者使用Mapper接口方式调用。
+测试方法 String sql = null; UserEntity entity = new UserEntity(); entity.setUserId(1L); entity.setPassword(&amp;quot;sdflkjsldjf&amp;quot;); entity.setPasswordExpire(new Date()); entity.setVersion(2L); List&amp;lt;Long&amp;gt; list = new ArrayList&amp;lt;Long&amp;gt;(); list.add(1L); list.add(2L); Long[] ids = new Long[]{1L,2L}; //方式一 sql = SqlHelper.getMapperSql(userMapper, &amp;quot;mobileIsExists&amp;quot;, 1L, &amp;quot;13800138000&amp;quot;); System.out.println(&amp;quot;方式一：参数为：@Param：&amp;quot;+sql); sql = SqlHelper.getMapperSql(userMapper, &amp;quot;mobileIsExists&amp;quot;); System.out.println(&amp;quot;方式一：参数为：无参：&amp;quot;+sql); sql = SqlHelper.getMapperSql(userMapper, &amp;quot;modifyPassword&amp;quot;, entity); System.out.println(&amp;quot;方式一：参数为：entity&amp;quot;+sql); sql = SqlHelper.getMapperSql(userMapper, &amp;quot;blockedArrays&amp;quot;, ids); System.out.println(&amp;quot;方式一：参数为：arrays&amp;quot;+sql); sql = SqlHelper.</description>
+    </item>
+    
+  </channel>
+</rss>

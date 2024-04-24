@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Antpathmatcher on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/antpathmatcher/</link>
+    <description>Recent content in Antpathmatcher on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 Feb 2018 16:15:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/antpathmatcher/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RESTful访问权限管理实现思路，采用路径匹配神器之AntPathMatcher</title>
+      <link>https://ningyu1.github.io/site/post/62-ant-path-matcher/</link>
+      <pubDate>Tue, 27 Feb 2018 16:15:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/62-ant-path-matcher/</guid>
+      <description>我们经常在写程序时需要对路径进行匹配，比如说：资源的拦截与加载、RESTful访问控制、审计日志采集、等，伟大的SpringMVC在匹配Controller路径时是如何实现的？全都归功于ant匹配规则。
+Spring源码之AntPathMatcher，这个工具类匹配很强大，采用的是ant匹配规则。
+什么是ant匹配规则？
+   字符wildcard 描述     ? 匹配一个字符（matches one character）   * 匹配0个及以上字符（matches zero or more characters ）   ** 匹配0个及以上目录directories（matches zero or more &amp;lsquo;directories&amp;rsquo; in a path ）    这个匹配规则很简单，采用简洁明了的方式来进行匹配解析，简化版本的正则。
+结合官方的示例来理解一下
+   Pattern 匹配说明     com/t?st.jsp 匹配: com/test.jsp , com/tast.jsp , com/txst.jsp   com/*.jsp 匹配: com文件夹下的全部.jsp文件   com/**/test.jsp 匹配: com文件夹和子文件夹下的全部.jsp文件   org/springframework/*/.</description>
+    </item>
+    
+  </channel>
+</rss>

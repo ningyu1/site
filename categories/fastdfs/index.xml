@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fastdfs on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/categories/fastdfs/</link>
+    <description>Recent content in Fastdfs on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Sep 2017 10:17:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/categories/fastdfs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FastDFS-Client使用说明</title>
+      <link>https://ningyu1.github.io/site/post/21-fastfds-client/</link>
+      <pubDate>Wed, 06 Sep 2017 10:17:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/21-fastfds-client/</guid>
+      <description>项目地址 fastdfs-client
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+fastdfs-client是什么 fastdfs-client是一个访问fastdfs的Java客户端框架，帮助开发人员快速使用分布式文件系统的工具，封装了TrackerClient操作来管理存储节点，封装了StorageClient操作来执行文件上传下载功能。
+change log V1.1.0
+ 修改download文件receive时带入的inputStream对象，inputStream对象修改为克隆socket的inputstream，避免污染连接池中的socket对象，当业务回调不读取留时会影响下一次连接池中获取的socket对象。 在使用1.0.0版本进行download文件时，建议使用DownloadCallback的实现类：DownloadByteArray和DownloadFileWriter不要自己去实现，不要关闭receive方法传入的inputStream对象。 在使用1.1.0版本进行download文件时，receive传入的inputStream是克隆的，因此使用完后必须进行关闭操作。  V1.0.0
+ 包装Request和Response报文解析 包装Storage和Tracker操作命令 增加连接池提升使用性能  接口方法 StorageClient
+TrackerClient
+Maven引入 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;cn.tsoft.framework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;fastdfs-client&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  Spring引入 &amp;lt;import resource=&amp;quot;classpath:spring-fastdfs.xml&amp;quot;/&amp;gt;  Client使用 @Autowired private StorageClient storageClient; //上传 String path = ClassLoader.getSystemResource(&amp;quot;123456.txt&amp;quot;).getPath(); File file = new File(path); FileInputStream fileInputStream = FileUtils.openInputStream(file); //方式1 StorePath storePath = storageClient.uploadFile(&amp;quot;group1&amp;quot;, fileInputStream, file.length(), &amp;quot;txt&amp;quot;); //方式2 StorePath storePath = storageClient.uploadFile(fileInputStream, file.length(), &amp;quot;txt&amp;quot;); //方式3 StorePath storePath = storageClient.</description>
+    </item>
+    
+    <item>
+      <title>Fastdfs安装说明与常见问题解决</title>
+      <link>https://ningyu1.github.io/site/post/02-fastdfs-installer/</link>
+      <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/02-fastdfs-installer/</guid>
+      <description>Fastdfs安装说明与常见问题解决 docker中安装 docker pull season/fastdfs docker tag season/fastdfs 192.168.0.34:5000/season/fastdfs docker push 192.168.0.34:5000/season/fastdfs  启动会获取tracker ip 192.168.0.54:22122
+monitor检测
+/usr/local/bin/fdfs_monitor /etc/fdfs/storage.conf  storage store_path0路径与base_path路径必须不同
+物理机安装 1.安装git yum install -y git
+2.下载fastdfs源码 git clone https://github.com/happyfish100/fastdfs.git git clone https://github.com/happyfish100/libfastcommon.git git clone https://github.com/happyfish100/fastdfs-nginx-module.git  3.下载nginx cp /home/jyftp/nginx-1.10.1.tar.gz ./ tar -xvf nginx-1.10.1.tar.gz rm -rf nginx-1.10.1.tar.gz chown -R root.root nginx-1.10.1/ mv nginx-1.10.1/ nginx  4.安装libfastcommon (fastdfs依赖的系统库） cd /usr/local/fastdfs/libfastcommon ./make.sh ./make.sh install  5.安装fastdfs cd /usr/local/fastdfs/fastdfs ./make.sh .</description>
+    </item>
+    
+  </channel>
+</rss>

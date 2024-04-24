@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dubbo on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/categories/dubbo/</link>
+    <description>Recent content in Dubbo on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Apr 2018 13:25:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/categories/dubbo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dubbo使用jsr303框架hibernate-validator遇到的问题</title>
+      <link>https://ningyu1.github.io/site/post/78-dubbo-validation-jsr303-pit/</link>
+      <pubDate>Mon, 23 Apr 2018 13:25:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/78-dubbo-validation-jsr303-pit/</guid>
+      <description>Dubbo可以集成jsr303标准规范的验证框架，作为验证框架不二人选的hibernate-validator是大家都会经常在项目中使用的，但是在Dubbo使用是会发生下面这个问题。
+问题描述 背景：使用springmvc做restful，使用dubbo做rpc，restful中调用大量的rpc，数据验证会在这两个地方，一个是restful层面，一个是rpc层面，restful层面使用springmvc默认的集成hibernate-validator来实现，参数开启验证只需要加入@Validated param。
+rpc层面也使用hibernate-validator实现，dubbo中开启validation也有两个方式，一个是在consumer端，一个是在provider端。
+当我们在consumer端开启验证时: &amp;lt;dubbo:reference id=&amp;quot;serviceName&amp;quot; interface=&amp;quot;com.domain.package.TestService&amp;quot; registry=&amp;quot;registry&amp;quot; validation=&amp;quot;true&amp;quot;/&amp;gt;  没有任何问题，可以拿到所有的数据校验失败数据。
+当我们在provider端开启验证时： &amp;lt;dubbo:service interface=&amp;quot;com.domain.package.TestService&amp;quot; ref=&amp;quot;serviceName&amp;quot; validation=&amp;quot;true&amp;quot; /&amp;gt;  会发生如下异常：
+com.alibaba.dubbo.rpc.RpcException: Failed to invoke remote method: sayHello, provider: dubbo://127.0.0.1:20831/com.domain.package.TestService?application=dubbo-test- rest&amp;amp;default.check=false&amp;amp;default.cluster=failfast&amp;amp;default.retries=0&amp;amp;default.timeout=1200000&amp;amp;default.version=1.0 .0&amp;amp;dubbo=2.6.1&amp;amp;interface=com.domain.package.TestService&amp;amp;methods=sayHello&amp;amp;pid=29268&amp;amp;register.ip=192. 168.6.47&amp;amp;side=consumer&amp;amp;timestamp=1524453157718, cause: com.alibaba.com.caucho.hessian.io.HessianFieldException: org.hibernate.validator.internal.engine.ConstraintViolationImpl.constraintDescriptor: &#39;org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl&#39; could not be instantiated com.alibaba.com.caucho.hessian.io.HessianFieldException: org.hibernate.validator.internal.engine.ConstraintViolationImpl.constraintDescriptor: &#39;org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl&#39; could not be instantiated at com.alibaba.com.caucho.hessian.io.JavaDeserializer.logDeserializeError(JavaDeserializer.java:167) at com.alibaba.com.caucho.hessian.io.JavaDeserializer$ObjectFieldDeserializer.deserialize (JavaDeserializer.java:408) at com.alibaba.com.caucho.hessian.io.JavaDeserializer.readObject(JavaDeserializer.java:273) at com.alibaba.com.caucho.hessian.io.JavaDeserializer.readObject(JavaDeserializer.java:200) at com.alibaba.com.caucho.hessian.io.SerializerFactory.readObject(SerializerFactory.java:525) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObjectInstance(Hessian2Input.java:2791) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2731) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2260) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2705) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2260) at com.</description>
+    </item>
+    
+    <item>
+      <title>Json序列化、反序列化支持泛型，Dubbo对泛型参数方法进行反射调用</title>
+      <link>https://ningyu1.github.io/site/post/69-java-reflect/</link>
+      <pubDate>Tue, 13 Mar 2018 15:31:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/69-java-reflect/</guid>
+      <description>最近在对Dubbo接口进行反射调用时，遇到了参数类型较为复杂的情况下，使用反射方式无法调用的问题。
+由于Dubbo使用了proxy代理对象，因此在反射上调用是存在一定的问题，从反射对象上获取的方法和参数类型可能会导致无法正常的调用。
+首先先让我们看一个复杂参数的接口定义
+public String testMethod(Map&amp;lt;String,ResourceVo&amp;gt; map, List&amp;lt;Map&amp;lt;String,ResourceVo&amp;gt;&amp;gt; list) throws BizException;  Gson反序列化复杂类型 在对参数进行反序列化时，内部的类型容易丢失，我们可以使用gson的Type进行反序列化得到正确的参数值，让我们看一下gson反序列化的两个方法
+ /** * This method deserializes the specified Json into an object of the specified class. It is not * suitable to use if the specified class is a generic type since it will not have the generic * type information because of the Type Erasure feature of Java. Therefore, this method should not * be used if the desired type is a generic type.</description>
+    </item>
+    
+    <item>
+      <title>Dubbo本地调试最优方式，本地Server端调用本地Client端</title>
+      <link>https://ningyu1.github.io/site/post/09-dubbo-debug/</link>
+      <pubDate>Tue, 20 Dec 2016 14:32:41 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/09-dubbo-debug/</guid>
+      <description>分布式应用的调试总是比常规项目开发调试起来要麻烦很多。 我们还在为搞不清自己请求的服务是本地服务还是服务器服务而苦恼吗？ 我们还在为配置文件被修改导致服务器上版本服务不正常而苦恼吗？ 接下来我介绍一个Dubbo在多环境调试的最优调试方式，在介绍之前先说一下我们现在的调试方式。
+不好的方式（现在的方式）： 现在本地调试，需要修改DubboServer.xml和DubboClient.xml配置文件
+将文件中的 dubbo:registry protocol=&amp;quot;zookeeper&amp;quot; address=&amp;quot;${dubbo.registry}&amp;quot; /&amp;gt; 修改为 &amp;lt;dubbo:registry address=&amp;quot;N/A&amp;quot; /&amp;gt;  这种方式的弊端：
+ 开发总是不注意将修改为address=&amp;ldquo;N/A&amp;rdquo;的文件提交到svn，在其他环境打包run起来，总是没有Export Service。 文件经常被改来改去容易冲突，冲突解决不好容易丢失配置。 无法很好的将本地调试和各环境的相互依赖分离开  最优的方式：
+ 创建一个properties文件，名字可以随便命名，我命名为：dubbo-local.properties，这个文件可以放在任何地方。该文件不提交到svn，我建议不要放在工程目录里以避免自己提交了都不知道，建议放在用户目录下${user.home}(不知道用户目录的自己去 度娘、谷哥、必硬) dubbo-local.properties文件内容如下：
+&amp;lt;!--注册中心变量 --&amp;gt; dubbo.registry=N/A &amp;lt;!--以下是你们DubboServer.xml中配置的需要Export Service，这里我建议你有几个要Export Service都配置在这里，后面是请求本地的地址 地址格式：dubbo://ip:port，这里需要注意的是，需要修改为自己dubbo服务的端口 --&amp;gt; com.domain.imprest.api.IImprestRecordService=dubbo://localhost:20812 com.domain.imprest.api.IImprestRequestService=dubbo://localhost:20812 com.domain.imprest.api.IImprestTrackService=dubbo://localhost:20812 com.domain.imprest.api.IImprestWriteoffService=dubbo://localhost:20812 com.domain.imprest.api.IImprestIOCollectService=dubbo://localhost:20812 com.domain.imprest.api.ISystemService=dubbo://localhost:20812 com.domain.imprest.api.IImprestDeptService=dubbo://localhost:20812  接下来启动你的Dubbo服务，在启动之前需要添加一下启动参数
+  参数：-Ddubbo.properties.file 值：dubbo-local.properties文件的本地地址，绝对地址   接下来启动你的web服务，在启动之前需要添加一下启动参数  参数：-Ddubbo.resolve.file 值：dubbo-local.properties文件的本地地址，绝对地址  ps.当你不想连接本地服务调试时，只需将启动参数去掉即可，无需修改配置文件，让配置文件一直保持清爽干净。 以后你就可以安心的本地调试你的程序了，再也不会因为服务没有Export出去、配置文件被修改而焦头烂额。
+Dubbo Plugin for Apache JMeter Dubbo Plugin for Apache JMeter是用来在Jmeter里更加方便的测试Dubbo接口而开发的插件，马上使用
+项目地址 github: jmeter-plugin-dubbo</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Best Paper on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/best-paper/</link>
+    <description>Recent content in Best Paper on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 28 Dec 2018 17:38:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/best-paper/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>自1996年起的(Best Paper)计算机科学最佳论文奖收录</title>
+      <link>https://ningyu1.github.io/site/post/107-best-paper/</link>
+      <pubDate>Fri, 28 Dec 2018 17:38:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/107-best-paper/</guid>
+      <description>原文地址： https://jeffhuang.com/best_paper_awards.html
+我擦好牛逼了，自1996年起的计算机科学最佳论文奖全收录，不说了戳开看吧。</description>
+    </item>
+    
+  </channel>
+</rss>

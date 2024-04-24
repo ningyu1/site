@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xhr.withcredentials on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/xhr.withcredentials/</link>
+    <description>Recent content in Xhr.withcredentials on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Jun 2018 12:20:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/xhr.withcredentials/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>跨域踩坑经验总结（内涵：跨域知识科普）</title>
+      <link>https://ningyu1.github.io/site/post/92-cors-ajax/</link>
+      <pubDate>Wed, 27 Jun 2018 12:20:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/92-cors-ajax/</guid>
+      <description>跨域问题是我们非常常见的问题，尤其在跨系统页面间的调用经常会遇到，解决的方式在网上一搜一大把，这里整理出我遇到跨域问题解决的方式以及思路，如何安全的解决跨域调用请继续往下看。
+ 什么是跨域？ 跨域使用的场景？ 解决跨域的方式？ 前端、后端如何配合处理跨域？  跨域常见错误 突如其来的OPTIONS请求？ 后端需要返回的Header有哪些？ 前端如何配合发起请求？ Ajax跨域请求跨平台兼容性问题   什么是跨域？ 什么是Cross-origin_resource_sharing? 跨域请求存在的原因：由于浏览器的同源策略，即属于不同域的页面之间不能相互访问各自的页面内容。
+跨域使用的场景？  域名不同  www.jiuyescm.com和www.jiuye.com即为不同的域名  二级域名相同，子域名不同  a.jiuyescm.com和b.jiuyescm.com为子域不同  端口不同，协议不同  http://www.jiuyescm.com和https://www.jiuyescm.com www.jiuyescm.com:8888和www.jiuyescm.com:8080   解决跨域的方式？  jsonp  安全性差，已经不推荐  CORS（W3C标准，跨域资源共享 - Cross-origin resource sharing）  服务端设置，安全性高，推荐使用  websocke  特殊场景时使用，不属于常规跨域操作  代理服务（nginx）  可作为服务端cors配置的一种方式，推荐使用   前端、后端如何配合处理跨域？ ps. 我们这里只介绍：CORS处理方式。
+跨域常见错误 首先让我们看一下前端报出的跨域错误信息
+第一种：No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource，并且The response had HTTP status code 404</description>
+    </item>
+    
+  </channel>
+</rss>

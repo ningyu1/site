@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>对象拷贝 on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D/</link>
+    <description>Recent content in 对象拷贝 on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Mar 2019 16:03:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java对象复制类库性能对比</title>
+      <link>https://ningyu1.github.io/site/post/113-object-copy/</link>
+      <pubDate>Fri, 22 Mar 2019 16:03:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/113-object-copy/</guid>
+      <description>背景 在开发中我们经常会用到对象之间的互相拷贝，Java中对象拷贝的类库也比较多，常见的有Spring BeanUtils，Apache BeanUtils，等并且在很多大厂公司对对象拷贝也有详尽的说明，避免大家踩坑。
+功能对比    耗时(毫秒) 1000次 10,000次 100,100次     Apache BeanUtils 298 983 4211   Cglib BeanCopier 89 120 203   Spring BeanUtils 92 160 524    性能对比     Apache BeanUtils Cglib BeanCopier Spring BeanUtils     非public类 不支持 支持 支持   基本类型与装箱类型，int-&amp;gt;Integer，Integer-&amp;gt;int 支持，可以copy 不支持，不copy 不支持，不copy   int-&amp;gt;long，long-&amp;gt;int，int-&amp;gt;Long，Integer-&amp;gt;long 不支持 不支持 不支持   源对象相同属性无get方法 不支持 不copy 不支持 不copy 不支持 不copy   目标对象相同属性无get方法 支持 不支持 支持   目标对象相同属性无set方法 不copy，不报错 报错 不copy，不报错   源对象相同属性无set方法 支持 支持 支持   目标对象相同属性set方法返回非void 不设置，其他正常属性可以copy 不设置，导致其他属性都无法copy 支持，能够copy   目标对象多字段 支持 支持 支持   目标对象少字段 支持 支持 支持    结论 从性能对比来看：</description>
+    </item>
+    
+  </channel>
+</rss>

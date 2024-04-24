@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jenkins on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/jenkins/</link>
+    <description>Recent content in Jenkins on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Apr 2018 17:03:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>单元测试以及代码覆盖率——Jenkins集成SonarQube、JaCoCo、Junit使用问题汇总</title>
+      <link>https://ningyu1.github.io/site/post/77-jenkins-sonarqube-jacoco-junit/</link>
+      <pubDate>Thu, 12 Apr 2018 17:03:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/77-jenkins-sonarqube-jacoco-junit/</guid>
+      <description>当我们使用持续集成Jenkins的时候经常会结合一系列的插件使用，这里就说一下Jenkins集成Sonar做代码质量管理以及Junit（testng）、JaCoCo做单元测试和覆盖率的时候遇到的问题。
+前提 首先我们的工程使用maven构建，单元测试使用testng编写，在使用jenkins之前我们应该在本地使用maven调通所有的单元测试以及test coverage的问题。
+我们使用maven-surefire-plugin来生成单元测试报告，使用jacoco-maven-plugin来生成test coverage报告。下面我给出以下我使用的标准配置
+maven工程调通单元测试以及测试覆盖率报告生成 pom.xml的标准配置
+&amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;slf4j-api&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.testng&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;testng&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;6.4&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;optional&amp;gt;true&amp;lt;/optional&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;optional&amp;gt;true&amp;lt;/optional&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.jacoco&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jacoco-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.8.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-surefire-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.5&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;skipTests&amp;gt;false&amp;lt;/skipTests&amp;gt; &amp;lt;argLine&amp;gt;${argLine} -Dfile.encoding=UTF-8&amp;lt;/argLine&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-deploy-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;skip&amp;gt;false&amp;lt;/skip&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.jacoco&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jacoco-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.8.1&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;skip&amp;gt;false&amp;lt;/skip&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;prepare-agent&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;outputDirectory&amp;gt;${basedir}/target/coverage-reports&amp;lt;/outputDirectory&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;id&amp;gt;report&amp;lt;/id&amp;gt; &amp;lt;phase&amp;gt;test&amp;lt;/phase&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;report&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt;  根据上面配置执行下来的报告生成的目录结构如下:</description>
+    </item>
+    
+    <item>
+      <title>Jenkins、SVN、MAVEN打包时区问题解决方案</title>
+      <link>https://ningyu1.github.io/site/post/47-jenkins-svn-maven-timezone/</link>
+      <pubDate>Tue, 09 Jan 2018 18:30:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/47-jenkins-svn-maven-timezone/</guid>
+      <description>目录  Jenkins时区设置问题 SVN更新代码时区问题 MAVEN打包时区问题  一、Jenkins时区设置问题 docker@jenkins:~$ cat /etc/default/jenkins|grep 2048 JAVA_ARGS=&amp;quot;-Xmx2048m -Xms2048m -XX:PermSize=512m -XX:MaxPermSize=512m -Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Shanghai -Djava.awt.headless=true&amp;quot; # Allow graphs etc. to work even when an X server is present  增加时区参数：-Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Shanghai
+修改启动后查看jenkins系统参数：
+二、SVN更新代码时区问题 svn时区依赖jenkins的时区设置
+没有修改时区之前：
+能看的出来revision时间是有问题的跟我们机器时间不一致少了8小时
+修复这个问题有两个方法
+ 可以通过设置svn路径后增加@HEAD忽略掉revision来修复这个问题，具体设置如下   修改jenkins时区，参考第一个问题  jenkins时区设置完之后svn拉取代码会自动修改：revision，如图   三、MAVEN打包时区问题 我项目中使用的是maven自己的timestamp
+&amp;lt;timestamp&amp;gt;${maven.build.timestamp}&amp;lt;/timestamp&amp;gt;  它的问题是：时区是UTC而且无法修改，如果要使用GMT+8，就需要插件提供支持
+使用maven utc的timestamp构建出来的包名如下：
+我使用插件：build-helper-maven-plugin
+在pom中增加plugin build-helper-maven-plugin来覆盖maven的timestamp变量：
+&amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.codehaus.mojo&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;build-helper-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.0&amp;lt;/version&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;id&amp;gt;timestamp-property&amp;lt;/id&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;timestamp-property&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;name&amp;gt;timestamp&amp;lt;/name&amp;gt; &amp;lt;pattern&amp;gt;yyyyMMddHHmm&amp;lt;/pattern&amp;gt; &amp;lt;timeZone&amp;gt;GMT+8&amp;lt;/timeZone&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt;  然后打包测试：</description>
+    </item>
+    
+  </channel>
+</rss>

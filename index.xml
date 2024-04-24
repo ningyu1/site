@@ -1,0 +1,1901 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/</link>
+    <description>Recent content on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Apr 2019 15:30:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>博客迁移</title>
+      <link>https://ningyu1.github.io/site/post/blog-migration/</link>
+      <pubDate>Wed, 03 Apr 2019 15:30:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/blog-migration/</guid>
+      <description>由于旧的站点分类、标签、归档中没有分页，也无法搜索本站内的博文，移动端支持的不好，所以现在将站点迁移到https://ningyu1.github.io
+新的博客显示风格更加友好，支持移动端显示，支持搜索本站内的所有博文，首页、归档、分类、标签均支持分页，支持分享到wechat、qq、weibo等。
+Peace yo. 谢谢</description>
+    </item>
+    
+    <item>
+      <title>Java对象复制类库性能对比</title>
+      <link>https://ningyu1.github.io/site/post/113-object-copy/</link>
+      <pubDate>Fri, 22 Mar 2019 16:03:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/113-object-copy/</guid>
+      <description>背景 在开发中我们经常会用到对象之间的互相拷贝，Java中对象拷贝的类库也比较多，常见的有Spring BeanUtils，Apache BeanUtils，等并且在很多大厂公司对对象拷贝也有详尽的说明，避免大家踩坑。
+功能对比    耗时(毫秒) 1000次 10,000次 100,100次     Apache BeanUtils 298 983 4211   Cglib BeanCopier 89 120 203   Spring BeanUtils 92 160 524    性能对比     Apache BeanUtils Cglib BeanCopier Spring BeanUtils     非public类 不支持 支持 支持   基本类型与装箱类型，int-&amp;gt;Integer，Integer-&amp;gt;int 支持，可以copy 不支持，不copy 不支持，不copy   int-&amp;gt;long，long-&amp;gt;int，int-&amp;gt;Long，Integer-&amp;gt;long 不支持 不支持 不支持   源对象相同属性无get方法 不支持 不copy 不支持 不copy 不支持 不copy   目标对象相同属性无get方法 支持 不支持 支持   目标对象相同属性无set方法 不copy，不报错 报错 不copy，不报错   源对象相同属性无set方法 支持 支持 支持   目标对象相同属性set方法返回非void 不设置，其他正常属性可以copy 不设置，导致其他属性都无法copy 支持，能够copy   目标对象多字段 支持 支持 支持   目标对象少字段 支持 支持 支持    结论 从性能对比来看：</description>
+    </item>
+    
+    <item>
+      <title>谈一谈前后端分离的优劣势</title>
+      <link>https://ningyu1.github.io/site/post/112-front-end-and-back-end-separation/</link>
+      <pubDate>Mon, 11 Mar 2019 19:11:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/112-front-end-and-back-end-separation/</guid>
+      <description>从公司内网转载一篇同事整理的资料，关于前后端分离的优劣方面，整理的比较全面，推荐不明白为什么要前后端分离的同学阅读。
+首先说明：前后端分离并非仅仅只是一种开发模式，而是一种架构模式（前后端分离架构）。
+开发模式对比    序号 老的开发模式（后端以Java为例） 新的开发模式（后端以Java为例）     1 产品经理/领导/客户提出需求 产品经理/领导/客户提出需求   2 UI做出设计图 UI做出设计图   3 前端工程师做html页面 前后端约定接口&amp;amp;数据&amp;amp;参数   4 后端工程师将html页面套成jsp页面 前后端并行开发   5 集成出现问题 前端返工 后端返工 前后端集成   6 二次集成 集成成功 交付 前端页面调整 集成成功 交互    请求方式对比    序号 老的开发模式（后端以Java为例） 新的开发模式（后端以Java为例）     1 客户端请求 浏览器发送请求   2 服务端的servlet或controller接收请求 直接到达html页面（前端控制路由与渲染页面，整个项目开发的权重前移）   3 调用service,dao代码完成业务逻辑 html页面负责调用服务端接口产生数据   4 返回jsp jsp展现一些动态的代码 填充html，展现动态效果，在页面上进行解析并操作DOM或数据    前后端分离的优势    序号 优势     1 可以实现真正的前后端解耦，前端服务器使用nginx，后端/应用服务器使用tomcat，加快整体响应速度   2 发现bug，可以快速定位是谁的问题，不会出现互相踢皮球的现象   3 减少后端服务器的并发/负载压力   4 即使后端服务暂时超时或者宕机了，前端页面也会正常访问，只不过数据刷不出来而已   5 多端应用   6 页面显示的东西再多也不怕，因为是异步加载   7 增加代码的维护性&amp;amp;易读性   8 提升开发效率，因为可以前后端并行开发，而不是像以前的强依赖   9 前端大量的组件代码得以复用，组件化，提升开发效率，抽出来   10 在nginx中部署证书，外网使用https访问，并且只开放443和80端口，其他端口一律关闭（防止黑客端口扫描），内网使用http，性能和安全都有保障。   11 nginx支持页面热部署，不用重启服务器，前端升级更无缝。   12 前端项目中可以加入mock测试（构造虚拟测试对象来模拟后端，可以独立开发和测试）    前后端分离的劣势 有联调、沟通环节，这个过程非常花时间，也容易出bug，还很难维护。</description>
+    </item>
+    
+    <item>
+      <title>谈一谈开发团队代码质量如何管控与提升</title>
+      <link>https://ningyu1.github.io/site/post/111-code-quality-management/</link>
+      <pubDate>Thu, 07 Mar 2019 14:37:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/111-code-quality-management/</guid>
+      <description>今天我们谈一下开发团队代码质量如何做到管控与提升，我相信很多公司都会面临这样的问题，开发团队大人员技术水平参差不齐，代码写的不够规范，代码扫描问题修改太过滞后，代码库管理每个团队都不一致，偶尔还会合并丢失一些代码，code review费人费时效率不高，开发任务的管理以及任务与代码的可追溯问题，等等之类的问题，我们能否制定一套从设计到开发再到交付一整套的管控方案来帮助开发团队管控代码的质量？下来我就针对这些问题展开来谈谈我的想法。
+举个例子 比如说我们要增加代码和任务之间的可追溯性，我们可能考虑采用git+jira关联的方式对开发人员每笔提交在提交comment中增加jira编号，这是就是一个规范，但是规范落地如何检查？开发人员如果忘记在comment中添加就会造成关联失败，那我们就要采用工具的方式帮助开发人员在提交时检查comment是否符合规范。
+比如说我们有制定编码规范，也采用了sonar去扫描代码的问题，但是这个方式的缺点是太过滞后，需要质量人员跟进去推动并且效果也不是很好，我们是否可以考虑前置检查点帮助开发人员在代码编写和提交时能主动的发现问题，在代码提交的时候发现规范问题可以直接进行解决再提交，我们可以考虑采用git加checkstyle、pmd、fingbug等工具插件，在代码提交的时候进行规范检测并且进行告警，这样就可以很好的帮助开发人员及时的发现问题，并不是开发已经提交了再去sonar上检查代码规范来发现问题再事后的安排人员去解决，开发人员都有一个习惯，当功能开发好没有问题后他们很少会去主动的修改与重构代码，这样就会导致迟迟不能推进，我们提前了检查点帮助开发人员及时发现问题就可以更好的推行规范的落地。
+因此我们要考虑提供一整套代码质量管理的机制，应用在开发全生命周期中，并在关键的流程节点进行验证，从而把控与提升代码的质量。
+常见的问题及我的看法 静态代码扫描太滞后，推进吃力 我相信大多都会使用类似sonar这类的静态代码检查工具来检查代码，这里我们不说工具的好坏，我们只说检查问题的修复情况，我相信很多开发都会有一种习惯，在代码写完之后如果上线没有问题的话他们是很少会去主动的优化代码，即使你扫描结果告诉他他也会有各种理由推脱，当然我们可以通过管理的手段强制他们修改，比如说blocker、critical级别的必须全部改掉，其余的看情况修改，当然通过管理手段从上往下会有一定的效果，但是这些都是比较滞后的方式，我们能不能提前发现问题让开发在功能开发过程中就把发现的问题改掉？
+这个当然是可以的，我们可以利用代码检查的机制，在代码开发中就让开发去扫描发现问题，在代码提交的时候去校验如果有严重的禁止代码提交。这样一来我们就可以提前来发现并解决问题，这样可能会带来的是开发人员的排斥，开发人员都觉得自己代码写的没有问题，所以这块我们需要把控这个检查规则的宽松度，我们可以结合公司的开发规范，整理不同级别的问题，通过先简后严的方式，先把开发的习惯培养起来后再逐渐的提升严格度，这样一来开发就有个适应期也比较好接受，比如说：我们通过checkstyle的规则模板定义，前期把一些无用导入包、命名不规范、导入包用*、system.out语句这类接受度高的作为error级别来推动开发适应从而培养这种良好的习惯。
+团队Code Review没有跑起来或跑的太费事费力 在技术行业做了一定时间的人应该都知道code review是多么的重要，一可以促进团队人员之间互相交流，二可以提升整体团队的技术水平，学习优秀人员写的代码，帮助初级人员提升代码编写能力，所以code review还是强烈必须要做的，至于怎么做code review？我谈一下我的想法和建议
+比较常见的方式是定期团队内组织全体人员进行集中式的code review，我比较推荐利用工具在线的操作方式来做code review，现在开源非常的火也可以参考学习开源团队code review的方式，比如说github有pull request，gitlab有merge request，可以在这个合并代码的节点上进行code review，这样做的好处是第一比较开放，只要能看到合并代码请求的都可以进行review，第二可以留下review记录，互相的想法沟通和建议可以很好的留存下来并且可以通过UI的方式友好的展示出来，从而提升code review效率。
+这个当然需要结合git flow的机制来协作完成。
+代码库分支、版本管理不规范，合并丢代码 团队多了或团队大了，每个人或多或少对git的管理与使用理解不一致，这样就造成了分支、版本管理的混乱，这样在版本代码合并时就会产生很多冲突，我们可以指定一套规范性的东西，指导开发团队进行分支、版本的管理，这里说到的是指导不是限制，要让开发在可控的范围内自由发挥。
+可以参考git flow、github flow等，当然我们要统一一个工作流程推广给开发团队中。
+前面我们说了用代码合并来进行code review，这样我们就要让开发人员在每开发完一个任务的时候就要进行一次代码合并，git是一个优秀的分布式代码库管理工具，我们利用git的分布式特性，以及灵活的流程机制来规范大家的使用。
+例如：
+一次迭代冲刺或一个版本对应一个develop-*分支和release-*，并且控制分支的push与merge权限，固定一个master分支并且控制master分支的权限，让个人开发通过feature-{username|功能名称}-*分支来进行功能开发，当一个任务或者一个功能开发完成进行一次develop-*分支的合并，这样一来及可以code review也可以有序的管理分支上的代码，当开发人员提交合并请求时发生了冲突就需要开发人员自己解决完冲突后再进行代码合并请求，这样一来版本分支上代码是有序的。
+   Name From Remark     master - 只能有一个并并且固定的   develop-* 从master创建 开发分支，可以结合jira的sprint，一个sprint对应一个，迭代开始时创建，&amp;rsquo;*&amp;rsquo; 通常可以是一个发布周期或者一个冲刺命名   release-* 从master创建 预发布分支，可以结合jira的sprint，一个sprint对应一个，迭代开始时创建，&amp;rsquo;*&amp;rsquo; 通常可以是一个发布周期或者一个冲刺命名   feature-{username or 功能名称}-* 从develop-*创建 开发人员分支，这个分支的声明周期很短，在这个功能开发完成通过Merge Request发起合并进行code review之后合并从而删除分支    以上可以定位分支约定。</description>
+    </item>
+    
+    <item>
+      <title>疑似Batch处理事务问题，保存了该回滚的数据</title>
+      <link>https://ningyu1.github.io/site/post/110-mybatis-batch/</link>
+      <pubDate>Wed, 20 Feb 2019 14:34:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/110-mybatis-batch/</guid>
+      <description>这篇文章转自公司内网wiki中一篇不错的问题分析文章，
+问题描述  两个事物， 在第一个事务报错是则执行第二个事务 两个事物都是执行下面的批量操作 两个事务的批量操作是插入到相同的两张表中，如下代码 第一个事务预计在第一个表中插入3条记录， 第二个表中插入3条记录，但是第一个表的第一个记录就违反了约束，报错异常； 第一个事务失败后，执行第二个事务，第二个事务插入两个表中各一条记录。 实际结果：第一个表有一条记录（第二个事务中插入的），第二个表中有4条记录（除了第二个事务中的一条，还有第一个事务中的3条数据）  问题点是在第一个事务抛异常回滚了，第一个表成功回滚，但是第二个事务将第一个事务中的第二个表的数据提交了。
+问题原因  我们说明批量操作是指：如下的样例:insert into t(field) values(v1),(v2),(v3) sqlSession.commit();实际上并不是事务的commit，而只是执行sql 2个事务绑定的是同一个connection。 在一个mybatis的sqlSession 批量中操作两张表，则会生成两个prepareStatement， 而prepareStatement对象在mybatis中有cache。 回滚时回滚到savepoint  基于上面6点， 当第一个事务的第一个表执行是失败后（在第一个表的失败位置上设置一个savepoint，回滚时值回滚到这个savepoint，第二个preparestatement被缓存了）
+问题总结  本问题不设计到事务传播机制与隔离级别 本例为一个错误使用范例，即不能在一个mybatis的sqlSession批量中操作两张表  注意：PreparedStatement确实适合执行相同sql的批处理，Statement适合执行不同sql的批处理
+一些代码跟踪截图这里就不方便放出来请见谅。</description>
+    </item>
+    
+    <item>
+      <title>RESTful开发日期类型字段如何正确传递</title>
+      <link>https://ningyu1.github.io/site/post/109-restful-date-convert/</link>
+      <pubDate>Tue, 12 Feb 2019 15:30:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/109-restful-date-convert/</guid>
+      <description>RESTful开发时经常会遇到参数传入日期类型及返回的日期类型值，日期和时间戳如果没有适当和一致地处理，就会给人带来头痛的问题，我这里建议大家使用统一格式化的时间字符串yyyy-MM-dd HH:mm:ss，为什么建议这个呢？这样看起来比较直观，前后端联调起来比较高效。
+下面我们就细说一下日期类型的参数将如何处理。
+GET方法时参数传入日期类型该如何处理 举例
+url如下：
+http://localhost:8081/test/time_get?time=2018-07-09 10:38:57  Controller代码：
+import java.util.Date; @RequestMapping(value = &amp;quot;/time_get&amp;quot;, method = RequestMethod.GET) @ResponseBody public Response&amp;lt;Date&amp;gt; time_get(Date time) { logger.info(&amp;quot;time:{}&amp;quot;, time); return Response.createResponse(time); }  在这种情况下日期参数是无法成功的传入到controller方法里，会爆出如下的异常：
+org.springframework.core.convert.ConversionFailedException: Failed to convert from type java.lang.String to type java.util.Date for value &#39;2018-07-09 10:38:57&#39;; nested exception is java.lang.IllegalArgumentException at org.springframework.core.convert.support.ObjectToObjectConverter.convert(ObjectToObjectConverter.java:81) ~[spring-core-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:35) ~[spring-core-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.core.convert.support.GenericConversionService.convert(GenericConversionService.java:178) ~[spring-core-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:161) ~[spring-beans-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:93) ~[spring-beans-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.beans.TypeConverterSupport.doConvert(TypeConverterSupport.java:64) ~[spring-beans-4.0.0.RELEASE.jar:4.0.0.RELEASE] ... 43 common frames omitted Caused by: java.</description>
+    </item>
+    
+    <item>
+      <title>谈一谈自定义字段实现的几种方式</title>
+      <link>https://ningyu1.github.io/site/post/108-custom-field/</link>
+      <pubDate>Thu, 03 Jan 2019 15:50:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/108-custom-field/</guid>
+      <description>我们经常会遇到项目中很多对表单进行自定义，比如说saas应用针对租户自定义表单字段名称，自定义列表名称。 还有更高级自定义，比如说自定义的模块，表单、字段、字段类型、流程等自定义。
+提供自定义也是一个系统扩展性的体现，自定义功能的强大自然能适应更多的用户场景。
+接下来我们就看看自定义的实现方案通常都有哪些方式。
+常见的自定义字段的实现方式分为三种由简到繁，扩展性、复杂性也是逐渐增强的，每个方式各有优劣解决的场景也有所不同，具体往下看。
+列式存储自定义字段（扩展字段 ext field） 模型如下：
+   ID Name Ext1(性别) Ext2(地区) Ext3(QQ) Ext4(WECHAT)     1 韩梅梅 女 Shanghai 10000    2 李磊 男 Beijing  abc001    优点：
+ 实现成本最低 可以直接表连接进行检索  缺点：
+ 扩展能力一般，有上限 浪费资源，比如说有20个扩展字段，一行只用到2个，其余的18个都要存储null来浪费空间。 能解决的场景比较有限。  EAV模型 Entity-Attribute-Value（实体、属性、值） 对象属性存储在一个有三列的表中：实体，属性和值（entity，attribute，value)。实体（entiry）表示所描述的数据项，例如一个产品或汽车。属性（attribute）表示描述实体的数据，例如一个产品将有价格，重量和许多其他属性。值（value）是属性的值，例如产品可能有一个9.99英镑的价格属性。此外值可以基于数据类型进行分割，所以可将EAV表分为字符串、整数、日期和长文本（long text）表。依据数据类型分割是为了支持索引,使得数据库执行可能的类型检查验证。
+EAV表模型带来了数据的灵活性，是的增加对象的属性不需要用增加数据库的字段，有很高的灵活性。但是EAV表也有较大的性能问题。通常，EAV表带来的一个问题是当查找多个字段时，需要进行关联查询join,这样的查询效率比较低。为了提高查询效率，我们可以对商品属性表进行矩阵转积处理(pivoting)。
+一种方式是在代码中读出后存入cache中,当修改attributes表后触发更新cache或用cron定期更新;另一种方法是将关联信息组成一张大的临时表，数据的更新可以用数据库的触发器触发更新。由于大量数据在代码中进行处理会带来了DB的额外IO和服务器性能问题。当使用EAV表模型时，InnoDB比MYISAM的性能要好不少。
+ps. 我们常用的行模型（纵向）存储就是EAV模型实现的一种方式。
+模型如下：
+人员表（Entity）
+   ID Name     1 韩梅梅   2 李磊    扩展映射（Entities）</description>
+    </item>
+    
+    <item>
+      <title>自1996年起的(Best Paper)计算机科学最佳论文奖收录</title>
+      <link>https://ningyu1.github.io/site/post/107-best-paper/</link>
+      <pubDate>Fri, 28 Dec 2018 17:38:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/107-best-paper/</guid>
+      <description>原文地址： https://jeffhuang.com/best_paper_awards.html
+我擦好牛逼了，自1996年起的计算机科学最佳论文奖全收录，不说了戳开看吧。</description>
+    </item>
+    
+    <item>
+      <title>[Enhancement]Enumeration type support, Dubbo Plugin for Apache JMeter - V1.3.8</title>
+      <link>https://ningyu1.github.io/site/post/106-jmeter-plugin-dubbo-1.3.8/</link>
+      <pubDate>Tue, 18 Dec 2018 13:57:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/106-jmeter-plugin-dubbo-1.3.8/</guid>
+      <description>项目地址 github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+V1.3.8 What is new:  Enumeration type support. #34 Support group to zookeeper,redis registration center. #33  新版改进：  支持枚举类型参数。#34 zookeeper、redis作为注册中心时增加group支持。 #33  ps. 参数类型支持：枚举类型以及参数对象内属性为枚举类型
+截图 ps. dubbo:registry group: 服务注册分组，跨组的服务不会相互影响，也无法相互调用，适用于环境隔离。
+具体查看dubbo文档</description>
+    </item>
+    
+    <item>
+      <title>雪花算法-记录</title>
+      <link>https://ningyu1.github.io/site/post/105-snowflake/</link>
+      <pubDate>Fri, 07 Dec 2018 11:51:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/105-snowflake/</guid>
+      <description>最近看到了一篇分析雪花算法的文章还不错，然后整理了一下分享出来。
+先来科普一下SnowFlake算法
+算法原理 Twitter Snowflake 生成的 unique ID 的组成 (由高位到低位):
+41 bits: Timestamp (毫秒级) 10 bits: 节点 ID (datacenter ID 5 bits + worker ID 5 bits) 12 bits: sequence number 一共 63 bits (最高位是 0).
+| 0(最高位预留) | 时间戳(41位) | 机器ID(10位) | 自增序列(12位) | unique ID 生成过程:
+ 10 bits 的机器号, 在 ID 分配 Worker 启动的时候，从一个 Zookeeper 集群获取 (保证所有的 Worker 不会有重复的机器号)； 41 bits 的 Timestamp: 每次要生成一个新 ID 的时候，都会获取一下当前的 Timestamp, 然后分两种情况生成 sequence number； 如果当前的 Timestamp 和前一个已生成 ID 的 Timestamp 相同 (在同一毫秒中)，就用前一个 ID 的 sequence number + 1 作为新的 sequence number (12 bits); 如果本毫秒内的所有 ID 用完，等到下一毫秒继续 (这个等待过程中, 不能分配出新的 ID)； 如果当前的 Timestamp 比前一个 ID 的 Timestamp 大, 随机生成一个初始 sequence number (12bits) 作为本毫秒内的第一个 sequence number；  41-bit的时间可以表示（1L&amp;lt;&amp;lt;41）/(1000L x 3600 x 24 x 365)=69年的时间，10-bit机器可以分别表示1024台机器。如果我们对IDC划分有需求，还可以将10-bit分5-bit给IDC，分5-bit给工作机器。这样就可以表示32个IDC，每个IDC下可以有32台机器，可以根据自身需求定义。12个自增序列号可以表示2^12个ID，理论上snowflake方案的QPS约为409.</description>
+    </item>
+    
+    <item>
+      <title>[Enhancement]Support to select provider from zookeeper, Dubbo Plugin for Apache JMeter - V1.3.7</title>
+      <link>https://ningyu1.github.io/site/post/104-jmeter-plugin-dubbo-1.3.7/</link>
+      <pubDate>Tue, 13 Nov 2018 18:51:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/104-jmeter-plugin-dubbo-1.3.7/</guid>
+      <description> 项目地址 github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+V1.3.7 What is new:  Support to select provider from zookeeper. issue: #31 Upgrade dubbo version to v2.6.4.  新版改进：  支持从zookeeper选择服务提供者，降低手动输入出错概率，issue: #31 升级dubbo版本到v2.6.4  截图 </description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— jms:listener-container配置queue的concurrency数量与预期不一致</title>
+      <link>https://ningyu1.github.io/site/post/103-activemq-listener-concurrency/</link>
+      <pubDate>Tue, 30 Oct 2018 18:40:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/103-activemq-listener-concurrency/</guid>
+      <description>问题描述  现象一 现象二  测试消费者 测试后结论  问题描述 测试程序时发现queue的consumer数量配置与预期不一致，具体如何不一致看下面的测试。
+现象一 当我们使用下面配置，listener使用同一个task-executor并且监听三个queue时，consumer使用20-20，只会有一个queue能达到20个consumer，其余两个queue的consumer=0
+&amp;lt;bean id=&amp;quot;queueMessageExecutor1&amp;quot; class=&amp;quot;org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;corePoolSize&amp;quot; value=&amp;quot;20&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;maxPoolSize&amp;quot; value=&amp;quot;20&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;daemon&amp;quot; value=&amp;quot;true&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;keepAliveSeconds&amp;quot; value=&amp;quot;120&amp;quot; /&amp;gt; &amp;lt;/bean&amp;gt; &amp;lt;jms:listener-container task-executor=&amp;quot;queueMessageExecutor1&amp;quot; destination-type=&amp;quot;queue&amp;quot; container-type=&amp;quot;default&amp;quot; connection-factory=&amp;quot;pooledConnectionFactory&amp;quot; concurrency=&amp;quot;20-20&amp;quot; acknowledge=&amp;quot;auto&amp;quot; receive-timeout=&amp;quot;60000&amp;quot;&amp;gt; &amp;lt;jms:listener destination=&amp;quot;QUEUE.EMAIL&amp;quot; ref=&amp;quot;mailMessageListener&amp;quot; /&amp;gt; &amp;lt;jms:listener destination=&amp;quot;QUEUE.SMS&amp;quot; ref=&amp;quot;smsMessageListener&amp;quot; /&amp;gt; &amp;lt;jms:listener destination=&amp;quot;QUEUE.WECHAT&amp;quot; ref=&amp;quot;wechatMessageListener&amp;quot; /&amp;gt; &amp;lt;/jms:listener-container&amp;gt;  效果如下图：
+现象二 当我们去掉listener-container的receive-timeout=&amp;quot;60000&amp;quot;的配置，三个queue的consumer都等于20。
+&amp;lt;bean id=&amp;quot;queueMessageExecutor1&amp;quot; class=&amp;quot;org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;corePoolSize&amp;quot; value=&amp;quot;20&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;maxPoolSize&amp;quot; value=&amp;quot;20&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;daemon&amp;quot; value=&amp;quot;true&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;keepAliveSeconds&amp;quot; value=&amp;quot;120&amp;quot; /&amp;gt; &amp;lt;/bean&amp;gt; &amp;lt;jms:listener-container task-executor=&amp;quot;queueMessageExecutor1&amp;quot; destination-type=&amp;quot;queue&amp;quot; container-type=&amp;quot;default&amp;quot; connection-factory=&amp;quot;pooledConnectionFactory&amp;quot; concurrency=&amp;quot;20-20&amp;quot; acknowledge=&amp;quot;auto&amp;quot;&amp;gt; &amp;lt;jms:listener destination=&amp;quot;QUEUE.</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— 莫名其妙的java.lang.NoClassDefFoundError: org.springframework.beans.FatalBeanException异常</title>
+      <link>https://ningyu1.github.io/site/post/102-noclassdeffounderror/</link>
+      <pubDate>Sat, 29 Sep 2018 15:30:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/102-noclassdeffounderror/</guid>
+      <description>问题描述 问题分析  尝试一 尝试二 尝试三 尝试四  解决方法  问题描述 最近运维在部署应用的时候偶尔会碰到下面的异常：
+Exception in thread &amp;quot;main&amp;quot; java.lang.NoClassDefFoundError: org.springframework.beans.FatalBeanException at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547) at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475) at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304) at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228) at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300) at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195) at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700) at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760) at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482) at org.springframework.context.support.ClassPathXmlApplicationContext.&amp;lt;init&amp;gt;(ClassPathXmlApplicationContext.java:139) at org.springframework.context.support.ClassPathXmlApplicationContext.&amp;lt;init&amp;gt;(ClassPathXmlApplicationContext.java:93) at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50) at com.alibaba.dubbo.container.Main.main(Main.java:80)  这个异常看上去是org.springframework.beans.FatalBeanException在运行时找不到class，但是调试起来很懵逼。
+问题分析 尝试一 怀疑这个类org.springframework.beans.FatalBeanException在classloader的时候无法找到。
+这个类org.springframework.beans.FatalBeanException在spring-beans包下，查看打包的lib下存在spring-beans包，查看运行jar中的META-INF下的MANIFEST.MF文件中也有lib/spring-beans-4.0.0.RELEASE.jar
+因此排除了这个怀疑。
+ps.这里要区分一下NoClassDefFoundError和ClassNotFoundException异常看这篇文章
+尝试二 这个类在spring-beans包中，那是不是这个jar包损坏无法读取？
+查看了jar包信息以及打开与解压也排除了jar包损坏的可能性。
+尝试三 修改log级别改为debug看会不会有更多的日志输出。
+通过日志级别的调整为debug后，除了都了一些debug的常规日志以外，错误相关的日志还是跟上面的输出一样，因此也是无济于事。
+尝试四 通过arthas观察org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory这个类的doCreateBean这个方法异常的输出。
+arthas ${pid} watch org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory doCreateBean &amp;quot;{params, throwExp}&amp;quot; -e -x 2  发现如下更多的日志：</description>
+    </item>
+    
+    <item>
+      <title>zookeeper数据迁移及恢复</title>
+      <link>https://ningyu1.github.io/site/post/101-zookeeper-data-migrate/</link>
+      <pubDate>Fri, 28 Sep 2018 11:20:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/101-zookeeper-data-migrate/</guid>
+      <description>在做环境迁移的时候经常会遇到中间件的数据迁移，今天我们说一下zookeeper的数据如何迁移与恢复。
+比如说我们使用prd环境数据迁移到st环境为例来叙述一下具体的步骤。
+第一步：从prd环境zookeeper服务器的数据目录下复制最新的日志和快照文件。
+先去zookeeper的安装目录下找到zookeeper的conf文件，例如：
+$&amp;gt; cd /usr/local/zookeeper/conf $&amp;gt; cat zoo.cfg  打开zoo.cfg文件找到具体配置的zookeeper的data目录，例如：
+# the directory where the snapshot is stored. # do not use /tmp for storage, /tmp here is just # example sakes. dataDir=/var/zookeeper  进入到dataDir下的version-2文件夹，version-2文件夹下存放的是zookeeper的日志和镜像文件，我们找到最新的日志和镜像文件，例如：
+$&amp;gt; cd /var/zookeeper/version-2 $&amp;gt; ls -ah -rw-r--r-- 1 zookeeper zookeeper 67108880 Sep 27 17:20 log.909e2d252 -rw-r--r-- 1 zookeeper zookeeper 10408329 Sep 27 17:01 snapshot.909e2d250  找到最新的日志和快照文件，例如上面的：log.909e2d252和snapshot.909e2d250
+日志文件存放zookeeper全部数据记录 ，快照文件则是内存增量文件。
+ps.这里要注意找最新的日志和快照文件
+zookeeper的日志和镜像文件的清理可以看这篇文章：Zookeeper事务日志和snapshot清理方式
+第二步：传输日志和快照文件
+如果st和prd网络是通的话可以通过scp的方式复制过去，如果网络不通通过中转站来过渡。
+第三步：停掉需要恢复数据的zk服务，删除数据目录下的文件，复制刚才的两个文件到数据目录下</description>
+    </item>
+    
+    <item>
+      <title>Git常用开发流程 —— 中心化的工作流</title>
+      <link>https://ningyu1.github.io/site/post/100-git-centralized-workflow/</link>
+      <pubDate>Wed, 26 Sep 2018 20:50:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/100-git-centralized-workflow/</guid>
+      <description>一、中心化的工作流  为什么会有冲突，冲突的原因 举例说明  rebase实操记录 示例总结以及注意事项    一、中心化的工作流 中心化的工作流又叫做SVN-style,适用于熟悉svn的管理流程来过渡到git（分布式版本控制系统），如果你的开发团队成员已经很熟悉svn，集中式工作流让你无需去适应一个全新流程就可以体验Git带来的收益。这个工作流也可以作为向更Git风格工作流迁移的友好过渡，入下图所示：
+像SVN一样，集中式工作流以中央仓库作为项目所有修改的单点实体。相比SVN缺省的开发分支trunk，Git叫做master，所有修改提交到这个分支上。该工作流只用到master这一个分支。 开发者开始先克隆中央仓库。在自己的项目拷贝中，像SVN一样的编辑文件和提交修改；但修改是存在本地的，和中央仓库是完全隔离的。开发者可以把和上游的同步延后到一个方便时间点。 要发布修改到正式项目中时，开发者要把本地master分支的修改『推（push）』到中央仓库中。这相当于svn commit操作，但push操作会把所有还不在中央仓库的本地提交都推上去，下图所示：
+为什么会有冲突，冲突的原因 使用svn-style的方式避免不了会遇到冲突，冲突的解决尤为重要，中央仓库代表了正式项目（git里是master，svn里是trunk），所以提交历史应该被尊重且是稳定不变的。如果开发者本地的提交历史和中央仓库有分歧，Git会拒绝push提交否则会覆盖已经在中央库的正式提交。
+在开发者提交自己功能修改到中央库前，需要先fetch在中央库的新增提交，rebase自己提交到中央库提交历史之上。这样做的意思是在说，我要把自己的修改加到别人已经完成的修改上，最终的结果是一个完美的线性历史，就像以前的SVN的工作流中一样。如果本地修改和上游提交有冲突，Git会暂停rebase过程，给你手动解决冲突的机会。
+举例说明 让我们举一个例子来理解一下中心化工作流-svn-style
+比如说：wms项目组有两个开发人员：小明、小健，看他们是如何开发自己的功能并提交到中央仓库上的。
+第一步：小明、小健从中央仓库克隆代码
+git clone http://gitlab.xxx.com/demo/gitflow-demo.git  ps.克隆仓库时Git会自动添加远程别名origin指向中央仓库，不动请参考：git clone --help
+克隆代码入下图示例：
+小明开发新功能：
+小明使用标准的Git过程开发功能：编辑、暂存（Stage）和提交，这里注意不进行push操作，只做本地commit提交到本地仓库
+git status # 查看本地仓库的修改状态 git add # 暂存文件 git commit # 提交文件  这些操作都是本地的提交操作，小明可以反复的按照需求来进行代码修改，不需要担心中央仓库的改变和小健自己本地的改变。
+小明开发功能都在本地上进行就如下图示例：
+小健开发新功能
+小健也是一样使用标准的Git过程开发功能，编辑、暂存、提交，他和小明一样不需要关系中央仓库的改变和小明自己本地的改变，所有的提交都是私有的，都是在自己的本地仓库中。
+小健开发功能都在本地上进行就如下图所示：
+小明开发好了功能想发布了
+小明把他的本地仓库修改的代码push到中央仓库，使用下面命令
+git push origin master  ps. origin是在小明克隆仓库时Git创建的远程中央仓库别名。master参数告诉Git推送的分支
+ps. 我们这里假设团队中只有两个人（小明、小健），由于中央仓库自从小明克隆以来还没有被更新过，所以push操作不会有冲突，成功完成。
+小明把他自己的本地代码push到中央仓库就如下图所示：
+小健开发好了功能也想发布了
+小健也是使用git push命令来推送自己本地仓库的改动到中央仓库，使用下面命令
+git push origin master  但是此时origin已经由于小明在之前推送了小明本地的代码上去，因此已经和小健本地的代码产生了分歧，推送会被拒绝，入下图所示：</description>
+    </item>
+    
+    <item>
+      <title>如何编写高性能的 RPC 框架</title>
+      <link>https://ningyu1.github.io/site/post/99-rpc-benchmark1/</link>
+      <pubDate>Wed, 19 Sep 2018 12:01:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/99-rpc-benchmark1/</guid>
+      <description>最近看相关rpc-benchmark相关的东西发现这篇文章挺好的，所以转载出来，下面是文章出处。
+作者：鲁小憨 链接：https://www.jianshu.com/p/7182b8751e75 來源：简书 简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+在 RPC Benchmark Round 1 中，Turbo 性能炸裂表现强悍，并且在 listUser 这一项目中，取得了 10x dubbo 性能的好成绩。本文将介绍 Turbo 强悍性能背后的原理，并探讨如何编写高性能的 RPC 框架。
+过早的优化是万恶之源？ 这句话是 The Art of Computer Programming 作者，图领奖得主 Donald Knuth 大神说的。不过对于框架设计者而言，这句话并不正确。在设计一款高性能的基础框架时，必须始终重视性能优化，并将性能测试贯穿于整个设计开发过程中。这方面做到极致的类库有 Disruptor JCTools Agrona DSL-JSON 等等，这几个高性能类库都坚持一个原则：不了解性能的外部类库坚决不用，如果现有的类库不能满足性能要求，那就重新设计一个。作为 Turbo 的设计者，我也尽量坚持这一原则，努力做到 Benchmark 驱动开发。
+JMH 让 Benchmark 驱动开发成为可能 在 JMH 出现之前，要对某个类库进行微基准性能测试是一件非常困难的事情。很难保证公平的测试条件，预热次数难以确定，预热效果也不好观察。JMH 的出现让性能测试变得 标准化 简单化，也让 Benchmark 驱动开发成为可能。Turbo 在开发过程中用 JMH 进行了充分的 Benchmark，以确定核心环节的性能开销，选择合适的实现方案。更多关于 JMH 的介绍请参考下面的链接：
+ OpenJDK: jmh JMH - Java Microbenchmark Harness ImportNew JMH简介  RPC 的主要流程  客户端 获取到 UserService 接口的 Refer: userServiceRefer 客户端 调用 userServiceRefer.</description>
+    </item>
+    
+    <item>
+      <title>怎样对RPC进行有效的性能测试</title>
+      <link>https://ningyu1.github.io/site/post/98-rpc-benchmark/</link>
+      <pubDate>Tue, 18 Sep 2018 18:16:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/98-rpc-benchmark/</guid>
+      <description>最近看相关rpc-benchmark相关的东西发现这篇文章挺好的，所以转载出来，下面是文章出处。
+作者：鲁小憨 链接：https://www.jianshu.com/p/cbcdf05eaa5c 來源：简书 简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+在 RPC Benchmark Round 1 中 turbo 的成绩一骑绝尘，实力碾压众 rpc 框架。对此，很多人表示不服气，认为作者既是运动员又是裁判员有失公平。所以我认为有必要解释一下 rpc-benchmark 的公正性，以及为什么 turbo 能够如此强悍。
+参考对象 rpc-benchmark 灵感源自 techempower-benchmarks，为了能够评测众多服务器框架，techempower-benchmarks 提供了6个测试用例：
+ JSON serialization  This test exercises the framework fundamentals including keep-alive support, request routing, request header parsing, object instantiation, JSON serialization, response header generation, and request count throughput.
+ Single database query  This test exercises the framework&amp;rsquo;s object-relational mapper (ORM), random number generator, database driver, and database connection pool.</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— MyBatis的PropertyTokenizer抛NPE异常</title>
+      <link>https://ningyu1.github.io/site/post/97-mybatis-npe/</link>
+      <pubDate>Mon, 20 Aug 2018 17:48:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/97-mybatis-npe/</guid>
+      <description>这个文章转自公司内网WIKI，同事调试的问题以及问题分析过程，我觉得挺好的所以转载出来。
+问题描述 多任务同时处理时会报出如下NPE异常，堆栈信息如下：
+2018-08-10 18:16:10.938 [xxxExecutor-2] ERROR c.j.bmc.mq.listener.xxxResultListener org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: ### Error querying database. Cause: java.lang.NullPointerException ### Cause: java.lang.NullPointerException at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:75) ~[mybatis-spring-1.2.2.jar:1.2.2] at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:371) ~[mybatis-spring-1.2.2.jar:1.2.2] at com.sun.proxy.$Proxy21.selectList(Unknown Source) ~[na:na] at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:198) ~[mybatis-spring-1.2.2.jar:1.2.2] at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:119) ~[mybatis-3.2.7.jar:3.2.7] at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:63) ~[mybatis-3.2.7.jar:3.2.7] at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52) ~[mybatis-3.2.7.jar:3.2.7] at com.sun.proxy.$Proxy49.findBillBillingTask(Unknown Source) ~[na:na] at com.xxx.service.impl.XXXServiceImpl.findBillBillingTask(XXXServiceImpl.java:118) ~[bmc-service-0.0.1-SNAPSHOT.jar:na] at com.xxx.service.impl.XXXServiceImpl$$FastClassByCGLIB$$7d4463f0.invoke(&amp;lt;generated&amp;gt;) ~[spring-core-4.0.0.RELEASE.jar:na] at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:713) ~[spring-aop-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98) ~[spring-tx-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262) ~[spring-tx-4.0.0.RELEASE.jar:4.0.0.RELEASE] at org.</description>
+    </item>
+    
+    <item>
+      <title>为什么手机浏览器打开word、excel文件部分文件能预览，部分文件不能预览？</title>
+      <link>https://ningyu1.github.io/site/post/96-word-xml/</link>
+      <pubDate>Thu, 09 Aug 2018 09:48:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/96-word-xml/</guid>
+      <description>最近公司合同项目中有很多附件是excel和word的格式，这些文件有用户直接导入的，也有程序自动生成的，合同项目中有结合钉钉来做工作流，所以会有pc端和钉钉移动端的互动。
+问题现象 pc端的附件列表可以正常的下载word、excel文件，并且可以成功的打开，但是当流程流转到钉钉时，在钉钉审批的时候可以通过连接跳转h5来显示附件列表，项目的功能设计初衷是可以在手机端打开预览word、excel文件。
+但是发现了奇怪的问题，部分word可以在钉钉中显示，部分word无法显示，例如下图所示：
+我们的期望效果如下图所示：
+问题分析 我们分别使用手机浏览器（safari）、postman、微信内嵌浏览器、qq内嵌浏览器分别测试无法正常预览的word链接
+手机浏览器、微信内嵌浏览器、qq内嵌浏览器均无法打开
+使用postman下载在移动端无法打开的word链接，返回的是一段xml，如下：
+ &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; standalone=&amp;quot;yes&amp;quot;?&amp;gt; &amp;lt;?mso-application progid=&amp;quot;Word.Document&amp;quot;?&amp;gt; &amp;lt;pkg:package xmlns:pkg=&amp;quot;http://schemas.microsoft.com/office/2006/xmlPackage&amp;quot;&amp;gt;&amp;lt;pkg:part pkg:name=&amp;quot;/_rels/.rels&amp;quot; ....  这是个什么鬼？是word的xml格式，问题原因就在这里手机浏览器无法识别word的xml格式，因此再次尝试excel
+excel使用的是poi生成直接写的是二级制格式，没有使用xml格式，因此excel是可以在移动端打开预览的。
+询问开发word是如何生成的？
+生成过程是这样的：使用word编辑好模版，然后另存为xml格式，导入到系统中去，通过FreeMarker替换内容，再将xml写到fastdfs中去后缀给成 &amp;lsquo;.doc&amp;rsquo; ,这样下载下来使用office word可以直接打开xml格式的来进行无损渲染。
+解决方案 询问业务是否必须要使用word格式文件？我的理解合同项目大多都是给用户只读的文件，建议使用pdf来做，使用jasper生成word模版，通过jasper的java api直接生成pdf，合同后期还要考虑添加水印，pdf更加方便一些。
+建议使用pdf来替换word，如果非要使用word，建议生成word二进制格式来替换xml格式，除非不考虑移动端渲染可以使用xml格式的word。
+目前java生成word的方式有如下六种方式：
+ Jacob是Java-COM Bridge的缩写，它在Java与微软的COM组件之间构建一座桥梁。使用Jacob自带的DLL动态链接库，并通过JNI的方式实现了在Java平台上对COM程序的调用。DLL动态链接库的生成需要windows平台的支持。该方案只能在windows平台实现，是其局限性。 Apache POI包括一系列的API，它们可以操作基于MicroSoft OLE 2 Compound Document Format的各种格式文件，可以通过这些API在Java中读写Excel、Word等文件。他的excel处理很强大，对于word还局限于读取，目前只能实现一些简单文件的操作，不能设置样式。 Java2word是一个在java程序中调用 MS Office Word 文档的组件(类库)。该组件提供了一组简单的接口，以便java程序调用他的服务操作Word 文档。 这些服务包括： 打开文档、新建文档、查找文字、替换文字，插入文字、插入图片、插入表格，在书签处插入文字、插入图片、插入表格等。填充数据到表格中读取表格数据 ，1.1版增强的功能： 指定文本样式，指定表格样式。如此，则可动态排版word文档。是一种不错的解决方案。 iText是著名的开放源码的站点sourceforge一个项目，是用于生成PDF文档的一个java类库。通过iText不仅可以生成PDF或rtf的文档，而且可以将XML、Html文件转化为PDF文件。功能强大。 JSP输出样式，该方案实现简单，但是处理样式有点缺陷，简单的导出可以使用。 用XML做就很简单了。Word从2003开始支持XML格式，大致的思路是先用office2003或者2007编辑好word的样式，然后另存为xml，将xml翻译为FreeMarker模板，最后用java来解析FreeMarker模板并输出Doc。经测试这样方式生成的word文档完全符合office标准，样式、内容控制非常便利，打印也不会变形，生成的文档和office中编辑文档完全一样。  总结 伴随着手机的兴起，不管是传统行业还是互联网行业对系统都有在移动端使用的要求，不管是从用户体验上还是从移动系统兼容性以及浏览器兼容性上都会遇到各种问题，当然也有工具可以解决这些问题，例如：RN、flutter都可以很好的解决系统兼容问题，vue.js、angularjs都可以很好的解决浏览器兼容问题，而且这些都有大厂的支持，关于以上的问题这种解决方法并不是最好的，但是可以做为一种参考，重点是对问题的总结，只要解决问题的方法符合自己的业务场景我个人认为就是正（有）确（效）的方法，如果有更好的方式可以在下放留言一起讨论。</description>
+    </item>
+    
+    <item>
+      <title>使用downloadjs下载并且重命名文件名称引发的跨域问题</title>
+      <link>https://ningyu1.github.io/site/post/95-downloadjs-cors/</link>
+      <pubDate>Thu, 02 Aug 2018 14:50:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/95-downloadjs-cors/</guid>
+      <description>我们有一部分静态资源放在fastdfs文件服务器上，并且文件名称是生成的随机数，直接浏览器下载是可以正常下载文件的，但是我们需要修改下载文件的名称，直接a标签href是无法修改下载文件名称的。
+使用a标签的download属性又有浏览器兼容问题，而且download属性有一个弊端，只有点击右键另存为才会生效，直接点击是不生效的。
+因此我们这里借助了一个组件downloadjs来进行文件下载，它可以修改下载文件的名称，并且也没有浏览器兼容问题，原理呢很简单那，使用ajax请求去下载文件，在发起请求时构造请求header来重命名下载文件名。
+但是这里会存在一个问题？我们的fastdfs和应用程序是独立的两个域，因此存在跨域的问题，直接使用a标签的href是不存在跨域的问题，按关于这个跨域的问题我们如何解决？
+先来看一下使用downloadjs下载fastdfs的文件时报出的跨域错误信息如下
+Failed to load http://192.168.0.48:8079/group1/M00/03/35/wKgAMFtgB2SAFjibAAX3egrfUI8922.doc: No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource. Origin &#39;http://localhost:8080&#39; is therefore not allowed access.  本地使用是通过vue的proxyTable绕过跨域的问题，其实就是前端的proxy方式虚拟一个context然后pass转发，虽然这样可以解决目前的问题，但是我们在uat和prd环境又要增加相同的context path的映射，这不是我们想要的，我们想直接访问下载地址来进行下载，因此我们需要修改fastdfs的nginx模块配置。
+跨域的配置这里就不多说了，其实就是添加一系列的Access-Control-Allow-X的header即可，不会的可以参考我以前的文章跨域踩坑经验总结》，唯一需要注意的是，当使用Access-Control-Allow-Credentials=true时Access-Control-Allow-Origin不允许使用* 必须使用具体的域名多个可以使用,分割。
+修改后我们可以直接的请求地址下载文件即可。</description>
+    </item>
+    
+    <item>
+      <title>使用Embedded RedisServer写UT</title>
+      <link>https://ningyu1.github.io/site/post/94-embedded-redisserver/</link>
+      <pubDate>Tue, 17 Jul 2018 18:11:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/94-embedded-redisserver/</guid>
+      <description>当我们在进行开发的时候经常会用到Redis，但是在写junit的时候往往引用了Redis造成test case很难写，我们需要mock一个localhost的Redis server来进行测试，因此我们可以借助embedded redisServer来实现，下面我们就看一下具体使用的示例
+代码示例 @Before public void setUp() throws IOException { initMocks(this); final Random random = new SecureRandom(); redisServer = new RedisServer(); redisServer.start(); pool = new JedisPool(); repository = new RedisKeyRepository(pool); manager = new RedisKeyManager(random, pool, repository); manager.setMaxActiveKeys(3); clearData(); manager.initialiseNewRepository(); resource = new ProtectedResource(repository, random); }  这是一个非常简单的使用示例，我们还可以更改配置以及增加密码
+@Before public void setUpRedis() throws IOException, SchedulerConfigException { port = getPort(); logger.debug(&amp;quot;Attempting to start embedded Redis server on port &amp;quot; + port); redisServer = RedisServer.</description>
+    </item>
+    
+    <item>
+      <title>通过对Maven的依赖分析剔除无用的jar引用</title>
+      <link>https://ningyu1.github.io/site/post/93-maven-depenpency-analyze/</link>
+      <pubDate>Wed, 11 Jul 2018 14:11:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/93-maven-depenpency-analyze/</guid>
+      <description>当项目开发维护了一段时间时，经常会有项目打包速度慢，jar依赖多，依赖关系错综复杂，这种问题是项目维护最常见的问题，由于开发人员在bugfix或者feature开发时往往只是往项目中添加jar依赖，那我们如何分析出项目中哪些依赖是用到的，哪些依赖是不用的？
+使用Maven analyze来进行分析
+使用如下命令：
+mvn dependency:analyze  会输出如下的日志：
+[INFO] --- maven-dependency-plugin:2.8:analyze (default-cli) @ xxxproject --- [WARNING] Used undeclared dependencies found: [WARNING] org.springframework:spring-beans:jar:4.0.0.RELEASE:compile [WARNING] org.springframework:spring-context:jar:4.0.0.RELEASE:compile [WARNING] Unused declared dependencies found: [WARNING] com.alibaba:dubbo:jar:2.5.3:compile [WARNING] com.baidu.disconf:disconf-client:jar:2.6.32:compile [WARNING] org.mybatis:mybatis:jar:3.2.7:compile [WARNING] org.mybatis:mybatis-spring:jar:1.2.2:compile [WARNING] mysql:mysql-connector-java:jar:5.1.41:compile [WARNING] com.alibaba:druid:jar:1.0.9:compile [WARNING] com.github.sgroschupf:zkclient:jar:0.1:compile [WARNING] org.apache.zookeeper:zookeeper:jar:3.4.6:compile [WARNING] org.springframework:spring-jdbc:jar:4.0.0.RELEASE:compile [WARNING] org.slf4j:log4j-over-slf4j:jar:1.7.5:compile [WARNING] org.slf4j:jcl-over-slf4j:jar:1.7.5:runtime [WARNING] ch.qos.logback:logback-classic:jar:1.0.13:compile  我们就来说一下日志中的Used undeclared dependencies found和Unused declared dependencies found
+Used undeclared dependencies found 这个是指某些依赖的包在代码中有用到它的代码，但是它并不是直接的依赖（就是说没有在pom中直接声明），是通过引入传递下来的包。
+举个例子：
+project在pom中声明了A.jar的依赖（没有声明B.jar的依赖） A.jar的依赖关系：A.jar -&amp;gt; B.</description>
+    </item>
+    
+    <item>
+      <title>跨域踩坑经验总结（内涵：跨域知识科普）</title>
+      <link>https://ningyu1.github.io/site/post/92-cors-ajax/</link>
+      <pubDate>Wed, 27 Jun 2018 12:20:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/92-cors-ajax/</guid>
+      <description>跨域问题是我们非常常见的问题，尤其在跨系统页面间的调用经常会遇到，解决的方式在网上一搜一大把，这里整理出我遇到跨域问题解决的方式以及思路，如何安全的解决跨域调用请继续往下看。
+ 什么是跨域？ 跨域使用的场景？ 解决跨域的方式？ 前端、后端如何配合处理跨域？  跨域常见错误 突如其来的OPTIONS请求？ 后端需要返回的Header有哪些？ 前端如何配合发起请求？ Ajax跨域请求跨平台兼容性问题   什么是跨域？ 什么是Cross-origin_resource_sharing? 跨域请求存在的原因：由于浏览器的同源策略，即属于不同域的页面之间不能相互访问各自的页面内容。
+跨域使用的场景？  域名不同  www.jiuyescm.com和www.jiuye.com即为不同的域名  二级域名相同，子域名不同  a.jiuyescm.com和b.jiuyescm.com为子域不同  端口不同，协议不同  http://www.jiuyescm.com和https://www.jiuyescm.com www.jiuyescm.com:8888和www.jiuyescm.com:8080   解决跨域的方式？  jsonp  安全性差，已经不推荐  CORS（W3C标准，跨域资源共享 - Cross-origin resource sharing）  服务端设置，安全性高，推荐使用  websocke  特殊场景时使用，不属于常规跨域操作  代理服务（nginx）  可作为服务端cors配置的一种方式，推荐使用   前端、后端如何配合处理跨域？ ps. 我们这里只介绍：CORS处理方式。
+跨域常见错误 首先让我们看一下前端报出的跨域错误信息
+第一种：No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource，并且The response had HTTP status code 404</description>
+    </item>
+    
+    <item>
+      <title>Docker启动的容器如何清理日志？看这里</title>
+      <link>https://ningyu1.github.io/site/post/90-docker-container-cleanlog/</link>
+      <pubDate>Tue, 19 Jun 2018 15:10:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/90-docker-container-cleanlog/</guid>
+      <description>Docker run起来的容器随着时间久了，容器内的服务输出的日志也在日积月累，需要定期的进行日志清理。
+如果公司使用DevOps的话更加需要对容器内的日志进行定期清理，业务的镜像服务或许还好一些，因为开发同学每天都在用、每天都会upgrade服务，在upgrade的时候会删除老的容器，再重新run一个新容器去替换掉老的，但是有一些长期run的服务就很少有人关注了，比如说rancher、还有一些基础服务，可能很长时间也不会去做upgrade操作，因此容器内的日志就越来越多，如果不清理总有一天会撑爆服务器硬盘，到那个时候再去清理恢复服务的话，有可能会有磁盘文件损坏的风险。
+因此我们需要定期的对Docker容器内的日志进行清理。
+如何查看Docker内容器的日志？可以参考文章：《如何直接操作Docker容器？》
+在清理容器日志前，我们首先要知道Docker将容器的日志放在那里？
+Docker将容器的日志放在/var/lib/docker/containers/containerid/containerid-json.log
+ps. containerid是容器id一般是82bbc....这个风格，64位字符
+当然找不到的话也可以使用文件搜索的方式去查找Docker的容器日志放在那里，查找的时候按照上面的名称风格去查找，例如：
+find / -type f -name &amp;quot;*-json.log&amp;quot;  容器的id怎么查看呢？
+docker ps  通过ps找到容器id，也找到日志所在的位置后，接下来就是清理日志的操作了，日志文件不能直接删除，直接删除会影响正在运行的容器，可以通过清空文件内容的方式来处理。
+清空文件的方式有很多种如下：
+$ : &amp;gt; filename $ &amp;gt; filename $ echo &amp;quot;&amp;quot; &amp;gt; filename $ echo &amp;gt; filename $ cat /dev/null &amp;gt; filename  选一种即可
+cat /dev/null &amp;gt;/var/lib/docker/containers/containerid/containerid-json.log  </description>
+    </item>
+    
+    <item>
+      <title>Zookeeper事务日志和snapshot清理方式</title>
+      <link>https://ningyu1.github.io/site/post/89-zookeeper-cleanlog/</link>
+      <pubDate>Fri, 15 Jun 2018 17:15:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/89-zookeeper-cleanlog/</guid>
+      <description>Zookeeper运行过程会产生大量的事务日志和snapshot镜像文件，文件的目录是通过zoo.conf的datadir参数指定的，下面我们就说一下如何清理事务日志和snapshot。
+清理的方式有如下三种：
+ 一、zookeeper配置自动清理 二、使用自定义清理脚本 三、使用zkCleanup.sh清理  下面我们一一介绍每种清理方式是如何使用的。
+zookeeper配置自动清理 zookeeper在3.4.0版本以后提供了自动清理snapshot和事务日志的功能通过配置 autopurge.snapRetainCount 和 autopurge.purgeInterval 这两个参数能够实现定时清理了。这两个参数都是在zoo.cfg中配置的：
+我们使用的zk版本是：3.4.6，因此可以使用自带的清理功能
+autopurge.purgeInterval 这个参数指定了清理频率，单位是小时，需要填写一个1或更大的整数，默认是0，表示不开启自己清理功能。
+autopurge.snapRetainCount 这个参数和上面的参数搭配使用，这个参数指定了需要保留的文件数目。默认是保留3个。
+示例：
+autopurge.snapRetainCount=60 autopurge.purgeInterval=48  保留48小时内的日志，并且保留60个文件
+ps.但是修改conf需要重启服务，生产可能不会考虑重启服务因此使用其他方法。
+使用自定义清理脚本 clean_zook_log.sh脚本内容如下
+#!/bin/bash #snapshot file dir dataDir=/var/zookeeper/version-2 #tran log dir dataLogDir=/var/zookeeper/version-2 logDir=/usr/local/zookeeper/logs #Leave 60 files count=60 count=$[$count+1] ls -t $dataLogDir/log.* | tail -n +$count | xargs rm -f ls -t $dataDir/snapshot.* | tail -n +$count | xargs rm -f ls -t $logDir/zookeeper.log.* | tail -n +$count | xargs rm -f  这个脚本保留最新的60个文件，可以将他写到 将这个脚本添加到crontab中，设置为每天凌晨2点？或者其他时间执行即可。</description>
+    </item>
+    
+    <item>
+      <title>如何扩展个人微信号来实现群组管理的功能？</title>
+      <link>https://ningyu1.github.io/site/post/85-wechat/</link>
+      <pubDate>Fri, 08 Jun 2018 13:38:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/85-wechat/</guid>
+      <description>最近在思考一个问题，如何能在系统中集成微信群组管理的功能，比如说邀请好友进群、对群组进行管理、创建群组、删除群组之类的操作，说白了就是将微信的功能嵌入到自己的程序里面去。这样就可以有效的管理多个群组来扩展一些客服的功能。
+于是查找关于微信API的资料，第一反应就是先去官方的开放文档中查看是否有类似API开放。
+翻了一圈资料，看了微信服务号、订阅号、小程序、以及企业微信的开放文档后整理出来目前官方开放的API的功能现状如下：
+官方是没有提供任何个人群管理接口API，只有一些类似外挂类的工具可以对个人群组进行管理。
+但是外挂类的工具又怕有风险，说不定哪天就over了。
+在资料翻阅的过程，发现了可以通过微友助手在群组里添加机器人，但是这个方式可能不是我们想要的。
+官方开放的客服API可以与客服系统进行对接，它是将微信端作为客服的入口与客服系统对接，生成客诉工单或者是跟客服对话，这也不是我们想要的方式。
+在没有官方API可用的情况下我们想使用这方面的功能该如何操作呢？
+发现曙光 微信目前官方提供的终端，除了手机端以外还有电脑端和WEB网页端。
+咦，有WEB网页端那不就有API可以操作么？只是可能我们要写类似于外挂一样的东西模拟官方的微信网页端操作。
+于是开始搜索这方面的资料，很幸运找到了ItChat这个类库。
+这个类库的实现方式就是我们刚才说到的模拟网页版本的rest请求去扩展的一些接口。
+那已经有人做好了轮子那我们就可以直接使用了。
+ItChat的实现方式 第一部分，分析微信协议，开始获取并模拟扩展个人微信号所需要的协议。 第二部分，利用上面分析出来的协议 第三部分，包装成扩展功能API
+网页端微信协议分析思路可以查看：手把手教你扩展个人微信号（1）
+接口的使用可以查看：手把手教你扩展个人微信号（2）
+有兴趣的可以进去看一下。
+Github链接：ItChat
+总结 这个库的实现方式还是很有趣的，使用网页版微信调用的rest接口，跟常规外挂一样模拟网页微信的操作，只要网页版本微信不关闭应该都能用，只是可能需要紧跟着网页版本的微信rest接口持续升级
+github上有1w多star，很明显说明了这个扩展功能还是很多人迫切想使用的，后面我会尝试一下然后把遇到的问题和使用经验会再分享出来。Keep Real！</description>
+    </item>
+    
+    <item>
+      <title>如何使用抓包调试工具 —— Charles</title>
+      <link>https://ningyu1.github.io/site/post/84-charles/</link>
+      <pubDate>Mon, 04 Jun 2018 17:28:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/84-charles/</guid>
+      <description>以下信息转自公司内网资料，觉得很实用就转载出来提供参考。
+一、Charles是什么？ Charles是在 Mac或Windows下常用的http协议网络包截取工具，在平常的测试与调式过程中，掌握此工具就基本可以不用其他抓包工具了。
+二、为什么是Charles？ 为什么要用抓包工具？大家在平常移动App调试测试中是如何进行抓包的？
+主要特点如下：
+ 支持SSL代理，可以截取分析SSL的请求 支持流量控制。可以模拟慢速网络(2G,3G)，以及等待时间较长的请求。 支持AJAX调试。可以自动把JSON或者XML数据格式化，方便查看。 支持重发网络请求，方便后端调试。 支持修改网络请求参数。 支持网络请求的截取和动态修改。 最重要的一个优点就是有不同平台的版本（Mac，Windows、Linux）即学一个打遍天下。  三、Charles基本工作原理 charles是通过网络代理来进行抓包的，下面先了解一下http代理的原理：
+ 普通http请求过程  一般情况下的HTTP请求与响应
+ 加入了Charles的HTTP代理的请求与响应过程  中间的代理服务器就是Charles
+四、Charles的下载与安装过程  官网下载地址：http://www.charlesproxy.com/download/ Mac下安装  是一个安装包是一个dmg后缀的文件。打开后将Charles拖到Application目录下即完成安装。
+在Mac下你打开Launchpad即可看到一个像花瓶一样的Charles程序图标
+ Windows下安装  下载后直接双击根据安装向导一步一步安装即可
+五、Http抓包操作步骤 Step 1: 开启Charleshttp代理  设置Charles代理  第一次启动默认会开启本机的系统代理，因为我们只是监控移动端的所以将此选去除（去掉选项前面的小钩）
+ 激活http代理功能  Step 2: 手机端Wifi添加代理 Android端  在手机端打开你的Wifi设置然后长按已经连接的Wifi在弹出来的菜单中选择【修改网络】 沟上[显示高级]选项&amp;ndash;【手动】 输入代理服务器的IP与端口，IP即安装了Charles的电脑IP地址，端口就是前面一步设置Charles时所设置的端口。  注意：手机所连接Wifi要与电脑在同一个LAN(局域网)
+iOS端  点击你所连接的wifi 输入代理服务器的IP与端口，  IP即安装了Charles的电脑IP地址，端口就是前面一步设置Charles时所设置的端口。
+注意：手机所连接Wifi要与电脑在同一个LAN(局域网)
+Step 3:开启Charles录制功能  当手机连接上代理后Charles会弹出相应的提示框，点击Allow即可 点击工具栏上的开始录制按钮，即启动了Charles的抓包功能了。  Step 4：启动应用开始抓包  在手机上操作相应的App进行抓包。 在Charles的主界面上就可看到相应的请求内容。  Step 5：分析抓取的数据包  Charles 主要提供两种查看封包的视图，分别名为 “Structure”和 “Sequence”：  Structure 视图将网络请求按访问的域名分类； Sequence 视图将网络请求按访问的时间排序。  大家可以根据具体的需要在这两种视图之前来回切换。请求多了有些时候会看不过来，Charles提供了一个简单的Filter功能，可以输入关键字来快速筛选出URL 中带指定关键字的网络请求。 对于某一个具体的网络请求，你可以查看其详细的请求内容和响应内容。如果请求内容是POST 的表单，Charles 会自动帮你将表单进行分项显示。如果响应内容是 JSON 格式的，那么 Charles可以自动帮你将JSON 内容格式化，方便你查看。如果响应内容是图片，那么 Charles可以显示出图片的预览。  六、Https抓包操作步骤 Step 1：了解一下https的基本原理； HTTPS其实是有两部分组成：HTTP+ SSL / TLS，也就是在HTTP上又加了一层处理加密信息的模块。服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据。具体是如何进行加密，解密，验证的，且看图,下面这个图的解说 详细说明，请参考：http://blog.</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Docker Pull Image : error pulling image configuration: unexpected EOF错误</title>
+      <link>https://ningyu1.github.io/site/post/83-docker-pull-error/</link>
+      <pubDate>Tue, 29 May 2018 12:09:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/83-docker-pull-error/</guid>
+      <description>问题现象 执行docker pull命令报错：
+docker@rancher-192:~$ docker pull 192.168.0.34:5000/imageName:latest latest: Pulling from imageName 75a822cd7888: Pulling fs layer 046e44ee6057: Download complete 8c47541cb10b: Waiting e17edf9a1bd4: Waiting error pulling image configuration: unexpected EOF  查看日志错误如下：
+docker@rancher-192:~$ journalctl -u docker.service -- Logs begin at Mon 2018-05-14 04:14:07 CST, end at Tue 2018-05-29 11:31:02 CST. -- May 29 11:28:22 rancher-192.168.0.83 docker[993]: time=&amp;quot;2018-05-29T11:28:22.601383366+08:00&amp;quot; level=error msg=&amp;quot;Not continuing with pull after error: error pulling image configuration: unexpected EOF&amp;quot; May 29 11:30:36 rancher-192.</description>
+    </item>
+    
+    <item>
+      <title>如何免费的让你的网站变得更加安全 - HTTPS</title>
+      <link>https://ningyu1.github.io/site/post/82-ssl-lets-encrypt/</link>
+      <pubDate>Mon, 28 May 2018 15:57:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/82-ssl-lets-encrypt/</guid>
+      <description>在这个数据不安全的世界里，很有可能你早上买了个东西下午就会有类似的推销电话打过来骚扰你，这些数据信息从哪里来的呢？当然很多时候是人为的贩卖信息造成的，但是数据来源很大一部分是来自于互联网。因此站点使用https已经是最基本的防护，当我去访问一个站点它如果不是https的我可能都不想访问它更别提输入一些个人信息了。那怎么才能让我们提供的网站安全的服务你的用户呢？当然是使用证书来保护网站来往的数据。
+如果不差钱的话还是使用收费的证书去给你的网站开启https。当然国内也有很多免费的证书，去谷哥或者度娘能检索到一大把的免费证书信息，各大云服务商上面也有免费的证书可以申请使用，我下面就介绍一个免费的使用方式。
+Let’s Encrypt
+Let&#39;s Encrypt是一个于2015年三季度推出的数字证书认证机构，旨在以自动化流程消除手动创建和安装证书的复杂流程，并推广使万维网服务器的加密连接无所不在，为安全网站提供免费的SSL/TLS证书。
+Let&#39;s Encrypt由互联网安全研究小组（缩写ISRG）提供服务。主要赞助商包括电子前哨基金会、Mozilla基金会、Akamai以及思科。2015年4月9日，ISRG与Linux基金会宣布合作。
+通过官网我们能看到赞助商还是蛮多的，赞助商列表
+上述来自于维基百科，查看原文
+从介绍中能了解到它是为了解决，以自动化流程消除手动创建和安装证书的复杂流程，让证书使用更加简单。
+我们通过Let&#39;s Encrypt官网的Getting Started中可以查看具体的使用说明
+下面我们简单介绍一下使用步骤：
+使用步骤 安装证书非常简单，只需要使用Certbot，就可以完成。
+ 打开Certbot，选择你的网站使用的应用服务器和操作系统。如下图：   选择完后会生成安装教程，不用想太多Step by step就好了，如下图：  安装基础环境 $ sudo apt-get update $ sudo apt-get install software-properties-common $ sudo add-apt-repository ppa:certbot/certbot $ sudo apt-get update $ sudo apt-get install python-certbot-nginx  安装证书 安装完之后直接运行sudo certbot --nginx即可
+certbot 会自动修改nginx配置文件(nginx.conf)并且列出你的虚拟站点让你选择是否开启HTTPS，当然你只用选择是否开启即可，选择完后它会自动下载证书并且修改nginx配置文件
+修改后的nginx.conf是什么样的？让我们看一下
+listen 443 ssl; # managed by Certbot ssl_certificate /etc/letsencrypt/live/your.domain/fullchain.pem; # managed by Certbot ssl_certificate_key /etc/letsencrypt/live/your.</description>
+    </item>
+    
+    <item>
+      <title>Mysql数据库字符集utf8mb4使用问题</title>
+      <link>https://ningyu1.github.io/site/post/81-mysql-utf8mb4/</link>
+      <pubDate>Mon, 14 May 2018 14:38:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/81-mysql-utf8mb4/</guid>
+      <description>问题发生在这个字上，首先先让我们看这个字的字符信息
+utf8字符集信息 Utf-8 Character
+Symbol information table
+   Name: Utf-8 Character     Unicode Subset: CJK Extension B   Unicode HEX: U+20046   ASCII value: 131142   HTML: &amp;#131142;   CSS: \20046    它属于utf8的字符集，具体可参考：传送门
+既然属于utf8的字符集那为什么数据库保存这个字会出现非法字符的错误呢？错误如下：
+### Cause: java.sql.SQLException: Incorrect string value: &#39;\xF0\xA5\x8A\x8D&#39; for column &#39;DESCRIPTION&#39; at row 1 ; uncategorized SQLException for SQL []; SQL state [HY000]; error code [1366]; Incorrect string value: &#39;\xF0\xA5\x8A\x8D&#39; for column &#39;DESCRIPTION&#39; at row 1; nested exception is java.</description>
+    </item>
+    
+    <item>
+      <title>ActiveMQ消息消费慢问题排查</title>
+      <link>https://ningyu1.github.io/site/post/80-activemq-consumer-slow-speed/</link>
+      <pubDate>Wed, 09 May 2018 15:38:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/80-activemq-consumer-slow-speed/</guid>
+      <description>问题现象 有的时候会发现ActiveMQ中某个个队列的消息在写入后，不是立刻就被调度消费，而是需要等待一小会才能被调度消费（大概时间是1分钟），而且还伴随着这样的现象，当消息写入速度很快时消费很快，当消息写入消息速度很慢时反而消费很慢，我们的理解就是当写入慢的时候很多消费者都是闲置的那为什么消费反而会变慢？
+问题原因 跟了一下代码发现了跟我们的设置有很大关系，因为我们设置的receiveTimeout=6000（1分钟）接受阻塞时间为1分钟。
+ActiveMQ在消费时每个consumer会独占一个Thread，Thead中通过consumer.receive()去阻塞，只有当consumer消费了maxMessagesPerTask个消息后，才会退出线程，由taskExecutor重新调度，maxMessagesPerTask这个值默认为10，可以通过下面代码得知：
+@Override public void initialize() { // Adapt default cache level. if (this.cacheLevel == CACHE_AUTO) { this.cacheLevel = (getTransactionManager() != null ? CACHE_NONE : CACHE_CONSUMER); } // Prepare taskExecutor and maxMessagesPerTask. synchronized (this.lifecycleMonitor) { if (this.taskExecutor == null) { this.taskExecutor = createDefaultTaskExecutor(); } else if (this.taskExecutor instanceof SchedulingTaskExecutor &amp;amp;&amp;amp; ((SchedulingTaskExecutor) this.taskExecutor).prefersShortLivedTasks() &amp;amp;&amp;amp; this.maxMessagesPerTask == Integer.MIN_VALUE) { // TaskExecutor indicated a preference for short-lived tasks. According to // setMaxMessagesPerTask javadoc, we&#39;ll use 10 message per task in this case // unless the user specified a custom value.</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Docker Pull Image : Filesystem layer verification failed for digest sha256错误</title>
+      <link>https://ningyu1.github.io/site/post/79-docker-registry-pull-filesystem-layer/</link>
+      <pubDate>Fri, 27 Apr 2018 17:46:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/79-docker-registry-pull-filesystem-layer/</guid>
+      <description>问题现象 除了打包镜像的服务器上可以执行docker pull 192.168.0.34:5000/sample:latest以外，其它任何服务器执行此命令时，都会出现以下错误信息：
+8b7054...: Verifying Checksum Filesystem layer verification failed for digest sha256: 8b7054.....  这使得无法正常使用最新的sample镜像文件。
+如果是按分析过程中的方式把8b7054文件夹迁移的话，docker会不断重试去拉取此文件信息，大概结果如下：
+8b7054...: (..Retry 10 seconds) Filesystem layer verification failed for digest sha256: 8b7054.....  分析过程 尝试在服务器上找日志，结果没有可用的日志。
+在/var/lib/registry下找该sha256的数据，能够找到，尝试移走该文件夹数据。结果执行docker pull命令时，依旧是报错。只好迁移回文件夹。
+尝试在网络上寻找解决方案，有的说与源有关系，有的说与docker版本有关系，需要升级版本，大多都没有很好的解决。如果实在搞不定，估计
+需要考虑这些方案了。
+尝试删除所有sample开发版本相关的image，并重新打包镜像，结果问题依旧。
+解决方案 docker build的过程中有很多选项可以使用，尝试将缓存关闭（默认否）、签名关闭（默认否）、清理过程文件（默认是）。
+因此切换到jenkins的workspace下，找到sample文件夹，执行以下命令:
+docker build --rm=true --no-cache --disable-content-trust=true -t sample . docker tag sample 192.168.0.34:5000/sample docker push --disable-content-trust=true 192.168.0.34:5000/sample  编译打包过程没有任何错误，可以正常发布镜像到registry上。
+于是，切换到其他服务器上去执行docker pull，结果一切正常。
+没有checksum？ 且没有原来失败的sha256 digest。
+看了下其他镜像成功过的pull日志，也是没有checksum。看来只有出现异常的时候，才会去checksum（待考证）
+既然已经成功过，那还是用正常的方式去打包编译及下载。于是删除现有镜像文件，在jenkins上进行工程打包（原始逻辑）。
+docker build -t sample:latest .</description>
+    </item>
+    
+    <item>
+      <title>Dubbo使用jsr303框架hibernate-validator遇到的问题</title>
+      <link>https://ningyu1.github.io/site/post/78-dubbo-validation-jsr303-pit/</link>
+      <pubDate>Mon, 23 Apr 2018 13:25:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/78-dubbo-validation-jsr303-pit/</guid>
+      <description>Dubbo可以集成jsr303标准规范的验证框架，作为验证框架不二人选的hibernate-validator是大家都会经常在项目中使用的，但是在Dubbo使用是会发生下面这个问题。
+问题描述 背景：使用springmvc做restful，使用dubbo做rpc，restful中调用大量的rpc，数据验证会在这两个地方，一个是restful层面，一个是rpc层面，restful层面使用springmvc默认的集成hibernate-validator来实现，参数开启验证只需要加入@Validated param。
+rpc层面也使用hibernate-validator实现，dubbo中开启validation也有两个方式，一个是在consumer端，一个是在provider端。
+当我们在consumer端开启验证时: &amp;lt;dubbo:reference id=&amp;quot;serviceName&amp;quot; interface=&amp;quot;com.domain.package.TestService&amp;quot; registry=&amp;quot;registry&amp;quot; validation=&amp;quot;true&amp;quot;/&amp;gt;  没有任何问题，可以拿到所有的数据校验失败数据。
+当我们在provider端开启验证时： &amp;lt;dubbo:service interface=&amp;quot;com.domain.package.TestService&amp;quot; ref=&amp;quot;serviceName&amp;quot; validation=&amp;quot;true&amp;quot; /&amp;gt;  会发生如下异常：
+com.alibaba.dubbo.rpc.RpcException: Failed to invoke remote method: sayHello, provider: dubbo://127.0.0.1:20831/com.domain.package.TestService?application=dubbo-test- rest&amp;amp;default.check=false&amp;amp;default.cluster=failfast&amp;amp;default.retries=0&amp;amp;default.timeout=1200000&amp;amp;default.version=1.0 .0&amp;amp;dubbo=2.6.1&amp;amp;interface=com.domain.package.TestService&amp;amp;methods=sayHello&amp;amp;pid=29268&amp;amp;register.ip=192. 168.6.47&amp;amp;side=consumer&amp;amp;timestamp=1524453157718, cause: com.alibaba.com.caucho.hessian.io.HessianFieldException: org.hibernate.validator.internal.engine.ConstraintViolationImpl.constraintDescriptor: &#39;org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl&#39; could not be instantiated com.alibaba.com.caucho.hessian.io.HessianFieldException: org.hibernate.validator.internal.engine.ConstraintViolationImpl.constraintDescriptor: &#39;org.hibernate.validator.internal.metadata.descriptor.ConstraintDescriptorImpl&#39; could not be instantiated at com.alibaba.com.caucho.hessian.io.JavaDeserializer.logDeserializeError(JavaDeserializer.java:167) at com.alibaba.com.caucho.hessian.io.JavaDeserializer$ObjectFieldDeserializer.deserialize (JavaDeserializer.java:408) at com.alibaba.com.caucho.hessian.io.JavaDeserializer.readObject(JavaDeserializer.java:273) at com.alibaba.com.caucho.hessian.io.JavaDeserializer.readObject(JavaDeserializer.java:200) at com.alibaba.com.caucho.hessian.io.SerializerFactory.readObject(SerializerFactory.java:525) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObjectInstance(Hessian2Input.java:2791) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2731) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2260) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2705) at com.alibaba.com.caucho.hessian.io.Hessian2Input.readObject(Hessian2Input.java:2260) at com.</description>
+    </item>
+    
+    <item>
+      <title>单元测试以及代码覆盖率——Jenkins集成SonarQube、JaCoCo、Junit使用问题汇总</title>
+      <link>https://ningyu1.github.io/site/post/77-jenkins-sonarqube-jacoco-junit/</link>
+      <pubDate>Thu, 12 Apr 2018 17:03:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/77-jenkins-sonarqube-jacoco-junit/</guid>
+      <description>当我们使用持续集成Jenkins的时候经常会结合一系列的插件使用，这里就说一下Jenkins集成Sonar做代码质量管理以及Junit（testng）、JaCoCo做单元测试和覆盖率的时候遇到的问题。
+前提 首先我们的工程使用maven构建，单元测试使用testng编写，在使用jenkins之前我们应该在本地使用maven调通所有的单元测试以及test coverage的问题。
+我们使用maven-surefire-plugin来生成单元测试报告，使用jacoco-maven-plugin来生成test coverage报告。下面我给出以下我使用的标准配置
+maven工程调通单元测试以及测试覆盖率报告生成 pom.xml的标准配置
+&amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;slf4j-api&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.testng&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;testng&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;6.4&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;optional&amp;gt;true&amp;lt;/optional&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;optional&amp;gt;true&amp;lt;/optional&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.jacoco&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jacoco-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.8.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-surefire-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.5&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;skipTests&amp;gt;false&amp;lt;/skipTests&amp;gt; &amp;lt;argLine&amp;gt;${argLine} -Dfile.encoding=UTF-8&amp;lt;/argLine&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-deploy-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;skip&amp;gt;false&amp;lt;/skip&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.jacoco&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jacoco-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.8.1&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;skip&amp;gt;false&amp;lt;/skip&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;prepare-agent&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;outputDirectory&amp;gt;${basedir}/target/coverage-reports&amp;lt;/outputDirectory&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;id&amp;gt;report&amp;lt;/id&amp;gt; &amp;lt;phase&amp;gt;test&amp;lt;/phase&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;report&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt;  根据上面配置执行下来的报告生成的目录结构如下:</description>
+    </item>
+    
+    <item>
+      <title>TiDB使用笔记 —— 测试环境集群部署</title>
+      <link>https://ningyu1.github.io/site/post/76-tidb-notes/</link>
+      <pubDate>Tue, 10 Apr 2018 20:13:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/76-tidb-notes/</guid>
+      <description>TiDB是一个NewSql的分布式数据库，具体介绍我们引用官方的简介
+简介 TiDB 是 PingCAP 公司受 Google Spanner / F1 论文启发而设计的开源分布式 NewSQL 数据库。
+TiDB 具备如下 NewSQL 核心特性：
+SQL支持（TiDB 是 MySQL 兼容的） 水平弹性扩展（吞吐可线性扩展） 分布式事务 跨数据中心数据强一致性保证 故障自恢复的高可用 海量数据高并发实时写入与实时查询（HTAP 混合负载） TiDB 的设计目标是 100% 的 OLTP 场景和 80% 的 OLAP 场景，更复杂的 OLAP 分析可以通过 TiSpark 项目来完成。
+TiDB 对业务没有任何侵入性，能优雅的替换传统的数据库中间件、数据库分库分表等 Sharding 方案。同时它也让开发运维人员不用关注数据库 Scale 的细节问题，专注于业务开发，极大的提升研发的生产力。
+我们来看一下TiDB的架构图
+架构图 从架构图中可以看出TiDB的三大组件都支持水平扩展而且内部通信使用的是gRPC，关于TiDB和gRPC的那些事可以查看InfoQ的文章：《TiDB与gRPC的那点事》
+TiDB使用的TiKV作为存储，官方建议至少TiKV使用ssd硬盘，如果条件好pd模块最好也使用ssd硬盘。
+下来我们具体看一下三大组件分别都是干什么的
+TiDB Server TiDB Server 负责接收 SQL 请求，处理 SQL 相关的逻辑，并通过 PD 找到存储计算所需数据的 TiKV 地址，与 TiKV 交互获取数据，最终返回结果。 TiDB Server 是无状态的，其本身并不存储数据，只负责计算，可以无限水平扩展，可以通过负载均衡组件（如LVS、HAProxy 或 F5）对外提供统一的接入地址。</description>
+    </item>
+    
+    <item>
+      <title>MySql Lock wait timeout exceeded该如何处理？</title>
+      <link>https://ningyu1.github.io/site/post/75-mysql-lock-wait-timeout-exceeded/</link>
+      <pubDate>Sun, 08 Apr 2018 18:02:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/75-mysql-lock-wait-timeout-exceeded/</guid>
+      <description>这个问题我相信大家对它并不陌生，但是有很多人对它产生的原因以及处理吃的不是特别透，很多情况都是交给DBA去定位和处理问题，接下来我们就针对这个问题来展开讨论。
+Mysql造成锁的情况有很多，下面我们就列举一些情况：
+ 执行DML操作没有commit，再执行删除操作就会锁表。 在同一事务内先后对同一条数据进行插入和更新操作。 表索引设计不当，导致数据库出现死锁。 长事物，阻塞DDL，继而阻塞所有同表的后续操作。  但是要区分的是Lock wait timeout exceeded与Dead Lock是不一样。
+ Lock wait timeout exceeded：后提交的事务等待前面处理的事务释放锁，但是在等待的时候超过了mysql的锁等待时间，就会引发这个异常。 Dead Lock：两个事务互相等待对方释放相同资源的锁，从而造成的死循环，就会引发这个异常。  还有一个要注意的是innodb_lock_wait_timeout与lock_wait_timeout也是不一样的。
+ innodb_lock_wait_timeout：innodb的dml操作的行级锁的等待时间 lock_wait_timeout：数据结构ddl操作的锁的等待时间  如何查看innodb_lock_wait_timeout的具体值？
+SHOW VARIABLES LIKE &#39;innodb_lock_wait_timeout&#39;  如何修改innode lock wait timeout的值？
+参数修改的范围有Session和Global，并且支持动态修改，可以有两种方法修改：
+方法一：
+通过下面语句修改
+set innodb_lock_wait_timeout=100; set global innodb_lock_wait_timeout=100;  ps. 注意global的修改对当前线程是不生效的，只有建立新的连接才生效。
+方法二：
+修改参数文件/etc/my.cnf innodb_lock_wait_timeout = 50
+ps. innodb_lock_wait_timeout指的是事务等待获取资源等待的最长时间，超过这个时间还未分配到资源则会返回应用失败； 当锁等待超过设置时间的时候，就会报如下的错误；ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction。其参数的时间单位是秒，最小可设置为1s(一般不会设置得这么小)，最大可设置1073741824秒，默认安装时这个值是50s(默认参数设置)。
+下面介绍在遇到这类问题该如何处理
+问题现象  数据更新或新增后数据经常自动回滚。 表操作总报 Lock wait timeout exceeded 并长时间无反应  解决方法  应急方法：show full processlist; kill掉出现问题的进程。 ps.</description>
+    </item>
+    
+    <item>
+      <title>RediSearch基于Redis的高性能全文搜索引擎，资料整理</title>
+      <link>https://ningyu1.github.io/site/post/74-redisearch/</link>
+      <pubDate>Fri, 30 Mar 2018 12:24:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/74-redisearch/</guid>
+      <description>最近在参考CQRS DDD架构来进行公司的库存中心重构设计，在CQRS架构中需要一个in-memory的方式快速修改库存在通过消息驱动异步更新到DB，也就是说内存的数据是最新的，DB的数据是异步持久化的，在某一个时刻内存和DB的数据是存在不一致的，但是满足最终一致性。
+这样我们就需要内存当作前置DB在使用，因此不单纯的只满足修改数据，还需要满足Query的要求，内存结构的数据Query是比较麻烦的，它不像DB那样已经实现好了索引检索，需要我们自己来设计Key的机构和搜索索引的构建。
+当然行业里也有这样的做法，对数据修改的时候双写到内存(Redis)和ElasticSearch再异步到DB，这样Query全部走向ElasticSearch，但是我觉得这样做的复杂度会增加很多，所以就在看如何基于Redis来设计一个搜索引擎。
+看到了RedisLabs团队开发的基于Redis的搜索引擎：RediSearch
+RediSearch Github: RediSearch
+官方站点
+官方给出的描述
+Redisearch implements a search engine on top of redis, but unlike other redis search libraries, it does not use internal data structures like sorted sets. Inverted indexes are stored as a special compressed data type that allows for fast indexing and search speed, and low memory footprint. This also enables more advanced features, like exact phrase matching and numeric filtering for text queries, that are not possible or efficient with traditional redis search approaches.</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— CAS Server集群环境下报错：Server redirected too many  times (20)</title>
+      <link>https://ningyu1.github.io/site/post/73-cas-server-pit1/</link>
+      <pubDate>Fri, 23 Mar 2018 16:01:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/73-cas-server-pit1/</guid>
+      <description>当我们使用cas做单点登录的时候往往会使用集群方式部署，不管是cas server或者是接入的app server都会采用集群的方式部署。
+在对cas server做集群实现无状态化，需要注意一下几点，也是我上一篇cas遇到的TGC验证问题中总结出来的：
+ cas的ticket需要做到集中存储，可以使用redis、jpa、或者其他方式，这个官方文章上有详细介绍：ticket-registry cas的session信息需要做到集中存储，如果使用的是tomcat可以使用TomcatRedisSessionMananger插件来通过redis做session集中存储。 还有一个就是上面遇到的问题，客户端cookie信息：TGC，TGC采用cookie方式存在客户端，因此需要开启会话保持，使得相同客户端每次都会被路由到同一个cas server上去做TGC验证。 最后一个就是需要接入sso的client应用端的session信息也需要做集中存储，因此cas server会和client进行通信去验证ticket，验证完后会生成信息并存储到sesson中，因此也需要使用TomcatRedisSessionMananger插件来通过redis做session集中存储。 cas server端和接入的app服务端需要保证网络通畅。  cas使用总结博文目录 最近cas遇到的问题我都总结到了blog中，这里整理一下目录如下：
+ 《CAS使用经验总结，纯干货》 《CAS Server强制踢人功能实现方式》 《Trouble Shooting —— CAS Server集群环境下TGC验证问题排查，需要开启会话保持》  接下来我们就说一下这次遇到的问题。
+问题现象 通过上面的方式可以将cas server做到集群无状态化，但是避免不了其他的问题，下面就是最近与到的问题，现象是这样的，一部分人可以正常登陆，一部分人登陆时报错，错误如下：
+2018-03-23 10:33:22.768 [http-nio-7051-exec-1] ERROR org.jasig.cas.client.util.CommonUtils - Server redirected too many times (20) java.net.ProtocolException: Server redirected too many times (20) at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1637) ~[na:1.7.0_79] at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:254) ~[na:1.7.0_79] at org.jasig.cas.client.util.CommonUtils.getResponseFromServer(CommonUtils.java:393) ~[cas-client-core-3.3.3.jar:3.3.3] at org.jasig.cas.client.validation.AbstractCasProtocolUrlBasedTicketValidator.retrieveResponseFromServer(AbstractCasProtocolUrlBasedTicketValidator.java:45) [cas-client-core-3.3.3.jar:3.3.3] at org.jasig.cas.client.validation.AbstractUrlBasedTicketValidator.validate(AbstractUrlBasedTicketValidator.java:200) [cas-client-core-3.3.3.jar:3.3.3] at org.springframework.security.cas.authentication.CasAuthenticationProvider.authenticateNow(CasAuthenticationProvider.java:140) [spring-security-cas-3.1.7.RELEASE.jar:3.1.7.RELEASE] at org.</description>
+    </item>
+    
+    <item>
+      <title>Subversion库如何全文检索代码？</title>
+      <link>https://ningyu1.github.io/site/post/72-svn-query/</link>
+      <pubDate>Fri, 23 Mar 2018 10:44:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/72-svn-query/</guid>
+      <description>现在是Git流行的年代，在Git的套件里想要全文检索代码也有很多方案，Git也支持命令直接检索代码，但是当使用svn的用户代码检索应该如何处理呢？
+在回答前面问题之前我们还要搞清楚另外一个问题，我们为什么要检索代码？
+有的时候我们想从所有的代码库去寻找使用相同方法的代码，常规做法就是checkout下来所有的项目，然后通过IDE工具去关联检索使用到某个方法的代码，但是这样做比较耗费时间而且当项目过多IDE不一定能扛得住。还有的时候我们想从规范角度去check开发人员写的代码是否有违规的或者有问题的，就可以通过检索去寻找，当然规范的check有更好的工具，可以使用scm工具sonar去check代码它整合了很多check模版。
+鉴于上面种种的原因对代码做检索还是很有必要的，接下来我们就说一下使用svn时如何全文检索代码。
+我们可以先说一个思路，把代码灌入elasticsearch、lucene、solr，然后通过ui去搜索这是一条可行的路子。
+这两天发现了一个工具svnquery很好用，它使用ASP.net开发，采用Lucene生成索引，提供GUI和WEB工具通过索引文件来检索代码。
+svnquery官网
+它提供三个程序，一个svnindex用于通过svn库生成索引目录
+SvnIndex.exe %aciton% %index_path% %svn_path% -u 用户名 -p 密码  ps. action包括create、update，更新和修改
+执行后会生成一个索引目录，可以通过svnfind工具可以选择索引目录来进行代码搜索，svnfind是一个GUI工具。
+还可以通过SvnWebQuery来进行代码搜索，SvnWebQuery是一个.NET的web程序需要放入IIS服务器来使用
+引用官网的两张图
+唯一的缺点就是需要一个库一个库的生成索引，没有批量生成svn路径下所有有权限的库，如果有这个功能我个人觉得就完美了。
+好了工具介绍到这里，如果有用svn的想对代码进行检索的可以使用这个工具。</description>
+    </item>
+    
+    <item>
+      <title>Zookeeper常用命令与注意事项</title>
+      <link>https://ningyu1.github.io/site/post/71-zookeeper-considerations/</link>
+      <pubDate>Wed, 21 Mar 2018 15:26:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/71-zookeeper-considerations/</guid>
+      <description>Zookeeper在互联网行业和分布式环境下是最常用的集群协调工具，那我们今天就对Zookeeper的常用命令和使用注意事项进一步说明，在这之前我们先看一下Zookeeper是什么，它能做什么？
+Zookeeper是什么？ ZooKeeper是一个开源的分布式应用程序协调服务，是Google的Chubby一个开源的实现，是Hadoop和Hbase的重要组件。它是一个为分布式应用提供一致性服务的软件，提供的功能包括：配置维护、域名服务、分布式同步、组服务等。
+它的这些特性可以让我们在很多场景下使用它，可以用它做注册中心、分布式锁、选举、队列等。
+Zookeeper的原理 ZooKeeper是以Fast Paxos算法为基础的，Paxos 算法存在活锁的问题，即当有多个proposer交错提交时，有可能互相排斥导致没有一个proposer能提交成功，而Fast Paxos作了一些优化，通过选举产生一个leader (领导者)，只有leader才能提交proposer，具体算法可见Fast Paxos。因此，要想弄懂ZooKeeper首先得对Fast Paxos有所了解
+ZooKeeper的基本运转流程：
+ 选举Leader。 同步数据。 选举Leader过程中算法有很多，但要达到的选举标准是一致的。 Leader要具有最高的执行ID，类似root权限。 集群中大多数的机器得到响应并接受选出的Leader。  Zookeeper数据结构 与普通的文件系统极其类似，如下：
+其中每个节点称为一个znode. 每个znode由3部分组成:
+ stat. 此为状态信息, 描述该znode的版本, 权限等信息. data. 与该znode关联的数据. children. 该znode下的子节点.  Zookeeper节点类型  persistent： persistent节点不和特定的session绑定, 不会随着创建该节点的session的结束而消失, 而是一直存在, 除非该节点被显式删除. ephemeral： ephemeral节点是临时性的, 如果创建该节点的session结束了, 该节点就会被自动删除. ephemeral节点不能拥有子节点. 虽然ephemeral节点与创建它的session绑定, 但只要该该节点没有被删除, 其他session就可以读写该节点中关联的数据. 使用-e参数指定创建ephemeral节点. sequence： 严格的说, sequence并非节点类型中的一种. sequence节点既可以是ephemeral的, 也可以是persistent的. 创建sequence节点时, ZooKeeper server会在指定的节点名称后加上一个数字序列, 该数字序列是递增的. 因此可以多次创建相同的sequence节点, 而得到不同的节点. 使用-s参数指定创建sequence节点.  Zookeeper常用命令 启动服务 [app@iZbp1dijzcfg8m0bcqfv9yZ zookeeper]$ ./bin/zkServer.sh start ZooKeeper JMX enabled by default Using config: /usr/local/servers/zookeeper/zookeeper/bin/.</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— CAS Server集群环境下TGC验证问题排查，需要开启会话保持</title>
+      <link>https://ningyu1.github.io/site/post/70-cas-server-pit/</link>
+      <pubDate>Fri, 16 Mar 2018 12:02:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/70-cas-server-pit/</guid>
+      <description>问题现象 CAS部署结构：
+两台cas server通过nginx做负载均衡，两个cas server的ticket registry配置的jpa方式，指向同一个库。两个cas server的tomcat做了TomcatRedisSessionManager，使用redis集中存储session。
+目前的现象：
+页面上请求cas登录地址，登录过后频繁刷新登录页面，有时返回已登录，有时返回未登录，当返回未登录时去后台查看日志发现有如下错误，验证cookie发现请求的源IP与第一次访问的源IP不一致。这个很明显是cas集群环境下的问题。
+2018-03-16 10:02:44,418 DEBUG [org.apereo.cas.web.support.TGCCookieRetrievingCookieGenerator] - &amp;lt;Invalid cookie. Required remote address does not match ${ip}&amp;gt; java.lang.IllegalStateException: Invalid cookie. Required remote address does not match ${ip} at org.apereo.cas.web.support.DefaultCasCookieValueManager.obtainCookieValue(DefaultCasCookieValueManager.java:84) ~[cas-server-support-cookie-5.0.4.jar:5.0.4] at org.apereo.cas.web.support.CookieRetrievingCookieGenerator.retrieveCookieValue(CookieRetrievingCookieGenerator.java:93) ~[cas-server-support-cookie-5.0.4.jar:5.0.4] at org.apereo.cas.web.support.CookieRetrievingCookieGenerator$$FastClassBySpringCGLIB$$25dba342.invoke(&amp;lt;generated&amp;gt;) ~[cas-server-support-cookie-5.0.4.jar:5.0.4] at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:720) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:133) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:121) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:655) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.apereo.cas.web.support.CookieRetrievingCookieGenerator$$EnhancerBySpringCGLIB$$10d36968.retrieveCookieValue(&amp;lt;generated&amp;gt;) ~[cas-server-support-cookie-5.0.4.jar:5.0.4] at org.apereo.cas.logging.web.ThreadContextMDCServletFilter.doFilter(ThreadContextMDCServletFilter.java:83) ~[cas-server-core-logging-5.0.4.jar:5.0.4] at org.</description>
+    </item>
+    
+    <item>
+      <title>Json序列化、反序列化支持泛型，Dubbo对泛型参数方法进行反射调用</title>
+      <link>https://ningyu1.github.io/site/post/69-java-reflect/</link>
+      <pubDate>Tue, 13 Mar 2018 15:31:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/69-java-reflect/</guid>
+      <description>最近在对Dubbo接口进行反射调用时，遇到了参数类型较为复杂的情况下，使用反射方式无法调用的问题。
+由于Dubbo使用了proxy代理对象，因此在反射上调用是存在一定的问题，从反射对象上获取的方法和参数类型可能会导致无法正常的调用。
+首先先让我们看一个复杂参数的接口定义
+public String testMethod(Map&amp;lt;String,ResourceVo&amp;gt; map, List&amp;lt;Map&amp;lt;String,ResourceVo&amp;gt;&amp;gt; list) throws BizException;  Gson反序列化复杂类型 在对参数进行反序列化时，内部的类型容易丢失，我们可以使用gson的Type进行反序列化得到正确的参数值，让我们看一下gson反序列化的两个方法
+ /** * This method deserializes the specified Json into an object of the specified class. It is not * suitable to use if the specified class is a generic type since it will not have the generic * type information because of the Type Erasure feature of Java. Therefore, this method should not * be used if the desired type is a generic type.</description>
+    </item>
+    
+    <item>
+      <title>New Version V1.2.0, Dubbo Plugin for Apache JMeter</title>
+      <link>https://ningyu1.github.io/site/post/68-jmeter-plugin-dubbo-1.2.0/</link>
+      <pubDate>Tue, 13 Mar 2018 13:18:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/68-jmeter-plugin-dubbo-1.2.0/</guid>
+      <description>项目地址 jmeter-plugin-dubbo项目已经transfer到dubbo group下
+github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+V1.2.0  使用gson进行json序列化、反序列化 使用dubbo泛化调用方式重构反射调用方式 支持复杂类型、支持泛型，例如：&amp;rdquo;java.lang.List,Map map,List&amp;gt; list&amp;rdquo;  本次版本主要对反射参数类型进行了增强，支持复杂类型、支持参数泛型，可以参考如下的参数对照表：
+   Java类型 paramType paramValue     int int 1   double double 1.2   short short 1   float float 1.2   long long 1   byte byte 字节   boolean boolean true或false   char char A，如果字符过长取值为：&amp;rdquo;STR&amp;rdquo;.charAt(0)   java.lang.String java.lang.String或String或string 字符串   java.</description>
+    </item>
+    
+    <item>
+      <title>Python项目生成requirements.txt的多种方式，用于类库迁移必备</title>
+      <link>https://ningyu1.github.io/site/post/67-python-requirements/</link>
+      <pubDate>Fri, 09 Mar 2018 14:19:54 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/67-python-requirements/</guid>
+      <description>我相信任何软件程序都会有依赖的类库，尤其现在开源如此的火爆，很多轮子可以拿来直接使用不再需要自己再去开发（拿来主义者），这样大大的提高开发效率。NPM就是轮子最多的地方，哈哈！开个玩笑！
+我们做开发时为何需要对依赖库进行管理？当依赖类库过多时，如何管理类库的版本？
+我相信大家都知道怎么回答这个问题，为了更加规范管理项目结构，提高开发效率所以我们需要对依赖库进行管理，不管使用任何开发语言，如今都有依赖库的管理工具。
+例如：Java有Maven、Gradle，JS有NPM，Python有pip、easy_install，Linux有apt-get、yun 等。
+我们这里就对Python的依赖库管理来进一步说一说。
+Python提供通过requirements.txt文件来进行项目中依赖的三方库进行整体安装导入。
+那首先让我们看一下requirements.txt的格式
+requests==1.2.0 Flask==0.10.1  Python安装依赖库使用pip可以很方便的安装，如果我们需要迁移一个项目，那我们就需要导出项目中依赖的所有三方类库的版本、名称等信息。
+接下来就看Python项目如何根据requirements.txt文件来安装三方类库
+方法一：pip freeze pip freeze &amp;gt; requirements.txt  pip freeze命令输出的格式和requirements.txt文件内容格式完全一样，因此我们可以将pip freeze的内容输出到文件requirements.txt中。在其他机器上可以根据导出的requirements.txt进行包安装。
+如果要安装requirements.txt中的类库内容，那么你可以执行
+pip install -r requirements.txt  注意：pip freeze输出的是本地环境中所有三方包信息，但是会比pip list少几个包，因为pip，wheel，setuptools等包，是自带的而无法(un)install的，如果要显示所有包可以加上参数-all，即pip freeze -all
+方法二：pipreqs 使用pipreqs生成requirements.txt
+首先先安装pipreqs
+pip install pipreqs  使用pipreqs生成requirements.txt
+pipreqs requirements.txt  注意：pipreqs生成指定目录下的依赖类库
+上面两个方法的区别？ 使用pip freeze保存的是当前Python环境下所有的类库，如果你没有用virtualenv来对Python环境做虚拟化的话，类库就会很杂很多，在对项目进行迁移的时候我们只需关注项目中使用的类库，没有必要导出所有安装过的类库，因此我们一般迁移项目不会使用pipreqs，pip freeze更加适合迁移整个python环境下安装过的类库时使用。
+不知道virtualenv是什么或者不会使用它的可以查看：《构建Python多个虚拟环境来进行不同版本开发之神器-virtualenv》
+使用pipreqs它会根据当前目录下的项目的依赖来导出三方类库，因此常用与项目的迁移中。
+这就是pip freeze、pipreqs的区别，前者是导出Python环境下所有安装的类库，后者导出项目中使用的类库。</description>
+    </item>
+    
+    <item>
+      <title>Bug Fix Version V1.1.0, Dubbo Plugin for Apache JMeter</title>
+      <link>https://ningyu1.github.io/site/post/66-jmeter-plugin-dubbo-bugfix/</link>
+      <pubDate>Wed, 07 Mar 2018 18:00:54 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/66-jmeter-plugin-dubbo-bugfix/</guid>
+      <description>首先先感谢网友 @流浪的云 提的bug，让我感觉到写这个工具没有白费还有点价值，非常感谢，
+他在使用jmeter-plugin-dubbo插件时发现GUI中输入的信息无法使用Jmeter变量${var}与函数来进行参数化，以下是我修复这个问题的记录。
+项目地址 jmeter-plugin-dubbo项目已经transfer到dubbo group下
+github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+问题描述  jmeter-plugin-dubbo插件GUI输入的信息无法使用${var}变量来进行参数化  问题修复 Jmeter的输出要想使用用户自定义变量、CSV变量、BeanShell、函数来进行参数化，必须将输入的参数通过JMeterProperty的子类add到Jmeter管理。如果使用的是Swing的Bean绑定机制可以很好的支持变量与函数参数化，如果是手写的GUI与Sample就需要注意这一点，可能写出来的插件不能使用变量${var}参数化。
+我之前在处理参数值在GUI和Sample之间传递时，没有使用org.apache.jmeter.testelement.property.JMeterProperty系列子类来处理参数，因此变量无法支持，让我们来看一下区别。
+先让我们看一下org.apache.jmeter.testelement.property.JMeterProperty都有哪些子类。
+我们之前使用的参数赋值是这样的：
+public String getVersion() { return this.getPropertyAsString(FIELD_DUBBO_VERSION, DEFAULT_VERSION); } public void setVersion(String version) { this.setProperty(FIELD_DUBBO_VERSION, version); }  这种方式是无法支持使用${var}变量来参数化赋值的（也就是动态赋值）。
+我们应该给setProperty传入JMeterProperty的子类来支持变量参数化，如下：
+public String getVersion() { return this.getPropertyAsString(FIELD_DUBBO_VERSION, DEFAULT_VERSION); } public void setVersion(String version) { this.setProperty(new StringProperty(FIELD_DUBBO_VERSION, version)); }  ps.注意setProperty的使用不一样，这里使用的是new StringProperty
+上面的参数还相对简单的普通字符串参数，当我们遇到集合或更加复杂的参数类型时如何处理？
+我本以为使用JMeterProperty的子类CollectionProperty是可以让集合参数支持变量参数化的，结果测试下来没有任何用，传入的${var}变量，在运行的时候还是变量没有变成相应的值。
+于是又换成MapProperty和ObjectProperty一样无法支持变量参数化。
+查看Jmeter Plugins的Http Sample源码，看他是如何处理的。
+org.apache.jmeter.protocol.http.util.HTTPArgument源码 package org.apache.jmeter.protocol.http.util; import java.</description>
+    </item>
+    
+    <item>
+      <title>Java中内部类使用注意事项，内部类对序列化与反序列化的影响</title>
+      <link>https://ningyu1.github.io/site/post/65-java-inner-class/</link>
+      <pubDate>Tue, 06 Mar 2018 16:50:17 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/65-java-inner-class/</guid>
+      <description>现在很多服务架构都是微服务、分布式架构，开发模式也都是模块化开发，在分布式的开发方式下服务之间的调用不管是RPC还是RESTful或是其他SOA方案，均离不开序列化与反序列化，尤其是使用Java开发，Bean实现序列化接口几乎已经是必备的要求，而且这个要求已经纳入到很多大厂公司的开发规范中，开发规范中强制要求实现序列化接口和重写toString、hashCode方法。
+前面提到了序列化与反序列化，那序列化与反序列化的对象就是开发人员写的java bean，不同的java bean会给序列化反序列化带来什么问题呢？接下来就让我们看一下内部类对序列化反序列化的影响。
+在这之前我们先看一下常用的序列化工具：
+ JavaSerialize fastjson dubbo json google gson google protoBuf hessian kryo Avro fast-serialization jboss-serialization jboss-marshalling-river protostuff msgpack-databind json/jackson/databind json/jackson/db-afterburner xml/xstream+c xml/jackson/databind-aalto  工具太多了这里就不列了，让我们先做一个测试。
+测试 常规java bean 测试类：
+import java.io.Serializable; public class Test implements Serializable { private static final long serialVersionUID = 2010307013874058143L; private String name; public String getName() { return name; } public void setName(String name) { this.name = name; } }  调用序列化与反序列化:</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Docker rancher/agent-instance cannot start automatically</title>
+      <link>https://ningyu1.github.io/site/post/64-rancher-agent-instance/</link>
+      <pubDate>Mon, 05 Mar 2018 17:23:11 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/64-rancher-agent-instance/</guid>
+      <description>今天发现一个docker机器莫名其妙的无工作了，于是进入宿主机查看信息如下：
+docker@xxx:~$ docker ps be4238200956 rancher/agent:v1.0.2 &amp;quot;/run.sh run&amp;quot; 5 months ago Up 34 minutes rancher-agent  发现只有一个rancher/agent容器是启动的，其余的都没有启动，查看rancher控制台，服务都在转圈圈Restaring状态，而且长时间一直这个状态没有变化。
+这是什么问题呢？
+查看机器上所有的容器
+docker@xxx:~$ docker ps -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES d9da7f16ef2d 192.168.0.34:5000/saas-erp:latest &amp;quot;./entrypoint.sh&amp;quot; 4 days ago Exited (0) 50 minutes ago r-erp_erp-dubbo_1 79e8e475db19 192.168.0.34:5000/tms2job:latest &amp;quot;./entrypoint.sh&amp;quot; 4 weeks ago Exited (0) 50 minutes ago r-tms_tms2-job_1 0995dabe324b 192.168.0.34:5000/customer-mq:latest &amp;quot;catalina.sh run&amp;quot; 8 weeks ago Exited (143) 7 weeks ago r-customer_customer-mq_1 65492930b132 192.</description>
+    </item>
+    
+    <item>
+      <title>构建Python多个虚拟环境来进行不同版本开发之神器-virtualenv</title>
+      <link>https://ningyu1.github.io/site/post/63-python-virtualenv/</link>
+      <pubDate>Fri, 02 Mar 2018 11:22:28 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/63-python-virtualenv/</guid>
+      <description>我们都知道Python的类库很多，但是大多支持的版本还是Python2.x系列，Python3支持的类库相对较少，因此我们在开发的时候经常还使用的Python2系列的版本，Python3对语法进行了比较大的重构，Python3中将一些Python2的模块名称做了修改，虽然兼容Python2但还是需要我们做一些处理来保证代码在不同Python版本中能够正常运作，如果我们想同时使用Python2 和 Python3，这个时候大家最常用的做法就是机器上配置多个版本，虽然可以解决问题但是配合多个项目的各种杂乱的包依赖情况，问题就变的非常复杂了，可能升级某一个第三方依赖库会对很多项目产生影响。
+我们都知道在安装Python类库的时候它默认会安装到Python的目录下，有编程洁癖的人都会因此苦恼，因为它污染了Python的目录，并且在开发的时候不同的项目使用的类库差异也蛮大，为了使多个项目之间互相不影响，我们能不能根据项目来区分开Python环境目录？
+当然可以，virtualenv就能帮助我们解决上面的苦恼，它是一个可以创建多个隔绝Python环境的工具，virtualenv可以创建一个包含所有必要的可执行的文件夹，用来使用Python工程所需要的包，同时还不污染Python的原安装目录。
+这个工具简直就是给有开发洁癖的人送福音的。画外音：专业送快递
+上面大致说了一下我们使用virtualenv的初衷，接下来让我们看一下virtualenv如何使用，在使用之前先正式的了解一下virtualenv
+什么是virtualenv? Virtualenv是一个用来创建独立的Python环境的工具
+为什么我们需要一个独立的Python环境？ 引用virtualenv的文档
+virtualenv is a tool to create isolated Python environments. The basic problem being addressed is one of dependencies and versions, and indirectly permissions. Imagine you have an application that needs version 1 of LibFoo, but another application requires version 2. How can you use both these applications? If you install everything into /usr/lib/python2.7/site-packages (or whatever your platform’s standard location is), it’s easy to end up in a situation where you unintentionally upgrade an application that shouldn’t be upgraded.</description>
+    </item>
+    
+    <item>
+      <title>RESTful访问权限管理实现思路，采用路径匹配神器之AntPathMatcher</title>
+      <link>https://ningyu1.github.io/site/post/62-ant-path-matcher/</link>
+      <pubDate>Tue, 27 Feb 2018 16:15:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/62-ant-path-matcher/</guid>
+      <description>我们经常在写程序时需要对路径进行匹配，比如说：资源的拦截与加载、RESTful访问控制、审计日志采集、等，伟大的SpringMVC在匹配Controller路径时是如何实现的？全都归功于ant匹配规则。
+Spring源码之AntPathMatcher，这个工具类匹配很强大，采用的是ant匹配规则。
+什么是ant匹配规则？
+   字符wildcard 描述     ? 匹配一个字符（matches one character）   * 匹配0个及以上字符（matches zero or more characters ）   ** 匹配0个及以上目录directories（matches zero or more &amp;lsquo;directories&amp;rsquo; in a path ）    这个匹配规则很简单，采用简洁明了的方式来进行匹配解析，简化版本的正则。
+结合官方的示例来理解一下
+   Pattern 匹配说明     com/t?st.jsp 匹配: com/test.jsp , com/tast.jsp , com/txst.jsp   com/*.jsp 匹配: com文件夹下的全部.jsp文件   com/**/test.jsp 匹配: com文件夹和子文件夹下的全部.jsp文件   org/springframework/*/.</description>
+    </item>
+    
+    <item>
+      <title>扩展Disconf支持Global共享配置，简化业务应用参数配置</title>
+      <link>https://ningyu1.github.io/site/post/61-disconf-ext/</link>
+      <pubDate>Sun, 11 Feb 2018 11:26:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/61-disconf-ext/</guid>
+      <description>当我们使用统一配置中心（UCM）后或许都会出现这种烦恼，项目中的配置项目多，当项目引用到基础中间件时都要增加基础中间件的配置，例如：zk参数、redis参数、rpc参数、loadbalance参数、mq参数、等。这些配置都是基础的中间件配置，应该做成共享的方式让所有APP都共享，而并不是在用的时候再去APP中添加，Global的配置基础中间件团队维护即可。
+为什么要有公共共享的配置？ 因为在APP配置中有很多是公共的配置，如果没有Global就需要在自己的APP中配置这些配置信息，导致APP中配置信息过多不好维护，公共的配置信息修改需要通知各业务APP修改自己APP中的配置，没有达到一处修改，各处使用的目标。
+这时候有朋友就会问我了如果做成全局共享配置，那不同项目需要修改全局某个参数怎么办呢？ 这个需求也很正常，比如loadbalance参数确实需要根据不同项目的具体情况去配置参数，对于这种问题其实很好解决，我们可以使用APP中的配置去覆盖Global配置，也就是说当APP中的配置项与Global配置项相同的情况下，以APP的配置为主即可。
+这样一来APP的配置生效的优先级为：Local conf &amp;gt; Project conf &amp;gt; Global conf，当出现相同配置项以APP自身的配置为主去覆盖。
+增加了Global的支持后，APP中的配置减少了，避免了一些由于配置导致的错误，也可以通过Global的方式去规范APP的配置，让业务开发不关心公共配置的细节，在使用的时候直接使用无需维护。
+Disconf作为一个比较老牌的UCM在这方面支持的并不好，它并没有共享配置这个概念，这样一来公共的配置就需要在每个APP中都要配置一份，操作起来很烦人。
+那我们如何来解决这个问题？我们能否扩展Disconf让其支持Global共享配置呢？ 扩展思路 在加载properties的时候，也就是ReloadablePropertiesFactoryBean的locations，给前面默认加一个GlobalProp项目的索引项：global（使用disconf的新建配置项，而不是配置文件），这个索引项的值是所有global配置文件的名称，使用&amp;rdquo;,&amp;ldquo;分隔，例如：
+global-dubbo.properties,global-redis.properties,global-zookeeper.properties,global-sso.properties,global-mq.properties,global-fastdfs.properties,global-elasticsearch.properties  让disconf下载配置文件的时候优先下载global的配置文件，在properties加载的时候优先加载global的配置，这样当发生重复项时后加载的会覆盖前面的信息，从而达到了我们上面的需求，当APP中修改了某个global配置应该以APP的配置项为主。
+接下来就让我们看一下具体扩展了哪些类？
+Disconf的扩展点做的不是那么的好，因此扩展起来有些麻烦，我使用的是比较暴力的方式，直接使用原包的类在名称后加Ext然后修改代码，使用的时候使用Ext的类替代即可，这种方式的弊端是升级Disconf的时候很麻烦。
+Disconf扫描管理 com.baidu.disconf.client.DisconfMgrBean 扩展一个 com.baidu.disconf.client.DisconfMgrBeanExt com.baidu.disconf.client.DisconfMgrBeanSecond 扩展一个 com.baidu.disconf.client.DisconfMgrBeanSecondExt  Reloadable Properties com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean 扩展一个 com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBeanExt  可以增加一个开关从而支持启用global的自由度，默认是开启的。
+下面来看一下扩展后的具体使用方法如下
+项目地址 disconf-client-ext
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+disconf-client-ext的使用  依赖disconf版本：2.6.32 pom中引入disconf-client-ext依赖 修改disconf配置  替换com.baidu.disconf.client.DisconfMgrBean &amp;ndash;&amp;gt; com.baidu.disconf.client.DisconfMgrBeanExt 替换com.baidu.disconf.client.DisconfMgrBeanSecond &amp;ndash;&amp;gt; com.baidu.disconf.client.DisconfMgrBeanSecondExt 替换com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean &amp;ndash;&amp;gt; com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBeanExt 修改locations中配置文件，只保留项目自己的配置文件，例如   &amp;lt;bean id=&amp;quot;disconfNotReloadablePropertiesFactoryBean&amp;quot; class=&amp;quot;com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBeanExt&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;locations&amp;quot;&amp;gt; &amp;lt;list&amp;gt; &amp;lt;value&amp;gt;classpath:/jdbc.properties&amp;lt;/value&amp;gt; &amp;lt;/list&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;/bean&amp;gt;   关闭global共享配置（默认是开启的）  &amp;lt;bean id=&amp;quot;disconfNotReloadablePropertiesFactoryBean&amp;quot; class=&amp;quot;com.</description>
+    </item>
+    
+    <item>
+      <title>Dubbo接口如何在Jmeter中测试，自研Dubbo Plugin for Apache JMeter</title>
+      <link>https://ningyu1.github.io/site/post/60-jmeter-plugins-dubbo-support/</link>
+      <pubDate>Fri, 09 Feb 2018 15:39:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/60-jmeter-plugins-dubbo-support/</guid>
+      <description>最近公司测试需要对Dubbo的RPC接口进行测试，测试工具使用的是Jmeter，按照常规的做法需要包装一个Java请求，再配合Jmeter的Java Sample去做测试，这种做法是最简单最普遍的，但是这个方法不够灵活和方便，那我们能不能写一个Jmeter Plugin来解决这个问题？让Dubbo RPC接口测试更为方便一些？
+那我们先了解一下Jmeter的插件机制
+Jmeter Plugin 先来看一下Jmeter的核心组件
+ Sample 取样器，这个是最主要的组件，测试的内容主要是靠Sample来实现，我们常见的Sample有，HttpSample、FTPSample、JavaSample、SMTPSample、LDAPSample等。 Timer 定时器，主要用于配置sample之间的等待时间，可以查看：org.apache.jmeter.timers.RandomTimer ConfigElement 配置组件，主要用于定义前置配置。如数据库连接，csv输入数据集等。主要功能是将配置转换为变量设置到JMeter context中。 Assertion 验证Sampler的结果是否符合预期 PostProcessor 一般用于对Sampler结果进行二次加工 Visualizer 将sampler的结果进行可视化展示。 Controller 对sampler进行逻辑控制。 SampleListener 负责处理监听，基于事件机制。一般用于保存sampler的结果等耗费时间的操作。  Jmeter的插件机制比较简单，Jmeter提供了扩展类来支持自定义插件的开发。 继承org.apache.jmeter.samplers.gui.AbstractSamplerGui和org.apache.jmeter.samplers.AbstractSampler就可以完成一个插件开发。
+JMeter的GUI机制 由于Jmeter是一个基于Swing的GUI工具,所以开发插件需要对Java Swing GUI框架有一定了解。 JMeter内部有两种GUI的实现方式。
+第一种方式： 直接继承JMeterGUIComponent接口的抽象实现类:
+org.apache.jmeter.config.gui.AbstractConfigGui org.apache.jmeter.assertions.gui.AbstractAssertionGui org.apache.jmeter.control.gui.AbstractControllerGui org.apache.jmeter.timers.gui.AbstractTimerGui org.apache.jmeter.visualizers.gui.AbstractVisualizer org.apache.jmeter.samplers.gui.AbstractSamplerGui  通过Swing的Bean绑定机制 前者的好处是自由度高，可定制性强，但需要开发者关心GUI控件布局,以及从控件到Model的转换。后者基本不需要开发者接触到GUI层的东西，定义好Bean以及BeanInfo即可。但SampleListener不支持BeanInfo方式定义。
+ps.如果java swing比较熟悉的话推荐使用第一种方式，自由度高。
+下面是我写的插件DubboSample，主要用于Dubbo RPC接口测试。
+Dubbo Plugin for Apache JMeter jmeter-plugin-dubbo项目已经transfer到dubbo group下
+github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+DubboSample使用 支持Jmeter版本 Jmeter版本：3.0
+插件安装 插件包可以去github上下载。将插件包放入Jmeter的lib的ext下。
+${Path}\apache-jmeter-3.0\lib\ext  如果使用的是:jmeter-plugins-dubbo-1.0.0-SNAPSHOT-jar-with-dependencies.jar包含所有依赖。
+如果使用的是：jmeter-plugins-dubbo-1.0.0-SNAPSHOT.jar需要自定添加插件的依赖包，推荐使用上面的包，依赖包版本如下：</description>
+    </item>
+    
+    <item>
+      <title>如何将Python脚本打包成可执行文件？</title>
+      <link>https://ningyu1.github.io/site/post/59-py2exe-pyinstaller/</link>
+      <pubDate>Wed, 07 Feb 2018 11:57:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/59-py2exe-pyinstaller/</guid>
+      <description>我们有时候经常会使用python写一些小工具，在Linux环境下可以很方便运行，因为Linux默认都会有python环境，我们只需要添加python脚本依赖的类库即可执行。但是有的时候我们需要把小工具给到一些麻瓜去用的时候就会出现一些问题，他们大多是在Windows上运行工具，那就必须要先准备python的可运行环境才行，这就给麻瓜们带来了使用成本，我们能否将python脚本打包成windows下可执行文件呢？
+接下来让我们先了解一下python有哪些类库可以帮助我们解决这个问题。
+这是一个来自Freezing Your Code的统计
+   Solution Windows Linux OS X Python 3 License One-file mode Zipfile import Eggs pkg_resources support     bbFreeze yes yes yes no MIT no yes yes yes   py2exe yes no no yes MIT yes yes no no   pyInstaller yes yes yes yes GPL yes no yes no   cx_Freeze yes yes yes yes PSF no yes yes no   py2app no no yes yes MIT no yes yes yes    我们能看到有很多类库都可以解决我们的问题，其中pyInstaller、cx_Freeze、bbFreeze都不错，pkg_resources新版的pyInstaller貌似是支持的。</description>
+    </item>
+    
+    <item>
+      <title>Git SSH Key settings and passphrase reset</title>
+      <link>https://ningyu1.github.io/site/post/58-git-ssh/</link>
+      <pubDate>Tue, 30 Jan 2018 16:10:20 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/58-git-ssh/</guid>
+      <description>在使用github仓库的时候我们经常会看到clone有两种方式:https、ssh，https的方式使用起来非常简单但是每次在pull、push的时候需要输入密码，一两次还可以忍受但是作为常态是有点崩溃的，这个时候我们可以使用ssh的方式，ssh的好处就是在pull、push的时候可以使用密码也可以不使用密码，但是前提是要设置好ssh key，如果你是Repository的管理员那很好设置，如果不是管理员那就老老实实的使用https的方式，下来我们就说一下使用ssh遇到的问题。
+修改用户主目录（home） 当出现下图问题时：
+是说明你的.ssh目录设置的有问题，关于用户主目录（home）的问题，一般windows机器安装完git后home都会是C:\Users\用户名这种目录，但是打开Git bash时它无法识别home目录使用到了其他莫名其妙的目录（有的时候会是不存在的目录或是网络盘符），在这个时候就需要变更home目录，变更的方法如下：
+环境：windows
+Git version 1.x系列 如果是Git version 1.x系列，打开profile文件，文件位置：$\Git\etc\profile（$替换成你的盘符）。 在profile中找到：HOME=&amp;quot;$(cd &amp;quot;$HOME&amp;quot; ; pwd)&amp;quot;这个位置，在前面增加你想变成的home目录，例如：
+# normalize HOME to unix path HOME=&amp;quot;C:\Users\用户名&amp;quot; HOME=&amp;quot;$(cd &amp;quot;$HOME&amp;quot; ; pwd)&amp;quot; export PATH=&amp;quot;$HOME/bin:$PATH&amp;quot; export GNUPGHOME=~/.gnupg  当修改好之后，重启Git bash即可，输入cd ~/.ssh，会进入你设置好的目录，在这个目录下生成相关的配置文件，如：.ssh、.gnupg、.bash_history、.gitconfig等，如果以前已经有这些文件可以copy到这个目录下直接使用。
+Git version 2.x系列 如果是Git version 2.x系列，请设置环境变量，增加HOME的环境变量，目录为：C:\Users\用户名（你想设置的目录），随后重启Git bash即可，输入cd ~/.ssh，会进入你设置好的目录。
+按照上面步骤修改好之后，出现下图所示就证明修改完成了。如：
+ssh key设置 输入cd ~/.ssh进入home目录使用如下如下方法生成ssh key
+ 可以在Git bash中使用ssh-keygen生成ssh key 还可以使用eclipse的ssh2工具生成，操作如下：Window -&amp;gt; Preferences -&amp;gt; General -&amp;gt; Network Connections -&amp;gt; SSH -&amp;gt; Key Management -&amp;gt; Generate RSA Key 还可以使用TortoiseGit的PuTTY Key Generator工具生成。  方法有很多，生成好的private key用文本编辑器打开复制出来，粘贴到git hub的settings中即可，操作如下：github -&amp;gt; Settings -&amp;gt; SSH and GPG keys -&amp;gt; New SSH key，起个名字粘贴key然后保存即可。</description>
+    </item>
+    
+    <item>
+      <title>关于凝雨</title>
+      <link>https://ningyu1.github.io/site/about/</link>
+      <pubDate>Tue, 30 Jan 2018 11:03:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/about/</guid>
+      <description>大家好，我是凝雨，我不是高手，我也不是牛人，我只是单纯的喜欢编程，我觉得做任何事情还是要跟着自己的心走。
+网络信息  Blog: https://ningyu1.github.io/blog/index.html Email： ningbe111@163.com &amp;amp;&amp;amp; ningbe111@gmail.com GitHub：https://github.com/ningyu1 座右铭：
+十年饮冰，难凉热血
+心无杂念，快乐编程
+世界和平，Keep Real
+  个人介绍 我是一个技术型带管理经验的IT从业者，目前在生鲜冷链供应链领域做架构师，擅长底层技术架构，框架编写，团队管理。对分布式、微服务、高并发、高性能、高可用有丰富经验积累和心得体会，喜欢在开源社区游走主要以学习为目的，保持空杯心态学无止境，写代码的时候有洁癖，完美主义者。
+兴趣爱好：
+ 钓鱼（越来越专业） 羽毛球（打的一般吧） 台球（偶尔会一杆清） 足球（和老友们没事会踢一场） 唱歌（闲暇时会录几首歌） 看书（技术类、文学类书籍）  我的微信 ps.添加时请备注来源博客，技术讨论否则拒绝</description>
+    </item>
+    
+    <item>
+      <title>CAS Server强制踢人功能实现方式</title>
+      <link>https://ningyu1.github.io/site/post/57-cas-server1/</link>
+      <pubDate>Fri, 26 Jan 2018 15:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/57-cas-server1/</guid>
+      <description>前面写过一篇关于CAS Server使用的经验总结，主要总结了CAS Server在使用的时候遇到的一些常见问题，比如说：证书、SLO、集群session处理、自定义用户认证、Ticket持久化等问题，传送门：CAS使用经验总结，纯干货，这次在基础上又增加了一个很常见很普通的问题，那就是踢人功能。
+在管理系统这个领域里面踢人功能并不陌生，为了更好的管理用户串用账号，安全等方面考虑，接下来我们就细说一下CAS如何实现踢人的功能。
+先说一下踢人功能的场景：
+用户A在机器A上登录了APP1，用户A在机器B上登录APP1，在这种情况下后者登录需要踢掉前者的登录状态。
+用户A在机器A上登录了APP1，用户B在机器B上登录了APP1，在这种情况下不存在踢人操作。
+用户A在机器A上登录了APP1，用户A在机器B上登录了APP2，在这种情况下要分情况了，可以踢也可以不踢，这个就根据产品情况来选择，我们本次测试不能解决这个场景，如何解决我还在摸索中。
+要做踢人功能之前先了解一下CAS的认证授权机制是如何完成的？
+我这里直接引用官网的架构图：
+CAS Server与应用的Session交互图：
+其实CAS就是生成维护Ticket信息和应用session做绑定，当然它的Ticket实现还是比较复杂的，有树形关系以及和Service关联关系，从Ticket的源码能看的出来它有root的判断和Service的映射列表。
+根据上面对CAS的理解，接下来我们说CAS怎么操作踢人功能？
+踢人功能实现思路 在登录认证的时候记录一下，在下次登录获取到登录的人员列表，然后去匹配找出是否存在相同的用户，如果存在相同的用户，就注销掉这个用户的登录信息，这个是常规的思路和做法，但是在CAS里如何去找到切入点来进行判断操作呢？
+我们在上一篇中提到了自定义认证逻辑，那么我们就可以继续在认证的这个切入点去进一步分析。
+这里要先搞清楚一个概念：Authentication和Authorization这两者是不同的。
+Authentication：字面意思认证，怎么理解这个认证呢？举个例子：我们每个人都有身份证，比如你去买火车票，买火车票需要出示身份证，那这个身份证就是证明你是你自己的凭证，那这个证明的过程就是认证。
+Authorization：字面意思授权，怎么理解这个授权呢？举个例子：继续拿买火车票来说，你刚才出示了身份证证明了你自己，然后给了钱买了一张火车票，铁道部给了你一张票，这个票授权了你可以乘坐X车次X座位的权限其他车次你无权乘坐，那么这张票就是证明你确实买了X车次X座位的凭证，这就是授权。
+换回系统的角度来说，认证就是验证用户名密码，授权就是验证你能不能操作某个功能的权限。
+理解完认证和授权的区别，我们就开始从认证这块的切入点去看如何操作，CAS提供了这个类TicketRegistry它是管理所有Ticket的接口，通过调用TicketRegistry.getTickets()方法可以获取到所有认证用户的凭证。
+/** * Retrieve all tickets from the registry. * * @return collection of tickets currently stored in the registry. Tickets * might or might not be valid i.e. expired. */ Collection&amp;lt;Ticket&amp;gt; getTickets();  那有了凭证信息就好更进一步操作。
+CAS提供了TicketGrantingTicket，这个类是Ticket接口的一个实现类，可以通过TicketGrantingTicket.getAuthentication().getPrincipal().getId()来获取用户的身份。
+/** * @return the unique id for the Principal */ String getId();  getId()返回的是登录的用户名，那拿到了用户名就要考虑如何注销的事情了。</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— HTTPS(SSL)站点使用WebSocket(ws)出现SecurityError问题</title>
+      <link>https://ningyu1.github.io/site/post/56-websocket-ssl/</link>
+      <pubDate>Thu, 25 Jan 2018 17:04:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/56-websocket-ssl/</guid>
+      <description>最近发生了一个问题我觉得挺有意思的，所以针对这个问题总结一下。
+最近公司服务上了https(SSL)，在https(SSL)的环境下呢本因为可以愉快的玩耍，但是后来发现程序有使用websocket（ws://domain.com），这里就有朋友想了使用ws跟ssl有什么关系？我可以很明确的告诉你当然有关系。
+当你的站点使用的是http的时候，使用ws可以很愉快的玩耍。当换成了https(SSL)那么问题来了。
+在chrome下是测试没有问题可以正常使用，但是在ie下就出现了问题，报SecurityError的错误，那这个错误是什么原因呢?
+WebSocket connection to &#39;ws://domain.com/websocket&#39; failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED  应该是每个浏览器对websocket的支持不一样或者说每个浏览器的安全沙箱不太一样，禁止了一些用法，各大浏览器对websocket的支持情况请看：https://caniuse.com/#search=websocket
+无意中看到了mozilla的websocket支持详细说明如下：
+Security considerations
+WebSockets should not be used in a mixed content environment; that is, you shouldn&amp;rsquo;t open a non-secure WebSocket connection from a page loaded using HTTPS or vice-versa. In fact, some browsers explicitly forbid this, including Firefox 8 and later. 
+具体地址：https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications
+意思呢就是，ws与http对应，wss与https对应，如果站点使用的是https那就必须使用wss来做websocket请求不能使用ws来请求，不允许混合的方式使用。
+看到这个就更加明确了问题所在：安全机制问题，最好不要混合使用避免奇怪的问题。
+于是就开启了wss服务的使用路程。
+如果你的wss服务是使用ip方式访问的，那么需要制作一个对应这个ip的证书，可以使用openssl生成自签名证书，但是不推荐使用ip的方式访问WebSocket。
+如果你的wss服务是使用域名方式访问的，那么需要制作一个对应这个域名证书（最好是通配符域名证书），这样在构建wss服务的时候将证书配置进去。
+构建wss服务有很多种方式，我这里提供一种比较简单的方式。
+使用nginx提供ssl代理 保留以前的ws服务提供方式不做任何变更，增加一个nginx开启ssl代理，配置跟常规的ssl配置有一些细微的变化，那就是header会有一些变化，websocket需要指定header：Upgrade和http version：1.1 ，因此我这里给出配置详情：</description>
+    </item>
+    
+    <item>
+      <title>生产环境如何快速跟踪、分析、定位问题-Java</title>
+      <link>https://ningyu1.github.io/site/post/55-java-jvm-analysis/</link>
+      <pubDate>Tue, 23 Jan 2018 14:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/55-java-jvm-analysis/</guid>
+      <description>我相信做技术的都会遇到过这样的问题，生产环境服务遇到宕机的情况下如何去分析问题？比如说JVM内存爆掉、CPU持续高位运行、线程被夯住或线程deadlocks，面对这样的问题，如何在生产环境第一时间跟踪分析与定位问题很关键。下来让我们看看通过如下步骤在第一时间分析问题。
+CPU占用较高场景 收集当前CPU占用较高的线程信息，执行如下命令：
+top -H -p PID -b -d 1 -n 1 &amp;gt; top.log 或 top -H -p PID  结果如下：
+上图显示的都是某一个进程内的线程信息，找到cpu消耗最高的线程id，再配合jstack来分析耗cpu的代码位置，那如何分析呢？
+先执行jstack获取线程信息
+jstack -l PID &amp;gt; jstackl.log  将PID（29978）转成16进制：0x751a，16进制转换工具很多可以在线随便搜索一个或者基本功好的自己计算。
+打开jstackl.log，查找nid=0x751a的信息，这样就定位到了具体的代码位置，这里由于是安全原因我就不贴图了。
+通过上面的步骤就可以轻松的定位那个线程导致cpu过高，当然也可以通过其他方式来定位，下面介绍一个快捷的方式
+#线程cpu占用 #!/bin/bash [ $# -ne 1 ] &amp;amp;&amp;amp; exit 1 jstack $1 &amp;gt;/tmp/jstack.log for cpu_tid in `ps -mp $1 -o THREAD,tid,time|sort -k2nr| sed -n &#39;2,15p&#39; |awk &#39;{print$2&amp;quot;_&amp;quot;$(NF-1)}&#39;`;do cpu=`echo $cpu_tid | cut -d_ -f1` tid=`echo $cpu_tid | cut -d_ -f2` xtid=`printf &amp;quot;%x\n&amp;quot; $tid` echo -e &amp;quot;\033[31m========================$xtid $cpu%\033[0m&amp;quot; cat /tmp/jstack.</description>
+    </item>
+    
+    <item>
+      <title>CAS使用经验总结，纯干货</title>
+      <link>https://ningyu1.github.io/site/post/54-cas-server/</link>
+      <pubDate>Fri, 19 Jan 2018 16:25:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/54-cas-server/</guid>
+      <description>最近在处理公司项目对接到CAS server，在使用CAS发生了很多问题，下面整理一下遇到的问题与解决方式，希望可以帮助到需要的工程师们
+CAS它是什么？它能做什么？这些我就不概述了，自行去搜索了解，https://baike.baidu.com/item/CAS/1329561
+我们在使用CAS的时候基本都会遇到如下的几种问题：
+ 证书问题 Client接入配置 SLO（Single Logout） CAS callback回调问题 Cookie问题 用户数据源以及认证问题 CAS Server Ticket持久化问题 Client Server集群模式下session问题  还有一些是公司内部项目框架集成问题这里就不多说了。
+以下总结都是基于CAS v5.0.4版本测试
+我用的CAS Server是通过overlays改造后的项目，为什么需要修改原有的CAS Server呢？
+我相信每个公司都有一些特殊的需求比如说：
+ 对登录页面的修改 自有的密码加密验证方式 新老项目架构参差不齐 使用公司自有用户数据源  等等很多问题都需要对CAS Server进行改造
+这里我将改造的CAS Server放到github上：
+项目地址：cas-site
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+下面具体说一下上述的问题将如何来分析并解决
+证书问题 如果你的服务不打算使用SSL那请跳过这段说明。
+一般公司项目会有很多域名大概都是子域名的方式，例如：account.xxxx.com,login.xxxx.com，那么最好使用通配符证书，为什么呢？这样你的cas server上配置一个通配符证书即可，如果没有使用通配符证书那cas server上要配置所有授信域名的证书，这样就很麻烦，除非一些历史问题没办法才会导入多个证书，一般使用通配符证书。
+我使用的是自签名的通配符证书，具体自签名证书如何生成可以查看我之前写的文章：
+《Openssl生成自签名证书，简单步骤》中讲述了如何生成自签名证书。
+《使用自签名证书，简单步骤》中讲述了如何使用自签名证书。
+《Java访问SSL地址，使用证书方式和免验证证书方式》中讲述了Java访问ssl使用证书方式和免验证证书方式。
+ps.这里需要注意的是在制作单域名证书和通配符域名证书的区别是在：Common Name输入的时候，例如：
+单域名证书：Common Name：account.xxxx.ccom 通配符域名证书：Common Name：*.xxxx.com
+将制作好的证书文件通过keytool导入到jdk下即可，或使用InstallCert来生成文件copy到jdk下，具体可以参考文章：《使用自签名证书，简单步骤》
+证书放在：%JAVA_HOME%\jre\lib\security
+我们cas server使用的jdk1.8，client服务大多是jdk1.7，因此在证书处理上要注意这个细节，上面文章中有明确说明
+如果需要使用Docker构建，可以参考我写好的Dockerfile，在cas-site项目下Dockerfile文件
+Client接入配置 接入cas的client端配置非常简单，可以使用spring framework对接cas方式，也可以使用spring security对接cas方式，或者其他支持cas的第三方框架，自己对接配置非常简单只需要配置SingleSignOutFilter和SingleSignOutHttpSessionListener
+ org.jasig.cas.client.session.SingleSignOutFilter：解决Logout清空TGC和session信息 org.jasig.cas.client.session.SingleSignOutHttpSessionListener：session监听  这里在对接方面就不做过多的介绍了。</description>
+    </item>
+    
+    <item>
+      <title>Java访问SSL地址，使用证书方式和免验证证书方式</title>
+      <link>https://ningyu1.github.io/site/post/53-ssl-cert-3/</link>
+      <pubDate>Mon, 15 Jan 2018 14:08:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/53-ssl-cert-3/</guid>
+      <description>前文回顾 《Openssl生成自签名证书，简单步骤》中讲述了如何生成自签名证书。
+《使用自签名证书，简单步骤》中讲述了如何使用自签名证书。
+下面讲述在Java中如何访问SSL地址，使用证书访问和免验证证书访问。
+Java安装证书访问SSL地址 使用InstallCert安装证书 《使用自签名证书，简单步骤》这篇文章中介绍的InstallCert生成jssecacerts文件。 将ssecacerts文件放入%JAVA_HOME%\jre\lib\security 下即可。
+使用keytool工具导入证书 keytool -import -alias xstore -keystore &amp;quot;cacerts_path&amp;quot; -file a.cer   cacerts_path: 你的cacerts文件路径，一般在%JAVA_HOME%jre\lib\security\cacerts a.cer: 你需要导入的cer文件路径，可以是InstallCert生成的文件 密码使用jdk默认密码：changeit，或者在上面命令后增加-storepass changeit设置密码参数  通过上面两种方式可以将证书安装到jdk下，接下来就是java中如何访问ssl地址，不多说直接上代码。
+自定义javax.net.ssl.X509TrustManager实现类 import java.security.cert.CertificateException; import java.security.cert.X509Certificate; import javax.net.ssl.X509TrustManager; public class MyX509TrustManager implements X509TrustManager { @Override public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException { } @Override public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException { } @Override public X509Certificate[] getAcceptedIssuers() { return null; } }  包装HttpsDemo类 HttpsDemo类中包装两个方法，sendHttps发起ssl地址请求，sendHttp发起普通地址请求</description>
+    </item>
+    
+    <item>
+      <title>使用自签名证书，简单步骤</title>
+      <link>https://ningyu1.github.io/site/post/52-ssl-cert-2/</link>
+      <pubDate>Fri, 12 Jan 2018 19:13:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/52-ssl-cert-2/</guid>
+      <description>在前文《Openssl生成自签名证书，简单步骤》中讲述了如何生成自签名证书，接下来整理证书使用遇到的问题。
+证书使用的方式也有很多中，可以使用keytool生成或导入导出证书，这里对keytool不做过多描述，可以通过&amp;ndash;help查看使用方法。
+证书文件可以放到应用服务器、负载均衡、jvm中使用，如：IIS、tomcat、nginx或者loadbalance、jdk等等。
+这里介绍一个简单的工具：InstallCert安装证书文件到jdk下，这个在本地调试连接ssl服务器代码的时候很有用。
+如果我们的服务端使用的是jdk1.8（比如说：cas服务），访问的客户端（业务系统）也是jdk1.8，那么直接使用InstallCert安装即可.
+如果我们的服务端使用的是jdk1.8，但是客户端使用jdk1.7会遇到什么问题？
+我们都知道jdk1.7默认的TLS版本是1.0但是支持1.1和1.2，如何查看jdk支持的TLS版本呢？
+可以使用jdk自带的jcp（java control panel）工具
+jcp（java control panel）路径：%JAVA_HOME%\jre\bin
+点击高级，勾选TLS1.1 TSL1.2开启支持。
+如果使用客户端程序（jdk1.7开发的）访问服务端程序（jdk1.8开发的），在使用InstallCert安装证书时会出现如下错误：
+javax.net.ssl.SSLHandshakeException: Remote host closed connection during handshake at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:946) ~[na:1.7.0_45] at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1312) ~[na:1.7.0_45]  上面错误的意思就是服务器把你拒绝了！把你拒绝了！把你拒绝了！拒绝你的理由就是TLS版本不对。
+下面我主要讲在客户端程序（jdk1.7开发的）访问服务端程序（jdk1.8开发的）的场景下安装证书如何解决上面的错误。
+通过InstallCert源码安装证书 /* * Copyright 2006 Sun Microsystems, Inc. All Rights Reserved. * * Redistribution and use in source and binary forms, with or without * modification, are permitted provided that the following conditions * are met: * * - Redistributions of source code must retain the above copyright * notice, this list of conditions and the following disclaimer.</description>
+    </item>
+    
+    <item>
+      <title>Openssl生成自签名证书，简单步骤</title>
+      <link>https://ningyu1.github.io/site/post/51-ssl-cert/</link>
+      <pubDate>Fri, 12 Jan 2018 17:06:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/51-ssl-cert/</guid>
+      <description>最近在调试服务时需要使用证书，因此对证书的生成和使用做了一些整理，网上关于这部分资料也很多，但是很杂乱，我整理出以下简单的步骤生成自签名证书，具体让我们来看一看吧。
+第一种方式 通过openssl生成私钥
+openssl genrsa -out server.key 1024  使用私钥生成自签名的cert证书文件，以下是通过参数只定证书需要的信息
+openssl req -new -x509 -days 3650 -key server.key -out server.crt -subj &amp;quot;/C=CN/ST=mykey/L=mykey/O=mykey/OU=mykey/CN=domain1/CN=domain2/CN=domain3&amp;quot;  如果对上面参数具体的说明不太了解的，可以使用不带参数的方式，通过命令行步骤生成，参考第二种方式。
+第二种方式 通过openssl生成私钥
+openssl genrsa -out server.key 1024  根据私钥生成证书申请文件csr
+openssl req -new -key server.key -out server.csr  这里根据命令行向导来进行信息输入：
+ps.Common Name可以输入：*.yourdomain.com，这种方式生成通配符域名证书
+使用私钥对证书申请进行签名从而生成证书
+openssl x509 -req -in server.csr -out server.crt -signkey server.key -days 3650  这样就生成了有效期为：10年的证书文件，对于自己内网服务使用足够。
+第三种方式 直接生成证书文件
+openssl req -new -x509 -keyout server.key -out server.crt -config openssl.</description>
+    </item>
+    
+    <item>
+      <title>MySQL Gap Lock问题</title>
+      <link>https://ningyu1.github.io/site/post/50-mysql-gap-lock/</link>
+      <pubDate>Thu, 11 Jan 2018 17:10:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/50-mysql-gap-lock/</guid>
+      <description>文章来源：http://blog.chinaunix.net/uid-20726500-id-5749804.html 作者：@小桥河西
+初识MySQL的gap，觉得这个设计比较独特，和其他数据库的做法不太一样，所以整理一个简单的memo（虽然关于gap锁，相关资料已经很多了）
+一、什么是gap A place in an InnoDB index data structure where new values could be inserted.
+说白了gap就是索引树中插入新记录的空隙。相应的gap lock就是加在gap上的锁，还有一个next-key锁，是记录+记录前面的gap的组合的锁。
+二、gap锁或next-key锁的作用 http://dev.mysql.com/doc/refman/5.7/en/innodb-next-key-locking.html
+To prevent phantoms, InnoDB uses an algorithm called next-key locking that combines index-row locking with gap locking. InnoDB performs row-level locking in such a way that when it searches or scans a table index, it sets shared or exclusive locks on the index records it encounters. Thus, the row-level locks are actually index-record locks.</description>
+    </item>
+    
+    <item>
+      <title>推荐一个性能测试工具包（适用于单元测试）</title>
+      <link>https://ningyu1.github.io/site/post/49-java-test/</link>
+      <pubDate>Thu, 11 Jan 2018 16:52:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/49-java-test/</guid>
+      <description>给大家推荐一个做单元测试非常好用的性能测试工具包，contiperf，很方便的进行并发压力测试
+ pom引用  &amp;lt;!-- 单元测试 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.7&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- 性能测试 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.databene&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;contiperf&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.1.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt;   使用示例  /** * &amp;lt;功能描述&amp;gt; * * @author ningyu * @date 2017年10月24日 下午2:40:58 */ public class MyPerfTest { private IRedisSequenceService sequenceService; @Rule public ContiPerfRule i = new ContiPerfRule(); @Before public void init() { ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(&amp;quot;test-spring-context.xml&amp;quot;); sequenceService = (IRedisSequenceService) context.getBean(&amp;quot;redisSequenceService&amp;quot;); } @Test @PerfTest(threads=10, invocations=10000)//threads并发线程数量，invocations总调用次数,还有其他参数可以设置查看文档或者源码 public void test() { try { long res = sequenceService.</description>
+    </item>
+    
+    <item>
+      <title>如何直接操作Docker容器？</title>
+      <link>https://ningyu1.github.io/site/post/48-docker/</link>
+      <pubDate>Thu, 11 Jan 2018 16:11:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/48-docker/</guid>
+      <description>如果你想对Docker的容器进行操作，比如直接查看日志（Rancher无法看的时候），可以通过以下方式实现：
+执行命令docker ps，找到该容器
+第一种方式：
+执行命令docker exec -it [容器号前几位即可] /bin/bash，进入容器内部（类似Linux环境），如：
+如果/bin/bash不能执行，那就用/bin/sh。换一种shell。
+进入容器后我们就可以做任何事情，建议只在容器内做只读操作，必要进行修改操作。如果不想进入容器内部操作也可以：
+执行命令docker exec -it [容器号前几位即可] tailf -n 100 /xxxx/xxxxx.log，进入容器内部（类似Linux环境），如：
+第二种方式：
+执行命令docker logs [容器号前几位即可]，查看日志
+docker logs --tail=200 -f 容器id
+ps:&amp;ndash;tail=200 显示最近200行 ,all显示所有
+这个可以用于不知道日志存放在哪里，如：
+或者直接去宿主机器上查看容器日志文件，docker会在主机上面的/var/lib/docker/containers/[容器id]/生成每个容器的日志文件，以[容器id]-json.log命名，但是不推荐这种方式查看，如：
+在/var/lib/docker/containers能看到很多关于容器的信息比如说hostname等。
+docker还支持Log Driver可以将日志接入到日志分析工具，比如说：ELKB套件</description>
+    </item>
+    
+    <item>
+      <title>Jenkins、SVN、MAVEN打包时区问题解决方案</title>
+      <link>https://ningyu1.github.io/site/post/47-jenkins-svn-maven-timezone/</link>
+      <pubDate>Tue, 09 Jan 2018 18:30:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/47-jenkins-svn-maven-timezone/</guid>
+      <description>目录  Jenkins时区设置问题 SVN更新代码时区问题 MAVEN打包时区问题  一、Jenkins时区设置问题 docker@jenkins:~$ cat /etc/default/jenkins|grep 2048 JAVA_ARGS=&amp;quot;-Xmx2048m -Xms2048m -XX:PermSize=512m -XX:MaxPermSize=512m -Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Shanghai -Djava.awt.headless=true&amp;quot; # Allow graphs etc. to work even when an X server is present  增加时区参数：-Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Shanghai
+修改启动后查看jenkins系统参数：
+二、SVN更新代码时区问题 svn时区依赖jenkins的时区设置
+没有修改时区之前：
+能看的出来revision时间是有问题的跟我们机器时间不一致少了8小时
+修复这个问题有两个方法
+ 可以通过设置svn路径后增加@HEAD忽略掉revision来修复这个问题，具体设置如下   修改jenkins时区，参考第一个问题  jenkins时区设置完之后svn拉取代码会自动修改：revision，如图   三、MAVEN打包时区问题 我项目中使用的是maven自己的timestamp
+&amp;lt;timestamp&amp;gt;${maven.build.timestamp}&amp;lt;/timestamp&amp;gt;  它的问题是：时区是UTC而且无法修改，如果要使用GMT+8，就需要插件提供支持
+使用maven utc的timestamp构建出来的包名如下：
+我使用插件：build-helper-maven-plugin
+在pom中增加plugin build-helper-maven-plugin来覆盖maven的timestamp变量：
+&amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.codehaus.mojo&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;build-helper-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.0&amp;lt;/version&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;id&amp;gt;timestamp-property&amp;lt;/id&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;timestamp-property&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;name&amp;gt;timestamp&amp;lt;/name&amp;gt; &amp;lt;pattern&amp;gt;yyyyMMddHHmm&amp;lt;/pattern&amp;gt; &amp;lt;timeZone&amp;gt;GMT+8&amp;lt;/timeZone&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt;  然后打包测试：</description>
+    </item>
+    
+    <item>
+      <title>Docker Registry镜像清理问题</title>
+      <link>https://ningyu1.github.io/site/post/46-docker-registry/</link>
+      <pubDate>Fri, 29 Dec 2017 14:45:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/46-docker-registry/</guid>
+      <description>目录  修改Docker Registry配置 使用Registry V2 RestfulAPI 删除镜像 Docker Registry GC回收空间 使用UI管理Docker Registry  修改Docker Registry配置 配置开启删除功能:config.yml
+version: 0.1 log: fields: service: registry storage: delete: enabled: true cache: blobdescriptor: inmemory filesystem: rootdirectory: /var/lib/registry http: addr: :5000 headers: X-Content-Type-Options: [nosniff] health: storagedriver: enabled: true interval: 10s threshold: 3  主要在storage下增加delete开启状态 enabled:true
+具体配置参考官方配置详情：https://github.com/docker/distribution/blob/master/docs/configuration.md
+使用Registry V2 RestfulAPI 删除镜像 镜像删除之前需要获取镜像的digest值
+ 获取镜像digest值  curl --cacert /etc/docker/certs.d/192.168.0.34\:5000/ca.crt -H &amp;quot;Accept:application/vnd.docker.distribution.manifest.v2+json&amp;quot; https://192.168.0.34:5000/v2/messer/manifests/1.0  注意：
+我们配置了证书，所以必须要添加证书 &amp;ndash;cacert使用crt证书</description>
+    </item>
+    
+    <item>
+      <title>Spring Cloud Netflix架构浅析</title>
+      <link>https://ningyu1.github.io/site/post/45-spring-cloud-netflix/</link>
+      <pubDate>Mon, 25 Dec 2017 13:58:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/45-spring-cloud-netflix/</guid>
+      <description>点评 这篇文章比较适合入门，对于spring cloud生态的成员有一个大致的了解，其实spring cloud生态将netflix的产品进行了很好的整合，netflix早几年就在服务治理这块有很深入的研究，出品了很多服务治理的工具hystrix就是很有名的一个，具体可以查看：https://github.com/netflix，刚好在微服务盛行的年代服务治理是必不可少的一环，现在在微服务开发套件这块常用也就是下面这两种选择：
+ spring cloud套件，成熟上手快 自建微服务架构  UCM，统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。 RPC，阿里的Dubbo、点评的Pigeon，当当改的DubboX，grpc，等等很多开源的，还有很多公司自研的。 服务治理，netflix的hystrix老牌的功能强大的服务治理工具，有熔断、降级等功能，很多公司会结合监控套件开发自己的服务治理工具。 开发框架（rpc、restful这个一般公司都有自研的开发框架） 注册中心（zookeeper、redis、Consul、SmartStack、Eureka，其中一些已经是spring cloud生态的一员了）。 网关，restful的使用nginx+lua，这也是openAPI网关常用的手段 负载均衡，这个结合选用的rpc框架来选择。一般rpc框架都有负载均衡的功能。 服务治理熔断，使用hystrix（也已经是spring cloud生态的一员了） 监控，使用pinpoint、点评的cat、等其他开源的APM工具 DevOPS，持续交付一般也是自己构架的，采用jenkins打包docker镜像，使用docker生态的工具构建容器化发布平台。   下面文章转自：https://my.oschina.net/u/3747963/blog/1592777 作者：@海岸线的曙光
+微服务框架Spring Boot+Spring Cloud Spring Cloud是基于Spring Boot的一整套实现微服务的框架，可以说，Spring Boot作为框架，Spring Cloud作为微服务，一起构成了一种不可忽视的、新生的框架体系。它提供了微服务开发所需的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态管理等组件，方便易用。Spring Cloud包含了非常多的子框架，其中，Spring Cloud Netflix是其中一套框架，它主要提供的模块包括：服务发现、断路器和监控、智能路由、客户端负载均衡等。
+Spring Cloud Netflix组件以及部署  Eureka，服务注册和发现，它提供了一个服务注册中心、服务发现的客户端，还有一个方便的查看所有注册的服务的界面。 所有的服务使用Eureka的服务发现客户端来将自己注册到Eureka的服务器上。 Zuul，网关，所有的客户端请求通过这个网关访问后台的服务。他可以使用一定的路由配置来判断某一个URL由哪个服务来处理。并从Eureka获取注册的服务来转发请求。 Ribbon，即负载均衡，Zuul网关将一个请求发送给某一个服务的应用的时候，如果一个服务启动了多个实例，就会通过Ribbon来通过一定的负载均衡策略来发送给某一个服务实例。 Feign，服务客户端，服务之间如果需要相互访问，可以使用RestTemplate，也可以使用Feign客户端访问。它默认会使用Ribbon来实现负载均衡。 Hystrix，监控和断路器。我们只需要在服务接口上添加Hystrix标签，就可以实现对这个接口的监控和断路器功能。 Hystrix Dashboard，监控面板，他提供了一个界面，可以监控各个服务上的服务调用所消耗的时间等。 Turbine，监控聚合，使用Hystrix监控，我们需要打开每一个服务实例的监控信息来查看。而Turbine可以帮助我们把所有的服务实例的监控信息聚合到一个地方统一查看。  Spring Cloud Netflix组件开发 可以参考其中文文档：https://springcloud.cc/spring-cloud-netflix.html
+ 服务注册与监控中心：  @SpringBootApplication @EnableEurekaServer @EnableHystrixDashboard public class ApplicationRegistry { public static void main(String[] args) { new SpringApplicationBuilder(Application.</description>
+    </item>
+    
+    <item>
+      <title>JDK1.8新特性详解</title>
+      <link>https://ningyu1.github.io/site/post/44-jdk1.8-feature/</link>
+      <pubDate>Fri, 15 Dec 2017 18:15:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/44-jdk1.8-feature/</guid>
+      <description>将Java8的新特新逐一列出，并将使用简单的代码示例来指导你如何使用默认接口方法，lambda表达式，方法引用以及多重Annotation，之后你将会学到最新的API上的改进，比如流，函数式接口，Map以及全新的日期API
+一、接口的默认方法 Java 8允许我们给接口添加一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法，示例如下：
+interface Formula { double calculate(int a); default double sqrt(int a) { return Math.sqrt(a); } }  Formula接口在拥有calculate方法之外同时还定义了sqrt方法，实现了Formula接口的子类只需要实现一个calculate方法，默认方法sqrt将在子类上可以直接使用。
+Formula formula = new Formula() { @Override public double calculate(int a) { return sqrt(a * 100); } }; formula.calculate(100); // 100.0 formula.sqrt(16); // 4.0  文中的formula被实现为一个匿名类的实例，该代码非常容易理解，6行代码实现了计算 sqrt(a * 100)。在下一节中，我们将会看到实现单方法接口的更简单的做法。
+二、Lambda 表达式 首先看看在老版本的Java中是如何排列字符串的：
+List&amp;lt;String&amp;gt; names = Arrays.asList(&amp;quot;peter&amp;quot;, &amp;quot;anna&amp;quot;, &amp;quot;mike&amp;quot;, &amp;quot;xenia&amp;quot;); Collections.sort(names, new Comparator&amp;lt;String&amp;gt;() { @Override public int compare(String a, String b) { return b.</description>
+    </item>
+    
+    <item>
+      <title>JDK1.7新特性详解</title>
+      <link>https://ningyu1.github.io/site/post/43-jdk1.7-feature/</link>
+      <pubDate>Fri, 15 Dec 2017 18:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/43-jdk1.7-feature/</guid>
+      <description>JDK7对Java语法有少量更新，重点是在易用性和便捷性的改进。
+1.二进制字面量 JDK7开始，终于可以用二进制来表示整数（byte,short,int和long）。使用二进制字面量的好处是，可以是代码更容易被理解。语法非常简单，只要在二进制数值前面加 0b或者0B
+byte nByte = (byte)0b0001; short nShort = (short)0B0010; int nInt = 0b0011; long nLong = 0b0100L;  2.数字字面量可以出现下划线 对于一些比较大的数字，我们定义起来总是不方面，经常缺少或者增加位数。JDK7为我们提供了一种解决方案，下划线可以出现在数字字面量。
+int a = 10_0000_0000; long b = 0xffff_ffff_ffff_ffffl; byte c = 0b0001_1000;  注意：你只能将下划线置于数字之间，以下使用方法是错误的，
+ 数字的开头或者结尾 小数点的前后 ‘F’或者‘f’的后缀 只能用数字的位置  nt err1 = _11,err2=11_; float err3=3._4,err4=3_.4; long err5=0x888_f;  3.switch 语句可以用字符串了 这个功能千呼万唤，终于出来了
+private static void switchString(String str){ switch(str){ case &amp;quot;one&amp;quot;: System.err.println(&amp;quot;1&amp;quot;); break; case &amp;quot;two&amp;quot;: System.out.println(&amp;quot;2&amp;quot;); break; default : System.</description>
+    </item>
+    
+    <item>
+      <title>Fastjson反序列化java.lang.VerifyError错误</title>
+      <link>https://ningyu1.github.io/site/post/42-fastjson/</link>
+      <pubDate>Fri, 15 Dec 2017 15:42:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/42-fastjson/</guid>
+      <description>现象 当反序列化目标对象属性超过32个时会报如下错误：
+Exception in thread &amp;quot;main&amp;quot; java.lang.VerifyError: (class: com/alibaba/fastjson/parser/deserializer/FastjsonASMDeserializer_1_OmsMaterialStorageReconciliationEntity, method: deserialze signature: (Lcom/alibaba/fastjson/parser/DefaultJSONParser;Ljava/lang/reflect/Type;Ljava/lang/Object;I)Ljava/lang/Object;) Accessing value from uninitialized register 48 at java.lang.Class.getDeclaredConstructors0(Native Method) at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493) at java.lang.Class.getConstructor0(Class.java:2803) at java.lang.Class.getConstructor(Class.java:1718) at com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory.createJavaBeanDeserializer(ASMDeserializerFactory.java:82) at com.alibaba.fastjson.parser.ParserConfig.createJavaBeanDeserializer(ParserConfig.java:639) at com.alibaba.fastjson.parser.ParserConfig.getDeserializer(ParserConfig.java:491) at com.alibaba.fastjson.parser.ParserConfig.getDeserializer(ParserConfig.java:348) at com.alibaba.fastjson.parser.DefaultJSONParser.parseObject(DefaultJSONParser.java:639) at com.alibaba.fastjson.JSON.parseObject(JSON.java:350) at com.alibaba.fastjson.JSON.parseObject(JSON.java:254) at com.alibaba.fastjson.JSON.parseObject(JSON.java:467) at com.jiuyescm.uam.main.Main.main(Main.java:29)  查看我们使用的fastjson包版本：
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.alibaba&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;fastjson&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2.28&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  查看官方issues是否有同样的问题
+找到问题：https://github.com/alibaba/fastjson/issues/1071
+是一个反序列化的bug，在1.2.29版本修复
+升级我们使用的fastjson版本验证是否修复问题
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.alibaba&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;fastjson&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2.29&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  测试代码：
+public static void main(String[] args) throws IOException { String a = &amp;quot;{\&amp;quot;region\&amp;quot;:\&amp;quot;aaa\&amp;quot;,\&amp;quot;weight\&amp;quot;:null,\&amp;quot;outqty\&amp;quot;:null,\&amp;quot;inVolume\&amp;quot;:null,\&amp;quot;qtyMax\&amp;quot;:null,\&amp;quot;creTime\&amp;quot;:null,\&amp;quot;lastStock\&amp;quot;:null,\&amp;quot;inHeight\&amp;quot;:null,\&amp;quot;wallThickness\&amp;quot;:null,\&amp;quot;id\&amp;quot;:null,\&amp;quot;height\&amp;quot;:null,\&amp;quot;length\&amp;quot;:null,\&amp;quot;materialType\&amp;quot;:null,\&amp;quot;inqty\&amp;quot;:null,\&amp;quot;materialTypeName\&amp;quot;:null,\&amp;quot;materialName\&amp;quot;:null,\&amp;quot;supplierId\&amp;quot;:null,\&amp;quot;status\&amp;quot;:null,\&amp;quot;width\&amp;quot;:null,\&amp;quot;barcode\&amp;quot;:null,\&amp;quot;qtyMin\&amp;quot;:null,\&amp;quot;crePersonId\&amp;quot;:null,\&amp;quot;unit\&amp;quot;:null,\&amp;quot;changeDate\&amp;quot;:null,\&amp;quot;initStock\&amp;quot;:null,\&amp;quot;materialNo\&amp;quot;:null,\&amp;quot;crePerson\&amp;quot;:null,\&amp;quot;inLength\&amp;quot;:null,\&amp;quot;materialPrice\&amp;quot;:null,\&amp;quot;volume\&amp;quot;:null,\&amp;quot;inWidth\&amp;quot;:null,\&amp;quot;warehouseNo\&amp;quot;:null}&amp;quot;; OmsMaterialStorageReconciliationEntity t2 = JSON.</description>
+    </item>
+    
+    <item>
+      <title>Java开源APM概要</title>
+      <link>https://ningyu1.github.io/site/post/41-apm/</link>
+      <pubDate>Mon, 11 Dec 2017 10:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/41-apm/</guid>
+      <description>候选APM  naver/pinpoint(github上2148个star)  韩国的一个公司开源的，有待评估使用情况，就是整体还不是JDK8，有些还是有点费劲，技术上采用agent的方式，对java友好
+ 大众点评cat(github上1725个star)  看接入的公司还是挺多的，个人感觉是点评名气还可以，但是搭建起来有点费劲，很多东西都写死配置了，不灵活。整体设计的话，由于没有采用agent的方式，采用的是api手工埋点的方式，跟SNG的很像，好处的是跨语言，不好的地方就是对java来说用起来还需要包装一下
+ sky-walking(github上374个star)  开发团队加入了OneAPM,目前看使用的公司不多，整体技术采用agent方式，对java友好。提供了对dubbo等的支持，属于soa时代的产品
+技术架构 pinpoint CAT skywalking 简要评价 从技术架构上看，对于log的存储都使用了hbase，也都是自己实现了日志/监控数据的上报。pinpoint支持udp的方式，这个好一点。这类还是有点SOA时代的痕迹，更为符合大数据时代的做法是，监控数据丢给kafka，然后监控server来消费数据即可，这一点在cat中使用了consumer有点这个味道，但是没有彻底转型过来。
+展望 APM整体的功能结构，主要是 1.日志追踪，2.监控报警 3.性能统计。对于日志追踪，已经有spirng cloud zipkin了，这个对spring cloud体系结合的很好，确的就是监控报警和性能统计，可以采用agent的方式进行无侵入的监控，或者采用log appender的方式到kafka，之后再进行error的监控报警，以及把performance的数据log到日志，发送到kafka来进行统计。
+docs  pinpoint 大众点评Cat&amp;ndash;架构分析 透过CAT，来看分布式实时监控系统的设计与实现 sky-walking  转自原文地址：https://segmentfault.com/a/1190000006817114</description>
+    </item>
+    
+    <item>
+      <title>跨库分页-架构技术实践</title>
+      <link>https://ningyu1.github.io/site/post/40-distributed-db-paging/</link>
+      <pubDate>Fri, 24 Nov 2017 18:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/40-distributed-db-paging/</guid>
+      <description>文章来源：http://gitbook.cn/books/58a98f512bd83c246b6b8866/index.html 作者：@58沈剑 说明：文章转自沈老板的文章，分析的很不错
+一、需求缘起 分页需求 互联网很多业务都有分页拉取数据的需求，例如：
+ 微信消息过多时，拉取第N页消息。 京东下单过多时，拉取第N页订单。 浏览58同城，查看第N页帖子。 这些业务场景对应的消息表，订单表，帖子表分页拉取需求有这样一些特点： 有一个业务主键id，例如msg_id，order_id，tiezi_id 分页排序是按照非业务主键id来排序的，业务中经常按照时间time来排序order by  在数据量不大时，可以通过在排序字段time上建立索引，利用SQL提供的offset/limit功能就能满足分页查询需求：
+select * from t_msg order by time offset 200 limit 100 select * from t_order order by time offset 200 limit 100 select * from t_tiezi order by time offset 200 limit 100  此处假设一页数据为100条，均拉取第3页数据。
+分库需求 高并发大流量的互联网架构，一般通过服务层来访问数据库，随着数据量的增大，数据库需要进行水平切分，分库后将数据分布到不同的数据库实例（甚至物理机器）上，以达到降低数据量，增加实例数的扩容目的。
+一旦涉及分库，逃不开“分库依据”patition key的概念，使用哪一个字段来水平切分数据库呢：大部分的业务场景，会使用业务主键id。
+确定了分库依据patition key后，接下来要确定的是分库算法：大部分的业务场景，会使用业务主键id取模的算法来分库，这样即能够保证每个库的数据分布是均匀的，又能够保证每个库的请求分布是均匀的，实在是简单实现负载均衡的好方法，此法在互联网架构中应用颇多。
+举一个更具体的例子：
+用户库user，水平切分后变为两个库，分库依据patition key是uid，分库算法是uid取模：uid%2余0的数据会落到db0，uid%2余1的数据会落到db1。
+问题的提出 仍然是上述用户库的例子，如果业务要查询“最近注册的第3页用户”，该如何实现呢？单库上，可以select * from t_user order by time offset 200 limit 100，变成两个库后，分库依据是uid，排序依据是time，数据库层失去了time排序的全局视野，数据分布在两个库上，此时该怎么办呢？</description>
+    </item>
+    
+    <item>
+      <title>BTrace使用笔记</title>
+      <link>https://ningyu1.github.io/site/post/39-btrace/</link>
+      <pubDate>Wed, 15 Nov 2017 11:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/39-btrace/</guid>
+      <description>BTrace是什么？ Btrace是由sundararajan在2009年6月开发的一个开源项目，是一种动态跟踪分析一个运行中的Java应用程序的工具。 BTrace是一个为Java平台开发的安全、动态的追踪工具。BTrace动态地向目标应用程序的字节码注入追踪代码（字节码追踪），这些追踪字节码追踪代码使用Java语言表达，也就是BTrace的脚本。
+BTrace能做什么？ BTrace可以用来帮我们做运行时的JAVA程序分析，监控等等操作，BTrace也有一些使用上的限制，如：不能在脚本中新建类等。 Btrace是通过Attach API中提供的VirtualMachine.attach(PID)方法来获得要监控的JVM，然后使用VirtualMachine.loadAgent(&amp;rdquo;*.jar&amp;rdquo;)方法来加载jar文件。
+特别注意 BTrace植入过的代码，会一直在，直到应用重启为止。所以即使Btrace退出了，业务函数每次执行时都会执行Btrace植入的代码
+Btrace术语 Probe Point(探测点) 追踪语句（或者一组追踪语句）被触发执行的“位置”或“事件”。也就是我们想要执行一些追踪语句的“位置”或“事件”。 Trace Actions or Actions（追踪动作） probe被触发时，执行的追踪语句。 Action Methods（动作方法） 我的理解是定义追踪动作的方法，当然根据官方的说明这个方法应该是静态的。 在静态方法中定义probe触发所调用的trace语句，那么这种定义了trace脚本的静态方法就是”动作方法”
+BTrace程序结构 一个BTrace程序是其实就是一个普通的java类，特别之处就是由一个或者多个被(public static void)组合修饰的方法并且这些方法被BTrace对应的annotations注解。注解用来指出被追踪程序的位置（probe point）。追踪动作须书写在静态方法体中，也就是action方法（可以有多个action方法）。
+BTrace约束 为了保证追踪动作是“只读”的（也就是这些动作不可以修改被追踪程序的状态）和有限度的（比如在固定时间里结束）。一个BTrace程序只允许完成一些指定的动作。下面是BTrace一些不可以完成的事情：
+ 不能创建新的对象 不能创建新的数组 不能抛出异常 不能捕获异常 不能进行任何的实例函数或者静态函数 – 只有com.sun.btrace.BTraceUtils类中的静态函数或者BTrace程序自己声明的函数才可以被BTrace调用 不可以在目标程序的类，或者对象的静态或者实例级别的field进行赋值。但是，BTrace自身的类是可以给它的静态field进行赋值的 不能有outer，inner,嵌套的或者本地类。 不能有同步代码块或者同步的函数 不能有循环语句（for,while, do..while） 不能继承其它类（父类只能是java.lang.Object） 不能实现接口 不能包含断言(assert)语句 不能使用类字面值  这上面的种种限制可以通过一个配置改变：unsafe=true，在使用BTrace注解时修改该属性的默认值（false）为true，即@BTrace（unsafe=true）；也可以启动选项中显式声明-Dcom.sun.btrace.unsafe=true（响应也有-u参数）；现在你可以为所欲为了。BUT，这样做之前最好考虑好风险并再三检查脚本，请斟酌使用！
+BTrace安装 btrace git下载地址 下载下来直接解压就可以使用
+基本语法 btrace &amp;lt;pid&amp;gt; &amp;lt;btrace-script&amp;gt;脚本  btrace命令行工具运行命令如下：
+btrace &amp;lt;options&amp;gt; &amp;lt;pid&amp;gt; &amp;lt;btrace source or .class file&amp;gt; &amp;lt;btrace arguments&amp;gt; 常用选项： [-I &amp;lt;include-path&amp;gt;] [-p &amp;lt;port&amp;gt;] [-cp &amp;lt;classpath&amp;gt;]  参数说明：</description>
+    </item>
+    
+    <item>
+      <title>ActiveMQ发送速度慢问题排查</title>
+      <link>https://ningyu1.github.io/site/post/38-activemq-slow-speed/</link>
+      <pubDate>Thu, 09 Nov 2017 17:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/38-activemq-slow-speed/</guid>
+      <description>目录：  关于使用发送消息给activemq的同步/异步发送问题需要注意 同步/异步发送使用场景 maxConnections配置问题注意事项 idleTimeout配置问题注意事项 关于Failover的问题  关于使用发送消息给activemq的同步/异步发送问题需要注意 activemq发送异步参数：useAsyncSend与发送超时参数：sendTimeout是存在冲突的， 1. 当useAsyncSend=true，没有sendTimeout参数时（sendTimeout默认值0秒），走异步发送 2. 当useAsyncSend=false，没有sendTimeout参数时（sendTimeout默认值0秒），走同步发送 3. 当useAsyncSend=true，sendTimeout=1000，优先根据sendTimeout参数走同步发送
+同步/异步发送使用场景 场景一：业务可以容忍消息丢失（日志记录）这样的场景使用： 使用：异步发送 配置：useAsyncSend=true，sendTimeout不配置（sendTimeout默认值0秒） 注意：可以不需要补偿机制
+场景二：业务不能容忍消息丢失，这样的场景使用： 使用1：异步发送 配置1：useAsyncSend=true，sendTimeout不配置（sendTimeout默认值0秒） 注意1：当异步发送消息失败或异常导致消息丢失时有补偿的做法（如：定时任务、重发消息、等） 使用2：同步发送 配置2：useAsyncSend=false（useAsyncSend默认值false），sendTimeout=2000（超时时间一定要配置） 注意2：可以不需要补偿机制
+场景三：业务必须将消息发送和jdbc事务放在一个事务内，保证数据的强一致性，这样的场景使用： 使用：同步发送 配置：useAsyncSend=false（useAsyncSend默认值false），sendTimeout=2000（超时时间一定要配置） 注意：消息发送的超时时间（sendTimeout）&amp;lt; jdbc事务超时时间
+禁止使用的配置： 配置：useAsyncSend=false（useAsyncSend默认值false），sendTimeout不配置（sendTimeout默认值0秒） 注意：上面不配置超时时间的同步发送会造成请求阻塞在这里。
+maxConnections配置问题注意事项 根据activemq的连接池实现代码，发现maxconnections不适合设置很大，除非并发非常高的情况下，因为现在activemq创建一个连接平均在1-2秒钟左右，根据activemq的连接实现发现
+if (getConnectionsPool().getNumIdle(key) &amp;lt; getMaxConnections()) { try { connectionsPool.addObject(key); connection = mostRecentlyCreated.getAndSet(null); connection.incrementReferenceCount(); } catch (Exception e) { throw createJmsException(&amp;quot;Error while attempting to add new Connection to the pool&amp;quot;, e); } } else { try { // We can race against other threads returning the connection when there is an // expiration or idle timeout.</description>
+    </item>
+    
+    <item>
+      <title>并发与幂等性</title>
+      <link>https://ningyu1.github.io/site/post/37-concurrency-idempotent/</link>
+      <pubDate>Mon, 06 Nov 2017 17:40:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/37-concurrency-idempotent/</guid>
+      <description>文章来源：https://my.oschina.net/wangen2009/blog/1560975 作者：@码代码的小司机</description>
+    </item>
+    
+    <item>
+      <title>atomikos jta(xa) transaction问题：Already mapped: xxxx</title>
+      <link>https://ningyu1.github.io/site/post/36-atomikos-transactions-trouble/</link>
+      <pubDate>Thu, 02 Nov 2017 15:52:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/36-atomikos-transactions-trouble/</guid>
+      <description>目录：  问题现象 问题分析 修改验证 解决方案 总结  问题现象 库存中心在压测过程中会时不时的报错，错误如下：
+2017-11-02 11:38:37.620 [DubboServerHandler-10.27.69.168:20888-thread-156] ERROR xx.xx.inv.service.impl.OptionApiImpl - java.lang.IllegalStateException: Already mapped: 10.27.69.168.tm150959391756909559 xx.xx.exception.BizException: java.lang.IllegalStateException: Already mapped: 10.27.69.168.tm150959391756909559 at xx.xx.inv.service.impl.OptionApiImpl.invWmsOption(OptionApiImpl.java:290) ~[inv-api-impl-1.0.1-SNAPSHOT.jar:na] at com.alibaba.dubbo.common.bytecode.Wrapper1.invokeMethod(Wrapper1.java) [na:2.5.3] at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:46) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:72) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.filter.AccessLogFilter.invoke(AccessLogFilter.java:199) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.filter.ExceptionFilter.invoke(ExceptionFilter.java:64) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.filter.TimeoutFilter.invoke(TimeoutFilter.java:42) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.dubbo.filter.TraceFilter.invoke(TraceFilter.java:78) [dubbo-2.5.3.jar:2.5.3] at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91) [dubbo-2.</description>
+    </item>
+    
+    <item>
+      <title>数据源连接泄漏问题分析</title>
+      <link>https://ningyu1.github.io/site/post/35-datasource-connection-leak/</link>
+      <pubDate>Thu, 26 Oct 2017 13:29:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/35-datasource-connection-leak/</guid>
+      <description>目录：  问题现象 问题分析 修改验证 解决方案 总结  问题现象 开启druid数据源的连接泄漏开关（removeAbandoned=true），设置强制回收非法连接的超时时间为120（removeAbandonedTimeout=120,2分钟，目的是调试方便，让非法连接快速close掉）。 启动程序，等待2分钟会有连接泄漏的异常爆出，具体日志如下：
+2017-10-25 17:19:52.858 [qtp365976330-72] WARN org.jasig.cas.client.session.SingleSignOutHandler - Front Channel single sign out redirects are disabled when the &#39;casServerUrlPrefix&#39; value is not set. 2017-10-25 17:21:56.531 [Druid-ConnectionPool-Destroy-678372234] ERROR com.alibaba.druid.pool.DruidDataSource - abandon connection, open stackTrace at java.lang.Thread.getStackTrace(Thread.java:1588) at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:995) at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4544) at com.alibaba.druid.filter.FilterAdapter.dataSource_getConnection(FilterAdapter.java:2723) at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4540) at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:661) at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:4540) at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:919) at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:911) at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:98) at com.github.pagehelper.PageHelper.initSqlUtil(PageHelper.java:165) at com.github.pagehelper.PageHelper.intercept(PageHelper.java:148) at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:60) at com.</description>
+    </item>
+    
+    <item>
+      <title>Redis RDB文件格式全解析</title>
+      <link>https://ningyu1.github.io/site/post/34-redis-rdb/</link>
+      <pubDate>Mon, 09 Oct 2017 14:30:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/34-redis-rdb/</guid>
+      <description>点评 这篇文章作为对RDB理解的教程文章，对RDB文件的原理理解有助于进行Redis高阶应用的设计与开发。
+文章转自：http://blog.nosqlfan.com/html/3734.html 作者：@nosqlfan
+RDB文件是Redis持久化的一种方式，Redis通过制定好的策略，按期将内存中的数据以镜像的形式转存到RDB文件中。那么RDB文件内部格式是什么样的呢，Redis又做了哪些工作让RDB能够更快的dump和加载呢，下面我们深入RDB文件，来看一看其内部结构。 首先我们来看一个RDB文件的概况图：
+----------------------------# RDB文件是二进制的，所以并不存在回车换行来分隔一行一行. 52 45 44 49 53 # 以字符串 &amp;quot;REDIS&amp;quot; 开头 30 30 30 33 # RDB 的版本号，大端存储，比如左边这个表示版本号为0003 ---------------------------- FE 00 # FE = FE表示数据库编号，Redis支持多个库，以数字编号，这里00表示第0个数据库 ----------------------------# Key-Value 对存储开始了 FD $length-encoding # FD 表示过期时间，过期时间是用 length encoding 编码存储的，后面会讲到 $value-type # 1 个字节用于表示value的类型，比如set,hash,list,zset等 $string-encoded-key # Key 值，通过string encoding 编码，同样后面会讲到 $encoded-value # Value值，根据不同的Value类型采用不同的编码方式 ---------------------------- FC $length-encoding # FC 表示毫秒级的过期时间，后面的具体时间用length encoding编码存储 $value-type # 同上，也是一个字节的value类型 $string-encoded-key # 同样是以 string encoding 编码的 Key值 $encoded-value # 同样是以对应的数据类型编码的 Value 值 ---------------------------- $value-type # 下面是没有过期时间设置的 Key-Value对，为防止冲突，数据类型不会以 FD, FC, FE, FF 开头 $string-encoded-key $encoded-value ---------------------------- FE $length-encoding # 下一个库开始，库的编号用 length encoding 编码 ---------------------------- .</description>
+    </item>
+    
+    <item>
+      <title>Redis数据结构使用以及注意事项，运维问题总结</title>
+      <link>https://ningyu1.github.io/site/post/33-redis-considerations/</link>
+      <pubDate>Mon, 09 Oct 2017 12:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/33-redis-considerations/</guid>
+      <description>文章转自：http://www.cnblogs.com/cnmenglang/p/6225987.html 作者：@江南白衣
+优缺点 非常非常的快，有测评说比Memcached还快(当大家都是单CPU的时候)，而且是无短板的快，读写都一般的快，所有API都差不多快，也没有MySQL Cluster、MongoDB那样更新同一条记录如Counter时慢下去的毛病。
+丰富的数据结构，超越了一般的Key-Value数据库而被认为是一个数据结构服务器。组合各种结构，限制Redis用途的是你自己的想象力，作者自己捉刀写的用途入门。
+因为是个人作品，Redis目前只有2.3万行代码，Keep it simple的死硬做法，使得普通公司而不需淘宝那个级别的文艺公司也可以吃透它。
+Redis宣言就是作者的自白，我最喜欢其中的&amp;rdquo;代码像首诗&amp;rdquo;，&amp;rdquo;设计是一场与复杂性的战斗&amp;rdquo;，&amp;rdquo;Coding是一件艰苦的事情，唯一的办法是享受它。如果它已不能带来快乐就停止它。为了防止这一天的出现，我们要尽量避免把Redis往乏味的路上带。
+让人又爱又恨的单线程架构，使得代码不用处理平时最让人头痛的并发而大幅简化，也不用老是担心作者的并发有没有写对，但也带来CPU的瓶颈，而且单线程被慢操作所阻塞时，其他请求的延时变得不确定。
+那Redis不是什么？
+Redis 不是Big Data，数据都在内存中，无法以T为单位。
+在Redis-Cluster发布并被稳定使用之前，Redis没有真正的平滑水平扩展能力。
+Redis 不支持Ad-Hoc Query，提供的只是数据结构的API，没有SQL一样的查询能力。
+Feature速览 所有数据都在内存中。
+五种数据结构：String / Hash / List / Set / Ordered Set。
+数据过期时间支持。
+不完全的事务支持。
+服务端脚本：使用Lua Script编写，类似存储过程的作用。
+PubSub：捞过界的消息一对多发布订阅功能，起码Redis-Sentinel使用了它。
+持久化：支持定期导出内存的Snapshot 与 记录写操作日志的Append Only File两种模式。
+Replication：Master-Slave模式，Master可连接多个只读Slave，暂无专门的Geographic Replication支持。
+Fail-Over：Redis-Sentinel节点负责监控Master节点，在master失效时提升slave，独立的仲裁节点模式有效防止脑裂。
+Sharding：开发中的Redis-Cluser。
+动态配置：所有参数可用命令行动态配置不需重启，并重新写回配置文件中，对云上的大规模部署非常合适。
+八卦 作者是意大利的Salvatore Sanfilippo(antirez)，又是VMWare大善人聘请了他专心写Redis。
+EMC与VMWare将旗下的开源产品如Redis和Spring都整合到了孙公司Pivotal公司。
+Pivotal做的antirez访谈录，内含一切八卦，比如他的爱好是举重、跑步和品红酒。
+默认端口6379，是手机按键上MERZ对应的号码，意大利歌女Alessia Merz是antirez和朋友们认为愚蠢的代名词。
+数据结构 Key Key 不能太长，比如1024字节，但antirez也不喜欢太短如&amp;rdquo;u:1000:pwd&amp;rdquo;，要表达清楚意思才好。他私人建议用&amp;rdquo;:&amp;ldquo;分隔域，用&amp;rdquo;.&amp;ldquo;作为单词间的连接，如&amp;rdquo;comment:1234:reply.to&amp;rdquo;。
+Keys，返回匹配的key，支持通配符如 &amp;ldquo;keys a*&amp;rdquo; 、 &amp;ldquo;keys a?c&amp;rdquo;，但不建议在生产环境大数据量下使用。
+Sort，对集合按数字或字母顺序排序后返回或另存为list，还可以关联到外部key等。因为复杂度是最高的O(N+M*log(M))(N是集合大小，M 为返回元素的数量)，有时会安排到slave上执行。
+Expire/ExpireAt/Persist/TTL，关于Key超时的操作。默认以秒为单位，也有p字头的以毫秒为单位的版本， Redis的内部实现见2.9 过期数据清除。
+String 最普通的key-value类型，说是String，其实是任意的byte[]，比如图片，最大512M。 所有常用命令的复杂度都是O(1)，普通的Get/Set方法，可以用来做Cache，存Session，为了简化架构甚至可以替换掉Memcached。</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Enable AOF可能导致整个Redis被Block住，在3.0.6版本仍然存在</title>
+      <link>https://ningyu1.github.io/site/post/32-redis-aof/</link>
+      <pubDate>Mon, 09 Oct 2017 09:53:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/32-redis-aof/</guid>
+      <description>Redis会有短暂的几秒Block，应用报：Jedis connection failed, retrying&amp;hellip; 这个问题现象是这样的，应用周期性的报：Jedis connection failed, retrying&amp;hellip;，Redis开启AOF会被Block住导致无法连接，查看redis的日志
+1486:M 09 Oct 09:33:18.072 * 10 changes in 300 seconds. Saving... 1486:M 09 Oct 09:33:18.075 * Background saving started by pid 20706 1486:M 09 Oct 09:33:34.011 * Asynchronous AOF fsync is taking too long (disk is busy?). Writing the AOF buffer without waiting for fsync to complete, this may slow down Redis. 20706:C 09 Oct 09:33:42.629 * DB saved on disk 20706:C 09 Oct 09:33:42.</description>
+    </item>
+    
+    <item>
+      <title>条形码处理类库 ZXing</title>
+      <link>https://ningyu1.github.io/site/post/31-zxing/</link>
+      <pubDate>Sat, 30 Sep 2017 16:56:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/31-zxing/</guid>
+      <description>ZXing 详细介绍 ZXing是一个开源Java类库用于解析多种格式的1D/2D条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。
+示例代码 import com.google.zxing.BarcodeFormat; import com.google.zxing.EncodeHintType; import com.google.zxing.MultiFormatWriter; import com.google.zxing.WriterException; import com.google.zxing.client.j2se.MatrixToImageWriter; import com.google.zxing.common.BitMatrix; import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel; import java.io.File; import java.io.IOException; import java.io.OutputStream; import java.util.HashMap; import java.util.Map; /** * 二维码工具类 */ public class QRCodeUtil { private static final int width = 300;// 默认二维码宽度 private static final int height = 300;// 默认二维码高度 private static final String format = &amp;quot;png&amp;quot;;// 默认二维码文件格式 private static final Map&amp;lt;EncodeHintType, Object&amp;gt; hints = new HashMap();// 二维码参数 static { hints.</description>
+    </item>
+    
+    <item>
+      <title>npm registry太慢？怎么办？使用nrm</title>
+      <link>https://ningyu1.github.io/site/post/30-npm-nrm/</link>
+      <pubDate>Fri, 29 Sep 2017 14:16:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/30-npm-nrm/</guid>
+      <description> 转载自：http://cnodejs.org/topic/5326e78c434e04172c006826
+开发的npm registry 管理工具 nrm, 能够查看和切换当前使用的registry, 最近NPM经常 down 掉, 这个还是很有用的哈哈
+Install $ npm install -g nrm  Example $ nrm ls * npm ---- https://registry.npmjs.org/ cnpm --- http://r.cnpmjs.org/ eu ----- http://registry.npmjs.eu/ au ----- http://registry.npmjs.org.au/ sl ----- http://npm.strongloop.com/ nj ----- https://registry.nodejitsu.com/  $ nrm use cnpm //switch registry to cnpm Registry has been set to: http://r.cnpmjs.org/  cmd nrm help // show help nrm list // show all registries nrm use cnpm // switch to cnpm nrm home // go to a registry home page  Registries  npm cnpm strongloop european australia nodejitsu  </description>
+    </item>
+    
+    <item>
+      <title>分布式锁（Redis实现）使用说明</title>
+      <link>https://ningyu1.github.io/site/post/29-distributed-lock/</link>
+      <pubDate>Wed, 27 Sep 2017 16:43:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/29-distributed-lock/</guid>
+      <description>概述 &amp;nbsp;&amp;nbsp;&amp;nbsp;
+项目地址 distributed-lock
+
+分布式锁，默认是redis实现，可扩展接口增加zk、等其他实现,这个分布式锁采用redis实现，根据CAP理论保证了可用性、分区容错性、和最终一致性。
+实现的分布式锁特性  这把锁是非阻塞锁，可以根据超时时间和重试频率来定义重试次数 这把锁支持失效时间，极端情况下解锁失败，到达时间之后锁会自动删除 这把锁是非重入锁，一个线程获得锁之后，在释放锁之前，其他线程无法再次获得锁，只能根据获取锁超时时间和重试策略进行多次尝试获取锁。 因为这把锁是非阻塞的，所以性能很好，支持高并发 使用方无需手动获取锁和释放锁，锁的控制完全由框架控制操作，避免使用方由于没有释放锁或释放锁失败导致死锁的问题  实现的分布式锁缺点  通过超时时间来控制锁的失效时间其实并不完美，但是根据性能和CAP理论有做取舍 这把锁不支持阻塞，因为要达到高的性能阻塞的特性是要牺牲  使用步骤 Maven中引入 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;cn.tsoft.framework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;distributed-lock&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.1.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  spring中引入配置 &amp;lt;import resource=&amp;quot;classpath:spring-lock.xml&amp;quot; /&amp;gt;  使用到了RedisClient 具体可以查看《RedisCliet使用说明》
+&amp;lt;aop:aspectj-autoproxy /&amp;gt; &amp;lt;context:component-scan base-package=&amp;quot;cn.tsoft.framework&amp;quot; /&amp;gt; &amp;lt;context:property-placeholder location=&amp;quot;classpath:redis.properties&amp;quot;/&amp;gt; &amp;lt;import resource=&amp;quot;classpath:spring-redis.xml&amp;quot; /&amp;gt;  代码中使用 import cn.tsoft.framework.lock.Lock; import cn.tsoft.framework.lock.LockCallBack; import cn.tsoft.framework.lock.DefaultLockCallBack; @Autowired Lock lock; //方法一 T t = lock.lock(&amp;quot;Test_key_2&amp;quot;,20,60,new LockCallBack&amp;lt;T&amp;gt;(){ public T handleObtainLock(){ dosomething(); } public T handleNotObtainLock() throws LockCantObtainException{ return T;//throw new LockCantObtainException(); } public T handleException(LockInsideExecutedException e) throws LockInsideExecutedException{ return T;//throw new e; } }); //方法二 T t = lock.</description>
+    </item>
+    
+    <item>
+      <title>RedisClient升级支持Sentinel使用说明</title>
+      <link>https://ningyu1.github.io/site/post/28-redis-client-sentinel/</link>
+      <pubDate>Mon, 25 Sep 2017 13:29:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/28-redis-client-sentinel/</guid>
+      <description>项目地址 redis-client
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+RedisClient操作单点Redis使用文档：《RedisClient使用》 以下是支持Sentinel（哨兵）+Redis集群的RedisClient（架构封装的Java访问Redis的客户端程序）高级使用方式
+Redis集群方式：Master-Slave（1 - n 为一套集群可以多套） Sentinel集群方式：Sentinel（n台，n&amp;gt;=3），投票人数：n-1（参与Master是否宕机以及下一任Master选举的投票人数）
+1. Maven中引用（目前预览版） &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;cn.tsoft.framework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;redis-client&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  2. 配置说明 原始（基础）配置：
+redis.pool.maxTotal=1000 redis.pool.maxIdle=50 redis.pool.minIdle=10 redis.pool.testOnBorrow=true redis.pool.testOnReturn=true redis.ip=192.168.0.65 redis.port=6379 redis.timeout=2000 redis.password=123456  sentinel新增配置
+# sentinel redis.mastername=mymaster redis.sentinels=127.0.0.1:26379,127.0.0.1:26380,127.0.0.1:26381  redis.mastername指的是monitor master的名称 redis.sentinels指的是哨兵的ip：port集合（ip和port需要替换）
+删除配置
+#redis.ip=192.168.0.65 #redis.port=6379  ps.由于使用了sentinel自动发现redis服务因此不需要此配置，注释或删除即可
+3. spring配置说明 xml配置跟以前pool的配置方式有所不同，单节点redis的pool配置使用的是：redis.clients.jedis.JedisPoolConfig和redis.clients.jedis.JedisPool sentinel的配置替换为：redis.clients.jedis.JedisPoolConfig和cn.tsoft.framework.redis.pool.JedisSentinelPoolFactory
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xmlns:aop=&amp;quot;http://www.springframework.org/schema/aop&amp;quot; xmlns:context=&amp;quot;http://www.springframework.org/schema/context&amp;quot; xmlns:tx=&amp;quot;http://www.springframework.org/schema/tx&amp;quot; xsi:schemaLocation=&amp;quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd&amp;quot;&amp;gt; &amp;lt;aop:aspectj-autoproxy /&amp;gt; &amp;lt;context:component-scan base-package=&amp;quot;cn.</description>
+    </item>
+    
+    <item>
+      <title>Webpack 打包优化之速度篇</title>
+      <link>https://ningyu1.github.io/site/post/27-webpack2/</link>
+      <pubDate>Wed, 20 Sep 2017 11:57:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/27-webpack2/</guid>
+      <description>文章来源：https://jeffjade.com/2017/08/12/125-webpack-package-optimization-for-speed/ 作者：@晚晴幽草轩轩主
+在前文 Webpack 打包优化之体积篇中，对如何减小 Webpack 打包体积，做了些探讨；当然，那些法子对于打包速度的提升，也是大有裨益。然而，打包速度之于开发体验和及时构建，相当重要；所以有必要对其做更为深入的研究，以便完善工作流，这就是本文存在的缘由。
+Webpack Package optimization
+减小文件搜索范围 在使用实际项目开发中，为了提升开发效率，很明显你会使用很多成熟第三方库；即便自己写的代码，模块间相互引用，为了方便也会使用相对路劲，或者别名(alias)；这中间如果能使得 Webpack 更快寻找到目标，将对打包速度产生很是积极的影响。于此，我们需要做的即：减小文件搜索范围，从而提升速度；实现这一点，可以有如下两法：
+配置 resolve.modules Webpack的resolve.modules配置模块库（即 node_modules）所在的位置，在 js 里出现 import &#39;vue&#39; 这样不是相对、也不是绝对路径的写法时，会去 node_modules 目录下找。但是默认的配置，会采用向上递归搜索的方式去寻找，但通常项目目录里只有一个 node_modules，且是在项目根目录，为了减少搜索范围，可以直接写明 node_modules 的全路径；同样，对于别名(alias)的配置，亦当如此：
+function resolve (dir) { return path.join(__dirname, &#39;..&#39;, dir) } module.exports = { resolve: { extensions: [&#39;.js&#39;, &#39;.vue&#39;, &#39;.json&#39;], modules: [ resolve(&#39;src&#39;), resolve(&#39;node_modules&#39;) ], alias: { &#39;vue$&#39;: &#39;vue/dist/vue.common.js&#39;, &#39;src&#39;: resolve(&#39;src&#39;), &#39;assets&#39;: resolve(&#39;src/assets&#39;), &#39;components&#39;: resolve(&#39;src/components&#39;), // ... &#39;store&#39;: resolve(&#39;src/store&#39;) } }, ... }  需要额外补充一点的是，这是 Webpack2.</description>
+    </item>
+    
+    <item>
+      <title>Webpack 打包优化之体积篇</title>
+      <link>https://ningyu1.github.io/site/post/26-webpack1/</link>
+      <pubDate>Wed, 20 Sep 2017 10:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/26-webpack1/</guid>
+      <description>文章来源：https://jeffjade.com/2017/08/06/124-webpack-packge-optimization-for-volume/ 作者：@晚晴幽草轩轩主
+谈及如今欣欣向荣的前端圈，不仅有各类框架百花齐放，如Vue， React， Angular等等，就打包工具而言，发展也是如火如荼，百家争鸣；从早期的王者Browserify, Grunt，到后来赢得宝座的 Gulp， 以及独树一帜的 fis3, 以及下一代打包神器 Rollup ；在 browserify,grunt,gulp,rollup,webpack 可以一窥其中部分对比。在本文要探究的是，当前打包工具绝对霸者 Webpack。
+Webpack Package optimization
+Webpack，当前各大主流框架默认配备的打包方案，对其如何使用，已有较完备中英文文档；并且，各主流框架也有对应 CLI 予以基础配置，故不作为探讨范畴。从产品层来讲，如何使得构建的包体积小、运行快，这有必要不断摸索实践，提炼升级，使之臻于最佳。本文将从以下些许方面，对 Webpack 打包体积方面，做下优化探讨(备注： Webpack实践版本： 3.3.0)：
+定位 webpack 大的原因 这里推荐使用 webpack-bundle-analyzer —— Webpack 插件和 CLI 实用程序，她可以将内容束展示为方便交互的直观树状图，让你明白你所构建包中真正引入的内容；我们可以借助她，发现它大体有哪些模块组成，找到不合时宜的存在，然后优化它。我们可以在 项目的 package.json 文件中注入如下命令，以方便运行她(npm run analyz)，默认会打开 http://127.0.0.1:8888 作为展示。
+“analyz”: “NODE_ENV=production npm_config_report=true npm run build”  webpack-bundle-analyzer
+当然，同类型的还有 webpack-chart 以及 webpack-analyse，这两个站点也是以可视方式呈现构造的组件，可以让你清楚的看到模块的组成部分；不过稍显麻烦的是，你需要运行以下命令，生成工具分析所需要的 json 文件：
+webpack --profile --json &amp;gt; stats.json // 如果，运行指定的 weboack 文件，可用此命令 webpack --config build/webpack.prod.conf.js --profile --json &amp;gt; stats.</description>
+    </item>
+    
+    <item>
+      <title>五种开源协议(GPL,LGPL,BSD,MIT,Apache)</title>
+      <link>https://ningyu1.github.io/site/post/25-licence/</link>
+      <pubDate>Tue, 19 Sep 2017 13:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/25-licence/</guid>
+      <description>什么是许可协议？ 什么是许可，当你为你的产品签发许可，你是在出让自己的权利，不过，你仍然拥有版权和专利（如果申请了的话），许可的目的是，向使用你产品的人提供 一定的权限。
+不管产品是免费向公众分发，还是出售，制定一份许可协议非常有用，否则，对于前者，你相当于放弃了自己所有的权利，任何人都没有义务表明你的原始作 者身份，对于后者，你将不得不花费比开发更多的精力用来逐个处理用户的授权问题。
+而开源许可协议使这些事情变得简单，开发者很容易向一个项目贡献自己的代码，它还可以保护你原始作者的身份，使你 至少获得认可，开源许可协议还可以阻止其它人将某个产品据为己有。以下是开源界的 5 大许可协议。
+GNU GPL GNU General Public Licence (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：
+ 可自由复制 你可以将软件复制到你的电脑，你客户的电脑，或者任何地方。复制份数没有任何限制。 可自由分发 在你的网站提供下载，拷贝到U盘送人，或者将源代码打印出来从窗户扔出去（环保起见，请别这样做）。 可以用来盈利 你可以在分发软件的时候收费，但你必须在收费前向你的客户提供该软件的 GNU GPL 许可协议，以便让他们知道，他们可以从别的渠道免费得到这份软件，以及你收费的理由。 可自由修改 如果你想添加或删除某个功能，没问题，如果你想在别的项目中使用部分代码，也没问题，唯一的要求是，使用了这段代码的项目也必须使用 GPL 协议。  需要注意的是，分发的时候，需要明确提供源代码和二进制文件，另外，用于某些程序的某些协议有一些问题和限制，你可以看一下 @PierreJoye 写的 Practical Guide to GPL Compliance 一文。使用 GPL 协议，你必须在源代码代码中包含相应信息，以及协议本身。
+GNU LGPL GNU 还有另外一种协议，叫做 LGPL （Lesser General Public Licence），它对产品所保留的权利比 GPL 少，总的来说，LGPL 适合那些用于非 GPL 或非开源产品的开源类库或框架。因为 GPL 要求，使用了 GPL 代码的产品必须也使用 GPL 协议，开发者不允许将 GPL 代码用于商业产品。LGPL 绕过了这一限制。
+BSD BSD 在软件分发方面的限制比别的开源协议（如 GNU GPL）要少。该协议有多种版本，最主要的版本有两个，新 BSD 协议与简单 BSD 协议，这两种协议经过修正，都和 GPL 兼容，并为开源组织所认可。</description>
+    </item>
+    
+    <item>
+      <title>利用Zipkin对Spring Cloud应用进行服务追踪分析</title>
+      <link>https://ningyu1.github.io/site/post/24-zipkin/</link>
+      <pubDate>Fri, 08 Sep 2017 13:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/24-zipkin/</guid>
+      <description>文章转自：https://yq.aliyun.com/articles/60165 作者：@libinjingshan
+摘要： 本文简单介绍了如何利用Zipkin对SpringCloud应用进行服务分析。在实际的应用场景中，Zipkin可以结合压力测试工具一起使用，分析系统在大压力下的可用性和性能。 设想这么一种情况，如果你的微服务数量逐渐增大，服务间的依赖关系越来越复杂，怎么分析它们之间的调用关系及相互的影响？
+服务追踪分析 一个由微服务构成的应用系统通过服务来划分问题域，通过REST请求服务API来连接服务来完成完整业务。对于入口的一个调用可能需要有多个后台服务协同完成，链路上任何一个调用超时或出错都可能造成前端请求的失败。服务的调用链也会越来越长，并形成一个树形的调用链。
+随着服务的增多，对调用链的分析也会越来越负责。设想你在负责下面这个系统，其中每个小点都是一个微服务，他们之间的调用关系形成了复杂的网络。
+有密集恐惧症的同学就忽略吧。
+针对服务化应用全链路追踪的问题，Google发表了Dapper论文，介绍了他们如何进行服务追踪分析。其基本思路是在服务调用的请求和响应中加入ID，标明上下游请求的关系。利用这些信息，可以可视化地分析服务调用链路和服务间的依赖关系。
+Spring Cloud Sleuth和Zipkin 对应Dpper的开源实现是Zipkin，支持多种语言包括JavaScript，Python，Java, Scala, Ruby, C#, Go等。其中Java由多种不同的库来支持。
+在这个示例中，我们准备开发两个基于Spring Cloud的应用，利用Spring Cloud Sleuth来和Zipkin进行集成。Spring Cloud Sleuth是对Zipkin的一个封装，对于Span、Trace等信息的生成、接入HTTP Request，以及向Zipkin Server发送采集信息等全部自动完成。
+这是Spring Cloud Sleuth的概念图。
+服务REST调用 本次演示的服务有两个：tracedemo做为前端服务接收用户的请求，tracebackend为后端服务，tracedemo通过http协议调用后端服务。
+利用RestTemplate进行HTTP请求调用 tracedemo应用通过restTemplate调用后端tracedemo服务，注意，URL中指明tracedemo的地址为backend。
+@RequestMapping(&amp;quot;/&amp;quot;) public String callHome(){ LOG.log(Level.INFO, &amp;quot;calling trace demo backend&amp;quot;); return restTemplate.getForObject(&amp;quot;http://backend:8090&amp;quot;, String.class); }  后端服务响应HTTP请求，输出一行日志后返回经典的“hello world”。
+@RequestMapping(&amp;quot;/&amp;quot;) public String home(){ LOG.log(Level.INFO, &amp;quot;trace demo backend is being called&amp;quot;); return &amp;quot;Hello World.&amp;quot;; }  引入Sleuth和Zipkin依赖包 可以看到，这是典型的两个spring应用通过RestTemplate进行访问的方式，哪在HTTP请求中注入追踪信息并把相关信息发送到Zipkin Server呢？答案在两个应用所加载的JAR包里。
+本示例采用gradle来构建应用，在build.gradle中加载了sleuth和zipkin相关的JAR包：</description>
+    </item>
+    
+    <item>
+      <title>Spring Cloud学习-Eureka、Ribbon和Feign</title>
+      <link>https://ningyu1.github.io/site/post/23-spring-cloud/</link>
+      <pubDate>Fri, 08 Sep 2017 09:09:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/23-spring-cloud/</guid>
+      <description>前沿 这篇文章比较适合入门，对于spring cloud生态的成员有一个大致的了解，其实spring cloud生态将netflix的产品进行了很好的整合，netflix早几年就在服务治理这块有很深入的研究，出品了很多服务治理的工具hystrix就是很有名的一个，具体可以查看：https://github.com/netflix，刚好在微服务盛行的年代服务治理是必不可少的一环，现在在微服务开发套件这块常用也就是下面这两种选择：
+ spring cloud套件，成熟上手快 自建微服务架构  UCM，统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。 RPC，阿里的Dubbo、点评的Pigeon，当当改的DubboX，grpc，等等很多开源的，还有很多公司自研的。 服务治理，netflix的hystrix老牌的功能强大的服务治理工具，有熔断、降级等功能，很多公司会结合监控套件开发自己的服务治理工具。 开发框架（rpc、restful这个一般公司都有自研的开发框架） 注册中心（zookeeper、redis、Consul、SmartStack、Eureka，其中一些已经是spring cloud生态的一员了）。 网关，restful的使用nginx+lua，这也是openAPI网关常用的手段 负载均衡，这个结合选用的rpc框架来选择。一般rpc框架都有负载均衡的功能。 服务治理熔断，使用hystrix（也已经是spring cloud生态的一员了） 监控，使用pinpoint、点评的cat、等其他开源的APM工具 DevOPS，持续交付一般也是自己构架的，采用jenkins打包docker镜像，使用docker生态的工具构建容器化发布平台。   下面文章转自：https://www.jianshu.com/p/0aef3724e6bc 作者：@杜琪
+Talk is cheap，show me the code ， 书上得来终觉浅，绝知此事要躬行。在自己真正实现的过程中，会遇到很多莫名其妙的问题，而正是在解决这些问题的过程中，你会发现自己之前思维的盲点。 引子 看完《微服务设计》后，算是补上了自己在服务化这块的理论知识，在业界，一般有两种微服务的实践方法：基于dubbo的微服务架构、基于Spring Cloud的微服务架构。从概念上来讲，Dubbo和Spring Cloud并不能放在一起对比，因为Dubbo仅仅是一个RPC框架，实现Java程序的远程调用，实施服务化的中间件则需要自己开发；而Spring Cloud则是实施微服务的一系列套件，包括：服务注册与发现、断路器、服务状态监控、配置管理、智能路由、一次性令牌、全局锁、分布式会话管理、集群状态管理等。
+在有赞，我们基于Dubbo实施服务化，刚开始是基于ZooKeeper进行服务注册与发现，现在已经转成使用Etcd。我这次学习Spring Cloud，则是想成体系得学习下微服务架构的实现，也许能够对基于Dubbo实施微服务架构有所借鉴。
+Spring Cloud下有很多工程：
+ Spring Cloud Config：依靠git仓库实现的中心化配置管理。配置资源可以映射到Spring的不同开发环境中，但是也可以使用在非Spring应用中。 Spring Cloud Netflix：不同的Netflix OSS组件的集合：Eureka、Hystrix、Zuul、Archaius等。 Spring Cloud Bus：事件总线，利用分布式消息将多个服务连接起来。非常适合在集群中传播状态的改变事件（例如：配置变更事件） Spring Cloud Consul：服务发现和配置管理，由Hashicorp团队开发。  我决定先从Spring Cloud Netflix看起，它提供了如下的功能特性：
+ 服务发现：Eureka-server实例作为服务提供者，可以注册到服务注册中心，Eureka客户端可以通过Spring管理的bean发现实例； 服务发现：嵌套式的Eureka服务可以通过声明式的Java配置文件创建； 断路器：利用注解，可以创建一个简单的Hystrix客户端； 断路器：通过Java配置文件可以创建内嵌的Hystrix控制面板； 声明式REST客户端：使用Feign可以创建声明式、模板化的HTTP客户端； 客户端负载均衡器：Ribbon 路由器和过滤器：Zuul可以在微服务架构中提供路由功能、身份验证、服务迁移、金丝雀发布等功能。  本文计划利用Eureka实现一个简答的服务注册于发现的例子，需要创建三个角色：服务注册中心、服务提供者、服务消费者。</description>
+    </item>
+    
+    <item>
+      <title>RedisClient使用说明</title>
+      <link>https://ningyu1.github.io/site/post/22-redis-client/</link>
+      <pubDate>Wed, 06 Sep 2017 11:17:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/22-redis-client/</guid>
+      <description>项目地址 redis-client
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+Maven引入 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;cn.tsoft.framework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;redis-client&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.1.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  Spring引入 &amp;lt;import resource=&amp;quot;classpath:spring-redis.xml&amp;quot; /&amp;gt;  Api使用说明 ps.本次版本增加了namespace、泛型的支持（存、取直接使用java对象），namespace可以有效的避免key名称冲突和对以后做sharding提供了基础，泛型则是提升使用友好度，本次版本包装了驱动（jedis）的95%的方法，有一些性能不好的方法没有开放，新增了一些使用上更加友好的方法。
+常规操作的command实现：RedisClientImpl
+二进制操作的command实现：BinaryRedisClientImpl
+两者都支持直接存、取java对象，区别在于前者序列化为json以string的方式发送到redis服务器，后者序列化为byte[]以字节方式发送到redis服务，通过redis-cli工具前者可以很明确的看到存的值，后者看到的是二进制编码。
+接口方法 回调接口 cn.tsoft.framework.redis.callback.GetDataCallBack
+接口提供两个方法
+/** * ttl时间,不是所有命令都支持ttl设置 * */ int getExpiredTime(); /** * 执行回调方法 */ R invoke();  ps.int getExpiredTime();这个方法并不是所有命令都支持（hget系列不支持，因为hash的attr是不支持ttl设置的，ttl必须设置在hash的key上并不是hash的attr上），因此不支持ttl的命令就采用默认的空实现。 在使用get*和hget*方法时，如果key返回为null，则通过该接口的R invoke();方法获取数据并放到redis中。 hgetAllObjects方法上的GetDataCallBack gbs参数是无效的传入null即可。 如果在get方法获取不到值时不想走数据回调时传入null即可。
+示例：
+//不设置回调 Metadata resule = redisClient.get(bizkey, nameSpace, Metadata.class, null); List&amp;lt;Metadata &amp;gt; resule = redisClient.get(bizkey, nameSpace, new TypeReference&amp;lt;List&amp;lt;Metadata&amp;gt;&amp;gt;() {}, null); //设置回调 List&amp;lt;Long&amp;gt; resule = redisClient.</description>
+    </item>
+    
+    <item>
+      <title>FastDFS-Client使用说明</title>
+      <link>https://ningyu1.github.io/site/post/21-fastfds-client/</link>
+      <pubDate>Wed, 06 Sep 2017 10:17:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/21-fastfds-client/</guid>
+      <description>项目地址 fastdfs-client
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+fastdfs-client是什么 fastdfs-client是一个访问fastdfs的Java客户端框架，帮助开发人员快速使用分布式文件系统的工具，封装了TrackerClient操作来管理存储节点，封装了StorageClient操作来执行文件上传下载功能。
+change log V1.1.0
+ 修改download文件receive时带入的inputStream对象，inputStream对象修改为克隆socket的inputstream，避免污染连接池中的socket对象，当业务回调不读取留时会影响下一次连接池中获取的socket对象。 在使用1.0.0版本进行download文件时，建议使用DownloadCallback的实现类：DownloadByteArray和DownloadFileWriter不要自己去实现，不要关闭receive方法传入的inputStream对象。 在使用1.1.0版本进行download文件时，receive传入的inputStream是克隆的，因此使用完后必须进行关闭操作。  V1.0.0
+ 包装Request和Response报文解析 包装Storage和Tracker操作命令 增加连接池提升使用性能  接口方法 StorageClient
+TrackerClient
+Maven引入 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;cn.tsoft.framework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;fastdfs-client&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  Spring引入 &amp;lt;import resource=&amp;quot;classpath:spring-fastdfs.xml&amp;quot;/&amp;gt;  Client使用 @Autowired private StorageClient storageClient; //上传 String path = ClassLoader.getSystemResource(&amp;quot;123456.txt&amp;quot;).getPath(); File file = new File(path); FileInputStream fileInputStream = FileUtils.openInputStream(file); //方式1 StorePath storePath = storageClient.uploadFile(&amp;quot;group1&amp;quot;, fileInputStream, file.length(), &amp;quot;txt&amp;quot;); //方式2 StorePath storePath = storageClient.uploadFile(fileInputStream, file.length(), &amp;quot;txt&amp;quot;); //方式3 StorePath storePath = storageClient.</description>
+    </item>
+    
+    <item>
+      <title>MybatisSql获取工具类SqlHelper使用说明</title>
+      <link>https://ningyu1.github.io/site/post/20-mybatis-sqlhelper/</link>
+      <pubDate>Tue, 05 Sep 2017 17:50:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/20-mybatis-sqlhelper/</guid>
+      <description>项目地址 tsoft-common
+
+前言 有的时候我们想在代码中获取Mybatis方法的sql但是又不想去实际执行Mybatis的查询方法，可以使用该工具直接得到sql。
+Maven引入 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;cn.tsoft.framework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;tsoft-common&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  目标 SqlHelper是获取Mybatis方法的sql工具包，支持mybatis mapper方式和sqlmap方式，支持参数：entity，map，array，list，这个工具不需要你实际去执行Mybatis的查询方法就能得到sql，方法主要分两大类，使用命名空间namespace调用或者使用Mapper接口方式调用。
+测试方法 String sql = null; UserEntity entity = new UserEntity(); entity.setUserId(1L); entity.setPassword(&amp;quot;sdflkjsldjf&amp;quot;); entity.setPasswordExpire(new Date()); entity.setVersion(2L); List&amp;lt;Long&amp;gt; list = new ArrayList&amp;lt;Long&amp;gt;(); list.add(1L); list.add(2L); Long[] ids = new Long[]{1L,2L}; //方式一 sql = SqlHelper.getMapperSql(userMapper, &amp;quot;mobileIsExists&amp;quot;, 1L, &amp;quot;13800138000&amp;quot;); System.out.println(&amp;quot;方式一：参数为：@Param：&amp;quot;+sql); sql = SqlHelper.getMapperSql(userMapper, &amp;quot;mobileIsExists&amp;quot;); System.out.println(&amp;quot;方式一：参数为：无参：&amp;quot;+sql); sql = SqlHelper.getMapperSql(userMapper, &amp;quot;modifyPassword&amp;quot;, entity); System.out.println(&amp;quot;方式一：参数为：entity&amp;quot;+sql); sql = SqlHelper.getMapperSql(userMapper, &amp;quot;blockedArrays&amp;quot;, ids); System.out.println(&amp;quot;方式一：参数为：arrays&amp;quot;+sql); sql = SqlHelper.</description>
+    </item>
+    
+    <item>
+      <title>JMS实现参数的集中式管理</title>
+      <link>https://ningyu1.github.io/site/post/19-jms-ucm/</link>
+      <pubDate>Tue, 05 Sep 2017 17:12:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/19-jms-ucm/</guid>
+      <description>点评 虽然现在开源的UCM套件很多，UCM统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。但是很多人是知其然不知其所以然，刚好发现下面这篇文章可以作为原理的教程文章，使用JMS、Redis、Zookeeper简单的实现UCM基本功能，作为学习交流还是很不错的。
+文章转自：https://my.oschina.net/OutOfMemory/blog/1510101 作者：@ksfzhaohui
+前言 JMS的发布订阅机制也能实现类似的功能，集群节点通过订阅指定的节点，同时使用JMS对消息的过滤器功能，实现对指定参数的更新，本文将介绍通过JMS实现简单的参数集中式管理。
+Maven引入 Spring相关的jar引入参考上一篇文章
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.jms&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jms&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.activemq&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;activemq-all&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.10.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  目标  可以同时配置监听多个节点如/app1,/app2； 希望只需要配置如/app1，就能够监听其子节点如/app1/modual1以及子节点的子节点如/app1/modual1/xxx/…； 服务器启动能获取当前指定父节点下的所有子节点数据； 在添加节点或者在更新节点数据的时候能够动态通知，这样代码中就能够实时获取最新的数据； spring配置中可以从Zookeeper中读取参数进行初始化。  虽然在实现的方式上有点区别，但是最终达成的目标是一致的，同样列出了这5条目标
+实现 MQWatcher主要用来和JMS建立连接，同时订阅指定节点，建立点对点连接，过滤出需要监听的数据，更新数据，初始化数据，存储数据等 InitConfServer主要作为点对点连接的服务器端用来初始化数据
+1.同时配置监听多个节点 提供一个字符串数组给用户用来添加需要监听的节点：
+private String[] keyPatterns;  2.能够监听其子节点以及子节点的子节点 使用了一种和Zookeeper不一样的方式，JMS的方式是将所有的数据变更都发送到订阅者，然后订阅者通过过滤出需要的数据进行更新
+/** MQ的过滤器 **/ private StringBuffer keyFilter = new StringBuffer(); private final String TOPIC = &amp;quot;dynamicConfTopic&amp;quot;; private void watcherPaths() throws JMSException { Topic topic = session.createTopic(TOPIC); MessageConsumer consumer = session.createConsumer(topic, keyFilter.toString()); consumer.</description>
+    </item>
+    
+    <item>
+      <title>Zookeeper实现参数的集中式管理</title>
+      <link>https://ningyu1.github.io/site/post/18-zookeeper-ucm/</link>
+      <pubDate>Tue, 05 Sep 2017 17:07:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/18-zookeeper-ucm/</guid>
+      <description>点评 虽然现在开源的UCM套件很多，UCM统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。但是很多人是知其然不知其所以然，刚好发现下面这篇文章可以作为原理的教程文章，使用JMS、Redis、Zookeeper简单的实现UCM基本功能，作为学习交流还是很不错的。
+文章转自：https://my.oschina.net/OutOfMemory/blog/1503392 作者：@ksfzhaohui
+前言 应用项目中都会有一些参数，一般的做法通常可以选择将其存储在本地配置文件或者内存变量中；对于集群机器规模不大、配置变更不是特别频繁的情况下，这两种方式都能很好的解决；但是一旦集群机器规模变大，且配置信息越来越频繁，依靠这两种方式就越来越困难；我们希望能够快速的做到全局参数的变更，因此需要一种参数的集中式管理，下面利用Zookeeper的一些特性来实现简单的参数管理。
+准备 jdk:1.7.0_80 zookeeper:3.4.3 curator:2.6.0 spring:3.1.2  Maven引入 Spring相关的jar引入参考上一篇文章
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-core&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-context&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-beans&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.2.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.zookeeper&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;zookeeper&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.4.3&amp;lt;/version&amp;gt; &amp;lt;exclusions&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;com.sun.jmx&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jmxri&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;com.sun.jdmk&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jmxtools&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;javax.jms&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jms&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;/exclusions&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.curator&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;curator-framework&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.6.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.curator&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;curator-recipes&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.6.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  目标  可以同时配置监听多个节点如/app1,/app2； 希望只需要配置如/app1，就能够监听其子节点如/app1/modual1以及子节点的子节点如/app1/modual1/xxx/…； 服务器启动能获取当前指定父节点下的所有子节点数据； 在添加节点或者在更新节点数据的时候能够动态通知，这样代码中就能够实时获取最新的数据； spring配置中可以从Zookeeper中读取参数进行初始化。  实现 提供ZKWatcher类主要用来和Zookeeper建立连接，监听节点，初始化节点数据，更新节点数据，存储节点数据等</description>
+    </item>
+    
+    <item>
+      <title>[转]Redis实现参数的集中式管理</title>
+      <link>https://ningyu1.github.io/site/post/17-redis-ucm/</link>
+      <pubDate>Tue, 05 Sep 2017 16:40:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/17-redis-ucm/</guid>
+      <description>点评 虽然现在开源的UCM套件很多，UCM统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。但是很多人是知其然不知其所以然，刚好发现下面这篇文章可以作为原理的教程文章，使用JMS、Redis、Zookeeper简单的实现UCM基本功能，作为学习交流还是很不错的。
+文章转自：https://my.oschina.net/OutOfMemory/blog/1526063 作者：@ksfzhaohui
+前言 利用的Redis的发布订阅功能实现对参数的集中式管理；分布式缓存Redis提供了类似的发布订阅功能，并且Redis本身提供了缓存和持久化的功能，本文将介绍通过Redis实现简单的参数集中式管理。
+Maven引入 Spring相关的jar引入参考上一篇文章
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;redis.clients&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jedis&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.4.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  目标  可以同时配置监听多个节点如/app1,/app2； 希望只需要配置如/app1，就能够监听其子节点如/app1/modual1以及子节点的子节点如/app1/modual1/xxx/…； 服务器启动能获取当前指定父节点下的所有子节点数据； 在添加节点或者在更新节点数据的时候能够动态通知，这样代码中就能够实时获取最新的数据； spring配置中可以从Zookeeper中读取参数进行初始化。  虽然在实现的方式上有点区别，但是最终达成的目标是一致的，同样列出了这5条目标
+实现 RedisWatcher主要用来和Redis进行连接，然后对监听的节点进行初始化，模糊订阅需要监听的节点，最后接受数据的变更，更新本地数据，存储数据等。
+1.同时配置监听多个节点 提供一个字符串数组给用户用来添加需要监听的节点：
+private String[] keyPatterns;  2.能够监听其子节点以及子节点的子节点 使用Redis提供的psubscribe命令，订阅一个或多个符合给定模式的频道，提供了模糊订阅的功能
+private void watcherPaths() { new Thread(new Runnable() { @Override public void run() { jedis.psubscribe(new JedisPubSub() { @Override public void onMessage(String channel, String message) { try { keyValueMap.put(channel, message); LOGGER.info(&amp;quot;key = &amp;quot; + channel + &amp;quot;,value = &amp;quot; + message); } catch (Exception e) { LOGGER.</description>
+    </item>
+    
+    <item>
+      <title>Spring框架-事务管理注意事项</title>
+      <link>https://ningyu1.github.io/site/post/16-spring-transaction/</link>
+      <pubDate>Sat, 26 Aug 2017 16:40:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/16-spring-transaction/</guid>
+      <description>常见事务问题  事务不起作用  可能是配置不起效，如扫描问题  事务自动提交了（批量操作中）  可能是在没事务的情况下，利用了数据库的隐式提交   事务配置说明 通常情况下我们的Spring Component扫描分为两部分，一部分是Spring Servlet(MVC)，一部分是其他Context Config的内容。主要扫描Annotation定义，包括@Controller、@Autowired、@Resource、@Service、@Component、@Repository等。
+Spring Servlet部分的扫描配置可以通过web.xml中DispatchServlet的init-param节点配置确定。
+Context Config部分的扫描配置为非以上配置的其他Spring配置文件确定。
+为了能够使用事务，需要防止因Spring Servlet的扫描导致@Service事务配置失效。可以调整DispatchServlet中的配置文件，排除对@Service的扫描。
+配置如下：
+&amp;lt;context:component-scan base-package=&amp;quot;com.jiuyescm.xxx&amp;quot;&amp;gt; &amp;lt;context:exclude-filter type=&amp;quot;annotation&amp;quot; expression=&amp;quot;org.springframework.stereotype.Service&amp;quot; /&amp;gt; &amp;lt;/context:component-scan&amp;gt;  如何通过日志判断事务是否已经被Spring所管理？  在logback或者log4j中对org.springframework.aop、org.springframework.transaction、org.springframework.jdbc、org.mybatis.spring.transaction进行DEBUG级别日志跟踪（开发期） 查看日志中是否有事务管理、开启、提交、回滚等字符，如：
+DEBUG o.m.spring.transaction.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@28cfe912] will be managed by Spring  没有被控制的时候，日志如下：
+DEBUG o.m.spring.transaction.SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@28cfe912] will not be managed by Spring   如何通过程序判断是否存在事务？ boolean flag = TransactionSynchronizationManager.isActualTransactionActive();  返回true，则在事务控制下，否则不在控制下</description>
+    </item>
+    
+    <item>
+      <title>NPE（java.lang.NullPointerException）防范</title>
+      <link>https://ningyu1.github.io/site/post/15-java-npe/</link>
+      <pubDate>Sat, 26 Aug 2017 16:01:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/15-java-npe/</guid>
+      <description>我们程序中NPE还是比较多的，下面介绍良好的编码规范防止NPE的发生
+NPE（java.lang.NullPointerException）: 空指针异常
+一、【推荐】防止 NPE，是程序员的基本修养，注意 NPE 产生的场景： 1） 返回类型为基本数据类型， return 包装数据类型的对象时，自动拆箱有可能产生 NPE。
+反例： public int f() { return Integer 对象}， 如果为 null，自动解箱抛 NPE。
+2） 数据库的查询结果可能为 null。
+3） 集合里的元素即使 isNotEmpty，取出的数据元素也可能为 null。
+4） 远程调用返回对象时，一律要求进行空指针判断，防止 NPE。
+5） 对于 Session 中获取的数据，建议 NPE 检查，避免空指针。
+6） 级联调用 obj.getA().getB().getC()； 一连串调用，易产生 NPE。
+正例： 使用 JDK8 的 Optional 类来防止 NPE 问题。
+ps.我们现在开发规范jdk版本jdk1.7.0_45，对于jdk8里面的optional可以了解学习，它是一种友好的解决方式。
+二、【强制】当某一列的值全是 NULL 时， count(col)的返回结果为 0，但 sum(col)的返回结果为 NULL，因此使用 sum()时需注意 NPE 问题。
+正例： 可以使用如下方式来避免 sum 的 NPE 问题： SELECT IF(ISNULL(SUM(g)),0,SUM(g))</description>
+    </item>
+    
+    <item>
+      <title>JVM调优总结 -Xms -Xmx -Xmn -Xss</title>
+      <link>https://ningyu1.github.io/site/post/15-java-jvm/</link>
+      <pubDate>Sat, 26 Aug 2017 15:56:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/15-java-jvm/</guid>
+      <description>堆大小设置 JVM 中最大堆大小有三方面限制：相关操作系统的数据模型（32-bt还是64-bit）限制；系统的可用虚拟内存限制；系统的可用物理内存限制。32位系统下，一般限制在1.5G~2G；64为操作系统对内存无限制。我在Windows Server 2003 系统，3.5G物理内存，JDK5.0下测试，最大可设置为1478m。
+典型设置  java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -Xmx3550m：设置JVM最大可用内存为3550M。 -Xms3550m：设置JVM促使内存为3550m。此值可以设置与-Xmx相同，以避免每次垃圾回收完成后JVM重新分配内存。 -Xmn2g：设置年轻代大小为2G。整个JVM内存大小=年轻代大小 + 年老代大小 + 持久代大小。持久代一般固定大小为64m，所以增大年轻代后，将会减小年老代大小。此值对系统性能影响较大，Sun官方推荐配置为整个堆的3/8。 -Xss128k：设置每个线程的堆栈大小。JDK5.0以后每个线程堆栈大小为1M，以前每个线程堆栈大小为256K。更具应用的线程所需内存大小进行调整。在相同物理内存下，减小这个值能生成更多的线程。但是操作系统对一个进程内的线程数还是有限制的，不能无限生成，经验值在3000~5000左右。
+ java -Xmx3550m -Xms3550m -Xss128k -XX:NewRatio=4 -XX:SurvivorRatio=4 -XX:MaxPermSize=16m -XX:MaxTenuringThreshold=0 -XX:NewRatio=4:设置年轻代（包括Eden和两个Survivor区）与年老代的比值（除去持久代）。设置为4，则年轻代与年老代所占比值为1：4，年轻代占整个堆栈的1/5 -XX:SurvivorRatio=4：设置年轻代中Eden区与Survivor区的大小比值。设置为4，则两个Survivor区与一个Eden区的比值为2:4，一个Survivor区占整个年轻代的1/6 -XX:MaxPermSize=16m:设置持久代大小为16m。 -XX:MaxTenuringThreshold=0：设置垃圾最大年龄。如果设置为0的话，则年轻代对象不经过Survivor区，直接进入年老代。对于年老代比较多的应用，可以提高效率。如果将此值设置为一个较大值，则年轻代对象会在Survivor区进行多次复制，这样可以增加对象再年轻代的存活时间，增加在年轻代即被回收的概论。
+  回收器选择 JVM给了三种选择：串行收集器、并行收集器、并发收集器，但是串行收集器只适用于小数据量的情况，所以这里的选择主要针对并行收集器和并发收集器。默认情况下，JDK5.0以前都是使用串行收集器，如果想使用其他收集器需要在启动时加入相应参数。JDK5.0以后，JVM会根据当前系统配置进行判断。
+ java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:ParallelGCThreads=20 -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+UseConcMarkSweepGC：设置年老代为并发收集。测试中配置这个以后，-XX:NewRatio=4的配置失效了，原因不明。所以，此时年轻代大小最好用-Xmn设置。 -XX:+UseParNewGC:设置年轻代为并行收集。可与CMS收集同时使用。JDK5.0以上，JVM会根据系统配置自行设置，所以无需再设置此值。
+ java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:+UseConcMarkSweepGC -XX:CMSFullGCsBeforeCompaction=5 -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction：由于并发收集器不对内存空间进行压缩、整理，所以运行一段时间以后会产生“碎片”，使得运行效率降低。此值设置运行多少次GC以后对内存空间进行压缩、整理。 -XX:+UseCMSCompactAtFullCollection：打开对年老代的压缩。可能会影响性能，但是可以消除碎片
+ java -Xmx3800m -Xms3800m -Xmn2g -Xss128k -XX:+UseParallelGC -XX:ParallelGCThreads=20 -XX:+UseParallelGC：选择垃圾收集器为并行收集器。此配置仅对年轻代有效。即上述配置下，年轻代使用并发收集，而年老代仍旧使用串行收集。 -XX:ParallelGCThreads=20：配置并行收集器的线程数，即：同时多少个线程一起进行垃圾回收。此值最好配置与处理器数目相等。</description>
+    </item>
+    
+    <item>
+      <title>关于Axios的GET与DELETE用法注意事项</title>
+      <link>https://ningyu1.github.io/site/post/12-vue-axios/</link>
+      <pubDate>Thu, 24 Aug 2017 10:51:30 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/12-vue-axios/</guid>
+      <description>axios的接口定义如下 config定义如下： 因此，我们在使用get和delete时需要注意，这两个接口接收的第二个参数是config。用时，就需要区别对待，且需要与后台定义对应。
+ 如果想参数在Query Parameter里面，那就用{params: params}，后台那边会用RequestParam接收 如果想参数在Payload里面，那就用{data: params}，后台那边会用RequestBody接收  如果后台不匹配，可能会抛ContentType错误的异常，如：</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Redis AOF rewrite错误导致Redis被Block住</title>
+      <link>https://ningyu1.github.io/site/post/11-redis-aof-pit/</link>
+      <pubDate>Tue, 15 Aug 2017 10:30:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/11-redis-aof-pit/</guid>
+      <description>问题现状： redis-cli 上去执行任何命令返回：connnection reset by peer
+重启的应用无法连接到redis，已经建立连接的应用可以正常使用。
+分析过程： 第一反应查看redis 日志，如下：
+1838:M 16 Aug 01:07:39.319 # Error opening /setting AOF rewrite IPC pipes: Numerical result out of range 1838:M 16 Aug 01:07:39.319 * Starting automatic rewriting of AOF on 110% growth 1838:M 16 Aug 01:07:39.319 # Error opening /setting AOF rewrite IPC pipes: Numerical result out of range 1838:M 16 Aug 01:07:39.419 * Starting automatic rewriting of AOF on 110% growth 1838:M 16 Aug 01:07:39.</description>
+    </item>
+    
+    <item>
+      <title>Lombok使用说明</title>
+      <link>https://ningyu1.github.io/site/post/04-lombok-quick-start/</link>
+      <pubDate>Wed, 19 Jul 2017 15:22:56 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/04-lombok-quick-start/</guid>
+      <description>一、项目背景 在写Java程序的时候经常会遇到如下情形：
+新建了一个Class类，然后在其中设置了几个字段，最后还需要花费很多时间来建立getter和setter方法
+lombok项目的产生就是为了省去我们手动创建getter和setter方法的麻烦，它能够在我们编译源码的时候自动帮我们生成getter和setter方法。即它最终能够达到的效果是：在源码中没有getter和setter方法，但是在编译生成的字节码文件中有getter和setter方法
+比如源码文件：
+import java.io.Serializable; import lombok.AllArgsConstructor; import lombok.Data; import lombok.NoArgsConstructor; import lombok.extern.slf4j.Slf4j; @Data @Slf4j @NoArgsConstructor @AllArgsConstructor public class TestUserVo implements Serializable{ private static final long serialVersionUID = -5648809805573016853L; private Long id; private Long userId; /** * 获取 id * @return the id */ public Long getId() { System.out.println(&amp;quot;getId&amp;quot;); return id; } /** * 设置 id * @param id the id to set */ public void setId(Long id) { System.</description>
+    </item>
+    
+    <item>
+      <title>Fastdfs安装说明与常见问题解决</title>
+      <link>https://ningyu1.github.io/site/post/02-fastdfs-installer/</link>
+      <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/02-fastdfs-installer/</guid>
+      <description>Fastdfs安装说明与常见问题解决 docker中安装 docker pull season/fastdfs docker tag season/fastdfs 192.168.0.34:5000/season/fastdfs docker push 192.168.0.34:5000/season/fastdfs  启动会获取tracker ip 192.168.0.54:22122
+monitor检测
+/usr/local/bin/fdfs_monitor /etc/fdfs/storage.conf  storage store_path0路径与base_path路径必须不同
+物理机安装 1.安装git yum install -y git
+2.下载fastdfs源码 git clone https://github.com/happyfish100/fastdfs.git git clone https://github.com/happyfish100/libfastcommon.git git clone https://github.com/happyfish100/fastdfs-nginx-module.git  3.下载nginx cp /home/jyftp/nginx-1.10.1.tar.gz ./ tar -xvf nginx-1.10.1.tar.gz rm -rf nginx-1.10.1.tar.gz chown -R root.root nginx-1.10.1/ mv nginx-1.10.1/ nginx  4.安装libfastcommon (fastdfs依赖的系统库） cd /usr/local/fastdfs/libfastcommon ./make.sh ./make.sh install  5.安装fastdfs cd /usr/local/fastdfs/fastdfs ./make.sh .</description>
+    </item>
+    
+    <item>
+      <title>Nginx 502 Bad Gateway问题分析与踩过的坑</title>
+      <link>https://ningyu1.github.io/site/post/03-nginx-502-bad-gateway/</link>
+      <pubDate>Fri, 30 Jun 2017 18:36:44 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/03-nginx-502-bad-gateway/</guid>
+      <description>我相信使用Nginx的都会遇到过502 504 这种bad gateway错误，下面我把碰到这个问题分析过程记录并分享出来。 先让我们看一下具体的错误信息
+502 Bad Gateway The proxy server received an invalid response from an upstream server  从字面上的意思理解，nginx从upstream没有接受到信息，第一感觉就是连接被close？还是超时了？超时的话一般错误信息是 timeout
+下面是尝试解决这个问题尝试过的手段
+1. 第一感觉是proxy返回超时，因此查找nginx官方文档，找到关于proxy的timeout设置 Syntax:	proxy_connect_timeout time; Default:	proxy_connect_timeout 60s; Context:	http, server, location Defines a timeout for establishing a connection with a proxied server. It should be noted that this timeout cannot usually exceed 75 seconds.  ps. 这个时间不能超过75秒
+Syntax:	proxy_read_timeout time; Default:	proxy_read_timeout 60s; Context:	http, server, location Defines a timeout for reading a response from the proxied server.</description>
+    </item>
+    
+    <item>
+      <title>Cache设计和使用上的套路</title>
+      <link>https://ningyu1.github.io/site/post/05-cache-design/</link>
+      <pubDate>Fri, 02 Jun 2017 14:06:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/05-cache-design/</guid>
+      <description>一、管道（pipeline）提升效率 Redis是一个cs模式的tcp server，使用和http类似的请求响应协议。一个client可以通过一个socket连接发起多个请求命令。每个请求命令发出后client通常会阻塞并等待redis服务处理，redis处理完后请求命令后会将结果通过响应报文返回给client。每执行一个命令需要2个tcp报文才能完成，由于通信会有网络延迟,假如从client和server之间的包传输时间需要0.125秒，那么执行四个命令8个报文至少会需要1秒才能完成，这样即使redis每秒能处理100k命令，而我们的client也只能一秒钟发出四个命令。这显示没有充分利用 redis的处理能力。因此我们需要使用管道（pipeline）的方式从client打包多条命令一起发出，不需要等待单条命令的响应返回，而redis服务端会处理完多条命令后会将多条命令的处理结果打包到一起返回给客户端（它能够让（多条）执行命令简单的，更加快速的发送给服务器，但是没有任何原子性的保证）官方资料
+【反例】
+【正例】
+//管道，批量发送多条命令，但是不支持namespace需要手动添加namespace Pipeline pipelined = redisClient.pipelined(); pipelined.set(key, value); pipelined.get(key); pipelined.syncAndReturnAll(); //发送命令并接受返回值 pipelined.sync();//发送命令不接受返回值  使用管道注意事项： 1. tcp报文过长会被拆分。 2. 如果使用pipeline服务器会被迫使用内存队列来发送应答（服务器会在处理完命令前先缓存所有的命令处理结果） 3. 打包的命令越多，缓存消耗内存也越多，所以并不是打包命令越多越好，需要结合测试找到合适我们业务场景的量（双刃剑） 4. 不保证原子性，因此在Redis中没有数据需要走DB获取数据，Redis也支持事务（multi、watch）但是会影响性能（没有事务和有事务相差还是蛮大的），不是非要强一致的场景请不要使用。
+二、连接池使用问题 jedis客户端2.4版本以上对连接池资源使用上进行了优化，提供了更优雅的资源回收方法并且支持broken处理，提供close方法替换原来的回收资源方法（returnBrokenResource 、returnResource）
+【反例】
+【正例】
+三、使用key值前缀来作命名空间 虽然说Redis支持多个数据库（默认32个，可以配置更多），但是除了默认的0号库以外，其它的都需要通过一个额外请求才能使用。所以用前缀作为命名空间可能会更明智一点。另外，在使用前缀作为命名空间区隔不同key的时候，最好在程序中使用全局配置来实现，直接在代码里写前缀的做法要严格避免，这样可维护性实在太差了。
+命名分割符使用 “.” 分隔
+【正例】
+四、expire对于key过期时间来控制垃圾回收 Redis是一个提供持久化功能的内存数据库，如果你不指定上面值的过期时间（TTL），并且也不进行定期的清理工作，那么你的Redis内存占用会越来越大，当有一天它超过了系统可用内存，那么swap上场，离性能陡降的时间就不远了。所以在Redis中保存数据时，一定要预先考虑好数据的生命周期，这有很多方法可以实现。
+比如你可以采用Redis自带的过期时间（setEX）为你的数据设定过期时间。但是自动过期有一个问题，很有可能导致你还有大量内存可用时，就让key过期去释放内存，或者是内存已经不足了key还没有过期。
+（LRU）如果你想更精准的控制你的数据过期，你可以用一个ZSET来维护你的数据更新程度，你可以用时间戳作为score值，每次更新操作时更新一下score，这样你就得到了一个按更新时间排序序列串，你可以轻松地找到最老的数据，并且从最老的数据开始进行删除，一直删除到你的空间足够为止。
+【正例】
+redisClient.setex(bizkey, 60, value);//set一个key并设置ttl60秒  五、乱用（不要有个锤子看哪都是钉子） 当你使用Redis构建你的服务的时候，一定要记住，你只是找了一个合适的工具来实现你需要的功能。而不是说你在用Redis构建一个服务，这是很不同的，你把Redis当作你很多工具中的一个，只在合适使用的时候再使用它，在不合适的时候选择其它的方法。
+我们对它的定位更多是Cache服务而非DB
+六、缓存设计的误区 我们通常是这样设计的，应用程序先从cache取数据，没有得到，则从数据库中取数据，成功后，放到缓存中。
+那试想一下，如果取出来的null，需不需要放入cache呢？答案当然是需要的。
+我们试想一下如果取出为null不放入cache会有什么结果？很显然每次取cache没有走db返回null，很容易让攻击者利用这个漏洞搞垮你的服务器，利用洪水攻击让你的程序夯在这个地方导致你的正常流程抢不到资源。
+七、缓存更新的问题 以下内容摘自酷壳-COOLSHELL的文章《缓存更新的套路》
+很多人在写更新缓存数据代码时，先删除缓存，然后再更新数据库，而后续的操作会把数据再装载的缓存中。然而，这个是逻辑是错误的。试想，两个并发操作，一个是更新操作，另一个是查询操作，更新操作删除缓存后，查询操作没有命中缓存，先把老数据读出来后放到缓存中，然后更新操作更新了数据库。于是，在缓存中的数据还是老的数据，导致缓存中的数据是脏的，而且还一直这样脏下去了。
+正确更新缓存的Design Pattern有四种：Cache aside, Read through, Write through, Write behind caching
+Cache Aside Pattern</description>
+    </item>
+    
+    <item>
+      <title>ActiveMQ使用经验分享，配置详解</title>
+      <link>https://ningyu1.github.io/site/post/06-activemq-settings/</link>
+      <pubDate>Thu, 11 May 2017 12:03:10 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/06-activemq-settings/</guid>
+      <description>根据我们的使用场景抽取出来了一系列activemq公共配置参数mq.properties
+mq.properties activemq.connnect.brokerurl=failover:(tcp://192.168.0.66:61616) activemq.connnect.useAsyncSend=true # object对象接受报名单,true不受限制,false需要设置白名单 activemq.connnect.trustAllPackages=true # 最大连接数 activemq.pool.maxConnections=20 # 空闲失效时间,毫秒 activemq.pool.idleTimeout=60000 # 初始数量 activemq.listener.pool.corePoolSize=5 activemq.listener.pool.maxPoolSize=10 # 启动守护进程 activemq.listener.pool.daemon=true # 单位秒 activemq.listener.pool.keepAliveSeconds=120 # 由于jms:listener-container不支持propertyPlaceholder替换，因此这些参数值写在spring-mq.xml文件中，参考值 # # 接收消息时的超时时间,单位毫秒 activemq.consumer.receiveTimeout=60000 # 监听目标类型 activemq.listener.destinationtype=queue # 监听确认消息方式 activemq.listener.acknowledge=auto # 监听数量 activemq.listener.concurrency=2-10  spring-mq.xml &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot; xmlns:context=&amp;quot;http://www.springframework.org/schema/context&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xmlns:amq=&amp;quot;http://activemq.apache.org/schema/core&amp;quot; xmlns:jms=&amp;quot;http://www.springframework.org/schema/jms&amp;quot; xsi:schemaLocation=&amp;quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-4.0.xsd http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core-5.8.0.xsd&amp;quot;&amp;gt; &amp;lt;!-- 配置activeMQ连接 tcp://192.168.0.66:61616 --&amp;gt; &amp;lt;bean id=&amp;quot;targetConnectionFactory&amp;quot; class=&amp;quot;org.apache.activemq.ActiveMQConnectionFactory&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;brokerURL&amp;quot; value=&amp;quot;${activemq.connnect.brokerurl}&amp;quot; /&amp;gt; &amp;lt;!-- useAsyncSend 异步发送 --&amp;gt; &amp;lt;property name=&amp;quot;useAsyncSend&amp;quot; value=&amp;quot;${activemq.</description>
+    </item>
+    
+    <item>
+      <title>Maven settings.xml详解</title>
+      <link>https://ningyu1.github.io/site/post/07-maven-settings/</link>
+      <pubDate>Wed, 10 May 2017 10:05:37 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/07-maven-settings/</guid>
+      <description>settings.xml有什么用 从settings.xml的文件名就可以看出，它是用来设置maven参数的配置文件。并且，settings.xml是maven的全局配置文件。而pom.xml文件是所在项目的局部配置。
+Settings.xml中包含类似本地仓储位置、修改远程仓储服务器、认证信息等配置。
+settings.xml文件位置 全局配置: ${M2_HOME}/conf/settings.xml
+用户配置: user.home/.m2/settings.xmlnote：用户配置优先于全局配置。user.home/.m2/settings.xmlnote：用户配置优先于全局配置。{user.home} 和和所有其他系统属性只能在3.0+版本上使用。请注意windows和Linux使用变量的区别。
+配置优先级 需要注意的是：局部配置优先于全局配置。
+配置优先级从高到低：pom.xml&amp;gt; user settings &amp;gt; global settings
+如果这些文件同时存在，在应用配置时，会合并它们的内容，如果有重复的配置，优先级高的配置会覆盖优先级低的。
+ps.修改了配置文件最好吧cmd和eclipse重开一下
+settings.xml元素详解 顶级元素概览 下面列举了settings.xml中的顶级元素
+&amp;lt;settings xmlns=&amp;quot;http://maven.apache.org/SETTINGS/1.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:schemaLocation=&amp;quot;http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd&amp;quot;&amp;gt; &amp;lt;localRepository/&amp;gt; &amp;lt;interactiveMode/&amp;gt; &amp;lt;usePluginRegistry/&amp;gt; &amp;lt;offline/&amp;gt; &amp;lt;pluginGroups/&amp;gt; &amp;lt;servers/&amp;gt; &amp;lt;mirrors/&amp;gt; &amp;lt;proxies/&amp;gt; &amp;lt;profiles/&amp;gt; &amp;lt;activeProfiles/&amp;gt; &amp;lt;/settings&amp;gt;  LocalRepository 作用：该值表示构建系统本地仓库的路径。
+其默认值：~/.m2/repository。 &amp;lt;localRepository&amp;gt;${user.home}/.m2/repository&amp;lt;/localRepository&amp;gt;
+InteractiveMode 作用：表示maven是否需要和用户交互以获得输入。
+如果maven需要和用户交互以获得输入，则设置成true，反之则应为false。默认为true。 &amp;lt;interactiveMode&amp;gt;true&amp;lt;/interactiveMode&amp;gt;
+UsePluginRegistry 作用：maven是否需要使用plugin-registry.xml文件来管理插件版本。
+如果需要让maven使用文件~/.m2/plugin-registry.xml来管理插件版本，则设为true。默认为false。 &amp;lt;usePluginRegistry&amp;gt;false&amp;lt;/usePluginRegistry&amp;gt;
+Offline 作用：表示maven是否需要在离线模式下运行。
+如果构建系统需要在离线模式下运行，则为true，默认为false。
+当由于网络设置原因或者安全因素，构建服务器不能连接远程仓库的时候，该配置就十分有用。 &amp;lt;offline&amp;gt;false&amp;lt;/offline&amp;gt;
+PluginGroups 作用：当插件的组织id（groupId）没有显式提供时，供搜寻插件组织Id（groupId）的列表。
+该元素包含一个pluginGroup元素列表，每个子元素包含了一个组织Id（groupId）。
+当我们使用某个插件，并且没有在命令行为其提供组织Id（groupId）的时候，Maven就会使用该列表。默认情况下该列表包含了org.apache.maven.plugins和org.codehaus.mojo。
+&amp;lt;settings xmlns=&amp;quot;http://maven.apache.org/SETTINGS/1.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:schemaLocation=&amp;quot;http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd&amp;quot;&amp;gt; ... &amp;lt;pluginGroups&amp;gt; &amp;lt;!--plugin的组织Id（groupId） --&amp;gt; &amp;lt;pluginGroup&amp;gt;org.</description>
+    </item>
+    
+    <item>
+      <title>archives</title>
+      <link>https://ningyu1.github.io/site/archives/</link>
+      <pubDate>Tue, 28 Mar 2017 15:58:20 +0800</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RESTful设计规范</title>
+      <link>https://ningyu1.github.io/site/post/01-restful-design-specifications/</link>
+      <pubDate>Tue, 21 Feb 2017 11:58:19 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/01-restful-design-specifications/</guid>
+      <description>一、 摘要（Abstract） RESTful API 已经非常成熟，也得到了大家的认可。我们按照 Richardson Maturity Model 对 REST 评价的模型，规范基于 level2 来设计
+二、版本（Versioning） API的版本号放入URL。例如：
+https://api.jiuyescm.com/v1/ https://api.jiuyescm.com/v1.2/  三、资源、路径（Endpoint） 路径，API的具体地址。在REST中，每个地址都代表一个具体的资源（Resource）约定如下：
+ 路径仅表示资源的路径（位置），尽量不要有actions操作（一些特殊的actions操作除外） 路径以 复数（名词） 进行命名资源，不管返回单个或者多个资源。 使用 小写字母、数字以及下划线（“_”） 。（下划线是为了区分多个单词，如user_name） 资源的路径从父到子依次如：
+/{resource}/{resource_id}/{sub_resource}/{sub_resource_id}/{sub_resource_property}  使用 ? 来进行资源的过滤、搜索以及分页等
+ 使用版本号，且版本号在资源路径之前
+ 优先使用内容协商来区分表述格式，而不是使用后缀来区分表述格式
+ 应该放在一个专用的域名下，如：http：//api.jiuyescm.com
+ 使用SSL
+  综上，一个API路径可能会是
+https://api.domain.com/v1/{resource}/{resource_id}/{sub_resource}/{sub_resource_id}/{sub_resource_property} https://api.domain.com /v1/{resource}?page=1&amp;amp;page_size=10 https://api.domain.com /v1/{resource}?name=xx&amp;amp;sortby=name&amp;amp;order=asc  四、操作（HTTP Actions） 用HTTP动词（方法）表示对资源的具体操作。常用的HTTP动词有：
+GET（SELECT）：从服务器取出资源（一项或多项） POST（CREATE）：在服务器新建一个资源 PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源） PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性） DELETE（DELETE）：从服务器删除资源 还有两个不常用的HTTP动词 HEAD：获取资源的元数据 OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的  下面是一些例子
+GET /users：列出所有用户 POST /users：新建一个用户 GET /users/{user_id}：获取某个指定用户的信息 PUT /users/{user_id}：更新某个指定用户的信息（提供该用户的全部信息） PATCH /users/{user_id}：更新某个指定用户的信息（提供该用户的部分信息） DELETE /users/{user_id}：删除某个用户 GET /users/{user_id}/resources：列出某个指定用户的所有权限资源 DELETE /users/{user_id}/resources/{resources_id}：删除某个指定用户的指定权限资源  五、数据（Data Format） 数据是对资源的具体描述，分为请求数据和返回数据。约定如下：</description>
+    </item>
+    
+    <item>
+      <title>Dubbo本地调试最优方式，本地Server端调用本地Client端</title>
+      <link>https://ningyu1.github.io/site/post/09-dubbo-debug/</link>
+      <pubDate>Tue, 20 Dec 2016 14:32:41 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/09-dubbo-debug/</guid>
+      <description>分布式应用的调试总是比常规项目开发调试起来要麻烦很多。 我们还在为搞不清自己请求的服务是本地服务还是服务器服务而苦恼吗？ 我们还在为配置文件被修改导致服务器上版本服务不正常而苦恼吗？ 接下来我介绍一个Dubbo在多环境调试的最优调试方式，在介绍之前先说一下我们现在的调试方式。
+不好的方式（现在的方式）： 现在本地调试，需要修改DubboServer.xml和DubboClient.xml配置文件
+将文件中的 dubbo:registry protocol=&amp;quot;zookeeper&amp;quot; address=&amp;quot;${dubbo.registry}&amp;quot; /&amp;gt; 修改为 &amp;lt;dubbo:registry address=&amp;quot;N/A&amp;quot; /&amp;gt;  这种方式的弊端：
+ 开发总是不注意将修改为address=&amp;ldquo;N/A&amp;rdquo;的文件提交到svn，在其他环境打包run起来，总是没有Export Service。 文件经常被改来改去容易冲突，冲突解决不好容易丢失配置。 无法很好的将本地调试和各环境的相互依赖分离开  最优的方式：
+ 创建一个properties文件，名字可以随便命名，我命名为：dubbo-local.properties，这个文件可以放在任何地方。该文件不提交到svn，我建议不要放在工程目录里以避免自己提交了都不知道，建议放在用户目录下${user.home}(不知道用户目录的自己去 度娘、谷哥、必硬) dubbo-local.properties文件内容如下：
+&amp;lt;!--注册中心变量 --&amp;gt; dubbo.registry=N/A &amp;lt;!--以下是你们DubboServer.xml中配置的需要Export Service，这里我建议你有几个要Export Service都配置在这里，后面是请求本地的地址 地址格式：dubbo://ip:port，这里需要注意的是，需要修改为自己dubbo服务的端口 --&amp;gt; com.domain.imprest.api.IImprestRecordService=dubbo://localhost:20812 com.domain.imprest.api.IImprestRequestService=dubbo://localhost:20812 com.domain.imprest.api.IImprestTrackService=dubbo://localhost:20812 com.domain.imprest.api.IImprestWriteoffService=dubbo://localhost:20812 com.domain.imprest.api.IImprestIOCollectService=dubbo://localhost:20812 com.domain.imprest.api.ISystemService=dubbo://localhost:20812 com.domain.imprest.api.IImprestDeptService=dubbo://localhost:20812  接下来启动你的Dubbo服务，在启动之前需要添加一下启动参数
+  参数：-Ddubbo.properties.file 值：dubbo-local.properties文件的本地地址，绝对地址   接下来启动你的web服务，在启动之前需要添加一下启动参数  参数：-Ddubbo.resolve.file 值：dubbo-local.properties文件的本地地址，绝对地址  ps.当你不想连接本地服务调试时，只需将启动参数去掉即可，无需修改配置文件，让配置文件一直保持清爽干净。 以后你就可以安心的本地调试你的程序了，再也不会因为服务没有Export出去、配置文件被修改而焦头烂额。
+Dubbo Plugin for Apache JMeter Dubbo Plugin for Apache JMeter是用来在Jmeter里更加方便的测试Dubbo接口而开发的插件，马上使用
+项目地址 github: jmeter-plugin-dubbo</description>
+    </item>
+    
+    <item>
+      <title>分支(branche)开发，主干(trunk)发布</title>
+      <link>https://ningyu1.github.io/site/post/08-svn-trunk-branche/</link>
+      <pubDate>Tue, 20 Dec 2016 14:32:41 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/08-svn-trunk-branche/</guid>
+      <description>主干，分支分开开发模式在使用的时候要注意，主干是不做任何代码修改，只负责merge，修改全在分支上，不管是新功能的开发分支，还是修复bug的分支，如果线上有紧急bug修复，要先容trunk上拉一个bugfix分支出来，修改提交然后在merge到主干上去 ，打包测试发包。
+图示：
+注意事项： 本地修改的代码不要藏在本地 不提交，如果发现没有地方可以提交，提交会影响版本发布，那就是主干、分支开发模式使用不当，请及时调整</description>
+    </item>
+    
+    <item>
+      <title>SVN设置文件忽略的多种方法</title>
+      <link>https://ningyu1.github.io/site/post/10-svn-ignore/</link>
+      <pubDate>Sat, 26 Nov 2016 10:30:34 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/10-svn-ignore/</guid>
+      <description>方法一： 在svn客户端（小乌龟），想设置忽略提交.class文件，通过 properties -&amp;gt; New -&amp;gt; Other 添加一个忽略的属性，，还是不行：部分屏蔽了，部分class还是在列表中
+方法二： 在svn客户端（小乌龟）：Settings -&amp;gt; General -&amp;gt; Global ignore pattern 添加了一个 *.class就行了
+方法三： 在 Eclipse 中点击菜单 window -&amp;gt; Preferences -&amp;gt; Team -&amp;gt; Ignored Resources
+点击 Add Pattern… 按钮添加你要忽略的文件或目录
+方法四： 在Eclipse的导航视图中，选中尚未加入版本控制的文件或目录，右键 -&amp;gt; Team -&amp;gt; 添加至SVN:ignore
+方法五： 在资源管理器中，右键一个未加入版本控制文件或目录，并从弹出菜单选择TortoiseSVN -&amp;gt; Add to Ignore List，会出现一个子菜单，允许你仅选择该文件或者所有具有相同后缀的文件。
+如果你想从忽略列表中移除一个或多个条目，右击这些条目，选择TortoiseSVN -&amp;gt; 从忽略列表删除。</description>
+    </item>
+    
+    <item>
+      <title>SLF4J和Logback日志框架详解</title>
+      <link>https://ningyu1.github.io/site/post/13-slf4j-logback/</link>
+      <pubDate>Fri, 10 Apr 2015 10:15:03 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/13-slf4j-logback/</guid>
+      <description>本文讲述SLF4J和Logback日志框架。 SLF4J是一套简单的日志外观模式的Java API，帮助在项目部署时对接各种日志实现。 LogBack在运行时使用JMX帮助修改日志配置，在生产状态下无需重启应用程序。
+SLF4J SLF4J是简单的日志外观模式框架，抽象了各种日志框架例如Logback、Log4j、Commons-logging和JDK自带的logging实现接口。它使得用户可以在部署时使用自己想要的日志框架。SLF4J是轻量级的，在性能方面几乎是零消耗的。
+SLF4J没有替代任何日志框架，它仅仅是标准日志框架的外观模式。如果在类路径下除了SLF4J再没有任何日志框架，那么默认状态是在控制台输出日志。
+Logback Logback是Log4j的改进版本，而且原生支持SLF4J（因为是同一作者开发的），因此从其它日志框架如Log4j或JDK的logging迁移到Logback是完全可行的。
+由于Logback原生支持SLF4J，因此Logback＋SLF4J的组合是日志框架的最佳选择，比SLF4J+其它日志框架的组合要快一些。而且Logback的配置可以是XML或Groovy代码。
+注意一个重要的特性，Logback通过JMX修改日志配置（比如日志级别从Debug调整到INFO），可以从JMX控制台直接操作，无需重启应用程序。
+此外，Logback的异常堆栈跟踪的信息，有助于调试。
+java.lang.NullPointerException: null at com.fimt.poc.LoggingSample.(LoggingSample.java:16) [classes/:na] at com.fimt.poc.LoggingSample.main(LoggingSample.java:23) [fimt-logging-poc-1.0.jar/:1.0  SLF4J API用法  从org.slf4j包导入Logger和LoggerFactory  import org.slf4j.Logger; import org.slf4j.LoggerFactory;   声明日志类  private final Logger logger = LoggerFactory.getLogger(LoggingSample.class);   使用debug、warn、info、error方法并跟踪适合的参数。  所有的方法默认都使用字符串作为输入。
+logger.info(&amp;quot;This is sample info statement&amp;quot;);  SLF4J结合Logback 在pom.xml包含下面的依赖：它会自动包含所有的依赖包logback-core、slf4j-api……
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;ch.qos.logback&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;logback-classic&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  SLF4J能用于现有的日志框架如Log4j、Commons-logging、java.util.logging(JUL)。
+SLF4J结合Log4j 在pom.xml包含下面的依赖
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;slf4j-log4j12&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.7.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  SLF4J结合JUL (java.</description>
+    </item>
+    
+    <item>
+      <title>Google Guava官方教程（中文版）</title>
+      <link>https://ningyu1.github.io/site/post/14-guava/</link>
+      <pubDate>Mon, 09 Mar 2015 17:34:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/14-guava/</guid>
+      <description>Guava 中文是石榴的意思，该项目是 Google 的一个开源项目，包含许多 Google 核心的 Java 常用库。
+引言 Guava工程包含了若干被Google的 Java项目广泛依赖 的核心库，例如：集合 [collections] 、缓存 [caching] 、原生类型支持 [primitives support] 、并发库 [concurrency libraries] 、通用注解 [common annotations] 、字符串处理 [string processing] 、I/O 等等。 所有这些工具每天都在被Google的工程师应用在产品服务中。
+查阅Javadoc并不一定是学习这些库最有效的方式。在此，我们希望通过此文档为Guava中最流行和最强大的功能，提供更具可读性和解释性的说明。
+译文格式说明
+Guava中的类被首次引用时，都会链接到Guava的API文档。如：Optional。 Guava和JDK中的方法被引用时，一般都会链接到Guava或JDK的API文档，一些人所共知的JDK方法除外。如：Optional.of(T), Map.get(key)。 译者对文档的额外说明以斜体显示，并且以“译者注：”开始。
+目录 1. 基本工具 [Basic utilities] 让使用Java语言变得更舒适 * 使用和避免null：null是模棱两可的，会引起令人困惑的错误，有些时候它让人很不舒服。很多Guava工具类用快速失败拒绝null值，而不是盲目地接受 * 前置条件: 让方法中的条件检查更简单 * 常见Object方法: 简化Object方法实现，如hashCode()和toString() * 排序: Guava强大的”流畅风格比较器” * Throwables：简化了异常和错误的传播与检查
+2. 集合[Collections] Guava对JDK集合的扩展，这是Guava最成熟和为人所知的部分 * 不可变集合: 用不变的集合进行防御性编程和性能提升。 * 新集合类型: multisets, multimaps, tables, bidirectional maps等 * 强大的集合工具类: 提供java.</description>
+    </item>
+    
+  </channel>
+</rss>

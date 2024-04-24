@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Angular on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/angular/</link>
+    <description>Recent content in Angular on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Sep 2017 11:57:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/angular/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Webpack 打包优化之速度篇</title>
+      <link>https://ningyu1.github.io/site/post/27-webpack2/</link>
+      <pubDate>Wed, 20 Sep 2017 11:57:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/27-webpack2/</guid>
+      <description>文章来源：https://jeffjade.com/2017/08/12/125-webpack-package-optimization-for-speed/ 作者：@晚晴幽草轩轩主
+在前文 Webpack 打包优化之体积篇中，对如何减小 Webpack 打包体积，做了些探讨；当然，那些法子对于打包速度的提升，也是大有裨益。然而，打包速度之于开发体验和及时构建，相当重要；所以有必要对其做更为深入的研究，以便完善工作流，这就是本文存在的缘由。
+Webpack Package optimization
+减小文件搜索范围 在使用实际项目开发中，为了提升开发效率，很明显你会使用很多成熟第三方库；即便自己写的代码，模块间相互引用，为了方便也会使用相对路劲，或者别名(alias)；这中间如果能使得 Webpack 更快寻找到目标，将对打包速度产生很是积极的影响。于此，我们需要做的即：减小文件搜索范围，从而提升速度；实现这一点，可以有如下两法：
+配置 resolve.modules Webpack的resolve.modules配置模块库（即 node_modules）所在的位置，在 js 里出现 import &#39;vue&#39; 这样不是相对、也不是绝对路径的写法时，会去 node_modules 目录下找。但是默认的配置，会采用向上递归搜索的方式去寻找，但通常项目目录里只有一个 node_modules，且是在项目根目录，为了减少搜索范围，可以直接写明 node_modules 的全路径；同样，对于别名(alias)的配置，亦当如此：
+function resolve (dir) { return path.join(__dirname, &#39;..&#39;, dir) } module.exports = { resolve: { extensions: [&#39;.js&#39;, &#39;.vue&#39;, &#39;.json&#39;], modules: [ resolve(&#39;src&#39;), resolve(&#39;node_modules&#39;) ], alias: { &#39;vue$&#39;: &#39;vue/dist/vue.common.js&#39;, &#39;src&#39;: resolve(&#39;src&#39;), &#39;assets&#39;: resolve(&#39;src/assets&#39;), &#39;components&#39;: resolve(&#39;src/components&#39;), // ... &#39;store&#39;: resolve(&#39;src/store&#39;) } }, ... }  需要额外补充一点的是，这是 Webpack2.</description>
+    </item>
+    
+    <item>
+      <title>Webpack 打包优化之体积篇</title>
+      <link>https://ningyu1.github.io/site/post/26-webpack1/</link>
+      <pubDate>Wed, 20 Sep 2017 10:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/26-webpack1/</guid>
+      <description>文章来源：https://jeffjade.com/2017/08/06/124-webpack-packge-optimization-for-volume/ 作者：@晚晴幽草轩轩主
+谈及如今欣欣向荣的前端圈，不仅有各类框架百花齐放，如Vue， React， Angular等等，就打包工具而言，发展也是如火如荼，百家争鸣；从早期的王者Browserify, Grunt，到后来赢得宝座的 Gulp， 以及独树一帜的 fis3, 以及下一代打包神器 Rollup ；在 browserify,grunt,gulp,rollup,webpack 可以一窥其中部分对比。在本文要探究的是，当前打包工具绝对霸者 Webpack。
+Webpack Package optimization
+Webpack，当前各大主流框架默认配备的打包方案，对其如何使用，已有较完备中英文文档；并且，各主流框架也有对应 CLI 予以基础配置，故不作为探讨范畴。从产品层来讲，如何使得构建的包体积小、运行快，这有必要不断摸索实践，提炼升级，使之臻于最佳。本文将从以下些许方面，对 Webpack 打包体积方面，做下优化探讨(备注： Webpack实践版本： 3.3.0)：
+定位 webpack 大的原因 这里推荐使用 webpack-bundle-analyzer —— Webpack 插件和 CLI 实用程序，她可以将内容束展示为方便交互的直观树状图，让你明白你所构建包中真正引入的内容；我们可以借助她，发现它大体有哪些模块组成，找到不合时宜的存在，然后优化它。我们可以在 项目的 package.json 文件中注入如下命令，以方便运行她(npm run analyz)，默认会打开 http://127.0.0.1:8888 作为展示。
+“analyz”: “NODE_ENV=production npm_config_report=true npm run build”  webpack-bundle-analyzer
+当然，同类型的还有 webpack-chart 以及 webpack-analyse，这两个站点也是以可视方式呈现构造的组件，可以让你清楚的看到模块的组成部分；不过稍显麻烦的是，你需要运行以下命令，生成工具分析所需要的 json 文件：
+webpack --profile --json &amp;gt; stats.json // 如果，运行指定的 weboack 文件，可用此命令 webpack --config build/webpack.prod.conf.js --profile --json &amp;gt; stats.</description>
+    </item>
+    
+  </channel>
+</rss>

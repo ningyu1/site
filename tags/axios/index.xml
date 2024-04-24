@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Axios on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/axios/</link>
+    <description>Recent content in Axios on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Aug 2017 10:51:30 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/axios/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于Axios的GET与DELETE用法注意事项</title>
+      <link>https://ningyu1.github.io/site/post/12-vue-axios/</link>
+      <pubDate>Thu, 24 Aug 2017 10:51:30 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/12-vue-axios/</guid>
+      <description>axios的接口定义如下 config定义如下： 因此，我们在使用get和delete时需要注意，这两个接口接收的第二个参数是config。用时，就需要区别对待，且需要与后台定义对应。
+ 如果想参数在Query Parameter里面，那就用{params: params}，后台那边会用RequestParam接收 如果想参数在Payload里面，那就用{data: params}，后台那边会用RequestBody接收  如果后台不匹配，可能会抛ContentType错误的异常，如：</description>
+    </item>
+    
+  </channel>
+</rss>

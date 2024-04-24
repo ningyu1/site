@@ -1,0 +1,5934 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.51" />
+	<meta charset="utf-8">
+    
+    
+    <title>凝雨 - Yun</title>
+    <meta name="author" content="凝雨-Yun">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://ningyu1.github.io/site/index.xml" rel="alternate" title="凝雨 - Yun" type="application/atom+xml">
+    <link href="https://ningyu1.github.io/site/images/fav.ico" rel="shortcut icon">
+    <style>
+    @charset "UTF-8";
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("https://ningyu1.github.io/site/font/fontawesome-webfont.eot");
+  src: url("https://ningyu1.github.io/site/font/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.woff") format("woff"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.ttf") format("truetype"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.svgz#FontAwesomeRegular") format("svg"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face{
+    font-family: 'MyHermit';
+    src: url('https://ningyu1.github.io/site/font/hermit-medium-webfont.eot');
+    src: url('https://ningyu1.github.io/site/font/hermit-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://ningyu1.github.io/site/font/hermit-medium-webfont.woff') format('woff'),
+         url('https://ningyu1.github.io/site/font/hermit-medium-webfont.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'PingFang SC', serif;
+  font-weight: 300;
+  font-size: 16px;
+  /*background: url("https://ningyu1.github.io/site/images/retina_dust.png");*/
+  color: #444;
+  colori: #666666; }
+  @media screen and (max-width: 1040px) {
+    body {
+      margin: 0 20px; } }
+  @media screen and (max-width: 600px) {
+    body {
+      font-size: 13px; } }
+
+.bBackground {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: -moz-radial-gradient(50% 50%, farthest-side, white, #efefef);
+  background: -webkit-gradient(radial, 50% 50%, 250, 50% 50%, 750, from(white), to(#bbbbbb));
+  z-index: -100; }
+
+h1 {
+  font-size: 1.8em; }
+
+h2 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.3em; }
+
+a {
+  text-decoration: none;
+  outline-width: 0;
+  color: #258fb8; }
+
+.alignleft {
+  float: left; }
+
+.alignright {
+  float: right; }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.inner {
+  width: 900px;
+  margin: 0 auto; }
+  @media screen and (max-width: 1040px) {
+    .inner {
+      width: 100%; } }
+
+#w2btoTop {
+  display: none;
+  text-decoration: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  overflow: hidden;
+  width: 51px;
+  height: 51px;
+  border: none;
+  text-indent: -999px;
+  background: url(https://ningyu1.github.io/site/images/totop.png) no-repeat left top; }
+
+#w2btoTopHover {
+  background: url(https://ningyu1.github.io/site/images/totop.png) no-repeat left -51px;
+  width: 51px;
+  height: 51px;
+  display: block;
+  overflow: hidden;
+  float: left;
+  opacity: 0;
+  -moz-opacity: 0;
+  filter: alpha(opacity=0); }
+
+#w2btoTop:active, #w2btoTop:focus {
+  outline: none; }
+
+.basic-alignment.left, article .entry-content img.left, article .entry-content video.left {
+  float: left;
+  margin-right: 1.5em; }
+.basic-alignment.right, article .entry-content img.right, article .entry-content video.right {
+  float: right;
+  margin-left: 1.5em; }
+.basic-alignment.center, article .entry-content img.center, article .entry-content video.center {
+  display: block;
+  margin: 0 auto 1.5em; }
+.basic-alignment.left, article .entry-content img.left, article .entry-content video.left, .basic-alignment.right, article .entry-content img.right, article .entry-content video.right {
+  margin-bottom: .8em; }
+
+/* changes tooltip, to use, make elements 'class' as 'tooltip' and 'title' would be shown in tooltip */
+.tooltip {
+  display: inline;
+  position: relative; }
+
+.tooltip:hover {
+  text-decoration: none; }
+
+.tooltip:hover:after {
+  background: #111;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  bottom: 18px;
+  color: #fff;
+  content: attr(title);
+  display: block;
+  left: 50%;
+  padding: 5px 15px;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 98; }
+
+.tooltip:hover:before {
+  border: solid;
+  border-color: #111 transparent;
+  border-width: 6px 6px 0 6px;
+  bottom: 12px;
+  content: "";
+  display: block;
+  left: 75%;
+  position: absolute;
+  z-index: 99; }
+
+.pullquote-right:before,
+.pullquote-left:before {
+  /* Reset metrics. */
+  padding: 0;
+  border: none;
+  /* Content */
+  content: attr(data-pullquote);
+  /* Pull out to the right, modular scale based margins. */
+  float: right;
+  width: 45%;
+  margin: .5em 0 1em 1.5em;
+  /* Baseline correction */
+  position: relative;
+  top: 7px;
+  font-size: 1.4em;
+  line-height: 1.45em; }
+
+.pullquote-left:before {
+  /* Make left pullquotes align properly. */
+  float: left;
+  margin: .5em 1.5em 1em 0; }
+
+#header {
+  padding: 20px 0 20px 0; }
+  @media screen and (max-width: 1040px) {
+    #header {
+      height: auto;
+      position: relative;
+      padding-bottom: 10px; } }
+  #header a {
+    color: #666666;
+    -webkit-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(color 0.3s, false, false, false, false, false, false, false, false, false); }
+    #header a:hover {
+      color: #258fb8; }
+  #header h1 {
+    font-family: 'Slackey', cursive;
+    font-weight: 300;
+    font-size: 52px; }
+    @media screen and (max-width: 1040px) {
+      #header h1 {
+        float: none; } }
+
+#headerbg {
+  text-align: center;
+  background: #444;
+  padding: 10px 10px;
+  display: table;
+  color: #fff;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-weight: bold;
+  -webkit-mask-image: -webkit-linear-gradient(black, rgba(0, 0, 0, 0.9));
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .2s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: .2s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: 1s;
+  -ms-animation-delay: .2s;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  -o-animation-duration: 1s;
+  -o-animation-delay: .2s;
+  -o-animation-timing-function: ease;
+  -o-animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: .2s;
+  animation-timing-function: ease;
+  animation-fill-mode: both; }
+
+#load {
+  display: none;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  background: url("https://ningyu1.github.io/site/images/loading.gif");
+  width: 50px;
+  height: 50px;
+  text-indent: -9999em; }
+
+#social-links li {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  margin-top: 20px;
+  margin-right: 9px;
+  background-color: #ddd;
+  text-align: center;
+  line-height: 35px;
+  -webkit-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false);
+  -moz-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false false);
+  -o-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false false);
+  transition: compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false); }
+  #social-links li:hover {
+    background-color: #555; }
+#social-links a {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  #social-links a svg {
+    position: absolute; }
+  #social-links a .github {
+    top: 3px;
+    left: 2px; }
+  #social-links a .sina-weibo {
+    top: 8px;
+    left: 6px; }
+  #social-links a .tencent-weibo {
+    top: 6px;
+    left: 4px; }
+  #social-links a .twitter {
+    top: 2px;
+    left: 3px; }
+
+a.facebook {
+  background: url("https://ningyu1.github.io/site/images/social/Facebook.png") center no-repeat; }
+
+a.facebook:hover {
+  background: url("https://ningyu1.github.io/site/images/social/FacebookH.png") center no-repeat; }
+
+a.github {
+  background: url("https://ningyu1.github.io/site/images/social/Github.png") center no-repeat; }
+
+a.github:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GithubH.png") center no-repeat; }
+
+a.gitee {
+  background: url("https://ningyu1.github.io/site/images/social/Gitee.png") center no-repeat; }
+
+a.gitee:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GiteeH.png") center no-repeat; }
+
+a.gitlab {
+  background: url("https://ningyu1.github.io/site/images/social/Gitlab.png") center no-repeat; }
+
+a.gitlab:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GitlabH.png") center no-repeat; }
+
+a.email {
+  background: url("https://ningyu1.github.io/site/images/social/Email.png") center no-repeat; }
+
+a.email:hover {
+  background: url("https://ningyu1.github.io/site/images/social/EmailH.png") center no-repeat; }
+
+a.rss {
+  background: url("https://ningyu1.github.io/site/images/social/Rss.png") center no-repeat; }
+
+a.rss:hover {
+  background: url("https://ningyu1.github.io/site/images/social/RssH.png") center no-repeat; }
+
+a.twitter {
+  background: url("https://ningyu1.github.io/site/images/social/Twitter.png") center no-repeat; }
+
+a.twitter:hover {
+  background: url("https://ningyu1.github.io/site/images/social/TwitterH.png") center no-repeat; }
+
+a.google {
+  background: url("https://ningyu1.github.io/site/images/social/Picasa.png") center no-repeat; }
+
+a.google:hover {
+  background: url("https://ningyu1.github.io/site/images/social/PicasaH.png") center no-repeat; }
+
+a.skype {
+  background: url("https://ningyu1.github.io/site/images/social/Skype.png") center no-repeat; }
+
+a.skype:hover {
+  background: url("https://ningyu1.github.io/site/images/social/SkypeH.png") center no-repeat; }
+
+a.linkedin {
+  background: url("https://ningyu1.github.io/site/images/social/LinkedIn.png") center no-repeat; }
+
+a.linkedin:hover {
+  background: url("https://ningyu1.github.io/site/images/social/LinkedInH.png") center no-repeat; }
+
+a.youtube {
+  background: url("https://ningyu1.github.io/site/images/social/Youtube.png") center no-repeat; }
+
+a.youtube:hover {
+  background: url("https://ningyu1.github.io/site/images/social/YoutubeH.png") center no-repeat; }
+
+a.lastfm {
+  background: url("https://ningyu1.github.io/site/images/social/LastFM.png") center no-repeat; }
+
+a.lastfm:hover {
+  background: url("https://ningyu1.github.io/site/images/social/LastFMH.png") center no-repeat; }
+
+/* search bar */
+#search {
+  display: inline; }
+
+#search input[type="text"] {
+  background: url("https://ningyu1.github.io/site/images/search-dark.png") no-repeat 10px 6px #444444;
+  border: 0 none;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #777;
+  width: 110px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s; }
+
+#search input[type="text"]:focus {
+  width: 160px; }
+
+#dark {
+  display: inline-block;
+  height: 70px; }
+
+#dark #search input[type="text"] {
+  background: url("https://ningyu1.github.io/site/images/search-dark.png") no-repeat 10px 6px #444444;
+  border: 0 none;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #ddd;
+  width: 110px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s; }
+
+#dark #search input[type="text"]:focus {
+  width: 160px;
+  outline: 0; }
+
+/* nav */
+#nav {
+  text-align: center;
+  position: relative;
+  margin: 10px auto; }
+
+ul#nav *{
+	box-sizing:content-box
+}
+
+ul#nav li {
+  display: inline-block; }
+
+ul#nav li {
+  list-style-type: none;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-right: 1px; }
+
+ul#nav li a {
+  display: inline-block;
+  width: 110px;
+  height: 40px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #222;
+  font-weight: normal;
+  text-decoration: none;
+  font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-style: normal;
+  text-shadow: 1px 1px 10px #222;
+  overflow: hidden; }
+
+ul#nav li a:hover {
+  color: #fff;
+  font-style: normal;
+  font-weight: normal;
+  background-image: url("https://ningyu1.github.io/site/images/hover.png");
+  background-repeat: no-repeat;
+  background-position: center top; }
+
+ul#nav li a:active {
+  position: relative;
+  top: 2px; }
+
+ul#nav li#active a {
+  color: #FFF;
+  background-image: url("https://ningyu1.github.io/site/images/active.png");
+  background-repeat: no-repeat;
+  background-position: center top; }
+
+#pagenavi {
+  padding: 20px 0;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #pagenavi a:hover {
+    text-decoration: underline; }
+  #pagenavi .prev, #pagenavi .next {
+    position: absolute; }
+  #pagenavi .prev {
+    padding-left: 30px;
+    left: 0; }
+    #pagenavi .prev:before {
+      content: "\f060";
+      font: 1.3em FontAwesome;
+      position: absolute;
+      left: 0; }
+  #pagenavi .next {
+    padding-right: 30px;
+    right: 0; }
+    #pagenavi .next:before {
+      content: "\f061";
+      font: 1.3em FontAwesome;
+      position: absolute;
+      right: 0; }
+  #pagenavi .center {
+    text-align: center;
+    width: 100%;
+    display: block; }
+    @media screen and (max-width: 400px) {
+      #pagenavi .center {
+        display: none; } }
+
+article {
+  border-bottom: 1px solid #dddddd;
+  padding: 30px 0;
+  position: relative; }
+  @media screen and (max-width: 800px) {
+    article {
+      padding-bottom: 15px; } }
+  @media screen and (max-width: 600px) {
+    article {
+      padding: 15px 0; } }
+  article h2.title {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 20px; }
+    article h2.title a {
+      color: #1094e8; }
+  article .title a {
+    color: #7c7873;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out; }
+  article .title a:hover {
+    color: #084B8A;
+    text-shadow: 3px 3px 12px #888;
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3); }
+  article .entry-content {
+    line-height: 2;
+    text-align: justify; }
+    article .entry-content a:hover {
+      text-decoration: underline; }
+    article .entry-content .more-link {
+      display: block;
+      margin-top: 16px;
+      padding-left: 30px;
+      position: relative; }
+      article .entry-content .more-link:before {
+        content: "\f061";
+        font: 1.3em FontAwesome;
+        line-height: 1.6em;
+        position: absolute;
+        left: 0; }
+    article .entry-content p, article .entry-content blockquote, article .entry-content ul, article .entry-content ol, article .entry-content dl, article .entry-content iframe, article .entry-content h1, article .entry-content h2, article .entry-content h3, article .entry-content h4, article .entry-content h5, article .entry-content h6, article .entry-content .video-container {
+      margin-top: 10px; }
+    article .entry-content ul, article .entry-content ol, article .entry-content dl {
+      margin-left: 20px; }
+      article .entry-content ul ul, article .entry-content ul ol, article .entry-content ul dl, article .entry-content ol ul, article .entry-content ol ol, article .entry-content ol dl, article .entry-content dl ul, article .entry-content dl ol, article .entry-content dl dl {
+        margin-top: 0; }
+    article .entry-content strong {
+      font-weight: bold; }
+    article .entry-content em {
+      font-style: italic; }
+    article .entry-content p {
+      margin-top: 10px; }
+    article .entry-content h2 {
+      font-weight: 300;
+      border-bottom: 1px solid #dddddd;
+      position: relative; }
+      article .entry-content h2:before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        border-bottom: 1px solid white;
+        width: 100%; }
+    article .entry-content img, article .entry-content video {
+      margin: 10px 0;
+      max-width: 100%;
+      height: auto;
+      -moz-border-radius: 0.3em;
+      -webkit-border-radius: 0.3em;
+      -o-border-radius: 0.3em;
+      -ms-border-radius: 0.3em;
+      -khtml-border-radius: 0.3em;
+      border-radius: 0.3em;
+      -moz-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -o-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+      border: #fff 0.3em solid; }
+    article .entry-content img.noborder, article .entry-content video.noborder {
+      border: none;
+      box-shadow: none; }
+    article .entry-content blockquote {
+      background: #dddddd;
+      border-left: 5px solid #cccccc;
+      padding: 15px 20px;
+      margin-top: 10px; }
+      article .entry-content blockquote > p:first-of-type {
+        margin-top: 0; }
+    article .entry-content iframe {
+      border: none; }
+    article .entry-content .caption {
+      display: block;
+      font-size: 0.9em;
+      color: #999999;
+      padding-left: 25px;
+      position: relative; }
+      article .entry-content .caption:before {
+        content: "\f040";
+        color: #cccccc;
+        font: 1.3em FontAwesome;
+        line-height: 1.6em;
+        position: absolute;
+        left: 0; }
+    article .entry-content .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden; }
+      article .entry-content .video-container iframe, article .entry-content .video-container object, article .entry-content .video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 0; }
+
+.share {
+  padding: 15px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+
+@media screen and (max-width: 800px) {
+  .post h2.title, .post .entry-content {
+    margin-left: 0; } }
+.post .meta {
+  line-height: 2;
+  color: #999999;
+  width: 370px; }
+  @media screen and (max-width: 800px) {
+    .post .meta {
+      margin-top: 15px;
+      position: static;
+      width: auto; } }
+  .post .meta a {
+    color: #999999;
+    -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+    .post .meta a:hover {
+      color: #666666; }
+  .post .meta .date, .post .meta .tags, .post .meta .comments {
+    padding-left: 30px;
+    position: relative; }
+    .post .meta .date:before, .post .meta .tags:before, .post .meta .comments:before {
+      color: #cccccc;
+      font: 1.3em FontAwesome;
+      line-height: 1.6em;
+      position: absolute;
+      left: 0; }
+    @media screen and (max-width: 800px) {
+      .post .meta .date, .post .meta .tags, .post .meta .comments {
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline;
+        margin-right: 30px; } }
+  .post .meta .date:before {
+    content: "\f073"; }
+  .post .meta .tags:before {
+    content: "\f02c"; }
+  .post .meta .comments:before {
+    content: "\f075"; }
+
+.archives {
+  position: relative; }
+  .archives:last-of-type:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    border-top: 1px solid #dddddd; }
+  .archives .top-border-padding {
+    border-top: 1px solid #fff; }
+    .archives .top-border-padding:before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      width: 100%;
+      border-top: 1px solid #dddddd; }
+  .archives .year {
+    line-height: 35px;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    padding-top: 15px;
+    border-top: 1px solid #fff; }
+    .archives .year:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      width: 100%;
+      border-top: 1px solid #dddddd; }
+    @media screen and (max-width: 600px) {
+      .archives .year {
+        position: relative;
+        width: 100%; } }
+  .archives article {
+    margin-left: 200px;
+    padding: 10px 0; }
+    @media screen and (max-width: 600px) {
+      .archives article {
+        margin-left: 0; }
+        .archives article:first-of-type {
+          border-top: none;
+          padding-top: 30px; } }
+    .archives article .title {
+      margin-bottom: 0;
+      font-size: 25px; }
+    .archives article .meta {
+      color: #999999;
+      font-size: 0.9em;
+      line-height: 2;
+      margin-top: 10px; }
+      @media screen and (max-width: 600px) {
+        .archives article .meta {
+          display: none; } }
+      .archives article .meta span {
+        margin-right: 30px;
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline; }
+        .archives article .meta span:before {
+          color: #cccccc;
+          font: 1.3em FontAwesome;
+          padding-right: 10px; }
+      .archives article .meta a {
+        color: #999999;
+        -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+        -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+        -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+        transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+        .archives article .meta a:hover {
+          color: #666666; }
+      .archives article .meta .date:before {
+        content: "\f073"; }
+      .archives article .meta .tags:before {
+        content: "\f02c"; }
+      .archives article .meta .comments:before {
+        content: "\f075"; }
+
+#comment {
+  padding: 30px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #comment h2.title {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 20px; }
+
+footer {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.6em;
+  color: #666; }
+
+footer a {
+  color: #123; }
+
+footer a:hover {
+  color: #456; }
+
+#banner {
+  color: #999999;
+  padding: 30px 0;
+  line-height: 30px;
+  text-align: center;
+  position: relative;
+  display: none;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #banner:hover a {
+    color: #258fb8; }
+  #banner a {
+    color: #999999;
+    -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+    #banner a:hover {
+      text-decoration: underline; }
+  #banner small {
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+  #banner .loading {
+    background: image-url("loading_pacman.gif") center no-repeat;
+    text-indent: -9999px; }
+  #banner .container {
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    display: none; }
+    #banner .container .feed {
+      list-style: none;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+      #banner .container .feed li {
+        position: relative; }
+        #banner .container .feed li small {
+          position: absolute;
+          right: 0; }
+
+/*! fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license */
+.fancybox-tmp iframe, .fancybox-tmp object {
+  vertical-align: top;
+  padding: 0;
+  margin: 0; }
+
+.fancybox-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8020; }
+
+.fancybox-skin {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: #f9f9f9;
+  color: #444;
+  text-shadow: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px; }
+
+.fancybox-opened {
+  z-index: 8030; }
+
+.fancybox-opened .fancybox-skin {
+  -webkit-box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false);
+  -moz-box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false);
+  box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false); }
+
+.fancybox-outer, .fancybox-inner {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  outline: none; }
+
+.fancybox-inner {
+  overflow: hidden; }
+
+.fancybox-type-iframe .fancybox-inner {
+  -webkit-overflow-scrolling: touch; }
+
+.fancybox-error {
+  color: #444;
+  font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 10px; }
+
+.fancybox-image, .fancybox-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  vertical-align: top; }
+
+.fancybox-image {
+  max-width: 100%;
+  max-height: 100%; }
+
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+  background-image: image-url("fancybox/fancybox_sprite.png"); }
+
+#fancybox-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -22px;
+  margin-left: -22px;
+  background-position: 0 -108px;
+  opacity: 0.8;
+  cursor: pointer;
+  z-index: 8020; }
+
+#fancybox-loading div {
+  width: 44px;
+  height: 44px;
+  background: image-url("fancybox/fancybox_loading.gif") center center no-repeat; }
+
+.fancybox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 8040; }
+
+.fancybox-nav {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  cursor: pointer;
+  background: transparent image-url("fancybox/blank.gif");
+  /* helps IE */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  z-index: 8040; }
+
+.fancybox-prev {
+  left: 0; }
+
+.fancybox-next {
+  right: 0; }
+
+.fancybox-nav span {
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 34px;
+  margin-top: -18px;
+  cursor: pointer;
+  z-index: 8040;
+  visibility: hidden; }
+
+.fancybox-prev span {
+  left: 20px;
+  background-position: 0 -36px; }
+
+.fancybox-next span {
+  right: 20px;
+  background-position: 0 -72px; }
+
+.fancybox-nav:hover span {
+  visibility: visible; }
+
+.fancybox-tmp {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  padding: 0;
+  overflow: visible;
+  visibility: hidden; }
+
+/* Overlay helper */
+#fancybox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: none;
+  z-index: 8010;
+  background: #000; }
+
+#fancybox-overlay.overlay-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0; }
+
+/* Title helper */
+.fancybox-title {
+  visibility: hidden;
+  font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+  text-shadow: none;
+  z-index: 8050; }
+
+.fancybox-opened .fancybox-title {
+  visibility: visible; }
+
+.fancybox-title-float-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  margin-bottom: -35px;
+  z-index: 8030;
+  text-align: center; }
+
+.fancybox-title-float-wrap .child {
+  display: inline-block;
+  margin-right: -100%;
+  padding: 2px 20px;
+  background: transparent;
+  /* Fallback for web browsers that doesn't support RGBa */
+  background: rgba(0, 0, 0, 0.8);
+  text-shadow: 0 1px 2px #222;
+  color: #FFF;
+  font-weight: bold;
+  line-height: 24px;
+  white-space: nowrap;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px; }
+
+.fancybox-title-outside-wrap {
+  position: relative;
+  margin-top: 10px;
+  color: #fff; }
+
+.fancybox-title-inside-wrap {
+  margin-top: 10px; }
+
+.fancybox-title-over-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  padding: 10px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8); }
+
+/*
+Animate.css - http://daneden.me/animate
+Licensed under the ☺ license (http://licence.visualidiot.com/)
+
+Copyright (c) 2012 Dan Eden
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+body {
+  /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
+  -webkit-backface-visibility: hidden; }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  animation-duration: 2s; }
+
+@-webkit-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@-moz-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@-o-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+.flash {
+  -webkit-animation-name: flash;
+  -moz-animation-name: flash;
+  -o-animation-name: flash;
+  animation-name: flash; }
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px); } }
+
+@-moz-keyframes shake {
+  0%, 100% {
+    -moz-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -moz-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -moz-transform: translateX(10px); } }
+
+@-o-keyframes shake {
+  0%, 100% {
+    -o-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -o-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -o-transform: translateX(10px); } }
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px); } }
+
+.shake {
+  -webkit-animation-name: shake;
+  -moz-animation-name: shake;
+  -o-animation-name: shake;
+  animation-name: shake; }
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0); }
+
+  40% {
+    -webkit-transform: translateY(-30px); }
+
+  60% {
+    -webkit-transform: translateY(-15px); } }
+
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0); }
+
+  40% {
+    -moz-transform: translateY(-30px); }
+
+  60% {
+    -moz-transform: translateY(-15px); } }
+
+@-o-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -o-transform: translateY(0); }
+
+  40% {
+    -o-transform: translateY(-30px); }
+
+  60% {
+    -o-transform: translateY(-15px); } }
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); }
+
+  40% {
+    transform: translateY(-30px); }
+
+  60% {
+    transform: translateY(-15px); } }
+
+.bounce {
+  -webkit-animation-name: bounce;
+  -moz-animation-name: bounce;
+  -o-animation-name: bounce;
+  animation-name: bounce; }
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1); }
+
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0); } }
+
+@-moz-keyframes tada {
+  0% {
+    -moz-transform: scale(1); }
+
+  10%, 20% {
+    -moz-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -moz-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -moz-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -moz-transform: scale(1) rotate(0); } }
+
+@-o-keyframes tada {
+  0% {
+    -o-transform: scale(1); }
+
+  10%, 20% {
+    -o-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -o-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -o-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -o-transform: scale(1) rotate(0); } }
+
+@keyframes tada {
+  0% {
+    transform: scale(1); }
+
+  10%, 20% {
+    transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    transform: scale(1) rotate(0); } }
+
+.tada {
+  -webkit-animation-name: tada;
+  -moz-animation-name: tada;
+  -o-animation-name: tada;
+  animation-name: tada; }
+
+@-webkit-keyframes swing {
+  20%, 40%, 60%, 80%, 100% {
+    -webkit-transform-origin: top center; }
+
+  20% {
+    -webkit-transform: rotate(15deg); }
+
+  40% {
+    -webkit-transform: rotate(-10deg); }
+
+  60% {
+    -webkit-transform: rotate(5deg); }
+
+  80% {
+    -webkit-transform: rotate(-5deg); }
+
+  100% {
+    -webkit-transform: rotate(0deg); } }
+
+@-moz-keyframes swing {
+  20% {
+    -moz-transform: rotate(15deg); }
+
+  40% {
+    -moz-transform: rotate(-10deg); }
+
+  60% {
+    -moz-transform: rotate(5deg); }
+
+  80% {
+    -moz-transform: rotate(-5deg); }
+
+  100% {
+    -moz-transform: rotate(0deg); } }
+
+@-o-keyframes swing {
+  20% {
+    -o-transform: rotate(15deg); }
+
+  40% {
+    -o-transform: rotate(-10deg); }
+
+  60% {
+    -o-transform: rotate(5deg); }
+
+  80% {
+    -o-transform: rotate(-5deg); }
+
+  100% {
+    -o-transform: rotate(0deg); } }
+
+@keyframes swing {
+  20% {
+    transform: rotate(15deg); }
+
+  40% {
+    transform: rotate(-10deg); }
+
+  60% {
+    transform: rotate(5deg); }
+
+  80% {
+    transform: rotate(-5deg); }
+
+  100% {
+    transform: rotate(0deg); } }
+
+.swing {
+  -webkit-transform-origin: top center;
+  -moz-transform-origin: top center;
+  -o-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  -moz-animation-name: swing;
+  -o-animation-name: swing;
+  animation-name: swing; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%); }
+
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -webkit-transform: translateX(0%); } }
+
+@-moz-keyframes wobble {
+  0% {
+    -moz-transform: translateX(0%); }
+
+  15% {
+    -moz-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -moz-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -moz-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -moz-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -moz-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -moz-transform: translateX(0%); } }
+
+@-o-keyframes wobble {
+  0% {
+    -o-transform: translateX(0%); }
+
+  15% {
+    -o-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -o-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -o-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -o-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -o-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -o-transform: translateX(0%); } }
+
+@keyframes wobble {
+  0% {
+    transform: translateX(0%); }
+
+  15% {
+    transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    transform: translateX(0%); } }
+
+.wobble {
+  -webkit-animation-name: wobble;
+  -moz-animation-name: wobble;
+  -o-animation-name: wobble;
+  animation-name: wobble; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1); }
+
+  50% {
+    -webkit-transform: scale(1.1); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes pulse {
+  0% {
+    -moz-transform: scale(1); }
+
+  50% {
+    -moz-transform: scale(1.1); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@-o-keyframes pulse {
+  0% {
+    -o-transform: scale(1); }
+
+  50% {
+    -o-transform: scale(1.1); }
+
+  100% {
+    -o-transform: scale(1); } }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+
+  50% {
+    transform: scale(1.1); }
+
+  100% {
+    transform: scale(1); } }
+
+.pulse {
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -o-animation-name: pulse;
+  animation-name: pulse; }
+
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0);
+    -webkit-animation-timing-function: ease-out; }
+
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -webkit-animation-timing-function: ease-out; }
+
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -webkit-animation-timing-function: ease-in; }
+
+  80% {
+    -webkit-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -webkit-animation-timing-function: ease-in; }
+
+  100% {
+    -webkit-transform: perspective(400px) scale(1);
+    -webkit-animation-timing-function: ease-in; } }
+
+@-moz-keyframes flip {
+  0% {
+    -moz-transform: perspective(400px) rotateY(0);
+    -moz-animation-timing-function: ease-out; }
+
+  40% {
+    -moz-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -moz-animation-timing-function: ease-out; }
+
+  50% {
+    -moz-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -moz-animation-timing-function: ease-in; }
+
+  80% {
+    -moz-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -moz-animation-timing-function: ease-in; }
+
+  100% {
+    -moz-transform: perspective(400px) scale(1);
+    -moz-animation-timing-function: ease-in; } }
+
+@-o-keyframes flip {
+  0% {
+    -o-transform: perspective(400px) rotateY(0);
+    -o-animation-timing-function: ease-out; }
+
+  40% {
+    -o-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -o-animation-timing-function: ease-out; }
+
+  50% {
+    -o-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -o-animation-timing-function: ease-in; }
+
+  80% {
+    -o-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -o-animation-timing-function: ease-in; }
+
+  100% {
+    -o-transform: perspective(400px) scale(1);
+    -o-animation-timing-function: ease-in; } }
+
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+    animation-timing-function: ease-out; }
+
+  40% {
+    transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    animation-timing-function: ease-out; }
+
+  50% {
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    animation-timing-function: ease-in; }
+
+  80% {
+    transform: perspective(400px) rotateY(360deg) scale(0.95);
+    animation-timing-function: ease-in; }
+
+  100% {
+    transform: perspective(400px) scale(1);
+    animation-timing-function: ease-in; } }
+
+.flip {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flip;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flip;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flip;
+  backface-visibility: visible !important;
+  animation-name: flip; }
+
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes flipInX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -moz-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -moz-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@-o-keyframes flipInX {
+  0% {
+    -o-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -o-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -o-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -o-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInX;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInX;
+  backface-visibility: visible !important;
+  animation-name: flipInX; }
+
+@-webkit-keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes flipOutX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@-o-keyframes flipOutX {
+  0% {
+    -o-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@keyframes flipOutX {
+  0% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+.flipOutX {
+  -webkit-animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
+  -moz-animation-name: flipOutX;
+  -moz-backface-visibility: visible !important;
+  -o-animation-name: flipOutX;
+  -o-backface-visibility: visible !important;
+  animation-name: flipOutX;
+  backface-visibility: visible !important; }
+
+@-webkit-keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes flipInY {
+  0% {
+    -moz-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -moz-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -moz-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -moz-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@-o-keyframes flipInY {
+  0% {
+    -o-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -o-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -o-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -o-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@keyframes flipInY {
+  0% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+.flipInY {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInY;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInY;
+  backface-visibility: visible !important;
+  animation-name: flipInY; }
+
+@-webkit-keyframes flipOutY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes flipOutY {
+  0% {
+    -moz-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@-o-keyframes flipOutY {
+  0% {
+    -o-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@keyframes flipOutY {
+  0% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+.flipOutY {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipOutY;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipOutY;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipOutY;
+  backface-visibility: visible !important;
+  animation-name: flipOutY; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  -moz-animation-name: fadeInUp;
+  -o-animation-name: fadeInUp;
+  animation-name: fadeInUp; }
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  -moz-animation-name: fadeInDown;
+  -o-animation-name: fadeInDown;
+  animation-name: fadeInDown; }
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  -moz-animation-name: fadeInLeft;
+  -o-animation-name: fadeInLeft;
+  animation-name: fadeInLeft; }
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  -moz-animation-name: fadeInRight;
+  -o-animation-name: fadeInRight;
+  animation-name: fadeInRight; }
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  -moz-animation-name: fadeInUpBig;
+  -o-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig; }
+
+@-webkit-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInDownBig {
+  -webkit-animation-name: fadeInDownBig;
+  -moz-animation-name: fadeInDownBig;
+  -o-animation-name: fadeInDownBig;
+  animation-name: fadeInDownBig; }
+
+@-webkit-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInLeftBig {
+  -webkit-animation-name: fadeInLeftBig;
+  -moz-animation-name: fadeInLeftBig;
+  -o-animation-name: fadeInLeftBig;
+  animation-name: fadeInLeftBig; }
+
+@-webkit-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInRightBig {
+  -webkit-animation-name: fadeInRightBig;
+  -moz-animation-name: fadeInRightBig;
+  -o-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig; }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  -moz-animation-name: fadeOut;
+  -o-animation-name: fadeOut;
+  animation-name: fadeOut; }
+
+@-webkit-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px); } }
+
+@-moz-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-20px); } }
+
+@-o-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-20px); } }
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px); } }
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  -moz-animation-name: fadeOutUp;
+  -o-animation-name: fadeOutUp;
+  animation-name: fadeOutUp; }
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px); } }
+
+@-moz-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(20px); } }
+
+@-o-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(20px); } }
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px); } }
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  -moz-animation-name: fadeOutDown;
+  -o-animation-name: fadeOutDown;
+  animation-name: fadeOutDown; }
+
+@-webkit-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px); } }
+
+@-moz-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-20px); } }
+
+@-o-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-20px); } }
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-20px); } }
+
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  -moz-animation-name: fadeOutLeft;
+  -o-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft; }
+
+@-webkit-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px); } }
+
+@-moz-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(20px); } }
+
+@-o-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(20px); } }
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(20px); } }
+
+.fadeOutRight {
+  -webkit-animation-name: fadeOutRight;
+  -moz-animation-name: fadeOutRight;
+  -o-animation-name: fadeOutRight;
+  animation-name: fadeOutRight; }
+
+@-webkit-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); } }
+
+@-moz-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); } }
+
+@-o-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); } }
+
+@keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px); } }
+
+.fadeOutUpBig {
+  -webkit-animation-name: fadeOutUpBig;
+  -moz-animation-name: fadeOutUpBig;
+  -o-animation-name: fadeOutUpBig;
+  animation-name: fadeOutUpBig; }
+
+@-webkit-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); } }
+
+@-moz-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); } }
+
+@-o-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(2000px); } }
+
+@keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(2000px); } }
+
+.fadeOutDownBig {
+  -webkit-animation-name: fadeOutDownBig;
+  -moz-animation-name: fadeOutDownBig;
+  -o-animation-name: fadeOutDownBig;
+  animation-name: fadeOutDownBig; }
+
+@-webkit-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); } }
+
+@-moz-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); } }
+
+@-o-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); } }
+
+@keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-2000px); } }
+
+.fadeOutLeftBig {
+  -webkit-animation-name: fadeOutLeftBig;
+  -moz-animation-name: fadeOutLeftBig;
+  -o-animation-name: fadeOutLeftBig;
+  animation-name: fadeOutLeftBig; }
+
+@-webkit-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); } }
+
+@-moz-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); } }
+
+@-o-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(2000px); } }
+
+@keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(2000px); } }
+
+.fadeOutRightBig {
+  -webkit-animation-name: fadeOutRightBig;
+  -moz-animation-name: fadeOutRightBig;
+  -o-animation-name: fadeOutRightBig;
+  animation-name: fadeOutRightBig; }
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05); }
+
+  70% {
+    -webkit-transform: scale(0.9); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.05); }
+
+  70% {
+    -moz-transform: scale(0.9); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@-o-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -o-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -o-transform: scale(1.05); }
+
+  70% {
+    -o-transform: scale(0.9); }
+
+  100% {
+    -o-transform: scale(1); } }
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05); }
+
+  70% {
+    transform: scale(0.9); }
+
+  100% {
+    transform: scale(1); } }
+
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  -moz-animation-name: bounceIn;
+  -o-animation-name: bounceIn;
+  animation-name: bounceIn; }
+
+@-webkit-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px); }
+
+  80% {
+    -webkit-transform: translateY(10px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(-30px); }
+
+  80% {
+    -moz-transform: translateY(10px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateY(-30px); }
+
+  80% {
+    -o-transform: translateY(10px); }
+
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-30px); }
+
+  80% {
+    transform: translateY(10px); }
+
+  100% {
+    transform: translateY(0); } }
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  -moz-animation-name: bounceInUp;
+  -o-animation-name: bounceInUp;
+  animation-name: bounceInUp; }
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px); }
+
+  80% {
+    -webkit-transform: translateY(-10px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(30px); }
+
+  80% {
+    -moz-transform: translateY(-10px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateY(30px); }
+
+  80% {
+    -o-transform: translateY(-10px); }
+
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateY(30px); }
+
+  80% {
+    transform: translateY(-10px); }
+
+  100% {
+    transform: translateY(0); } }
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  -moz-animation-name: bounceInDown;
+  -o-animation-name: bounceInDown;
+  animation-name: bounceInDown; }
+
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px); }
+
+  80% {
+    -webkit-transform: translateX(-10px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(30px); }
+
+  80% {
+    -moz-transform: translateX(-10px); }
+
+  100% {
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateX(30px); }
+
+  80% {
+    -o-transform: translateX(-10px); }
+
+  100% {
+    -o-transform: translateX(0); } }
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateX(30px); }
+
+  80% {
+    transform: translateX(-10px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  -moz-animation-name: bounceInLeft;
+  -o-animation-name: bounceInLeft;
+  animation-name: bounceInLeft; }
+
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px); }
+
+  80% {
+    -webkit-transform: translateX(10px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(-30px); }
+
+  80% {
+    -moz-transform: translateX(10px); }
+
+  100% {
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateX(-30px); }
+
+  80% {
+    -o-transform: translateX(10px); }
+
+  100% {
+    -o-transform: translateX(0); } }
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateX(-30px); }
+
+  80% {
+    transform: translateX(10px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  -moz-animation-name: bounceInRight;
+  -o-animation-name: bounceInRight;
+  animation-name: bounceInRight; }
+
+@-webkit-keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1); }
+
+  25% {
+    -webkit-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.3); } }
+
+@-moz-keyframes bounceOut {
+  0% {
+    -moz-transform: scale(1); }
+
+  25% {
+    -moz-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.3); } }
+
+@-o-keyframes bounceOut {
+  0% {
+    -o-transform: scale(1); }
+
+  25% {
+    -o-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -o-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -o-transform: scale(0.3); } }
+
+@keyframes bounceOut {
+  0% {
+    transform: scale(1); }
+
+  25% {
+    transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.3); } }
+
+.bounceOut {
+  -webkit-animation-name: bounceOut;
+  -moz-animation-name: bounceOut;
+  -o-animation-name: bounceOut;
+  animation-name: bounceOut; }
+
+@-webkit-keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); } }
+
+@-moz-keyframes bounceOutUp {
+  0% {
+    -moz-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); } }
+
+@-o-keyframes bounceOutUp {
+  0% {
+    -o-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); } }
+
+@keyframes bounceOutUp {
+  0% {
+    transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px); } }
+
+.bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  -moz-animation-name: bounceOutUp;
+  -o-animation-name: bounceOutUp;
+  animation-name: bounceOutUp; }
+
+@-webkit-keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); } }
+
+@-moz-keyframes bounceOutDown {
+  0% {
+    -moz-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); } }
+
+@-o-keyframes bounceOutDown {
+  0% {
+    -o-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(2000px); } }
+
+@keyframes bounceOutDown {
+  0% {
+    transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(2000px); } }
+
+.bounceOutDown {
+  -webkit-animation-name: bounceOutDown;
+  -moz-animation-name: bounceOutDown;
+  -o-animation-name: bounceOutDown;
+  animation-name: bounceOutDown; }
+
+@-webkit-keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); } }
+
+@-moz-keyframes bounceOutLeft {
+  0% {
+    -moz-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); } }
+
+@-o-keyframes bounceOutLeft {
+  0% {
+    -o-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); } }
+
+@keyframes bounceOutLeft {
+  0% {
+    transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-2000px); } }
+
+.bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  -moz-animation-name: bounceOutLeft;
+  -o-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft; }
+
+@-webkit-keyframes bounceOutRight {
+  0% {
+    -webkit-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); } }
+
+@-moz-keyframes bounceOutRight {
+  0% {
+    -moz-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); } }
+
+@-o-keyframes bounceOutRight {
+  0% {
+    -o-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(2000px); } }
+
+@keyframes bounceOutRight {
+  0% {
+    transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(2000px); } }
+
+.bounceOutRight {
+  -webkit-animation-name: bounceOutRight;
+  -moz-animation-name: bounceOutRight;
+  -o-animation-name: bounceOutRight;
+  animation-name: bounceOutRight; }
+
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateIn {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateIn {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateIn {
+  0% {
+    transform-origin: center center;
+    transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  -moz-animation-name: rotateIn;
+  -o-animation-name: rotateIn;
+  animation-name: rotateIn; }
+
+@-webkit-keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInUpLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInUpLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInUpLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInUpLeft {
+  -webkit-animation-name: rotateInUpLeft;
+  -moz-animation-name: rotateInUpLeft;
+  -o-animation-name: rotateInUpLeft;
+  animation-name: rotateInUpLeft; }
+
+@-webkit-keyframes rotateInDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInDownLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInDownLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInDownLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInDownLeft {
+  -webkit-animation-name: rotateInDownLeft;
+  -moz-animation-name: rotateInDownLeft;
+  -o-animation-name: rotateInDownLeft;
+  animation-name: rotateInDownLeft; }
+
+@-webkit-keyframes rotateInUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInUpRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInUpRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInUpRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInUpRight {
+  -webkit-animation-name: rotateInUpRight;
+  -moz-animation-name: rotateInUpRight;
+  -o-animation-name: rotateInUpRight;
+  animation-name: rotateInUpRight; }
+
+@-webkit-keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInDownRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInDownRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInDownRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInDownRight {
+  -webkit-animation-name: rotateInDownRight;
+  -moz-animation-name: rotateInDownRight;
+  -o-animation-name: rotateInDownRight;
+  animation-name: rotateInDownRight; }
+
+@-webkit-keyframes rotateOut {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOut {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(200deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOut {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(200deg);
+    opacity: 0; } }
+
+@keyframes rotateOut {
+  0% {
+    transform-origin: center center;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(200deg);
+    opacity: 0; } }
+
+.rotateOut {
+  -webkit-animation-name: rotateOut;
+  -moz-animation-name: rotateOut;
+  -o-animation-name: rotateOut;
+  animation-name: rotateOut; }
+
+@-webkit-keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutUpLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutUpLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutUpLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    opacity: 0; } }
+
+.rotateOutUpLeft {
+  -webkit-animation-name: rotateOutUpLeft;
+  -moz-animation-name: rotateOutUpLeft;
+  -o-animation-name: rotateOutUpLeft;
+  animation-name: rotateOutUpLeft; }
+
+@-webkit-keyframes rotateOutDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutDownLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutDownLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutDownLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+    opacity: 0; } }
+
+.rotateOutDownLeft {
+  -webkit-animation-name: rotateOutDownLeft;
+  -moz-animation-name: rotateOutDownLeft;
+  -o-animation-name: rotateOutDownLeft;
+  animation-name: rotateOutDownLeft; }
+
+@-webkit-keyframes rotateOutUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutUpRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutUpRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutUpRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0; } }
+
+.rotateOutUpRight {
+  -webkit-animation-name: rotateOutUpRight;
+  -moz-animation-name: rotateOutUpRight;
+  -o-animation-name: rotateOutUpRight;
+  animation-name: rotateOutUpRight; }
+
+@-webkit-keyframes rotateOutDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutDownRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutDownRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutDownRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(-90deg);
+    opacity: 0; } }
+
+.rotateOutDownRight {
+  -webkit-animation-name: rotateOutDownRight;
+  -moz-animation-name: rotateOutDownRight;
+  -o-animation-name: rotateOutDownRight;
+  animation-name: rotateOutDownRight; }
+
+@-webkit-keyframes hinge {
+  0% {
+    -webkit-transform: rotate(0);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -webkit-transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  40% {
+    -webkit-transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  100% {
+    -webkit-transform: translateY(700px);
+    opacity: 0; } }
+
+@-moz-keyframes hinge {
+  0% {
+    -moz-transform: rotate(0);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -moz-transform: rotate(80deg);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  40% {
+    -moz-transform: rotate(60deg);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  80% {
+    -moz-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  100% {
+    -moz-transform: translateY(700px);
+    opacity: 0; } }
+
+@-o-keyframes hinge {
+  0% {
+    -o-transform: rotate(0);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -o-transform: rotate(80deg);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  40% {
+    -o-transform: rotate(60deg);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  80% {
+    -o-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  100% {
+    -o-transform: translateY(700px);
+    opacity: 0; } }
+
+@keyframes hinge {
+  0% {
+    transform: rotate(0);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    transform: rotate(80deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  40% {
+    transform: rotate(60deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  80% {
+    transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  100% {
+    transform: translateY(700px);
+    opacity: 0; } }
+
+.hinge {
+  -webkit-animation-name: hinge;
+  -moz-animation-name: hinge;
+  -o-animation-name: hinge;
+  animation-name: hinge; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg); } }
+
+@-moz-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0px) rotate(0deg); } }
+
+@-o-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0px) rotate(0deg); } }
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg); } }
+
+.rollIn {
+  -webkit-animation-name: rollIn;
+  -moz-animation-name: rollIn;
+  -o-animation-name: rollIn;
+  animation-name: rollIn; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg); } }
+
+@-moz-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(100%) rotate(120deg); } }
+
+@-o-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(100%) rotate(120deg); } }
+
+@keyframes rollOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%) rotate(120deg); } }
+
+.rollOut {
+  -webkit-animation-name: rollOut;
+  -moz-animation-name: rollOut;
+  -o-animation-name: rollOut;
+  animation-name: rollOut; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes lightSpeedIn {
+  0% {
+    -moz-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -moz-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -moz-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@-o-keyframes lightSpeedIn {
+  0% {
+    -o-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -o-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -o-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@keyframes lightSpeedIn {
+  0% {
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+.lightSpeedIn {
+  -webkit-animation-name: lightSpeedIn;
+  -moz-animation-name: lightSpeedIn;
+  -o-animation-name: lightSpeedIn;
+  animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  animation-timing-function: ease-out; }
+
+.animated.lightSpeedIn {
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes lightSpeedOut {
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@-moz-keyframes lightSpeedOut {
+  0% {
+    -moz-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@-o-keyframes lightSpeedOut {
+  0% {
+    -o-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@keyframes lightSpeedOut {
+  0% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+.lightSpeedOut {
+  -webkit-animation-name: lightSpeedOut;
+  -moz-animation-name: lightSpeedOut;
+  -o-animation-name: lightSpeedOut;
+  animation-name: lightSpeedOut;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in; }
+
+.animated.lightSpeedOut {
+  -webkit-animation-duration: 0.25s;
+  -moz-animation-duration: 0.25s;
+  -o-animation-duration: 0.25s;
+  animation-duration: 0.25s; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: skewX(9deg); }
+
+  10% {
+    -webkit-transform: skewX(-8deg); }
+
+  20% {
+    -webkit-transform: skewX(7deg); }
+
+  30% {
+    -webkit-transform: skewX(-6deg); }
+
+  40% {
+    -webkit-transform: skewX(5deg); }
+
+  50% {
+    -webkit-transform: skewX(-4deg); }
+
+  60% {
+    -webkit-transform: skewX(3deg); }
+
+  70% {
+    -webkit-transform: skewX(-2deg); }
+
+  80% {
+    -webkit-transform: skewX(1deg); }
+
+  90% {
+    -webkit-transform: skewX(0deg); }
+
+  100% {
+    -webkit-transform: skewX(0deg); } }
+
+@-moz-keyframes wiggle {
+  0% {
+    -moz-transform: skewX(9deg); }
+
+  10% {
+    -moz-transform: skewX(-8deg); }
+
+  20% {
+    -moz-transform: skewX(7deg); }
+
+  30% {
+    -moz-transform: skewX(-6deg); }
+
+  40% {
+    -moz-transform: skewX(5deg); }
+
+  50% {
+    -moz-transform: skewX(-4deg); }
+
+  60% {
+    -moz-transform: skewX(3deg); }
+
+  70% {
+    -moz-transform: skewX(-2deg); }
+
+  80% {
+    -moz-transform: skewX(1deg); }
+
+  90% {
+    -moz-transform: skewX(0deg); }
+
+  100% {
+    -moz-transform: skewX(0deg); } }
+
+@-o-keyframes wiggle {
+  0% {
+    -o-transform: skewX(9deg); }
+
+  10% {
+    -o-transform: skewX(-8deg); }
+
+  20% {
+    -o-transform: skewX(7deg); }
+
+  30% {
+    -o-transform: skewX(-6deg); }
+
+  40% {
+    -o-transform: skewX(5deg); }
+
+  50% {
+    -o-transform: skewX(-4deg); }
+
+  60% {
+    -o-transform: skewX(3deg); }
+
+  70% {
+    -o-transform: skewX(-2deg); }
+
+  80% {
+    -o-transform: skewX(1deg); }
+
+  90% {
+    -o-transform: skewX(0deg); }
+
+  100% {
+    -o-transform: skewX(0deg); } }
+
+@keyframes wiggle {
+  0% {
+    transform: skewX(9deg); }
+
+  10% {
+    transform: skewX(-8deg); }
+
+  20% {
+    transform: skewX(7deg); }
+
+  30% {
+    transform: skewX(-6deg); }
+
+  40% {
+    transform: skewX(5deg); }
+
+  50% {
+    transform: skewX(-4deg); }
+
+  60% {
+    transform: skewX(3deg); }
+
+  70% {
+    transform: skewX(-2deg); }
+
+  80% {
+    transform: skewX(1deg); }
+
+  90% {
+    transform: skewX(0deg); }
+
+  100% {
+    transform: skewX(0deg); } }
+
+.wiggle {
+  -webkit-animation-name: wiggle;
+  -moz-animation-name: wiggle;
+  -o-animation-name: wiggle;
+  animation-name: wiggle;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in; }
+
+.animated.wiggle {
+  -webkit-animation-duration: 0.75s;
+  -moz-animation-duration: 0.75s;
+  -o-animation-duration: 0.75s;
+  animation-duration: 0.75s; }
+  
+
+    </style>
+
+    <link href="https://ningyu1.github.io/site/css/custom.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="https://ningyu1.github.io/site/css/github-markdown.css" rel="stylesheet" type="text/css">
+
+    <link href='https://ningyu1.github.io/site/css/Slackey.css' rel='stylesheet' type='text/css'>
+    <link href='https://ningyu1.github.io/site/css/Fjallaone.css' rel='stylesheet' type='text/css'>
+    <link href='https://ningyu1.github.io/site/css/Amethysta.css' rel='stylesheet' type='text/css'>
+	<script src="https://ningyu1.github.io/site/js/jquery.min.js"></script>
+    
+
+    <script type="text/javascript" src="https://ningyu1.github.io/site/js/jquery-tapir.js"></script>
+
+    
+
+    <link rel="stylesheet" href="https://ningyu1.github.io/site/css/hljs.css">
+    <script src="https://ningyu1.github.io/site/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?5bb9b9d406e3381971859973a2ca3583";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+</head>
+
+
+<a href="https://github.com/ningyu1"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; z-index:9999; background-color: rgba(0, 0, 0, 0)!important;" src="https://ningyu1.github.io/site/images/right-graphite@2x.png" alt="Fork me on GitHub"></a>
+
+
+
+
+
+
+
+
+<link href="https://ningyu1.github.io/site/css/music-player.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://ningyu1.github.io/site/js/music-player.js"></script>
+<iframe class="player"  frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="https://music.163.com/outchain/player?type=2&id=1296583188&auto=0&height=66"></iframe>
+
+
+
+<body class="markdown-body">
+    <div id="wrapper">
+        <header id="header" class="inner">
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        凝雨 - Yun
+    </div>
+</h1>
+
+<span class="subtitle">快乐编程每一天 - Happy Coding Every Day</span>
+<br>
+
+
+<ul id="social-links" style="text-align:center; clear:both;">
+	
+    
+    <li>
+    <a href="mailto:ningbe111@163.com" class="email" title="Email"></a>
+    </li>
+    
+    
+    
+    <li>
+    <a href="https://github.com/ningyu1" class="github" title="Github"></a>
+    </li>
+    
+	
+    
+    <li>
+    <a href="https://gitlab.com/ningyu1" class="gitlab" title="Gitlab"></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+    
+	
+    
+    <li>
+    <a href="https://gitee.com/ningyu" class="gitee" title="Gitee码云"></a>
+    </li>
+    
+	<li>
+
+    <a href="https://ningyu1.github.io/atom.xml" class="rss" title="RSS" target="_blank"></a>
+    </li>
+</ul>
+
+
+
+<ul id="nav">
+
+
+
+
+
+    
+    <li id="ajax"><a href="https://ningyu1.github.io/">Home</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/archives/">Archives</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/categories/">Categories</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/tags/">Tags</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/about/">About</a></li>
+    <li id="ajax"><a href="https://g2.okk.dog/?path=register&code=qn7nOwdj">科学上网</a></li>
+    
+    <li>
+    <div id="dark">
+        
+        <form action="//www.google.com/search" method="get" accept-charset="UTF-8" id="search">
+
+            <input type="hidden" name="sitesearch" value="https://ningyu1.github.io" />
+            <input type="text" name="q" results="0" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+</ul>
+
+</header>
+
+<div id="toload">
+
+    <div id="content" class="inner">
+        
+
+
+
+
+    
+    <script id="dsq-count-scr" src="//ningyu.disqus.com/count.js" async></script>
+    
+
+
+
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/94-embedded-redisserver/">使用Embedded RedisServer写UT</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-07-17T18:11:00.000&#43;00:00' itemprop="datePublished">2018-07-17</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/redis">redis</a>
+
+<a href="https://ningyu1.github.io/site/tags/test">test</a>
+
+<a href="https://ningyu1.github.io/site/tags/cant-start-redis-server.-check-logs-for-details.">Can&#39;t start redis server. Check logs for details.</a>
+
+
+</div>
+    </div>
+        
+
+<p>当我们在进行开发的时候经常会用到<code>Redis</code>，但是在写<code>junit</code>的时候往往引用了<code>Redis</code>造成<code>test case</code>很难写，我们需要<code>mock</code>一个<code>localhost</code>的<code>Redis server</code>来进行测试，因此我们可以借助<code>embedded redisServer</code>来实现，下面我们就看一下具体使用的示例</p>
+
+<h2 id="代码示例">代码示例</h2>
+
+<pre><code>@Before
+public void setUp() throws IOException {
+    initMocks(this);
+    final Random random = new SecureRandom();
+    redisServer = new RedisServer();
+    redisServer.start();
+ 
+    pool = new JedisPool();
+    repository = new RedisKeyRepository(pool);
+    manager = new RedisKeyManager(random, pool, repository);
+    manager.setMaxActiveKeys(3);
+ 
+    clearData();
+    manager.initialiseNewRepository();
+ 
+    resource = new ProtectedResource(repository, random);
+}
+</code></pre>
+
+<p><span style="color:blue"><em>这是一个非常简单的使用示例，我们还可以更改配置以及增加密码</em></span></p>
+
+<pre><code>@Before
+public void setUpRedis() throws IOException, SchedulerConfigException {
+    port = getPort();
+    logger.debug(&quot;Attempting to start embedded Redis server on port &quot; + port);
+    redisServer = RedisServer.builder()
+            .port(port)
+            .build();
+    redisServer.start();
+    final short database = 1;
+    JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
+    jedisPoolConfig.setTestOnBorrow(true);
+    jedisPool = new JedisPool(jedisPoolConfig, host, port, Protocol.DEFAULT_TIMEOUT, null, database);
+ 
+    jobStore = new RedisJobStore();
+    jobStore.setHost(host);
+    jobStore.setLockTimeout(2000);
+    jobStore.setPort(port);
+    jobStore.setInstanceId(&quot;testJobStore1&quot;);
+    jobStore.setDatabase(database);
+    mockScheduleSignaler = mock(SchedulerSignaler.class);
+    jobStore.initialize(null, mockScheduleSignaler);
+    schema = new RedisJobStoreSchema();
+ 
+    jedis = jedisPool.getResource();
+    jedis.flushDB();
+}
+</code></pre>
+
+<p><span style="color:blue"><em>使用<code>RedisServerBuilder</code>构建<code>Redis server</code>，并且指定port</em></span></p>
+
+<pre><code>@Test
+//Note the try/finally is to ensure that the server is shutdown so other tests do not have to
+//provide auth information
+public void testAuth() throws Exception {
+ 
+  RedisServer server = RedisServer.builder().port(6381).setting(&quot;requirepass foobar&quot;).build();
+  server.start();
+  RedisOptions job = new RedisOptions()
+    .setHost(&quot;localhost&quot;)
+    .setPort(6381);
+  RedisClient rdx = RedisClient.create(vertx, job);
+ 
+  rdx.auth(&quot;barfoo&quot;, reply -&gt; {
+    assertFalse(reply.succeeded());
+    rdx.auth(&quot;foobar&quot;, reply2 -&gt; {
+      assertTrue(reply2.succeeded());
+      try {
+        server.stop();
+      } catch (Exception ignore) {
+      }
+      testComplete();
+    });
+  });
+  await();
+}
+</code></pre>
+
+<p><span style="color:blue"><em>设置一个需要密码访问的Redis server，setting可以设置redis conf中的所有属性</em></span></p>
+
+<h2 id="更多用法">更多用法</h2>
+
+<p>还有很多用法，具体查看下面的代码示例</p>
+
+<pre><code>@Test
+public void testDebugSegfault() throws Exception {
+ 
+  RedisServer server = RedisServer.builder().port(6381).build();
+  server.start();
+  RedisOptions job = new RedisOptions()
+    .setHost(&quot;localhost&quot;)
+    .setPort(6381);
+  RedisClient rdx = RedisClient.create(vertx, job);
+ 
+  rdx.debugSegfault(reply -&gt; {
+    // this should fail, since we crashed the server on purpose
+    assertTrue(reply.failed());
+    rdx.info(reply2 -&gt; {
+      assertFalse(reply2.succeeded());
+      server.stop();
+      testComplete();
+    });
+  });
+  await();
+}
+
+public RedisServerResource(int port, String password) {
+    this.port = port;
+    try {
+        RedisExecProvider redisExecProvider = RedisExecProvider.defaultProvider();
+        this.redisServer = RedisServer
+                .builder()
+                .redisExecProvider(redisExecProvider)
+                .port(port)
+                .setting(&quot;requirepass &quot; + password)
+                .build();
+    } catch (Throwable error) {
+        String message = String.format(&quot;failed creating Redis server (port=%d)&quot;, port);
+        throw new RuntimeException(message, error);
+    }
+}
+
+@Before
+public void before() throws Exception {
+  mockTracer.reset();
+ 
+  redisServer = RedisServer.builder().setting(&quot;bind 127.0.0.1&quot;).build();
+  redisServer.start();
+} 
+
+private void startServer(TestContext testContext) {
+    EmbeddedRedis embeddedRedis = AnnotationUtils.findAnnotation(testContext.getTestClass(), EmbeddedRedis.class);
+    int port = embeddedRedis.port();
+ 
+    try {
+        server = new RedisServer(port);
+        server.start();
+    } catch (IOException e) {
+        if (logger.isErrorEnabled()) {
+            logger.error(e.getMessage(), e);
+        }
+    }
+}
+
+private RedisServer createRedisServer() {
+    final RedisServerBuilder redisServerBuilder = RedisServer.builder()
+            .port(redisPort)
+            .setting(&quot;appendonly yes&quot;)
+            .setting(&quot;appendfsync everysec&quot;);
+    settings.stream().forEach(s -&gt; redisServerBuilder.setting(s));
+ 
+    final RedisServer redisServer = redisServerBuilder.build();
+    return redisServer;
+}
+</code></pre>
+
+<h2 id="有可能我们启动会遇到下面的错误">有可能我们启动会遇到下面的错误：</h2>
+
+<pre><code>java.lang.RuntimeException: Can't start redis server. Check logs for details.
+    at redis.embedded.AbstractRedisInstance.awaitRedisServerReady(AbstractRedisInstance.java:66)
+    at redis.embedded.AbstractRedisInstance.start(AbstractRedisInstance.java:37)
+    at redis.embedded.RedisServer.start(RedisServer.java:11)
+    at com.bignibou.configuration.session.EmbeddedRedisConfiguration$RedisServerBean.afterPropertiesSet(EmbeddedRedisConfiguration.java:26)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1633)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+    ... 15 more
+</code></pre>
+
+<p>这个是什么原因呢？我们进一步debug输出redis server的log看是什么问题，redis log如下：</p>
+
+<pre><code>The windows version of redis allocates a large memory mapped file for sharing the heap with the forked process used in persistence operations. This file will be created in the current working directory or the directory specified by the 'heapdir' directive in the
+.conf file. Windows is reporting that there is insufficient disk space available for this file (Windows error 0x70).
+You may fix this probilem by either reducing the size of the Redis heap with the --maxheap flag, or by moving the heap file to a local drive with sufficient space.
+Please see the documentation included with the binary distributions for more details on the --maxheap and --heapdir flags.
+Redis can not continue, Exiting.
+</code></pre>
+
+<p>这里的原因是我们启动的时候<code>heap</code>不够，redis server默认的<code>maxheap:1024000000</code>，创建<code>.conf</code>文件时硬盘不够，那如何解决这个错误呢？</p>
+
+<pre><code>@Test
+public void testAuth() throws Exception {
+  RedisServer server = RedisServer.builder().port(6381).setting(&quot;maxheap 51200000&quot;).build();
+  server.start();
+}
+</code></pre>
+
+<p>关于<code>redis maxheap</code>的详细描述如下：</p>
+
+<pre><code># The Redis heap must be larger than the value specified by the maxmemory
+# flag, as the heap allocator has its own memory requirements and
+# fragmentation of the heap is inevitable. If only the maxmemory flag is
+# specified, maxheap will be set at 1.5*maxmemory. If the maxheap flag is
+# specified along with maxmemory, the maxheap flag will be automatically
+# increased if it is smaller than 1.5*maxmemory.
+# 
+# maxheap &lt;bytes&gt;
+maxheap 51200000
+</code></pre>
+
+<p><span style="color:blue"><em>注意：修改时需要考虑可用量，常规情况都无需修改这个参数</em></span></p>
+
+<p><a href="https://www.programcreek.com/java-api-examples/index.php?api=redis.embedded.RedisServer">更多查看官方文档</a></p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/94-embedded-redisserver/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/93-maven-depenpency-analyze/">通过对Maven的依赖分析剔除无用的jar引用</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-07-11T14:11:00.000&#43;00:00' itemprop="datePublished">2018-07-11</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/maven">maven</a>
+
+<a href="https://ningyu1.github.io/site/tags/dependencyanalyze">dependency:analyze</a>
+
+
+</div>
+    </div>
+        
+
+<p>当项目开发维护了一段时间时，经常会有项目打包速度慢，jar依赖多，依赖关系错综复杂，这种问题是项目维护最常见的问题，由于开发人员在bugfix或者feature开发时往往只是往项目中添加jar依赖，那我们如何分析出项目中哪些依赖是用到的，哪些依赖是不用的？</p>
+
+<p>使用<a href="http://maven.apache.org/plugins/maven-dependency-plugin/analyze-mojo.html">Maven analyze</a>来进行分析</p>
+
+<p>使用如下命令：</p>
+
+<pre><code>mvn dependency:analyze
+</code></pre>
+
+<p>会输出如下的日志：</p>
+
+<pre><code>[INFO] --- maven-dependency-plugin:2.8:analyze (default-cli) @ xxxproject ---
+[WARNING] Used undeclared dependencies found:
+[WARNING]    org.springframework:spring-beans:jar:4.0.0.RELEASE:compile
+[WARNING]    org.springframework:spring-context:jar:4.0.0.RELEASE:compile
+[WARNING] Unused declared dependencies found:
+[WARNING]    com.alibaba:dubbo:jar:2.5.3:compile
+[WARNING]    com.baidu.disconf:disconf-client:jar:2.6.32:compile
+[WARNING]    org.mybatis:mybatis:jar:3.2.7:compile
+[WARNING]    org.mybatis:mybatis-spring:jar:1.2.2:compile
+[WARNING]    mysql:mysql-connector-java:jar:5.1.41:compile
+[WARNING]    com.alibaba:druid:jar:1.0.9:compile
+[WARNING]    com.github.sgroschupf:zkclient:jar:0.1:compile
+[WARNING]    org.apache.zookeeper:zookeeper:jar:3.4.6:compile
+[WARNING]    org.springframework:spring-jdbc:jar:4.0.0.RELEASE:compile
+[WARNING]    org.slf4j:log4j-over-slf4j:jar:1.7.5:compile
+[WARNING]    org.slf4j:jcl-over-slf4j:jar:1.7.5:runtime
+[WARNING]    ch.qos.logback:logback-classic:jar:1.0.13:compile                         
+</code></pre>
+
+<p>我们就来说一下日志中的<code>Used undeclared dependencies found</code>和<code>Unused declared dependencies found</code></p>
+
+<h2 id="used-undeclared-dependencies-found">Used undeclared dependencies found</h2>
+
+<p>这个是指某些依赖的包在代码中有用到它的代码，但是它并不是直接的依赖（就是说没有在pom中直接声明），是通过引入传递下来的包。</p>
+
+<p>举个例子：</p>
+
+<p><code>project</code>在<code>pom</code>中声明了<code>A.ja</code>r的依赖（没有声明<code>B.jar</code>的依赖）
+<code>A.jar</code>的依赖关系：<code>A.jar</code> -&gt; <code>B.jar</code>
+通过<code>mvn dependency:analyze</code>出现
+<code>[WARNING] Used undeclared dependencies found: B.jar</code>
+就说明<code>project</code>中的代码用到了<code>B.jar</code>的代码
+这个时候你就可以把<code>B.jar</code>直接声明在pom中</p>
+
+<h2 id="unused-declared-dependencies-found">Unused declared dependencies found</h2>
+
+<p>这个是指我们在pom中声明了依赖，但是在实际代码中并没有用到这个包！也就是多余的包。
+这个时候我们就可以把这个依赖从pom中剔除。</p>
+
+<p><span style="color:blue">
+<em>但是这里我们需要注意：
+这里说的实际代码没有用到，指的是在main/java和test里没有用的，但是并不是意味着真的没有用到这些包，有可能配置文件中引用或者其他扩展点自动加载这些包，所以我们在删除依赖的时候一定要小心，做好备份，因为这类引用maven是分析不出来的。</em>
+</span></p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/93-maven-depenpency-analyze/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/92-cors-ajax/">跨域踩坑经验总结（内涵：跨域知识科普）</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-06-27T12:20:00.000&#43;00:00' itemprop="datePublished">2018-06-27</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/cors">cors</a>
+
+<a href="https://ningyu1.github.io/site/tags/xhr.withcredentials">xhr.withCredentials</a>
+
+<a href="https://ningyu1.github.io/site/tags/crossdomain">crossDomain</a>
+
+<a href="https://ningyu1.github.io/site/tags/ajax%E8%B7%A8%E5%9F%9F">Ajax跨域</a>
+
+
+</div>
+    </div>
+        
+
+<p>跨域问题是我们非常常见的问题，尤其在跨系统页面间的调用经常会遇到，解决的方式在网上一搜一大把，这里整理出我遇到跨域问题解决的方式以及思路，如何安全的解决跨域调用请继续往下看。</p>
+
+<ul>
+<li><a href="#what's-Cross-domain">什么是跨域？</a></li>
+<li><a href="#scene">跨域使用的场景？</a></li>
+<li><a href="#solution">解决跨域的方式？</a></li>
+<li><a href="#solution1">前端、后端如何配合处理跨域？</a>
+
+<ul>
+<li><a href="#errors">跨域常见错误</a></li>
+<li><a href="#options">突如其来的OPTIONS请求？</a></li>
+<li><a href="#response-header">后端需要返回的Header有哪些？</a></li>
+<li><a href="#ajax-crossDomain">前端如何配合发起请求？</a></li>
+<li><a href="#ajax-compatibility">Ajax跨域请求跨平台兼容性问题</a></li>
+</ul></li>
+</ul>
+
+<h1 id="span-id-what-s-cross-domain-什么是跨域-span"><span id = "what's-Cross-domain">什么是跨域？</span></h1>
+
+<p><a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">什么是Cross-origin_resource_sharing?</a>
+跨域请求存在的原因：由于浏览器的同源策略，即属于不同域的页面之间不能相互访问各自的页面内容。</p>
+
+<h1 id="span-id-scene-跨域使用的场景-span"><span id = "scene">跨域使用的场景？</span></h1>
+
+<ol>
+<li>域名不同
+
+<ul>
+<li><code>www.jiuyescm.com</code>和<code>www.jiuye.com</code>即为不同的域名</li>
+</ul></li>
+<li>二级域名相同，子域名不同
+
+<ul>
+<li><code>a.jiuyescm.com</code>和<code>b.jiuyescm.com</code>为子域不同</li>
+</ul></li>
+<li>端口不同，协议不同
+
+<ul>
+<li><code>http://www.jiuyescm.com</code>和<code>https://www.jiuyescm.com</code></li>
+<li><code>www.jiuyescm.com:8888</code>和<code>www.jiuyescm.com:8080</code></li>
+</ul></li>
+</ol>
+
+<h1 id="span-id-solution-解决跨域的方式-span"><span id = "solution">解决跨域的方式？</span></h1>
+
+<ol>
+<li>jsonp
+
+<ul>
+<li>安全性差，已经不推荐</li>
+</ul></li>
+<li>CORS（W3C标准，跨域资源共享 - Cross-origin resource sharing）
+
+<ul>
+<li>服务端设置，安全性高，推荐使用</li>
+</ul></li>
+<li>websocke
+
+<ul>
+<li>特殊场景时使用，不属于常规跨域操作</li>
+</ul></li>
+<li>代理服务（nginx）
+
+<ul>
+<li>可作为服务端cors配置的一种方式，推荐使用</li>
+</ul></li>
+</ol>
+
+<h1 id="span-id-solution1-前端-后端如何配合处理跨域-span"><span id = "solution1">前端、后端如何配合处理跨域？</span></h1>
+
+<p><span style="color:blue"><em>ps. 我们这里只介绍：CORS处理方式。</em></span></p>
+
+<h2 id="span-id-errors-跨域常见错误-span"><span id = "errors">跨域常见错误</span></h2>
+
+<p>首先让我们看一下前端报出的跨域错误信息</p>
+
+<p>第一种：<code>No 'Access-Control-Allow-Origin' header is present on the requested resource</code>，并且<code>The response had HTTP status code 404</code></p>
+
+<pre><code>XMLHttpRequest cannot load http://b.domain.com, Response to preflinght request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://a.domain.com' is therefore not allowed access. The Response had HTTP status code 404.
+</code></pre>
+
+<p><span style="color:blue"><em>ps.并且The response had HTTP status code 404</em></span></p>
+
+<p>问题原因：服务器端后台没有允许OPTIONS请求</p>
+
+<p>第二种：<code>No 'Access-Control-Allow-Origin' header is present on the requested resource</code>，并且<code>The response had HTTP status code 405</code></p>
+
+<pre><code>XMLHttpRequest cannot load http://b.domain.com, Response to preflinght request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://a.domain.com' is therefore not allowed access. The Response had HTTP status code 405.
+</code></pre>
+
+<p><span style="color:blue"><em>ps.并且The response had HTTP status code 405</em></span></p>
+
+<p>问题原因：服务器端后台允许了OPTIONS请求，但是某些安全配置阻止了OPTIONS请求</p>
+
+<p>第三种：<code>No 'Access-Control-Allow-Origin' header is present on the requested resource</code>，并且<code>The response had HTTP status code 200</code></p>
+
+<pre><code>XMLHttpRequest cannot load http://b.domain.com, Response to preflinght request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://a.domain.com' is therefore not allowed access.
+</code></pre>
+
+<p><span style="color:blue"><em>ps.并且The response had HTTP status code 200</em></span></p>
+
+<p>问题原因：服务器端后台允许了OPTIONS请求，并且OPTIONS请求没有被阻止，但是头部不匹配。</p>
+
+<p>第四种：<code>heade contains multiple values '*,*'</code>，并且<code>The response had HTTP status code 200</code></p>
+
+<pre><code>XMLHttpRequestcannot load http://b.domain.com. The 'Access-Control-Allow-Origin' header contains multiple values'*, *', but only one is allowed. Origin 'http://a.domain.com' is therefore notallowed access.
+</code></pre>
+
+<p><span style="color:blue"><em>ps.并且The response had HTTP status code 200</em></span></p>
+
+<p>问题原因：设置多次Access-Control-Allow-Origin=*，可能是配置的人对CORS实现原理和机制不了解导致。</p>
+
+<h2 id="span-id-options-突如其来的options请求-span"><span id = "options">突如其来的OPTIONS请求？</span></h2>
+
+<p>有时你会发现明明请求的是POST、GET、PUT、DELETE，但是浏览器中看到的确实OPTION，，为什么会变成OPTION？</p>
+
+<p>原因：因为本次Ajax请求是“非简单请求”,所以请求前会发送一次预检请求(OPTIONS)，这个操作由浏览器自己进行。如果服务器端后台接口没有允许OPTIONS请求,将会导致无法找到对应接口地址，因此需要服务端提供相应的信息到response header中，继续往下看。</p>
+
+<h2 id="span-id-response-header-后端需要返回的header有哪些-span"><span id = "response-header">后端需要返回的Header有哪些？</span></h2>
+
+<pre><code># 服务端允许访问的域名
+Access-Control-Allow-Origin=https://idss-uat.jiuyescm.com
+# 服务端允许访问Http Method
+Access-Control-Allow-Methods=GET, POST, PUT, DELETE, PATCH, OPTIONS
+# 服务端接受跨域带过来的Cookie,当为true时,origin必须是明确的域名不能使用*
+Access-Control-Allow-Credentials=true
+# Access-Control-Allow-Headers 表明它允许跨域请求包含content-type头，我们这里不设置，有需要的可以设置
+#Access-Control-Allow-Headers=Content-Type,Accept
+# 跨域请求中预检请求(Http Method为Option)的有效期,20天,单位秒
+Access-Control-Max-Age=1728000
+</code></pre>
+
+<p><span style="color:blue"><em>ps. 如果跨域需要携带cookie去请求，<code>Access-Control-Allow-Credentials</code>必须为true，但是需要注意当<code>Access-Control-Allow-Credentials=true</code>时，<code>Access-Control-Allow-Origin</code>就不能为&rdquo; * &ldquo; ，必须是明确的域名，当然可以多个域名使用 &ldquo;,&rdquo; 分割</em></span></p>
+
+<h2 id="span-id-ajax-crossdomain-前端如何配合发起请求-span"><span id = "ajax-crossDomain">前端如何配合发起请求？</span></h2>
+
+<p>如果是浏览器直接访问跨域请求url，只要服务端返回 “Access-Control-Allow-X” 系列header在response中即可成功访问。</p>
+
+<p>如果是ajax发起的请求该如何处理？</p>
+
+<p>第一种：请求不需要携带cookie</p>
+
+<pre><code>$.ajax({
+    url : 'url',
+    data : data,
+    dataType: 'json',
+    type : 'POST',
+    crossDomain: true,
+    contentType: &quot;application/json&quot;,
+    success: function (data) {
+        var a=JSON.stringify(data);
+        if(data.result==true){
+        　　...........
+    　　 }else{
+　　　　 　　...........
+　　　　 }
+    },
+    error:function (data) {
+        var a=JSON.stringify(data);
+        alert(a);
+    }
+});
+</code></pre>
+
+<p><span style="color:blue"><em>ps. 增加crossDomain=true</em></span></p>
+
+<p>第二种：请求需要携带cookie</p>
+
+<pre><code>$.ajax({
+	url : 'url',
+	data : data,
+	dataType: 'json',
+	type : 'POST',
+	xhrFields: {
+	    withCredentials: true
+	},
+	crossDomain: true,
+	contentType: &quot;application/json&quot;,
+	success: function (data) {
+        var a=JSON.stringify(data);
+        if(data.result==true){
+        　　...........
+    　　 }else{
+　　　　 　　...........
+　　　　 }
+    },
+    error:function (data) {
+        var a=JSON.stringify(data);
+        alert(a);
+    }
+});
+</code></pre>
+
+<p><span style="color:blue"><em>ps. 增加crossDomain与xhr.withCredentials，发送Ajax时，Request header中便会带上 Cookie 信息。</em></span></p>
+
+<p>到这里你以为跨域的相关都介绍完毕了？太天真</p>
+
+<p>最后还有一个终极boss问题，是什么问题呢？</p>
+
+<p>上面的第二种携带cookie的跨域请求调用方式在IOS下可以正常工作，但是在Android下无法正常工作并且还报错，额。。。。。</p>
+
+<h2 id="span-id-ajax-compatibility-ajax跨域请求跨平台兼容性问题-span"><span id = "ajax-compatibility">Ajax跨域请求跨平台兼容性问题</span></h2>
+
+<p>问题原因：因为Android下的webview不兼容这个写法，使用标准的 <a href="http://www.w3school.com.cn/jquery/ajax_ajax.asp#beforeSend(XHR)">beforeSend(XHR)</a> 替换</p>
+
+<pre><code>xhrFields: {
+	withCredentials: true
+}
+</code></pre>
+
+<p><span style="color:blue"><em>ps. webview不兼容的写法，firefox下也不兼容</em></span></p>
+
+<p>标准的写法：</p>
+
+<pre><code>$.ajax({
+    type: &quot;POST&quot;,
+    url: &quot;url&quot;,
+    data:datatosend,
+    dataType:&quot;json&quot;,
+    beforeSend: function(xhr) {
+        xhr.withCredentials = true;
+    }
+    crossDomain:true,
+    success: function (data) {
+        var a=JSON.stringify(data);
+        if(data.result==true){
+        　　...........
+    　　 }else{
+　　　　 　　...........
+　　　　 }
+    },
+    error:function (data) {
+        var a=JSON.stringify(data);
+        alert(a);
+    }
+});
+</code></pre>
+
+<p>到这跨域的相关使用就介绍完毕，这次是真的结束了。Keep Real!</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/92-cors-ajax/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/90-docker-container-cleanlog/">Docker启动的容器如何清理日志？看这里</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-06-19T15:10:00.000&#43;00:00' itemprop="datePublished">2018-06-19</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/docker">docker</a>
+
+
+</div>
+    </div>
+        <p>Docker run起来的容器随着时间久了，容器内的服务输出的日志也在日积月累，需要定期的进行日志清理。</p>
+
+<p>如果公司使用DevOps的话更加需要对容器内的日志进行定期清理，业务的镜像服务或许还好一些，因为开发同学每天都在用、每天都会upgrade服务，在upgrade的时候会删除老的容器，再重新run一个新容器去替换掉老的，但是有一些长期run的服务就很少有人关注了，比如说rancher、还有一些基础服务，可能很长时间也不会去做upgrade操作，因此容器内的日志就越来越多，如果不清理总有一天会撑爆服务器硬盘，到那个时候再去清理恢复服务的话，有可能会有磁盘文件损坏的风险。</p>
+
+<p>因此我们需要定期的对Docker容器内的日志进行清理。</p>
+
+<p>如何查看Docker内容器的日志？可以参考文章：<a href="https://ningyu1.github.io/site/post/48-docker/">《如何直接操作Docker容器？》</a></p>
+
+<p>在清理容器日志前，我们首先要知道Docker将容器的日志放在那里？</p>
+
+<p>Docker将容器的日志放在<code>/var/lib/docker/containers/containerid/containerid-json.log</code></p>
+
+<p><span style="color:blue"><em>ps. containerid是容器id一般是<code>82bbc....</code>这个风格，64位字符</em></span></p>
+
+<p>当然找不到的话也可以使用文件搜索的方式去查找Docker的容器日志放在那里，查找的时候按照上面的名称风格去查找，例如：</p>
+
+<pre><code>find / -type f -name &quot;*-json.log&quot;
+</code></pre>
+
+<p>容器的id怎么查看呢？</p>
+
+<pre><code>docker ps
+</code></pre>
+
+<p>通过ps找到容器id，也找到日志所在的位置后，接下来就是清理日志的操作了，日志文件不能直接删除，直接删除会影响正在运行的容器，可以通过清空文件内容的方式来处理。</p>
+
+<p>清空文件的方式有很多种如下：</p>
+
+<pre><code>$ : &gt; filename 
+$ &gt; filename 
+$ echo &quot;&quot; &gt; filename 
+$ echo &gt; filename 
+$ cat /dev/null &gt; filename
+</code></pre>
+
+<p>选一种即可</p>
+
+<pre><code>cat /dev/null &gt;/var/lib/docker/containers/containerid/containerid-json.log
+</code></pre>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/90-docker-container-cleanlog/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/89-zookeeper-cleanlog/">Zookeeper事务日志和snapshot清理方式</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-06-15T17:15:00.000&#43;00:00' itemprop="datePublished">2018-06-15</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/zookeeper">zookeeper</a>
+
+
+</div>
+    </div>
+        
+
+<p>Zookeeper运行过程会产生大量的事务日志和snapshot镜像文件，文件的目录是通过<code>zoo.conf</code>的<code>datadir</code>参数指定的，下面我们就说一下如何清理事务日志和snapshot。</p>
+
+<p>清理的方式有如下三种：</p>
+
+<ul>
+<li><a href="#zkConf">一、zookeeper配置自动清理</a></li>
+<li><a href="#shell">二、使用自定义清理脚本</a></li>
+<li><a href="#zkCleanup">三、使用zkCleanup.sh清理</a></li>
+</ul>
+
+<p>下面我们一一介绍每种清理方式是如何使用的。</p>
+
+<h1 id="span-id-zkconf-zookeeper配置自动清理-span"><span id = "zkConf">zookeeper配置自动清理</span></h1>
+
+<p>zookeeper在3.4.0版本以后提供了自动清理snapshot和事务日志的功能通过配置 autopurge.snapRetainCount 和 autopurge.purgeInterval 这两个参数能够实现定时清理了。这两个参数都是在zoo.cfg中配置的：</p>
+
+<p>我们使用的zk版本是：3.4.6，因此可以使用自带的清理功能</p>
+
+<p>autopurge.purgeInterval  这个参数指定了清理频率，单位是小时，需要填写一个1或更大的整数，默认是0，表示不开启自己清理功能。</p>
+
+<p>autopurge.snapRetainCount 这个参数和上面的参数搭配使用，这个参数指定了需要保留的文件数目。默认是保留3个。</p>
+
+<p>示例：</p>
+
+<pre><code>autopurge.snapRetainCount=60 
+autopurge.purgeInterval=48
+</code></pre>
+
+<p>保留48小时内的日志，并且保留60个文件</p>
+
+<p><span style="color:red"><em>ps.但是修改conf需要重启服务，生产可能不会考虑重启服务因此使用其他方法。</em></span></p>
+
+<h1 id="span-id-shell-使用自定义清理脚本-span"><span id = "shell">使用自定义清理脚本</span></h1>
+
+<p>clean_zook_log.sh脚本内容如下</p>
+
+<pre><code>#!/bin/bash
+            
+#snapshot file dir
+dataDir=/var/zookeeper/version-2
+#tran log dir
+dataLogDir=/var/zookeeper/version-2
+logDir=/usr/local/zookeeper/logs
+#Leave 60 files
+count=60
+count=$[$count+1]
+ls -t $dataLogDir/log.* | tail -n +$count | xargs rm -f
+ls -t $dataDir/snapshot.* | tail -n +$count | xargs rm -f
+ls -t $logDir/zookeeper.log.* | tail -n +$count | xargs rm -f
+</code></pre>
+
+<p>这个脚本保留最新的60个文件，可以将他写到 将这个脚本添加到crontab中，设置为每天凌晨2点？或者其他时间执行即可。</p>
+
+<pre><code>crontab -e 2 2 * * * /bin/bash /usr/local/zookeeper/bin/clean_zook_log.sh &gt; /dev/null 2&gt;&amp;1
+</code></pre>
+
+<p><span style="color:red"><em>ps.不用修改配置，不需要重启zk集群，推荐使用</em></span></p>
+
+<h1 id="span-id-zkcleanup-使用zkcleanup-sh清理-span"><span id = "zkCleanup">使用zkCleanup.sh清理</span></h1>
+
+<p>这个脚本是使用的zookeeper.jar里的<code>org.apache.zookeeper.server.PurgeTxnLog</code>这个class的main函数清理的，因此需要启动一个java进程，比shell清理要重一些。</p>
+
+<p><a href="http://zookeeper.apache.org/doc/r3.4.3/api/index.html"><code>org.apache.zookeeper.server.PurgeTxnLog</code>文档</a></p>
+
+<pre><code>sh /usr/local/zookeeper/bin/zkCleanup.sh 数据目录 -n 20
+</code></pre>
+
+<p>参数说明</p>
+
+<p>数据目录： /var/zookeeper
+20:  保留快照日志的数量</p>
+
+<p><span style="color:red"><em>ps.因为zookeeper从3.4.0版本之后提供了对历史事务日志和快照文件的自动清理，所以这个脚本很少使用，另外在生产环境中我们一般采取自动脚本来定点定量清除指定日期的日志文件</em></span></p>
+
+<p>到这里三种清理方式都介绍完毕了，根据自己的实际情况选择一种使用就可以了。祝大家周末愉快以及端午节快乐，ok 收工 回家。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/89-zookeeper-cleanlog/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/85-wechat/">如何扩展个人微信号来实现群组管理的功能？</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-06-08T13:38:00.000&#43;00:00' itemprop="datePublished">2018-06-08</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/wechat">wechat</a>
+
+
+</div>
+    </div>
+        
+
+<p>最近在思考一个问题，如何能在系统中集成微信群组管理的功能，比如说邀请好友进群、对群组进行管理、创建群组、删除群组之类的操作，说白了就是将微信的功能嵌入到自己的程序里面去。这样就可以有效的管理多个群组来扩展一些客服的功能。</p>
+
+<p>于是查找关于微信API的资料，第一反应就是先去官方的开放文档中查看是否有类似API开放。</p>
+
+<p>翻了一圈资料，看了微信服务号、订阅号、小程序、以及企业微信的开放文档后整理出来目前官方开放的API的功能现状如下：</p>
+
+<p>官方是没有提供任何个人群管理接口API，只有一些类似外挂类的工具可以对个人群组进行管理。</p>
+
+<p>但是外挂类的工具又怕有风险，说不定哪天就over了。</p>
+
+<p>在资料翻阅的过程，发现了可以通过微友助手在群组里添加机器人，但是这个方式可能不是我们想要的。</p>
+
+<p>官方开放的客服API可以与客服系统进行对接，它是将微信端作为客服的入口与客服系统对接，生成客诉工单或者是跟客服对话，这也不是我们想要的方式。</p>
+
+<p><span style="color:blue"><strong>在没有官方API可用的情况下我们想使用这方面的功能该如何操作呢？</strong></span></p>
+
+<h1 id="发现曙光">发现曙光</h1>
+
+<p>微信目前官方提供的终端，除了手机端以外还有电脑端和WEB网页端。</p>
+
+<p>咦，有WEB网页端那不就有API可以操作么？只是可能我们要写类似于外挂一样的东西模拟官方的微信网页端操作。</p>
+
+<p>于是开始搜索这方面的资料，很幸运找到了<a href="https://github.com/littlecodersh/ItChat"><code>ItChat</code></a>这个类库。</p>
+
+<p>这个类库的实现方式就是我们刚才说到的模拟网页版本的rest请求去扩展的一些接口。</p>
+
+<p>那已经有人做好了轮子那我们就可以直接使用了。</p>
+
+<h1 id="itchat的实现方式">ItChat的实现方式</h1>
+
+<p>第一部分，分析微信协议，开始获取并模拟扩展个人微信号所需要的协议。
+第二部分，利用上面分析出来的协议
+第三部分，包装成扩展功能API</p>
+
+<p>网页端微信协议分析思路可以查看：<a href="http://python.jobbole.com/84918/">手把手教你扩展个人微信号（1）</a></p>
+
+<p>接口的使用可以查看：<a href="http://python.jobbole.com/86532/">手把手教你扩展个人微信号（2）</a></p>
+
+<p>有兴趣的可以进去看一下。</p>
+
+<p>Github链接：<a href="https://github.com/littlecodersh/ItChat">ItChat</a></p>
+
+<h1 id="总结">总结</h1>
+
+<p>这个库的实现方式还是很有趣的，使用网页版微信调用的rest接口，跟常规外挂一样模拟网页微信的操作，只要网页版本微信不关闭应该都能用，只是可能需要紧跟着网页版本的微信rest接口持续升级</p>
+
+<p>github上有1w多star，很明显说明了这个扩展功能还是很多人迫切想使用的，后面我会尝试一下然后把遇到的问题和使用经验会再分享出来。Keep Real！</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/85-wechat/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/84-charles/">如何使用抓包调试工具 —— Charles</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-06-04T17:28:00.000&#43;00:00' itemprop="datePublished">2018-06-04</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/charles">Charles</a>
+
+<a href="https://ningyu1.github.io/site/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B5%8B%E8%AF%95">移动端测试</a>
+
+
+</div>
+    </div>
+        
+
+<p>以下信息转自公司内网资料，觉得很实用就转载出来提供参考。</p>
+
+<h1 id="一-charles是什么">一、Charles是什么？</h1>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/1.png" alt="" /></p>
+
+<p>Charles是在 Mac或Windows下常用的http协议网络包截取工具，在平常的测试与调式过程中，掌握此工具就基本可以不用其他抓包工具了。</p>
+
+<h1 id="二-为什么是charles">二、为什么是Charles？</h1>
+
+<p>为什么要用抓包工具？大家在平常移动App调试测试中是如何进行抓包的？</p>
+
+<p><strong>主要特点如下：</strong></p>
+
+<ol>
+<li>支持SSL代理，可以截取分析SSL的请求</li>
+<li>支持流量控制。可以模拟慢速网络(2G,3G)，以及等待时间较长的请求。</li>
+<li>支持AJAX调试。可以自动把JSON或者XML数据格式化，方便查看。</li>
+<li>支持重发网络请求，方便后端调试。</li>
+<li>支持修改网络请求参数。</li>
+<li>支持网络请求的截取和动态修改。</li>
+<li>最重要的一个优点就是有不同平台的版本（Mac，Windows、Linux）即学一个打遍天下。</li>
+</ol>
+
+<h1 id="三-charles基本工作原理">三、Charles基本工作原理</h1>
+
+<p>charles是通过网络代理来进行抓包的，下面先了解一下http代理的原理：</p>
+
+<ul>
+<li>普通http请求过程</li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/2.png" alt="" /></p>
+
+<p><span style="color:blue"><em>一般情况下的HTTP请求与响应</em></span></p>
+
+<ul>
+<li>加入了Charles的HTTP代理的请求与响应过程</li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/3.png" alt="" /></p>
+
+<p><span style="color:blue"><em>中间的代理服务器就是Charles</em></span></p>
+
+<h1 id="四-charles的下载与安装过程">四、Charles的下载与安装过程</h1>
+
+<ul>
+<li>官网下载地址：<a href="http://www.charlesproxy.com/download/">http://www.charlesproxy.com/download/</a></li>
+<li>Mac下安装</li>
+</ul>
+
+<p>是一个安装包是一个dmg后缀的文件。打开后将Charles拖到Application目录下即完成安装。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/4.png" alt="" /></p>
+
+<p>在Mac下你打开Launchpad即可看到一个像花瓶一样的Charles程序图标</p>
+
+<ul>
+<li>Windows下安装</li>
+</ul>
+
+<p>下载后直接双击根据安装向导一步一步安装即可</p>
+
+<h1 id="五-http抓包操作步骤">五、Http抓包操作步骤</h1>
+
+<h2 id="step-1-开启charleshttp代理">Step 1: 开启Charleshttp代理</h2>
+
+<ul>
+<li>设置Charles代理</li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/5.png" alt="" /></p>
+
+<p>第一次启动默认会开启本机的系统代理，因为我们只是监控移动端的所以将此选去除（去掉选项前面的小钩）</p>
+
+<ul>
+<li>激活http代理功能</li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/6.png" alt="" /></p>
+
+<h2 id="step-2-手机端wifi添加代理">Step 2: 手机端Wifi添加代理</h2>
+
+<h3 id="android端">Android端</h3>
+
+<ul>
+<li>在手机端打开你的Wifi设置然后长按已经连接的Wifi在弹出来的菜单中选择【修改网络】</li>
+<li>沟上[显示高级]选项&ndash;【手动】</li>
+<li>输入代理服务器的IP与端口，IP即安装了Charles的电脑IP地址，端口就是前面一步设置Charles时所设置的端口。</li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/7.png" alt="" /></p>
+
+<p><span style="color:blue"><em>注意：手机所连接Wifi要与电脑在同一个LAN(局域网)</em></span></p>
+
+<h3 id="ios端">iOS端</h3>
+
+<ul>
+<li>点击你所连接的wifi</li>
+<li>输入代理服务器的IP与端口，</li>
+</ul>
+
+<p>IP即安装了Charles的电脑IP地址，端口就是前面一步设置Charles时所设置的端口。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/8.png" alt="" /></p>
+
+<p><span style="color:blue"><em>注意：手机所连接Wifi要与电脑在同一个LAN(局域网)</em></span></p>
+
+<h2 id="step-3-开启charles录制功能">Step 3:开启Charles录制功能</h2>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/9.png" alt="" /></p>
+
+<ol>
+<li>当手机连接上代理后Charles会弹出相应的提示框，点击Allow即可</li>
+<li>点击工具栏上的开始录制按钮，即启动了Charles的抓包功能了。</li>
+</ol>
+
+<h2 id="step-4-启动应用开始抓包">Step 4：启动应用开始抓包</h2>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/10.png" alt="" /></p>
+
+<ol>
+<li>在手机上操作相应的App进行抓包。</li>
+<li>在Charles的主界面上就可看到相应的请求内容。</li>
+</ol>
+
+<h2 id="step-5-分析抓取的数据包">Step 5：分析抓取的数据包</h2>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/11.png" alt="" /></p>
+
+<ol>
+<li>Charles 主要提供两种查看封包的视图，分别名为 “Structure”和 “Sequence”：
+
+<ul>
+<li>Structure 视图将网络请求按访问的域名分类；</li>
+<li>Sequence 视图将网络请求按访问的时间排序。</li>
+</ul></li>
+<li>大家可以根据具体的需要在这两种视图之前来回切换。请求多了有些时候会看不过来，Charles提供了一个简单的Filter功能，可以输入关键字来快速筛选出URL 中带指定关键字的网络请求。</li>
+<li>对于某一个具体的网络请求，你可以查看其详细的请求内容和响应内容。如果请求内容是POST 的表单，Charles 会自动帮你将表单进行分项显示。如果响应内容是 JSON 格式的，那么 Charles可以自动帮你将JSON 内容格式化，方便你查看。如果响应内容是图片，那么 Charles可以显示出图片的预览。</li>
+</ol>
+
+<h1 id="六-https抓包操作步骤">六、Https抓包操作步骤</h1>
+
+<h2 id="step-1-了解一下https的基本原理">Step 1：了解一下https的基本原理；</h2>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/12.png" alt="" /></p>
+
+<p>HTTPS其实是有两部分组成：HTTP+ SSL / TLS，也就是在HTTP上又加了一层处理加密信息的模块。服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据。具体是如何进行加密，解密，验证的，且看图,下面这个图的解说
+详细说明，请参考：<a href="http://blog.csdn.net/clh604/article/details/22179907">http://blog.csdn.net/clh604/article/details/22179907</a></p>
+
+<h2 id="step-2-在手机端安装ssl证书">Step 2：在手机端安装SSL证书</h2>
+
+<ul>
+<li>将证书文件从Charles导出</li>
+<li>然后通过adb或者其他工具将其复制到手机的SD卡中。</li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/13.png" alt="" /></p>
+
+<p><span style="color:blue"><em>从Charles导出证书文件</em></span></p>
+
+<ul>
+<li>将证书文件导入Android手机</li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/14.png" alt="" /></p>
+
+<p><span style="color:blue"><em>在手机的设置界面找到【安全】&mdash;》【从内部存储设备或SD卡安装】&mdash;-》选择SD卡上的证书&mdash;》弹出设置证书名对话框，输入一个易记的名字，然后根据提示进行导入即可</em></span></p>
+
+<ul>
+<li>将证书文件导入iOS手机</li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/15.png" alt="" />
+<img src="https://ningyu1.github.io/site/img/charles/16.jpg" alt="" /></p>
+
+<ol>
+<li>在iPhone手机上打开Safari浏览器，然后在地址栏中输入www.charlesproxy.com/getssl。</li>
+<li>稍后会弹出安装描述文件提示，点击右上角的【安装】按钮进行证书安装即可。</li>
+<li>在iOS 10.3之后,需要手动打开开关以信任证书，设置-&gt;通用-&gt;关于本机-&gt;证书信任设置-&gt; 找到charles proxy custom root certificate然后信任该证书即可.</li>
+</ol>
+
+<h2 id="step-3-激活charles的ssl代理">Step 3：激活Charles的SSL代理</h2>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/17.jpg" alt="" /></p>
+
+<ol>
+<li>选择【Proxy】&mdash;&gt;【SSL Proxying Settings..】设置。</li>
+<li>在弹出来的对话框中沟选【Enable SSL Proxying】。</li>
+</ol>
+
+<h2 id="step-4-将指定的url请求开启ssl代理功能">Step 4：将指定的URL请求开启SSL代理功能</h2>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/18.jpg" alt="" /></p>
+
+<ol>
+<li>选择抓取的https链接，然后右键选择【Enable SSL Proxying】。</li>
+<li>如果不激活SSL代理，所以https请求都是乱码无法查看。</li>
+</ol>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/19.png" alt="" /></p>
+
+<p><span style="color:blue"><em>再次请求这个Https时，其请求内容已经一目了然了。</em></span></p>
+
+<h1 id="七-charles进阶-修改请求也响应的内容">七、Charles进阶&mdash;修改请求也响应的内容</h1>
+
+<h2 id="step-1-设置charless断点">Step 1：设置Charless断点</h2>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/20.jpg" alt="" /></p>
+
+<p><span style="color:blue"><em>选择【Breakpoint Settings…】&mdash;&gt;勾选【Enable Breakpoints】来激活断点功能</em></span></p>
+
+<h2 id="step-2-对指定的url开启断点功能">Step 2：对指定的URL开启断点功能</h2>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/21.png" alt="" /></p>
+
+<ol>
+<li>选择一个URL链接-à右键开启菜单&mdash;》选择【Breakpoints】即可开启此请求的断点。</li>
+<li>这样Charles会遇到此请求时会弹出中断对话框。</li>
+</ol>
+
+<h2 id="step-3-编辑请求与响应的内容">Step 3：编辑请求与响应的内容。</h2>
+
+<ul>
+<li>编辑请求内容，在中断对话框中，用户可以点击Edit Request来编辑请求的内容，编辑完成后然后点击【Execute】发出去这个请求给服务端</li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/22.png" alt="" /></p>
+
+<ul>
+<li>编辑服务器响应的内容，在【Edit Request】对话中点击【Execute】发出请求后，服务端返回来数据后，用户点击【Edit Response】可对响应内容进行编辑完成后然后点击【Execute】发出去这个数据给客户端。</li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/23.png" alt="" /></p>
+
+<h1 id="八-charles进阶-弱网模拟">八、Charles进阶&mdash;弱网模拟</h1>
+
+<ol>
+<li>菜单中选择【Proxy】&mdash;&gt;【Throttle Settings..】-à激活【Enable Throttling】。</li>
+<li>在Throttle Configuration设置弱网的参数。</li>
+<li>以下是各种网制式的速率参考文档：</li>
+</ol>
+
+<p><a href="https://link.jianshu.com/?t=http://wenku.baidu.com/link?url=buoPWkwmfW3B216gtRzIBbLZST3EEqxnAHNEabaVu2tXlGlkCMUl_E4tor_408BRG4eRSd4p5VQd_k4xiq14VXvJIrrfZq7l9CJhU8ht7Nq">移动网络制式与网速的参考文档</a></p>
+
+<p><img src="https://ningyu1.github.io/site/img/charles/24.jpg" alt="" /></p>
+
+<p><span style="color:blue"><em>弱网模拟设置</em></span></p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/84-charles/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/83-docker-pull-error/">Trouble Shooting —— Docker Pull Image : error pulling image configuration: unexpected EOF错误</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-05-29T12:09:00.000&#43;00:00' itemprop="datePublished">2018-05-29</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/docker">docker</a>
+
+<a href="https://ningyu1.github.io/site/tags/docker-pull">docker pull</a>
+
+<a href="https://ningyu1.github.io/site/tags/error-pulling-image-configuration-unexpected-eof">error pulling image configuration: unexpected EOF</a>
+
+
+</div>
+    </div>
+        
+
+<h1 id="问题现象">问题现象</h1>
+
+<p>执行docker pull命令报错：</p>
+
+<pre><code>docker@rancher-192:~$ docker pull 192.168.0.34:5000/imageName:latest
+latest: Pulling from imageName
+75a822cd7888: Pulling fs layer
+046e44ee6057: Download complete
+8c47541cb10b: Waiting
+e17edf9a1bd4: Waiting
+error pulling image configuration: unexpected EOF
+</code></pre>
+
+<p>查看日志错误如下：</p>
+
+<pre><code>docker@rancher-192:~$ journalctl -u docker.service
+-- Logs begin at Mon 2018-05-14 04:14:07 CST, end at Tue 2018-05-29 11:31:02 CST. --
+May 29 11:28:22 rancher-192.168.0.83 docker[993]: time=&quot;2018-05-29T11:28:22.601383366+08:00&quot; level=error msg=&quot;Not continuing with pull after error: error pulling image configuration: unexpected EOF&quot;
+May 29 11:30:36 rancher-192.168.0.83 docker[993]: time=&quot;2018-05-29T11:30:36.987345560+08:00&quot; level=error msg=&quot;Not continuing with pull after error: error pulling image configuration: unexpected EOF&quot;
+</code></pre>
+
+<p>随便找一台其他机器上进行pull操作，一样报错，但是pull其他镜像确实正常的，查看其他机器上日志如下：</p>
+
+<pre><code>docker@devserver1:~/messer/public$ journalctl -u docker.service
+-- Logs begin at Fri 2018-05-25 23:29:13 CST, end at Tue 2018-05-29 11:34:24 CST. --
+May 29 11:34:24 devserver1 docker[893]: time=&quot;2018-05-29T11:34:24.167053102+08:00&quot; level=error msg=&quot;Not continuing with pull after error: error pulling image configuration: unexpected EOF&quot;
+May 29 11:34:24 devserver1 docker[893]: time=&quot;2018-05-29T11:34:24.212480193+08:00&quot; level=info msg=&quot;Layer sha256:3fc67fe0621339e8f025cb429eecee5db64025673f3eafb02d12b512f07bbba5 cleaned up&quot;
+</code></pre>
+
+<p>这个问题让我们想到了之前我写过一篇文章<a href="https://ningyu1.github.io/site/post/79-docker-registry-pull-filesystem-layer/">《Trouble Shooting —— Docker Pull Image : Filesystem layer verification failed for digest sha256错误》</a>也是<code>docker pull</code>的时候报错：</p>
+
+<pre><code>8b7054...: Verifying Checksum
+Filesystem layer verification failed for digest sha256: 8b7054.....
+</code></pre>
+
+<p>通过使用之前文章的解决方案依然可以解决这个问题。</p>
+
+<p>这类问题可以使用绕过校验重新build后push刷新digest值后，恢复原始build参数再重新push恢复默认操作来进行解决。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/83-docker-pull-error/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/82-ssl-lets-encrypt/">如何免费的让你的网站变得更加安全 - HTTPS</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-05-28T15:57:00.000&#43;00:00' itemprop="datePublished">2018-05-28</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/https">https</a>
+
+<a href="https://ningyu1.github.io/site/tags/lets-encrypt">lets-encrypt</a>
+
+
+</div>
+    </div>
+        
+
+<p>在这个数据不安全的世界里，很有可能你早上买了个东西下午就会有类似的推销电话打过来骚扰你，这些数据信息从哪里来的呢？当然很多时候是人为的贩卖信息造成的，但是数据来源很大一部分是来自于互联网。因此站点使用https已经是最基本的防护，当我去访问一个站点它如果不是https的我可能都不想访问它更别提输入一些个人信息了。那怎么才能让我们提供的网站安全的服务你的用户呢？当然是使用证书来保护网站来往的数据。</p>
+
+<p>如果不差钱的话还是使用收费的证书去给你的网站开启https。当然国内也有很多免费的证书，去谷哥或者度娘能检索到一大把的免费证书信息，各大云服务商上面也有免费的证书可以申请使用，我下面就介绍一个免费的使用方式。</p>
+
+<p><a href="https://letsencrypt.org/">Let’s Encrypt</a></p>
+
+<p><code>Let's Encrypt</code>是一个于2015年三季度推出的<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E8%AE%A4%E8%AF%81%E6%9C%BA%E6%9E%84">数字证书认证机构</a>，旨在以自动化流程消除手动创建和安装证书的复杂流程，并推广使<a href="https://zh.wikipedia.org/wiki/%E8%90%AC%E7%B6%AD%E7%B6%B2">万维网</a>服务器的加密连接无所不在，为安全网站提供免费的<a href="https://zh.wikipedia.org/wiki/SSL">SSL</a>/<a href="https://zh.wikipedia.org/wiki/TLS">TLS</a>证书。</p>
+
+<p><code>Let's Encrypt由</code><a href="https://zh.wikipedia.org/w/index.php?title=%E4%BA%92%E8%81%94%E7%BD%91%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6%E5%B0%8F%E7%BB%84&amp;action=edit&amp;redlink=1">互联网安全研究小组</a>（缩写ISRG）提供服务。主要赞助商包括<a href="https://zh.wikipedia.org/wiki/%E7%94%B5%E5%AD%90%E5%89%8D%E5%93%A8%E5%9F%BA%E9%87%91%E4%BC%9A">电子前哨基金会</a>、<a href="https://zh.wikipedia.org/wiki/Mozilla%E5%9F%BA%E9%87%91%E4%BC%9A">Mozilla基金会</a>、<a href="https://zh.wikipedia.org/wiki/Akamai">Akamai</a>以及思科。2015年4月9日，ISRG与Linux基金会宣布合作。</p>
+
+<p>通过官网我们能看到赞助商还是蛮多的，<a href="https://letsencrypt.org/sponsors/">赞助商列表</a></p>
+
+<p>上述来自于维基百科，<a href="https://zh.wikipedia.org/wiki/Let%27s_Encrypt">查看原文</a></p>
+
+<p>从介绍中能了解到它是为了解决，<span style="color:blue"><strong><em>以自动化流程消除手动创建和安装证书的复杂流程</em></strong></span>，让证书使用更加简单。</p>
+
+<p>我们通过<code>Let's Encrypt</code>官网的<a href="https://letsencrypt.org/getting-started/">Getting Started</a>中可以查看具体的使用说明</p>
+
+<p>下面我们简单介绍一下使用步骤：</p>
+
+<h1 id="使用步骤">使用步骤</h1>
+
+<p>安装证书非常简单，只需要使用<a href="https://certbot.eff.org/">Certbot</a>，就可以完成。</p>
+
+<ul>
+<li>打开<a href="https://certbot.eff.org/">Certbot</a>，选择你的网站使用的应用服务器和操作系统。如下图：</li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/certbot/1.png" alt="" /></p>
+
+<ul>
+<li>选择完后会生成安装教程，不用想太多Step by step就好了，如下图：</li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/certbot/2.png" alt="" /></p>
+
+<h2 id="安装基础环境">安装基础环境</h2>
+
+<pre><code>$ sudo apt-get update
+$ sudo apt-get install software-properties-common
+$ sudo add-apt-repository ppa:certbot/certbot
+$ sudo apt-get update
+$ sudo apt-get install python-certbot-nginx 
+</code></pre>
+
+<h2 id="安装证书">安装证书</h2>
+
+<p>安装完之后直接运行<code>sudo certbot --nginx</code>即可</p>
+
+<p><span style="color:blue"><code>certbot</code> 会自动修改nginx配置文件(<code>nginx.conf</code>)并且列出你的虚拟站点让你选择是否开启HTTPS，当然你只用选择是否开启即可，选择完后它会自动下载证书并且修改nginx配置文件</span></p>
+
+<p>修改后的nginx.conf是什么样的？让我们看一下</p>
+
+<pre><code>listen 443 ssl; # managed by Certbot
+ssl_certificate /etc/letsencrypt/live/your.domain/fullchain.pem; # managed by Certbot
+ssl_certificate_key /etc/letsencrypt/live/your.domain/privkey.pem; # managed by Certbot
+include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+</code></pre>
+
+<p>还会很贴心的帮你生成http跳转到https的配置，如下：</p>
+
+<pre><code># Redirect non-https traffic to https
+if ($scheme != &quot;https&quot;) {
+  return 301 https://$host$request_uri;
+} # managed by Certbot
+</code></pre>
+
+<p>到这里就完成了证书安装，是不是很简单。当然我们之前也说过证书是有有效期的，那过期了之后我们如何操作？再根据上面的操作执行一次？</p>
+
+<p>当然不是了，我们可以使用自动检测的方式来进行自动的更新证书与nginx配置。具体看下面操作：</p>
+
+<h2 id="证书自动更新">证书自动更新</h2>
+
+<p>下面是官方对于证书续订的说明：</p>
+
+<pre><code>Automating renewal
+The Certbot packages on your system come with a cron job that will renew your certificates automatically before they expire. 
+Since Let's Encrypt certificates last for 90 days, it's highly advisable to take advantage of this feature. 
+You can test automatic renewal for your certificates by running this command:
+
+$ sudo certbot renew --dry-run
+</code></pre>
+
+<p>首先<code>Let’s Encrypt</code> 的证书只有90天的有效期，所以我们可以使用<code>crontab</code>来进行定时自动更新。</p>
+
+<p><code>crontab</code>如何使用这里就不多做介绍了，可以查看<a href="https://ningyu1.github.io/linux-command/c/crontab.html">crontab使用说明</a></p>
+
+<p>使用下面的表达式让其在每个月的一号强制更新证书，但是证书的强制更新不能太频繁，太频繁会提前进入证书授权限制。</p>
+
+<pre><code>0 0 1 * * /usr/bin/certbot renew --force-renewal
+10 0 1 * * /usr/sbin/service nginx restart
+</code></pre>
+
+<p><a href="https://certbot.eff.org/docs/using.html#renewal">renew的使用说明</a></p>
+
+<p>到这里证书安装以及自动更新就介绍完毕了，当然我们的站点中有很多静态资源或超链接的地方，在启用https后可能也要进行一轮的检查由http修改为https，主要就是那些hard code的地方需要找出来进行修改掉。</p>
+
+<p>为了保护你服务的用户信息安全，我强烈建议开启HTTPS，只要是个站点服务就应该开启HTTPS这才是负责任的的体现，Keep Real。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/82-ssl-lets-encrypt/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/81-mysql-utf8mb4/">Mysql数据库字符集utf8mb4使用问题</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-05-14T14:38:00.000&#43;00:00' itemprop="datePublished">2018-05-14</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/mysql">mysql</a>
+
+<a href="https://ningyu1.github.io/site/tags/utf8mb4">utf8mb4</a>
+
+
+</div>
+    </div>
+        
+
+<p>问题发生在<img src="https://ningyu1.github.io/site/img/mysql-utf8mf4/3.png" alt="" />这个字上，首先先让我们看这个字的字符信息</p>
+
+<h1 id="utf8字符集信息">utf8字符集信息</h1>
+
+<p><img src="https://ningyu1.github.io/site/img/mysql-utf8mf4/3.png" alt="" /> Utf-8 Character</p>
+
+<p><strong>Symbol information table</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Name:</th>
+<th align="center">Utf-8 Character</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">Unicode Subset:</td>
+<td align="center"><a href="https://www.utf8icons.com/subsets/cjk-extension-b">CJK Extension B</a></td>
+</tr>
+
+<tr>
+<td align="center">Unicode HEX:</td>
+<td align="center">U+20046</td>
+</tr>
+
+<tr>
+<td align="center">ASCII value:</td>
+<td align="center">131142</td>
+</tr>
+
+<tr>
+<td align="center">HTML:</td>
+<td align="center">&#131142;</td>
+</tr>
+
+<tr>
+<td align="center">CSS:</td>
+<td align="center">\20046</td>
+</tr>
+</tbody>
+</table>
+
+<p>它属于utf8的字符集，具体可参考：<a href="https://www.utf8icons.com/character/131142/utf-8-character">传送门</a></p>
+
+<p>既然属于utf8的字符集那为什么数据库保存这个字会出现非法字符的错误呢？错误如下：</p>
+
+<pre><code>### Cause: java.sql.SQLException: Incorrect string value: '\xF0\xA5\x8A\x8D' for column 'DESCRIPTION' at row 1
+; uncategorized SQLException for SQL []; SQL state [HY000]; error code [1366]; Incorrect string value: '\xF0\xA5\x8A\x8D' for column 'DESCRIPTION' at row 1; nested exception is java.sql.SQLException: Incorrect string value: '\xF0\xA5\x8A\x8D' for column 'DESCRIPTION' at row 1
+    at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:84)
+    at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+    at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+    at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+</code></pre>
+
+<p>让我们先了解一下utf8的编码，UTF-8编码是U+2528D，属于CJK Unified Ideographs Extension B（中日韩统一表意文字扩充B）字符集的字符，处于第二辅助平面（SIP，表意文字补充平面），不属于我们通常所见的基本多文种平面（BMP，即Unicode编码范围在0000-FFFF之内）的字符。保存一个字；相比之下，在BMP范围之内的字符只需要占用3 Bytes。仅仅就因为字符保存位数不同，就让程序开发出现了难题。</p>
+
+<p>来自wikipedia的Unicode字符平面映射</p>
+
+<p>目前的<a href="https://zh.wikipedia.org/wiki/Unicode">Unicode</a>字符分为17组编排，每组称为平面（Plane），而每平面拥有65536（即216）个代码点。然而目前只用了少数平面。</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">平面</th>
+<th align="center">始末字符值</th>
+<th align="center">中文名称</th>
+<th align="center">英文名称</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">0号平面</td>
+<td align="center">U+0000 - U+FFFF</td>
+<td align="center"><strong>基本多文种平面</strong></td>
+<td align="center">Basic Multilingual Plane，简称<strong>BMP</strong></td>
+</tr>
+
+<tr>
+<td align="center">1号平面</td>
+<td align="center">U+10000 - U+1FFFF</td>
+<td align="center"><strong>多文种补充平面</strong></td>
+<td align="center">Supplementary Multilingual Plane，简称<strong>SMP</strong></td>
+</tr>
+
+<tr>
+<td align="center">2号平面</td>
+<td align="center">U+20000 - U+2FFFF</td>
+<td align="center"><strong>表意文字补充平面</strong></td>
+<td align="center">Supplementary Ideographic Plane，简称<strong>SIP</strong></td>
+</tr>
+
+<tr>
+<td align="center">3号平面</td>
+<td align="center">U+30000 - U+3FFFF</td>
+<td align="center"><strong>表意文字第三平面</strong></td>
+<td align="center">（未正式使用[1]）   Tertiary Ideographic Plane，简称<strong>TIP</strong></td>
+</tr>
+
+<tr>
+<td align="center">4号平面 至 13号平面</td>
+<td align="center">U+40000 - U+DFFFF</td>
+<td align="center">（尚未使用）</td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">14号平面</td>
+<td align="center">U+E0000 - U+EFFFF</td>
+<td align="center"><strong>特别用途补充平面</strong></td>
+<td align="center">Supplementary Special-purpose Plane，简称<strong>SSP</strong></td>
+</tr>
+
+<tr>
+<td align="center">15号平面</td>
+<td align="center">U+F0000 - U+FFFFF</td>
+<td align="center">保留作为<strong>私人使用区（A区）</strong><a href="https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%B9%B3%E9%9D%A2%E6%98%A0%E5%B0%84#cite_note-PUA-2">[2]</a></td>
+<td align="center">Private Use Area-A，简称<strong>PUA-A</strong></td>
+</tr>
+
+<tr>
+<td align="center">16号平面</td>
+<td align="center">U+100000 - U+10FFFF</td>
+<td align="center">保留作为<strong>私人使用区（B区）</strong><a href="https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%B9%B3%E9%9D%A2%E6%98%A0%E5%B0%84#cite_note-PUA-2">[2]</a></td>
+<td align="center">Private Use Area-B，简称<strong>PUA-B</strong></td>
+</tr>
+</tbody>
+</table>
+
+<p>具体可查看：<a href="https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%B9%B3%E9%9D%A2%E6%98%A0%E5%B0%84">传送门</a></p>
+
+<p>究其原因就是这个字保存需要占4 Bytes的字节，mysql在<span style="color:red"><strong>MySQL 5.6+</strong></span>版本之后支持4Bytes字节（utf8mb4）的存储，首先先看一下mysql编码如何设置？</p>
+
+<h1 id="数据库字符集设置">数据库字符集设置</h1>
+
+<p>建库语句中需要指定字符集编码为：utf8mb4</p>
+
+<p>建库语句中需要指定字符集校对规则为：utf8mb4_general_ci</p>
+
+<p>建表语句中需要指定字符集编码为：utf8mb4</p>
+
+<p>表字段需要指定字符集编码为：utf8mb4</p>
+
+<p>表字段collation需要指定字符集校验规则：utf8mb4_general_ci</p>
+
+<p>如下图：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/mysql-utf8mf4/1.png" alt="" /></p>
+
+<p><img src="https://ningyu1.github.io/site/img/mysql-utf8mf4/2.png" alt="" /></p>
+
+<pre><code>CREATE TABLE `t_application` (
+   `ID` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+   `APP_ID` bigint(20) NOT NULL COMMENT '应用编号',
+   `NAME` varchar(100) NOT NULL COMMENT '应用名称',
+   `DESCRIPTION` varchar(200) DEFAULT NULL COMMENT '应用描述',
+   PRIMARY KEY (`ID`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC
+</code></pre>
+
+<h1 id="utf8mb4不生效问题分析">utf8mb4不生效问题分析</h1>
+
+<p>完成上面的字符集设置之后我们使用程序保存<img src="https://ningyu1.github.io/site/img/mysql-utf8mf4/3.png" alt="" />字符来进行测试，还是提示非法的字符集错误，那这又是为什么呢？</p>
+
+<p>让我们来看回数据库charset设置，<code>SHOW VARIABLES LIKE 'CHARACTER%'</code>，关注character_set_server这个字符设置</p>
+
+<p><img src="https://ningyu1.github.io/site/img/mysql-utf8mf4/4.png" alt="" /></p>
+
+<p>character_set_server在默认情况下为latin1</p>
+
+<pre><code>/*
+character_set_server: 服务器安装时指定的默认字符集设定。
+character_set_database: 数据库服务器中某个库使用的字符集设定，如果建库时没有指明，将使用服务器安装时指定的字符集设置。
+  
+建表时候，字段字符集的选取方式如下：
+ 
+1. * if 字段指定的字符集
+2. * else if 表指定的字符集
+3. * else if @@character_set_database
+4. * else @@character_set_server (如果没有设定，这个值为latin1)
+  
+*/
+</code></pre>
+
+<p>按照上面的说法，如果character_set_server和character_set_database变量的值不同，则新建数据库的字符集以character_set_server为准，而不是按照character_set_database。</p>
+
+<p><span style="color:red"><strong>我的理解是character_set_database指定了utf8mb4后目标库应该按照设置的字符集格式走才对，只有没有设置的库才会走默认的，但是现在测试下来，character_set_server必须修改为utf8mb4,否则保存这种字符依然提示非法字符集，不太清楚具体什么原因。</strong></span></p>
+
+<p>如果数据库按照上面设置了以后还是无法保存的话，应该就是mysql驱动的问题和数据库连接串字符集的问题。下面让我们看一下从mysql server到mysql驱动到数据源再到应用所有的utf8mb4设置。</p>
+
+<h1 id="完整的正确设置">完整的正确设置</h1>
+
+<h2 id="mysql服务端配置">Mysql服务端配置</h2>
+
+<p>建库语句中需要指定字符集编码为：utf8mb4</p>
+
+<p>建库语句中需要指定字符集校对规则为：utf8mb4_general_ci</p>
+
+<p>建表语句中需要指定字符集编码为：utf8mb4</p>
+
+<p>表字段需要指定字符集编码为：utf8mb4</p>
+
+<p>表字段collation需要指定字符集校验规则：utf8mb4_general_ci</p>
+
+<p>mysql ini配置文件指定character_set_server</p>
+
+<pre><code>[client]
+default-character-set=utf8mb4
+[mysql]
+default-character-set=utf8mb4
+[mysqld]
+character-set-server=utf8mb4
+collation-server=utf8mb4_general_ci
+</code></pre>
+
+<p><span style="color:red"><strong>ps. character_set_server设置成utf8或使用默认latin1，在直接使用sql插入特殊字符和emoji表情时数据库显示？？？？？乱码，使用程序（mybatis）插入特殊字符和emoji表情时报错：java.sql.SQLException: Incorrect string value: &lsquo;\xF0\xA5\x8A\x8D&rsquo; for column &lsquo;某某列&rsquo; at row 1</strong></span></p>
+
+<h2 id="java连接mysql驱动版本">java连接mysql驱动版本</h2>
+
+<p>mysql-connector-java版本在5.1.13+才支持utf8mb4，因此在选用连接驱动时应注意这个问题，我们使用的驱动是mysql-connector-java-5.1.41。</p>
+
+<h2 id="数据源配置">数据源配置</h2>
+
+<p>我们使用的druid数据源配置上需要加上<code>connectionInitSqls</code>属性配置，具体如下：</p>
+
+<pre><code>&lt;bean id=&quot;dataSource&quot; class=&quot;com.alibaba.druid.pool.DruidDataSource&quot;
+        destroy-method=&quot;close&quot;&gt;
+    ....此处省略其他属性.....
+    &lt;property name=&quot;connectionInitSqls&quot; value=&quot;set names utf8mb4;&quot; /&gt;
+&lt;/bean&gt;
+</code></pre>
+
+<p><span style="color:red"><strong>ps.但是我实际测试下来，这个参数不加也没有什么问题，可以正常保存这种特殊字符和emoji表情，官方建议配置。</strong></span></p>
+
+<h2 id="数据库连接串配置">数据库连接串配置</h2>
+
+<p>我们的配置如下：</p>
+
+<pre><code>jdbc.url=jdbc:mysql://ip:port/databaseName?useUnicode=true&amp;characterEncoding=UTF-8&amp;noAccessToProcedureBodies=true&amp;autoReconnect=true
+</code></pre>
+
+<p>建议去掉useUnicode和characterEncoding的配置，使用如下配置：</p>
+
+<pre><code>jdbc.url=jdbc:mysql://ip:port/databaseName?noAccessToProcedureBodies=true&amp;autoReconnect=true
+</code></pre>
+
+<p><span style="color:red"><strong>ps.但是我实际测试下来，连接串上增加useUnicode=true&amp;characterEncoding=utf8也没有什么问题，可以正常保存这种特殊字符和emoji表情。</strong></span></p>
+
+<h1 id="总结">总结</h1>
+
+<p><span><strong>最主要的是mysql服务端的character_set_server需要和character_set_database保持一致修改为utf8mb4，因此我们先不考虑数据库连接串和druid数据源配置修改，但是mysql-connector-java版本必须使用5.1.13+</strong></span></p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/81-mysql-utf8mb4/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+
+
+  <nav id="pagenavi">
+    
+        <a href="https://ningyu1.github.io/site/page/2/" class="prev">Prev</a>
+    
+    
+        <a href="https://ningyu1.github.io/site/page/4/" class="next">Next</a>
+    
+    <div class="center"><a href="https://ningyu1.github.io/site/archives/index.html">Blog Archives</a></div>
+  </nav>
+
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2024
+    
+    凝雨-Yun
+    . Powered by <a href="http://gohugo.io" target="_blank">Hugo</a> |
+    Theme is <a href="https://github.com/wd/hugo-fabric">hugo-fabric</a>
+</div>
+
+    </footer>
+    <script src="https://ningyu1.github.io/site/js/fabric.js"></script>
+
+
+</div>
+</div>
+<script src="https://ningyu1.github.io/site/js/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+ 
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery);
+ 
+</script>
+</body>
+</html>

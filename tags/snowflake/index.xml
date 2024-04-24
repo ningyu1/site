@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Snowflake on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/snowflake/</link>
+    <description>Recent content in Snowflake on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Dec 2018 11:51:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/snowflake/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>雪花算法-记录</title>
+      <link>https://ningyu1.github.io/site/post/105-snowflake/</link>
+      <pubDate>Fri, 07 Dec 2018 11:51:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/105-snowflake/</guid>
+      <description>最近看到了一篇分析雪花算法的文章还不错，然后整理了一下分享出来。
+先来科普一下SnowFlake算法
+算法原理 Twitter Snowflake 生成的 unique ID 的组成 (由高位到低位):
+41 bits: Timestamp (毫秒级) 10 bits: 节点 ID (datacenter ID 5 bits + worker ID 5 bits) 12 bits: sequence number 一共 63 bits (最高位是 0).
+| 0(最高位预留) | 时间戳(41位) | 机器ID(10位) | 自增序列(12位) | unique ID 生成过程:
+ 10 bits 的机器号, 在 ID 分配 Worker 启动的时候，从一个 Zookeeper 集群获取 (保证所有的 Worker 不会有重复的机器号)； 41 bits 的 Timestamp: 每次要生成一个新 ID 的时候，都会获取一下当前的 Timestamp, 然后分两种情况生成 sequence number； 如果当前的 Timestamp 和前一个已生成 ID 的 Timestamp 相同 (在同一毫秒中)，就用前一个 ID 的 sequence number + 1 作为新的 sequence number (12 bits); 如果本毫秒内的所有 ID 用完，等到下一毫秒继续 (这个等待过程中, 不能分配出新的 ID)； 如果当前的 Timestamp 比前一个 ID 的 Timestamp 大, 随机生成一个初始 sequence number (12bits) 作为本毫秒内的第一个 sequence number；  41-bit的时间可以表示（1L&amp;lt;&amp;lt;41）/(1000L x 3600 x 24 x 365)=69年的时间，10-bit机器可以分别表示1024台机器。如果我们对IDC划分有需求，还可以将10-bit分5-bit给IDC，分5-bit给工作机器。这样就可以表示32个IDC，每个IDC下可以有32台机器，可以根据自身需求定义。12个自增序列号可以表示2^12个ID，理论上snowflake方案的QPS约为409.</description>
+    </item>
+    
+  </channel>
+</rss>

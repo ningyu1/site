@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cpu Top on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/cpu-top/</link>
+    <description>Recent content in Cpu Top on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Jan 2018 14:36:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/cpu-top/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>生产环境如何快速跟踪、分析、定位问题-Java</title>
+      <link>https://ningyu1.github.io/site/post/55-java-jvm-analysis/</link>
+      <pubDate>Tue, 23 Jan 2018 14:36:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/55-java-jvm-analysis/</guid>
+      <description>我相信做技术的都会遇到过这样的问题，生产环境服务遇到宕机的情况下如何去分析问题？比如说JVM内存爆掉、CPU持续高位运行、线程被夯住或线程deadlocks，面对这样的问题，如何在生产环境第一时间跟踪分析与定位问题很关键。下来让我们看看通过如下步骤在第一时间分析问题。
+CPU占用较高场景 收集当前CPU占用较高的线程信息，执行如下命令：
+top -H -p PID -b -d 1 -n 1 &amp;gt; top.log 或 top -H -p PID  结果如下：
+上图显示的都是某一个进程内的线程信息，找到cpu消耗最高的线程id，再配合jstack来分析耗cpu的代码位置，那如何分析呢？
+先执行jstack获取线程信息
+jstack -l PID &amp;gt; jstackl.log  将PID（29978）转成16进制：0x751a，16进制转换工具很多可以在线随便搜索一个或者基本功好的自己计算。
+打开jstackl.log，查找nid=0x751a的信息，这样就定位到了具体的代码位置，这里由于是安全原因我就不贴图了。
+通过上面的步骤就可以轻松的定位那个线程导致cpu过高，当然也可以通过其他方式来定位，下面介绍一个快捷的方式
+#线程cpu占用 #!/bin/bash [ $# -ne 1 ] &amp;amp;&amp;amp; exit 1 jstack $1 &amp;gt;/tmp/jstack.log for cpu_tid in `ps -mp $1 -o THREAD,tid,time|sort -k2nr| sed -n &#39;2,15p&#39; |awk &#39;{print$2&amp;quot;_&amp;quot;$(NF-1)}&#39;`;do cpu=`echo $cpu_tid | cut -d_ -f1` tid=`echo $cpu_tid | cut -d_ -f2` xtid=`printf &amp;quot;%x\n&amp;quot; $tid` echo -e &amp;quot;\033[31m========================$xtid $cpu%\033[0m&amp;quot; cat /tmp/jstack.</description>
+    </item>
+    
+  </channel>
+</rss>

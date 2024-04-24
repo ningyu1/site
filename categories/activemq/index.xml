@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Activemq on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/categories/activemq/</link>
+    <description>Recent content in Activemq on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Oct 2018 18:40:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/categories/activemq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Trouble Shooting —— jms:listener-container配置queue的concurrency数量与预期不一致</title>
+      <link>https://ningyu1.github.io/site/post/103-activemq-listener-concurrency/</link>
+      <pubDate>Tue, 30 Oct 2018 18:40:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/103-activemq-listener-concurrency/</guid>
+      <description>问题描述  现象一 现象二  测试消费者 测试后结论  问题描述 测试程序时发现queue的consumer数量配置与预期不一致，具体如何不一致看下面的测试。
+现象一 当我们使用下面配置，listener使用同一个task-executor并且监听三个queue时，consumer使用20-20，只会有一个queue能达到20个consumer，其余两个queue的consumer=0
+&amp;lt;bean id=&amp;quot;queueMessageExecutor1&amp;quot; class=&amp;quot;org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;corePoolSize&amp;quot; value=&amp;quot;20&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;maxPoolSize&amp;quot; value=&amp;quot;20&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;daemon&amp;quot; value=&amp;quot;true&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;keepAliveSeconds&amp;quot; value=&amp;quot;120&amp;quot; /&amp;gt; &amp;lt;/bean&amp;gt; &amp;lt;jms:listener-container task-executor=&amp;quot;queueMessageExecutor1&amp;quot; destination-type=&amp;quot;queue&amp;quot; container-type=&amp;quot;default&amp;quot; connection-factory=&amp;quot;pooledConnectionFactory&amp;quot; concurrency=&amp;quot;20-20&amp;quot; acknowledge=&amp;quot;auto&amp;quot; receive-timeout=&amp;quot;60000&amp;quot;&amp;gt; &amp;lt;jms:listener destination=&amp;quot;QUEUE.EMAIL&amp;quot; ref=&amp;quot;mailMessageListener&amp;quot; /&amp;gt; &amp;lt;jms:listener destination=&amp;quot;QUEUE.SMS&amp;quot; ref=&amp;quot;smsMessageListener&amp;quot; /&amp;gt; &amp;lt;jms:listener destination=&amp;quot;QUEUE.WECHAT&amp;quot; ref=&amp;quot;wechatMessageListener&amp;quot; /&amp;gt; &amp;lt;/jms:listener-container&amp;gt;  效果如下图：
+现象二 当我们去掉listener-container的receive-timeout=&amp;quot;60000&amp;quot;的配置，三个queue的consumer都等于20。
+&amp;lt;bean id=&amp;quot;queueMessageExecutor1&amp;quot; class=&amp;quot;org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;corePoolSize&amp;quot; value=&amp;quot;20&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;maxPoolSize&amp;quot; value=&amp;quot;20&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;daemon&amp;quot; value=&amp;quot;true&amp;quot; /&amp;gt; &amp;lt;property name=&amp;quot;keepAliveSeconds&amp;quot; value=&amp;quot;120&amp;quot; /&amp;gt; &amp;lt;/bean&amp;gt; &amp;lt;jms:listener-container task-executor=&amp;quot;queueMessageExecutor1&amp;quot; destination-type=&amp;quot;queue&amp;quot; container-type=&amp;quot;default&amp;quot; connection-factory=&amp;quot;pooledConnectionFactory&amp;quot; concurrency=&amp;quot;20-20&amp;quot; acknowledge=&amp;quot;auto&amp;quot;&amp;gt; &amp;lt;jms:listener destination=&amp;quot;QUEUE.</description>
+    </item>
+    
+    <item>
+      <title>ActiveMQ使用经验分享，配置详解</title>
+      <link>https://ningyu1.github.io/site/post/06-activemq-settings/</link>
+      <pubDate>Thu, 11 May 2017 12:03:10 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/06-activemq-settings/</guid>
+      <description>根据我们的使用场景抽取出来了一系列activemq公共配置参数mq.properties
+mq.properties activemq.connnect.brokerurl=failover:(tcp://192.168.0.66:61616) activemq.connnect.useAsyncSend=true # object对象接受报名单,true不受限制,false需要设置白名单 activemq.connnect.trustAllPackages=true # 最大连接数 activemq.pool.maxConnections=20 # 空闲失效时间,毫秒 activemq.pool.idleTimeout=60000 # 初始数量 activemq.listener.pool.corePoolSize=5 activemq.listener.pool.maxPoolSize=10 # 启动守护进程 activemq.listener.pool.daemon=true # 单位秒 activemq.listener.pool.keepAliveSeconds=120 # 由于jms:listener-container不支持propertyPlaceholder替换，因此这些参数值写在spring-mq.xml文件中，参考值 # # 接收消息时的超时时间,单位毫秒 activemq.consumer.receiveTimeout=60000 # 监听目标类型 activemq.listener.destinationtype=queue # 监听确认消息方式 activemq.listener.acknowledge=auto # 监听数量 activemq.listener.concurrency=2-10  spring-mq.xml &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot; xmlns:context=&amp;quot;http://www.springframework.org/schema/context&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xmlns:amq=&amp;quot;http://activemq.apache.org/schema/core&amp;quot; xmlns:jms=&amp;quot;http://www.springframework.org/schema/jms&amp;quot; xsi:schemaLocation=&amp;quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-4.0.xsd http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core-5.8.0.xsd&amp;quot;&amp;gt; &amp;lt;!-- 配置activeMQ连接 tcp://192.168.0.66:61616 --&amp;gt; &amp;lt;bean id=&amp;quot;targetConnectionFactory&amp;quot; class=&amp;quot;org.apache.activemq.ActiveMQConnectionFactory&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;brokerURL&amp;quot; value=&amp;quot;${activemq.connnect.brokerurl}&amp;quot; /&amp;gt; &amp;lt;!-- useAsyncSend 异步发送 --&amp;gt; &amp;lt;property name=&amp;quot;useAsyncSend&amp;quot; value=&amp;quot;${activemq.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cant Start Redis Server. Check Logs for Details. on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/cant-start-redis-server.-check-logs-for-details./</link>
+    <description>Recent content in Cant Start Redis Server. Check Logs for Details. on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Jul 2018 18:11:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/cant-start-redis-server.-check-logs-for-details./index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Embedded RedisServer写UT</title>
+      <link>https://ningyu1.github.io/site/post/94-embedded-redisserver/</link>
+      <pubDate>Tue, 17 Jul 2018 18:11:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/94-embedded-redisserver/</guid>
+      <description>当我们在进行开发的时候经常会用到Redis，但是在写junit的时候往往引用了Redis造成test case很难写，我们需要mock一个localhost的Redis server来进行测试，因此我们可以借助embedded redisServer来实现，下面我们就看一下具体使用的示例
+代码示例 @Before public void setUp() throws IOException { initMocks(this); final Random random = new SecureRandom(); redisServer = new RedisServer(); redisServer.start(); pool = new JedisPool(); repository = new RedisKeyRepository(pool); manager = new RedisKeyManager(random, pool, repository); manager.setMaxActiveKeys(3); clearData(); manager.initialiseNewRepository(); resource = new ProtectedResource(repository, random); }  这是一个非常简单的使用示例，我们还可以更改配置以及增加密码
+@Before public void setUpRedis() throws IOException, SchedulerConfigException { port = getPort(); logger.debug(&amp;quot;Attempting to start embedded Redis server on port &amp;quot; + port); redisServer = RedisServer.</description>
+    </item>
+    
+  </channel>
+</rss>

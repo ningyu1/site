@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Invalid Cookie. Required Remote Address Does Not Match Ip on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/invalid-cookie.-required-remote-address-does-not-match-ip/</link>
+    <description>Recent content in Invalid Cookie. Required Remote Address Does Not Match Ip on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Mar 2018 12:02:53 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/invalid-cookie.-required-remote-address-does-not-match-ip/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Trouble Shooting —— CAS Server集群环境下TGC验证问题排查，需要开启会话保持</title>
+      <link>https://ningyu1.github.io/site/post/70-cas-server-pit/</link>
+      <pubDate>Fri, 16 Mar 2018 12:02:53 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/70-cas-server-pit/</guid>
+      <description>问题现象 CAS部署结构：
+两台cas server通过nginx做负载均衡，两个cas server的ticket registry配置的jpa方式，指向同一个库。两个cas server的tomcat做了TomcatRedisSessionManager，使用redis集中存储session。
+目前的现象：
+页面上请求cas登录地址，登录过后频繁刷新登录页面，有时返回已登录，有时返回未登录，当返回未登录时去后台查看日志发现有如下错误，验证cookie发现请求的源IP与第一次访问的源IP不一致。这个很明显是cas集群环境下的问题。
+2018-03-16 10:02:44,418 DEBUG [org.apereo.cas.web.support.TGCCookieRetrievingCookieGenerator] - &amp;lt;Invalid cookie. Required remote address does not match ${ip}&amp;gt; java.lang.IllegalStateException: Invalid cookie. Required remote address does not match ${ip} at org.apereo.cas.web.support.DefaultCasCookieValueManager.obtainCookieValue(DefaultCasCookieValueManager.java:84) ~[cas-server-support-cookie-5.0.4.jar:5.0.4] at org.apereo.cas.web.support.CookieRetrievingCookieGenerator.retrieveCookieValue(CookieRetrievingCookieGenerator.java:93) ~[cas-server-support-cookie-5.0.4.jar:5.0.4] at org.apereo.cas.web.support.CookieRetrievingCookieGenerator$$FastClassBySpringCGLIB$$25dba342.invoke(&amp;lt;generated&amp;gt;) ~[cas-server-support-cookie-5.0.4.jar:5.0.4] at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:720) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:133) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:121) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:655) ~[spring-aop-4.3.4.RELEASE.jar:4.3.4.RELEASE] at org.apereo.cas.web.support.CookieRetrievingCookieGenerator$$EnhancerBySpringCGLIB$$10d36968.retrieveCookieValue(&amp;lt;generated&amp;gt;) ~[cas-server-support-cookie-5.0.4.jar:5.0.4] at org.apereo.cas.logging.web.ThreadContextMDCServletFilter.doFilter(ThreadContextMDCServletFilter.java:83) ~[cas-server-core-logging-5.0.4.jar:5.0.4] at org.</description>
+    </item>
+    
+  </channel>
+</rss>

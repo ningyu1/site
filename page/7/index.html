@@ -1,0 +1,6273 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.51" />
+	<meta charset="utf-8">
+    
+    
+    <title>凝雨 - Yun</title>
+    <meta name="author" content="凝雨-Yun">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://ningyu1.github.io/site/index.xml" rel="alternate" title="凝雨 - Yun" type="application/atom+xml">
+    <link href="https://ningyu1.github.io/site/images/fav.ico" rel="shortcut icon">
+    <style>
+    @charset "UTF-8";
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("https://ningyu1.github.io/site/font/fontawesome-webfont.eot");
+  src: url("https://ningyu1.github.io/site/font/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.woff") format("woff"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.ttf") format("truetype"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.svgz#FontAwesomeRegular") format("svg"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face{
+    font-family: 'MyHermit';
+    src: url('https://ningyu1.github.io/site/font/hermit-medium-webfont.eot');
+    src: url('https://ningyu1.github.io/site/font/hermit-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://ningyu1.github.io/site/font/hermit-medium-webfont.woff') format('woff'),
+         url('https://ningyu1.github.io/site/font/hermit-medium-webfont.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'PingFang SC', serif;
+  font-weight: 300;
+  font-size: 16px;
+  /*background: url("https://ningyu1.github.io/site/images/retina_dust.png");*/
+  color: #444;
+  colori: #666666; }
+  @media screen and (max-width: 1040px) {
+    body {
+      margin: 0 20px; } }
+  @media screen and (max-width: 600px) {
+    body {
+      font-size: 13px; } }
+
+.bBackground {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: -moz-radial-gradient(50% 50%, farthest-side, white, #efefef);
+  background: -webkit-gradient(radial, 50% 50%, 250, 50% 50%, 750, from(white), to(#bbbbbb));
+  z-index: -100; }
+
+h1 {
+  font-size: 1.8em; }
+
+h2 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.3em; }
+
+a {
+  text-decoration: none;
+  outline-width: 0;
+  color: #258fb8; }
+
+.alignleft {
+  float: left; }
+
+.alignright {
+  float: right; }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.inner {
+  width: 900px;
+  margin: 0 auto; }
+  @media screen and (max-width: 1040px) {
+    .inner {
+      width: 100%; } }
+
+#w2btoTop {
+  display: none;
+  text-decoration: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  overflow: hidden;
+  width: 51px;
+  height: 51px;
+  border: none;
+  text-indent: -999px;
+  background: url(https://ningyu1.github.io/site/images/totop.png) no-repeat left top; }
+
+#w2btoTopHover {
+  background: url(https://ningyu1.github.io/site/images/totop.png) no-repeat left -51px;
+  width: 51px;
+  height: 51px;
+  display: block;
+  overflow: hidden;
+  float: left;
+  opacity: 0;
+  -moz-opacity: 0;
+  filter: alpha(opacity=0); }
+
+#w2btoTop:active, #w2btoTop:focus {
+  outline: none; }
+
+.basic-alignment.left, article .entry-content img.left, article .entry-content video.left {
+  float: left;
+  margin-right: 1.5em; }
+.basic-alignment.right, article .entry-content img.right, article .entry-content video.right {
+  float: right;
+  margin-left: 1.5em; }
+.basic-alignment.center, article .entry-content img.center, article .entry-content video.center {
+  display: block;
+  margin: 0 auto 1.5em; }
+.basic-alignment.left, article .entry-content img.left, article .entry-content video.left, .basic-alignment.right, article .entry-content img.right, article .entry-content video.right {
+  margin-bottom: .8em; }
+
+/* changes tooltip, to use, make elements 'class' as 'tooltip' and 'title' would be shown in tooltip */
+.tooltip {
+  display: inline;
+  position: relative; }
+
+.tooltip:hover {
+  text-decoration: none; }
+
+.tooltip:hover:after {
+  background: #111;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  bottom: 18px;
+  color: #fff;
+  content: attr(title);
+  display: block;
+  left: 50%;
+  padding: 5px 15px;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 98; }
+
+.tooltip:hover:before {
+  border: solid;
+  border-color: #111 transparent;
+  border-width: 6px 6px 0 6px;
+  bottom: 12px;
+  content: "";
+  display: block;
+  left: 75%;
+  position: absolute;
+  z-index: 99; }
+
+.pullquote-right:before,
+.pullquote-left:before {
+  /* Reset metrics. */
+  padding: 0;
+  border: none;
+  /* Content */
+  content: attr(data-pullquote);
+  /* Pull out to the right, modular scale based margins. */
+  float: right;
+  width: 45%;
+  margin: .5em 0 1em 1.5em;
+  /* Baseline correction */
+  position: relative;
+  top: 7px;
+  font-size: 1.4em;
+  line-height: 1.45em; }
+
+.pullquote-left:before {
+  /* Make left pullquotes align properly. */
+  float: left;
+  margin: .5em 1.5em 1em 0; }
+
+#header {
+  padding: 20px 0 20px 0; }
+  @media screen and (max-width: 1040px) {
+    #header {
+      height: auto;
+      position: relative;
+      padding-bottom: 10px; } }
+  #header a {
+    color: #666666;
+    -webkit-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(color 0.3s, false, false, false, false, false, false, false, false, false); }
+    #header a:hover {
+      color: #258fb8; }
+  #header h1 {
+    font-family: 'Slackey', cursive;
+    font-weight: 300;
+    font-size: 52px; }
+    @media screen and (max-width: 1040px) {
+      #header h1 {
+        float: none; } }
+
+#headerbg {
+  text-align: center;
+  background: #444;
+  padding: 10px 10px;
+  display: table;
+  color: #fff;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-weight: bold;
+  -webkit-mask-image: -webkit-linear-gradient(black, rgba(0, 0, 0, 0.9));
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .2s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: .2s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: 1s;
+  -ms-animation-delay: .2s;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  -o-animation-duration: 1s;
+  -o-animation-delay: .2s;
+  -o-animation-timing-function: ease;
+  -o-animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: .2s;
+  animation-timing-function: ease;
+  animation-fill-mode: both; }
+
+#load {
+  display: none;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  background: url("https://ningyu1.github.io/site/images/loading.gif");
+  width: 50px;
+  height: 50px;
+  text-indent: -9999em; }
+
+#social-links li {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  margin-top: 20px;
+  margin-right: 9px;
+  background-color: #ddd;
+  text-align: center;
+  line-height: 35px;
+  -webkit-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false);
+  -moz-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false false);
+  -o-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false false);
+  transition: compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false); }
+  #social-links li:hover {
+    background-color: #555; }
+#social-links a {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  #social-links a svg {
+    position: absolute; }
+  #social-links a .github {
+    top: 3px;
+    left: 2px; }
+  #social-links a .sina-weibo {
+    top: 8px;
+    left: 6px; }
+  #social-links a .tencent-weibo {
+    top: 6px;
+    left: 4px; }
+  #social-links a .twitter {
+    top: 2px;
+    left: 3px; }
+
+a.facebook {
+  background: url("https://ningyu1.github.io/site/images/social/Facebook.png") center no-repeat; }
+
+a.facebook:hover {
+  background: url("https://ningyu1.github.io/site/images/social/FacebookH.png") center no-repeat; }
+
+a.github {
+  background: url("https://ningyu1.github.io/site/images/social/Github.png") center no-repeat; }
+
+a.github:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GithubH.png") center no-repeat; }
+
+a.gitee {
+  background: url("https://ningyu1.github.io/site/images/social/Gitee.png") center no-repeat; }
+
+a.gitee:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GiteeH.png") center no-repeat; }
+
+a.gitlab {
+  background: url("https://ningyu1.github.io/site/images/social/Gitlab.png") center no-repeat; }
+
+a.gitlab:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GitlabH.png") center no-repeat; }
+
+a.email {
+  background: url("https://ningyu1.github.io/site/images/social/Email.png") center no-repeat; }
+
+a.email:hover {
+  background: url("https://ningyu1.github.io/site/images/social/EmailH.png") center no-repeat; }
+
+a.rss {
+  background: url("https://ningyu1.github.io/site/images/social/Rss.png") center no-repeat; }
+
+a.rss:hover {
+  background: url("https://ningyu1.github.io/site/images/social/RssH.png") center no-repeat; }
+
+a.twitter {
+  background: url("https://ningyu1.github.io/site/images/social/Twitter.png") center no-repeat; }
+
+a.twitter:hover {
+  background: url("https://ningyu1.github.io/site/images/social/TwitterH.png") center no-repeat; }
+
+a.google {
+  background: url("https://ningyu1.github.io/site/images/social/Picasa.png") center no-repeat; }
+
+a.google:hover {
+  background: url("https://ningyu1.github.io/site/images/social/PicasaH.png") center no-repeat; }
+
+a.skype {
+  background: url("https://ningyu1.github.io/site/images/social/Skype.png") center no-repeat; }
+
+a.skype:hover {
+  background: url("https://ningyu1.github.io/site/images/social/SkypeH.png") center no-repeat; }
+
+a.linkedin {
+  background: url("https://ningyu1.github.io/site/images/social/LinkedIn.png") center no-repeat; }
+
+a.linkedin:hover {
+  background: url("https://ningyu1.github.io/site/images/social/LinkedInH.png") center no-repeat; }
+
+a.youtube {
+  background: url("https://ningyu1.github.io/site/images/social/Youtube.png") center no-repeat; }
+
+a.youtube:hover {
+  background: url("https://ningyu1.github.io/site/images/social/YoutubeH.png") center no-repeat; }
+
+a.lastfm {
+  background: url("https://ningyu1.github.io/site/images/social/LastFM.png") center no-repeat; }
+
+a.lastfm:hover {
+  background: url("https://ningyu1.github.io/site/images/social/LastFMH.png") center no-repeat; }
+
+/* search bar */
+#search {
+  display: inline; }
+
+#search input[type="text"] {
+  background: url("https://ningyu1.github.io/site/images/search-dark.png") no-repeat 10px 6px #444444;
+  border: 0 none;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #777;
+  width: 110px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s; }
+
+#search input[type="text"]:focus {
+  width: 160px; }
+
+#dark {
+  display: inline-block;
+  height: 70px; }
+
+#dark #search input[type="text"] {
+  background: url("https://ningyu1.github.io/site/images/search-dark.png") no-repeat 10px 6px #444444;
+  border: 0 none;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #ddd;
+  width: 110px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s; }
+
+#dark #search input[type="text"]:focus {
+  width: 160px;
+  outline: 0; }
+
+/* nav */
+#nav {
+  text-align: center;
+  position: relative;
+  margin: 10px auto; }
+
+ul#nav *{
+	box-sizing:content-box
+}
+
+ul#nav li {
+  display: inline-block; }
+
+ul#nav li {
+  list-style-type: none;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-right: 1px; }
+
+ul#nav li a {
+  display: inline-block;
+  width: 110px;
+  height: 40px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #222;
+  font-weight: normal;
+  text-decoration: none;
+  font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-style: normal;
+  text-shadow: 1px 1px 10px #222;
+  overflow: hidden; }
+
+ul#nav li a:hover {
+  color: #fff;
+  font-style: normal;
+  font-weight: normal;
+  background-image: url("https://ningyu1.github.io/site/images/hover.png");
+  background-repeat: no-repeat;
+  background-position: center top; }
+
+ul#nav li a:active {
+  position: relative;
+  top: 2px; }
+
+ul#nav li#active a {
+  color: #FFF;
+  background-image: url("https://ningyu1.github.io/site/images/active.png");
+  background-repeat: no-repeat;
+  background-position: center top; }
+
+#pagenavi {
+  padding: 20px 0;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #pagenavi a:hover {
+    text-decoration: underline; }
+  #pagenavi .prev, #pagenavi .next {
+    position: absolute; }
+  #pagenavi .prev {
+    padding-left: 30px;
+    left: 0; }
+    #pagenavi .prev:before {
+      content: "\f060";
+      font: 1.3em FontAwesome;
+      position: absolute;
+      left: 0; }
+  #pagenavi .next {
+    padding-right: 30px;
+    right: 0; }
+    #pagenavi .next:before {
+      content: "\f061";
+      font: 1.3em FontAwesome;
+      position: absolute;
+      right: 0; }
+  #pagenavi .center {
+    text-align: center;
+    width: 100%;
+    display: block; }
+    @media screen and (max-width: 400px) {
+      #pagenavi .center {
+        display: none; } }
+
+article {
+  border-bottom: 1px solid #dddddd;
+  padding: 30px 0;
+  position: relative; }
+  @media screen and (max-width: 800px) {
+    article {
+      padding-bottom: 15px; } }
+  @media screen and (max-width: 600px) {
+    article {
+      padding: 15px 0; } }
+  article h2.title {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 20px; }
+    article h2.title a {
+      color: #1094e8; }
+  article .title a {
+    color: #7c7873;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out; }
+  article .title a:hover {
+    color: #084B8A;
+    text-shadow: 3px 3px 12px #888;
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3); }
+  article .entry-content {
+    line-height: 2;
+    text-align: justify; }
+    article .entry-content a:hover {
+      text-decoration: underline; }
+    article .entry-content .more-link {
+      display: block;
+      margin-top: 16px;
+      padding-left: 30px;
+      position: relative; }
+      article .entry-content .more-link:before {
+        content: "\f061";
+        font: 1.3em FontAwesome;
+        line-height: 1.6em;
+        position: absolute;
+        left: 0; }
+    article .entry-content p, article .entry-content blockquote, article .entry-content ul, article .entry-content ol, article .entry-content dl, article .entry-content iframe, article .entry-content h1, article .entry-content h2, article .entry-content h3, article .entry-content h4, article .entry-content h5, article .entry-content h6, article .entry-content .video-container {
+      margin-top: 10px; }
+    article .entry-content ul, article .entry-content ol, article .entry-content dl {
+      margin-left: 20px; }
+      article .entry-content ul ul, article .entry-content ul ol, article .entry-content ul dl, article .entry-content ol ul, article .entry-content ol ol, article .entry-content ol dl, article .entry-content dl ul, article .entry-content dl ol, article .entry-content dl dl {
+        margin-top: 0; }
+    article .entry-content strong {
+      font-weight: bold; }
+    article .entry-content em {
+      font-style: italic; }
+    article .entry-content p {
+      margin-top: 10px; }
+    article .entry-content h2 {
+      font-weight: 300;
+      border-bottom: 1px solid #dddddd;
+      position: relative; }
+      article .entry-content h2:before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        border-bottom: 1px solid white;
+        width: 100%; }
+    article .entry-content img, article .entry-content video {
+      margin: 10px 0;
+      max-width: 100%;
+      height: auto;
+      -moz-border-radius: 0.3em;
+      -webkit-border-radius: 0.3em;
+      -o-border-radius: 0.3em;
+      -ms-border-radius: 0.3em;
+      -khtml-border-radius: 0.3em;
+      border-radius: 0.3em;
+      -moz-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -o-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+      border: #fff 0.3em solid; }
+    article .entry-content img.noborder, article .entry-content video.noborder {
+      border: none;
+      box-shadow: none; }
+    article .entry-content blockquote {
+      background: #dddddd;
+      border-left: 5px solid #cccccc;
+      padding: 15px 20px;
+      margin-top: 10px; }
+      article .entry-content blockquote > p:first-of-type {
+        margin-top: 0; }
+    article .entry-content iframe {
+      border: none; }
+    article .entry-content .caption {
+      display: block;
+      font-size: 0.9em;
+      color: #999999;
+      padding-left: 25px;
+      position: relative; }
+      article .entry-content .caption:before {
+        content: "\f040";
+        color: #cccccc;
+        font: 1.3em FontAwesome;
+        line-height: 1.6em;
+        position: absolute;
+        left: 0; }
+    article .entry-content .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden; }
+      article .entry-content .video-container iframe, article .entry-content .video-container object, article .entry-content .video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 0; }
+
+.share {
+  padding: 15px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+
+@media screen and (max-width: 800px) {
+  .post h2.title, .post .entry-content {
+    margin-left: 0; } }
+.post .meta {
+  line-height: 2;
+  color: #999999;
+  width: 370px; }
+  @media screen and (max-width: 800px) {
+    .post .meta {
+      margin-top: 15px;
+      position: static;
+      width: auto; } }
+  .post .meta a {
+    color: #999999;
+    -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+    .post .meta a:hover {
+      color: #666666; }
+  .post .meta .date, .post .meta .tags, .post .meta .comments {
+    padding-left: 30px;
+    position: relative; }
+    .post .meta .date:before, .post .meta .tags:before, .post .meta .comments:before {
+      color: #cccccc;
+      font: 1.3em FontAwesome;
+      line-height: 1.6em;
+      position: absolute;
+      left: 0; }
+    @media screen and (max-width: 800px) {
+      .post .meta .date, .post .meta .tags, .post .meta .comments {
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline;
+        margin-right: 30px; } }
+  .post .meta .date:before {
+    content: "\f073"; }
+  .post .meta .tags:before {
+    content: "\f02c"; }
+  .post .meta .comments:before {
+    content: "\f075"; }
+
+.archives {
+  position: relative; }
+  .archives:last-of-type:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    border-top: 1px solid #dddddd; }
+  .archives .top-border-padding {
+    border-top: 1px solid #fff; }
+    .archives .top-border-padding:before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      width: 100%;
+      border-top: 1px solid #dddddd; }
+  .archives .year {
+    line-height: 35px;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    padding-top: 15px;
+    border-top: 1px solid #fff; }
+    .archives .year:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      width: 100%;
+      border-top: 1px solid #dddddd; }
+    @media screen and (max-width: 600px) {
+      .archives .year {
+        position: relative;
+        width: 100%; } }
+  .archives article {
+    margin-left: 200px;
+    padding: 10px 0; }
+    @media screen and (max-width: 600px) {
+      .archives article {
+        margin-left: 0; }
+        .archives article:first-of-type {
+          border-top: none;
+          padding-top: 30px; } }
+    .archives article .title {
+      margin-bottom: 0;
+      font-size: 25px; }
+    .archives article .meta {
+      color: #999999;
+      font-size: 0.9em;
+      line-height: 2;
+      margin-top: 10px; }
+      @media screen and (max-width: 600px) {
+        .archives article .meta {
+          display: none; } }
+      .archives article .meta span {
+        margin-right: 30px;
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline; }
+        .archives article .meta span:before {
+          color: #cccccc;
+          font: 1.3em FontAwesome;
+          padding-right: 10px; }
+      .archives article .meta a {
+        color: #999999;
+        -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+        -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+        -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+        transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+        .archives article .meta a:hover {
+          color: #666666; }
+      .archives article .meta .date:before {
+        content: "\f073"; }
+      .archives article .meta .tags:before {
+        content: "\f02c"; }
+      .archives article .meta .comments:before {
+        content: "\f075"; }
+
+#comment {
+  padding: 30px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #comment h2.title {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 20px; }
+
+footer {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.6em;
+  color: #666; }
+
+footer a {
+  color: #123; }
+
+footer a:hover {
+  color: #456; }
+
+#banner {
+  color: #999999;
+  padding: 30px 0;
+  line-height: 30px;
+  text-align: center;
+  position: relative;
+  display: none;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #banner:hover a {
+    color: #258fb8; }
+  #banner a {
+    color: #999999;
+    -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+    #banner a:hover {
+      text-decoration: underline; }
+  #banner small {
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+  #banner .loading {
+    background: image-url("loading_pacman.gif") center no-repeat;
+    text-indent: -9999px; }
+  #banner .container {
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    display: none; }
+    #banner .container .feed {
+      list-style: none;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+      #banner .container .feed li {
+        position: relative; }
+        #banner .container .feed li small {
+          position: absolute;
+          right: 0; }
+
+/*! fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license */
+.fancybox-tmp iframe, .fancybox-tmp object {
+  vertical-align: top;
+  padding: 0;
+  margin: 0; }
+
+.fancybox-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8020; }
+
+.fancybox-skin {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: #f9f9f9;
+  color: #444;
+  text-shadow: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px; }
+
+.fancybox-opened {
+  z-index: 8030; }
+
+.fancybox-opened .fancybox-skin {
+  -webkit-box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false);
+  -moz-box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false);
+  box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false); }
+
+.fancybox-outer, .fancybox-inner {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  outline: none; }
+
+.fancybox-inner {
+  overflow: hidden; }
+
+.fancybox-type-iframe .fancybox-inner {
+  -webkit-overflow-scrolling: touch; }
+
+.fancybox-error {
+  color: #444;
+  font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 10px; }
+
+.fancybox-image, .fancybox-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  vertical-align: top; }
+
+.fancybox-image {
+  max-width: 100%;
+  max-height: 100%; }
+
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+  background-image: image-url("fancybox/fancybox_sprite.png"); }
+
+#fancybox-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -22px;
+  margin-left: -22px;
+  background-position: 0 -108px;
+  opacity: 0.8;
+  cursor: pointer;
+  z-index: 8020; }
+
+#fancybox-loading div {
+  width: 44px;
+  height: 44px;
+  background: image-url("fancybox/fancybox_loading.gif") center center no-repeat; }
+
+.fancybox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 8040; }
+
+.fancybox-nav {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  cursor: pointer;
+  background: transparent image-url("fancybox/blank.gif");
+  /* helps IE */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  z-index: 8040; }
+
+.fancybox-prev {
+  left: 0; }
+
+.fancybox-next {
+  right: 0; }
+
+.fancybox-nav span {
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 34px;
+  margin-top: -18px;
+  cursor: pointer;
+  z-index: 8040;
+  visibility: hidden; }
+
+.fancybox-prev span {
+  left: 20px;
+  background-position: 0 -36px; }
+
+.fancybox-next span {
+  right: 20px;
+  background-position: 0 -72px; }
+
+.fancybox-nav:hover span {
+  visibility: visible; }
+
+.fancybox-tmp {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  padding: 0;
+  overflow: visible;
+  visibility: hidden; }
+
+/* Overlay helper */
+#fancybox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: none;
+  z-index: 8010;
+  background: #000; }
+
+#fancybox-overlay.overlay-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0; }
+
+/* Title helper */
+.fancybox-title {
+  visibility: hidden;
+  font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+  text-shadow: none;
+  z-index: 8050; }
+
+.fancybox-opened .fancybox-title {
+  visibility: visible; }
+
+.fancybox-title-float-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  margin-bottom: -35px;
+  z-index: 8030;
+  text-align: center; }
+
+.fancybox-title-float-wrap .child {
+  display: inline-block;
+  margin-right: -100%;
+  padding: 2px 20px;
+  background: transparent;
+  /* Fallback for web browsers that doesn't support RGBa */
+  background: rgba(0, 0, 0, 0.8);
+  text-shadow: 0 1px 2px #222;
+  color: #FFF;
+  font-weight: bold;
+  line-height: 24px;
+  white-space: nowrap;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px; }
+
+.fancybox-title-outside-wrap {
+  position: relative;
+  margin-top: 10px;
+  color: #fff; }
+
+.fancybox-title-inside-wrap {
+  margin-top: 10px; }
+
+.fancybox-title-over-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  padding: 10px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8); }
+
+/*
+Animate.css - http://daneden.me/animate
+Licensed under the ☺ license (http://licence.visualidiot.com/)
+
+Copyright (c) 2012 Dan Eden
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+body {
+  /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
+  -webkit-backface-visibility: hidden; }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  animation-duration: 2s; }
+
+@-webkit-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@-moz-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@-o-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+.flash {
+  -webkit-animation-name: flash;
+  -moz-animation-name: flash;
+  -o-animation-name: flash;
+  animation-name: flash; }
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px); } }
+
+@-moz-keyframes shake {
+  0%, 100% {
+    -moz-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -moz-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -moz-transform: translateX(10px); } }
+
+@-o-keyframes shake {
+  0%, 100% {
+    -o-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -o-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -o-transform: translateX(10px); } }
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px); } }
+
+.shake {
+  -webkit-animation-name: shake;
+  -moz-animation-name: shake;
+  -o-animation-name: shake;
+  animation-name: shake; }
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0); }
+
+  40% {
+    -webkit-transform: translateY(-30px); }
+
+  60% {
+    -webkit-transform: translateY(-15px); } }
+
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0); }
+
+  40% {
+    -moz-transform: translateY(-30px); }
+
+  60% {
+    -moz-transform: translateY(-15px); } }
+
+@-o-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -o-transform: translateY(0); }
+
+  40% {
+    -o-transform: translateY(-30px); }
+
+  60% {
+    -o-transform: translateY(-15px); } }
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); }
+
+  40% {
+    transform: translateY(-30px); }
+
+  60% {
+    transform: translateY(-15px); } }
+
+.bounce {
+  -webkit-animation-name: bounce;
+  -moz-animation-name: bounce;
+  -o-animation-name: bounce;
+  animation-name: bounce; }
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1); }
+
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0); } }
+
+@-moz-keyframes tada {
+  0% {
+    -moz-transform: scale(1); }
+
+  10%, 20% {
+    -moz-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -moz-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -moz-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -moz-transform: scale(1) rotate(0); } }
+
+@-o-keyframes tada {
+  0% {
+    -o-transform: scale(1); }
+
+  10%, 20% {
+    -o-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -o-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -o-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -o-transform: scale(1) rotate(0); } }
+
+@keyframes tada {
+  0% {
+    transform: scale(1); }
+
+  10%, 20% {
+    transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    transform: scale(1) rotate(0); } }
+
+.tada {
+  -webkit-animation-name: tada;
+  -moz-animation-name: tada;
+  -o-animation-name: tada;
+  animation-name: tada; }
+
+@-webkit-keyframes swing {
+  20%, 40%, 60%, 80%, 100% {
+    -webkit-transform-origin: top center; }
+
+  20% {
+    -webkit-transform: rotate(15deg); }
+
+  40% {
+    -webkit-transform: rotate(-10deg); }
+
+  60% {
+    -webkit-transform: rotate(5deg); }
+
+  80% {
+    -webkit-transform: rotate(-5deg); }
+
+  100% {
+    -webkit-transform: rotate(0deg); } }
+
+@-moz-keyframes swing {
+  20% {
+    -moz-transform: rotate(15deg); }
+
+  40% {
+    -moz-transform: rotate(-10deg); }
+
+  60% {
+    -moz-transform: rotate(5deg); }
+
+  80% {
+    -moz-transform: rotate(-5deg); }
+
+  100% {
+    -moz-transform: rotate(0deg); } }
+
+@-o-keyframes swing {
+  20% {
+    -o-transform: rotate(15deg); }
+
+  40% {
+    -o-transform: rotate(-10deg); }
+
+  60% {
+    -o-transform: rotate(5deg); }
+
+  80% {
+    -o-transform: rotate(-5deg); }
+
+  100% {
+    -o-transform: rotate(0deg); } }
+
+@keyframes swing {
+  20% {
+    transform: rotate(15deg); }
+
+  40% {
+    transform: rotate(-10deg); }
+
+  60% {
+    transform: rotate(5deg); }
+
+  80% {
+    transform: rotate(-5deg); }
+
+  100% {
+    transform: rotate(0deg); } }
+
+.swing {
+  -webkit-transform-origin: top center;
+  -moz-transform-origin: top center;
+  -o-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  -moz-animation-name: swing;
+  -o-animation-name: swing;
+  animation-name: swing; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%); }
+
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -webkit-transform: translateX(0%); } }
+
+@-moz-keyframes wobble {
+  0% {
+    -moz-transform: translateX(0%); }
+
+  15% {
+    -moz-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -moz-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -moz-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -moz-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -moz-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -moz-transform: translateX(0%); } }
+
+@-o-keyframes wobble {
+  0% {
+    -o-transform: translateX(0%); }
+
+  15% {
+    -o-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -o-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -o-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -o-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -o-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -o-transform: translateX(0%); } }
+
+@keyframes wobble {
+  0% {
+    transform: translateX(0%); }
+
+  15% {
+    transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    transform: translateX(0%); } }
+
+.wobble {
+  -webkit-animation-name: wobble;
+  -moz-animation-name: wobble;
+  -o-animation-name: wobble;
+  animation-name: wobble; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1); }
+
+  50% {
+    -webkit-transform: scale(1.1); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes pulse {
+  0% {
+    -moz-transform: scale(1); }
+
+  50% {
+    -moz-transform: scale(1.1); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@-o-keyframes pulse {
+  0% {
+    -o-transform: scale(1); }
+
+  50% {
+    -o-transform: scale(1.1); }
+
+  100% {
+    -o-transform: scale(1); } }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+
+  50% {
+    transform: scale(1.1); }
+
+  100% {
+    transform: scale(1); } }
+
+.pulse {
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -o-animation-name: pulse;
+  animation-name: pulse; }
+
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0);
+    -webkit-animation-timing-function: ease-out; }
+
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -webkit-animation-timing-function: ease-out; }
+
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -webkit-animation-timing-function: ease-in; }
+
+  80% {
+    -webkit-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -webkit-animation-timing-function: ease-in; }
+
+  100% {
+    -webkit-transform: perspective(400px) scale(1);
+    -webkit-animation-timing-function: ease-in; } }
+
+@-moz-keyframes flip {
+  0% {
+    -moz-transform: perspective(400px) rotateY(0);
+    -moz-animation-timing-function: ease-out; }
+
+  40% {
+    -moz-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -moz-animation-timing-function: ease-out; }
+
+  50% {
+    -moz-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -moz-animation-timing-function: ease-in; }
+
+  80% {
+    -moz-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -moz-animation-timing-function: ease-in; }
+
+  100% {
+    -moz-transform: perspective(400px) scale(1);
+    -moz-animation-timing-function: ease-in; } }
+
+@-o-keyframes flip {
+  0% {
+    -o-transform: perspective(400px) rotateY(0);
+    -o-animation-timing-function: ease-out; }
+
+  40% {
+    -o-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -o-animation-timing-function: ease-out; }
+
+  50% {
+    -o-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -o-animation-timing-function: ease-in; }
+
+  80% {
+    -o-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -o-animation-timing-function: ease-in; }
+
+  100% {
+    -o-transform: perspective(400px) scale(1);
+    -o-animation-timing-function: ease-in; } }
+
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+    animation-timing-function: ease-out; }
+
+  40% {
+    transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    animation-timing-function: ease-out; }
+
+  50% {
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    animation-timing-function: ease-in; }
+
+  80% {
+    transform: perspective(400px) rotateY(360deg) scale(0.95);
+    animation-timing-function: ease-in; }
+
+  100% {
+    transform: perspective(400px) scale(1);
+    animation-timing-function: ease-in; } }
+
+.flip {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flip;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flip;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flip;
+  backface-visibility: visible !important;
+  animation-name: flip; }
+
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes flipInX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -moz-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -moz-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@-o-keyframes flipInX {
+  0% {
+    -o-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -o-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -o-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -o-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInX;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInX;
+  backface-visibility: visible !important;
+  animation-name: flipInX; }
+
+@-webkit-keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes flipOutX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@-o-keyframes flipOutX {
+  0% {
+    -o-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@keyframes flipOutX {
+  0% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+.flipOutX {
+  -webkit-animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
+  -moz-animation-name: flipOutX;
+  -moz-backface-visibility: visible !important;
+  -o-animation-name: flipOutX;
+  -o-backface-visibility: visible !important;
+  animation-name: flipOutX;
+  backface-visibility: visible !important; }
+
+@-webkit-keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes flipInY {
+  0% {
+    -moz-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -moz-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -moz-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -moz-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@-o-keyframes flipInY {
+  0% {
+    -o-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -o-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -o-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -o-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@keyframes flipInY {
+  0% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+.flipInY {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInY;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInY;
+  backface-visibility: visible !important;
+  animation-name: flipInY; }
+
+@-webkit-keyframes flipOutY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes flipOutY {
+  0% {
+    -moz-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@-o-keyframes flipOutY {
+  0% {
+    -o-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@keyframes flipOutY {
+  0% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+.flipOutY {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipOutY;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipOutY;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipOutY;
+  backface-visibility: visible !important;
+  animation-name: flipOutY; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  -moz-animation-name: fadeInUp;
+  -o-animation-name: fadeInUp;
+  animation-name: fadeInUp; }
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  -moz-animation-name: fadeInDown;
+  -o-animation-name: fadeInDown;
+  animation-name: fadeInDown; }
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  -moz-animation-name: fadeInLeft;
+  -o-animation-name: fadeInLeft;
+  animation-name: fadeInLeft; }
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  -moz-animation-name: fadeInRight;
+  -o-animation-name: fadeInRight;
+  animation-name: fadeInRight; }
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  -moz-animation-name: fadeInUpBig;
+  -o-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig; }
+
+@-webkit-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInDownBig {
+  -webkit-animation-name: fadeInDownBig;
+  -moz-animation-name: fadeInDownBig;
+  -o-animation-name: fadeInDownBig;
+  animation-name: fadeInDownBig; }
+
+@-webkit-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInLeftBig {
+  -webkit-animation-name: fadeInLeftBig;
+  -moz-animation-name: fadeInLeftBig;
+  -o-animation-name: fadeInLeftBig;
+  animation-name: fadeInLeftBig; }
+
+@-webkit-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInRightBig {
+  -webkit-animation-name: fadeInRightBig;
+  -moz-animation-name: fadeInRightBig;
+  -o-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig; }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  -moz-animation-name: fadeOut;
+  -o-animation-name: fadeOut;
+  animation-name: fadeOut; }
+
+@-webkit-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px); } }
+
+@-moz-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-20px); } }
+
+@-o-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-20px); } }
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px); } }
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  -moz-animation-name: fadeOutUp;
+  -o-animation-name: fadeOutUp;
+  animation-name: fadeOutUp; }
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px); } }
+
+@-moz-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(20px); } }
+
+@-o-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(20px); } }
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px); } }
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  -moz-animation-name: fadeOutDown;
+  -o-animation-name: fadeOutDown;
+  animation-name: fadeOutDown; }
+
+@-webkit-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px); } }
+
+@-moz-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-20px); } }
+
+@-o-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-20px); } }
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-20px); } }
+
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  -moz-animation-name: fadeOutLeft;
+  -o-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft; }
+
+@-webkit-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px); } }
+
+@-moz-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(20px); } }
+
+@-o-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(20px); } }
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(20px); } }
+
+.fadeOutRight {
+  -webkit-animation-name: fadeOutRight;
+  -moz-animation-name: fadeOutRight;
+  -o-animation-name: fadeOutRight;
+  animation-name: fadeOutRight; }
+
+@-webkit-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); } }
+
+@-moz-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); } }
+
+@-o-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); } }
+
+@keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px); } }
+
+.fadeOutUpBig {
+  -webkit-animation-name: fadeOutUpBig;
+  -moz-animation-name: fadeOutUpBig;
+  -o-animation-name: fadeOutUpBig;
+  animation-name: fadeOutUpBig; }
+
+@-webkit-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); } }
+
+@-moz-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); } }
+
+@-o-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(2000px); } }
+
+@keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(2000px); } }
+
+.fadeOutDownBig {
+  -webkit-animation-name: fadeOutDownBig;
+  -moz-animation-name: fadeOutDownBig;
+  -o-animation-name: fadeOutDownBig;
+  animation-name: fadeOutDownBig; }
+
+@-webkit-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); } }
+
+@-moz-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); } }
+
+@-o-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); } }
+
+@keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-2000px); } }
+
+.fadeOutLeftBig {
+  -webkit-animation-name: fadeOutLeftBig;
+  -moz-animation-name: fadeOutLeftBig;
+  -o-animation-name: fadeOutLeftBig;
+  animation-name: fadeOutLeftBig; }
+
+@-webkit-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); } }
+
+@-moz-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); } }
+
+@-o-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(2000px); } }
+
+@keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(2000px); } }
+
+.fadeOutRightBig {
+  -webkit-animation-name: fadeOutRightBig;
+  -moz-animation-name: fadeOutRightBig;
+  -o-animation-name: fadeOutRightBig;
+  animation-name: fadeOutRightBig; }
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05); }
+
+  70% {
+    -webkit-transform: scale(0.9); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.05); }
+
+  70% {
+    -moz-transform: scale(0.9); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@-o-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -o-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -o-transform: scale(1.05); }
+
+  70% {
+    -o-transform: scale(0.9); }
+
+  100% {
+    -o-transform: scale(1); } }
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05); }
+
+  70% {
+    transform: scale(0.9); }
+
+  100% {
+    transform: scale(1); } }
+
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  -moz-animation-name: bounceIn;
+  -o-animation-name: bounceIn;
+  animation-name: bounceIn; }
+
+@-webkit-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px); }
+
+  80% {
+    -webkit-transform: translateY(10px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(-30px); }
+
+  80% {
+    -moz-transform: translateY(10px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateY(-30px); }
+
+  80% {
+    -o-transform: translateY(10px); }
+
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-30px); }
+
+  80% {
+    transform: translateY(10px); }
+
+  100% {
+    transform: translateY(0); } }
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  -moz-animation-name: bounceInUp;
+  -o-animation-name: bounceInUp;
+  animation-name: bounceInUp; }
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px); }
+
+  80% {
+    -webkit-transform: translateY(-10px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(30px); }
+
+  80% {
+    -moz-transform: translateY(-10px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateY(30px); }
+
+  80% {
+    -o-transform: translateY(-10px); }
+
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateY(30px); }
+
+  80% {
+    transform: translateY(-10px); }
+
+  100% {
+    transform: translateY(0); } }
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  -moz-animation-name: bounceInDown;
+  -o-animation-name: bounceInDown;
+  animation-name: bounceInDown; }
+
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px); }
+
+  80% {
+    -webkit-transform: translateX(-10px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(30px); }
+
+  80% {
+    -moz-transform: translateX(-10px); }
+
+  100% {
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateX(30px); }
+
+  80% {
+    -o-transform: translateX(-10px); }
+
+  100% {
+    -o-transform: translateX(0); } }
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateX(30px); }
+
+  80% {
+    transform: translateX(-10px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  -moz-animation-name: bounceInLeft;
+  -o-animation-name: bounceInLeft;
+  animation-name: bounceInLeft; }
+
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px); }
+
+  80% {
+    -webkit-transform: translateX(10px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(-30px); }
+
+  80% {
+    -moz-transform: translateX(10px); }
+
+  100% {
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateX(-30px); }
+
+  80% {
+    -o-transform: translateX(10px); }
+
+  100% {
+    -o-transform: translateX(0); } }
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateX(-30px); }
+
+  80% {
+    transform: translateX(10px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  -moz-animation-name: bounceInRight;
+  -o-animation-name: bounceInRight;
+  animation-name: bounceInRight; }
+
+@-webkit-keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1); }
+
+  25% {
+    -webkit-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.3); } }
+
+@-moz-keyframes bounceOut {
+  0% {
+    -moz-transform: scale(1); }
+
+  25% {
+    -moz-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.3); } }
+
+@-o-keyframes bounceOut {
+  0% {
+    -o-transform: scale(1); }
+
+  25% {
+    -o-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -o-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -o-transform: scale(0.3); } }
+
+@keyframes bounceOut {
+  0% {
+    transform: scale(1); }
+
+  25% {
+    transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.3); } }
+
+.bounceOut {
+  -webkit-animation-name: bounceOut;
+  -moz-animation-name: bounceOut;
+  -o-animation-name: bounceOut;
+  animation-name: bounceOut; }
+
+@-webkit-keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); } }
+
+@-moz-keyframes bounceOutUp {
+  0% {
+    -moz-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); } }
+
+@-o-keyframes bounceOutUp {
+  0% {
+    -o-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); } }
+
+@keyframes bounceOutUp {
+  0% {
+    transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px); } }
+
+.bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  -moz-animation-name: bounceOutUp;
+  -o-animation-name: bounceOutUp;
+  animation-name: bounceOutUp; }
+
+@-webkit-keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); } }
+
+@-moz-keyframes bounceOutDown {
+  0% {
+    -moz-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); } }
+
+@-o-keyframes bounceOutDown {
+  0% {
+    -o-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(2000px); } }
+
+@keyframes bounceOutDown {
+  0% {
+    transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(2000px); } }
+
+.bounceOutDown {
+  -webkit-animation-name: bounceOutDown;
+  -moz-animation-name: bounceOutDown;
+  -o-animation-name: bounceOutDown;
+  animation-name: bounceOutDown; }
+
+@-webkit-keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); } }
+
+@-moz-keyframes bounceOutLeft {
+  0% {
+    -moz-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); } }
+
+@-o-keyframes bounceOutLeft {
+  0% {
+    -o-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); } }
+
+@keyframes bounceOutLeft {
+  0% {
+    transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-2000px); } }
+
+.bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  -moz-animation-name: bounceOutLeft;
+  -o-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft; }
+
+@-webkit-keyframes bounceOutRight {
+  0% {
+    -webkit-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); } }
+
+@-moz-keyframes bounceOutRight {
+  0% {
+    -moz-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); } }
+
+@-o-keyframes bounceOutRight {
+  0% {
+    -o-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(2000px); } }
+
+@keyframes bounceOutRight {
+  0% {
+    transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(2000px); } }
+
+.bounceOutRight {
+  -webkit-animation-name: bounceOutRight;
+  -moz-animation-name: bounceOutRight;
+  -o-animation-name: bounceOutRight;
+  animation-name: bounceOutRight; }
+
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateIn {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateIn {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateIn {
+  0% {
+    transform-origin: center center;
+    transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  -moz-animation-name: rotateIn;
+  -o-animation-name: rotateIn;
+  animation-name: rotateIn; }
+
+@-webkit-keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInUpLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInUpLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInUpLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInUpLeft {
+  -webkit-animation-name: rotateInUpLeft;
+  -moz-animation-name: rotateInUpLeft;
+  -o-animation-name: rotateInUpLeft;
+  animation-name: rotateInUpLeft; }
+
+@-webkit-keyframes rotateInDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInDownLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInDownLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInDownLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInDownLeft {
+  -webkit-animation-name: rotateInDownLeft;
+  -moz-animation-name: rotateInDownLeft;
+  -o-animation-name: rotateInDownLeft;
+  animation-name: rotateInDownLeft; }
+
+@-webkit-keyframes rotateInUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInUpRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInUpRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInUpRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInUpRight {
+  -webkit-animation-name: rotateInUpRight;
+  -moz-animation-name: rotateInUpRight;
+  -o-animation-name: rotateInUpRight;
+  animation-name: rotateInUpRight; }
+
+@-webkit-keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInDownRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInDownRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInDownRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInDownRight {
+  -webkit-animation-name: rotateInDownRight;
+  -moz-animation-name: rotateInDownRight;
+  -o-animation-name: rotateInDownRight;
+  animation-name: rotateInDownRight; }
+
+@-webkit-keyframes rotateOut {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOut {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(200deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOut {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(200deg);
+    opacity: 0; } }
+
+@keyframes rotateOut {
+  0% {
+    transform-origin: center center;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(200deg);
+    opacity: 0; } }
+
+.rotateOut {
+  -webkit-animation-name: rotateOut;
+  -moz-animation-name: rotateOut;
+  -o-animation-name: rotateOut;
+  animation-name: rotateOut; }
+
+@-webkit-keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutUpLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutUpLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutUpLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    opacity: 0; } }
+
+.rotateOutUpLeft {
+  -webkit-animation-name: rotateOutUpLeft;
+  -moz-animation-name: rotateOutUpLeft;
+  -o-animation-name: rotateOutUpLeft;
+  animation-name: rotateOutUpLeft; }
+
+@-webkit-keyframes rotateOutDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutDownLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutDownLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutDownLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+    opacity: 0; } }
+
+.rotateOutDownLeft {
+  -webkit-animation-name: rotateOutDownLeft;
+  -moz-animation-name: rotateOutDownLeft;
+  -o-animation-name: rotateOutDownLeft;
+  animation-name: rotateOutDownLeft; }
+
+@-webkit-keyframes rotateOutUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutUpRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutUpRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutUpRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0; } }
+
+.rotateOutUpRight {
+  -webkit-animation-name: rotateOutUpRight;
+  -moz-animation-name: rotateOutUpRight;
+  -o-animation-name: rotateOutUpRight;
+  animation-name: rotateOutUpRight; }
+
+@-webkit-keyframes rotateOutDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutDownRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutDownRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutDownRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(-90deg);
+    opacity: 0; } }
+
+.rotateOutDownRight {
+  -webkit-animation-name: rotateOutDownRight;
+  -moz-animation-name: rotateOutDownRight;
+  -o-animation-name: rotateOutDownRight;
+  animation-name: rotateOutDownRight; }
+
+@-webkit-keyframes hinge {
+  0% {
+    -webkit-transform: rotate(0);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -webkit-transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  40% {
+    -webkit-transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  100% {
+    -webkit-transform: translateY(700px);
+    opacity: 0; } }
+
+@-moz-keyframes hinge {
+  0% {
+    -moz-transform: rotate(0);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -moz-transform: rotate(80deg);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  40% {
+    -moz-transform: rotate(60deg);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  80% {
+    -moz-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  100% {
+    -moz-transform: translateY(700px);
+    opacity: 0; } }
+
+@-o-keyframes hinge {
+  0% {
+    -o-transform: rotate(0);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -o-transform: rotate(80deg);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  40% {
+    -o-transform: rotate(60deg);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  80% {
+    -o-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  100% {
+    -o-transform: translateY(700px);
+    opacity: 0; } }
+
+@keyframes hinge {
+  0% {
+    transform: rotate(0);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    transform: rotate(80deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  40% {
+    transform: rotate(60deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  80% {
+    transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  100% {
+    transform: translateY(700px);
+    opacity: 0; } }
+
+.hinge {
+  -webkit-animation-name: hinge;
+  -moz-animation-name: hinge;
+  -o-animation-name: hinge;
+  animation-name: hinge; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg); } }
+
+@-moz-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0px) rotate(0deg); } }
+
+@-o-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0px) rotate(0deg); } }
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg); } }
+
+.rollIn {
+  -webkit-animation-name: rollIn;
+  -moz-animation-name: rollIn;
+  -o-animation-name: rollIn;
+  animation-name: rollIn; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg); } }
+
+@-moz-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(100%) rotate(120deg); } }
+
+@-o-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(100%) rotate(120deg); } }
+
+@keyframes rollOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%) rotate(120deg); } }
+
+.rollOut {
+  -webkit-animation-name: rollOut;
+  -moz-animation-name: rollOut;
+  -o-animation-name: rollOut;
+  animation-name: rollOut; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes lightSpeedIn {
+  0% {
+    -moz-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -moz-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -moz-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@-o-keyframes lightSpeedIn {
+  0% {
+    -o-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -o-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -o-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@keyframes lightSpeedIn {
+  0% {
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+.lightSpeedIn {
+  -webkit-animation-name: lightSpeedIn;
+  -moz-animation-name: lightSpeedIn;
+  -o-animation-name: lightSpeedIn;
+  animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  animation-timing-function: ease-out; }
+
+.animated.lightSpeedIn {
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes lightSpeedOut {
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@-moz-keyframes lightSpeedOut {
+  0% {
+    -moz-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@-o-keyframes lightSpeedOut {
+  0% {
+    -o-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@keyframes lightSpeedOut {
+  0% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+.lightSpeedOut {
+  -webkit-animation-name: lightSpeedOut;
+  -moz-animation-name: lightSpeedOut;
+  -o-animation-name: lightSpeedOut;
+  animation-name: lightSpeedOut;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in; }
+
+.animated.lightSpeedOut {
+  -webkit-animation-duration: 0.25s;
+  -moz-animation-duration: 0.25s;
+  -o-animation-duration: 0.25s;
+  animation-duration: 0.25s; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: skewX(9deg); }
+
+  10% {
+    -webkit-transform: skewX(-8deg); }
+
+  20% {
+    -webkit-transform: skewX(7deg); }
+
+  30% {
+    -webkit-transform: skewX(-6deg); }
+
+  40% {
+    -webkit-transform: skewX(5deg); }
+
+  50% {
+    -webkit-transform: skewX(-4deg); }
+
+  60% {
+    -webkit-transform: skewX(3deg); }
+
+  70% {
+    -webkit-transform: skewX(-2deg); }
+
+  80% {
+    -webkit-transform: skewX(1deg); }
+
+  90% {
+    -webkit-transform: skewX(0deg); }
+
+  100% {
+    -webkit-transform: skewX(0deg); } }
+
+@-moz-keyframes wiggle {
+  0% {
+    -moz-transform: skewX(9deg); }
+
+  10% {
+    -moz-transform: skewX(-8deg); }
+
+  20% {
+    -moz-transform: skewX(7deg); }
+
+  30% {
+    -moz-transform: skewX(-6deg); }
+
+  40% {
+    -moz-transform: skewX(5deg); }
+
+  50% {
+    -moz-transform: skewX(-4deg); }
+
+  60% {
+    -moz-transform: skewX(3deg); }
+
+  70% {
+    -moz-transform: skewX(-2deg); }
+
+  80% {
+    -moz-transform: skewX(1deg); }
+
+  90% {
+    -moz-transform: skewX(0deg); }
+
+  100% {
+    -moz-transform: skewX(0deg); } }
+
+@-o-keyframes wiggle {
+  0% {
+    -o-transform: skewX(9deg); }
+
+  10% {
+    -o-transform: skewX(-8deg); }
+
+  20% {
+    -o-transform: skewX(7deg); }
+
+  30% {
+    -o-transform: skewX(-6deg); }
+
+  40% {
+    -o-transform: skewX(5deg); }
+
+  50% {
+    -o-transform: skewX(-4deg); }
+
+  60% {
+    -o-transform: skewX(3deg); }
+
+  70% {
+    -o-transform: skewX(-2deg); }
+
+  80% {
+    -o-transform: skewX(1deg); }
+
+  90% {
+    -o-transform: skewX(0deg); }
+
+  100% {
+    -o-transform: skewX(0deg); } }
+
+@keyframes wiggle {
+  0% {
+    transform: skewX(9deg); }
+
+  10% {
+    transform: skewX(-8deg); }
+
+  20% {
+    transform: skewX(7deg); }
+
+  30% {
+    transform: skewX(-6deg); }
+
+  40% {
+    transform: skewX(5deg); }
+
+  50% {
+    transform: skewX(-4deg); }
+
+  60% {
+    transform: skewX(3deg); }
+
+  70% {
+    transform: skewX(-2deg); }
+
+  80% {
+    transform: skewX(1deg); }
+
+  90% {
+    transform: skewX(0deg); }
+
+  100% {
+    transform: skewX(0deg); } }
+
+.wiggle {
+  -webkit-animation-name: wiggle;
+  -moz-animation-name: wiggle;
+  -o-animation-name: wiggle;
+  animation-name: wiggle;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in; }
+
+.animated.wiggle {
+  -webkit-animation-duration: 0.75s;
+  -moz-animation-duration: 0.75s;
+  -o-animation-duration: 0.75s;
+  animation-duration: 0.75s; }
+  
+
+    </style>
+
+    <link href="https://ningyu1.github.io/site/css/custom.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="https://ningyu1.github.io/site/css/github-markdown.css" rel="stylesheet" type="text/css">
+
+    <link href='https://ningyu1.github.io/site/css/Slackey.css' rel='stylesheet' type='text/css'>
+    <link href='https://ningyu1.github.io/site/css/Fjallaone.css' rel='stylesheet' type='text/css'>
+    <link href='https://ningyu1.github.io/site/css/Amethysta.css' rel='stylesheet' type='text/css'>
+	<script src="https://ningyu1.github.io/site/js/jquery.min.js"></script>
+    
+
+    <script type="text/javascript" src="https://ningyu1.github.io/site/js/jquery-tapir.js"></script>
+
+    
+
+    <link rel="stylesheet" href="https://ningyu1.github.io/site/css/hljs.css">
+    <script src="https://ningyu1.github.io/site/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?5bb9b9d406e3381971859973a2ca3583";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+</head>
+
+
+<a href="https://github.com/ningyu1"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; z-index:9999; background-color: rgba(0, 0, 0, 0)!important;" src="https://ningyu1.github.io/site/images/right-graphite@2x.png" alt="Fork me on GitHub"></a>
+
+
+
+
+
+
+
+
+<link href="https://ningyu1.github.io/site/css/music-player.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://ningyu1.github.io/site/js/music-player.js"></script>
+<iframe class="player"  frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="https://music.163.com/outchain/player?type=2&id=1296583188&auto=0&height=66"></iframe>
+
+
+
+<body class="markdown-body">
+    <div id="wrapper">
+        <header id="header" class="inner">
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        凝雨 - Yun
+    </div>
+</h1>
+
+<span class="subtitle">快乐编程每一天 - Happy Coding Every Day</span>
+<br>
+
+
+<ul id="social-links" style="text-align:center; clear:both;">
+	
+    
+    <li>
+    <a href="mailto:ningbe111@163.com" class="email" title="Email"></a>
+    </li>
+    
+    
+    
+    <li>
+    <a href="https://github.com/ningyu1" class="github" title="Github"></a>
+    </li>
+    
+	
+    
+    <li>
+    <a href="https://gitlab.com/ningyu1" class="gitlab" title="Gitlab"></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+    
+	
+    
+    <li>
+    <a href="https://gitee.com/ningyu" class="gitee" title="Gitee码云"></a>
+    </li>
+    
+	<li>
+
+    <a href="https://ningyu1.github.io/atom.xml" class="rss" title="RSS" target="_blank"></a>
+    </li>
+</ul>
+
+
+
+<ul id="nav">
+
+
+
+
+
+    
+    <li id="ajax"><a href="https://ningyu1.github.io/">Home</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/archives/">Archives</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/categories/">Categories</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/tags/">Tags</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/about/">About</a></li>
+    <li id="ajax"><a href="https://g2.okk.dog/?path=register&code=qn7nOwdj">科学上网</a></li>
+    
+    <li>
+    <div id="dark">
+        
+        <form action="//www.google.com/search" method="get" accept-charset="UTF-8" id="search">
+
+            <input type="hidden" name="sitesearch" value="https://ningyu1.github.io" />
+            <input type="text" name="q" results="0" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+</ul>
+
+</header>
+
+<div id="toload">
+
+    <div id="content" class="inner">
+        
+
+
+
+
+    
+    <script id="dsq-count-scr" src="//ningyu.disqus.com/count.js" async></script>
+    
+
+
+
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/51-ssl-cert/">Openssl生成自签名证书，简单步骤</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-01-12T17:06:36.000&#43;00:00' itemprop="datePublished">2018-01-12</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/ssl">ssl</a>
+
+<a href="https://ningyu1.github.io/site/tags/openssl">openssl</a>
+
+
+</div>
+    </div>
+        
+
+<p>最近在调试服务时需要使用证书，因此对证书的生成和使用做了一些整理，网上关于这部分资料也很多，但是很杂乱，我整理出以下简单的步骤生成自签名证书，具体让我们来看一看吧。</p>
+
+<h1 id="第一种方式">第一种方式</h1>
+
+<p>通过openssl生成私钥</p>
+
+<pre><code>openssl genrsa -out server.key 1024
+</code></pre>
+
+<p>使用私钥生成自签名的cert证书文件，以下是通过参数只定证书需要的信息</p>
+
+<pre><code>openssl req -new -x509 -days 3650 -key server.key -out server.crt -subj &quot;/C=CN/ST=mykey/L=mykey/O=mykey/OU=mykey/CN=domain1/CN=domain2/CN=domain3&quot;
+</code></pre>
+
+<p>如果对上面参数具体的说明不太了解的，可以使用不带参数的方式，通过命令行步骤生成，参考第二种方式。</p>
+
+<h1 id="第二种方式">第二种方式</h1>
+
+<p>通过openssl生成私钥</p>
+
+<pre><code>openssl genrsa -out server.key 1024
+</code></pre>
+
+<p>根据私钥生成证书申请文件csr</p>
+
+<pre><code>openssl req -new -key server.key -out server.csr
+</code></pre>
+
+<p>这里根据命令行向导来进行信息输入：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/ssl-cert/1.png" alt="" /></p>
+
+<p><span style="color:red"><strong>ps.Common Name可以输入：*.yourdomain.com，这种方式生成通配符域名证书</strong></span></p>
+
+<p>使用私钥对证书申请进行签名从而生成证书</p>
+
+<pre><code>openssl x509 -req -in server.csr -out server.crt -signkey server.key -days 3650
+</code></pre>
+
+<p>这样就生成了有效期为：10年的证书文件，对于自己内网服务使用足够。</p>
+
+<h1 id="第三种方式">第三种方式</h1>
+
+<p>直接生成证书文件</p>
+
+<pre><code>openssl req -new -x509 -keyout server.key -out server.crt -config openssl.cnf
+</code></pre>
+
+<p><span style="color:red"><strong>ps.以上生成得到的server.crt证书，格式都是pem的。</strong></span></p>
+
+<p>我个人比较推荐使用第二种方式，如果不在乎其他参数可以使用第三种直接一步生成。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/51-ssl-cert/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/50-mysql-gap-lock/">MySQL Gap Lock问题</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-01-11T17:10:36.000&#43;00:00' itemprop="datePublished">2018-01-11</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/mysql-gap-lock">mysql gap lock</a>
+
+
+</div>
+    </div>
+        
+
+<p>文章来源：<a href="http://blog.chinaunix.net/uid-20726500-id-5749804.html">http://blog.chinaunix.net/uid-20726500-id-5749804.html</a>
+作者：@小桥河西</p>
+
+<p>初识MySQL的gap，觉得这个设计比较独特，和其他数据库的做法不太一样，所以整理一个简单的memo（虽然关于gap锁，相关资料已经很多了）</p>
+
+<h1 id="一-什么是gap">一、什么是gap</h1>
+
+<p><code>A place in an InnoDB index data structure where new values could be inserted.</code></p>
+
+<p>说白了gap就是索引树中插入新记录的空隙。相应的gap lock就是加在gap上的锁，还有一个next-key锁，是记录+记录前面的gap的组合的锁。</p>
+
+<h1 id="二-gap锁或next-key锁的作用">二、gap锁或next-key锁的作用</h1>
+
+<p><a href="http://dev.mysql.com/doc/refman/5.7/en/innodb-next-key-locking.html">http://dev.mysql.com/doc/refman/5.7/en/innodb-next-key-locking.html</a></p>
+
+<pre><code>To prevent phantoms, InnoDB uses an algorithm called next-key locking that combines index-row 
+locking with gap locking. InnoDB performs row-level locking in such a way that when it searches
+ or scans a table index, it sets shared or exclusive locks on the index records it encounters. 
+Thus, the row-level locks are actually index-record locks. In addition, a next-key lock on 
+an index record also affects the “gap” before that index record. That is, a next-key lock is 
+an index-record lock plus a gap lock on the gap preceding the index record. If one session has 
+a shared or exclusive lock on record R in an index, another session cannot insert a new index 
+record in the gap immediately before R in the index order. 
+</code></pre>
+
+<p>简单讲就是防止幻读。通过锁阻止特定条件的新记录的插入，因为插入时也要获取gap锁(Insert Intention Locks)。</p>
+
+<h1 id="三-什么时候会取得gap-lock或nextkey-lock">三、什么时候会取得gap lock或nextkey lock</h1>
+
+<p>这和隔离级别有关,只在REPEATABLE READ或以上的隔离级别下的特定操作才会取得gap lock或nextkey lock。</p>
+
+<p><a href="http://dev.mysql.com/doc/refman/5.7/en/innodb-transaction-isolation-levels.html">http://dev.mysql.com/doc/refman/5.7/en/innodb-transaction-isolation-levels.html</a></p>
+
+<h2 id="repeatable-read">REPEATABLE READ</h2>
+
+<pre><code>... For consistent reads, there is an important difference from the READ COMMITTED isolation level:
+ All consistent reads within the same transaction read the snapshot established by the first read. ...
+
+For locking reads (SELECT with FOR UPDATE or LOCK IN SHARE MODE), UPDATE, and DELETE statements, 
+locking depends on whether the statement uses a unique index with a unique search condition, 
+or a range-type search condition. For a unique index with a unique search condition, 
+InnoDB locks only the index record found, not the gap before it. For other search conditions, 
+InnoDB locks the index range scanned, using gap locks or next-key locks to block insertions 
+by other sessions into the gaps covered by the range. 
+</code></pre>
+
+<p>locking reads，UPDATE和DELETE时，除了对唯一索引的唯一搜索外都会获取gap锁或next-key锁。即锁住其扫描的范围。</p>
+
+<p>下面对非唯一索引做个测试。</p>
+
+<p>表定义如下:</p>
+
+<pre><code>mysql&gt; show create table tb2;
++-------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table | Create Table                                                                                                                                   |
++-------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| tb2   | CREATE TABLE `tb2` (
+  `id` int(11) DEFAULT NULL,
+  `c1` int(11) DEFAULT NULL,
+  KEY `tb2_idx1` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 |
++-------+------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec) 
+</code></pre>
+
+<p>表中有3条记录： 10,20,30。</p>
+
+<pre><code>mysql&gt; select * from tb2;
++------+------+
+| id   | c1   |
++------+------+
+|   10 |    0 |
+|   20 |    0 |
+|   30 |    0 |
++------+------+
+3 rows in set (0.01 sec) 
+</code></pre>
+
+<p>在REPEATABLE READ下，更新一条记录不提交，然后看看能阻塞另外的会话哪些操作。</p>
+
+<h2 id="session-1">SESSION 1:</h2>
+
+<p>SESSION 1中更新id=20的记录</p>
+
+<pre><code>mysql&gt; begin;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; update tb2 set c1=2 where id=20;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0 
+</code></pre>
+
+<h2 id="session-2">SESSION 2:</h2>
+
+<p>SESSION 2中，执行插入操作，发现[10,30)范围不能插入数据。</p>
+
+<pre><code>mysql&gt; begin;
+Query OK, 0 rows affected (0.00 sec)
+mysql&gt; insert into tb2 values(9,4);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; insert into tb2 values(10,4);
+ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+mysql&gt; insert into tb2 values(19,4);
+ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+mysql&gt; insert into tb2 values(20,4);
+ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+mysql&gt; insert into tb2 values(21,4);
+ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+mysql&gt; insert into tb2 values(29,4);
+ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+mysql&gt; insert into tb2 values(30,4);
+Query OK, 1 row affected (0.01 sec) 
+</code></pre>
+
+<p>对于更新操作，仅20这条记录不能更新，因为更新操作不会去获取gap锁。</p>
+
+<pre><code>mysql&gt; begin;
+Query OK, 0 rows affected (0.00 sec)
+mysql&gt; update tb2 set c1=4 where id=10;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+mysql&gt; update tb2 set c1=4 where id=20;
+ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+mysql&gt; update tb2 set c1=4 where id=30;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 2  Changed: 0  Warnings: 0 
+</code></pre>
+
+<p>如果SESSION 1的表扫描没有用到索引，那么gap或next-key锁住的范围是整个表，即任何值都不能插入。</p>
+
+<h2 id="read-committed">READ COMMITTED</h2>
+
+<pre><code>For locking reads (SELECT with FOR UPDATE or LOCK IN SHARE MODE), UPDATE statements, 
+and DELETE statements, InnoDB locks only index records, not the gaps before them,
+ and thus permits the free insertion of new records next to locked records. 
+</code></pre>
+
+<p>只会锁住已有记录，不会加gap锁。</p>
+
+<h2 id="serializable">SERIALIZABLE</h2>
+
+<pre><code>This level is like REPEATABLE READ, but InnoDB implicitly converts all plain 
+SELECT statements to SELECT ... LOCK IN SHARE MODE if autocommit is disabled. 
+</code></pre>
+
+<p>和REPEATABLE READ的主要区别在于把普通的SELECT变成SELECT &hellip; LOCK IN SHARE MODE，即对普通的select都会获取gap锁或next-key锁。</p>
+
+<h1 id="repeatable-read和幻读">REPEATABLE READ和幻读</h1>
+
+<p>在“consistent-read”时，REPEATABLE READ下看到是事务开始时的快照，即使其它事务插入了新行通常也是看不到的，所以在常见的场合可以避免幻读。 但是，&rdquo;locking read&rdquo;或更新，删除时是会看到已提交的修改的，包括新插入的行。</p>
+
+<p><a href="http://dev.mysql.com/doc/refman/5.7/en/innodb-consistent-read.html">http://dev.mysql.com/doc/refman/5.7/en/innodb-consistent-read.html</a></p>
+
+<pre><code>If you want to see the “freshest” state of the database, use either the READ COMMITTED 
+isolation level or a locking read: 
+</code></pre>
+
+<p>下面看一个例子</p>
+
+<h2 id="session-1-1">SESSION 1:</h2>
+
+<pre><code>mysql&gt; START TRANSACTION;
+Query OK, 0 rows affected (0.00 sec)
+mysql&gt; select id,c1 from tb1 where id=1;
++----+------+
+| id | c1   |
++----+------+
+|  1 |  100 |
++----+------+
+1 row in set (0.00 sec) 
+</code></pre>
+
+<h2 id="session-2-1">SESSION 2:</h2>
+
+<pre><code>mysql&gt; update tb1 set c1=101 where id =1;
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0 
+</code></pre>
+
+<h2 id="session-1-2">SESSION 1:</h2>
+
+<pre><code>mysql&gt; select id,c1 from tb1 where id=1 LOCK IN SHARE MODE;
++----+------+
+| id | c1   |
++----+------+
+|  1 |  101 |
++----+------+
+1 row in set (0.00 sec)
+
+mysql&gt; select id,c1 from tb1 where id=1;
++----+------+
+| id | c1   |
++----+------+
+|  1 |  100 |
++----+------+
+1 row in set (0.00 sec)
+
+mysql&gt; update tb1 set c1=c1+1000 where id=1;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql&gt; select id,c1 from tb1 where id=1;
++----+------+
+| id | c1   |
++----+------+
+|  1 | 1101 |
++----+------+
+1 row in set (0.00 sec) 
+</code></pre>
+
+<p>上面update的行为违反了REPEATABLE READ的承诺，看到了事务开始后其它事务的并发更新。这对应用开发需要特别注意，这种情况下其它数据库通常都是报错的。</p>
+
+<h1 id="其它">其它</h1>
+
+<p>RR和RC相比还有一个重要的区别，RC下，扫描过但不匹配的记录不会加锁，或者是先加锁再释放，即semi-consistent read。但RR下扫描过记录都要加锁。这个差别对有全表扫描的更新的场景影响极大。详细参考<a href="http://hedengcheng.com/?p=771，关于MySQL的加锁处理，这篇文章讲得很透彻！">http://hedengcheng.com/?p=771，关于MySQL的加锁处理，这篇文章讲得很透彻！</a></p>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="http://hedengcheng.com/?p=771">http://hedengcheng.com/?p=771</a></li>
+<li><a href="http://dev.mysql.com/doc/refman/5.7/en/innodb-consistent-read.html">http://dev.mysql.com/doc/refman/5.7/en/innodb-consistent-read.html</a></li>
+<li><a href="http://dev.mysql.com/doc/refman/5.7/en/innodb-transaction-isolation-levels.html">http://dev.mysql.com/doc/refman/5.7/en/innodb-transaction-isolation-levels.html</a></li>
+<li><a href="http://dev.mysql.com/doc/refman/5.7/en/innodb-next-key-locking.html">http://dev.mysql.com/doc/refman/5.7/en/innodb-next-key-locking.html</a></li>
+<li><a href="http://blog.chinaunix.net/uid-20726500-id-3902528.html">http://blog.chinaunix.net/uid-20726500-id-3902528.html</a></li>
+<li><a href="http://blog.itpub.net/22664653/viewspace-750824/">http://blog.itpub.net/22664653/viewspace-750824/</a></li>
+<li><a href="http://www.bitscn.com/pdb/mysql/201405/227973.html">http://www.bitscn.com/pdb/mysql/201405/227973.html</a></li>
+</ul>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/50-mysql-gap-lock/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/49-java-test/">推荐一个性能测试工具包（适用于单元测试）</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-01-11T16:52:36.000&#43;00:00' itemprop="datePublished">2018-01-11</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/java">java</a>
+
+<a href="https://ningyu1.github.io/site/tags/test">test</a>
+
+
+</div>
+    </div>
+        <p>给大家推荐一个做单元测试非常好用的性能测试工具包，contiperf，很方便的进行并发压力测试</p>
+
+<ul>
+<li>pom引用</li>
+</ul>
+
+<pre><code>&lt;!-- 单元测试 --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;junit&lt;/groupId&gt;
+    &lt;artifactId&gt;junit&lt;/artifactId&gt;
+    &lt;version&gt;4.7&lt;/version&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;!-- 性能测试 --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.databene&lt;/groupId&gt;
+    &lt;artifactId&gt;contiperf&lt;/artifactId&gt;
+    &lt;version&gt;2.1.0&lt;/version&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<ul>
+<li>使用示例</li>
+</ul>
+
+<pre><code>/**
+ * &lt;功能描述&gt;
+ *
+ * @author ningyu
+ * @date 2017年10月24日 下午2:40:58
+ */
+public class MyPerfTest {
+     
+    private IRedisSequenceService sequenceService;
+     
+    @Rule
+    public ContiPerfRule i = new ContiPerfRule();
+    @Before
+    public void init() {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(&quot;test-spring-context.xml&quot;);
+        sequenceService = (IRedisSequenceService) context.getBean(&quot;redisSequenceService&quot;);
+    }
+     
+    @Test
+    @PerfTest(threads=10, invocations=10000)//threads并发线程数量，invocations总调用次数,还有其他参数可以设置查看文档或者源码
+    public void test() {
+        try {
+            long res = sequenceService.nextSeq(&quot;TEST_NINGYU&quot;);
+        System.out.println(Thread.currentThread().getName()+&quot;:&quot;+res);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/49-java-test/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/48-docker/">如何直接操作Docker容器？</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-01-11T16:11:36.000&#43;00:00' itemprop="datePublished">2018-01-11</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/docker">docker</a>
+
+<a href="https://ningyu1.github.io/site/tags/rancher">rancher</a>
+
+
+</div>
+    </div>
+        <p>如果你想对Docker的容器进行操作，比如直接查看日志（<code>Rancher</code>无法看的时候），可以通过以下方式实现：</p>
+
+<p>执行命令docker ps，找到该容器</p>
+
+<p>第一种方式：</p>
+
+<p>执行命令<code>docker exec -it [容器号前几位即可] /bin/bash</code>，进入容器内部（类似Linux环境），如：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/docker/1.png" alt="" /></p>
+
+<p>如果/bin/bash不能执行，那就用/bin/sh。换一种shell。</p>
+
+<p>进入容器后我们就可以做任何事情，建议只在容器内做只读操作，必要进行修改操作。如果不想进入容器内部操作也可以：</p>
+
+<p>执行命令<code>docker exec -it [容器号前几位即可] tailf -n 100 /xxxx/xxxxx.log</code>，进入容器内部（类似Linux环境），如：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/docker/2.png" alt="" /></p>
+
+<p>第二种方式：</p>
+
+<p>执行命令<code>docker logs  [容器号前几位即可]</code>，查看日志</p>
+
+<p><code>docker logs --tail=200 -f 容器id</code></p>
+
+<p>ps:&ndash;tail=200 显示最近200行 ,all显示所有</p>
+
+<p>这个可以用于不知道日志存放在哪里，如：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/docker/3.png" alt="" /></p>
+
+<p>或者直接去宿主机器上查看容器日志文件，docker会在主机上面的<code>/var/lib/docker/containers/[容器id]/</code>生成每个容器的日志文件，以[容器id]-json.log命名，<span style="color:red"><strong>但是不推荐这种方式查看</strong></span>，如：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/docker/4.png" alt="" /></p>
+
+<p>在<code>/var/lib/docker/containers</code>能看到很多关于容器的信息比如说hostname等。</p>
+
+<p>docker还支持Log Driver可以将日志接入到日志分析工具，比如说：ELKB套件</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/48-docker/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/47-jenkins-svn-maven-timezone/">Jenkins、SVN、MAVEN打包时区问题解决方案</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-01-09T18:30:36.000&#43;00:00' itemprop="datePublished">2018-01-09</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/jenkins">jenkins</a>
+
+<a href="https://ningyu1.github.io/site/tags/svn">svn</a>
+
+<a href="https://ningyu1.github.io/site/tags/maven">maven</a>
+
+
+</div>
+    </div>
+        
+
+<h1 id="目录">目录</h1>
+
+<ol>
+<li><a href="#jenkins">Jenkins时区设置问题</a></li>
+<li><a href="#svn">SVN更新代码时区问题</a></li>
+<li><a href="#maven">MAVEN打包时区问题</a></li>
+</ol>
+
+<h1 id="a-name-jenkins-一-jenkins时区设置问题-a"><a name="jenkins">一、Jenkins时区设置问题</a></h1>
+
+<pre><code>docker@jenkins:~$ cat /etc/default/jenkins|grep 2048
+JAVA_ARGS=&quot;-Xmx2048m -Xms2048m -XX:PermSize=512m -XX:MaxPermSize=512m  -Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Shanghai  -Djava.awt.headless=true&quot;  # Allow graphs etc. to work even when an X server is present
+
+</code></pre>
+
+<p>增加时区参数：<code>-Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Shanghai</code></p>
+
+<p>修改启动后查看jenkins系统参数：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/jenkins-svn-maven-timezone/1.png" alt="" /></p>
+
+<h1 id="a-name-svn-二-svn更新代码时区问题-a"><a name="svn">二、SVN更新代码时区问题</a></h1>
+
+<p>svn时区依赖jenkins的时区设置</p>
+
+<p>没有修改时区之前：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/jenkins-svn-maven-timezone/2.png" alt="" /></p>
+
+<p>能看的出来revision时间是有问题的跟我们机器时间不一致少了8小时</p>
+
+<p>修复这个问题有两个方法</p>
+
+<ul>
+<li>可以通过设置svn路径后增加@HEAD忽略掉revision来修复这个问题，具体设置如下</li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/jenkins-svn-maven-timezone/3.png" alt="" /></p>
+
+<ul>
+<li>修改jenkins时区，参考第一个问题
+
+<ul>
+<li>jenkins时区设置完之后svn拉取代码会自动修改：revision，如图</li>
+</ul></li>
+</ul>
+
+<p><img src="https://ningyu1.github.io/site/img/jenkins-svn-maven-timezone/4.png" alt="" /></p>
+
+<h1 id="a-name-maven-三-maven打包时区问题-a"><a name="maven">三、MAVEN打包时区问题</a></h1>
+
+<p>我项目中使用的是maven自己的timestamp</p>
+
+<pre><code>&lt;timestamp&gt;${maven.build.timestamp}&lt;/timestamp&gt;
+</code></pre>
+
+<p>它的问题是：时区是UTC而且无法修改，如果要使用GMT+8，就需要插件提供支持</p>
+
+<p>使用maven utc的timestamp构建出来的包名如下：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/jenkins-svn-maven-timezone/5.png" alt="" /></p>
+
+<p>我使用插件：<code>build-helper-maven-plugin</code></p>
+
+<p>在<code>pom</code>中增加<code>plugin</code> <code>build-helper-maven-plugin</code>来覆盖<code>maven</code>的<code>timestamp</code>变量：</p>
+
+<pre><code>&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
+            &lt;artifactId&gt;build-helper-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;3.0.0&lt;/version&gt;
+            &lt;executions&gt;
+                &lt;execution&gt;
+                    &lt;id&gt;timestamp-property&lt;/id&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;timestamp-property&lt;/goal&gt;
+                    &lt;/goals&gt;
+                    &lt;configuration&gt;
+                        &lt;name&gt;timestamp&lt;/name&gt;
+                        &lt;pattern&gt;yyyyMMddHHmm&lt;/pattern&gt;
+                        &lt;timeZone&gt;GMT+8&lt;/timeZone&gt;
+                    &lt;/configuration&gt;
+                &lt;/execution&gt;
+            &lt;/executions&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+
+<p>然后打包测试：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/jenkins-svn-maven-timezone/6.png" alt="" /></p>
+
+<p>测试通过，plugin配置建议配置在parent pom中这样所有子集项目都可以继承</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/47-jenkins-svn-maven-timezone/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/46-docker-registry/">Docker Registry镜像清理问题</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-12-29T14:45:36.000&#43;00:00' itemprop="datePublished">2017-12-29</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/docker">docker</a>
+
+<a href="https://ningyu1.github.io/site/tags/docker-registry">docker registry</a>
+
+<a href="https://ningyu1.github.io/site/tags/docker-registry-web">docker registry web</a>
+
+<a href="https://ningyu1.github.io/site/tags/docker-registry-frontend">docker registry frontend</a>
+
+
+</div>
+    </div>
+        
+
+<h1 id="目录">目录</h1>
+
+<ol>
+<li><a href="#config">修改Docker Registry配置</a></li>
+<li><a href="#restful">使用Registry V2 RestfulAPI 删除镜像</a></li>
+<li><a href="#gc">Docker Registry GC回收空间</a></li>
+<li><a href="#ui">使用UI管理Docker Registry</a></li>
+</ol>
+
+<h1 id="a-name-config-修改docker-registry配置-a"><a name="config">修改Docker Registry配置</a></h1>
+
+<p>配置开启删除功能:config.yml</p>
+
+<pre><code>version: 0.1
+log:
+  fields:
+    service: registry
+storage:
+    delete:
+        enabled: true
+    cache:
+        blobdescriptor: inmemory
+    filesystem:
+        rootdirectory: /var/lib/registry
+http:
+    addr: :5000
+    headers:
+        X-Content-Type-Options: [nosniff]
+health:
+  storagedriver:
+    enabled: true
+    interval: 10s
+    threshold: 3
+</code></pre>
+
+<p><span style='color:red'><strong>主要在storage下增加delete开启状态 enabled:true</strong></span></p>
+
+<p>具体配置参考官方配置详情：<a href="https://github.com/docker/distribution/blob/master/docs/configuration.md">https://github.com/docker/distribution/blob/master/docs/configuration.md</a></p>
+
+<h1 id="a-name-restful-使用registry-v2-restfulapi-删除镜像-a"><a name="restful">使用Registry V2 RestfulAPI 删除镜像</a></h1>
+
+<p>镜像删除之前需要获取镜像的digest值</p>
+
+<ul>
+<li>获取镜像digest值</li>
+</ul>
+
+<pre><code>curl --cacert /etc/docker/certs.d/192.168.0.34\:5000/ca.crt -H &quot;Accept:application/vnd.docker.distribution.manifest.v2+json&quot; https://192.168.0.34:5000/v2/messer/manifests/1.0
+</code></pre>
+
+<p>注意：</p>
+
+<p>我们配置了证书，所以必须要添加证书 &ndash;cacert使用crt证书</p>
+
+<p>在获取镜像digest值时必须要指定Header &ldquo;Accept:application/vnd.docker.distribution.manifest.v2+json&rdquo; 否则无法获取</p>
+
+<p>RESTful API格式：</p>
+
+<pre><code>/v2/&lt;镜像名称&gt;/manifests/&lt;tag&gt;
+</code></pre>
+
+<p>具体Docker registry V2 RESTful API查看：<a href="https://docs.docker.com/registry/spec/api/">https://docs.docker.com/registry/spec/api/</a></p>
+
+<ul>
+<li>通过上面获取到的具体返回信息</li>
+</ul>
+
+<pre><code>{
+   &quot;schemaVersion&quot;: 2,
+   &quot;mediaType&quot;: &quot;application/vnd.docker.distribution.manifest.v2+json&quot;,
+   &quot;config&quot;: {
+      &quot;mediaType&quot;: &quot;application/octet-stream&quot;,
+      &quot;size&quot;: 4191,
+      &quot;digest&quot;: &quot;sha256:c8043677c5d750e0904298c29825d1da8389a1ea2e2564e076ed54a023ece056&quot;
+   },
+   &quot;layers&quot;: [
+      {
+         &quot;mediaType&quot;: &quot;application/vnd.docker.image.rootfs.diff.tar.gzip&quot;,
+         &quot;size&quot;: 51363125,
+         &quot;digest&quot;: &quot;sha256:75a822cd7888e394c49828b951061402d31745f596b1f502758570f2d0ee79e2&quot;
+      },
+      {
+         &quot;mediaType&quot;: &quot;application/vnd.docker.image.rootfs.diff.tar.gzip&quot;,
+         &quot;size&quot;: 20179224,
+         &quot;digest&quot;: &quot;sha256:0aefb9dc4a57d3de6a9cfa2e87e4502dfa8ce3876264bb20783b1610f8e44806&quot;
+      },
+      {
+         &quot;mediaType&quot;: &quot;application/vnd.docker.image.rootfs.diff.tar.gzip&quot;,
+         &quot;size&quot;: 193,
+         &quot;digest&quot;: &quot;sha256:046e44ee6057f1264d00b0c54adcff2f2c44d30a29b50dfef928776f7aa45cc8&quot;
+      },
+      {
+         &quot;mediaType&quot;: &quot;application/vnd.docker.image.rootfs.diff.tar.gzip&quot;,
+         &quot;size&quot;: 596,
+         &quot;digest&quot;: &quot;sha256:614a7b3525a1442775b9d1b52413024dc750b6a9169fcae8d4ef9cf98bda7f0f&quot;
+      },
+      {
+         &quot;mediaType&quot;: &quot;application/vnd.docker.image.rootfs.diff.tar.gzip&quot;,
+         &quot;size&quot;: 1083978,
+         &quot;digest&quot;: &quot;sha256:5fe57df972ae5e10f02783cb372841e6feab67a296e2abc16f9a868e4322c33d&quot;
+      }
+   ]
+}
+</code></pre>
+
+<p>我们要的就是<code>&quot;digest&quot;: &quot;sha256:c8043677c5d750e0904298c29825d1da8389a1ea2e2564e076ed54a023ece056&quot;</code>这个值</p>
+
+<ul>
+<li>通过delete接口删除镜像</li>
+</ul>
+
+<pre><code>curl --cacert /etc/docker/certs.d/192.168.0.34\:5000/ca.crt -X DELETE https://192.168.0.34:5000/v2/messer/manifests/sha256:c8043677c5d750e0904298c29825d1da8389a1ea2e2564e076ed54a023ece056
+</code></pre>
+
+<p>返回不是404 就是删除了</p>
+
+<p>具体Docker registry V2 RESTful API查看：<a href="https://docs.docker.com/registry/spec/api/">https://docs.docker.com/registry/spec/api/</a></p>
+
+<h1 id="a-name-gc-docker-registry-gc回收空间-a"><a name="gc">Docker Registry GC回收空间</a></h1>
+
+<p>但是实际上并没有删除，只是删除了 Registry 的索引。实际文件并没有删除。</p>
+
+<p>最后还需要执行镜像的垃圾回收：</p>
+
+<pre><code>registry garbage-collect /etc/docker/registry/config.yml
+</code></pre>
+
+<p>上面需要进入到registry容器里面去执行，/etc/docker/registry/config.yml为配置文件路径</p>
+
+<p>gc完后会看到被gc的信息例如：</p>
+
+<pre><code>root@83d6f5acc9f5:/# /bin/registry garbage-collect /etc/docker/registry/config.yml
+INFO[0013] Deleting blob: /docker/registry/v2/blobs/sha256/c0/c0c9ad6136b5e7b142c48c7167eede3d15af54c538f7f3177c50693006cca242  go.version=go1.6.2 instance.id=73c88c92-c196-413e-9cdf-413760de2a62
+INFO[0013] Deleting blob: /docker/registry/v2/blobs/sha256/0c/0c1f3512513001c7e37c0dff11064a5c76ad9098507ee74189d6a810742173d7  go.version=go1.6.2 instance.id=73c88c92-c196-413e-9cdf-413760de2a62
+
+</code></pre>
+
+<p>如果没有任何输出证明没有回收到任何东西。</p>
+
+<h1 id="a-name-ui-使用ui管理docker-registry-a"><a name="ui">使用UI管理Docker Registry</a></h1>
+
+<p>上面是通过Docker registry V2 RESTful API的方式删除，也可以通过UI工具删除，目前Docker registry UI工具也比较多这里介绍两个， docker-registry-frontend和hyper/docker-registry-web。</p>
+
+<h2 id="docker-registry-frontend">docker-registry-frontend</h2>
+
+<p>我们使用的是 docker-registry-frontend但是他的功能比较弱没有删除的操作，只能浏览，虽然他的说明里面有说明添加了删除功能但是发布的版本中并没有合并删除功能的代码：</p>
+
+<p>官方hub信息：<a href="https://hub.docker.com/r/konradkleine/docker-registry-frontend/">https://hub.docker.com/r/konradkleine/docker-registry-frontend/</a></p>
+
+<p><img src="https://ningyu1.github.io/site/img/docker-registry/1.png" alt="" /></p>
+
+<p>这个<code>MODE_BROWSE_ONLY=false</code>这个配置是完全没有效果的，今天可以查看docker-registry-frontend的github issue：<a href="https://github.com/kwk/docker-registry-frontend/issues/106">https://github.com/kwk/docker-registry-frontend/issues/106</a></p>
+
+<h2 id="hyper-docker-registry-web">hyper/docker-registry-web</h2>
+
+<p>这个UI虽然不是很好看，但是有删除功能</p>
+
+<p>官方hub信息：<a href="https://hub.docker.com/r/hyper/docker-registry-web/">https://hub.docker.com/r/hyper/docker-registry-web/</a></p>
+
+<p>创建步骤根据官方hub上面的说明信息一步一步做就ok了，但是这个东西做的不太好速度有点慢。</p>
+
+<p>界面预览：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/docker-registry/2.png" alt="" />
+<img src="https://ningyu1.github.io/site/img/docker-registry/3.png" alt="" />
+<img src="https://ningyu1.github.io/site/img/docker-registry/4.png" alt="" />
+<img src="https://ningyu1.github.io/site/img/docker-registry/5.png" alt="" /></p>
+
+<p>不管是通过RESTful API还是UI删除镜像，都需要去再registry里去gc一下才能真正释放空间，如下时候gc后的效果图</p>
+
+<p><img src="https://ningyu1.github.io/site/img/docker-registry/6.png" alt="" />
+<img src="https://ningyu1.github.io/site/img/docker-registry/7.png" alt="" /></p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/46-docker-registry/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/45-spring-cloud-netflix/">Spring Cloud Netflix架构浅析</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-12-25T13:58:36.000&#43;00:00' itemprop="datePublished">2017-12-25</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/spring-cloud">spring cloud</a>
+
+<a href="https://ningyu1.github.io/site/tags/netflix">netflix</a>
+
+<a href="https://ningyu1.github.io/site/tags/hystrix">hystrix</a>
+
+<a href="https://ningyu1.github.io/site/tags/eureka">Eureka</a>
+
+<a href="https://ningyu1.github.io/site/tags/zuul">zuul</a>
+
+<a href="https://ningyu1.github.io/site/tags/ribbon">ribbon</a>
+
+<a href="https://ningyu1.github.io/site/tags/ucm">ucm</a>
+
+<a href="https://ningyu1.github.io/site/tags/rpc">rpc</a>
+
+<a href="https://ningyu1.github.io/site/tags/devops">devops</a>
+
+<a href="https://ningyu1.github.io/site/tags/monitor">monitor</a>
+
+
+</div>
+    </div>
+        
+
+<h1 id="点评">点评</h1>
+
+<p>这篇文章比较适合入门，对于spring cloud生态的成员有一个大致的了解，其实spring cloud生态将netflix的产品进行了很好的整合，netflix早几年就在服务治理这块有很深入的研究，出品了很多服务治理的工具hystrix就是很有名的一个，具体可以查看：<a href="https://github.com/netflix">https://github.com/netflix</a>，刚好在微服务盛行的年代服务治理是必不可少的一环，现在在微服务开发套件这块常用也就是下面这两种选择：</p>
+
+<ol>
+<li>spring cloud套件，成熟上手快</li>
+<li>自建微服务架构
+
+<ol>
+<li>UCM，统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。</li>
+<li>RPC，阿里的Dubbo、点评的Pigeon，当当改的DubboX，grpc，等等很多开源的，还有很多公司自研的。</li>
+<li>服务治理，netflix的hystrix老牌的功能强大的服务治理工具，有熔断、降级等功能，很多公司会结合监控套件开发自己的服务治理工具。</li>
+<li>开发框架（rpc、restful这个一般公司都有自研的开发框架）</li>
+<li>注册中心（zookeeper、redis、Consul、SmartStack、Eureka，其中一些已经是spring cloud生态的一员了）。</li>
+<li>网关，restful的使用nginx+lua，这也是openAPI网关常用的手段</li>
+<li>负载均衡，这个结合选用的rpc框架来选择。一般rpc框架都有负载均衡的功能。</li>
+<li>服务治理熔断，使用hystrix（也已经是spring cloud生态的一员了）</li>
+<li>监控，使用pinpoint、点评的cat、等其他开源的APM工具</li>
+<li>DevOPS，持续交付一般也是自己构架的，采用jenkins打包docker镜像，使用docker生态的工具构建容器化发布平台。</li>
+</ol></li>
+</ol>
+
+<p>下面文章转自：<a href="https://my.oschina.net/u/3747963/blog/1592777">https://my.oschina.net/u/3747963/blog/1592777</a>
+作者：@海岸线的曙光</p>
+
+<h1 id="微服务框架spring-boot-spring-cloud">微服务框架Spring Boot+Spring Cloud</h1>
+
+<p>Spring Cloud是基于<a href="http://www.60kb.com/tags-11.html">Spring Boot</a>的一整套实现<a href="http://www.60kb.com/tags-20.html">微服务</a>的框架，可以说，Spring Boot作为框架，Spring Cloud作为微服务，一起构成了一种不可忽视的、新生的框架体系。它提供了微服务开发所需的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、<a href="http://www.60kb.com/tags-16.html">分布式</a>会话和集群状态管理等组件，方便易用。Spring Cloud包含了非常多的子框架，其中，Spring Cloud <a href="http://www.60kb.com/tags-29.html">Netflix</a>是其中一套框架，它主要提供的模块包括：服务发现、断路器和监控、智能路由、客户端负载均衡等。</p>
+
+<h1 id="spring-cloud-netflix组件以及部署">Spring Cloud Netflix组件以及部署</h1>
+
+<ol>
+<li>Eureka，服务注册和发现，它提供了一个服务注册中心、服务发现的客户端，还有一个方便的查看所有注册的服务的界面。 所有的服务使用Eureka的服务发现客户端来将自己注册到Eureka的服务器上。</li>
+<li><a href="http://www.60kb.com/tags-63.html">Zuul</a>，网关，所有的客户端请求通过这个网关访问后台的服务。他可以使用一定的路由配置来判断某一个URL由哪个服务来处理。并从Eureka获取注册的服务来转发请求。</li>
+<li><a href="http://www.60kb.com/tags-55.html">Ribbon</a>，即负载均衡，Zuul网关将一个请求发送给某一个服务的应用的时候，如果一个服务启动了多个实例，就会通过Ribbon来通过一定的负载均衡策略来发送给某一个服务实例。</li>
+<li>Feign，服务客户端，服务之间如果需要相互访问，可以使用RestTemplate，也可以使用Feign客户端访问。它默认会使用Ribbon来实现负载均衡。</li>
+<li>Hystrix，监控和断路器。我们只需要在服务接口上添加Hystrix标签，就可以实现对这个接口的监控和断路器功能。</li>
+<li>Hystrix Dashboard，监控面板，他提供了一个界面，可以监控各个服务上的服务调用所消耗的时间等。</li>
+<li>Turbine，监控聚合，使用Hystrix监控，我们需要打开每一个服务实例的监控信息来查看。而Turbine可以帮助我们把所有的服务实例的监控信息聚合到一个地方统一查看。</li>
+</ol>
+
+<h1 id="spring-cloud-netflix组件开发">Spring Cloud Netflix组件开发</h1>
+
+<p>可以参考其中文文档：<a href="https://springcloud.cc/spring-cloud-netflix.html">https://springcloud.cc/spring-cloud-netflix.html</a></p>
+
+<ul>
+<li>服务注册与监控中心：</li>
+</ul>
+
+<pre><code>@SpringBootApplication
+@EnableEurekaServer
+@EnableHystrixDashboard
+public class ApplicationRegistry {
+    public static void main(String[] args) {
+        new SpringApplicationBuilder(Application.class).web(true).run(args);
+    }
+}
+</code></pre>
+
+<p>这里使用spring boot标签的 @SpringBootApplication 说明当前的应用是一个spring boot应用。这样我就可以直接用main函数在IDE里面启动这个应用，也可以打包后用命令行启动。当然也可以把打包的war包用tomcat之类的服务器启动。 使用标签 @EnableEurekaServer ，就能在启动过程中启动Eureka服务注册中心的组件。它会监听一个端口，默认是8761，来接收服务注册。并提供一个web页面，打开以后，可以看到注册的服务。 添加 @EnableHystrixDashboard 就会提供一个监控的页面，我们可以在上面输入要监控的服务的地址，就可以查看启用了Hystrix监控的接口的调用情况。 当然，为了使用上面的组件，我们需要在maven的POM文件里添加相应的依赖，比如使用 spring-boot-starter-parent ，依赖 spring-cloud-starter-eureka-server 和 spring-cloud-starter-hystrix-dashboard 等。</p>
+
+<ul>
+<li>服务间调用：</li>
+</ul>
+
+<p>两种方式可以进行服务调用，RestTemplate和FeignClient。不管是什么方式，他都是通过REST接口调用服务的http接口，参数和结果默认都是通过jackson序列化和反序列化。因为Spring MVC的RestController定义的接口，返回的数据都是通过jackson序列化成json数据。</p>
+
+<p>第一种：RestTemplate，只需要定义一个RestTemplate的Bean，设置成 LoadBalanced 即可：</p>
+
+<pre><code>@Configuration
+public class SomeCloudConfiguration {
+    @LoadBalanced
+    @Bean
+    RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+}
+</code></pre>
+
+<p>这样我们就可以在需要用的地方注入这个bean使用：</p>
+
+<pre><code>public class SomeServiceClass {
+    @Autowired
+    private RestTemplate restTemplate;
+    public String getUserById(Long userId) {
+        UserDTO results = restTemplate.getForObject(&quot;http://users/getUserDetail/&quot; + userId, UserDTO.class);
+        return results;
+    }
+}
+</code></pre>
+
+<p>其中， users 是服务ID，Ribbon会从服务实例列表获得这个服务的一个实例，发送请求，并获得结果。对象 UserDTO 需要序列号，它的反序列号会自动完成。</p>
+
+<p>第二种：FeignClient</p>
+
+<pre><code>@FeignClient(value = &quot;users&quot;, path = &quot;/users&quot;)
+public interface UserCompositeService {
+    @RequestMapping(value = &quot;/getUserDetail/{id}&quot;, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    UserDTO getUserById(@PathVariable Long id);
+}
+</code></pre>
+
+<p>我们只需要使用 @FeignClient 定义一个借口，Spring Cloud Feign会帮我们生成一个它的实现，从相应的users服务获取数据。 其中， @FeignClient(value = &ldquo;users&rdquo;, path = &ldquo;/users/getUserDetail&rdquo;) 里面的value是服务ID，path是这一组接口的path前缀。 在下面的方法定义里，就好像设置Spring MVC的接口一样，对于这个方法，它对应的URL是 /users/getUserDetail/{id} 。 然后，在使用它的时候，就像注入一个一般的服务一样注入后使用即可：</p>
+
+<pre><code>public class SomeOtherServiceClass {
+    @Autowired
+    private UserCompositeService userService;
+    public void doSomething() {
+        // .....                    
+        UserDTO results = userService.getUserById(userId);
+        // other operation...                    
+    }
+}
+</code></pre>
+
+<ul>
+<li>断路器：</li>
+</ul>
+
+<pre><code>//断路器：为了解决当某个方法调用失败的时候，调用后备方法来替代失败的方法，已达到容错／阻止级联错误的功能
+//fallbackMethod指定后备方法
+@HystrixCommand(fallbackMethod = &quot;doStudentFallback&quot;)
+@RequestMapping(value = &quot;dostudent&quot;,method = RequestMethod.GET)
+public String doStudent(){
+   return &quot;your name:secret,your age:secret!&quot;;
+}
+
+public String doStudentFallback(){
+   return &quot;your name:FEIFEI,your age:26!&quot;;
+}
+</code></pre>
+
+<p>其中，使用@EnableCircuitBreaker来启用断路器支持，Spring Cloud提供了一个控制台来监控断路器的运行情况，通过@EnableHystrixDashboard注解开启。</p>
+
+<p>以上是简单的一些对Spring Cloud Netflix组件的介绍。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/45-spring-cloud-netflix/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/44-jdk1.8-feature/">JDK1.8新特性详解</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-12-15T18:15:36.000&#43;00:00' itemprop="datePublished">2017-12-15</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/jdk">jdk</a>
+
+
+</div>
+    </div>
+        
+
+<p>将Java8的新特新逐一列出，并将使用简单的代码示例来指导你如何使用默认接口方法，lambda表达式，方法引用以及多重Annotation，之后你将会学到最新的API上的改进，比如流，函数式接口，Map以及全新的日期API</p>
+
+<h2 id="一-接口的默认方法">一、接口的默认方法</h2>
+
+<p>Java 8允许我们给接口添加一个非抽象的方法实现，只需要使用 default关键字即可，这个特征又叫做扩展方法，示例如下：</p>
+
+<pre><code>interface Formula {
+    double calculate(int a);
+    default double sqrt(int a) {
+        return Math.sqrt(a);
+    }
+}
+</code></pre>
+
+<p>Formula接口在拥有calculate方法之外同时还定义了sqrt方法，实现了Formula接口的子类只需要实现一个calculate方法，默认方法sqrt将在子类上可以直接使用。</p>
+
+<pre><code>Formula formula = new Formula() {
+    @Override
+    public double calculate(int a) {
+        return sqrt(a * 100);
+    }
+};
+formula.calculate(100);     // 100.0
+formula.sqrt(16);           // 4.0
+</code></pre>
+
+<p>文中的formula被实现为一个匿名类的实例，该代码非常容易理解，6行代码实现了计算 sqrt(a * 100)。在下一节中，我们将会看到实现单方法接口的更简单的做法。</p>
+
+<h2 id="二-lambda-表达式">二、Lambda 表达式</h2>
+
+<p>首先看看在老版本的Java中是如何排列字符串的：</p>
+
+<pre><code>List&lt;String&gt; names = Arrays.asList(&quot;peter&quot;, &quot;anna&quot;, &quot;mike&quot;, &quot;xenia&quot;);
+Collections.sort(names, new Comparator&lt;String&gt;() {
+    @Override
+    public int compare(String a, String b) {
+        return b.compareTo(a);
+    }
+});
+</code></pre>
+
+<p>只需要给静态方法 Collections.sort 传入一个List对象以及一个比较器来按指定顺序排列。通常做法都是创建一个匿名的比较器对象然后将其传递给sort方法。</p>
+
+<p>在Java 8 中你就没必要使用这种传统的匿名对象的方式了，Java 8提供了更简洁的语法，lambda表达式：</p>
+
+<pre><code>Collections.sort(names, (String a, String b) -&gt; {
+    return b.compareTo(a);
+});
+</code></pre>
+
+<p>看到了吧，代码变得更段且更具有可读性，但是实际上还可以写得更短：</p>
+
+<pre><code>Collections.sort(names, (String a, String b) -&gt; b.compareTo(a));
+</code></pre>
+
+<p>对于函数体只有一行代码的，你可以去掉大括号{}以及return关键字，但是你还可以写得更短点：</p>
+
+<pre><code>Collections.sort(names, (a, b) -&gt; b.compareTo(a));
+</code></pre>
+
+<p>Java编译器可以自动推导出参数类型，所以你可以不用再写一次类型。接下来我们看看lambda表达式还能作出什么更方便的东西来：</p>
+
+<h2 id="三-函数式接口">三、函数式接口</h2>
+
+<p>Lambda表达式是如何在java的类型系统中表示的呢？每一个lambda表达式都对应一个类型，通常是接口类型。而“函数式接口”是指仅仅只包含一个抽象方法的接口，每一个该类型的lambda表达式都会被匹配到这个抽象方法。因为 默认方法 不算抽象方法，所以你也可以给你的函数式接口添加默认方法。</p>
+
+<p>我们可以将lambda表达式当作任意只包含一个抽象方法的接口类型，确保你的接口一定达到这个要求，你只需要给你的接口添加 @FunctionalInterface 注解，编译器如果发现你标注了这个注解的接口有多于一个抽象方法的时候会报错的。</p>
+
+<pre><code>@FunctionalInterface
+interface Converter&lt;F, T&gt; {
+    T convert(F from);
+}
+Converter&lt;String, Integer&gt; converter = (from) -&gt; Integer.valueOf(from);
+Integer converted = converter.convert(&quot;123&quot;);
+System.out.println(converted);    // 123
+</code></pre>
+
+<p>需要注意如果@FunctionalInterface如果没有指定，上面的代码也是对的。</p>
+
+<p>将lambda表达式映射到一个单方法的接口上，这种做法在Java 8之前就有别的语言实现，比如Rhino JavaScript解释器，如果一个函数参数接收一个单方法的接口而你传递的是一个function，Rhino 解释器会自动做一个单接口的实例到function的适配器，典型的应用场景有 org.w3c.dom.events.EventTarget 的addEventListener 第二个参数 EventListener。</p>
+
+<h2 id="四-方法与构造函数引用">四、方法与构造函数引用</h2>
+
+<p>前一节中的代码还可以通过静态方法引用来表示：</p>
+
+<pre><code>Converter&lt;String, Integer&gt; converter = Integer::valueOf;
+Integer converted = converter.convert(&quot;123&quot;);
+System.out.println(converted);   // 123
+</code></pre>
+
+<p>Java 8 允许你使用 :: 关键字来传递方法或者构造函数引用，上面的代码展示了如何引用一个静态方法，我们也可以引用一个对象的方法：</p>
+
+<pre><code>converter = something::startsWith;
+String converted = converter.convert(&quot;Java&quot;);
+System.out.println(converted);    // &quot;J&quot;
+</code></pre>
+
+<p>接下来看看构造函数是如何使用::关键字来引用的，首先我们定义一个包含多个构造函数的简单类：</p>
+
+<pre><code>class Person {
+    String firstName;
+    String lastName;
+    Person() {}
+
+    Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
+</code></pre>
+
+<p>接下来我们指定一个用来创建Person对象的对象工厂接口：</p>
+
+<pre><code>interface PersonFactory&lt;P extends Person&gt; {
+    P create(String firstName, String lastName);
+}
+</code></pre>
+
+<p>这里我们使用构造函数引用来将他们关联起来，而不是实现一个完整的工厂：</p>
+
+<pre><code>PersonFactory&lt;Person&gt; personFactory = Person::new;
+Person person = personFactory.create(&quot;Peter&quot;, &quot;Parker&quot;);
+</code></pre>
+
+<p>我们只需要使用 Person::new 来获取Person类构造函数的引用，Java编译器会自动根据PersonFactory.create方法的签名来选择合适的构造函数。</p>
+
+<h2 id="五-lambda-作用域">五、Lambda 作用域</h2>
+
+<p>在lambda表达式中访问外层作用域和老版本的匿名对象中的方式很相似。你可以直接访问标记了final的外层局部变量，或者实例的字段以及静态变量。</p>
+
+<h2 id="六-访问局部变量">六、访问局部变量</h2>
+
+<p>我们可以直接在lambda表达式中访问外层的局部变量：</p>
+
+<pre><code>final int num = 1;
+Converter&lt;Integer, String&gt; stringConverter =
+        (from) -&gt; String.valueOf(from + num);
+stringConverter.convert(2);     // 3
+</code></pre>
+
+<p>但是和匿名对象不同的是，这里的变量num可以不用声明为final，该代码同样正确：</p>
+
+<pre><code>int num = 1;
+Converter&lt;Integer, String&gt; stringConverter =
+        (from) -&gt; String.valueOf(from + num);
+stringConverter.convert(2);     // 3
+</code></pre>
+
+<p>不过这里的num必须不可被后面的代码修改（即隐性的具有final的语义），例如下面的就无法编译：</p>
+
+<pre><code>int num = 1;
+Converter&lt;Integer, String&gt; stringConverter =
+        (from) -&gt; String.valueOf(from + num);
+num = 3;
+</code></pre>
+
+<p>在lambda表达式中试图修改num同样是不允许的。</p>
+
+<h2 id="七-访问对象字段与静态变量">七、访问对象字段与静态变量</h2>
+
+<p>和本地变量不同的是，lambda内部对于实例的字段以及静态变量是即可读又可写。该行为和匿名对象是一致的：</p>
+
+<pre><code>class Lambda4 {
+    static int outerStaticNum;
+    int outerNum;
+    void testScopes() {
+        Converter&lt;Integer, String&gt; stringConverter1 = (from) -&gt; {
+            outerNum = 23;
+            return String.valueOf(from);
+        };
+
+        Converter&lt;Integer, String&gt; stringConverter2 = (from) -&gt; {
+            outerStaticNum = 72;
+            return String.valueOf(from);
+        };
+    }
+}
+</code></pre>
+
+<h2 id="八-访问接口的默认方法">八、访问接口的默认方法</h2>
+
+<p>还记得第一节中的formula例子么，接口Formula定义了一个默认方法sqrt可以直接被formula的实例包括匿名对象访问到，但是在lambda表达式中这个是不行的。
+Lambda表达式中是无法访问到默认方法的，以下代码将无法编译：</p>
+
+<pre><code>Formula formula = (a) -&gt; sqrt( a * 100);
+Built-in Functional Interfaces
+</code></pre>
+
+<p>JDK 1.8 API包含了很多内建的函数式接口，在老Java中常用到的比如Comparator或者Runnable接口，这些接口都增加了@FunctionalInterface注解以便能用在lambda上。
+Java 8 API同样还提供了很多全新的函数式接口来让工作更加方便，有一些接口是来自Google Guava库里的，即便你对这些很熟悉了，还是有必要看看这些是如何扩展到lambda上使用的。</p>
+
+<h3 id="predicate接口">Predicate接口</h3>
+
+<p>Predicate 接口只有一个参数，返回boolean类型。该接口包含多种默认方法来将Predicate组合成其他复杂的逻辑（比如：与，或，非）：</p>
+
+<pre><code>Predicate&lt;String&gt; predicate = (s) -&gt; s.length() &gt; 0;
+predicate.test(&quot;foo&quot;);              // true
+predicate.negate().test(&quot;foo&quot;);     // false
+
+Predicate&lt;Boolean&gt; nonNull = Objects::nonNull;
+Predicate&lt;Boolean&gt; isNull = Objects::isNull;
+
+Predicate&lt;String&gt; isEmpty = String::isEmpty;
+Predicate&lt;String&gt; isNotEmpty = isEmpty.negate();
+</code></pre>
+
+<h3 id="function-接口">Function 接口</h3>
+
+<p>Function 接口有一个参数并且返回一个结果，并附带了一些可以和其他函数组合的默认方法（compose, andThen）：</p>
+
+<pre><code>Function&lt;String, Integer&gt; toInteger = Integer::valueOf;
+Function&lt;String, String&gt; backToString = toInteger.andThen(String::valueOf);
+backToString.apply(&quot;123&quot;);     // &quot;123&quot;
+</code></pre>
+
+<h3 id="supplier-接口">Supplier 接口</h3>
+
+<p>Supplier 接口返回一个任意范型的值，和Function接口不同的是该接口没有任何参数</p>
+
+<pre><code>Supplier&lt;Person&gt; personSupplier = Person::new;
+personSupplier.get();   // new Person
+</code></pre>
+
+<h3 id="consumer-接口">Consumer 接口</h3>
+
+<p>Consumer 接口表示执行在单个参数上的操作。</p>
+
+<p>Consumer<Person> greeter = (p) -&gt; System.out.println(&ldquo;Hello, &rdquo; + p.firstName);
+greeter.accept(new Person(&ldquo;Luke&rdquo;, &ldquo;Skywalker&rdquo;));</p>
+
+<h3 id="comparator-接口">Comparator 接口</h3>
+
+<p>Comparator 是老Java中的经典接口， Java 8在此之上添加了多种默认方法：</p>
+
+<pre><code>Comparator&lt;Person&gt; comparator = (p1, p2) -&gt; p1.firstName.compareTo(p2.firstName);
+Person p1 = new Person(&quot;John&quot;, &quot;Doe&quot;);
+Person p2 = new Person(&quot;Alice&quot;, &quot;Wonderland&quot;);
+
+comparator.compare(p1, p2);             // &gt; 0
+comparator.reversed().compare(p1, p2);  // &lt; 0
+</code></pre>
+
+<h3 id="optional-接口">Optional 接口</h3>
+
+<p>Optional 不是函数是接口，这是个用来防止NullPointerException异常的辅助类型，这是下一届中将要用到的重要概念，现在先简单的看看这个接口能干什么：</p>
+
+<p>Optional 被定义为一个简单的容器，其值可能是null或者不是null。在Java 8之前一般某个函数应该返回非空对象但是偶尔却可能返回了null，而在Java 8中，不推荐你返回null而是返回Optional。</p>
+
+<pre><code>Optional&lt;String&gt; optional = Optional.of(&quot;bam&quot;);
+optional.isPresent();           // true
+optional.get();                 // &quot;bam&quot;
+optional.orElse(&quot;fallback&quot;);    // &quot;bam&quot;
+
+optional.ifPresent((s) -&gt; System.out.println(s.charAt(0)));     // &quot;b&quot;
+</code></pre>
+
+<h3 id="stream-接口">Stream 接口</h3>
+
+<p>java.util.Stream 表示能应用在一组元素上一次执行的操作序列。Stream 操作分为中间操作或者最终操作两种，最终操作返回一特定类型的计算结果，而中间操作返回Stream本身，这样你就可以将多个操作依次串起来。Stream 的创建需要指定一个数据源，比如 java.util.Collection的子类，List或者Set， Map不支持。Stream的操作可以串行执行或者并行执行。</p>
+
+<p>首先看看Stream是怎么用，首先创建实例代码的用到的数据List：</p>
+
+<pre><code>List&lt;String&gt; stringCollection = new ArrayList&lt;&gt;();
+stringCollection.add(&quot;ddd2&quot;);
+stringCollection.add(&quot;aaa2&quot;);
+stringCollection.add(&quot;bbb1&quot;);
+stringCollection.add(&quot;aaa1&quot;);
+stringCollection.add(&quot;bbb3&quot;);
+stringCollection.add(&quot;ccc&quot;);
+stringCollection.add(&quot;bbb2&quot;);
+stringCollection.add(&quot;ddd1&quot;);
+</code></pre>
+
+<p>Java 8扩展了集合类，可以通过 Collection.stream() 或者 Collection.parallelStream() 来创建一个Stream。下面几节将详细解释常用的Stream操作：</p>
+
+<h3 id="filter-过滤">Filter 过滤</h3>
+
+<p>过滤通过一个predicate接口来过滤并只保留符合条件的元素，该操作属于中间操作，所以我们可以在过滤后的结果来应用其他Stream操作（比如forEach）。forEach需要一个函数来对过滤后的元素依次执行。forEach是一个最终操作，所以我们不能在forEach之后来执行其他Stream操作。</p>
+
+<pre><code>stringCollection
+    .stream()
+    .filter((s) -&gt; s.startsWith(&quot;a&quot;))
+    .forEach(System.out::println);
+// &quot;aaa2&quot;, &quot;aaa1&quot;
+</code></pre>
+
+<h3 id="sort-排序">Sort 排序</h3>
+
+<p>排序是一个中间操作，返回的是排序好后的Stream。如果你不指定一个自定义的Comparator则会使用默认排序。</p>
+
+<pre><code>stringCollection
+    .stream()
+    .sorted()
+    .filter((s) -&gt; s.startsWith(&quot;a&quot;))
+    .forEach(System.out::println);
+// &quot;aaa1&quot;, &quot;aaa2&quot;
+</code></pre>
+
+<p>需要注意的是，排序只创建了一个排列好后的Stream，而不会影响原有的数据源，排序之后原数据stringCollection是不会被修改的：</p>
+
+<pre><code>System.out.println(stringCollection);
+// ddd2, aaa2, bbb1, aaa1, bbb3, ccc, bbb2, ddd1
+</code></pre>
+
+<h3 id="map-映射">Map 映射</h3>
+
+<p>中间操作map会将元素根据指定的Function接口来依次将元素转成另外的对象，下面的示例展示了将字符串转换为大写字符串。你也可以通过map来讲对象转换成其他类型，map返回的Stream类型是根据你map传递进去的函数的返回值决定的。</p>
+
+<pre><code>stringCollection
+    .stream()
+    .map(String::toUpperCase)
+    .sorted((a, b) -&gt; b.compareTo(a))
+    .forEach(System.out::println);
+// &quot;DDD2&quot;, &quot;DDD1&quot;, &quot;CCC&quot;, &quot;BBB3&quot;, &quot;BBB2&quot;, &quot;AAA2&quot;, &quot;AAA1&quot;
+</code></pre>
+
+<h3 id="match-匹配">Match 匹配</h3>
+
+<p>Stream提供了多种匹配操作，允许检测指定的Predicate是否匹配整个Stream。所有的匹配操作都是最终操作，并返回一个boolean类型的值。</p>
+
+<pre><code>boolean anyStartsWithA = 
+    stringCollection
+        .stream()
+        .anyMatch((s) -&gt; s.startsWith(&quot;a&quot;));
+System.out.println(anyStartsWithA);      // true
+
+boolean allStartsWithA = 
+    stringCollection
+        .stream()
+        .allMatch((s) -&gt; s.startsWith(&quot;a&quot;));
+
+System.out.println(allStartsWithA);      // false
+
+boolean noneStartsWithZ = 
+    stringCollection
+        .stream()
+        .noneMatch((s) -&gt; s.startsWith(&quot;z&quot;));
+
+System.out.println(noneStartsWithZ);      // true
+</code></pre>
+
+<h3 id="count-计数">Count 计数</h3>
+
+<p>计数是一个最终操作，返回Stream中元素的个数，返回值类型是long。</p>
+
+<pre><code>long startsWithB = 
+    stringCollection
+        .stream()
+        .filter((s) -&gt; s.startsWith(&quot;b&quot;))
+        .count();
+System.out.println(startsWithB);    // 3
+</code></pre>
+
+<h3 id="reduce-规约">Reduce 规约</h3>
+
+<p>这是一个最终操作，允许通过指定的函数来讲stream中的多个元素规约为一个元素，规越后的结果是通过Optional接口表示的：</p>
+
+<pre><code>Optional&lt;String&gt; reduced =
+    stringCollection
+        .stream()
+        .sorted()
+        .reduce((s1, s2) -&gt; s1 + &quot;#&quot; + s2);
+reduced.ifPresent(System.out::println);
+// &quot;aaa1#aaa2#bbb1#bbb2#bbb3#ccc#ddd1#ddd2&quot;
+</code></pre>
+
+<h3 id="并行streams">并行Streams</h3>
+
+<p>前面提到过Stream有串行和并行两种，串行Stream上的操作是在一个线程中依次完成，而并行Stream则是在多个线程上同时执行。</p>
+
+<p>下面的例子展示了是如何通过并行Stream来提升性能：</p>
+
+<p>首先我们创建一个没有重复元素的大表：</p>
+
+<pre><code>int max = 1000000;
+List&lt;String&gt; values = new ArrayList&lt;&gt;(max);
+for (int i = 0; i &lt; max; i++) {
+    UUID uuid = UUID.randomUUID();
+    values.add(uuid.toString());
+}
+</code></pre>
+
+<p>然后我们计算一下排序这个Stream要耗时多久，
+串行排序：</p>
+
+<pre><code>long t0 = System.nanoTime();
+long count = values.stream().sorted().count();
+System.out.println(count);
+
+long t1 = System.nanoTime();
+
+long millis = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
+System.out.println(String.format(&quot;sequential sort took: %d ms&quot;, millis));
+</code></pre>
+
+<p>// 串行耗时: 899 ms
+并行排序：</p>
+
+<pre><code>long t0 = System.nanoTime();
+long count = values.parallelStream().sorted().count();
+System.out.println(count);
+
+long t1 = System.nanoTime();
+
+long millis = TimeUnit.NANOSECONDS.toMillis(t1 - t0);
+System.out.println(String.format(&quot;parallel sort took: %d ms&quot;, millis));
+</code></pre>
+
+<p>// 并行排序耗时: 472 ms
+上面两个代码几乎是一样的，但是并行版的快了50%之多，唯一需要做的改动就是将stream()改为parallelStream()。</p>
+
+<h3 id="map">Map</h3>
+
+<p>前面提到过，Map类型不支持stream，不过Map提供了一些新的有用的方法来处理一些日常任务。</p>
+
+<pre><code>Map&lt;Integer, String&gt; map = new HashMap&lt;&gt;();
+for (int i = 0; i &lt; 10; i++) {
+    map.putIfAbsent(i, &quot;val&quot; + i);
+}
+</code></pre>
+
+<p>map.forEach((id, val) -&gt; System.out.println(val));
+以上代码很容易理解， putIfAbsent 不需要我们做额外的存在性检查，而forEach则接收一个Consumer接口来对map里的每一个键值对进行操作。</p>
+
+<p>下面的例子展示了map上的其他有用的函数：</p>
+
+<pre><code>map.computeIfPresent(3, (num, val) -&gt; val + num);
+map.get(3);             // val33
+map.computeIfPresent(9, (num, val) -&gt; null);
+map.containsKey(9);     // false
+
+map.computeIfAbsent(23, num -&gt; &quot;val&quot; + num);
+map.containsKey(23);    // true
+
+map.computeIfAbsent(3, num -&gt; &quot;bam&quot;);
+map.get(3);             // val33
+</code></pre>
+
+<p>接下来展示如何在Map里删除一个键值全都匹配的项：</p>
+
+<pre><code>map.remove(3, &quot;val3&quot;);
+map.get(3);             // val33
+map.remove(3, &quot;val33&quot;);
+map.get(3);             // null
+</code></pre>
+
+<p>另外一个有用的方法：</p>
+
+<pre><code>map.getOrDefault(42, &quot;not found&quot;);  // not found
+</code></pre>
+
+<p>对Map的元素做合并也变得很容易了：</p>
+
+<pre><code>map.merge(9, &quot;val9&quot;, (value, newValue) -&gt; value.concat(newValue));
+map.get(9);             // val9
+map.merge(9, &quot;concat&quot;, (value, newValue) -&gt; value.concat(newValue));
+map.get(9);             // val9concat
+</code></pre>
+
+<p>Merge做的事情是如果键名不存在则插入，否则则对原键对应的值做合并操作并重新插入到map中。</p>
+
+<h2 id="九-date-api">九、Date API</h2>
+
+<p>Java 8 在包java.time下包含了一组全新的时间日期API。新的日期API和开源的Joda-Time库差不多，但又不完全一样，下面的例子展示了这组新API里最重要的一些部分：</p>
+
+<h3 id="clock-时钟">Clock 时钟</h3>
+
+<p>Clock类提供了访问当前日期和时间的方法，Clock是时区敏感的，可以用来取代 System.currentTimeMillis() 来获取当前的微秒数。某一个特定的时间点也可以使用Instant类来表示，Instant类也可以用来创建老的java.util.Date对象。</p>
+
+<pre><code>Clock clock = Clock.systemDefaultZone();
+long millis = clock.millis();
+Instant instant = clock.instant();
+Date legacyDate = Date.from(instant);   // legacy java.util.Date
+</code></pre>
+
+<h3 id="timezones-时区">Timezones 时区</h3>
+
+<p>在新API中时区使用ZoneId来表示。时区可以很方便的使用静态方法of来获取到。 时区定义了到UTS时间的时间差，在Instant时间点对象到本地日期对象之间转换的时候是极其重要的。</p>
+
+<pre><code>System.out.println(ZoneId.getAvailableZoneIds());
+// prints all available timezone ids
+ZoneId zone1 = ZoneId.of(&quot;Europe/Berlin&quot;);
+ZoneId zone2 = ZoneId.of(&quot;Brazil/East&quot;);
+System.out.println(zone1.getRules());
+System.out.println(zone2.getRules());
+
+// ZoneRules[currentStandardOffset=+01:00]
+// ZoneRules[currentStandardOffset=-03:00]
+</code></pre>
+
+<h3 id="localtime-本地时间">LocalTime 本地时间</h3>
+
+<p>LocalTime 定义了一个没有时区信息的时间，例如 晚上10点，或者 17:30:15。下面的例子使用前面代码创建的时区创建了两个本地时间。之后比较时间并以小时和分钟为单位计算两个时间的时间差：</p>
+
+<pre><code>LocalTime now1 = LocalTime.now(zone1);
+LocalTime now2 = LocalTime.now(zone2);
+System.out.println(now1.isBefore(now2));  // false
+
+long hoursBetween = ChronoUnit.HOURS.between(now1, now2);
+long minutesBetween = ChronoUnit.MINUTES.between(now1, now2);
+
+System.out.println(hoursBetween);       // -3
+System.out.println(minutesBetween);     // -239
+</code></pre>
+
+<p>LocalTime 提供了多种工厂方法来简化对象的创建，包括解析时间字符串。</p>
+
+<pre><code>LocalTime late = LocalTime.of(23, 59, 59);
+System.out.println(late);       // 23:59:59
+DateTimeFormatter germanFormatter =
+    DateTimeFormatter
+        .ofLocalizedTime(FormatStyle.SHORT)
+        .withLocale(Locale.GERMAN);
+
+LocalTime leetTime = LocalTime.parse(&quot;13:37&quot;, germanFormatter);
+System.out.println(leetTime);   // 13:37
+</code></pre>
+
+<h3 id="localdate-本地日期">LocalDate 本地日期</h3>
+
+<p>LocalDate 表示了一个确切的日期，比如 2014-03-11。该对象值是不可变的，用起来和LocalTime基本一致。下面的例子展示了如何给Date对象加减天/月/年。另外要注意的是这些对象是不可变的，操作返回的总是一个新实例。</p>
+
+<pre><code>LocalDate today = LocalDate.now();
+LocalDate tomorrow = today.plus(1, ChronoUnit.DAYS);
+LocalDate yesterday = tomorrow.minusDays(2);
+LocalDate independenceDay = LocalDate.of(2014, Month.JULY, 4);
+DayOfWeek dayOfWeek = independenceDay.getDayOfWeek();
+</code></pre>
+
+<p>System.out.println(dayOfWeek);    // FRIDAY
+从字符串解析一个LocalDate类型和解析LocalTime一样简单：</p>
+
+<pre><code>DateTimeFormatter germanFormatter =
+    DateTimeFormatter
+        .ofLocalizedDate(FormatStyle.MEDIUM)
+        .withLocale(Locale.GERMAN);
+LocalDate xmas = LocalDate.parse(&quot;24.12.2014&quot;, germanFormatter);
+System.out.println(xmas);   // 2014-12-24
+</code></pre>
+
+<h3 id="localdatetime-本地日期时间">LocalDateTime 本地日期时间</h3>
+
+<p>LocalDateTime 同时表示了时间和日期，相当于前两节内容合并到一个对象上了。LocalDateTime和LocalTime还有LocalDate一样，都是不可变的。LocalDateTime提供了一些能访问具体字段的方法。</p>
+
+<pre><code>LocalDateTime sylvester = LocalDateTime.of(2014, Month.DECEMBER, 31, 23, 59, 59);
+DayOfWeek dayOfWeek = sylvester.getDayOfWeek();
+System.out.println(dayOfWeek);      // WEDNESDAY
+
+Month month = sylvester.getMonth();
+System.out.println(month);          // DECEMBER
+
+long minuteOfDay = sylvester.getLong(ChronoField.MINUTE_OF_DAY);
+System.out.println(minuteOfDay);    // 1439
+</code></pre>
+
+<p>只要附加上时区信息，就可以将其转换为一个时间点Instant对象，Instant时间点对象可以很容易的转换为老式的java.util.Date。</p>
+
+<pre><code>Instant instant = sylvester
+        .atZone(ZoneId.systemDefault())
+        .toInstant();
+Date legacyDate = Date.from(instant);
+System.out.println(legacyDate);     // Wed Dec 31 23:59:59 CET 2014
+</code></pre>
+
+<p>格式化LocalDateTime和格式化时间和日期一样的，除了使用预定义好的格式外，我们也可以自己定义格式：</p>
+
+<pre><code>DateTimeFormatter formatter =
+    DateTimeFormatter
+        .ofPattern(&quot;MMM dd, yyyy - HH:mm&quot;);
+LocalDateTime parsed = LocalDateTime.parse(&quot;Nov 03, 2014 - 07:13&quot;, formatter);
+String string = formatter.format(parsed);
+System.out.println(string);     // Nov 03, 2014 - 07:13
+</code></pre>
+
+<p>和java.text.NumberFormat不一样的是新版的DateTimeFormatter是不可变的，所以它是线程安全的。
+关于时间日期格式的详细信息：<a href="http://download.java.net/jdk8/docs/api/java/time/format/DateTimeFormatter.html">http://download.java.net/jdk8/docs/api/java/time/format/DateTimeFormatter.html</a></p>
+
+<h2 id="十-annotation-注解">十、Annotation 注解</h2>
+
+<p>在Java 8中支持多重注解了，先看个例子来理解一下是什么意思。
+首先定义一个包装类Hints注解用来放置一组具体的Hint注解：</p>
+
+<pre><code>@interface Hints {
+    Hint[] value();
+}
+@Repeatable(Hints.class)
+@interface Hint {
+    String value();
+}
+</code></pre>
+
+<p>Java 8允许我们把同一个类型的注解使用多次，只需要给该注解标注一下@Repeatable即可。
+例 1: 使用包装类当容器来存多个注解（老方法）</p>
+
+<pre><code>@Hints({@Hint(&quot;hint1&quot;), @Hint(&quot;hint2&quot;)})
+class Person {}
+</code></pre>
+
+<p>例 2：使用多重注解（新方法）</p>
+
+<pre><code>@Hint(&quot;hint1&quot;)
+@Hint(&quot;hint2&quot;)
+class Person {}
+</code></pre>
+
+<p>第二个例子里java编译器会隐性的帮你定义好@Hints注解，了解这一点有助于你用反射来获取这些信息：</p>
+
+<pre><code>Hint hint = Person.class.getAnnotation(Hint.class);
+System.out.println(hint);                   // null
+Hints hints1 = Person.class.getAnnotation(Hints.class);
+System.out.println(hints1.value().length);  // 2
+
+Hint[] hints2 = Person.class.getAnnotationsByType(Hint.class);
+System.out.println(hints2.length);          // 2
+</code></pre>
+
+<p>即便我们没有在Person类上定义@Hints注解，我们还是可以通过 getAnnotation(Hints.class) 来获取 @Hints注解，更加方便的方法是使用 getAnnotationsByType 可以直接获取到所有的@Hint注解。
+另外Java 8的注解还增加到两种新的target上了：</p>
+
+<pre><code>@Target({ElementType.TYPE_PARAMETER, ElementType.TYPE_USE})
+@interface MyAnnotation {}
+</code></pre>
+
+<p>关于Java 8的新特性就写到这了，肯定还有更多的特性等待发掘。JDK 1.8里还有很多很有用的东西，比如Arrays.parallelSort, StampedLock和CompletableFuture等等。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/44-jdk1.8-feature/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/43-jdk1.7-feature/">JDK1.7新特性详解</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-12-15T18:00:36.000&#43;00:00' itemprop="datePublished">2017-12-15</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/jdk">jdk</a>
+
+
+</div>
+    </div>
+        
+
+<p>JDK7对Java语法有少量更新，重点是在易用性和便捷性的改进。</p>
+
+<h2 id="1-二进制字面量">1.二进制字面量</h2>
+
+<p>JDK7开始，终于可以用二进制来表示整数（byte,short,int和long）。使用二进制字面量的好处是，可以是代码更容易被理解。语法非常简单，只要在二进制数值前面加 0b或者0B</p>
+
+<pre><code>byte nByte = (byte)0b0001;  
+short nShort = (short)0B0010;  
+int nInt = 0b0011;  
+long nLong = 0b0100L; 
+</code></pre>
+
+<h2 id="2-数字字面量可以出现下划线">2.数字字面量可以出现下划线</h2>
+
+<p>对于一些比较大的数字，我们定义起来总是不方面，经常缺少或者增加位数。JDK7为我们提供了一种解决方案，下划线可以出现在数字字面量。</p>
+
+<pre><code>int a = 10_0000_0000;  
+long b = 0xffff_ffff_ffff_ffffl;  
+byte c = 0b0001_1000;  
+</code></pre>
+
+<p>注意：你只能将下划线置于数字之间，以下使用方法是错误的，</p>
+
+<ol>
+<li>数字的开头或者结尾</li>
+<li>小数点的前后</li>
+<li>‘F’或者‘f’的后缀</li>
+<li>只能用数字的位置</li>
+</ol>
+
+<pre><code>nt err1 = _11,err2=11_;  
+float err3=3._4,err4=3_.4;  
+long err5=0x888_f;  
+</code></pre>
+
+<h2 id="3-switch-语句可以用字符串了">3.switch 语句可以用字符串了</h2>
+
+<p>这个功能千呼万唤，终于出来了</p>
+
+<pre><code>private static void switchString(String str){  
+        switch(str){  
+            case &quot;one&quot;:  
+                System.err.println(&quot;1&quot;);  
+                break;  
+            case &quot;two&quot;:  
+                System.out.println(&quot;2&quot;);  
+                break;  
+            default :  
+                System.out.println(&quot;err&quot;);  
+        }  
+}  
+</code></pre>
+
+<h2 id="4-泛型实例的创建可以通过类型推断来简化">4.泛型实例的创建可以通过类型推断来简化</h2>
+
+<p>以后你创建一个泛型实例，不需要再详细说明类型，只需用&lt;&gt;,编译器会自动帮你匹配</p>
+
+<pre><code>//例如   
+Map&lt;String, List&lt;String&gt;&gt; myMap = new HashMap&lt;String, List&lt;String&gt;&gt;();  
+//可以简化为  
+Map&lt;String, List&lt;String&gt;&gt; myMap = new HashMap&lt;&gt;();  
+</code></pre>
+
+<h2 id="5-在可变参数方法中传递非具体化参数-non-reifiable-formal-parameters-改进编译警告和错误">5.在可变参数方法中传递非具体化参数（Non-Reifiable Formal Parameters）,改进编译警告和错误</h2>
+
+<p>有些参数类型，例如ArrayList<Number> 和 List<String>,是非具体化的（non-reifiable）.在编译阶段，编译器会擦除该类型信息。</p>
+
+<p>Heappollution 指一个变量被指向另外一个不是相同类型的变量。例如</p>
+
+<pre><code>List l = new ArrayList&lt;Number&gt;();  
+List&lt;String&gt; ls = l;       // unchecked warning  
+l.add(0, new Integer(42)); // another unchecked warning  
+String s = ls.get(0);      // ClassCastException is thrown  
+</code></pre>
+
+<p>回到我们的主题，在jdk7中，当你定义下面的函数时</p>
+
+<pre><code>public static &lt;T&gt; void addToList (List&lt;T&gt; listArg, T... elements) {  
+    for (T x : elements) {  
+      listArg.add(x);  
+    }  
+  }  
+</code></pre>
+
+<p>你会得到一个warning</p>
+
+<p><code>warning: [varargs] Possible heap pollution from parameterized vararg type</code></p>
+
+<p>在jdk7之前，当你调用一个含有非具体化参数的可变参数方法，你必须自行保证不会发生<code>heappollution</code>。这有一个问题，如果调用者对方法不熟悉，他根本无法判断。JDK7对此做了改进，在该方法被定义时久发出警告</p>
+
+<p>要消除警告，可以有三种方式</p>
+
+<ol>
+<li>加 annotation @SafeVarargs</li>
+<li>加 annotation @SuppressWarnings({&ldquo;unchecked&rdquo;, &ldquo;varargs&rdquo;})</li>
+<li>使用编译器参数 –Xlint:varargs;</li>
+</ol>
+
+<h2 id="6-try-with-resources-语句">6.try-with-resources 语句</h2>
+
+<p>jdk7提供了try-with-resources,可以自动关闭相关的资源（只要该资源实现了AutoCloseable接口，jdk7为绝大部分资源对象都实现了这个接口）</p>
+
+<pre><code>static String readFirstLineFromFile(String path) throws IOException {  
+  try (BufferedReader br = new BufferedReader(new FileReader(path))) {  
+    return br.readLine();  
+  }  
+}  
+</code></pre>
+
+<p>try 语句块中还可以同时处理多个资源,可以跟普通的try语句一样catch异常，有finally语句块</p>
+
+<pre><code>try (  
+      java.util.zip.ZipFile zf = new java.util.zip.ZipFile(zipFileName);  
+      java.io.BufferedWriter writer = java.nio.file.Files.newBufferedWriter(outputFilePath, charset)  
+    ) {  
+}catch(…){  
+}finally{  
+}  
+</code></pre>
+
+<h2 id="7-catch多个exception-rethrow-exception-改进了类型检测">7.Catch多个Exception，rethrow exception 改进了类型检测</h2>
+
+<p>很多时候，我们捕获了多个异常，却做了相同的事情，比如记日志，包装成新的异常，然后rethrow。这时，代码就不那么优雅了，例如</p>
+
+<pre><code>catch (IOException ex) {  
+     logger.log(ex);  
+     throw ex;  
+catch (SQLException ex) {  
+     logger.log(ex);  
+     throw ex;  
+}  
+</code></pre>
+
+<p>Jdk7允许捕获多个异常</p>
+
+<pre><code>catch (IOException|SQLException ex) {  
+    logger.log(ex);  
+    throw ex;  
+}  
+</code></pre>
+
+<p>注意，catch后面的异常参数是final的，不能重新再复制</p>
+
+<p><code>RethrowException</code>更具包容性的类型检测</p>
+
+<p>当你重新抛出多个异常时，不再需要详细定义异常类型了，编译器已经知道你具体抛出的是哪个异常了。你只需在方法定义的时候声明需要抛出的异常即可</p>
+
+<pre><code>public void call() throws ReflectiveOperationException, IOException {  
+    try {  
+      callWithReflection(arg);  
+    } catch (final Exception e) {  
+      logger.trace(&quot;Exception in reflection&quot;, e);  
+      throw e;  
+    }  
+}  
+</code></pre>
+
+<p>参考资料</p>
+
+<p>Jdk7官网 <a href="http://openjdk.java.net/projects/jdk7/">http://openjdk.java.net/projects/jdk7/</a></p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/43-jdk1.7-feature/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/42-fastjson/">Fastjson反序列化java.lang.VerifyError错误</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-12-15T15:42:36.000&#43;00:00' itemprop="datePublished">2017-12-15</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/fastjson">Fastjson</a>
+
+
+</div>
+    </div>
+        
+
+<h1 id="现象">现象</h1>
+
+<p>当反序列化目标对象属性超过32个时会报如下错误：</p>
+
+<pre><code>Exception in thread &quot;main&quot; java.lang.VerifyError: (class: com/alibaba/fastjson/parser/deserializer/FastjsonASMDeserializer_1_OmsMaterialStorageReconciliationEntity, method: deserialze signature: (Lcom/alibaba/fastjson/parser/DefaultJSONParser;Ljava/lang/reflect/Type;Ljava/lang/Object;I)Ljava/lang/Object;) Accessing value from uninitialized register 48
+    at java.lang.Class.getDeclaredConstructors0(Native Method)
+    at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493)
+    at java.lang.Class.getConstructor0(Class.java:2803)
+    at java.lang.Class.getConstructor(Class.java:1718)
+    at com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory.createJavaBeanDeserializer(ASMDeserializerFactory.java:82)
+    at com.alibaba.fastjson.parser.ParserConfig.createJavaBeanDeserializer(ParserConfig.java:639)
+    at com.alibaba.fastjson.parser.ParserConfig.getDeserializer(ParserConfig.java:491)
+    at com.alibaba.fastjson.parser.ParserConfig.getDeserializer(ParserConfig.java:348)
+    at com.alibaba.fastjson.parser.DefaultJSONParser.parseObject(DefaultJSONParser.java:639)
+    at com.alibaba.fastjson.JSON.parseObject(JSON.java:350)
+    at com.alibaba.fastjson.JSON.parseObject(JSON.java:254)
+    at com.alibaba.fastjson.JSON.parseObject(JSON.java:467)
+    at com.jiuyescm.uam.main.Main.main(Main.java:29)
+</code></pre>
+
+<p>查看我们使用的fastjson包版本：</p>
+
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+    &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+    &lt;version&gt;1.2.28&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<p>查看官方issues是否有同样的问题</p>
+
+<p>找到问题：<a href="https://github.com/alibaba/fastjson/issues/1071">https://github.com/alibaba/fastjson/issues/1071</a></p>
+
+<p>是一个反序列化的bug，在1.2.29版本修复</p>
+
+<p><img src="https://ningyu1.github.io/site/img/fastjson/1.png" alt="" /></p>
+
+<p>升级我们使用的fastjson版本验证是否修复问题</p>
+
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+    &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+    &lt;version&gt;1.2.29&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<p>测试代码：</p>
+
+<pre><code>public static void main(String[] args) throws IOException {
+    String a = &quot;{\&quot;region\&quot;:\&quot;aaa\&quot;,\&quot;weight\&quot;:null,\&quot;outqty\&quot;:null,\&quot;inVolume\&quot;:null,\&quot;qtyMax\&quot;:null,\&quot;creTime\&quot;:null,\&quot;lastStock\&quot;:null,\&quot;inHeight\&quot;:null,\&quot;wallThickness\&quot;:null,\&quot;id\&quot;:null,\&quot;height\&quot;:null,\&quot;length\&quot;:null,\&quot;materialType\&quot;:null,\&quot;inqty\&quot;:null,\&quot;materialTypeName\&quot;:null,\&quot;materialName\&quot;:null,\&quot;supplierId\&quot;:null,\&quot;status\&quot;:null,\&quot;width\&quot;:null,\&quot;barcode\&quot;:null,\&quot;qtyMin\&quot;:null,\&quot;crePersonId\&quot;:null,\&quot;unit\&quot;:null,\&quot;changeDate\&quot;:null,\&quot;initStock\&quot;:null,\&quot;materialNo\&quot;:null,\&quot;crePerson\&quot;:null,\&quot;inLength\&quot;:null,\&quot;materialPrice\&quot;:null,\&quot;volume\&quot;:null,\&quot;inWidth\&quot;:null,\&quot;warehouseNo\&quot;:null}&quot;;
+    OmsMaterialStorageReconciliationEntity t2 = JSON.parseObject(a, OmsMaterialStorageReconciliationEntity.class);
+    System.out.println(t2.getRegion());
+}
+</code></pre>
+
+<p>OmsMaterialStorageReconciliationEntity 这个entity对象属性超过32个，运行测试结果：</p>
+
+<pre><code>aaa
+</code></pre>
+
+<p>运行结果符合预期，验证完毕</p>
+
+<h1 id="结论">结论</h1>
+
+<ul>
+<li>升级fastjson包版本 -&gt; 1.2.29</li>
+</ul>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/42-fastjson/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+
+
+  <nav id="pagenavi">
+    
+        <a href="https://ningyu1.github.io/site/page/6/" class="prev">Prev</a>
+    
+    
+        <a href="https://ningyu1.github.io/site/page/8/" class="next">Next</a>
+    
+    <div class="center"><a href="https://ningyu1.github.io/site/archives/index.html">Blog Archives</a></div>
+  </nav>
+
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2024
+    
+    凝雨-Yun
+    . Powered by <a href="http://gohugo.io" target="_blank">Hugo</a> |
+    Theme is <a href="https://github.com/wd/hugo-fabric">hugo-fabric</a>
+</div>
+
+    </footer>
+    <script src="https://ningyu1.github.io/site/js/fabric.js"></script>
+
+
+</div>
+</div>
+<script src="https://ningyu1.github.io/site/js/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+ 
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery);
+ 
+</script>
+</body>
+</html>

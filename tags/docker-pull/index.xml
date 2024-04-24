@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker Pull on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/docker-pull/</link>
+    <description>Recent content in Docker Pull on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 May 2018 12:09:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/docker-pull/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Trouble Shooting —— Docker Pull Image : error pulling image configuration: unexpected EOF错误</title>
+      <link>https://ningyu1.github.io/site/post/83-docker-pull-error/</link>
+      <pubDate>Tue, 29 May 2018 12:09:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/83-docker-pull-error/</guid>
+      <description>问题现象 执行docker pull命令报错：
+docker@rancher-192:~$ docker pull 192.168.0.34:5000/imageName:latest latest: Pulling from imageName 75a822cd7888: Pulling fs layer 046e44ee6057: Download complete 8c47541cb10b: Waiting e17edf9a1bd4: Waiting error pulling image configuration: unexpected EOF  查看日志错误如下：
+docker@rancher-192:~$ journalctl -u docker.service -- Logs begin at Mon 2018-05-14 04:14:07 CST, end at Tue 2018-05-29 11:31:02 CST. -- May 29 11:28:22 rancher-192.168.0.83 docker[993]: time=&amp;quot;2018-05-29T11:28:22.601383366+08:00&amp;quot; level=error msg=&amp;quot;Not continuing with pull after error: error pulling image configuration: unexpected EOF&amp;quot; May 29 11:30:36 rancher-192.</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Docker Pull Image : Filesystem layer verification failed for digest sha256错误</title>
+      <link>https://ningyu1.github.io/site/post/79-docker-registry-pull-filesystem-layer/</link>
+      <pubDate>Fri, 27 Apr 2018 17:46:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/79-docker-registry-pull-filesystem-layer/</guid>
+      <description>问题现象 除了打包镜像的服务器上可以执行docker pull 192.168.0.34:5000/sample:latest以外，其它任何服务器执行此命令时，都会出现以下错误信息：
+8b7054...: Verifying Checksum Filesystem layer verification failed for digest sha256: 8b7054.....  这使得无法正常使用最新的sample镜像文件。
+如果是按分析过程中的方式把8b7054文件夹迁移的话，docker会不断重试去拉取此文件信息，大概结果如下：
+8b7054...: (..Retry 10 seconds) Filesystem layer verification failed for digest sha256: 8b7054.....  分析过程 尝试在服务器上找日志，结果没有可用的日志。
+在/var/lib/registry下找该sha256的数据，能够找到，尝试移走该文件夹数据。结果执行docker pull命令时，依旧是报错。只好迁移回文件夹。
+尝试在网络上寻找解决方案，有的说与源有关系，有的说与docker版本有关系，需要升级版本，大多都没有很好的解决。如果实在搞不定，估计
+需要考虑这些方案了。
+尝试删除所有sample开发版本相关的image，并重新打包镜像，结果问题依旧。
+解决方案 docker build的过程中有很多选项可以使用，尝试将缓存关闭（默认否）、签名关闭（默认否）、清理过程文件（默认是）。
+因此切换到jenkins的workspace下，找到sample文件夹，执行以下命令:
+docker build --rm=true --no-cache --disable-content-trust=true -t sample . docker tag sample 192.168.0.34:5000/sample docker push --disable-content-trust=true 192.168.0.34:5000/sample  编译打包过程没有任何错误，可以正常发布镜像到registry上。
+于是，切换到其他服务器上去执行docker pull，结果一切正常。
+没有checksum？ 且没有原来失败的sha256 digest。
+看了下其他镜像成功过的pull日志，也是没有checksum。看来只有出现异常的时候，才会去checksum（待考证）
+既然已经成功过，那还是用正常的方式去打包编译及下载。于是删除现有镜像文件，在jenkins上进行工程打包（原始逻辑）。
+docker build -t sample:latest .</description>
+    </item>
+    
+  </channel>
+</rss>

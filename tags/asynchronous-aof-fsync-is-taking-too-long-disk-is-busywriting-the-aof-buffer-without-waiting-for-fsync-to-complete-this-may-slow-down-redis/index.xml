@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Asynchronous Aof Fsync Is Taking Too Long Disk Is Busywriting the Aof Buffer Without Waiting for Fsync to Complete This May Slow Down Redis on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/asynchronous-aof-fsync-is-taking-too-long-disk-is-busywriting-the-aof-buffer-without-waiting-for-fsync-to-complete-this-may-slow-down-redis/</link>
+    <description>Recent content in Asynchronous Aof Fsync Is Taking Too Long Disk Is Busywriting the Aof Buffer Without Waiting for Fsync to Complete This May Slow Down Redis on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Oct 2017 12:00:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/asynchronous-aof-fsync-is-taking-too-long-disk-is-busywriting-the-aof-buffer-without-waiting-for-fsync-to-complete-this-may-slow-down-redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redis数据结构使用以及注意事项，运维问题总结</title>
+      <link>https://ningyu1.github.io/site/post/33-redis-considerations/</link>
+      <pubDate>Mon, 09 Oct 2017 12:00:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/33-redis-considerations/</guid>
+      <description>文章转自：http://www.cnblogs.com/cnmenglang/p/6225987.html 作者：@江南白衣
+优缺点 非常非常的快，有测评说比Memcached还快(当大家都是单CPU的时候)，而且是无短板的快，读写都一般的快，所有API都差不多快，也没有MySQL Cluster、MongoDB那样更新同一条记录如Counter时慢下去的毛病。
+丰富的数据结构，超越了一般的Key-Value数据库而被认为是一个数据结构服务器。组合各种结构，限制Redis用途的是你自己的想象力，作者自己捉刀写的用途入门。
+因为是个人作品，Redis目前只有2.3万行代码，Keep it simple的死硬做法，使得普通公司而不需淘宝那个级别的文艺公司也可以吃透它。
+Redis宣言就是作者的自白，我最喜欢其中的&amp;rdquo;代码像首诗&amp;rdquo;，&amp;rdquo;设计是一场与复杂性的战斗&amp;rdquo;，&amp;rdquo;Coding是一件艰苦的事情，唯一的办法是享受它。如果它已不能带来快乐就停止它。为了防止这一天的出现，我们要尽量避免把Redis往乏味的路上带。
+让人又爱又恨的单线程架构，使得代码不用处理平时最让人头痛的并发而大幅简化，也不用老是担心作者的并发有没有写对，但也带来CPU的瓶颈，而且单线程被慢操作所阻塞时，其他请求的延时变得不确定。
+那Redis不是什么？
+Redis 不是Big Data，数据都在内存中，无法以T为单位。
+在Redis-Cluster发布并被稳定使用之前，Redis没有真正的平滑水平扩展能力。
+Redis 不支持Ad-Hoc Query，提供的只是数据结构的API，没有SQL一样的查询能力。
+Feature速览 所有数据都在内存中。
+五种数据结构：String / Hash / List / Set / Ordered Set。
+数据过期时间支持。
+不完全的事务支持。
+服务端脚本：使用Lua Script编写，类似存储过程的作用。
+PubSub：捞过界的消息一对多发布订阅功能，起码Redis-Sentinel使用了它。
+持久化：支持定期导出内存的Snapshot 与 记录写操作日志的Append Only File两种模式。
+Replication：Master-Slave模式，Master可连接多个只读Slave，暂无专门的Geographic Replication支持。
+Fail-Over：Redis-Sentinel节点负责监控Master节点，在master失效时提升slave，独立的仲裁节点模式有效防止脑裂。
+Sharding：开发中的Redis-Cluser。
+动态配置：所有参数可用命令行动态配置不需重启，并重新写回配置文件中，对云上的大规模部署非常合适。
+八卦 作者是意大利的Salvatore Sanfilippo(antirez)，又是VMWare大善人聘请了他专心写Redis。
+EMC与VMWare将旗下的开源产品如Redis和Spring都整合到了孙公司Pivotal公司。
+Pivotal做的antirez访谈录，内含一切八卦，比如他的爱好是举重、跑步和品红酒。
+默认端口6379，是手机按键上MERZ对应的号码，意大利歌女Alessia Merz是antirez和朋友们认为愚蠢的代名词。
+数据结构 Key Key 不能太长，比如1024字节，但antirez也不喜欢太短如&amp;rdquo;u:1000:pwd&amp;rdquo;，要表达清楚意思才好。他私人建议用&amp;rdquo;:&amp;ldquo;分隔域，用&amp;rdquo;.&amp;ldquo;作为单词间的连接，如&amp;rdquo;comment:1234:reply.to&amp;rdquo;。
+Keys，返回匹配的key，支持通配符如 &amp;ldquo;keys a*&amp;rdquo; 、 &amp;ldquo;keys a?c&amp;rdquo;，但不建议在生产环境大数据量下使用。
+Sort，对集合按数字或字母顺序排序后返回或另存为list，还可以关联到外部key等。因为复杂度是最高的O(N+M*log(M))(N是集合大小，M 为返回元素的数量)，有时会安排到slave上执行。
+Expire/ExpireAt/Persist/TTL，关于Key超时的操作。默认以秒为单位，也有p字头的以毫秒为单位的版本， Redis的内部实现见2.9 过期数据清除。
+String 最普通的key-value类型，说是String，其实是任意的byte[]，比如图片，最大512M。 所有常用命令的复杂度都是O(1)，普通的Get/Set方法，可以用来做Cache，存Session，为了简化架构甚至可以替换掉Memcached。</description>
+    </item>
+    
+    <item>
+      <title>Trouble Shooting —— Enable AOF可能导致整个Redis被Block住，在3.0.6版本仍然存在</title>
+      <link>https://ningyu1.github.io/site/post/32-redis-aof/</link>
+      <pubDate>Mon, 09 Oct 2017 09:53:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/32-redis-aof/</guid>
+      <description>Redis会有短暂的几秒Block，应用报：Jedis connection failed, retrying&amp;hellip; 这个问题现象是这样的，应用周期性的报：Jedis connection failed, retrying&amp;hellip;，Redis开启AOF会被Block住导致无法连接，查看redis的日志
+1486:M 09 Oct 09:33:18.072 * 10 changes in 300 seconds. Saving... 1486:M 09 Oct 09:33:18.075 * Background saving started by pid 20706 1486:M 09 Oct 09:33:34.011 * Asynchronous AOF fsync is taking too long (disk is busy?). Writing the AOF buffer without waiting for fsync to complete, this may slow down Redis. 20706:C 09 Oct 09:33:42.629 * DB saved on disk 20706:C 09 Oct 09:33:42.</description>
+    </item>
+    
+  </channel>
+</rss>

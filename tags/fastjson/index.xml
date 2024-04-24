@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fastjson on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/tags/fastjson/</link>
+    <description>Recent content in Fastjson on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 06 Mar 2018 16:50:17 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/tags/fastjson/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java中内部类使用注意事项，内部类对序列化与反序列化的影响</title>
+      <link>https://ningyu1.github.io/site/post/65-java-inner-class/</link>
+      <pubDate>Tue, 06 Mar 2018 16:50:17 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/65-java-inner-class/</guid>
+      <description>现在很多服务架构都是微服务、分布式架构，开发模式也都是模块化开发，在分布式的开发方式下服务之间的调用不管是RPC还是RESTful或是其他SOA方案，均离不开序列化与反序列化，尤其是使用Java开发，Bean实现序列化接口几乎已经是必备的要求，而且这个要求已经纳入到很多大厂公司的开发规范中，开发规范中强制要求实现序列化接口和重写toString、hashCode方法。
+前面提到了序列化与反序列化，那序列化与反序列化的对象就是开发人员写的java bean，不同的java bean会给序列化反序列化带来什么问题呢？接下来就让我们看一下内部类对序列化反序列化的影响。
+在这之前我们先看一下常用的序列化工具：
+ JavaSerialize fastjson dubbo json google gson google protoBuf hessian kryo Avro fast-serialization jboss-serialization jboss-marshalling-river protostuff msgpack-databind json/jackson/databind json/jackson/db-afterburner xml/xstream+c xml/jackson/databind-aalto  工具太多了这里就不列了，让我们先做一个测试。
+测试 常规java bean 测试类：
+import java.io.Serializable; public class Test implements Serializable { private static final long serialVersionUID = 2010307013874058143L; private String name; public String getName() { return name; } public void setName(String name) { this.name = name; } }  调用序列化与反序列化:</description>
+    </item>
+    
+    <item>
+      <title>Fastjson反序列化java.lang.VerifyError错误</title>
+      <link>https://ningyu1.github.io/site/post/42-fastjson/</link>
+      <pubDate>Fri, 15 Dec 2017 15:42:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/42-fastjson/</guid>
+      <description>现象 当反序列化目标对象属性超过32个时会报如下错误：
+Exception in thread &amp;quot;main&amp;quot; java.lang.VerifyError: (class: com/alibaba/fastjson/parser/deserializer/FastjsonASMDeserializer_1_OmsMaterialStorageReconciliationEntity, method: deserialze signature: (Lcom/alibaba/fastjson/parser/DefaultJSONParser;Ljava/lang/reflect/Type;Ljava/lang/Object;I)Ljava/lang/Object;) Accessing value from uninitialized register 48 at java.lang.Class.getDeclaredConstructors0(Native Method) at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493) at java.lang.Class.getConstructor0(Class.java:2803) at java.lang.Class.getConstructor(Class.java:1718) at com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory.createJavaBeanDeserializer(ASMDeserializerFactory.java:82) at com.alibaba.fastjson.parser.ParserConfig.createJavaBeanDeserializer(ParserConfig.java:639) at com.alibaba.fastjson.parser.ParserConfig.getDeserializer(ParserConfig.java:491) at com.alibaba.fastjson.parser.ParserConfig.getDeserializer(ParserConfig.java:348) at com.alibaba.fastjson.parser.DefaultJSONParser.parseObject(DefaultJSONParser.java:639) at com.alibaba.fastjson.JSON.parseObject(JSON.java:350) at com.alibaba.fastjson.JSON.parseObject(JSON.java:254) at com.alibaba.fastjson.JSON.parseObject(JSON.java:467) at com.jiuyescm.uam.main.Main.main(Main.java:29)  查看我们使用的fastjson包版本：
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.alibaba&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;fastjson&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2.28&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  查看官方issues是否有同样的问题
+找到问题：https://github.com/alibaba/fastjson/issues/1071
+是一个反序列化的bug，在1.2.29版本修复
+升级我们使用的fastjson版本验证是否修复问题
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.alibaba&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;fastjson&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2.29&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  测试代码：
+public static void main(String[] args) throws IOException { String a = &amp;quot;{\&amp;quot;region\&amp;quot;:\&amp;quot;aaa\&amp;quot;,\&amp;quot;weight\&amp;quot;:null,\&amp;quot;outqty\&amp;quot;:null,\&amp;quot;inVolume\&amp;quot;:null,\&amp;quot;qtyMax\&amp;quot;:null,\&amp;quot;creTime\&amp;quot;:null,\&amp;quot;lastStock\&amp;quot;:null,\&amp;quot;inHeight\&amp;quot;:null,\&amp;quot;wallThickness\&amp;quot;:null,\&amp;quot;id\&amp;quot;:null,\&amp;quot;height\&amp;quot;:null,\&amp;quot;length\&amp;quot;:null,\&amp;quot;materialType\&amp;quot;:null,\&amp;quot;inqty\&amp;quot;:null,\&amp;quot;materialTypeName\&amp;quot;:null,\&amp;quot;materialName\&amp;quot;:null,\&amp;quot;supplierId\&amp;quot;:null,\&amp;quot;status\&amp;quot;:null,\&amp;quot;width\&amp;quot;:null,\&amp;quot;barcode\&amp;quot;:null,\&amp;quot;qtyMin\&amp;quot;:null,\&amp;quot;crePersonId\&amp;quot;:null,\&amp;quot;unit\&amp;quot;:null,\&amp;quot;changeDate\&amp;quot;:null,\&amp;quot;initStock\&amp;quot;:null,\&amp;quot;materialNo\&amp;quot;:null,\&amp;quot;crePerson\&amp;quot;:null,\&amp;quot;inLength\&amp;quot;:null,\&amp;quot;materialPrice\&amp;quot;:null,\&amp;quot;volume\&amp;quot;:null,\&amp;quot;inWidth\&amp;quot;:null,\&amp;quot;warehouseNo\&amp;quot;:null}&amp;quot;; OmsMaterialStorageReconciliationEntity t2 = JSON.</description>
+    </item>
+    
+  </channel>
+</rss>

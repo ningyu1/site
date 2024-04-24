@@ -1,0 +1,5999 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.51" />
+	<meta charset="utf-8">
+    
+    
+    <title>凝雨 - Yun</title>
+    <meta name="author" content="凝雨-Yun">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://ningyu1.github.io/site/index.xml" rel="alternate" title="凝雨 - Yun" type="application/atom+xml">
+    <link href="https://ningyu1.github.io/site/images/fav.ico" rel="shortcut icon">
+    <style>
+    @charset "UTF-8";
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("https://ningyu1.github.io/site/font/fontawesome-webfont.eot");
+  src: url("https://ningyu1.github.io/site/font/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.woff") format("woff"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.ttf") format("truetype"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.svgz#FontAwesomeRegular") format("svg"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face{
+    font-family: 'MyHermit';
+    src: url('https://ningyu1.github.io/site/font/hermit-medium-webfont.eot');
+    src: url('https://ningyu1.github.io/site/font/hermit-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://ningyu1.github.io/site/font/hermit-medium-webfont.woff') format('woff'),
+         url('https://ningyu1.github.io/site/font/hermit-medium-webfont.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'PingFang SC', serif;
+  font-weight: 300;
+  font-size: 16px;
+  /*background: url("https://ningyu1.github.io/site/images/retina_dust.png");*/
+  color: #444;
+  colori: #666666; }
+  @media screen and (max-width: 1040px) {
+    body {
+      margin: 0 20px; } }
+  @media screen and (max-width: 600px) {
+    body {
+      font-size: 13px; } }
+
+.bBackground {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: -moz-radial-gradient(50% 50%, farthest-side, white, #efefef);
+  background: -webkit-gradient(radial, 50% 50%, 250, 50% 50%, 750, from(white), to(#bbbbbb));
+  z-index: -100; }
+
+h1 {
+  font-size: 1.8em; }
+
+h2 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.3em; }
+
+a {
+  text-decoration: none;
+  outline-width: 0;
+  color: #258fb8; }
+
+.alignleft {
+  float: left; }
+
+.alignright {
+  float: right; }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.inner {
+  width: 900px;
+  margin: 0 auto; }
+  @media screen and (max-width: 1040px) {
+    .inner {
+      width: 100%; } }
+
+#w2btoTop {
+  display: none;
+  text-decoration: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  overflow: hidden;
+  width: 51px;
+  height: 51px;
+  border: none;
+  text-indent: -999px;
+  background: url(https://ningyu1.github.io/site/images/totop.png) no-repeat left top; }
+
+#w2btoTopHover {
+  background: url(https://ningyu1.github.io/site/images/totop.png) no-repeat left -51px;
+  width: 51px;
+  height: 51px;
+  display: block;
+  overflow: hidden;
+  float: left;
+  opacity: 0;
+  -moz-opacity: 0;
+  filter: alpha(opacity=0); }
+
+#w2btoTop:active, #w2btoTop:focus {
+  outline: none; }
+
+.basic-alignment.left, article .entry-content img.left, article .entry-content video.left {
+  float: left;
+  margin-right: 1.5em; }
+.basic-alignment.right, article .entry-content img.right, article .entry-content video.right {
+  float: right;
+  margin-left: 1.5em; }
+.basic-alignment.center, article .entry-content img.center, article .entry-content video.center {
+  display: block;
+  margin: 0 auto 1.5em; }
+.basic-alignment.left, article .entry-content img.left, article .entry-content video.left, .basic-alignment.right, article .entry-content img.right, article .entry-content video.right {
+  margin-bottom: .8em; }
+
+/* changes tooltip, to use, make elements 'class' as 'tooltip' and 'title' would be shown in tooltip */
+.tooltip {
+  display: inline;
+  position: relative; }
+
+.tooltip:hover {
+  text-decoration: none; }
+
+.tooltip:hover:after {
+  background: #111;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  bottom: 18px;
+  color: #fff;
+  content: attr(title);
+  display: block;
+  left: 50%;
+  padding: 5px 15px;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 98; }
+
+.tooltip:hover:before {
+  border: solid;
+  border-color: #111 transparent;
+  border-width: 6px 6px 0 6px;
+  bottom: 12px;
+  content: "";
+  display: block;
+  left: 75%;
+  position: absolute;
+  z-index: 99; }
+
+.pullquote-right:before,
+.pullquote-left:before {
+  /* Reset metrics. */
+  padding: 0;
+  border: none;
+  /* Content */
+  content: attr(data-pullquote);
+  /* Pull out to the right, modular scale based margins. */
+  float: right;
+  width: 45%;
+  margin: .5em 0 1em 1.5em;
+  /* Baseline correction */
+  position: relative;
+  top: 7px;
+  font-size: 1.4em;
+  line-height: 1.45em; }
+
+.pullquote-left:before {
+  /* Make left pullquotes align properly. */
+  float: left;
+  margin: .5em 1.5em 1em 0; }
+
+#header {
+  padding: 20px 0 20px 0; }
+  @media screen and (max-width: 1040px) {
+    #header {
+      height: auto;
+      position: relative;
+      padding-bottom: 10px; } }
+  #header a {
+    color: #666666;
+    -webkit-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(color 0.3s, false, false, false, false, false, false, false, false, false); }
+    #header a:hover {
+      color: #258fb8; }
+  #header h1 {
+    font-family: 'Slackey', cursive;
+    font-weight: 300;
+    font-size: 52px; }
+    @media screen and (max-width: 1040px) {
+      #header h1 {
+        float: none; } }
+
+#headerbg {
+  text-align: center;
+  background: #444;
+  padding: 10px 10px;
+  display: table;
+  color: #fff;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-weight: bold;
+  -webkit-mask-image: -webkit-linear-gradient(black, rgba(0, 0, 0, 0.9));
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .2s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: .2s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: 1s;
+  -ms-animation-delay: .2s;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  -o-animation-duration: 1s;
+  -o-animation-delay: .2s;
+  -o-animation-timing-function: ease;
+  -o-animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: .2s;
+  animation-timing-function: ease;
+  animation-fill-mode: both; }
+
+#load {
+  display: none;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  background: url("https://ningyu1.github.io/site/images/loading.gif");
+  width: 50px;
+  height: 50px;
+  text-indent: -9999em; }
+
+#social-links li {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  margin-top: 20px;
+  margin-right: 9px;
+  background-color: #ddd;
+  text-align: center;
+  line-height: 35px;
+  -webkit-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false);
+  -moz-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false false);
+  -o-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false false);
+  transition: compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false); }
+  #social-links li:hover {
+    background-color: #555; }
+#social-links a {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  #social-links a svg {
+    position: absolute; }
+  #social-links a .github {
+    top: 3px;
+    left: 2px; }
+  #social-links a .sina-weibo {
+    top: 8px;
+    left: 6px; }
+  #social-links a .tencent-weibo {
+    top: 6px;
+    left: 4px; }
+  #social-links a .twitter {
+    top: 2px;
+    left: 3px; }
+
+a.facebook {
+  background: url("https://ningyu1.github.io/site/images/social/Facebook.png") center no-repeat; }
+
+a.facebook:hover {
+  background: url("https://ningyu1.github.io/site/images/social/FacebookH.png") center no-repeat; }
+
+a.github {
+  background: url("https://ningyu1.github.io/site/images/social/Github.png") center no-repeat; }
+
+a.github:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GithubH.png") center no-repeat; }
+
+a.gitee {
+  background: url("https://ningyu1.github.io/site/images/social/Gitee.png") center no-repeat; }
+
+a.gitee:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GiteeH.png") center no-repeat; }
+
+a.gitlab {
+  background: url("https://ningyu1.github.io/site/images/social/Gitlab.png") center no-repeat; }
+
+a.gitlab:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GitlabH.png") center no-repeat; }
+
+a.email {
+  background: url("https://ningyu1.github.io/site/images/social/Email.png") center no-repeat; }
+
+a.email:hover {
+  background: url("https://ningyu1.github.io/site/images/social/EmailH.png") center no-repeat; }
+
+a.rss {
+  background: url("https://ningyu1.github.io/site/images/social/Rss.png") center no-repeat; }
+
+a.rss:hover {
+  background: url("https://ningyu1.github.io/site/images/social/RssH.png") center no-repeat; }
+
+a.twitter {
+  background: url("https://ningyu1.github.io/site/images/social/Twitter.png") center no-repeat; }
+
+a.twitter:hover {
+  background: url("https://ningyu1.github.io/site/images/social/TwitterH.png") center no-repeat; }
+
+a.google {
+  background: url("https://ningyu1.github.io/site/images/social/Picasa.png") center no-repeat; }
+
+a.google:hover {
+  background: url("https://ningyu1.github.io/site/images/social/PicasaH.png") center no-repeat; }
+
+a.skype {
+  background: url("https://ningyu1.github.io/site/images/social/Skype.png") center no-repeat; }
+
+a.skype:hover {
+  background: url("https://ningyu1.github.io/site/images/social/SkypeH.png") center no-repeat; }
+
+a.linkedin {
+  background: url("https://ningyu1.github.io/site/images/social/LinkedIn.png") center no-repeat; }
+
+a.linkedin:hover {
+  background: url("https://ningyu1.github.io/site/images/social/LinkedInH.png") center no-repeat; }
+
+a.youtube {
+  background: url("https://ningyu1.github.io/site/images/social/Youtube.png") center no-repeat; }
+
+a.youtube:hover {
+  background: url("https://ningyu1.github.io/site/images/social/YoutubeH.png") center no-repeat; }
+
+a.lastfm {
+  background: url("https://ningyu1.github.io/site/images/social/LastFM.png") center no-repeat; }
+
+a.lastfm:hover {
+  background: url("https://ningyu1.github.io/site/images/social/LastFMH.png") center no-repeat; }
+
+/* search bar */
+#search {
+  display: inline; }
+
+#search input[type="text"] {
+  background: url("https://ningyu1.github.io/site/images/search-dark.png") no-repeat 10px 6px #444444;
+  border: 0 none;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #777;
+  width: 110px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s; }
+
+#search input[type="text"]:focus {
+  width: 160px; }
+
+#dark {
+  display: inline-block;
+  height: 70px; }
+
+#dark #search input[type="text"] {
+  background: url("https://ningyu1.github.io/site/images/search-dark.png") no-repeat 10px 6px #444444;
+  border: 0 none;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #ddd;
+  width: 110px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s; }
+
+#dark #search input[type="text"]:focus {
+  width: 160px;
+  outline: 0; }
+
+/* nav */
+#nav {
+  text-align: center;
+  position: relative;
+  margin: 10px auto; }
+
+ul#nav *{
+	box-sizing:content-box
+}
+
+ul#nav li {
+  display: inline-block; }
+
+ul#nav li {
+  list-style-type: none;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-right: 1px; }
+
+ul#nav li a {
+  display: inline-block;
+  width: 110px;
+  height: 40px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #222;
+  font-weight: normal;
+  text-decoration: none;
+  font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-style: normal;
+  text-shadow: 1px 1px 10px #222;
+  overflow: hidden; }
+
+ul#nav li a:hover {
+  color: #fff;
+  font-style: normal;
+  font-weight: normal;
+  background-image: url("https://ningyu1.github.io/site/images/hover.png");
+  background-repeat: no-repeat;
+  background-position: center top; }
+
+ul#nav li a:active {
+  position: relative;
+  top: 2px; }
+
+ul#nav li#active a {
+  color: #FFF;
+  background-image: url("https://ningyu1.github.io/site/images/active.png");
+  background-repeat: no-repeat;
+  background-position: center top; }
+
+#pagenavi {
+  padding: 20px 0;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #pagenavi a:hover {
+    text-decoration: underline; }
+  #pagenavi .prev, #pagenavi .next {
+    position: absolute; }
+  #pagenavi .prev {
+    padding-left: 30px;
+    left: 0; }
+    #pagenavi .prev:before {
+      content: "\f060";
+      font: 1.3em FontAwesome;
+      position: absolute;
+      left: 0; }
+  #pagenavi .next {
+    padding-right: 30px;
+    right: 0; }
+    #pagenavi .next:before {
+      content: "\f061";
+      font: 1.3em FontAwesome;
+      position: absolute;
+      right: 0; }
+  #pagenavi .center {
+    text-align: center;
+    width: 100%;
+    display: block; }
+    @media screen and (max-width: 400px) {
+      #pagenavi .center {
+        display: none; } }
+
+article {
+  border-bottom: 1px solid #dddddd;
+  padding: 30px 0;
+  position: relative; }
+  @media screen and (max-width: 800px) {
+    article {
+      padding-bottom: 15px; } }
+  @media screen and (max-width: 600px) {
+    article {
+      padding: 15px 0; } }
+  article h2.title {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 20px; }
+    article h2.title a {
+      color: #1094e8; }
+  article .title a {
+    color: #7c7873;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out; }
+  article .title a:hover {
+    color: #084B8A;
+    text-shadow: 3px 3px 12px #888;
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3); }
+  article .entry-content {
+    line-height: 2;
+    text-align: justify; }
+    article .entry-content a:hover {
+      text-decoration: underline; }
+    article .entry-content .more-link {
+      display: block;
+      margin-top: 16px;
+      padding-left: 30px;
+      position: relative; }
+      article .entry-content .more-link:before {
+        content: "\f061";
+        font: 1.3em FontAwesome;
+        line-height: 1.6em;
+        position: absolute;
+        left: 0; }
+    article .entry-content p, article .entry-content blockquote, article .entry-content ul, article .entry-content ol, article .entry-content dl, article .entry-content iframe, article .entry-content h1, article .entry-content h2, article .entry-content h3, article .entry-content h4, article .entry-content h5, article .entry-content h6, article .entry-content .video-container {
+      margin-top: 10px; }
+    article .entry-content ul, article .entry-content ol, article .entry-content dl {
+      margin-left: 20px; }
+      article .entry-content ul ul, article .entry-content ul ol, article .entry-content ul dl, article .entry-content ol ul, article .entry-content ol ol, article .entry-content ol dl, article .entry-content dl ul, article .entry-content dl ol, article .entry-content dl dl {
+        margin-top: 0; }
+    article .entry-content strong {
+      font-weight: bold; }
+    article .entry-content em {
+      font-style: italic; }
+    article .entry-content p {
+      margin-top: 10px; }
+    article .entry-content h2 {
+      font-weight: 300;
+      border-bottom: 1px solid #dddddd;
+      position: relative; }
+      article .entry-content h2:before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        border-bottom: 1px solid white;
+        width: 100%; }
+    article .entry-content img, article .entry-content video {
+      margin: 10px 0;
+      max-width: 100%;
+      height: auto;
+      -moz-border-radius: 0.3em;
+      -webkit-border-radius: 0.3em;
+      -o-border-radius: 0.3em;
+      -ms-border-radius: 0.3em;
+      -khtml-border-radius: 0.3em;
+      border-radius: 0.3em;
+      -moz-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -o-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+      border: #fff 0.3em solid; }
+    article .entry-content img.noborder, article .entry-content video.noborder {
+      border: none;
+      box-shadow: none; }
+    article .entry-content blockquote {
+      background: #dddddd;
+      border-left: 5px solid #cccccc;
+      padding: 15px 20px;
+      margin-top: 10px; }
+      article .entry-content blockquote > p:first-of-type {
+        margin-top: 0; }
+    article .entry-content iframe {
+      border: none; }
+    article .entry-content .caption {
+      display: block;
+      font-size: 0.9em;
+      color: #999999;
+      padding-left: 25px;
+      position: relative; }
+      article .entry-content .caption:before {
+        content: "\f040";
+        color: #cccccc;
+        font: 1.3em FontAwesome;
+        line-height: 1.6em;
+        position: absolute;
+        left: 0; }
+    article .entry-content .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden; }
+      article .entry-content .video-container iframe, article .entry-content .video-container object, article .entry-content .video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 0; }
+
+.share {
+  padding: 15px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+
+@media screen and (max-width: 800px) {
+  .post h2.title, .post .entry-content {
+    margin-left: 0; } }
+.post .meta {
+  line-height: 2;
+  color: #999999;
+  width: 370px; }
+  @media screen and (max-width: 800px) {
+    .post .meta {
+      margin-top: 15px;
+      position: static;
+      width: auto; } }
+  .post .meta a {
+    color: #999999;
+    -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+    .post .meta a:hover {
+      color: #666666; }
+  .post .meta .date, .post .meta .tags, .post .meta .comments {
+    padding-left: 30px;
+    position: relative; }
+    .post .meta .date:before, .post .meta .tags:before, .post .meta .comments:before {
+      color: #cccccc;
+      font: 1.3em FontAwesome;
+      line-height: 1.6em;
+      position: absolute;
+      left: 0; }
+    @media screen and (max-width: 800px) {
+      .post .meta .date, .post .meta .tags, .post .meta .comments {
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline;
+        margin-right: 30px; } }
+  .post .meta .date:before {
+    content: "\f073"; }
+  .post .meta .tags:before {
+    content: "\f02c"; }
+  .post .meta .comments:before {
+    content: "\f075"; }
+
+.archives {
+  position: relative; }
+  .archives:last-of-type:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    border-top: 1px solid #dddddd; }
+  .archives .top-border-padding {
+    border-top: 1px solid #fff; }
+    .archives .top-border-padding:before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      width: 100%;
+      border-top: 1px solid #dddddd; }
+  .archives .year {
+    line-height: 35px;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    padding-top: 15px;
+    border-top: 1px solid #fff; }
+    .archives .year:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      width: 100%;
+      border-top: 1px solid #dddddd; }
+    @media screen and (max-width: 600px) {
+      .archives .year {
+        position: relative;
+        width: 100%; } }
+  .archives article {
+    margin-left: 200px;
+    padding: 10px 0; }
+    @media screen and (max-width: 600px) {
+      .archives article {
+        margin-left: 0; }
+        .archives article:first-of-type {
+          border-top: none;
+          padding-top: 30px; } }
+    .archives article .title {
+      margin-bottom: 0;
+      font-size: 25px; }
+    .archives article .meta {
+      color: #999999;
+      font-size: 0.9em;
+      line-height: 2;
+      margin-top: 10px; }
+      @media screen and (max-width: 600px) {
+        .archives article .meta {
+          display: none; } }
+      .archives article .meta span {
+        margin-right: 30px;
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline; }
+        .archives article .meta span:before {
+          color: #cccccc;
+          font: 1.3em FontAwesome;
+          padding-right: 10px; }
+      .archives article .meta a {
+        color: #999999;
+        -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+        -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+        -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+        transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+        .archives article .meta a:hover {
+          color: #666666; }
+      .archives article .meta .date:before {
+        content: "\f073"; }
+      .archives article .meta .tags:before {
+        content: "\f02c"; }
+      .archives article .meta .comments:before {
+        content: "\f075"; }
+
+#comment {
+  padding: 30px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #comment h2.title {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 20px; }
+
+footer {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.6em;
+  color: #666; }
+
+footer a {
+  color: #123; }
+
+footer a:hover {
+  color: #456; }
+
+#banner {
+  color: #999999;
+  padding: 30px 0;
+  line-height: 30px;
+  text-align: center;
+  position: relative;
+  display: none;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #banner:hover a {
+    color: #258fb8; }
+  #banner a {
+    color: #999999;
+    -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+    #banner a:hover {
+      text-decoration: underline; }
+  #banner small {
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+  #banner .loading {
+    background: image-url("loading_pacman.gif") center no-repeat;
+    text-indent: -9999px; }
+  #banner .container {
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    display: none; }
+    #banner .container .feed {
+      list-style: none;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+      #banner .container .feed li {
+        position: relative; }
+        #banner .container .feed li small {
+          position: absolute;
+          right: 0; }
+
+/*! fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license */
+.fancybox-tmp iframe, .fancybox-tmp object {
+  vertical-align: top;
+  padding: 0;
+  margin: 0; }
+
+.fancybox-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8020; }
+
+.fancybox-skin {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: #f9f9f9;
+  color: #444;
+  text-shadow: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px; }
+
+.fancybox-opened {
+  z-index: 8030; }
+
+.fancybox-opened .fancybox-skin {
+  -webkit-box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false);
+  -moz-box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false);
+  box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false); }
+
+.fancybox-outer, .fancybox-inner {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  outline: none; }
+
+.fancybox-inner {
+  overflow: hidden; }
+
+.fancybox-type-iframe .fancybox-inner {
+  -webkit-overflow-scrolling: touch; }
+
+.fancybox-error {
+  color: #444;
+  font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 10px; }
+
+.fancybox-image, .fancybox-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  vertical-align: top; }
+
+.fancybox-image {
+  max-width: 100%;
+  max-height: 100%; }
+
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+  background-image: image-url("fancybox/fancybox_sprite.png"); }
+
+#fancybox-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -22px;
+  margin-left: -22px;
+  background-position: 0 -108px;
+  opacity: 0.8;
+  cursor: pointer;
+  z-index: 8020; }
+
+#fancybox-loading div {
+  width: 44px;
+  height: 44px;
+  background: image-url("fancybox/fancybox_loading.gif") center center no-repeat; }
+
+.fancybox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 8040; }
+
+.fancybox-nav {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  cursor: pointer;
+  background: transparent image-url("fancybox/blank.gif");
+  /* helps IE */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  z-index: 8040; }
+
+.fancybox-prev {
+  left: 0; }
+
+.fancybox-next {
+  right: 0; }
+
+.fancybox-nav span {
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 34px;
+  margin-top: -18px;
+  cursor: pointer;
+  z-index: 8040;
+  visibility: hidden; }
+
+.fancybox-prev span {
+  left: 20px;
+  background-position: 0 -36px; }
+
+.fancybox-next span {
+  right: 20px;
+  background-position: 0 -72px; }
+
+.fancybox-nav:hover span {
+  visibility: visible; }
+
+.fancybox-tmp {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  padding: 0;
+  overflow: visible;
+  visibility: hidden; }
+
+/* Overlay helper */
+#fancybox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: none;
+  z-index: 8010;
+  background: #000; }
+
+#fancybox-overlay.overlay-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0; }
+
+/* Title helper */
+.fancybox-title {
+  visibility: hidden;
+  font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+  text-shadow: none;
+  z-index: 8050; }
+
+.fancybox-opened .fancybox-title {
+  visibility: visible; }
+
+.fancybox-title-float-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  margin-bottom: -35px;
+  z-index: 8030;
+  text-align: center; }
+
+.fancybox-title-float-wrap .child {
+  display: inline-block;
+  margin-right: -100%;
+  padding: 2px 20px;
+  background: transparent;
+  /* Fallback for web browsers that doesn't support RGBa */
+  background: rgba(0, 0, 0, 0.8);
+  text-shadow: 0 1px 2px #222;
+  color: #FFF;
+  font-weight: bold;
+  line-height: 24px;
+  white-space: nowrap;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px; }
+
+.fancybox-title-outside-wrap {
+  position: relative;
+  margin-top: 10px;
+  color: #fff; }
+
+.fancybox-title-inside-wrap {
+  margin-top: 10px; }
+
+.fancybox-title-over-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  padding: 10px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8); }
+
+/*
+Animate.css - http://daneden.me/animate
+Licensed under the ☺ license (http://licence.visualidiot.com/)
+
+Copyright (c) 2012 Dan Eden
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+body {
+  /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
+  -webkit-backface-visibility: hidden; }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  animation-duration: 2s; }
+
+@-webkit-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@-moz-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@-o-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+.flash {
+  -webkit-animation-name: flash;
+  -moz-animation-name: flash;
+  -o-animation-name: flash;
+  animation-name: flash; }
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px); } }
+
+@-moz-keyframes shake {
+  0%, 100% {
+    -moz-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -moz-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -moz-transform: translateX(10px); } }
+
+@-o-keyframes shake {
+  0%, 100% {
+    -o-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -o-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -o-transform: translateX(10px); } }
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px); } }
+
+.shake {
+  -webkit-animation-name: shake;
+  -moz-animation-name: shake;
+  -o-animation-name: shake;
+  animation-name: shake; }
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0); }
+
+  40% {
+    -webkit-transform: translateY(-30px); }
+
+  60% {
+    -webkit-transform: translateY(-15px); } }
+
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0); }
+
+  40% {
+    -moz-transform: translateY(-30px); }
+
+  60% {
+    -moz-transform: translateY(-15px); } }
+
+@-o-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -o-transform: translateY(0); }
+
+  40% {
+    -o-transform: translateY(-30px); }
+
+  60% {
+    -o-transform: translateY(-15px); } }
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); }
+
+  40% {
+    transform: translateY(-30px); }
+
+  60% {
+    transform: translateY(-15px); } }
+
+.bounce {
+  -webkit-animation-name: bounce;
+  -moz-animation-name: bounce;
+  -o-animation-name: bounce;
+  animation-name: bounce; }
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1); }
+
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0); } }
+
+@-moz-keyframes tada {
+  0% {
+    -moz-transform: scale(1); }
+
+  10%, 20% {
+    -moz-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -moz-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -moz-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -moz-transform: scale(1) rotate(0); } }
+
+@-o-keyframes tada {
+  0% {
+    -o-transform: scale(1); }
+
+  10%, 20% {
+    -o-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -o-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -o-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -o-transform: scale(1) rotate(0); } }
+
+@keyframes tada {
+  0% {
+    transform: scale(1); }
+
+  10%, 20% {
+    transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    transform: scale(1) rotate(0); } }
+
+.tada {
+  -webkit-animation-name: tada;
+  -moz-animation-name: tada;
+  -o-animation-name: tada;
+  animation-name: tada; }
+
+@-webkit-keyframes swing {
+  20%, 40%, 60%, 80%, 100% {
+    -webkit-transform-origin: top center; }
+
+  20% {
+    -webkit-transform: rotate(15deg); }
+
+  40% {
+    -webkit-transform: rotate(-10deg); }
+
+  60% {
+    -webkit-transform: rotate(5deg); }
+
+  80% {
+    -webkit-transform: rotate(-5deg); }
+
+  100% {
+    -webkit-transform: rotate(0deg); } }
+
+@-moz-keyframes swing {
+  20% {
+    -moz-transform: rotate(15deg); }
+
+  40% {
+    -moz-transform: rotate(-10deg); }
+
+  60% {
+    -moz-transform: rotate(5deg); }
+
+  80% {
+    -moz-transform: rotate(-5deg); }
+
+  100% {
+    -moz-transform: rotate(0deg); } }
+
+@-o-keyframes swing {
+  20% {
+    -o-transform: rotate(15deg); }
+
+  40% {
+    -o-transform: rotate(-10deg); }
+
+  60% {
+    -o-transform: rotate(5deg); }
+
+  80% {
+    -o-transform: rotate(-5deg); }
+
+  100% {
+    -o-transform: rotate(0deg); } }
+
+@keyframes swing {
+  20% {
+    transform: rotate(15deg); }
+
+  40% {
+    transform: rotate(-10deg); }
+
+  60% {
+    transform: rotate(5deg); }
+
+  80% {
+    transform: rotate(-5deg); }
+
+  100% {
+    transform: rotate(0deg); } }
+
+.swing {
+  -webkit-transform-origin: top center;
+  -moz-transform-origin: top center;
+  -o-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  -moz-animation-name: swing;
+  -o-animation-name: swing;
+  animation-name: swing; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%); }
+
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -webkit-transform: translateX(0%); } }
+
+@-moz-keyframes wobble {
+  0% {
+    -moz-transform: translateX(0%); }
+
+  15% {
+    -moz-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -moz-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -moz-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -moz-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -moz-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -moz-transform: translateX(0%); } }
+
+@-o-keyframes wobble {
+  0% {
+    -o-transform: translateX(0%); }
+
+  15% {
+    -o-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -o-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -o-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -o-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -o-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -o-transform: translateX(0%); } }
+
+@keyframes wobble {
+  0% {
+    transform: translateX(0%); }
+
+  15% {
+    transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    transform: translateX(0%); } }
+
+.wobble {
+  -webkit-animation-name: wobble;
+  -moz-animation-name: wobble;
+  -o-animation-name: wobble;
+  animation-name: wobble; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1); }
+
+  50% {
+    -webkit-transform: scale(1.1); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes pulse {
+  0% {
+    -moz-transform: scale(1); }
+
+  50% {
+    -moz-transform: scale(1.1); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@-o-keyframes pulse {
+  0% {
+    -o-transform: scale(1); }
+
+  50% {
+    -o-transform: scale(1.1); }
+
+  100% {
+    -o-transform: scale(1); } }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+
+  50% {
+    transform: scale(1.1); }
+
+  100% {
+    transform: scale(1); } }
+
+.pulse {
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -o-animation-name: pulse;
+  animation-name: pulse; }
+
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0);
+    -webkit-animation-timing-function: ease-out; }
+
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -webkit-animation-timing-function: ease-out; }
+
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -webkit-animation-timing-function: ease-in; }
+
+  80% {
+    -webkit-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -webkit-animation-timing-function: ease-in; }
+
+  100% {
+    -webkit-transform: perspective(400px) scale(1);
+    -webkit-animation-timing-function: ease-in; } }
+
+@-moz-keyframes flip {
+  0% {
+    -moz-transform: perspective(400px) rotateY(0);
+    -moz-animation-timing-function: ease-out; }
+
+  40% {
+    -moz-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -moz-animation-timing-function: ease-out; }
+
+  50% {
+    -moz-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -moz-animation-timing-function: ease-in; }
+
+  80% {
+    -moz-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -moz-animation-timing-function: ease-in; }
+
+  100% {
+    -moz-transform: perspective(400px) scale(1);
+    -moz-animation-timing-function: ease-in; } }
+
+@-o-keyframes flip {
+  0% {
+    -o-transform: perspective(400px) rotateY(0);
+    -o-animation-timing-function: ease-out; }
+
+  40% {
+    -o-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -o-animation-timing-function: ease-out; }
+
+  50% {
+    -o-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -o-animation-timing-function: ease-in; }
+
+  80% {
+    -o-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -o-animation-timing-function: ease-in; }
+
+  100% {
+    -o-transform: perspective(400px) scale(1);
+    -o-animation-timing-function: ease-in; } }
+
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+    animation-timing-function: ease-out; }
+
+  40% {
+    transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    animation-timing-function: ease-out; }
+
+  50% {
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    animation-timing-function: ease-in; }
+
+  80% {
+    transform: perspective(400px) rotateY(360deg) scale(0.95);
+    animation-timing-function: ease-in; }
+
+  100% {
+    transform: perspective(400px) scale(1);
+    animation-timing-function: ease-in; } }
+
+.flip {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flip;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flip;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flip;
+  backface-visibility: visible !important;
+  animation-name: flip; }
+
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes flipInX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -moz-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -moz-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@-o-keyframes flipInX {
+  0% {
+    -o-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -o-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -o-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -o-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInX;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInX;
+  backface-visibility: visible !important;
+  animation-name: flipInX; }
+
+@-webkit-keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes flipOutX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@-o-keyframes flipOutX {
+  0% {
+    -o-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@keyframes flipOutX {
+  0% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+.flipOutX {
+  -webkit-animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
+  -moz-animation-name: flipOutX;
+  -moz-backface-visibility: visible !important;
+  -o-animation-name: flipOutX;
+  -o-backface-visibility: visible !important;
+  animation-name: flipOutX;
+  backface-visibility: visible !important; }
+
+@-webkit-keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes flipInY {
+  0% {
+    -moz-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -moz-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -moz-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -moz-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@-o-keyframes flipInY {
+  0% {
+    -o-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -o-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -o-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -o-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@keyframes flipInY {
+  0% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+.flipInY {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInY;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInY;
+  backface-visibility: visible !important;
+  animation-name: flipInY; }
+
+@-webkit-keyframes flipOutY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes flipOutY {
+  0% {
+    -moz-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@-o-keyframes flipOutY {
+  0% {
+    -o-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@keyframes flipOutY {
+  0% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+.flipOutY {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipOutY;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipOutY;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipOutY;
+  backface-visibility: visible !important;
+  animation-name: flipOutY; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  -moz-animation-name: fadeInUp;
+  -o-animation-name: fadeInUp;
+  animation-name: fadeInUp; }
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  -moz-animation-name: fadeInDown;
+  -o-animation-name: fadeInDown;
+  animation-name: fadeInDown; }
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  -moz-animation-name: fadeInLeft;
+  -o-animation-name: fadeInLeft;
+  animation-name: fadeInLeft; }
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  -moz-animation-name: fadeInRight;
+  -o-animation-name: fadeInRight;
+  animation-name: fadeInRight; }
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  -moz-animation-name: fadeInUpBig;
+  -o-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig; }
+
+@-webkit-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInDownBig {
+  -webkit-animation-name: fadeInDownBig;
+  -moz-animation-name: fadeInDownBig;
+  -o-animation-name: fadeInDownBig;
+  animation-name: fadeInDownBig; }
+
+@-webkit-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInLeftBig {
+  -webkit-animation-name: fadeInLeftBig;
+  -moz-animation-name: fadeInLeftBig;
+  -o-animation-name: fadeInLeftBig;
+  animation-name: fadeInLeftBig; }
+
+@-webkit-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInRightBig {
+  -webkit-animation-name: fadeInRightBig;
+  -moz-animation-name: fadeInRightBig;
+  -o-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig; }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  -moz-animation-name: fadeOut;
+  -o-animation-name: fadeOut;
+  animation-name: fadeOut; }
+
+@-webkit-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px); } }
+
+@-moz-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-20px); } }
+
+@-o-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-20px); } }
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px); } }
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  -moz-animation-name: fadeOutUp;
+  -o-animation-name: fadeOutUp;
+  animation-name: fadeOutUp; }
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px); } }
+
+@-moz-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(20px); } }
+
+@-o-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(20px); } }
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px); } }
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  -moz-animation-name: fadeOutDown;
+  -o-animation-name: fadeOutDown;
+  animation-name: fadeOutDown; }
+
+@-webkit-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px); } }
+
+@-moz-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-20px); } }
+
+@-o-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-20px); } }
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-20px); } }
+
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  -moz-animation-name: fadeOutLeft;
+  -o-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft; }
+
+@-webkit-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px); } }
+
+@-moz-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(20px); } }
+
+@-o-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(20px); } }
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(20px); } }
+
+.fadeOutRight {
+  -webkit-animation-name: fadeOutRight;
+  -moz-animation-name: fadeOutRight;
+  -o-animation-name: fadeOutRight;
+  animation-name: fadeOutRight; }
+
+@-webkit-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); } }
+
+@-moz-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); } }
+
+@-o-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); } }
+
+@keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px); } }
+
+.fadeOutUpBig {
+  -webkit-animation-name: fadeOutUpBig;
+  -moz-animation-name: fadeOutUpBig;
+  -o-animation-name: fadeOutUpBig;
+  animation-name: fadeOutUpBig; }
+
+@-webkit-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); } }
+
+@-moz-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); } }
+
+@-o-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(2000px); } }
+
+@keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(2000px); } }
+
+.fadeOutDownBig {
+  -webkit-animation-name: fadeOutDownBig;
+  -moz-animation-name: fadeOutDownBig;
+  -o-animation-name: fadeOutDownBig;
+  animation-name: fadeOutDownBig; }
+
+@-webkit-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); } }
+
+@-moz-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); } }
+
+@-o-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); } }
+
+@keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-2000px); } }
+
+.fadeOutLeftBig {
+  -webkit-animation-name: fadeOutLeftBig;
+  -moz-animation-name: fadeOutLeftBig;
+  -o-animation-name: fadeOutLeftBig;
+  animation-name: fadeOutLeftBig; }
+
+@-webkit-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); } }
+
+@-moz-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); } }
+
+@-o-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(2000px); } }
+
+@keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(2000px); } }
+
+.fadeOutRightBig {
+  -webkit-animation-name: fadeOutRightBig;
+  -moz-animation-name: fadeOutRightBig;
+  -o-animation-name: fadeOutRightBig;
+  animation-name: fadeOutRightBig; }
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05); }
+
+  70% {
+    -webkit-transform: scale(0.9); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.05); }
+
+  70% {
+    -moz-transform: scale(0.9); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@-o-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -o-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -o-transform: scale(1.05); }
+
+  70% {
+    -o-transform: scale(0.9); }
+
+  100% {
+    -o-transform: scale(1); } }
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05); }
+
+  70% {
+    transform: scale(0.9); }
+
+  100% {
+    transform: scale(1); } }
+
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  -moz-animation-name: bounceIn;
+  -o-animation-name: bounceIn;
+  animation-name: bounceIn; }
+
+@-webkit-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px); }
+
+  80% {
+    -webkit-transform: translateY(10px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(-30px); }
+
+  80% {
+    -moz-transform: translateY(10px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateY(-30px); }
+
+  80% {
+    -o-transform: translateY(10px); }
+
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-30px); }
+
+  80% {
+    transform: translateY(10px); }
+
+  100% {
+    transform: translateY(0); } }
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  -moz-animation-name: bounceInUp;
+  -o-animation-name: bounceInUp;
+  animation-name: bounceInUp; }
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px); }
+
+  80% {
+    -webkit-transform: translateY(-10px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(30px); }
+
+  80% {
+    -moz-transform: translateY(-10px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateY(30px); }
+
+  80% {
+    -o-transform: translateY(-10px); }
+
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateY(30px); }
+
+  80% {
+    transform: translateY(-10px); }
+
+  100% {
+    transform: translateY(0); } }
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  -moz-animation-name: bounceInDown;
+  -o-animation-name: bounceInDown;
+  animation-name: bounceInDown; }
+
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px); }
+
+  80% {
+    -webkit-transform: translateX(-10px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(30px); }
+
+  80% {
+    -moz-transform: translateX(-10px); }
+
+  100% {
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateX(30px); }
+
+  80% {
+    -o-transform: translateX(-10px); }
+
+  100% {
+    -o-transform: translateX(0); } }
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateX(30px); }
+
+  80% {
+    transform: translateX(-10px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  -moz-animation-name: bounceInLeft;
+  -o-animation-name: bounceInLeft;
+  animation-name: bounceInLeft; }
+
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px); }
+
+  80% {
+    -webkit-transform: translateX(10px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(-30px); }
+
+  80% {
+    -moz-transform: translateX(10px); }
+
+  100% {
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateX(-30px); }
+
+  80% {
+    -o-transform: translateX(10px); }
+
+  100% {
+    -o-transform: translateX(0); } }
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateX(-30px); }
+
+  80% {
+    transform: translateX(10px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  -moz-animation-name: bounceInRight;
+  -o-animation-name: bounceInRight;
+  animation-name: bounceInRight; }
+
+@-webkit-keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1); }
+
+  25% {
+    -webkit-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.3); } }
+
+@-moz-keyframes bounceOut {
+  0% {
+    -moz-transform: scale(1); }
+
+  25% {
+    -moz-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.3); } }
+
+@-o-keyframes bounceOut {
+  0% {
+    -o-transform: scale(1); }
+
+  25% {
+    -o-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -o-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -o-transform: scale(0.3); } }
+
+@keyframes bounceOut {
+  0% {
+    transform: scale(1); }
+
+  25% {
+    transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.3); } }
+
+.bounceOut {
+  -webkit-animation-name: bounceOut;
+  -moz-animation-name: bounceOut;
+  -o-animation-name: bounceOut;
+  animation-name: bounceOut; }
+
+@-webkit-keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); } }
+
+@-moz-keyframes bounceOutUp {
+  0% {
+    -moz-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); } }
+
+@-o-keyframes bounceOutUp {
+  0% {
+    -o-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); } }
+
+@keyframes bounceOutUp {
+  0% {
+    transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px); } }
+
+.bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  -moz-animation-name: bounceOutUp;
+  -o-animation-name: bounceOutUp;
+  animation-name: bounceOutUp; }
+
+@-webkit-keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); } }
+
+@-moz-keyframes bounceOutDown {
+  0% {
+    -moz-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); } }
+
+@-o-keyframes bounceOutDown {
+  0% {
+    -o-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(2000px); } }
+
+@keyframes bounceOutDown {
+  0% {
+    transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(2000px); } }
+
+.bounceOutDown {
+  -webkit-animation-name: bounceOutDown;
+  -moz-animation-name: bounceOutDown;
+  -o-animation-name: bounceOutDown;
+  animation-name: bounceOutDown; }
+
+@-webkit-keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); } }
+
+@-moz-keyframes bounceOutLeft {
+  0% {
+    -moz-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); } }
+
+@-o-keyframes bounceOutLeft {
+  0% {
+    -o-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); } }
+
+@keyframes bounceOutLeft {
+  0% {
+    transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-2000px); } }
+
+.bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  -moz-animation-name: bounceOutLeft;
+  -o-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft; }
+
+@-webkit-keyframes bounceOutRight {
+  0% {
+    -webkit-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); } }
+
+@-moz-keyframes bounceOutRight {
+  0% {
+    -moz-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); } }
+
+@-o-keyframes bounceOutRight {
+  0% {
+    -o-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(2000px); } }
+
+@keyframes bounceOutRight {
+  0% {
+    transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(2000px); } }
+
+.bounceOutRight {
+  -webkit-animation-name: bounceOutRight;
+  -moz-animation-name: bounceOutRight;
+  -o-animation-name: bounceOutRight;
+  animation-name: bounceOutRight; }
+
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateIn {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateIn {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateIn {
+  0% {
+    transform-origin: center center;
+    transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  -moz-animation-name: rotateIn;
+  -o-animation-name: rotateIn;
+  animation-name: rotateIn; }
+
+@-webkit-keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInUpLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInUpLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInUpLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInUpLeft {
+  -webkit-animation-name: rotateInUpLeft;
+  -moz-animation-name: rotateInUpLeft;
+  -o-animation-name: rotateInUpLeft;
+  animation-name: rotateInUpLeft; }
+
+@-webkit-keyframes rotateInDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInDownLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInDownLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInDownLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInDownLeft {
+  -webkit-animation-name: rotateInDownLeft;
+  -moz-animation-name: rotateInDownLeft;
+  -o-animation-name: rotateInDownLeft;
+  animation-name: rotateInDownLeft; }
+
+@-webkit-keyframes rotateInUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInUpRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInUpRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInUpRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInUpRight {
+  -webkit-animation-name: rotateInUpRight;
+  -moz-animation-name: rotateInUpRight;
+  -o-animation-name: rotateInUpRight;
+  animation-name: rotateInUpRight; }
+
+@-webkit-keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInDownRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInDownRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInDownRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInDownRight {
+  -webkit-animation-name: rotateInDownRight;
+  -moz-animation-name: rotateInDownRight;
+  -o-animation-name: rotateInDownRight;
+  animation-name: rotateInDownRight; }
+
+@-webkit-keyframes rotateOut {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOut {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(200deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOut {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(200deg);
+    opacity: 0; } }
+
+@keyframes rotateOut {
+  0% {
+    transform-origin: center center;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(200deg);
+    opacity: 0; } }
+
+.rotateOut {
+  -webkit-animation-name: rotateOut;
+  -moz-animation-name: rotateOut;
+  -o-animation-name: rotateOut;
+  animation-name: rotateOut; }
+
+@-webkit-keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutUpLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutUpLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutUpLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    opacity: 0; } }
+
+.rotateOutUpLeft {
+  -webkit-animation-name: rotateOutUpLeft;
+  -moz-animation-name: rotateOutUpLeft;
+  -o-animation-name: rotateOutUpLeft;
+  animation-name: rotateOutUpLeft; }
+
+@-webkit-keyframes rotateOutDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutDownLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutDownLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutDownLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+    opacity: 0; } }
+
+.rotateOutDownLeft {
+  -webkit-animation-name: rotateOutDownLeft;
+  -moz-animation-name: rotateOutDownLeft;
+  -o-animation-name: rotateOutDownLeft;
+  animation-name: rotateOutDownLeft; }
+
+@-webkit-keyframes rotateOutUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutUpRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutUpRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutUpRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0; } }
+
+.rotateOutUpRight {
+  -webkit-animation-name: rotateOutUpRight;
+  -moz-animation-name: rotateOutUpRight;
+  -o-animation-name: rotateOutUpRight;
+  animation-name: rotateOutUpRight; }
+
+@-webkit-keyframes rotateOutDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutDownRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutDownRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutDownRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(-90deg);
+    opacity: 0; } }
+
+.rotateOutDownRight {
+  -webkit-animation-name: rotateOutDownRight;
+  -moz-animation-name: rotateOutDownRight;
+  -o-animation-name: rotateOutDownRight;
+  animation-name: rotateOutDownRight; }
+
+@-webkit-keyframes hinge {
+  0% {
+    -webkit-transform: rotate(0);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -webkit-transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  40% {
+    -webkit-transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  100% {
+    -webkit-transform: translateY(700px);
+    opacity: 0; } }
+
+@-moz-keyframes hinge {
+  0% {
+    -moz-transform: rotate(0);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -moz-transform: rotate(80deg);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  40% {
+    -moz-transform: rotate(60deg);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  80% {
+    -moz-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  100% {
+    -moz-transform: translateY(700px);
+    opacity: 0; } }
+
+@-o-keyframes hinge {
+  0% {
+    -o-transform: rotate(0);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -o-transform: rotate(80deg);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  40% {
+    -o-transform: rotate(60deg);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  80% {
+    -o-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  100% {
+    -o-transform: translateY(700px);
+    opacity: 0; } }
+
+@keyframes hinge {
+  0% {
+    transform: rotate(0);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    transform: rotate(80deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  40% {
+    transform: rotate(60deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  80% {
+    transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  100% {
+    transform: translateY(700px);
+    opacity: 0; } }
+
+.hinge {
+  -webkit-animation-name: hinge;
+  -moz-animation-name: hinge;
+  -o-animation-name: hinge;
+  animation-name: hinge; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg); } }
+
+@-moz-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0px) rotate(0deg); } }
+
+@-o-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0px) rotate(0deg); } }
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg); } }
+
+.rollIn {
+  -webkit-animation-name: rollIn;
+  -moz-animation-name: rollIn;
+  -o-animation-name: rollIn;
+  animation-name: rollIn; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg); } }
+
+@-moz-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(100%) rotate(120deg); } }
+
+@-o-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(100%) rotate(120deg); } }
+
+@keyframes rollOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%) rotate(120deg); } }
+
+.rollOut {
+  -webkit-animation-name: rollOut;
+  -moz-animation-name: rollOut;
+  -o-animation-name: rollOut;
+  animation-name: rollOut; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes lightSpeedIn {
+  0% {
+    -moz-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -moz-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -moz-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@-o-keyframes lightSpeedIn {
+  0% {
+    -o-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -o-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -o-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@keyframes lightSpeedIn {
+  0% {
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+.lightSpeedIn {
+  -webkit-animation-name: lightSpeedIn;
+  -moz-animation-name: lightSpeedIn;
+  -o-animation-name: lightSpeedIn;
+  animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  animation-timing-function: ease-out; }
+
+.animated.lightSpeedIn {
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes lightSpeedOut {
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@-moz-keyframes lightSpeedOut {
+  0% {
+    -moz-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@-o-keyframes lightSpeedOut {
+  0% {
+    -o-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@keyframes lightSpeedOut {
+  0% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+.lightSpeedOut {
+  -webkit-animation-name: lightSpeedOut;
+  -moz-animation-name: lightSpeedOut;
+  -o-animation-name: lightSpeedOut;
+  animation-name: lightSpeedOut;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in; }
+
+.animated.lightSpeedOut {
+  -webkit-animation-duration: 0.25s;
+  -moz-animation-duration: 0.25s;
+  -o-animation-duration: 0.25s;
+  animation-duration: 0.25s; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: skewX(9deg); }
+
+  10% {
+    -webkit-transform: skewX(-8deg); }
+
+  20% {
+    -webkit-transform: skewX(7deg); }
+
+  30% {
+    -webkit-transform: skewX(-6deg); }
+
+  40% {
+    -webkit-transform: skewX(5deg); }
+
+  50% {
+    -webkit-transform: skewX(-4deg); }
+
+  60% {
+    -webkit-transform: skewX(3deg); }
+
+  70% {
+    -webkit-transform: skewX(-2deg); }
+
+  80% {
+    -webkit-transform: skewX(1deg); }
+
+  90% {
+    -webkit-transform: skewX(0deg); }
+
+  100% {
+    -webkit-transform: skewX(0deg); } }
+
+@-moz-keyframes wiggle {
+  0% {
+    -moz-transform: skewX(9deg); }
+
+  10% {
+    -moz-transform: skewX(-8deg); }
+
+  20% {
+    -moz-transform: skewX(7deg); }
+
+  30% {
+    -moz-transform: skewX(-6deg); }
+
+  40% {
+    -moz-transform: skewX(5deg); }
+
+  50% {
+    -moz-transform: skewX(-4deg); }
+
+  60% {
+    -moz-transform: skewX(3deg); }
+
+  70% {
+    -moz-transform: skewX(-2deg); }
+
+  80% {
+    -moz-transform: skewX(1deg); }
+
+  90% {
+    -moz-transform: skewX(0deg); }
+
+  100% {
+    -moz-transform: skewX(0deg); } }
+
+@-o-keyframes wiggle {
+  0% {
+    -o-transform: skewX(9deg); }
+
+  10% {
+    -o-transform: skewX(-8deg); }
+
+  20% {
+    -o-transform: skewX(7deg); }
+
+  30% {
+    -o-transform: skewX(-6deg); }
+
+  40% {
+    -o-transform: skewX(5deg); }
+
+  50% {
+    -o-transform: skewX(-4deg); }
+
+  60% {
+    -o-transform: skewX(3deg); }
+
+  70% {
+    -o-transform: skewX(-2deg); }
+
+  80% {
+    -o-transform: skewX(1deg); }
+
+  90% {
+    -o-transform: skewX(0deg); }
+
+  100% {
+    -o-transform: skewX(0deg); } }
+
+@keyframes wiggle {
+  0% {
+    transform: skewX(9deg); }
+
+  10% {
+    transform: skewX(-8deg); }
+
+  20% {
+    transform: skewX(7deg); }
+
+  30% {
+    transform: skewX(-6deg); }
+
+  40% {
+    transform: skewX(5deg); }
+
+  50% {
+    transform: skewX(-4deg); }
+
+  60% {
+    transform: skewX(3deg); }
+
+  70% {
+    transform: skewX(-2deg); }
+
+  80% {
+    transform: skewX(1deg); }
+
+  90% {
+    transform: skewX(0deg); }
+
+  100% {
+    transform: skewX(0deg); } }
+
+.wiggle {
+  -webkit-animation-name: wiggle;
+  -moz-animation-name: wiggle;
+  -o-animation-name: wiggle;
+  animation-name: wiggle;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in; }
+
+.animated.wiggle {
+  -webkit-animation-duration: 0.75s;
+  -moz-animation-duration: 0.75s;
+  -o-animation-duration: 0.75s;
+  animation-duration: 0.75s; }
+  
+
+    </style>
+
+    <link href="https://ningyu1.github.io/site/css/custom.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="https://ningyu1.github.io/site/css/github-markdown.css" rel="stylesheet" type="text/css">
+
+    <link href='https://ningyu1.github.io/site/css/Slackey.css' rel='stylesheet' type='text/css'>
+    <link href='https://ningyu1.github.io/site/css/Fjallaone.css' rel='stylesheet' type='text/css'>
+    <link href='https://ningyu1.github.io/site/css/Amethysta.css' rel='stylesheet' type='text/css'>
+	<script src="https://ningyu1.github.io/site/js/jquery.min.js"></script>
+    
+
+    <script type="text/javascript" src="https://ningyu1.github.io/site/js/jquery-tapir.js"></script>
+
+    
+
+    <link rel="stylesheet" href="https://ningyu1.github.io/site/css/hljs.css">
+    <script src="https://ningyu1.github.io/site/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?5bb9b9d406e3381971859973a2ca3583";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+</head>
+
+
+<a href="https://github.com/ningyu1"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; z-index:9999; background-color: rgba(0, 0, 0, 0)!important;" src="https://ningyu1.github.io/site/images/right-graphite@2x.png" alt="Fork me on GitHub"></a>
+
+
+
+
+
+
+
+
+<link href="https://ningyu1.github.io/site/css/music-player.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://ningyu1.github.io/site/js/music-player.js"></script>
+<iframe class="player"  frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="https://music.163.com/outchain/player?type=2&id=1296583188&auto=0&height=66"></iframe>
+
+
+
+<body class="markdown-body">
+    <div id="wrapper">
+        <header id="header" class="inner">
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        凝雨 - Yun
+    </div>
+</h1>
+
+<span class="subtitle">快乐编程每一天 - Happy Coding Every Day</span>
+<br>
+
+
+<ul id="social-links" style="text-align:center; clear:both;">
+	
+    
+    <li>
+    <a href="mailto:ningbe111@163.com" class="email" title="Email"></a>
+    </li>
+    
+    
+    
+    <li>
+    <a href="https://github.com/ningyu1" class="github" title="Github"></a>
+    </li>
+    
+	
+    
+    <li>
+    <a href="https://gitlab.com/ningyu1" class="gitlab" title="Gitlab"></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+    
+	
+    
+    <li>
+    <a href="https://gitee.com/ningyu" class="gitee" title="Gitee码云"></a>
+    </li>
+    
+	<li>
+
+    <a href="https://ningyu1.github.io/atom.xml" class="rss" title="RSS" target="_blank"></a>
+    </li>
+</ul>
+
+
+
+<ul id="nav">
+
+
+
+
+
+    
+    <li id="ajax"><a href="https://ningyu1.github.io/">Home</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/archives/">Archives</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/categories/">Categories</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/tags/">Tags</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/about/">About</a></li>
+    <li id="ajax"><a href="https://g2.okk.dog/?path=register&code=qn7nOwdj">科学上网</a></li>
+    
+    <li>
+    <div id="dark">
+        
+        <form action="//www.google.com/search" method="get" accept-charset="UTF-8" id="search">
+
+            <input type="hidden" name="sitesearch" value="https://ningyu1.github.io" />
+            <input type="text" name="q" results="0" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+</ul>
+
+</header>
+
+<div id="toload">
+
+    <div id="content" class="inner">
+        
+
+
+
+
+    
+    <script id="dsq-count-scr" src="//ningyu.disqus.com/count.js" async></script>
+    
+
+
+
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/blog-migration/">博客迁移</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2019-04-03T15:30:21.000&#43;00:00' itemprop="datePublished">2019-04-03</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/other">other</a>
+
+
+</div>
+    </div>
+        <p>由于旧的站点分类、标签、归档中没有分页，也无法搜索本站内的博文，移动端支持的不好，所以现在将站点迁移到<a href="https://ningyu1.github.io">https://ningyu1.github.io</a></p>
+
+<p>新的博客显示风格更加友好，支持移动端显示，支持搜索本站内的所有博文，首页、归档、分类、标签均支持分页，支持分享到wechat、qq、weibo等。</p>
+
+<p>Peace yo. 谢谢</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/blog-migration/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/113-object-copy/">Java对象复制类库性能对比</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2019-03-22T16:03:21.000&#43;00:00' itemprop="datePublished">2019-03-22</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/java">Java</a>
+
+<a href="https://ningyu1.github.io/site/tags/%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D">对象拷贝</a>
+
+
+</div>
+    </div>
+        
+
+<h1 id="背景">背景</h1>
+
+<p>在开发中我们经常会用到对象之间的互相拷贝，<code>Java</code>中对象拷贝的类库也比较多，常见的有<code>Spring BeanUtils</code>，<code>Apache BeanUtils</code>，等并且在很多大厂公司对对象拷贝也有详尽的说明，避免大家踩坑。</p>
+
+<h1 id="功能对比">功能对比</h1>
+
+<table>
+<thead>
+<tr>
+<th align="left">耗时(毫秒)</th>
+<th align="left">1000次</th>
+<th align="left">10,000次</th>
+<th align="left">100,100次</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>Apache BeanUtils</code></td>
+<td align="left">298</td>
+<td align="left">983</td>
+<td align="left">4211</td>
+</tr>
+
+<tr>
+<td align="left"><code>Cglib BeanCopier</code></td>
+<td align="left">89</td>
+<td align="left">120</td>
+<td align="left">203</td>
+</tr>
+
+<tr>
+<td align="left"><code>Spring BeanUtils</code></td>
+<td align="left">92</td>
+<td align="left">160</td>
+<td align="left">524</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="性能对比">性能对比</h1>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">Apache BeanUtils</th>
+<th align="left">Cglib BeanCopier</th>
+<th align="left">Spring BeanUtils</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">非public类</td>
+<td align="left">不支持</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+</tr>
+
+<tr>
+<td align="left">基本类型与装箱类型，int-&gt;Integer，Integer-&gt;int</td>
+<td align="left">支持，可以copy</td>
+<td align="left">不支持，不copy</td>
+<td align="left">不支持，不copy</td>
+</tr>
+
+<tr>
+<td align="left">int-&gt;long，long-&gt;int，int-&gt;Long，Integer-&gt;long</td>
+<td align="left">不支持</td>
+<td align="left">不支持</td>
+<td align="left">不支持</td>
+</tr>
+
+<tr>
+<td align="left">源对象相同属性无get方法</td>
+<td align="left">不支持 不copy</td>
+<td align="left">不支持 不copy</td>
+<td align="left">不支持 不copy</td>
+</tr>
+
+<tr>
+<td align="left">目标对象相同属性无get方法</td>
+<td align="left">支持</td>
+<td align="left">不支持</td>
+<td align="left">支持</td>
+</tr>
+
+<tr>
+<td align="left">目标对象相同属性无set方法</td>
+<td align="left">不copy，不报错</td>
+<td align="left">报错</td>
+<td align="left">不copy，不报错</td>
+</tr>
+
+<tr>
+<td align="left">源对象相同属性无set方法</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+</tr>
+
+<tr>
+<td align="left">目标对象相同属性set方法返回非void</td>
+<td align="left">不设置，其他正常属性可以copy</td>
+<td align="left">不设置，导致其他属性都无法copy</td>
+<td align="left">支持，能够copy</td>
+</tr>
+
+<tr>
+<td align="left">目标对象多字段</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+</tr>
+
+<tr>
+<td align="left">目标对象少字段</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="结论">结论</h1>
+
+<p>从性能对比来看：</p>
+
+<ol>
+<li><code>cglib</code>的<code>BeanCopier</code>最好， <code>Spring BeanUtils</code>稍微差点，但也还可以，<code>Apache BeanUtils</code>性能最差</li>
+<li>从功能对比来看，<code>cglib</code> 在set方法返回非void时，会导致其他属性无法copy，目标没有set方法时，会报错，还存在并且有多项不支持的情况</li>
+</ol>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/113-object-copy/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/112-front-end-and-back-end-separation/">谈一谈前后端分离的优劣势</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2019-03-11T19:11:21.000&#43;00:00' itemprop="datePublished">2019-03-11</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB">前后端分离</a>
+
+
+</div>
+    </div>
+        
+
+<p>从公司内网转载一篇同事整理的资料，关于前后端分离的优劣方面，整理的比较全面，推荐不明白为什么要前后端分离的同学阅读。</p>
+
+<p><span style="color:blue"><em>首先说明：前后端分离并非仅仅只是一种开发模式，而是一种架构模式（前后端分离架构）。</em></span></p>
+
+<h1 id="开发模式对比">开发模式对比</h1>
+
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">老的开发模式（后端以Java为例）</th>
+<th align="left">新的开发模式（后端以Java为例）</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">产品经理/领导/客户提出需求</td>
+<td align="left">产品经理/领导/客户提出需求</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">UI做出设计图</td>
+<td align="left">UI做出设计图</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">前端工程师做html页面</td>
+<td align="left">前后端约定接口&amp;数据&amp;参数</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">后端工程师将html页面套成jsp页面</td>
+<td align="left">前后端并行开发</td>
+</tr>
+
+<tr>
+<td align="left">5</td>
+<td align="left">集成出现问题 前端返工 后端返工</td>
+<td align="left">前后端集成</td>
+</tr>
+
+<tr>
+<td align="left">6</td>
+<td align="left">二次集成 集成成功 交付</td>
+<td align="left">前端页面调整 集成成功 交互</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="请求方式对比">请求方式对比</h1>
+
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">老的开发模式（后端以Java为例）</th>
+<th align="left">新的开发模式（后端以Java为例）</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">客户端请求</td>
+<td align="left">浏览器发送请求</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">服务端的servlet或controller接收请求</td>
+<td align="left">直接到达html页面（前端控制路由与渲染页面，整个项目开发的权重前移）</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">调用service,dao代码完成业务逻辑</td>
+<td align="left">html页面负责调用服务端接口产生数据</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">返回jsp jsp展现一些动态的代码</td>
+<td align="left">填充html，展现动态效果，在页面上进行解析并操作DOM或数据</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="前后端分离的优势">前后端分离的优势</h1>
+
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">优势</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">可以实现真正的前后端解耦，前端服务器使用nginx，后端/应用服务器使用tomcat，加快整体响应速度</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">发现bug，可以快速定位是谁的问题，不会出现互相踢皮球的现象</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">减少后端服务器的并发/负载压力</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">即使后端服务暂时超时或者宕机了，前端页面也会正常访问，只不过数据刷不出来而已</td>
+</tr>
+
+<tr>
+<td align="left">5</td>
+<td align="left">多端应用</td>
+</tr>
+
+<tr>
+<td align="left">6</td>
+<td align="left">页面显示的东西再多也不怕，因为是异步加载</td>
+</tr>
+
+<tr>
+<td align="left">7</td>
+<td align="left">增加代码的维护性&amp;易读性</td>
+</tr>
+
+<tr>
+<td align="left">8</td>
+<td align="left">提升开发效率，因为可以前后端并行开发，而不是像以前的强依赖</td>
+</tr>
+
+<tr>
+<td align="left">9</td>
+<td align="left">前端大量的组件代码得以复用，组件化，提升开发效率，抽出来</td>
+</tr>
+
+<tr>
+<td align="left">10</td>
+<td align="left">在nginx中部署证书，外网使用https访问，并且只开放443和80端口，其他端口一律关闭（防止黑客端口扫描），内网使用http，性能和安全都有保障。</td>
+</tr>
+
+<tr>
+<td align="left">11</td>
+<td align="left">nginx支持页面热部署，不用重启服务器，前端升级更无缝。</td>
+</tr>
+
+<tr>
+<td align="left">12</td>
+<td align="left">前端项目中可以加入mock测试（构造虚拟测试对象来模拟后端，可以独立开发和测试）</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="前后端分离的劣势">前后端分离的劣势</h1>
+
+<p>有联调、沟通环节，这个过程非常花时间，也容易出bug，还很难维护。</p>
+
+<h1 id="前后端分离-术业有专攻">前后端分离-术业有专攻</h1>
+
+<p>后端： 把精力放在 高并发，高可用，高性能，安全，存储，业务等等研究上</p>
+
+<p>例如：设计模式，原理及源码，事务隔离与锁机制，http/tcp，多线程，分布式架构，弹性计算架构，微服务架构，性能优化，以及相关的项目管理等等</p>
+
+<p>前端： 把精力放在页面表现，速度流畅，兼容性，用户体验等等</p>
+
+<p>例如：html5，css3，jquery，angularjs，reactjs，vuejs，webpack，less/sass，gulp，nodejs，Google V8引擎，javascript多线程，模块化，面向切面编程，设计模式，浏览器兼容性，性能优化等等</p>
+
+<h1 id="总结">总结</h1>
+
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">总结</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">前后端分离并非仅仅只是一种开发模式，而是一种架构模式（前后端分离架构）。</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">千万不要以为只有在撸代码的时候把前端和后端分开就是前后端分离了，需要区分前后端项目。</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">前端项目与后端项目是两个项目，放在两个不同的服务器，需要独立部署，两个不同的工程，两个不同的代码库，不同的开发人员。</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">前后端工程师需要约定交互接口，实现并行开发，开发结束后需要进行独立部署，前端通过ajax来调用http请求调用后端的restful api。</td>
+</tr>
+
+<tr>
+<td align="left">5</td>
+<td align="left">前端只需要关注页面的样式与动态数据的解析&amp;渲染，而后端专注于具体业务逻辑。</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/112-front-end-and-back-end-separation/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/111-code-quality-management/">谈一谈开发团队代码质量如何管控与提升</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2019-03-07T14:37:21.000&#43;00:00' itemprop="datePublished">2019-03-07</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86">代码质量管理</a>
+
+<a href="https://ningyu1.github.io/site/tags/git-flow">git flow</a>
+
+<a href="https://ningyu1.github.io/site/tags/jira-git">jira git</a>
+
+<a href="https://ningyu1.github.io/site/tags/code-review">code review</a>
+
+<a href="https://ningyu1.github.io/site/tags/git-hook">git hook</a>
+
+<a href="https://ningyu1.github.io/site/tags/check-style">check style</a>
+
+
+</div>
+    </div>
+        
+
+<p>今天我们谈一下开发团队代码质量如何做到管控与提升，我相信很多公司都会面临这样的问题，开发团队大人员技术水平参差不齐，代码写的不够规范，代码扫描问题修改太过滞后，代码库管理每个团队都不一致，偶尔还会合并丢失一些代码，code review费人费时效率不高，开发任务的管理以及任务与代码的可追溯问题，等等之类的问题，我们能否制定一套从设计到开发再到交付一整套的管控方案来帮助开发团队管控代码的质量？下来我就针对这些问题展开来谈谈我的想法。</p>
+
+<h1 id="举个例子">举个例子</h1>
+
+<p>比如说我们要增加代码和任务之间的可追溯性，我们可能考虑采用git+jira关联的方式对开发人员每笔提交在提交comment中增加jira编号，这是就是一个规范，但是规范落地如何检查？开发人员如果忘记在comment中添加就会造成关联失败，那我们就要采用工具的方式帮助开发人员在提交时检查comment是否符合规范。</p>
+
+<p>比如说我们有制定编码规范，也采用了sonar去扫描代码的问题，但是这个方式的缺点是太过滞后，需要质量人员跟进去推动并且效果也不是很好，我们是否可以考虑前置检查点帮助开发人员在代码编写和提交时能主动的发现问题，在代码提交的时候发现规范问题可以直接进行解决再提交，我们可以考虑采用git加checkstyle、pmd、fingbug等工具插件，在代码提交的时候进行规范检测并且进行告警，这样就可以很好的帮助开发人员及时的发现问题，并不是开发已经提交了再去sonar上检查代码规范来发现问题再事后的安排人员去解决，开发人员都有一个习惯，当功能开发好没有问题后他们很少会去主动的修改与重构代码，这样就会导致迟迟不能推进，我们提前了检查点帮助开发人员及时发现问题就可以更好的推行规范的落地。</p>
+
+<p>因此我们要考虑提供一整套代码质量管理的机制，应用在开发全生命周期中，并在关键的流程节点进行验证，从而把控与提升代码的质量。</p>
+
+<h1 id="常见的问题及我的看法">常见的问题及我的看法</h1>
+
+<h2 id="静态代码扫描太滞后-推进吃力">静态代码扫描太滞后，推进吃力</h2>
+
+<p>我相信大多都会使用类似sonar这类的静态代码检查工具来检查代码，这里我们不说工具的好坏，我们只说检查问题的修复情况，我相信很多开发都会有一种习惯，在代码写完之后如果上线没有问题的话他们是很少会去主动的优化代码，即使你扫描结果告诉他他也会有各种理由推脱，当然我们可以通过管理的手段强制他们修改，比如说blocker、critical级别的必须全部改掉，其余的看情况修改，当然通过管理手段从上往下会有一定的效果，但是这些都是比较滞后的方式，我们能不能提前发现问题让开发在功能开发过程中就把发现的问题改掉？</p>
+
+<p>这个当然是可以的，我们可以利用代码检查的机制，在代码开发中就让开发去扫描发现问题，在代码提交的时候去校验如果有严重的禁止代码提交。这样一来我们就可以提前来发现并解决问题，这样可能会带来的是开发人员的排斥，开发人员都觉得自己代码写的没有问题，所以这块我们需要把控这个检查规则的宽松度，我们可以结合公司的开发规范，整理不同级别的问题，通过先简后严的方式，先把开发的习惯培养起来后再逐渐的提升严格度，这样一来开发就有个适应期也比较好接受，比如说：我们通过checkstyle的规则模板定义，前期把一些无用导入包、命名不规范、导入包用*、system.out语句这类接受度高的作为error级别来推动开发适应从而培养这种良好的习惯。</p>
+
+<h2 id="团队code-review没有跑起来或跑的太费事费力">团队Code Review没有跑起来或跑的太费事费力</h2>
+
+<p>在技术行业做了一定时间的人应该都知道code review是多么的重要，一可以促进团队人员之间互相交流，二可以提升整体团队的技术水平，学习优秀人员写的代码，帮助初级人员提升代码编写能力，所以code review还是强烈必须要做的，至于怎么做code review？我谈一下我的想法和建议</p>
+
+<p>比较常见的方式是定期团队内组织全体人员进行集中式的code review，我比较推荐利用工具在线的操作方式来做code review，现在开源非常的火也可以参考学习开源团队code review的方式，比如说github有pull request，gitlab有merge request，可以在这个合并代码的节点上进行code review，这样做的好处是第一比较开放，只要能看到合并代码请求的都可以进行review，第二可以留下review记录，互相的想法沟通和建议可以很好的留存下来并且可以通过UI的方式友好的展示出来，从而提升code review效率。</p>
+
+<p>这个当然需要结合git flow的机制来协作完成。</p>
+
+<h2 id="代码库分支-版本管理不规范-合并丢代码">代码库分支、版本管理不规范，合并丢代码</h2>
+
+<p>团队多了或团队大了，每个人或多或少对git的管理与使用理解不一致，这样就造成了分支、版本管理的混乱，这样在版本代码合并时就会产生很多冲突，我们可以指定一套规范性的东西，指导开发团队进行分支、版本的管理，这里说到的是指导不是限制，要让开发在可控的范围内自由发挥。</p>
+
+<p>可以参考git flow、github flow等，当然我们要统一一个工作流程推广给开发团队中。</p>
+
+<p>前面我们说了用代码合并来进行code review，这样我们就要让开发人员在每开发完一个任务的时候就要进行一次代码合并，git是一个优秀的分布式代码库管理工具，我们利用git的分布式特性，以及灵活的流程机制来规范大家的使用。</p>
+
+<p>例如：</p>
+
+<p>一次迭代冲刺或一个版本对应一个<code>develop-*</code>分支和<code>release-*</code>，并且控制分支的push与merge权限，固定一个master分支并且控制master分支的权限，让个人开发通过<code>feature-{username|功能名称}-*</code>分支来进行功能开发，当一个任务或者一个功能开发完成进行一次<code>develop-*</code>分支的合并，这样一来及可以code review也可以有序的管理分支上的代码，当开发人员提交合并请求时发生了冲突就需要开发人员自己解决完冲突后再进行代码合并请求，这样一来版本分支上代码是有序的。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">From</th>
+<th align="left">Remark</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>master</code></td>
+<td align="left">-</td>
+<td align="left">只能有一个并并且固定的</td>
+</tr>
+
+<tr>
+<td align="left"><code>develop-*</code></td>
+<td align="left">从master创建</td>
+<td align="left">开发分支，可以结合jira的sprint，一个sprint对应一个，迭代开始时创建，&rsquo;*&rsquo; 通常可以是一个发布周期或者一个冲刺命名</td>
+</tr>
+
+<tr>
+<td align="left"><code>release-*</code></td>
+<td align="left">从master创建</td>
+<td align="left">预发布分支，可以结合jira的sprint，一个sprint对应一个，迭代开始时创建，&rsquo;*&rsquo; 通常可以是一个发布周期或者一个冲刺命名</td>
+</tr>
+
+<tr>
+<td align="left"><code>feature-{username or 功能名称}-*</code></td>
+<td align="left">从<code>develop-*</code>创建</td>
+<td align="left">开发人员分支，这个分支的声明周期很短，在这个功能开发完成通过Merge Request发起合并进行code review之后合并从而删除分支</td>
+</tr>
+</tbody>
+</table>
+
+<p>以上可以定位分支约定。</p>
+
+<p>具体的操作可以参考下面描述：</p>
+
+<ol>
+<li>sprint开始时（需求确认后），从<code>master</code>创建<code>develop</code>分支，例如是<code>develop-V1.2.0</code></li>
+<li>开发人员从对应的<code>develop</code>分支创建自己的<code>feature</code>分支进行开发</li>
+<li>如果<code>master</code>分支发生变更，需要从<code>master</code>分支合并到对应的<code>develop</code>分支、可以考虑定期合并一次</li>
+<li><code>feature</code>分支合并到对应的<code>develop</code>之前，需要从<code>develop</code>分支合并到<code>feature</code>分支（这个避免和其他人提交进行冲突，规范开发人员自己解决掉冲突后才能发起合并请求）</li>
+<li><code>feature</code>分支合并到对应的<code>develop</code>之后，发布到测试环境进行测试（测试环境直接使用对应的<code>develop</code>分支）</li>
+<li><code>develop</code>分支在测试环境测试通过之后，合并到对应的<code>release</code>分支并发布到预发布环境（UAT）进行测试</li>
+<li><code>release</code>分支在预发布环境（UAT）验证通过后，合并到<code>master</code>分支并发布到生产环境进行验证</li>
+<li>发布到生产环境后从<code>master</code>分支构建对应的版本tag</li>
+</ol>
+
+<p>可同时支持多个sprint的并行。</p>
+
+<h2 id="代码提交备注写的很难懂甚至很随意">代码提交备注写的很难懂甚至很随意</h2>
+
+<p>代码的提交备注非常重要，尤其是在合并代码时产生冲突，第一时间肯定是根据提交日期去看本次提交做了什么修改，如果说备注随便填写，或者有些都没有填这样在回头来看的时候，及时是提交本人他也不能第一时间看出具体做了哪些修改，因此我觉得作为一个开发人员提交备注写的清晰明了是一件必备的职业素养，至于一些不按照规范的技术人员我们也可以要求他们按照规范必须填写。</p>
+
+<p>那如何做到对备注填写的质量把控呢？我们可以通过版本管理工具在提交代码时进行提交备注检测，比如说对长度的限制，至少要15个字符，或者对格式做一些验证，必须包含任务编号之类，这样一来就可以有效的控制代码提交备注的质量以及可读性。</p>
+
+<p>我们现在常用的git就有hook机制可以提供在代码提交前后做一些钩子，利用钩子来控制允许提交或者拒绝提交，比如说git的pre-commit和commit-msg</p>
+
+<h2 id="开发人员的任务管理与提交代码没有关联-无法查看某个任务具体提交了哪些代码">开发人员的任务管理与提交代码没有关联，无法查看某个任务具体提交了哪些代码</h2>
+
+<p>优秀的开发人员主动性都是很好的，主动性对开发来说也是非常重要的职业素养，不要让人催促你来完成任务，自己要学会主动找任务去做主动想如何优化与提升，所以时间任务管理是非常重要的，我任务开发人员都应该具备自己的时间任务管理能力，无论用什么工具只要能管理跟踪好自己的任务就是不错的人员。</p>
+
+<p>公司一般都有任务管理工具，有的用禅道、有的用jira，现在用jira的相对多一些，jira的功能丰富也可以促进团队进行敏捷的任务管理，我们可以通过打通任务管理工具和代码版本工具，让代码提交的时候通过任务编号产生关联，从而可以在任务中看到代码修改的片段。</p>
+
+<p>这里我用jira+git举个例子，比如说我们利用jira做scrum的敏捷管理，在制定好epic、story、task、subtask后，可以通过scrum模型的管理手段，在开发过程中通过插件、图标的数据来分析是否有风险？那个人的任务delay？那个人的任务制定还可以再进行拆分？等，从而尽早的做出调整来控制整个迭代周期按时完成。利用git提交的备注写入jira编号，通过jira和git的插件打通任务与提交代码的关联，这样一来我们就可以很好的看到任务执行过程数据与具体改动了哪些代码，从而提升开发效率。</p>
+
+<h2 id="统一管理校验规则版本-由简到严循序渐进的方式提升代码质量">统一管理校验规则版本，由简到严循序渐进的方式提升代码质量</h2>
+
+<p>我们上面说到的利用了checkstyle来验证代码风格，通过git hook来控制提交备注的规范，这些都需要自定义一些脚本，这些脚本也应该利用git进行有效的管理，我们能力能做到统一的调整了规则与脚本，开发过程中的应用立即使用最新的验证规则？还有git hooks的脚本是在开发机器本地运行的，这样就带来了一个问题如何让开发去安装脚本呢？叫他们手动安装？写个bat或shell脚本让开发执行一次？</p>
+
+<p>我觉得更好的方式是对开发透明在他们不知觉的时候已经悄悄的安装，我们可以利用git对规则与脚本的版本进行管理，利用nginx可以通过http方式直接访问规则与脚本文件，通过自定义maven plugin在代码build的时候验证开发机器上是否已经安装，如果没有就给它自动安装与自动更新。</p>
+
+<p>这样我们只要修改了规则与脚本后进行版本发布，开发机就会自动的更新下来从而可以立即生效。</p>
+
+<h2 id="开发团队技术氛围低沉">开发团队技术氛围低沉</h2>
+
+<p>很多公司开发团队一味的满头苦干，很容易忽视团队内的技术分享，再加上团队内人员进进出出有一些正能量的人当然也有一些负能量的人，这都是常事，但是不管怎样我相信做技术的人都愿意提升自己的技术能力，不管是工作中实践学习还是说参加沙龙或者论坛，都是很好的学习渠道，人的精力也是比较有限不可能关注很多面，通过团队内的技术分享，把每个人擅长的部分分享给大家，互相学习来提升凝聚力和团队整体的技术水平，这样长期以来我相信团队内的技术氛围肯定不会差。</p>
+
+<h1 id="总结">总结</h1>
+
+<p>以上就是我对代码质量管理与提升方面的经验与思考，里面涉及到很多东西，有流程的制定、工具的协作、工具的打通、规范的制定等，因此这是一个系统性的方案，希望可以利用一整套代码质量管理的流程，在关键的流程节点来把控代码的质量，形成闭环，希望可以帮助有需要的人，如果有更好的建议也希望大家多提意见进行补充，没有完美的方式，只有找到适合的可落地的就是好的。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/111-code-quality-management/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/110-mybatis-batch/">疑似Batch处理事务问题，保存了该回滚的数据</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2019-02-20T14:34:21.000&#43;00:00' itemprop="datePublished">2019-02-20</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/mybatis">mybatis</a>
+
+<a href="https://ningyu1.github.io/site/tags/batch">batch</a>
+
+
+</div>
+    </div>
+        
+
+<p>这篇文章转自公司内网wiki中一篇不错的问题分析文章，</p>
+
+<h1 id="问题描述">问题描述</h1>
+
+<ol>
+<li>两个事物， 在第一个事务报错是则执行第二个事务</li>
+<li>两个事物都是执行下面的批量操作</li>
+<li>两个事务的批量操作是插入到相同的两张表中，如下代码</li>
+<li>第一个事务预计在第一个表中插入3条记录， 第二个表中插入3条记录，但是第一个表的第一个记录就违反了约束，报错异常；</li>
+<li>第一个事务失败后，执行第二个事务，第二个事务插入两个表中各一条记录。</li>
+<li>实际结果：第一个表有一条记录（第二个事务中插入的），第二个表中有4条记录（除了第二个事务中的一条，还有第一个事务中的3条数据）</li>
+</ol>
+
+<p><img src="https://ningyu1.github.io/site/img/mybatis-batch/1.png" alt="" /></p>
+
+<p>问题点是在第一个事务抛异常回滚了，第一个表成功回滚，但是第二个事务将第一个事务中的第二个表的数据提交了。</p>
+
+<h1 id="问题原因">问题原因</h1>
+
+<ol>
+<li>我们说明批量操作是指：如下的样例:insert into t(field) values(v1),(v2),(v3)</li>
+<li>sqlSession.commit();实际上并不是事务的commit，而只是执行sql</li>
+<li>2个事务绑定的是同一个connection。</li>
+<li>在一个mybatis的sqlSession 批量中操作两张表，则会生成两个prepareStatement，</li>
+<li>而prepareStatement对象在mybatis中有cache。</li>
+<li>回滚时回滚到savepoint</li>
+</ol>
+
+<p>基于上面6点， 当第一个事务的第一个表执行是失败后（在第一个表的失败位置上设置一个savepoint，回滚时值回滚到这个savepoint，第二个preparestatement被缓存了）</p>
+
+<h1 id="问题总结">问题总结</h1>
+
+<ol>
+<li>本问题不设计到事务传播机制与隔离级别</li>
+<li>本例为一个错误使用范例，<strong>即不能在一个mybatis的sqlSession批量中操作两张表</strong></li>
+</ol>
+
+<p><span style="color:blue"><em>注意：PreparedStatement确实适合执行相同sql的批处理，Statement适合执行不同sql的批处理</em></span></p>
+
+<p>一些代码跟踪截图这里就不方便放出来请见谅。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/110-mybatis-batch/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/109-restful-date-convert/">RESTful开发日期类型字段如何正确传递</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2019-02-12T15:30:21.000&#43;00:00' itemprop="datePublished">2019-02-12</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/restful">restful</a>
+
+<a href="https://ningyu1.github.io/site/tags/date-convert">date-convert</a>
+
+
+</div>
+    </div>
+        
+
+<p>RESTful开发时经常会遇到参数传入日期类型及返回的日期类型值，日期和时间戳如果没有适当和一致地处理，就会给人带来头痛的问题，我这里建议大家使用统一格式化的时间字符串<code>yyyy-MM-dd HH:mm:ss</code>，为什么建议这个呢？这样看起来比较直观，前后端联调起来比较高效。</p>
+
+<p>下面我们就细说一下日期类型的参数将如何处理。</p>
+
+<h1 id="get方法时参数传入日期类型该如何处理">GET方法时参数传入日期类型该如何处理</h1>
+
+<p>举例</p>
+
+<p>url如下：</p>
+
+<pre><code>http://localhost:8081/test/time_get?time=2018-07-09 10:38:57
+</code></pre>
+
+<p>Controller代码：</p>
+
+<pre><code>import java.util.Date;
+
+@RequestMapping(value = &quot;/time_get&quot;, method = RequestMethod.GET)
+@ResponseBody
+public Response&lt;Date&gt; time_get(Date time) {
+    logger.info(&quot;time:{}&quot;, time);
+    return Response.createResponse(time);
+}
+</code></pre>
+
+<p>在这种情况下日期参数是无法成功的传入到controller方法里，会爆出如下的异常：</p>
+
+<pre><code>org.springframework.core.convert.ConversionFailedException: Failed to convert from type java.lang.String to type java.util.Date for value '2018-07-09 10:38:57'; nested exception is java.lang.IllegalArgumentException
+at org.springframework.core.convert.support.ObjectToObjectConverter.convert(ObjectToObjectConverter.java:81) ~[spring-core-4.0.0.RELEASE.jar:4.0.0.RELEASE]
+ at org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:35) ~[spring-core-4.0.0.RELEASE.jar:4.0.0.RELEASE]
+ at org.springframework.core.convert.support.GenericConversionService.convert(GenericConversionService.java:178) ~[spring-core-4.0.0.RELEASE.jar:4.0.0.RELEASE]
+ at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:161) ~[spring-beans-4.0.0.RELEASE.jar:4.0.0.RELEASE]
+ at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:93) ~[spring-beans-4.0.0.RELEASE.jar:4.0.0.RELEASE]
+ at org.springframework.beans.TypeConverterSupport.doConvert(TypeConverterSupport.java:64) ~[spring-beans-4.0.0.RELEASE.jar:4.0.0.RELEASE]
+ ... 43 common frames omitted
+Caused by: java.lang.IllegalArgumentException: null
+ at java.util.Date.parse(Date.java:615) ~[na:1.7.0_45]
+ at java.util.Date.&lt;init&gt;(Date.java:272) ~[na:1.7.0_45]
+ at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_45]
+ at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_45]
+ at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_45]
+ at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_45]
+ at org.springframework.core.convert.support.ObjectToObjectConverter.convert(ObjectToObjectConverter.java:76) ~[spring-core-4.0.0.RELEASE.jar:4.0.0.RELEASE]
+ ... 48 common frames omitted
+</code></pre>
+
+<p>那如何解决上面的问题？使用<code>@DateTimeFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;)</code>加到日期参数之前，像下面那样使用一样。</p>
+
+<p>Controller代码：</p>
+
+<pre><code>import java.util.Date;
+ 
+@RequestMapping(value = &quot;/time_get&quot;, method = RequestMethod.GET)
+@ResponseBody
+public Response&lt;Date&gt; time_get(@DateTimeFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;) Date time) {
+    logger.info(&quot;time:{}&quot;, time);
+    return Response.createResponse(time);
+}
+</code></pre>
+
+<p><span style="color:blue"><em>提示：年月日：pattern=&ldquo;yyyy-MM-dd&rdquo;，年月日时分秒：pattern=&ldquo;yyyy-MM-dd HH:mm:ss&rdquo;</em></span></p>
+
+<p>请求体：</p>
+
+<pre><code>GET /test/time_get1?time=2018-07-09 11:31:00 HTTP/1.1
+Host: localhost:8081
+</code></pre>
+
+<p>后端接收到的信息，debug截图：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/restful-date-convert/1.png" alt="" /></p>
+
+<h1 id="post方法时参数传入日期类型该如何处理">POST方法时参数传入日期类型该如何处理</h1>
+
+<p>当使用<code>@RequestBody</code>接受一个<code>VO</code>对象时<code>@DateTimeFormat</code>就会失效，因为我们走的是<code>Json</code>序列化与反序列化，<code>@DateTimeFormat</code>只会生效与<code>object</code>序列化、反序列化。如果使用的<code>Spring</code>可以自定义<code>messageConvert</code>或者增强<code>MappingJackson2HttpMessageConverter</code>中的<code>ObjectMapper</code></p>
+
+<p>代码如下：</p>
+
+<pre><code>import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
+
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+@Configuration
+public class WebConfig extends WebMvcConfigurationSupport {
+    @Override
+    protected void configureMessageConverters(List&lt;HttpMessageConverter&lt;?&gt;&gt; converters) {
+        List&lt;HttpMessageConverter&lt;?&gt;&gt; messageConverters = new ArrayList&lt;HttpMessageConverter&lt;?&gt;&gt;();
+        addDefaultHttpMessageConverters(messageConverters);
+        for (int i = 0; i &lt; messageConverters.size(); i++) {
+            HttpMessageConverter&lt;?&gt; mc = messageConverters.get(i);
+            if (mc instanceof MappingJackson2HttpMessageConverter) {
+                ObjectMapper objectMapper = new ObjectMapper();
+                //当json中属性在反序列化时，javabean中没有找到属性就忽略，如果FAIL_ON_UNKNOWN_PROPERTIES=true找不到属性会报错
+                objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+                //设置序列化、反序列化时日期类型的格式
+                objectMapper.setDateFormat(new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;));
+                ((MappingJackson2HttpMessageConverter) mc).setObjectMapper(objectMapper);
+            }
+            converters.add(mc);
+        }
+    }
+}
+
+</code></pre>
+
+<p><span style="color:blue"><em>注意：使用Jackson进行json序列化反序列化，默认可以处理<code>yyyy-MM-dd</code>这个格式，但是反序列化后的时间会差8小时</em></span></p>
+
+<p>通过上面对json序列化反序列化的配置后日期参数处理就变的简单了，效果如下。</p>
+
+<p>Controller代码：</p>
+
+<pre><code>
+@RequestMapping(value = &quot;/time_post&quot;, method = RequestMethod.POST)
+@ResponseBody
+public Response&lt;Date&gt; time_post(@RequestBody TestVo vo) {
+    logger.info(&quot;time:{}&quot;, vo.getTime());
+    return Response.createResponse(vo.getTime());
+}
+</code></pre>
+
+<p>VO代码：</p>
+
+<pre><code>public class TestVo implements Serializable {
+    private static final long serialVersionUID = 7435595656552442126L;
+    private Date time;
+    public Date getTime() {
+        return time;
+    }
+    public void setTime(Date time) {
+        this.time = time;
+    }
+}
+</code></pre>
+
+<p><span style="color:blue"><em>提示：<code>VO</code>中无需使用<code>@DateTimeFormat</code>，就是一个普通的javabean即可</em></span></p>
+
+<p>请求体：</p>
+
+<pre><code>POST /test/time_post HTTP/1.1
+Host: localhost:8081
+Content-Type: application/json
+{
+    &quot;time&quot;:&quot;2018-07-09 15:31:00&quot;
+}
+</code></pre>
+
+<p>后端接收到的信息，debug截图</p>
+
+<p><img src="https://ningyu1.github.io/site/img/restful-date-convert/2.png" alt="" /></p>
+
+<h1 id="put方法时参数传入日期类型该如何处理">PUT方法时参数传入日期类型该如何处理</h1>
+
+<p>如果put传参方式与get一样在方法上直接传参（<code>url?time=2018-07-09 10:38:57</code>），那参考get请求参数处理方式即可</p>
+
+<p>如果put传参方式与post一样使用<code>@RequestBody</code>传入json格式数据，那么参考post请求参数处理方式即可</p>
+
+<p>请求体：</p>
+
+<pre><code>PUT /test/time_put HTTP/1.1
+Host: localhost:8081
+Content-Type: application/json
+{
+    &quot;time&quot;:&quot;2018-07-09 15:31:00&quot;
+}
+</code></pre>
+
+<p>后端接收到的信息，debug截图</p>
+
+<p><img src="https://ningyu1.github.io/site/img/restful-date-convert/3.png" alt="" /></p>
+
+<p>前面都说的是request时日期格式处理方式，那么我们继续说一下response时日期格式如何处理。</p>
+
+<h1 id="response中日期格式该如何处理">Response中日期格式该如何处理</h1>
+
+<p>SpringMVC使用<code>@ResponseBody</code>时，日期格式默认显示为时间戳，不管方法直接返回Date类型、或者VO类型时，时间格式都一样返回时间戳，例如这样。</p>
+
+<p>请求体：</p>
+
+<pre><code>POST /test/time_post1 HTTP/1.1
+Host: localhost:8081
+Content-Type: application/json
+{
+    &quot;time&quot;:&quot;2018-07-09&quot;
+} 
+</code></pre>
+
+<p>响应体：</p>
+
+<pre><code>
+{
+    &quot;code&quot;: &quot;&quot;,
+    &quot;message&quot;: &quot;&quot;,
+    &quot;items&quot;: {
+        &quot;time&quot;: 1531094400000
+    }
+}
+</code></pre>
+
+<p>那如果我们要以字符串格式返回呢，那该如何处理？</p>
+
+<p>方法一增加统一的<code>messageConvert</code>处理：</p>
+
+<p>如果使用的spring可以自定义<code>messageConvert</code>或者增强<code>MappingJackson2HttpMessageConverter</code>中的<code>ObjectMapper</code></p>
+
+<p>代码在<a href="#POST方法时参数传入日期类型该如何处理">POST方法时参数传入日期类型该如何处理</a>这个章节</p>
+
+<p>方法二通过<code>@JsonFormat</code>注解处理：</p>
+
+<p>请在<code>VO</code>对象的date字段上加上<code>@JsonFormat(pattern=&quot;yyyy-MM-dd HH:mm:ss&quot;,timezone = &quot;GMT+8&quot;)</code>,例如下面代码：</p>
+
+<p>VO代码：</p>
+
+<pre><code>public class TestVo implements Serializable {
+    private static final long serialVersionUID = 7435595656552442126L;
+ 
+    @JsonFormat(pattern=&quot;yyyy-MM-dd HH:mm:ss&quot;,timezone = &quot;GMT+8&quot;)
+    private Date time;
+    public Date getTime() {
+        return time;
+    }
+    public void setTime(Date time) {
+        this.time = time;
+    }
+}
+</code></pre>
+
+<p><span style="color:blue"><em>注意：@JsonFormat(pattern=&ldquo;yyyy-MM-dd HH:mm:ss&rdquo;,timezone = &ldquo;GMT+8&rdquo;) ，即可将json返回的对象为指定的类型。</em></span></p>
+
+<p>返回日期格式使用的是&rdquo;yyyy-MM-dd HH:mm:ss&rdquo;样式字符串示例：</p>
+
+<p>请求体：</p>
+
+<pre><code>POST /test/time_post1 HTTP/1.1
+Host: localhost:8081
+Content-Type: application/json
+{
+    &quot;time&quot;:&quot;2018-07-09 15:31:00&quot;
+} 
+</code></pre>
+
+<p>响应体：</p>
+
+<pre><code>{
+    &quot;code&quot;: &quot;&quot;,
+    &quot;message&quot;: &quot;&quot;,
+    &quot;items&quot;: {
+        &quot;time&quot;: &quot;2018-07-09 15:31:00&quot;
+    }
+}
+</code></pre>
+
+<h1 id="日期格式处理规范">日期格式处理规范</h1>
+
+<p>这里有的人喜欢使用时间戳，有的人喜欢使用统一格式化的时间字符串<code>yyyy-MM-dd HH:mm:ss</code>，我个人的建议使用后者，因为这样比较直观调试交流起来也比较方便。</p>
+
+<p>使用哪种没有对错，其实就是一种规范，统一规范可以提升协作效率，因此我建议的规范如下：</p>
+
+<ul>
+<li>前端传入日期格式：yyyy-MM-dd HH:mm:ss，例如：2018-07-09 12:55:12（不使用时间戳，前后双方联调时查看起来更加友好）</li>
+<li>后端返回日期格式：yyyy-MM-dd HH:mm:ss，例如：2018-07-09 12:55:12（不使用时间戳，前后双方联调时查看起来更加友好）</li>
+<li>后端json序列化、反序列化框架：定义任何一种高效的json工具都行，例如：Fastjson、Gson、Jackson lib</li>
+<li>序列化、反序列化日期格式规范：pattern=&ldquo;yyyy-MM-dd HH:mm:ss&rdquo;,timezone = &ldquo;GMT+8&rdquo;，除特出场景可以使用pattern=&ldquo;yyyy-MM-dd&rdquo;,timezone = &ldquo;GMT+8&rdquo;</li>
+<li>不要随意自定义convert处理日期格式以及其他特殊格式转换，应该交由基础框架组或架构组统一在框架层面解决，对业务开发透明，或者在有些小公司由Leader或高开来担当。</li>
+</ul>
+
+<p>这些都是我个人摸爬滚打多年码出来的心得体会，说的不好还请见谅，希望可以帮助有需要的人。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/109-restful-date-convert/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/108-custom-field/">谈一谈自定义字段实现的几种方式</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2019-01-03T15:50:21.000&#43;00:00' itemprop="datePublished">2019-01-03</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/custom-field">custom-field</a>
+
+
+</div>
+    </div>
+        
+
+<p>我们经常会遇到项目中很多对表单进行自定义，比如说saas应用针对租户自定义表单字段名称，自定义列表名称。
+还有更高级自定义，比如说自定义的模块，表单、字段、字段类型、流程等自定义。</p>
+
+<p>提供自定义也是一个系统扩展性的体现，自定义功能的强大自然能适应更多的用户场景。</p>
+
+<p>接下来我们就看看自定义的实现方案通常都有哪些方式。</p>
+
+<p>常见的自定义字段的实现方式分为三种由简到繁，扩展性、复杂性也是逐渐增强的，每个方式各有优劣解决的场景也有所不同，具体往下看。</p>
+
+<h1 id="列式存储自定义字段-扩展字段-ext-field">列式存储自定义字段（扩展字段 ext field）</h1>
+
+<p>模型如下：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">ID</th>
+<th align="left">Name</th>
+<th align="left">Ext1(性别)</th>
+<th align="left">Ext2(地区)</th>
+<th align="left">Ext3(QQ)</th>
+<th align="left">Ext4(WECHAT)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">韩梅梅</td>
+<td align="left">女</td>
+<td align="left">Shanghai</td>
+<td align="left">10000</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">李磊</td>
+<td align="left">男</td>
+<td align="left">Beijing</td>
+<td align="left"></td>
+<td align="left">abc001</td>
+</tr>
+</tbody>
+</table>
+
+<p>优点：</p>
+
+<ol>
+<li>实现成本最低</li>
+<li>可以直接表连接进行检索</li>
+</ol>
+
+<p>缺点：</p>
+
+<ol>
+<li>扩展能力一般，有上限</li>
+<li>浪费资源，比如说有20个扩展字段，一行只用到2个，其余的18个都要存储null来浪费空间。</li>
+<li>能解决的场景比较有限。</li>
+</ol>
+
+<h1 id="eav模型-entity-attribute-value-实体-属性-值">EAV模型 Entity-Attribute-Value（实体、属性、值）</h1>
+
+<p>对象属性存储在一个有三列的表中：实体，属性和值（entity，attribute，value)。实体（entiry）表示所描述的数据项，例如一个产品或汽车。属性（attribute）表示描述实体的数据，例如一个产品将有价格，重量和许多其他属性。值（value）是属性的值，例如产品可能有一个9.99英镑的价格属性。此外值可以基于数据类型进行分割，所以可将EAV表分为字符串、整数、日期和长文本（long text）表。依据数据类型分割是为了支持索引,使得数据库执行可能的类型检查验证。</p>
+
+<p>EAV表模型带来了数据的灵活性，是的增加对象的属性不需要用增加数据库的字段，有很高的灵活性。但是EAV表也有较大的性能问题。通常，EAV表带来的一个问题是当查找多个字段时，需要进行关联查询join,这样的查询效率比较低。为了提高查询效率，我们可以对商品属性表进行矩阵转积处理(pivoting)。</p>
+
+<p>一种方式是在代码中读出后存入cache中,当修改attributes表后触发更新cache或用cron定期更新;另一种方法是将关联信息组成一张大的临时表，数据的更新可以用数据库的触发器触发更新。由于大量数据在代码中进行处理会带来了DB的额外IO和服务器性能问题。当使用EAV表模型时，InnoDB比MYISAM的性能要好不少。</p>
+
+<p>ps. 我们常用的行模型（纵向）存储就是EAV模型实现的一种方式。</p>
+
+<p>模型如下：</p>
+
+<p>人员表（Entity）</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">ID</th>
+<th align="left">Name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">韩梅梅</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">李磊</td>
+</tr>
+</tbody>
+</table>
+
+<p>扩展映射（Entities）</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Entity</th>
+<th align="left">Attribute</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">sex（性别）</td>
+<td align="left">女</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">sex（性别）</td>
+<td align="left">男</td>
+</tr>
+
+<tr>
+<td align="left">1</td>
+<td align="left">region（地区）</td>
+<td align="left">Shanghai</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">region（地区）</td>
+<td align="left">Beijing</td>
+</tr>
+
+<tr>
+<td align="left">1</td>
+<td align="left">QQ</td>
+<td align="left">10000</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">WECHAT</td>
+<td align="left">abc001</td>
+</tr>
+</tbody>
+</table>
+
+<p>优点：</p>
+
+<ol>
+<li>扩展能力较强</li>
+<li>理论上无上限</li>
+<li>可以支持几乎所有的自定义字段的需求</li>
+</ol>
+
+<p>缺点：</p>
+
+<ol>
+<li>关联查询效率低下</li>
+<li>需要维护自定义字段与值的关系表</li>
+</ol>
+
+<h1 id="json格式存储自定义字段">Json格式存储自定义字段</h1>
+
+<p>json格式非常丰富，在描述自定义字段的这方面比较适合，可以把一行多列的数据压缩到一个json text内，也比较节省空间，json格式可以无限扩展，还可支持多个自定义字段有不同的格式。</p>
+
+<p>模型如下：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">ID</th>
+<th align="left">Name</th>
+<th align="left">Content</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">韩梅梅</td>
+<td align="left">{&ldquo;sex&rdquo;:&ldquo;女&rdquo;,&ldquo;region&rdquo;:&ldquo;Shanghai&rdquo;,&ldquo;QQ&rdquo;:&ldquo;10000&rdquo;}</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">李磊</td>
+<td align="left">{&ldquo;sex&rdquo;:&ldquo;女&rdquo;,&ldquo;region&rdquo;:&ldquo;Beijing&rdquo;,&ldquo;WECHAT&rdquo;:&ldquo;abc001&rdquo;}</td>
+</tr>
+</tbody>
+</table>
+
+<p>ps. 支持以上的两种不同的自定义格式并存</p>
+
+<p><img src="https://ningyu1.github.io/site/img/custom-field/1.png" alt="" /></p>
+
+<p>优点：</p>
+
+<ol>
+<li>扩展能力强</li>
+<li>理论上无上限</li>
+<li>可以支持几乎所有的自定义字段的需求</li>
+<li>无需维护自定义字段与值关系</li>
+</ol>
+
+<p>缺点：</p>
+
+<ol>
+<li>数据库需要支持json type，不建议使用text类型</li>
+<li>不支持关联查询（mongodb除外）</li>
+<li>自定义字段检索需要通过其他方式，例如搜索引擎。（mongodb除外）</li>
+</ol>
+
+<h2 id="数据库对json格式支持情况">数据库对Json格式支持情况</h2>
+
+<p>数据库对Json类型的支持：</p>
+
+<ol>
+<li>Mysq5.7（<a href="http://www.lnmp.cn/mysql-57-new-features-json.html">CRUD参考</a>）</li>
+<li>PostgreSQL（<a href="https://www.enterprisedb.com/blog/crud-json-postgresql">CRUD参考</a>，<a href="https://blog.csdn.net/qwdafedv/article/details/68066802">json与jsonb区别</a>）</li>
+<li>MongoDB（<a href="https://docs.mongodb.com/manual/crud/">CRUD参考</a>）</li>
+</ol>
+
+<p>数据库对json类型的检索支持：</p>
+
+<ol>
+<li>Mysql5.7： 支持索引：通过虚拟列的功能可以对JSON中部分的数据进行索引。（相比PG和MongoDB弱一些，通过json_extract()函数做一些简单查询）</li>
+<li>PostgreSQL：支持检索，可以复杂查询</li>
+<li>MongoDB：支持检索，可以复杂查询，支持map reduce</li>
+</ol>
+
+<p>ORM框架对Json类型的支持：</p>
+
+<ol>
+<li>Mybatis支持json格式字段映射到POJO，方便json格式的bean与数据库映射。</li>
+<li>Hibernate支持json格式字段映射到POJO，方便json格式的bean与数据库映射。</li>
+</ol>
+
+<p>Mysql5.7.x json操作官方文档：</p>
+
+<ol>
+<li><a href="https://dev.mysql.com/doc/refman/5.7/en/json-creation-functions.html">json-creation-functions</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/5.7/en/json-search-functions.html">json-search-functions</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/5.7/en/json-modification-functions.html">json-modification-functions</a></li>
+</ol>
+
+<p>Mysql5.7.x 注意事项：</p>
+
+<ol>
+<li>JSON_UNQUOTE 、-&gt;、-&gt;&gt; 之间的区别
+
+<ul>
+<li>下面三个表达式返回相同的值
+
+<ul>
+<li>JSON_UNQUOTE( JSON_EXTRACT(column, path) )</li>
+<li>JSON_UNQUOTE(column -&gt; path)</li>
+<li>column-&gt;&gt;path</li>
+</ul></li>
+</ul></li>
+<li>JSON_CONTAINS_PATH 参数说明
+
+<ul>
+<li>第二个参数为&rsquo;one&rsquo;或&rsquo;all&rsquo;的区别
+
+<ul>
+<li>‘one’：至少存在一个路径返回1，反之返回0</li>
+<li>‘all’：全部路径存在返回1，反之返回0</li>
+</ul></li>
+</ul></li>
+<li>JSON_CONTAINS 参数说明
+
+<ul>
+<li>第二个参数是不接受整数的，无论 json 元素是整型还是字符串，否则会出现这个错误</li>
+</ul></li>
+<li>5.7.x不同版本支持的程度：
+
+<ul>
+<li>MySQL 5.7.13
+
+<ul>
+<li>支持操作符  -&gt;&gt;</li>
+</ul></li>
+<li>MySQL 5.7.9
+
+<ul>
+<li>支持操作符 -&gt; （JSON_EXTRACT()函数别名）</li>
+<li>重命名函数JSON_APPEND()为JSON_ARRAY_APPEND()，函数作用：将值追加到JSON文档中指定数组的末尾并返回结果，未来会删除&rsquo;JSON_APPEND()&rsquo;</li>
+</ul></li>
+<li>MySQL 5.7.22
+
+<ul>
+<li>支持JSON_ARRAYAGG()返回json数组形式结果集，JSON_OBJECTAGG()返回kson对象形式结果集</li>
+<li>添加JSON_MERGE_PATCH()，作用：合并结果（相同path）</li>
+<li>添加JSON_MERGE_PRESERVE()，作用：合并数据（不同path）</li>
+<li>弃用JSON_MERGE()，使用JSON_MERGE_PRESERVE() / JSON_MERGE_PATCH()，未来会删除&rsquo;JSON_MERGE()&rsquo;</li>
+</ul></li>
+</ul></li>
+</ol>
+
+<p>实现方式不局限于上面说到的方式，有更好的方式欢迎留言进行沟通。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/108-custom-field/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/107-best-paper/">自1996年起的(Best Paper)计算机科学最佳论文奖收录</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-12-28T17:38:21.000&#43;00:00' itemprop="datePublished">2018-12-28</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/best-paper">best-paper</a>
+
+
+</div>
+    </div>
+        <p>原文地址： <a href="https://jeffhuang.com/best_paper_awards.html">https://jeffhuang.com/best_paper_awards.html</a></p>
+
+<p>我擦好牛逼了，自1996年起的计算机科学最佳论文奖全收录，不说了戳开看吧。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/107-best-paper/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/106-jmeter-plugin-dubbo-1.3.8/">[Enhancement]Enumeration type support, Dubbo Plugin for Apache JMeter - V1.3.8</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-12-18T13:57:21.000&#43;00:00' itemprop="datePublished">2018-12-18</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/jmeter">jmeter</a>
+
+<a href="https://ningyu1.github.io/site/tags/dubbo">dubbo</a>
+
+<a href="https://ningyu1.github.io/site/tags/test">test</a>
+
+<a href="https://ningyu1.github.io/site/tags/dubbo%E5%8F%AF%E8%A7%86%E5%8C%96%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7">Dubbo可视化测试工具</a>
+
+<a href="https://ningyu1.github.io/site/tags/jmeter%E5%AF%B9dubbo%E6%8E%A5%E5%8F%A3%E8%BF%9B%E8%A1%8C%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95">Jmeter对Dubbo接口进行可视化压力测试</a>
+
+<a href="https://ningyu1.github.io/site/tags/dubbo-jmeter%E6%8F%92%E4%BB%B6">Dubbo Jmeter插件</a>
+
+
+</div>
+    </div>
+        
+
+<h1 id="项目地址">项目地址</h1>
+
+<p><a href="https://github.com/dubbo/jmeter-plugins-dubbo">github: jmeter-plugin-dubbo</a></p>
+
+<p><a href="https://gitee.com/ningyu/jmeter-plugins-dubbo">码云: jmeter-plugin-dubbo</a></p>
+
+<h1 id="v1-3-8-https-github-com-dubbo-jmeter-plugins-dubbo-releases-tag-v1-3-8"><a href="https://github.com/dubbo/jmeter-plugins-dubbo/releases/tag/V1.3.8">V1.3.8</a></h1>
+
+<h1 id="what-is-new">What is new:</h1>
+
+<ol>
+<li>Enumeration type support. <a href="https://github.com/dubbo/jmeter-plugins-dubbo/issues/34">#34</a></li>
+<li>Support group to zookeeper,redis registration center. <a href="https://github.com/dubbo/jmeter-plugins-dubbo/issues/33">#33</a></li>
+</ol>
+
+<h1 id="新版改进">新版改进：</h1>
+
+<ol>
+<li>支持枚举类型参数。<a href="https://github.com/dubbo/jmeter-plugins-dubbo/issues/34">#34</a></li>
+<li>zookeeper、redis作为注册中心时增加group支持。 <a href="https://github.com/dubbo/jmeter-plugins-dubbo/issues/33">#33</a></li>
+</ol>
+
+<p><span style="color:blue"><em>ps. 参数类型支持：枚举类型以及参数对象内属性为枚举类型</em></span></p>
+
+<h1 id="截图">截图</h1>
+
+<p><img src="https://ningyu1.github.io/site/img/jmeter-plugins-dubbo-1-3-8/1.png" alt="" /></p>
+
+<p><span style="color:blue"><em>ps. dubbo:registry group: 服务注册分组，跨组的服务不会相互影响，也无法相互调用，适用于环境隔离。</em></span></p>
+
+<p><span style="color:blue"><em>具体查看<a href="http://dubbo.apache.org/zh-cn/docs/user/references/xml/dubbo-registry.html">dubbo文档</a></em></span></p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/106-jmeter-plugin-dubbo-1.3.8/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/105-snowflake/">雪花算法-记录</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2018-12-07T11:51:21.000&#43;00:00' itemprop="datePublished">2018-12-07</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/snowflake">snowflake</a>
+
+
+</div>
+    </div>
+        
+
+<p>最近看到了一篇分析雪花算法的文章还不错，然后整理了一下分享出来。</p>
+
+<p>先来科普一下SnowFlake算法</p>
+
+<h1 id="算法原理">算法原理</h1>
+
+<p><a href="https://github.com/twitter/snowflake">Twitter Snowflake</a> 生成的 unique ID 的组成 (由高位到低位):</p>
+
+<p>41 bits: Timestamp (毫秒级)
+10 bits: 节点 ID (datacenter ID 5 bits + worker ID 5 bits)
+12 bits: sequence number
+一共 63 bits (最高位是 0).</p>
+
+<hr />
+
+<h2 id="0-最高位预留-时间戳-41位-机器id-10位-自增序列-12位">| 0(最高位预留) | 时间戳(41位) | 机器ID(10位) | 自增序列(12位) |</h2>
+
+<p>unique ID 生成过程:</p>
+
+<ul>
+<li>10 bits 的机器号, 在 ID 分配 Worker 启动的时候，从一个 Zookeeper 集群获取 (保证所有的 Worker 不会有重复的机器号)；</li>
+<li>41 bits 的 Timestamp: 每次要生成一个新 ID 的时候，都会获取一下当前的 Timestamp, 然后分两种情况生成 sequence number；</li>
+<li>如果当前的 Timestamp 和前一个已生成 ID 的 Timestamp 相同 (在同一毫秒中)，就用前一个 ID 的 sequence number + 1 作为新的 sequence number (12 bits);
+如果本毫秒内的所有 ID 用完，等到下一毫秒继续 (这个等待过程中, 不能分配出新的 ID)；</li>
+<li>如果当前的 Timestamp 比前一个 ID 的 Timestamp 大, 随机生成一个初始 sequence number (12bits) 作为本毫秒内的第一个 sequence number；</li>
+</ul>
+
+<p>41-bit的时间可以表示（1L&lt;&lt;41）/(1000L x 3600 x 24 x 365)=69年的时间，10-bit机器可以分别表示1024台机器。如果我们对IDC划分有需求，还可以将10-bit分5-bit给IDC，分5-bit给工作机器。这样就可以表示32个IDC，每个IDC下可以有32台机器，可以根据自身需求定义。12个自增序列号可以表示2^12个ID，理论上snowflake方案的QPS约为409.6w/s，这种分配方式可以保证在任何一个IDC的任何一台机器在任意毫秒内生成的ID都是不同的。</p>
+
+<p>优缺点这里就不赘述了。</p>
+
+<p>那我们继续看一个经典的Java版本的实现，这个在网上一搜一大把，官方原版的<a href="https://github.com/twitter-archive/snowflake/blob/snowflake-2010/src/main/scala/com/twitter/service/snowflake/IdWorker.scala">Scala版本</a></p>
+
+<pre><code>public class Snowflake {
+
+	private static final Logger logger = LoggerFactory.getLogger(Snowflake.class);
+
+	/**
+	 * 机器ID
+	 */
+	private final long workerId;
+	/**
+	 * 时间起始标记点，作为基准，一般取系统的最近时间，默认2017-01-01
+	 */
+	private final long epoch = 1483200000000L;
+	/**
+	 * 机器id所占的位数（源设计为5位，这里取消dataCenterId，采用10位，既1024台）
+	 */
+	private final long workerIdBits = 10L;
+	/**
+	 * 机器ID最大值: 1023 (从0开始)
+	 */
+	private final long maxWorkerId = -1L ^ -1L &lt;&lt; this.workerIdBits;
+	/**
+	 * 机器ID向左移12位
+	 */
+	private final long workerIdShift = this.sequenceBits;
+	/** 
+	 * 时间戳向左移22位(5+5+12)
+	 */
+	private final long timestampLeftShift = this.sequenceBits + this.workerIdBits;
+	/** 
+	 * 序列在id中占的位数
+	 */
+	private final long sequenceBits = 12L;
+	/** 
+	 * 生成序列的掩码，这里为4095 (0b111111111111=0xfff=4095)，12位
+	 */
+	private final long sequenceMask = -1L ^ -1L &lt;&lt; this.sequenceBits;
+	/**
+	 * 并发控制，毫秒内序列(0~4095)
+	 */
+	private long sequence = 0L;
+	/** 
+	 * 上次生成ID的时间戳 
+	 */
+	private long lastTimestamp = -1L;
+	
+	private final int HUNDRED_K = 100_000;
+
+	/**
+	 * @param workerId 机器Id
+	 */
+	private Snowflake(long workerId) {
+		if (workerId &gt; this.maxWorkerId || workerId &lt; 0) {
+			String message = String.format(&quot;worker Id can't be greater than %d or less than 0&quot;, this.maxWorkerId);
+			throw new IllegalArgumentException(message);
+		}
+		this.workerId = workerId;
+	}
+	
+	/**
+	 * Snowflake Builder
+	 * @param workerId workerId
+	 * @return Snowflake Instance
+	 */
+	public static Snowflake create(long workerId) {
+		return new Snowflake(workerId);
+	}
+	
+	/**
+	 * 批量获取ID
+	 * @param size 获取大小，最多10万个
+	 * @return SnowflakeId
+	 */
+	public long[] nextId(int size) {
+		if (size &lt;= 0 || size &gt; HUNDRED_K) {
+			String message = String.format(&quot;Size can't be greater than %d or less than 0&quot;, HUNDRED_K);
+			throw new IllegalArgumentException(message);
+		}
+		long[] ids = new long[size];
+		for (int i = 0; i &lt; size; i++) {
+			ids[i] = nextId();
+		}
+		return ids;
+	}
+
+	/**
+	 * 获得ID
+	 * @return SnowflakeId
+	 */
+	public synchronized long nextId() {
+		long timestamp = timeGen();
+
+		// 如果上一个timestamp与新产生的相等，则sequence加一(0-4095循环);
+		if (this.lastTimestamp == timestamp) {
+			// 对新的timestamp，sequence从0开始
+			this.sequence = this.sequence + 1 &amp; this.sequenceMask;
+			// 毫秒内序列溢出
+			if (this.sequence == 0) {
+				// 阻塞到下一个毫秒,获得新的时间戳
+				timestamp = this.tilNextMillis(this.lastTimestamp);
+			}
+		} else {
+			// 时间戳改变，毫秒内序列重置
+			this.sequence = 0;
+		}
+
+		// 如果当前时间小于上一次ID生成的时间戳，说明系统时钟回退过这个时候应当抛出异常
+		if (timestamp &lt; this.lastTimestamp) {
+			String message = String.format(&quot;Clock moved backwards. Refusing to generate id for %d milliseconds.&quot;, (this.lastTimestamp - timestamp));
+			logger.error(message);
+			throw new RuntimeException(message);
+		}
+
+		this.lastTimestamp = timestamp;
+		// 移位并通过或运算拼到一起组成64位的ID
+		return timestamp - this.epoch &lt;&lt; this.timestampLeftShift | this.workerId &lt;&lt; this.workerIdShift | this.sequence;
+	}
+
+	/**
+	 * 等待下一个毫秒的到来, 保证返回的毫秒数在参数lastTimestamp之后
+	 * @param lastTimestamp 上次生成ID的时间戳 
+	 * @return
+	 */
+	private long tilNextMillis(long lastTimestamp) {
+		long timestamp = timeGen();
+		while (timestamp &lt;= lastTimestamp) {
+			timestamp = timeGen();
+		}
+		return timestamp;
+	}
+
+	/**
+	 * 获得系统当前毫秒数
+	 */
+	private long timeGen() {
+		return System.currentTimeMillis();
+	}
+
+}
+</code></pre>
+
+<p>那让我们看一下代码来理解一下算法的细节。</p>
+
+<h1 id="代码理解">代码理解</h1>
+
+<p>我们从关键的代码段来理解，如下：</p>
+
+<pre><code>this.sequence = this.sequence + 1 &amp; this.sequenceMask;
+
+private final long maxWorkerId = -1L ^ -1L &lt;&lt; this.workerIdBits;
+
+return ((timestamp - this.epoch) &lt;&lt; this.timestampLeftShift)
+ | (this.workerId &lt;&lt; this.workerIdShift)
+ | this.sequence;
+</code></pre>
+
+<p><span style="color:blue"><em>ps. 我这里取消了datacenterId，将datacenterId和workerid合并到workerIdBits</em></span></p>
+
+<h2 id="负数的二进制表示">负数的二进制表示</h2>
+
+<p>在计算机中，负数的二进制是用补码来表示的。
+假设我是用Java中的int类型来存储数字的，
+int类型的大小是32个二进制位（bit），即4个字节（byte）。（1 byte = 8 bit）
+那么十进制数字3在二进制中的表示应该是这样的：</p>
+
+<pre><code>00000000 00000000 00000000 00000011
+// 3的二进制表示，就是原码
+</code></pre>
+
+<p>那数字-3在二进制中应该如何表示？
+我们可以反过来想想，因为-3+3=0，
+在二进制运算中把-3的二进制看成未知数x来求解，
+求解算式的二进制表示如下：</p>
+
+<pre><code>   00000000 00000000 00000000 00000011 //3，原码
++  xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx //-3，补码
+-----------------------------------------------
+   00000000 00000000 00000000 00000000
+</code></pre>
+
+<p>反推x的值，3的二进制加上什么值才使结果变成00000000 00000000 00000000 00000000？：</p>
+
+<pre><code>   00000000 00000000 00000000 00000011 //3，原码                         
++  11111111 11111111 11111111 11111101 //-3，补码
+-----------------------------------------------
+ 1 00000000 00000000 00000000 00000000
+</code></pre>
+
+<p>反推的思路是3的二进制数从最低位开始逐位加1，使溢出的1不断向高位溢出，直到溢出到第33位。然后由于int类型最多只能保存32个二进制位，所以最高位的1溢出了，剩下的32位就成了（十进制的）0。</p>
+
+<p>补码的意义就是可以拿补码和原码（3的二进制）相加，最终加出一个“溢出的0”</p>
+
+<p>以上是理解的过程，实际中记住公式就很容易算出来：</p>
+
+<p>补码 = 反码 + 1
+补码 = （原码 - 1）再取反码
+因此-1的二进制应该这样算：</p>
+
+<pre><code>00000000 00000000 00000000 00000001 //原码：1的二进制
+11111111 11111111 11111111 11111110 //取反码：1的二进制的反码
+11111111 11111111 11111111 11111111 //加1：-1的二进制表示（补码）
+</code></pre>
+
+<p>具体对位运算以及二进制的计算理解可以看看这篇文章<a href="https://blog.csdn.net/cj2580/article/details/80980459">https://blog.csdn.net/cj2580/article/details/80980459</a></p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/105-snowflake/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+
+
+  <nav id="pagenavi">
+    
+    
+        <a href="https://ningyu1.github.io/site/page/2/" class="next">Next</a>
+    
+    <div class="center"><a href="https://ningyu1.github.io/site/archives/index.html">Blog Archives</a></div>
+  </nav>
+
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2024
+    
+    凝雨-Yun
+    . Powered by <a href="http://gohugo.io" target="_blank">Hugo</a> |
+    Theme is <a href="https://github.com/wd/hugo-fabric">hugo-fabric</a>
+</div>
+
+    </footer>
+    <script src="https://ningyu1.github.io/site/js/fabric.js"></script>
+
+
+</div>
+</div>
+<script src="https://ningyu1.github.io/site/js/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+ 
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery);
+ 
+</script>
+</body>
+</html>

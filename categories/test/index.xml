@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on 凝雨 - Yun</title>
+    <link>https://ningyu1.github.io/site/categories/test/</link>
+    <description>Recent content in Test on 凝雨 - Yun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Dec 2018 13:57:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://ningyu1.github.io/site/categories/test/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Enhancement]Enumeration type support, Dubbo Plugin for Apache JMeter - V1.3.8</title>
+      <link>https://ningyu1.github.io/site/post/106-jmeter-plugin-dubbo-1.3.8/</link>
+      <pubDate>Tue, 18 Dec 2018 13:57:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/106-jmeter-plugin-dubbo-1.3.8/</guid>
+      <description>项目地址 github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+V1.3.8 What is new:  Enumeration type support. #34 Support group to zookeeper,redis registration center. #33  新版改进：  支持枚举类型参数。#34 zookeeper、redis作为注册中心时增加group支持。 #33  ps. 参数类型支持：枚举类型以及参数对象内属性为枚举类型
+截图 ps. dubbo:registry group: 服务注册分组，跨组的服务不会相互影响，也无法相互调用，适用于环境隔离。
+具体查看dubbo文档</description>
+    </item>
+    
+    <item>
+      <title>[Enhancement]Support to select provider from zookeeper, Dubbo Plugin for Apache JMeter - V1.3.7</title>
+      <link>https://ningyu1.github.io/site/post/104-jmeter-plugin-dubbo-1.3.7/</link>
+      <pubDate>Tue, 13 Nov 2018 18:51:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/104-jmeter-plugin-dubbo-1.3.7/</guid>
+      <description> 项目地址 github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+V1.3.7 What is new:  Support to select provider from zookeeper. issue: #31 Upgrade dubbo version to v2.6.4.  新版改进：  支持从zookeeper选择服务提供者，降低手动输入出错概率，issue: #31 升级dubbo版本到v2.6.4  截图 </description>
+    </item>
+    
+    <item>
+      <title>使用Embedded RedisServer写UT</title>
+      <link>https://ningyu1.github.io/site/post/94-embedded-redisserver/</link>
+      <pubDate>Tue, 17 Jul 2018 18:11:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/94-embedded-redisserver/</guid>
+      <description>当我们在进行开发的时候经常会用到Redis，但是在写junit的时候往往引用了Redis造成test case很难写，我们需要mock一个localhost的Redis server来进行测试，因此我们可以借助embedded redisServer来实现，下面我们就看一下具体使用的示例
+代码示例 @Before public void setUp() throws IOException { initMocks(this); final Random random = new SecureRandom(); redisServer = new RedisServer(); redisServer.start(); pool = new JedisPool(); repository = new RedisKeyRepository(pool); manager = new RedisKeyManager(random, pool, repository); manager.setMaxActiveKeys(3); clearData(); manager.initialiseNewRepository(); resource = new ProtectedResource(repository, random); }  这是一个非常简单的使用示例，我们还可以更改配置以及增加密码
+@Before public void setUpRedis() throws IOException, SchedulerConfigException { port = getPort(); logger.debug(&amp;quot;Attempting to start embedded Redis server on port &amp;quot; + port); redisServer = RedisServer.</description>
+    </item>
+    
+    <item>
+      <title>单元测试以及代码覆盖率——Jenkins集成SonarQube、JaCoCo、Junit使用问题汇总</title>
+      <link>https://ningyu1.github.io/site/post/77-jenkins-sonarqube-jacoco-junit/</link>
+      <pubDate>Thu, 12 Apr 2018 17:03:00 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/77-jenkins-sonarqube-jacoco-junit/</guid>
+      <description>当我们使用持续集成Jenkins的时候经常会结合一系列的插件使用，这里就说一下Jenkins集成Sonar做代码质量管理以及Junit（testng）、JaCoCo做单元测试和覆盖率的时候遇到的问题。
+前提 首先我们的工程使用maven构建，单元测试使用testng编写，在使用jenkins之前我们应该在本地使用maven调通所有的单元测试以及test coverage的问题。
+我们使用maven-surefire-plugin来生成单元测试报告，使用jacoco-maven-plugin来生成test coverage报告。下面我给出以下我使用的标准配置
+maven工程调通单元测试以及测试覆盖率报告生成 pom.xml的标准配置
+&amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;slf4j-api&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.testng&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;testng&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;6.4&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;optional&amp;gt;true&amp;lt;/optional&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;optional&amp;gt;true&amp;lt;/optional&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.jacoco&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jacoco-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.8.1&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-surefire-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.5&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;skipTests&amp;gt;false&amp;lt;/skipTests&amp;gt; &amp;lt;argLine&amp;gt;${argLine} -Dfile.encoding=UTF-8&amp;lt;/argLine&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-deploy-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;skip&amp;gt;false&amp;lt;/skip&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.jacoco&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jacoco-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.8.1&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;skip&amp;gt;false&amp;lt;/skip&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;prepare-agent&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;outputDirectory&amp;gt;${basedir}/target/coverage-reports&amp;lt;/outputDirectory&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;id&amp;gt;report&amp;lt;/id&amp;gt; &amp;lt;phase&amp;gt;test&amp;lt;/phase&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;report&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt;  根据上面配置执行下来的报告生成的目录结构如下:</description>
+    </item>
+    
+    <item>
+      <title>New Version V1.2.0, Dubbo Plugin for Apache JMeter</title>
+      <link>https://ningyu1.github.io/site/post/68-jmeter-plugin-dubbo-1.2.0/</link>
+      <pubDate>Tue, 13 Mar 2018 13:18:21 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/68-jmeter-plugin-dubbo-1.2.0/</guid>
+      <description>项目地址 jmeter-plugin-dubbo项目已经transfer到dubbo group下
+github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+V1.2.0  使用gson进行json序列化、反序列化 使用dubbo泛化调用方式重构反射调用方式 支持复杂类型、支持泛型，例如：&amp;rdquo;java.lang.List,Map map,List&amp;gt; list&amp;rdquo;  本次版本主要对反射参数类型进行了增强，支持复杂类型、支持参数泛型，可以参考如下的参数对照表：
+   Java类型 paramType paramValue     int int 1   double double 1.2   short short 1   float float 1.2   long long 1   byte byte 字节   boolean boolean true或false   char char A，如果字符过长取值为：&amp;rdquo;STR&amp;rdquo;.charAt(0)   java.lang.String java.lang.String或String或string 字符串   java.</description>
+    </item>
+    
+    <item>
+      <title>Bug Fix Version V1.1.0, Dubbo Plugin for Apache JMeter</title>
+      <link>https://ningyu1.github.io/site/post/66-jmeter-plugin-dubbo-bugfix/</link>
+      <pubDate>Wed, 07 Mar 2018 18:00:54 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/66-jmeter-plugin-dubbo-bugfix/</guid>
+      <description>首先先感谢网友 @流浪的云 提的bug，让我感觉到写这个工具没有白费还有点价值，非常感谢，
+他在使用jmeter-plugin-dubbo插件时发现GUI中输入的信息无法使用Jmeter变量${var}与函数来进行参数化，以下是我修复这个问题的记录。
+项目地址 jmeter-plugin-dubbo项目已经transfer到dubbo group下
+github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+问题描述  jmeter-plugin-dubbo插件GUI输入的信息无法使用${var}变量来进行参数化  问题修复 Jmeter的输出要想使用用户自定义变量、CSV变量、BeanShell、函数来进行参数化，必须将输入的参数通过JMeterProperty的子类add到Jmeter管理。如果使用的是Swing的Bean绑定机制可以很好的支持变量与函数参数化，如果是手写的GUI与Sample就需要注意这一点，可能写出来的插件不能使用变量${var}参数化。
+我之前在处理参数值在GUI和Sample之间传递时，没有使用org.apache.jmeter.testelement.property.JMeterProperty系列子类来处理参数，因此变量无法支持，让我们来看一下区别。
+先让我们看一下org.apache.jmeter.testelement.property.JMeterProperty都有哪些子类。
+我们之前使用的参数赋值是这样的：
+public String getVersion() { return this.getPropertyAsString(FIELD_DUBBO_VERSION, DEFAULT_VERSION); } public void setVersion(String version) { this.setProperty(FIELD_DUBBO_VERSION, version); }  这种方式是无法支持使用${var}变量来参数化赋值的（也就是动态赋值）。
+我们应该给setProperty传入JMeterProperty的子类来支持变量参数化，如下：
+public String getVersion() { return this.getPropertyAsString(FIELD_DUBBO_VERSION, DEFAULT_VERSION); } public void setVersion(String version) { this.setProperty(new StringProperty(FIELD_DUBBO_VERSION, version)); }  ps.注意setProperty的使用不一样，这里使用的是new StringProperty
+上面的参数还相对简单的普通字符串参数，当我们遇到集合或更加复杂的参数类型时如何处理？
+我本以为使用JMeterProperty的子类CollectionProperty是可以让集合参数支持变量参数化的，结果测试下来没有任何用，传入的${var}变量，在运行的时候还是变量没有变成相应的值。
+于是又换成MapProperty和ObjectProperty一样无法支持变量参数化。
+查看Jmeter Plugins的Http Sample源码，看他是如何处理的。
+org.apache.jmeter.protocol.http.util.HTTPArgument源码 package org.apache.jmeter.protocol.http.util; import java.</description>
+    </item>
+    
+    <item>
+      <title>Dubbo接口如何在Jmeter中测试，自研Dubbo Plugin for Apache JMeter</title>
+      <link>https://ningyu1.github.io/site/post/60-jmeter-plugins-dubbo-support/</link>
+      <pubDate>Fri, 09 Feb 2018 15:39:49 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/60-jmeter-plugins-dubbo-support/</guid>
+      <description>最近公司测试需要对Dubbo的RPC接口进行测试，测试工具使用的是Jmeter，按照常规的做法需要包装一个Java请求，再配合Jmeter的Java Sample去做测试，这种做法是最简单最普遍的，但是这个方法不够灵活和方便，那我们能不能写一个Jmeter Plugin来解决这个问题？让Dubbo RPC接口测试更为方便一些？
+那我们先了解一下Jmeter的插件机制
+Jmeter Plugin 先来看一下Jmeter的核心组件
+ Sample 取样器，这个是最主要的组件，测试的内容主要是靠Sample来实现，我们常见的Sample有，HttpSample、FTPSample、JavaSample、SMTPSample、LDAPSample等。 Timer 定时器，主要用于配置sample之间的等待时间，可以查看：org.apache.jmeter.timers.RandomTimer ConfigElement 配置组件，主要用于定义前置配置。如数据库连接，csv输入数据集等。主要功能是将配置转换为变量设置到JMeter context中。 Assertion 验证Sampler的结果是否符合预期 PostProcessor 一般用于对Sampler结果进行二次加工 Visualizer 将sampler的结果进行可视化展示。 Controller 对sampler进行逻辑控制。 SampleListener 负责处理监听，基于事件机制。一般用于保存sampler的结果等耗费时间的操作。  Jmeter的插件机制比较简单，Jmeter提供了扩展类来支持自定义插件的开发。 继承org.apache.jmeter.samplers.gui.AbstractSamplerGui和org.apache.jmeter.samplers.AbstractSampler就可以完成一个插件开发。
+JMeter的GUI机制 由于Jmeter是一个基于Swing的GUI工具,所以开发插件需要对Java Swing GUI框架有一定了解。 JMeter内部有两种GUI的实现方式。
+第一种方式： 直接继承JMeterGUIComponent接口的抽象实现类:
+org.apache.jmeter.config.gui.AbstractConfigGui org.apache.jmeter.assertions.gui.AbstractAssertionGui org.apache.jmeter.control.gui.AbstractControllerGui org.apache.jmeter.timers.gui.AbstractTimerGui org.apache.jmeter.visualizers.gui.AbstractVisualizer org.apache.jmeter.samplers.gui.AbstractSamplerGui  通过Swing的Bean绑定机制 前者的好处是自由度高，可定制性强，但需要开发者关心GUI控件布局,以及从控件到Model的转换。后者基本不需要开发者接触到GUI层的东西，定义好Bean以及BeanInfo即可。但SampleListener不支持BeanInfo方式定义。
+ps.如果java swing比较熟悉的话推荐使用第一种方式，自由度高。
+下面是我写的插件DubboSample，主要用于Dubbo RPC接口测试。
+Dubbo Plugin for Apache JMeter jmeter-plugin-dubbo项目已经transfer到dubbo group下
+github: jmeter-plugin-dubbo
+码云: jmeter-plugin-dubbo
+DubboSample使用 支持Jmeter版本 Jmeter版本：3.0
+插件安装 插件包可以去github上下载。将插件包放入Jmeter的lib的ext下。
+${Path}\apache-jmeter-3.0\lib\ext  如果使用的是:jmeter-plugins-dubbo-1.0.0-SNAPSHOT-jar-with-dependencies.jar包含所有依赖。
+如果使用的是：jmeter-plugins-dubbo-1.0.0-SNAPSHOT.jar需要自定添加插件的依赖包，推荐使用上面的包，依赖包版本如下：</description>
+    </item>
+    
+    <item>
+      <title>推荐一个性能测试工具包（适用于单元测试）</title>
+      <link>https://ningyu1.github.io/site/post/49-java-test/</link>
+      <pubDate>Thu, 11 Jan 2018 16:52:36 +0000</pubDate>
+      
+      <guid>https://ningyu1.github.io/site/post/49-java-test/</guid>
+      <description>给大家推荐一个做单元测试非常好用的性能测试工具包，contiperf，很方便的进行并发压力测试
+ pom引用  &amp;lt;!-- 单元测试 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.7&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- 性能测试 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.databene&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;contiperf&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.1.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt;   使用示例  /** * &amp;lt;功能描述&amp;gt; * * @author ningyu * @date 2017年10月24日 下午2:40:58 */ public class MyPerfTest { private IRedisSequenceService sequenceService; @Rule public ContiPerfRule i = new ContiPerfRule(); @Before public void init() { ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(&amp;quot;test-spring-context.xml&amp;quot;); sequenceService = (IRedisSequenceService) context.getBean(&amp;quot;redisSequenceService&amp;quot;); } @Test @PerfTest(threads=10, invocations=10000)//threads并发线程数量，invocations总调用次数,还有其他参数可以设置查看文档或者源码 public void test() { try { long res = sequenceService.</description>
+    </item>
+    
+  </channel>
+</rss>

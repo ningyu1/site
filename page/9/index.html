@@ -1,0 +1,6578 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.51" />
+	<meta charset="utf-8">
+    
+    
+    <title>凝雨 - Yun</title>
+    <meta name="author" content="凝雨-Yun">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://ningyu1.github.io/site/index.xml" rel="alternate" title="凝雨 - Yun" type="application/atom+xml">
+    <link href="https://ningyu1.github.io/site/images/fav.ico" rel="shortcut icon">
+    <style>
+    @charset "UTF-8";
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("https://ningyu1.github.io/site/font/fontawesome-webfont.eot");
+  src: url("https://ningyu1.github.io/site/font/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.woff") format("woff"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.ttf") format("truetype"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.svgz#FontAwesomeRegular") format("svg"),
+  url("https://ningyu1.github.io/site/font/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face{
+    font-family: 'MyHermit';
+    src: url('https://ningyu1.github.io/site/font/hermit-medium-webfont.eot');
+    src: url('https://ningyu1.github.io/site/font/hermit-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://ningyu1.github.io/site/font/hermit-medium-webfont.woff') format('woff'),
+         url('https://ningyu1.github.io/site/font/hermit-medium-webfont.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'PingFang SC', serif;
+  font-weight: 300;
+  font-size: 16px;
+  /*background: url("https://ningyu1.github.io/site/images/retina_dust.png");*/
+  color: #444;
+  colori: #666666; }
+  @media screen and (max-width: 1040px) {
+    body {
+      margin: 0 20px; } }
+  @media screen and (max-width: 600px) {
+    body {
+      font-size: 13px; } }
+
+.bBackground {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: -moz-radial-gradient(50% 50%, farthest-side, white, #efefef);
+  background: -webkit-gradient(radial, 50% 50%, 250, 50% 50%, 750, from(white), to(#bbbbbb));
+  z-index: -100; }
+
+h1 {
+  font-size: 1.8em; }
+
+h2 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.3em; }
+
+a {
+  text-decoration: none;
+  outline-width: 0;
+  color: #258fb8; }
+
+.alignleft {
+  float: left; }
+
+.alignright {
+  float: right; }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.inner {
+  width: 900px;
+  margin: 0 auto; }
+  @media screen and (max-width: 1040px) {
+    .inner {
+      width: 100%; } }
+
+#w2btoTop {
+  display: none;
+  text-decoration: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  overflow: hidden;
+  width: 51px;
+  height: 51px;
+  border: none;
+  text-indent: -999px;
+  background: url(https://ningyu1.github.io/site/images/totop.png) no-repeat left top; }
+
+#w2btoTopHover {
+  background: url(https://ningyu1.github.io/site/images/totop.png) no-repeat left -51px;
+  width: 51px;
+  height: 51px;
+  display: block;
+  overflow: hidden;
+  float: left;
+  opacity: 0;
+  -moz-opacity: 0;
+  filter: alpha(opacity=0); }
+
+#w2btoTop:active, #w2btoTop:focus {
+  outline: none; }
+
+.basic-alignment.left, article .entry-content img.left, article .entry-content video.left {
+  float: left;
+  margin-right: 1.5em; }
+.basic-alignment.right, article .entry-content img.right, article .entry-content video.right {
+  float: right;
+  margin-left: 1.5em; }
+.basic-alignment.center, article .entry-content img.center, article .entry-content video.center {
+  display: block;
+  margin: 0 auto 1.5em; }
+.basic-alignment.left, article .entry-content img.left, article .entry-content video.left, .basic-alignment.right, article .entry-content img.right, article .entry-content video.right {
+  margin-bottom: .8em; }
+
+/* changes tooltip, to use, make elements 'class' as 'tooltip' and 'title' would be shown in tooltip */
+.tooltip {
+  display: inline;
+  position: relative; }
+
+.tooltip:hover {
+  text-decoration: none; }
+
+.tooltip:hover:after {
+  background: #111;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  bottom: 18px;
+  color: #fff;
+  content: attr(title);
+  display: block;
+  left: 50%;
+  padding: 5px 15px;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 98; }
+
+.tooltip:hover:before {
+  border: solid;
+  border-color: #111 transparent;
+  border-width: 6px 6px 0 6px;
+  bottom: 12px;
+  content: "";
+  display: block;
+  left: 75%;
+  position: absolute;
+  z-index: 99; }
+
+.pullquote-right:before,
+.pullquote-left:before {
+  /* Reset metrics. */
+  padding: 0;
+  border: none;
+  /* Content */
+  content: attr(data-pullquote);
+  /* Pull out to the right, modular scale based margins. */
+  float: right;
+  width: 45%;
+  margin: .5em 0 1em 1.5em;
+  /* Baseline correction */
+  position: relative;
+  top: 7px;
+  font-size: 1.4em;
+  line-height: 1.45em; }
+
+.pullquote-left:before {
+  /* Make left pullquotes align properly. */
+  float: left;
+  margin: .5em 1.5em 1em 0; }
+
+#header {
+  padding: 20px 0 20px 0; }
+  @media screen and (max-width: 1040px) {
+    #header {
+      height: auto;
+      position: relative;
+      padding-bottom: 10px; } }
+  #header a {
+    color: #666666;
+    -webkit-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(color 0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(color 0.3s, false, false, false, false, false, false, false, false, false); }
+    #header a:hover {
+      color: #258fb8; }
+  #header h1 {
+    font-family: 'Slackey', cursive;
+    font-weight: 300;
+    font-size: 52px; }
+    @media screen and (max-width: 1040px) {
+      #header h1 {
+        float: none; } }
+
+#headerbg {
+  text-align: center;
+  background: #444;
+  padding: 10px 10px;
+  display: table;
+  color: #fff;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-weight: bold;
+  -webkit-mask-image: -webkit-linear-gradient(black, rgba(0, 0, 0, 0.9));
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .2s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: .2s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: 1s;
+  -ms-animation-delay: .2s;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  -o-animation-duration: 1s;
+  -o-animation-delay: .2s;
+  -o-animation-timing-function: ease;
+  -o-animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: .2s;
+  animation-timing-function: ease;
+  animation-fill-mode: both; }
+
+#load {
+  display: none;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  background: url("https://ningyu1.github.io/site/images/loading.gif");
+  width: 50px;
+  height: 50px;
+  text-indent: -9999em; }
+
+#social-links li {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  margin-top: 20px;
+  margin-right: 9px;
+  background-color: #ddd;
+  text-align: center;
+  line-height: 35px;
+  -webkit-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false);
+  -moz-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false false);
+  -o-transition: compact(compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false) false false false);
+  transition: compact(background-color 1s ease-in-out, false, false, false, false, false, false, false, false, false); }
+  #social-links li:hover {
+    background-color: #555; }
+#social-links a {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  #social-links a svg {
+    position: absolute; }
+  #social-links a .github {
+    top: 3px;
+    left: 2px; }
+  #social-links a .sina-weibo {
+    top: 8px;
+    left: 6px; }
+  #social-links a .tencent-weibo {
+    top: 6px;
+    left: 4px; }
+  #social-links a .twitter {
+    top: 2px;
+    left: 3px; }
+
+a.facebook {
+  background: url("https://ningyu1.github.io/site/images/social/Facebook.png") center no-repeat; }
+
+a.facebook:hover {
+  background: url("https://ningyu1.github.io/site/images/social/FacebookH.png") center no-repeat; }
+
+a.github {
+  background: url("https://ningyu1.github.io/site/images/social/Github.png") center no-repeat; }
+
+a.github:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GithubH.png") center no-repeat; }
+
+a.gitee {
+  background: url("https://ningyu1.github.io/site/images/social/Gitee.png") center no-repeat; }
+
+a.gitee:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GiteeH.png") center no-repeat; }
+
+a.gitlab {
+  background: url("https://ningyu1.github.io/site/images/social/Gitlab.png") center no-repeat; }
+
+a.gitlab:hover {
+  background: url("https://ningyu1.github.io/site/images/social/GitlabH.png") center no-repeat; }
+
+a.email {
+  background: url("https://ningyu1.github.io/site/images/social/Email.png") center no-repeat; }
+
+a.email:hover {
+  background: url("https://ningyu1.github.io/site/images/social/EmailH.png") center no-repeat; }
+
+a.rss {
+  background: url("https://ningyu1.github.io/site/images/social/Rss.png") center no-repeat; }
+
+a.rss:hover {
+  background: url("https://ningyu1.github.io/site/images/social/RssH.png") center no-repeat; }
+
+a.twitter {
+  background: url("https://ningyu1.github.io/site/images/social/Twitter.png") center no-repeat; }
+
+a.twitter:hover {
+  background: url("https://ningyu1.github.io/site/images/social/TwitterH.png") center no-repeat; }
+
+a.google {
+  background: url("https://ningyu1.github.io/site/images/social/Picasa.png") center no-repeat; }
+
+a.google:hover {
+  background: url("https://ningyu1.github.io/site/images/social/PicasaH.png") center no-repeat; }
+
+a.skype {
+  background: url("https://ningyu1.github.io/site/images/social/Skype.png") center no-repeat; }
+
+a.skype:hover {
+  background: url("https://ningyu1.github.io/site/images/social/SkypeH.png") center no-repeat; }
+
+a.linkedin {
+  background: url("https://ningyu1.github.io/site/images/social/LinkedIn.png") center no-repeat; }
+
+a.linkedin:hover {
+  background: url("https://ningyu1.github.io/site/images/social/LinkedInH.png") center no-repeat; }
+
+a.youtube {
+  background: url("https://ningyu1.github.io/site/images/social/Youtube.png") center no-repeat; }
+
+a.youtube:hover {
+  background: url("https://ningyu1.github.io/site/images/social/YoutubeH.png") center no-repeat; }
+
+a.lastfm {
+  background: url("https://ningyu1.github.io/site/images/social/LastFM.png") center no-repeat; }
+
+a.lastfm:hover {
+  background: url("https://ningyu1.github.io/site/images/social/LastFMH.png") center no-repeat; }
+
+/* search bar */
+#search {
+  display: inline; }
+
+#search input[type="text"] {
+  background: url("https://ningyu1.github.io/site/images/search-dark.png") no-repeat 10px 6px #444444;
+  border: 0 none;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #777;
+  width: 110px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s; }
+
+#search input[type="text"]:focus {
+  width: 160px; }
+
+#dark {
+  display: inline-block;
+  height: 70px; }
+
+#dark #search input[type="text"] {
+  background: url("https://ningyu1.github.io/site/images/search-dark.png") no-repeat 10px 6px #444444;
+  border: 0 none;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #ddd;
+  width: 110px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s; }
+
+#dark #search input[type="text"]:focus {
+  width: 160px;
+  outline: 0; }
+
+/* nav */
+#nav {
+  text-align: center;
+  position: relative;
+  margin: 10px auto; }
+
+ul#nav *{
+	box-sizing:content-box
+}
+
+ul#nav li {
+  display: inline-block; }
+
+ul#nav li {
+  list-style-type: none;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-right: 1px; }
+
+ul#nav li a {
+  display: inline-block;
+  width: 110px;
+  height: 40px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #222;
+  font-weight: normal;
+  text-decoration: none;
+  font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-style: normal;
+  text-shadow: 1px 1px 10px #222;
+  overflow: hidden; }
+
+ul#nav li a:hover {
+  color: #fff;
+  font-style: normal;
+  font-weight: normal;
+  background-image: url("https://ningyu1.github.io/site/images/hover.png");
+  background-repeat: no-repeat;
+  background-position: center top; }
+
+ul#nav li a:active {
+  position: relative;
+  top: 2px; }
+
+ul#nav li#active a {
+  color: #FFF;
+  background-image: url("https://ningyu1.github.io/site/images/active.png");
+  background-repeat: no-repeat;
+  background-position: center top; }
+
+#pagenavi {
+  padding: 20px 0;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #pagenavi a:hover {
+    text-decoration: underline; }
+  #pagenavi .prev, #pagenavi .next {
+    position: absolute; }
+  #pagenavi .prev {
+    padding-left: 30px;
+    left: 0; }
+    #pagenavi .prev:before {
+      content: "\f060";
+      font: 1.3em FontAwesome;
+      position: absolute;
+      left: 0; }
+  #pagenavi .next {
+    padding-right: 30px;
+    right: 0; }
+    #pagenavi .next:before {
+      content: "\f061";
+      font: 1.3em FontAwesome;
+      position: absolute;
+      right: 0; }
+  #pagenavi .center {
+    text-align: center;
+    width: 100%;
+    display: block; }
+    @media screen and (max-width: 400px) {
+      #pagenavi .center {
+        display: none; } }
+
+article {
+  border-bottom: 1px solid #dddddd;
+  padding: 30px 0;
+  position: relative; }
+  @media screen and (max-width: 800px) {
+    article {
+      padding-bottom: 15px; } }
+  @media screen and (max-width: 600px) {
+    article {
+      padding: 15px 0; } }
+  article h2.title {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 20px; }
+    article h2.title a {
+      color: #1094e8; }
+  article .title a {
+    color: #7c7873;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out; }
+  article .title a:hover {
+    color: #084B8A;
+    text-shadow: 3px 3px 12px #888;
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3); }
+  article .entry-content {
+    line-height: 2;
+    text-align: justify; }
+    article .entry-content a:hover {
+      text-decoration: underline; }
+    article .entry-content .more-link {
+      display: block;
+      margin-top: 16px;
+      padding-left: 30px;
+      position: relative; }
+      article .entry-content .more-link:before {
+        content: "\f061";
+        font: 1.3em FontAwesome;
+        line-height: 1.6em;
+        position: absolute;
+        left: 0; }
+    article .entry-content p, article .entry-content blockquote, article .entry-content ul, article .entry-content ol, article .entry-content dl, article .entry-content iframe, article .entry-content h1, article .entry-content h2, article .entry-content h3, article .entry-content h4, article .entry-content h5, article .entry-content h6, article .entry-content .video-container {
+      margin-top: 10px; }
+    article .entry-content ul, article .entry-content ol, article .entry-content dl {
+      margin-left: 20px; }
+      article .entry-content ul ul, article .entry-content ul ol, article .entry-content ul dl, article .entry-content ol ul, article .entry-content ol ol, article .entry-content ol dl, article .entry-content dl ul, article .entry-content dl ol, article .entry-content dl dl {
+        margin-top: 0; }
+    article .entry-content strong {
+      font-weight: bold; }
+    article .entry-content em {
+      font-style: italic; }
+    article .entry-content p {
+      margin-top: 10px; }
+    article .entry-content h2 {
+      font-weight: 300;
+      border-bottom: 1px solid #dddddd;
+      position: relative; }
+      article .entry-content h2:before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        border-bottom: 1px solid white;
+        width: 100%; }
+    article .entry-content img, article .entry-content video {
+      margin: 10px 0;
+      max-width: 100%;
+      height: auto;
+      -moz-border-radius: 0.3em;
+      -webkit-border-radius: 0.3em;
+      -o-border-radius: 0.3em;
+      -ms-border-radius: 0.3em;
+      -khtml-border-radius: 0.3em;
+      border-radius: 0.3em;
+      -moz-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -o-box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      box-shadow: rgba(0, 0, 0, 0.75) 0 1px 4px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+      border: #fff 0.3em solid; }
+    article .entry-content img.noborder, article .entry-content video.noborder {
+      border: none;
+      box-shadow: none; }
+    article .entry-content blockquote {
+      background: #dddddd;
+      border-left: 5px solid #cccccc;
+      padding: 15px 20px;
+      margin-top: 10px; }
+      article .entry-content blockquote > p:first-of-type {
+        margin-top: 0; }
+    article .entry-content iframe {
+      border: none; }
+    article .entry-content .caption {
+      display: block;
+      font-size: 0.9em;
+      color: #999999;
+      padding-left: 25px;
+      position: relative; }
+      article .entry-content .caption:before {
+        content: "\f040";
+        color: #cccccc;
+        font: 1.3em FontAwesome;
+        line-height: 1.6em;
+        position: absolute;
+        left: 0; }
+    article .entry-content .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden; }
+      article .entry-content .video-container iframe, article .entry-content .video-container object, article .entry-content .video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 0; }
+
+.share {
+  padding: 15px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+
+@media screen and (max-width: 800px) {
+  .post h2.title, .post .entry-content {
+    margin-left: 0; } }
+.post .meta {
+  line-height: 2;
+  color: #999999;
+  width: 370px; }
+  @media screen and (max-width: 800px) {
+    .post .meta {
+      margin-top: 15px;
+      position: static;
+      width: auto; } }
+  .post .meta a {
+    color: #999999;
+    -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+    .post .meta a:hover {
+      color: #666666; }
+  .post .meta .date, .post .meta .tags, .post .meta .comments {
+    padding-left: 30px;
+    position: relative; }
+    .post .meta .date:before, .post .meta .tags:before, .post .meta .comments:before {
+      color: #cccccc;
+      font: 1.3em FontAwesome;
+      line-height: 1.6em;
+      position: absolute;
+      left: 0; }
+    @media screen and (max-width: 800px) {
+      .post .meta .date, .post .meta .tags, .post .meta .comments {
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline;
+        margin-right: 30px; } }
+  .post .meta .date:before {
+    content: "\f073"; }
+  .post .meta .tags:before {
+    content: "\f02c"; }
+  .post .meta .comments:before {
+    content: "\f075"; }
+
+.archives {
+  position: relative; }
+  .archives:last-of-type:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    border-top: 1px solid #dddddd; }
+  .archives .top-border-padding {
+    border-top: 1px solid #fff; }
+    .archives .top-border-padding:before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      width: 100%;
+      border-top: 1px solid #dddddd; }
+  .archives .year {
+    line-height: 35px;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    padding-top: 15px;
+    border-top: 1px solid #fff; }
+    .archives .year:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      width: 100%;
+      border-top: 1px solid #dddddd; }
+    @media screen and (max-width: 600px) {
+      .archives .year {
+        position: relative;
+        width: 100%; } }
+  .archives article {
+    margin-left: 200px;
+    padding: 10px 0; }
+    @media screen and (max-width: 600px) {
+      .archives article {
+        margin-left: 0; }
+        .archives article:first-of-type {
+          border-top: none;
+          padding-top: 30px; } }
+    .archives article .title {
+      margin-bottom: 0;
+      font-size: 25px; }
+    .archives article .meta {
+      color: #999999;
+      font-size: 0.9em;
+      line-height: 2;
+      margin-top: 10px; }
+      @media screen and (max-width: 600px) {
+        .archives article .meta {
+          display: none; } }
+      .archives article .meta span {
+        margin-right: 30px;
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline; }
+        .archives article .meta span:before {
+          color: #cccccc;
+          font: 1.3em FontAwesome;
+          padding-right: 10px; }
+      .archives article .meta a {
+        color: #999999;
+        -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+        -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+        -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+        transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+        .archives article .meta a:hover {
+          color: #666666; }
+      .archives article .meta .date:before {
+        content: "\f073"; }
+      .archives article .meta .tags:before {
+        content: "\f02c"; }
+      .archives article .meta .comments:before {
+        content: "\f075"; }
+
+#comment {
+  padding: 30px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #comment h2.title {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 35px;
+    margin-bottom: 20px; }
+
+footer {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.6em;
+  color: #666; }
+
+footer a {
+  color: #123; }
+
+footer a:hover {
+  color: #456; }
+
+#banner {
+  color: #999999;
+  padding: 30px 0;
+  line-height: 30px;
+  text-align: center;
+  position: relative;
+  display: none;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dddddd; }
+  #banner:hover a {
+    color: #258fb8; }
+  #banner a {
+    color: #999999;
+    -webkit-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false);
+    -moz-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    -o-transition: compact(compact(0.3s, false, false, false, false, false, false, false, false, false) false false false);
+    transition: compact(0.3s, false, false, false, false, false, false, false, false, false); }
+    #banner a:hover {
+      text-decoration: underline; }
+  #banner small {
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+  #banner .loading {
+    background: image-url("loading_pacman.gif") center no-repeat;
+    text-indent: -9999px; }
+  #banner .container {
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    display: none; }
+    #banner .container .feed {
+      list-style: none;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+      #banner .container .feed li {
+        position: relative; }
+        #banner .container .feed li small {
+          position: absolute;
+          right: 0; }
+
+/*! fancyBox v2.0.6 fancyapps.com | fancyapps.com/fancybox/#license */
+.fancybox-tmp iframe, .fancybox-tmp object {
+  vertical-align: top;
+  padding: 0;
+  margin: 0; }
+
+.fancybox-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8020; }
+
+.fancybox-skin {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: #f9f9f9;
+  color: #444;
+  text-shadow: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px; }
+
+.fancybox-opened {
+  z-index: 8030; }
+
+.fancybox-opened .fancybox-skin {
+  -webkit-box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false);
+  -moz-box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false);
+  box-shadow: compact(0 10px 25px rgba(0, 0, 0, 0.5), false, false, false, false, false, false, false, false, false); }
+
+.fancybox-outer, .fancybox-inner {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  outline: none; }
+
+.fancybox-inner {
+  overflow: hidden; }
+
+.fancybox-type-iframe .fancybox-inner {
+  -webkit-overflow-scrolling: touch; }
+
+.fancybox-error {
+  color: #444;
+  font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 10px; }
+
+.fancybox-image, .fancybox-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  vertical-align: top; }
+
+.fancybox-image {
+  max-width: 100%;
+  max-height: 100%; }
+
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+  background-image: image-url("fancybox/fancybox_sprite.png"); }
+
+#fancybox-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -22px;
+  margin-left: -22px;
+  background-position: 0 -108px;
+  opacity: 0.8;
+  cursor: pointer;
+  z-index: 8020; }
+
+#fancybox-loading div {
+  width: 44px;
+  height: 44px;
+  background: image-url("fancybox/fancybox_loading.gif") center center no-repeat; }
+
+.fancybox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 8040; }
+
+.fancybox-nav {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  cursor: pointer;
+  background: transparent image-url("fancybox/blank.gif");
+  /* helps IE */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  z-index: 8040; }
+
+.fancybox-prev {
+  left: 0; }
+
+.fancybox-next {
+  right: 0; }
+
+.fancybox-nav span {
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 34px;
+  margin-top: -18px;
+  cursor: pointer;
+  z-index: 8040;
+  visibility: hidden; }
+
+.fancybox-prev span {
+  left: 20px;
+  background-position: 0 -36px; }
+
+.fancybox-next span {
+  right: 20px;
+  background-position: 0 -72px; }
+
+.fancybox-nav:hover span {
+  visibility: visible; }
+
+.fancybox-tmp {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  padding: 0;
+  overflow: visible;
+  visibility: hidden; }
+
+/* Overlay helper */
+#fancybox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: none;
+  z-index: 8010;
+  background: #000; }
+
+#fancybox-overlay.overlay-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0; }
+
+/* Title helper */
+.fancybox-title {
+  visibility: hidden;
+  font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+  text-shadow: none;
+  z-index: 8050; }
+
+.fancybox-opened .fancybox-title {
+  visibility: visible; }
+
+.fancybox-title-float-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  margin-bottom: -35px;
+  z-index: 8030;
+  text-align: center; }
+
+.fancybox-title-float-wrap .child {
+  display: inline-block;
+  margin-right: -100%;
+  padding: 2px 20px;
+  background: transparent;
+  /* Fallback for web browsers that doesn't support RGBa */
+  background: rgba(0, 0, 0, 0.8);
+  text-shadow: 0 1px 2px #222;
+  color: #FFF;
+  font-weight: bold;
+  line-height: 24px;
+  white-space: nowrap;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px; }
+
+.fancybox-title-outside-wrap {
+  position: relative;
+  margin-top: 10px;
+  color: #fff; }
+
+.fancybox-title-inside-wrap {
+  margin-top: 10px; }
+
+.fancybox-title-over-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  padding: 10px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8); }
+
+/*
+Animate.css - http://daneden.me/animate
+Licensed under the ☺ license (http://licence.visualidiot.com/)
+
+Copyright (c) 2012 Dan Eden
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+body {
+  /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
+  -webkit-backface-visibility: hidden; }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  animation-duration: 2s; }
+
+@-webkit-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@-moz-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@-o-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1; }
+
+  25%, 75% {
+    opacity: 0; } }
+
+.flash {
+  -webkit-animation-name: flash;
+  -moz-animation-name: flash;
+  -o-animation-name: flash;
+  animation-name: flash; }
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px); } }
+
+@-moz-keyframes shake {
+  0%, 100% {
+    -moz-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -moz-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -moz-transform: translateX(10px); } }
+
+@-o-keyframes shake {
+  0%, 100% {
+    -o-transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    -o-transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    -o-transform: translateX(10px); } }
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0); }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px); }
+
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px); } }
+
+.shake {
+  -webkit-animation-name: shake;
+  -moz-animation-name: shake;
+  -o-animation-name: shake;
+  animation-name: shake; }
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0); }
+
+  40% {
+    -webkit-transform: translateY(-30px); }
+
+  60% {
+    -webkit-transform: translateY(-15px); } }
+
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0); }
+
+  40% {
+    -moz-transform: translateY(-30px); }
+
+  60% {
+    -moz-transform: translateY(-15px); } }
+
+@-o-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -o-transform: translateY(0); }
+
+  40% {
+    -o-transform: translateY(-30px); }
+
+  60% {
+    -o-transform: translateY(-15px); } }
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); }
+
+  40% {
+    transform: translateY(-30px); }
+
+  60% {
+    transform: translateY(-15px); } }
+
+.bounce {
+  -webkit-animation-name: bounce;
+  -moz-animation-name: bounce;
+  -o-animation-name: bounce;
+  animation-name: bounce; }
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1); }
+
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0); } }
+
+@-moz-keyframes tada {
+  0% {
+    -moz-transform: scale(1); }
+
+  10%, 20% {
+    -moz-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -moz-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -moz-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -moz-transform: scale(1) rotate(0); } }
+
+@-o-keyframes tada {
+  0% {
+    -o-transform: scale(1); }
+
+  10%, 20% {
+    -o-transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    -o-transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    -o-transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    -o-transform: scale(1) rotate(0); } }
+
+@keyframes tada {
+  0% {
+    transform: scale(1); }
+
+  10%, 20% {
+    transform: scale(0.9) rotate(-3deg); }
+
+  30%, 50%, 70%, 90% {
+    transform: scale(1.1) rotate(3deg); }
+
+  40%, 60%, 80% {
+    transform: scale(1.1) rotate(-3deg); }
+
+  100% {
+    transform: scale(1) rotate(0); } }
+
+.tada {
+  -webkit-animation-name: tada;
+  -moz-animation-name: tada;
+  -o-animation-name: tada;
+  animation-name: tada; }
+
+@-webkit-keyframes swing {
+  20%, 40%, 60%, 80%, 100% {
+    -webkit-transform-origin: top center; }
+
+  20% {
+    -webkit-transform: rotate(15deg); }
+
+  40% {
+    -webkit-transform: rotate(-10deg); }
+
+  60% {
+    -webkit-transform: rotate(5deg); }
+
+  80% {
+    -webkit-transform: rotate(-5deg); }
+
+  100% {
+    -webkit-transform: rotate(0deg); } }
+
+@-moz-keyframes swing {
+  20% {
+    -moz-transform: rotate(15deg); }
+
+  40% {
+    -moz-transform: rotate(-10deg); }
+
+  60% {
+    -moz-transform: rotate(5deg); }
+
+  80% {
+    -moz-transform: rotate(-5deg); }
+
+  100% {
+    -moz-transform: rotate(0deg); } }
+
+@-o-keyframes swing {
+  20% {
+    -o-transform: rotate(15deg); }
+
+  40% {
+    -o-transform: rotate(-10deg); }
+
+  60% {
+    -o-transform: rotate(5deg); }
+
+  80% {
+    -o-transform: rotate(-5deg); }
+
+  100% {
+    -o-transform: rotate(0deg); } }
+
+@keyframes swing {
+  20% {
+    transform: rotate(15deg); }
+
+  40% {
+    transform: rotate(-10deg); }
+
+  60% {
+    transform: rotate(5deg); }
+
+  80% {
+    transform: rotate(-5deg); }
+
+  100% {
+    transform: rotate(0deg); } }
+
+.swing {
+  -webkit-transform-origin: top center;
+  -moz-transform-origin: top center;
+  -o-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  -moz-animation-name: swing;
+  -o-animation-name: swing;
+  animation-name: swing; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%); }
+
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -webkit-transform: translateX(0%); } }
+
+@-moz-keyframes wobble {
+  0% {
+    -moz-transform: translateX(0%); }
+
+  15% {
+    -moz-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -moz-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -moz-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -moz-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -moz-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -moz-transform: translateX(0%); } }
+
+@-o-keyframes wobble {
+  0% {
+    -o-transform: translateX(0%); }
+
+  15% {
+    -o-transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    -o-transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    -o-transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    -o-transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    -o-transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    -o-transform: translateX(0%); } }
+
+@keyframes wobble {
+  0% {
+    transform: translateX(0%); }
+
+  15% {
+    transform: translateX(-25%) rotate(-5deg); }
+
+  30% {
+    transform: translateX(20%) rotate(3deg); }
+
+  45% {
+    transform: translateX(-15%) rotate(-3deg); }
+
+  60% {
+    transform: translateX(10%) rotate(2deg); }
+
+  75% {
+    transform: translateX(-5%) rotate(-1deg); }
+
+  100% {
+    transform: translateX(0%); } }
+
+.wobble {
+  -webkit-animation-name: wobble;
+  -moz-animation-name: wobble;
+  -o-animation-name: wobble;
+  animation-name: wobble; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1); }
+
+  50% {
+    -webkit-transform: scale(1.1); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes pulse {
+  0% {
+    -moz-transform: scale(1); }
+
+  50% {
+    -moz-transform: scale(1.1); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@-o-keyframes pulse {
+  0% {
+    -o-transform: scale(1); }
+
+  50% {
+    -o-transform: scale(1.1); }
+
+  100% {
+    -o-transform: scale(1); } }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+
+  50% {
+    transform: scale(1.1); }
+
+  100% {
+    transform: scale(1); } }
+
+.pulse {
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -o-animation-name: pulse;
+  animation-name: pulse; }
+
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0);
+    -webkit-animation-timing-function: ease-out; }
+
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -webkit-animation-timing-function: ease-out; }
+
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -webkit-animation-timing-function: ease-in; }
+
+  80% {
+    -webkit-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -webkit-animation-timing-function: ease-in; }
+
+  100% {
+    -webkit-transform: perspective(400px) scale(1);
+    -webkit-animation-timing-function: ease-in; } }
+
+@-moz-keyframes flip {
+  0% {
+    -moz-transform: perspective(400px) rotateY(0);
+    -moz-animation-timing-function: ease-out; }
+
+  40% {
+    -moz-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -moz-animation-timing-function: ease-out; }
+
+  50% {
+    -moz-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -moz-animation-timing-function: ease-in; }
+
+  80% {
+    -moz-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -moz-animation-timing-function: ease-in; }
+
+  100% {
+    -moz-transform: perspective(400px) scale(1);
+    -moz-animation-timing-function: ease-in; } }
+
+@-o-keyframes flip {
+  0% {
+    -o-transform: perspective(400px) rotateY(0);
+    -o-animation-timing-function: ease-out; }
+
+  40% {
+    -o-transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    -o-animation-timing-function: ease-out; }
+
+  50% {
+    -o-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -o-animation-timing-function: ease-in; }
+
+  80% {
+    -o-transform: perspective(400px) rotateY(360deg) scale(0.95);
+    -o-animation-timing-function: ease-in; }
+
+  100% {
+    -o-transform: perspective(400px) scale(1);
+    -o-animation-timing-function: ease-in; } }
+
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+    animation-timing-function: ease-out; }
+
+  40% {
+    transform: perspective(400px) translateZ(150px) rotateY(170deg);
+    animation-timing-function: ease-out; }
+
+  50% {
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    animation-timing-function: ease-in; }
+
+  80% {
+    transform: perspective(400px) rotateY(360deg) scale(0.95);
+    animation-timing-function: ease-in; }
+
+  100% {
+    transform: perspective(400px) scale(1);
+    animation-timing-function: ease-in; } }
+
+.flip {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flip;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flip;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flip;
+  backface-visibility: visible !important;
+  animation-name: flip; }
+
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes flipInX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -moz-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -moz-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@-o-keyframes flipInX {
+  0% {
+    -o-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    -o-transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    -o-transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    -o-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+
+  40% {
+    transform: perspective(400px) rotateX(-10deg); }
+
+  70% {
+    transform: perspective(400px) rotateX(10deg); }
+
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInX;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInX;
+  backface-visibility: visible !important;
+  animation-name: flipInX; }
+
+@-webkit-keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes flipOutX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@-o-keyframes flipOutX {
+  0% {
+    -o-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+@keyframes flipOutX {
+  0% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; } }
+
+.flipOutX {
+  -webkit-animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
+  -moz-animation-name: flipOutX;
+  -moz-backface-visibility: visible !important;
+  -o-animation-name: flipOutX;
+  -o-backface-visibility: visible !important;
+  animation-name: flipOutX;
+  backface-visibility: visible !important; }
+
+@-webkit-keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes flipInY {
+  0% {
+    -moz-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -moz-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -moz-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -moz-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@-o-keyframes flipInY {
+  0% {
+    -o-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    -o-transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    -o-transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    -o-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@keyframes flipInY {
+  0% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+
+  40% {
+    transform: perspective(400px) rotateY(-10deg); }
+
+  70% {
+    transform: perspective(400px) rotateY(10deg); }
+
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+.flipInY {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInY;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInY;
+  backface-visibility: visible !important;
+  animation-name: flipInY; }
+
+@-webkit-keyframes flipOutY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes flipOutY {
+  0% {
+    -moz-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@-o-keyframes flipOutY {
+  0% {
+    -o-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+@keyframes flipOutY {
+  0% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0; } }
+
+.flipOutY {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipOutY;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipOutY;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipOutY;
+  backface-visibility: visible !important;
+  animation-name: flipOutY; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  -moz-animation-name: fadeInUp;
+  -o-animation-name: fadeInUp;
+  animation-name: fadeInUp; }
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  -moz-animation-name: fadeInDown;
+  -o-animation-name: fadeInDown;
+  animation-name: fadeInDown; }
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  -moz-animation-name: fadeInLeft;
+  -o-animation-name: fadeInLeft;
+  animation-name: fadeInLeft; }
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  -moz-animation-name: fadeInRight;
+  -o-animation-name: fadeInRight;
+  animation-name: fadeInRight; }
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  -moz-animation-name: fadeInUpBig;
+  -o-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig; }
+
+@-webkit-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateY(0); } }
+
+@keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.fadeInDownBig {
+  -webkit-animation-name: fadeInDownBig;
+  -moz-animation-name: fadeInDownBig;
+  -o-animation-name: fadeInDownBig;
+  animation-name: fadeInDownBig; }
+
+@-webkit-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInLeftBig {
+  -webkit-animation-name: fadeInLeftBig;
+  -moz-animation-name: fadeInLeftBig;
+  -o-animation-name: fadeInLeftBig;
+  animation-name: fadeInLeftBig; }
+
+@-webkit-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInRightBig {
+  -webkit-animation-name: fadeInRightBig;
+  -moz-animation-name: fadeInRightBig;
+  -o-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig; }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  -moz-animation-name: fadeOut;
+  -o-animation-name: fadeOut;
+  animation-name: fadeOut; }
+
+@-webkit-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px); } }
+
+@-moz-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-20px); } }
+
+@-o-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-20px); } }
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px); } }
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  -moz-animation-name: fadeOutUp;
+  -o-animation-name: fadeOutUp;
+  animation-name: fadeOutUp; }
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px); } }
+
+@-moz-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(20px); } }
+
+@-o-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(20px); } }
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px); } }
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  -moz-animation-name: fadeOutDown;
+  -o-animation-name: fadeOutDown;
+  animation-name: fadeOutDown; }
+
+@-webkit-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px); } }
+
+@-moz-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-20px); } }
+
+@-o-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-20px); } }
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-20px); } }
+
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  -moz-animation-name: fadeOutLeft;
+  -o-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft; }
+
+@-webkit-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px); } }
+
+@-moz-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(20px); } }
+
+@-o-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(20px); } }
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(20px); } }
+
+.fadeOutRight {
+  -webkit-animation-name: fadeOutRight;
+  -moz-animation-name: fadeOutRight;
+  -o-animation-name: fadeOutRight;
+  animation-name: fadeOutRight; }
+
+@-webkit-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); } }
+
+@-moz-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); } }
+
+@-o-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); } }
+
+@keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px); } }
+
+.fadeOutUpBig {
+  -webkit-animation-name: fadeOutUpBig;
+  -moz-animation-name: fadeOutUpBig;
+  -o-animation-name: fadeOutUpBig;
+  animation-name: fadeOutUpBig; }
+
+@-webkit-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); } }
+
+@-moz-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); } }
+
+@-o-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(2000px); } }
+
+@keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(2000px); } }
+
+.fadeOutDownBig {
+  -webkit-animation-name: fadeOutDownBig;
+  -moz-animation-name: fadeOutDownBig;
+  -o-animation-name: fadeOutDownBig;
+  animation-name: fadeOutDownBig; }
+
+@-webkit-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); } }
+
+@-moz-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); } }
+
+@-o-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); } }
+
+@keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-2000px); } }
+
+.fadeOutLeftBig {
+  -webkit-animation-name: fadeOutLeftBig;
+  -moz-animation-name: fadeOutLeftBig;
+  -o-animation-name: fadeOutLeftBig;
+  animation-name: fadeOutLeftBig; }
+
+@-webkit-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); } }
+
+@-moz-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); } }
+
+@-o-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(2000px); } }
+
+@keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(2000px); } }
+
+.fadeOutRightBig {
+  -webkit-animation-name: fadeOutRightBig;
+  -moz-animation-name: fadeOutRightBig;
+  -o-animation-name: fadeOutRightBig;
+  animation-name: fadeOutRightBig; }
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05); }
+
+  70% {
+    -webkit-transform: scale(0.9); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.05); }
+
+  70% {
+    -moz-transform: scale(0.9); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@-o-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -o-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -o-transform: scale(1.05); }
+
+  70% {
+    -o-transform: scale(0.9); }
+
+  100% {
+    -o-transform: scale(1); } }
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05); }
+
+  70% {
+    transform: scale(0.9); }
+
+  100% {
+    transform: scale(1); } }
+
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  -moz-animation-name: bounceIn;
+  -o-animation-name: bounceIn;
+  animation-name: bounceIn; }
+
+@-webkit-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px); }
+
+  80% {
+    -webkit-transform: translateY(10px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(-30px); }
+
+  80% {
+    -moz-transform: translateY(10px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateY(-30px); }
+
+  80% {
+    -o-transform: translateY(10px); }
+
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-30px); }
+
+  80% {
+    transform: translateY(10px); }
+
+  100% {
+    transform: translateY(0); } }
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  -moz-animation-name: bounceInUp;
+  -o-animation-name: bounceInUp;
+  animation-name: bounceInUp; }
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px); }
+
+  80% {
+    -webkit-transform: translateY(-10px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(30px); }
+
+  80% {
+    -moz-transform: translateY(-10px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateY(30px); }
+
+  80% {
+    -o-transform: translateY(-10px); }
+
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateY(30px); }
+
+  80% {
+    transform: translateY(-10px); }
+
+  100% {
+    transform: translateY(0); } }
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  -moz-animation-name: bounceInDown;
+  -o-animation-name: bounceInDown;
+  animation-name: bounceInDown; }
+
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px); }
+
+  80% {
+    -webkit-transform: translateX(-10px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(30px); }
+
+  80% {
+    -moz-transform: translateX(-10px); }
+
+  100% {
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateX(30px); }
+
+  80% {
+    -o-transform: translateX(-10px); }
+
+  100% {
+    -o-transform: translateX(0); } }
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateX(30px); }
+
+  80% {
+    transform: translateX(-10px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  -moz-animation-name: bounceInLeft;
+  -o-animation-name: bounceInLeft;
+  animation-name: bounceInLeft; }
+
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px); }
+
+  80% {
+    -webkit-transform: translateX(10px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(-30px); }
+
+  80% {
+    -moz-transform: translateX(10px); }
+
+  100% {
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateX(-30px); }
+
+  80% {
+    -o-transform: translateX(10px); }
+
+  100% {
+    -o-transform: translateX(0); } }
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateX(-30px); }
+
+  80% {
+    transform: translateX(10px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  -moz-animation-name: bounceInRight;
+  -o-animation-name: bounceInRight;
+  animation-name: bounceInRight; }
+
+@-webkit-keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1); }
+
+  25% {
+    -webkit-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.3); } }
+
+@-moz-keyframes bounceOut {
+  0% {
+    -moz-transform: scale(1); }
+
+  25% {
+    -moz-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.3); } }
+
+@-o-keyframes bounceOut {
+  0% {
+    -o-transform: scale(1); }
+
+  25% {
+    -o-transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    -o-transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    -o-transform: scale(0.3); } }
+
+@keyframes bounceOut {
+  0% {
+    transform: scale(1); }
+
+  25% {
+    transform: scale(0.95); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1); }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.3); } }
+
+.bounceOut {
+  -webkit-animation-name: bounceOut;
+  -moz-animation-name: bounceOut;
+  -o-animation-name: bounceOut;
+  animation-name: bounceOut; }
+
+@-webkit-keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); } }
+
+@-moz-keyframes bounceOutUp {
+  0% {
+    -moz-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); } }
+
+@-o-keyframes bounceOutUp {
+  0% {
+    -o-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); } }
+
+@keyframes bounceOutUp {
+  0% {
+    transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateY(20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px); } }
+
+.bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  -moz-animation-name: bounceOutUp;
+  -o-animation-name: bounceOutUp;
+  animation-name: bounceOutUp; }
+
+@-webkit-keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); } }
+
+@-moz-keyframes bounceOutDown {
+  0% {
+    -moz-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); } }
+
+@-o-keyframes bounceOutDown {
+  0% {
+    -o-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(2000px); } }
+
+@keyframes bounceOutDown {
+  0% {
+    transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(2000px); } }
+
+.bounceOutDown {
+  -webkit-animation-name: bounceOutDown;
+  -moz-animation-name: bounceOutDown;
+  -o-animation-name: bounceOutDown;
+  animation-name: bounceOutDown; }
+
+@-webkit-keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); } }
+
+@-moz-keyframes bounceOutLeft {
+  0% {
+    -moz-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); } }
+
+@-o-keyframes bounceOutLeft {
+  0% {
+    -o-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); } }
+
+@keyframes bounceOutLeft {
+  0% {
+    transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateX(20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-2000px); } }
+
+.bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  -moz-animation-name: bounceOutLeft;
+  -o-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft; }
+
+@-webkit-keyframes bounceOutRight {
+  0% {
+    -webkit-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); } }
+
+@-moz-keyframes bounceOutRight {
+  0% {
+    -moz-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(2000px); } }
+
+@-o-keyframes bounceOutRight {
+  0% {
+    -o-transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(2000px); } }
+
+@keyframes bounceOutRight {
+  0% {
+    transform: translateX(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateX(-20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(2000px); } }
+
+.bounceOutRight {
+  -webkit-animation-name: bounceOutRight;
+  -moz-animation-name: bounceOutRight;
+  -o-animation-name: bounceOutRight;
+  animation-name: bounceOutRight; }
+
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateIn {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateIn {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateIn {
+  0% {
+    transform-origin: center center;
+    transform: rotate(-200deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  -moz-animation-name: rotateIn;
+  -o-animation-name: rotateIn;
+  animation-name: rotateIn; }
+
+@-webkit-keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInUpLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInUpLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInUpLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInUpLeft {
+  -webkit-animation-name: rotateInUpLeft;
+  -moz-animation-name: rotateInUpLeft;
+  -o-animation-name: rotateInUpLeft;
+  animation-name: rotateInUpLeft; }
+
+@-webkit-keyframes rotateInDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInDownLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInDownLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInDownLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInDownLeft {
+  -webkit-animation-name: rotateInDownLeft;
+  -moz-animation-name: rotateInDownLeft;
+  -o-animation-name: rotateInDownLeft;
+  animation-name: rotateInDownLeft; }
+
+@-webkit-keyframes rotateInUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInUpRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInUpRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInUpRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(-90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInUpRight {
+  -webkit-animation-name: rotateInUpRight;
+  -moz-animation-name: rotateInUpRight;
+  -o-animation-name: rotateInUpRight;
+  animation-name: rotateInUpRight; }
+
+@-webkit-keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; } }
+
+@-moz-keyframes rotateInDownRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; } }
+
+@-o-keyframes rotateInDownRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; } }
+
+@keyframes rotateInDownRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; } }
+
+.rotateInDownRight {
+  -webkit-animation-name: rotateInDownRight;
+  -moz-animation-name: rotateInDownRight;
+  -o-animation-name: rotateInDownRight;
+  animation-name: rotateInDownRight; }
+
+@-webkit-keyframes rotateOut {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOut {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate(200deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOut {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate(200deg);
+    opacity: 0; } }
+
+@keyframes rotateOut {
+  0% {
+    transform-origin: center center;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(200deg);
+    opacity: 0; } }
+
+.rotateOut {
+  -webkit-animation-name: rotateOut;
+  -moz-animation-name: rotateOut;
+  -o-animation-name: rotateOut;
+  animation-name: rotateOut; }
+
+@-webkit-keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutUpLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutUpLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutUpLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    opacity: 0; } }
+
+.rotateOutUpLeft {
+  -webkit-animation-name: rotateOutUpLeft;
+  -moz-animation-name: rotateOutUpLeft;
+  -o-animation-name: rotateOutUpLeft;
+  animation-name: rotateOutUpLeft; }
+
+@-webkit-keyframes rotateOutDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutDownLeft {
+  0% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: left bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutDownLeft {
+  0% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: left bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutDownLeft {
+  0% {
+    transform-origin: left bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+    opacity: 0; } }
+
+.rotateOutDownLeft {
+  -webkit-animation-name: rotateOutDownLeft;
+  -moz-animation-name: rotateOutDownLeft;
+  -o-animation-name: rotateOutDownLeft;
+  animation-name: rotateOutDownLeft; }
+
+@-webkit-keyframes rotateOutUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutUpRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutUpRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutUpRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+    opacity: 0; } }
+
+.rotateOutUpRight {
+  -webkit-animation-name: rotateOutUpRight;
+  -moz-animation-name: rotateOutUpRight;
+  -o-animation-name: rotateOutUpRight;
+  animation-name: rotateOutUpRight; }
+
+@-webkit-keyframes rotateOutDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-moz-keyframes rotateOutDownRight {
+  0% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -moz-transform-origin: right bottom;
+    -moz-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@-o-keyframes rotateOutDownRight {
+  0% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    -o-transform-origin: right bottom;
+    -o-transform: rotate(-90deg);
+    opacity: 0; } }
+
+@keyframes rotateOutDownRight {
+  0% {
+    transform-origin: right bottom;
+    transform: rotate(0);
+    opacity: 1; }
+
+  100% {
+    transform-origin: right bottom;
+    transform: rotate(-90deg);
+    opacity: 0; } }
+
+.rotateOutDownRight {
+  -webkit-animation-name: rotateOutDownRight;
+  -moz-animation-name: rotateOutDownRight;
+  -o-animation-name: rotateOutDownRight;
+  animation-name: rotateOutDownRight; }
+
+@-webkit-keyframes hinge {
+  0% {
+    -webkit-transform: rotate(0);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -webkit-transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  40% {
+    -webkit-transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -webkit-transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out; }
+
+  100% {
+    -webkit-transform: translateY(700px);
+    opacity: 0; } }
+
+@-moz-keyframes hinge {
+  0% {
+    -moz-transform: rotate(0);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -moz-transform: rotate(80deg);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  40% {
+    -moz-transform: rotate(60deg);
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  80% {
+    -moz-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -moz-transform-origin: top left;
+    -moz-animation-timing-function: ease-in-out; }
+
+  100% {
+    -moz-transform: translateY(700px);
+    opacity: 0; } }
+
+@-o-keyframes hinge {
+  0% {
+    -o-transform: rotate(0);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    -o-transform: rotate(80deg);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  40% {
+    -o-transform: rotate(60deg);
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  80% {
+    -o-transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    -o-transform-origin: top left;
+    -o-animation-timing-function: ease-in-out; }
+
+  100% {
+    -o-transform: translateY(700px);
+    opacity: 0; } }
+
+@keyframes hinge {
+  0% {
+    transform: rotate(0);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  20%, 60% {
+    transform: rotate(80deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  40% {
+    transform: rotate(60deg);
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  80% {
+    transform: rotate(60deg) translateY(0);
+    opacity: 1;
+    transform-origin: top left;
+    animation-timing-function: ease-in-out; }
+
+  100% {
+    transform: translateY(700px);
+    opacity: 0; } }
+
+.hinge {
+  -webkit-animation-name: hinge;
+  -moz-animation-name: hinge;
+  -o-animation-name: hinge;
+  animation-name: hinge; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg); } }
+
+@-moz-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0px) rotate(0deg); } }
+
+@-o-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0px) rotate(0deg); } }
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-120deg); }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg); } }
+
+.rollIn {
+  -webkit-animation-name: rollIn;
+  -moz-animation-name: rollIn;
+  -o-animation-name: rollIn;
+  animation-name: rollIn; }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg); } }
+
+@-moz-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(100%) rotate(120deg); } }
+
+@-o-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(100%) rotate(120deg); } }
+
+@keyframes rollOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%) rotate(120deg); } }
+
+.rollOut {
+  -webkit-animation-name: rollOut;
+  -moz-animation-name: rollOut;
+  -o-animation-name: rollOut;
+  animation-name: rollOut; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes lightSpeedIn {
+  0% {
+    -moz-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -moz-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -moz-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@-o-keyframes lightSpeedIn {
+  0% {
+    -o-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    -o-transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    -o-transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+@keyframes lightSpeedIn {
+  0% {
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0; }
+
+  60% {
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1; }
+
+  80% {
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1; }
+
+  100% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1; } }
+
+.lightSpeedIn {
+  -webkit-animation-name: lightSpeedIn;
+  -moz-animation-name: lightSpeedIn;
+  -o-animation-name: lightSpeedIn;
+  animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  animation-timing-function: ease-out; }
+
+.animated.lightSpeedIn {
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes lightSpeedOut {
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@-moz-keyframes lightSpeedOut {
+  0% {
+    -moz-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -moz-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@-o-keyframes lightSpeedOut {
+  0% {
+    -o-transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    -o-transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+@keyframes lightSpeedOut {
+  0% {
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1; }
+
+  100% {
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0; } }
+
+.lightSpeedOut {
+  -webkit-animation-name: lightSpeedOut;
+  -moz-animation-name: lightSpeedOut;
+  -o-animation-name: lightSpeedOut;
+  animation-name: lightSpeedOut;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in; }
+
+.animated.lightSpeedOut {
+  -webkit-animation-duration: 0.25s;
+  -moz-animation-duration: 0.25s;
+  -o-animation-duration: 0.25s;
+  animation-duration: 0.25s; }
+
+/* originally authored by Angelo Rohit - https://github.com/angelorohit */
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: skewX(9deg); }
+
+  10% {
+    -webkit-transform: skewX(-8deg); }
+
+  20% {
+    -webkit-transform: skewX(7deg); }
+
+  30% {
+    -webkit-transform: skewX(-6deg); }
+
+  40% {
+    -webkit-transform: skewX(5deg); }
+
+  50% {
+    -webkit-transform: skewX(-4deg); }
+
+  60% {
+    -webkit-transform: skewX(3deg); }
+
+  70% {
+    -webkit-transform: skewX(-2deg); }
+
+  80% {
+    -webkit-transform: skewX(1deg); }
+
+  90% {
+    -webkit-transform: skewX(0deg); }
+
+  100% {
+    -webkit-transform: skewX(0deg); } }
+
+@-moz-keyframes wiggle {
+  0% {
+    -moz-transform: skewX(9deg); }
+
+  10% {
+    -moz-transform: skewX(-8deg); }
+
+  20% {
+    -moz-transform: skewX(7deg); }
+
+  30% {
+    -moz-transform: skewX(-6deg); }
+
+  40% {
+    -moz-transform: skewX(5deg); }
+
+  50% {
+    -moz-transform: skewX(-4deg); }
+
+  60% {
+    -moz-transform: skewX(3deg); }
+
+  70% {
+    -moz-transform: skewX(-2deg); }
+
+  80% {
+    -moz-transform: skewX(1deg); }
+
+  90% {
+    -moz-transform: skewX(0deg); }
+
+  100% {
+    -moz-transform: skewX(0deg); } }
+
+@-o-keyframes wiggle {
+  0% {
+    -o-transform: skewX(9deg); }
+
+  10% {
+    -o-transform: skewX(-8deg); }
+
+  20% {
+    -o-transform: skewX(7deg); }
+
+  30% {
+    -o-transform: skewX(-6deg); }
+
+  40% {
+    -o-transform: skewX(5deg); }
+
+  50% {
+    -o-transform: skewX(-4deg); }
+
+  60% {
+    -o-transform: skewX(3deg); }
+
+  70% {
+    -o-transform: skewX(-2deg); }
+
+  80% {
+    -o-transform: skewX(1deg); }
+
+  90% {
+    -o-transform: skewX(0deg); }
+
+  100% {
+    -o-transform: skewX(0deg); } }
+
+@keyframes wiggle {
+  0% {
+    transform: skewX(9deg); }
+
+  10% {
+    transform: skewX(-8deg); }
+
+  20% {
+    transform: skewX(7deg); }
+
+  30% {
+    transform: skewX(-6deg); }
+
+  40% {
+    transform: skewX(5deg); }
+
+  50% {
+    transform: skewX(-4deg); }
+
+  60% {
+    transform: skewX(3deg); }
+
+  70% {
+    transform: skewX(-2deg); }
+
+  80% {
+    transform: skewX(1deg); }
+
+  90% {
+    transform: skewX(0deg); }
+
+  100% {
+    transform: skewX(0deg); } }
+
+.wiggle {
+  -webkit-animation-name: wiggle;
+  -moz-animation-name: wiggle;
+  -o-animation-name: wiggle;
+  animation-name: wiggle;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -o-animation-timing-function: ease-in;
+  animation-timing-function: ease-in; }
+
+.animated.wiggle {
+  -webkit-animation-duration: 0.75s;
+  -moz-animation-duration: 0.75s;
+  -o-animation-duration: 0.75s;
+  animation-duration: 0.75s; }
+  
+
+    </style>
+
+    <link href="https://ningyu1.github.io/site/css/custom.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="https://ningyu1.github.io/site/css/github-markdown.css" rel="stylesheet" type="text/css">
+
+    <link href='https://ningyu1.github.io/site/css/Slackey.css' rel='stylesheet' type='text/css'>
+    <link href='https://ningyu1.github.io/site/css/Fjallaone.css' rel='stylesheet' type='text/css'>
+    <link href='https://ningyu1.github.io/site/css/Amethysta.css' rel='stylesheet' type='text/css'>
+	<script src="https://ningyu1.github.io/site/js/jquery.min.js"></script>
+    
+
+    <script type="text/javascript" src="https://ningyu1.github.io/site/js/jquery-tapir.js"></script>
+
+    
+
+    <link rel="stylesheet" href="https://ningyu1.github.io/site/css/hljs.css">
+    <script src="https://ningyu1.github.io/site/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?5bb9b9d406e3381971859973a2ca3583";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+</head>
+
+
+<a href="https://github.com/ningyu1"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px; z-index:9999; background-color: rgba(0, 0, 0, 0)!important;" src="https://ningyu1.github.io/site/images/right-graphite@2x.png" alt="Fork me on GitHub"></a>
+
+
+
+
+
+
+
+
+<link href="https://ningyu1.github.io/site/css/music-player.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://ningyu1.github.io/site/js/music-player.js"></script>
+<iframe class="player"  frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="https://music.163.com/outchain/player?type=2&id=1296583188&auto=0&height=66"></iframe>
+
+
+
+<body class="markdown-body">
+    <div id="wrapper">
+        <header id="header" class="inner">
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        凝雨 - Yun
+    </div>
+</h1>
+
+<span class="subtitle">快乐编程每一天 - Happy Coding Every Day</span>
+<br>
+
+
+<ul id="social-links" style="text-align:center; clear:both;">
+	
+    
+    <li>
+    <a href="mailto:ningbe111@163.com" class="email" title="Email"></a>
+    </li>
+    
+    
+    
+    <li>
+    <a href="https://github.com/ningyu1" class="github" title="Github"></a>
+    </li>
+    
+	
+    
+    <li>
+    <a href="https://gitlab.com/ningyu1" class="gitlab" title="Gitlab"></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+    
+	
+    
+    <li>
+    <a href="https://gitee.com/ningyu" class="gitee" title="Gitee码云"></a>
+    </li>
+    
+	<li>
+
+    <a href="https://ningyu1.github.io/atom.xml" class="rss" title="RSS" target="_blank"></a>
+    </li>
+</ul>
+
+
+
+<ul id="nav">
+
+
+
+
+
+    
+    <li id="ajax"><a href="https://ningyu1.github.io/">Home</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/archives/">Archives</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/categories/">Categories</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/tags/">Tags</a></li>
+    <li id="ajax"><a href="https://ningyu1.github.io/about/">About</a></li>
+    <li id="ajax"><a href="https://g2.okk.dog/?path=register&code=qn7nOwdj">科学上网</a></li>
+    
+    <li>
+    <div id="dark">
+        
+        <form action="//www.google.com/search" method="get" accept-charset="UTF-8" id="search">
+
+            <input type="hidden" name="sitesearch" value="https://ningyu1.github.io" />
+            <input type="text" name="q" results="0" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+</ul>
+
+</header>
+
+<div id="toload">
+
+    <div id="content" class="inner">
+        
+
+
+
+
+    
+    <script id="dsq-count-scr" src="//ningyu.disqus.com/count.js" async></script>
+    
+
+
+
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/31-zxing/">条形码处理类库 ZXing</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-09-30T16:56:36.000&#43;00:00' itemprop="datePublished">2017-09-30</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/google">google</a>
+
+<a href="https://ningyu1.github.io/site/tags/zxing">zxing</a>
+
+
+</div>
+    </div>
+        
+
+<h2 id="zxing-详细介绍">ZXing 详细介绍</h2>
+
+<p>ZXing是一个开源Java类库用于解析多种格式的1D/2D条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。</p>
+
+<h2 id="示例代码">示例代码</h2>
+
+<pre><code>import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+* 二维码工具类
+*/
+public class QRCodeUtil {
+  private static final int width = 300;// 默认二维码宽度
+  private static final int height = 300;// 默认二维码高度
+  private static final String format = &quot;png&quot;;// 默认二维码文件格式
+  private static final Map&lt;EncodeHintType, Object&gt; hints = new HashMap();// 二维码参数
+
+  static {
+      hints.put(EncodeHintType.CHARACTER_SET, &quot;utf-8&quot;);// 字符编码
+      hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);// 容错等级 L、M、Q、H 其中 L 为最低, H 为最高
+      hints.put(EncodeHintType.MARGIN, 2);// 二维码与图片边距
+  }
+  /**
+   * 返回一个 BufferedImage 对象
+   * @param content 二维码内容
+   * @param width   宽
+   * @param height  高
+   */
+  public static BufferedImage toBufferedImage(String content, int width, int height) throws WriterException, IOException {
+      BitMatrix bitMatrix = new MultiFormatWriter().encode(content, BarcodeFormat.QR_CODE, width, height, hints);
+      return MatrixToImageWriter.toBufferedImage(bitMatrix);
+  }
+  /**
+   * 将二维码图片输出到一个流中
+   * @param content 二维码内容
+   * @param stream  输出流
+   * @param width   宽
+   * @param height  高
+   */
+  public static void writeToStream(String content, OutputStream stream, int width, int height) throws WriterException, IOException {
+      BitMatrix bitMatrix = new MultiFormatWriter().encode(content, BarcodeFormat.QR_CODE, width, height, hints);
+      MatrixToImageWriter.writeToStream(bitMatrix, format, stream);
+  }
+  /**
+   * 生成二维码图片文件
+   * @param content 二维码内容
+   * @param path    文件保存路径
+   * @param width   宽
+   * @param height  高
+   */
+  public static void createQRCode(String content, String path, int width, int height) throws WriterException, IOException {
+      BitMatrix bitMatrix = new MultiFormatWriter().encode(content, BarcodeFormat.QR_CODE, width, height, hints);
+      //toPath() 方法由 jdk1.7 及以上提供
+      MatrixToImageWriter.writeToPath(bitMatrix, format, new File(path).toPath());
+  }
+}
+</code></pre>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/31-zxing/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/30-npm-nrm/">npm registry太慢？怎么办？使用nrm</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-09-29T14:16:36.000&#43;00:00' itemprop="datePublished">2017-09-29</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/npm">npm</a>
+
+<a href="https://ningyu1.github.io/site/tags/nrm">nrm</a>
+
+
+</div>
+    </div>
+        
+
+<p>转载自：<a href="http://cnodejs.org/topic/5326e78c434e04172c006826">http://cnodejs.org/topic/5326e78c434e04172c006826</a></p>
+
+<p>开发的npm registry 管理工具 <a href="https://github.com/Pana/nrm">nrm</a>,  能够查看和切换当前使用的registry, 最近NPM经常 down 掉, 这个还是很有用的哈哈</p>
+
+<h2 id="install">Install</h2>
+
+<pre><code>$ npm install -g nrm
+</code></pre>
+
+<h2 id="example">Example</h2>
+
+<pre><code>$ nrm ls
+
+* npm ---- https://registry.npmjs.org/
+  cnpm --- http://r.cnpmjs.org/
+  eu ----- http://registry.npmjs.eu/
+  au ----- http://registry.npmjs.org.au/
+  sl ----- http://npm.strongloop.com/
+  nj ----- https://registry.nodejitsu.com/
+</code></pre>
+
+<pre><code>$ nrm use cnpm //switch registry to cnpm
+
+    Registry has been set to: http://r.cnpmjs.org/
+</code></pre>
+
+<h2 id="cmd">cmd</h2>
+
+<pre><code>nrm help // show help
+nrm list // show all registries
+nrm use cnpm // switch to cnpm
+nrm home // go to a registry home page
+</code></pre>
+
+<h2 id="registries">Registries</h2>
+
+<ul>
+<li><a href="https://www.npmjs.org/">npm</a></li>
+<li><a href="http://cnpmjs.org/">cnpm</a></li>
+<li><a href="http://strongloop.com/">strongloop</a></li>
+<li><a href="http://npmjs.eu/">european</a></li>
+<li><a href="http://npmjs.org.au/">australia</a></li>
+<li><a href="https://www.nodejitsu.com/">nodejitsu</a></li>
+</ul>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/30-npm-nrm/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/29-distributed-lock/">分布式锁（Redis实现）使用说明</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-09-27T16:43:36.000&#43;00:00' itemprop="datePublished">2017-09-27</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/redis">Redis</a>
+
+<a href="https://ningyu1.github.io/site/tags/lock">Lock</a>
+
+<a href="https://ningyu1.github.io/site/tags/distributed">Distributed</a>
+
+
+</div>
+    </div>
+        
+
+<h2 id="概述">概述</h2>
+
+<p><a href="https://github.com/ningyu1/distributed-lock/releases"><img src="https://img.shields.io/github/release/ningyu1/distributed-lock.svg?style=social&amp;label=Release" alt="GitHub release" /></a>&nbsp;<a href="https://github.com/ningyu1/distributed-lock/stargazers"><img src="https://img.shields.io/github/stars/ningyu1/distributed-lock.svg?style=social&amp;label=Star" alt="GitHub stars" /></a>&nbsp;<a href="https://github.com/ningyu1/distributed-lock/fork"><img src="https://img.shields.io/github/forks/ningyu1/distributed-lock.svg?style=social&amp;label=Fork" alt="GitHub forks" /></a>&nbsp;<a href="https://github.com/ningyu1/distributed-lock/watchers"><img src="https://img.shields.io/github/watchers/ningyu1/distributed-lock.svg?style=social&amp;label=Watch" alt="GitHub watchers" /></a></p>
+
+<h2 id="项目地址">项目地址</h2>
+
+<p><a href="https://github.com/ningyu1/distributed-lock" title="项目地址">distributed-lock</a></p>
+
+<p><a href="http://www.gnu.org/licenses/gpl-3.0.html"><img src="https://img.shields.io/badge/license-GPLv3-blue.svg" alt="License" /></a></p>
+
+<p>分布式锁，默认是redis实现，可扩展接口增加zk、等其他实现,这个分布式锁采用redis实现，根据CAP理论保证了可用性、分区容错性、和最终一致性。</p>
+
+<h2 id="实现的分布式锁特性">实现的分布式锁特性</h2>
+
+<ol>
+<li>这把锁是非阻塞锁，可以根据超时时间和重试频率来定义重试次数</li>
+<li>这把锁支持失效时间，极端情况下解锁失败，到达时间之后锁会自动删除</li>
+<li>这把锁是非重入锁，一个线程获得锁之后，在释放锁之前，其他线程无法再次获得锁，只能根据获取锁超时时间和重试策略进行多次尝试获取锁。</li>
+<li>因为这把锁是非阻塞的，所以性能很好，支持高并发</li>
+<li>使用方无需手动获取锁和释放锁，锁的控制完全由框架控制操作，避免使用方由于没有释放锁或释放锁失败导致死锁的问题</li>
+</ol>
+
+<h2 id="实现的分布式锁缺点">实现的分布式锁缺点</h2>
+
+<ol>
+<li>通过超时时间来控制锁的失效时间其实并不完美，但是根据性能和CAP理论有做取舍</li>
+<li>这把锁不支持阻塞，因为要达到高的性能阻塞的特性是要牺牲</li>
+</ol>
+
+<h2 id="使用步骤">使用步骤</h2>
+
+<h3 id="maven中引入">Maven中引入</h3>
+
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;cn.tsoft.framework&lt;/groupId&gt;
+    &lt;artifactId&gt;distributed-lock&lt;/artifactId&gt;
+    &lt;version&gt;1.1.0-SNAPSHOT&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<h3 id="spring中引入配置">spring中引入配置</h3>
+
+<pre><code>&lt;import resource=&quot;classpath:spring-lock.xml&quot; /&gt;
+</code></pre>
+
+<h3 id="使用到了redisclient">使用到了RedisClient</h3>
+
+<p>具体可以查看<a href="https://ningyu1.github.io/site/post/22-redis-client/">《RedisCliet使用说明》</a></p>
+
+<pre><code>&lt;aop:aspectj-autoproxy /&gt;
+&lt;context:component-scan base-package=&quot;cn.tsoft.framework&quot; /&gt;
+&lt;context:property-placeholder location=&quot;classpath:redis.properties&quot;/&gt;
+&lt;import resource=&quot;classpath:spring-redis.xml&quot; /&gt;
+</code></pre>
+
+<h3 id="代码中使用">代码中使用</h3>
+
+<pre><code>import cn.tsoft.framework.lock.Lock;
+import  cn.tsoft.framework.lock.LockCallBack;
+import  cn.tsoft.framework.lock.DefaultLockCallBack;
+ 
+@Autowired
+Lock lock;
+
+//方法一
+T t = lock.lock(&quot;Test_key_2&quot;,20,60,new LockCallBack&lt;T&gt;(){
+    public T handleObtainLock(){
+        dosomething();
+    }
+    public T handleNotObtainLock() throws LockCantObtainException{
+        return T;//throw new LockCantObtainException();
+    }
+    public T handleException(LockInsideExecutedException e) throws LockInsideExecutedException{
+        return T;//throw new e;
+    }
+});
+
+//方法二
+T t = lock.lock(&quot;Test_key_2&quot;,LockRetryFrequncy.VERY_QUICK,20,60,new DefaultLockCallBack&lt;T&gt;(T,T){
+    public T handleObtainLock(){
+        dosomething();
+    }
+});
+</code></pre>
+
+<h3 id="锁重试策略说明">锁重试策略说明</h3>
+
+<pre><code>/**
+ * 锁重试获取频率策略
+ * 
+ * @author ningyu
+ *
+ */
+LockRetryFrequncy.VERY_QUICK;  //非常快
+LockRetryFrequncy.QUICK;       //快
+LockRetryFrequncy.NORMAL;      //中
+LockRetryFrequncy.SLOW;        //慢
+LockRetryFrequncy.VERYSLOW;    //很慢
+//例如：
+//以获取锁的超时时间为：1秒来计算
+//VERY_QUICK的重试次数为：100次
+//QUICK的重试次数为：20次
+//NORMAL的重试次数为：10次
+//SLOW的重试次数为：2次
+//QUICK的重试次数为：1次
+//这个重试策略根据自身业务来选择合适的重试策略
+</code></pre>
+
+<h3 id="example">Example</h3>
+
+<h4 id="第一种用法">第一种用法</h4>
+
+<pre><code>//锁名称：Test_key_2
+//获取锁超时时间：20秒
+//锁最大过期时间：60秒
+//内部执行回调，包含（1.获取到锁回调，2.没有获取到锁回调，3.获取到锁内部执行业务代码报错）
+//默认策略：NORMAL
+lock.lock(&quot;Test_key_2&quot;,20,60,new LockCallBack&lt;String&gt;() {
+   @Override
+   public String handleException(LockInsideExecutedException e) throws LockInsideExecutedException {
+       logger.error(&quot;获取到锁，内部执行报错&quot;);
+       return &quot;Exception&quot;;         
+   }
+ 
+   @Override
+   public String handleNotObtainLock() throws LockCantObtainException {
+          logger.error(&quot;没有获取到锁&quot;);
+       return &quot;NotObtainLock&quot;;
+   }
+ 
+   @Override
+   public String handleObtainLock() {
+       logger.info(&quot;获取到锁&quot;);
+       dosomething();
+       return &quot;ok&quot;;
+   }
+);
+</code></pre>
+
+<h4 id="第二种用法">第二种用法</h4>
+
+<pre><code>//锁名称：Test_key_2
+//获取锁超时时间：20秒
+//锁最大过期时间：60秒
+//内部执行回调，使用默认回调实现，只需要实现获取到锁后需要执行的方法，当遇到没有获取锁和获取锁内部执行错误时会返回构造函数中设置的值（支持泛型）
+//默认策略：NORMAL
+lock.lock(&quot;Test_key_2&quot;,20,60,new DefaultLockCallBack&lt;String&gt;(&quot;NotObtainLock&quot;, &quot;Exception&quot;) {
+   @Override
+   public String handleObtainLock() {
+       logger.info(&quot;获取到锁&quot;);
+       dosomething();
+       return &quot;ok&quot;;
+   }
+);
+</code></pre>
+
+<h4 id="第三种用法">第三种用法</h4>
+
+<pre><code>//锁名称：Test_key_2
+//锁重试获取频率：VERY_QUICK 非常快
+//获取锁超时时间：20秒
+//锁最大过期时间：60秒
+//内部执行回调，包含（1.获取到锁回调，2.没有获取到锁回调，3.获取到锁内部执行业务代码报错）
+lock.lock(&quot;Test_key_2&quot;,LockRetryFrequncy.VERY_QUICK,20,60,new LockCallBack&lt;String&gt;() {
+   @Override
+   public String handleException(LockInsideExecutedException e) throws LockInsideExecutedException {
+       logger.error(&quot;获取到锁，内部执行报错&quot;);
+       return &quot;Exception&quot;;         
+   }
+ 
+   @Override
+   public String handleNotObtainLock() throws LockCantObtainException {
+          logger.error(&quot;没有获取到锁&quot;);
+       return &quot;NotObtainLock&quot;;
+   }
+ 
+   @Override
+   public String handleObtainLock() {
+       logger.info(&quot;获取到锁&quot;);
+       dosomething();
+       return &quot;ok&quot;;
+   }
+);
+</code></pre>
+
+<h4 id="第四种用法">第四种用法</h4>
+
+<pre><code>//锁名称：Test_key_2
+//锁重试获取频率：VERY_QUICK 非常快
+//获取锁超时时间：20秒
+//锁最大过期时间：60秒
+//内部执行回调，使用默认回调实现，只需要实现获取到锁后需要执行的方法，当遇到没有获取锁和获取锁内部执行错误时会返回构造函数中设置的值（支持泛型）
+lock.lock(&quot;Test_key_2&quot;,LockRetryFrequncy.VERY_QUICK,20,60,new DefaultLockCallBack&lt;String&gt;(&quot;NotObtainLock&quot;, &quot;Exception&quot;) {
+   @Override
+   public String handleObtainLock() {
+       logger.info(&quot;获取到锁&quot;);
+       dosomething();
+       return &quot;ok&quot;;
+   }
+);
+</code></pre>
+
+<h3 id="注意事项">注意事项</h3>
+
+<ol>
+<li>获取锁的超时时间和重试策略直接影响获取锁重试的次数，根据业务场景来定义适合的重试获取锁的频次，避免线程阻塞。</li>
+<li>场景：
+
+<ol>
+<li>快速响应给客户端的场景，超时时间尽量短，超时时间 &lt; 锁后执行时间，例如：秒杀、抢购</li>
+<li>可以容忍响应速度的场景，锁后执行时间*2 &gt; 超时时间 &gt;=锁后执行时间</li>
+</ol></li>
+<li>根据业务场景来定义锁的最大过期时间，理论上业务执行越慢过期时间越大，因为是并发锁，为了杜绝因为获得锁而没有释放造成的问题</li>
+<li>建议 锁后执行时间*1.5 &gt; 锁超时时间 &gt; 锁后执行时间，避免并发问题</li>
+<li>获取锁后执行的代码块一定是小而快的，就像事务块使用原则一样，禁止重而长的逻辑包在里面造成其他线程获取锁失败率过高，如果逻辑很复杂需要分析那一块需要支持并发就把需要并发的代码包在里面。</li>
+</ol>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/29-distributed-lock/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/28-redis-client-sentinel/">RedisClient升级支持Sentinel使用说明</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-09-25T13:29:36.000&#43;00:00' itemprop="datePublished">2017-09-25</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/redis">Redis</a>
+
+
+</div>
+    </div>
+        
+
+<h2 id="项目地址">项目地址</h2>
+
+<p><a href="https://github.com/ningyu1/redis-client">redis-client</a></p>
+
+<p><a href="https://github.com/ningyu1/redis-client/releases"><img src="https://img.shields.io/github/release/ningyu1/redis-client.svg?style=social&amp;label=Release"></a>&nbsp;<a href="https://github.com/ningyu1/redis-client/stargazers"><img src="https://img.shields.io/github/stars/ningyu1/redis-client.svg?style=social&amp;label=Star"></a>&nbsp;<a href="https://github.com/ningyu1/redis-client/fork"><img src="https://img.shields.io/github/forks/ningyu1/redis-client.svg?style=social&amp;label=Fork"></a>&nbsp;<a href="https://github.com/ningyu1/redis-client/watchers"><img src="https://img.shields.io/github/watchers/ningyu1/redis-client.svg?style=social&amp;label=Watch"></a> <a href="http://www.gnu.org/licenses/gpl-3.0.html"><img src="https://img.shields.io/badge/license-GPLv3-blue.svg"></a></p>
+
+<p>RedisClient操作单点Redis使用文档：<a href="https://ningyu1.github.io/site/post/22-redis-client/">《RedisClient使用》</a>
+以下是支持Sentinel（哨兵）+Redis集群的RedisClient（架构封装的Java访问Redis的客户端程序）高级使用方式</p>
+
+<p>Redis集群方式：Master-Slave（1 - n 为一套集群可以多套）
+Sentinel集群方式：Sentinel（n台，n&gt;=3），投票人数：n-1（参与Master是否宕机以及下一任Master选举的投票人数）</p>
+
+<h2 id="1-maven中引用-目前预览版">1. Maven中引用（目前预览版）</h2>
+
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;cn.tsoft.framework&lt;/groupId&gt;
+  &lt;artifactId&gt;redis-client&lt;/artifactId&gt;
+  &lt;version&gt;1.2.0-SNAPSHOT&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<h2 id="2-配置说明">2. 配置说明</h2>
+
+<p>原始（基础）配置：</p>
+
+<pre><code>redis.pool.maxTotal=1000
+redis.pool.maxIdle=50
+redis.pool.minIdle=10
+redis.pool.testOnBorrow=true
+redis.pool.testOnReturn=true
+redis.ip=192.168.0.65
+redis.port=6379
+redis.timeout=2000
+redis.password=123456
+</code></pre>
+
+<p>sentinel新增配置</p>
+
+<pre><code># sentinel
+redis.mastername=mymaster
+redis.sentinels=127.0.0.1:26379,127.0.0.1:26380,127.0.0.1:26381
+</code></pre>
+
+<p>redis.mastername指的是monitor master的名称
+redis.sentinels指的是哨兵的ip：port集合（ip和port需要替换）</p>
+
+<p>删除配置</p>
+
+<pre><code>#redis.ip=192.168.0.65
+#redis.port=6379
+</code></pre>
+
+<p><strong>ps.由于使用了sentinel自动发现redis服务因此不需要此配置，注释或删除即可</strong></p>
+
+<h2 id="3-spring配置说明">3. spring配置说明</h2>
+
+<p>xml配置跟以前<code>pool</code>的配置方式有所不同，单节点<code>redis</code>的<code>pool</code>配置使用的是：<code>redis.clients.jedis.JedisPoolConfig</code>和<code>redis.clients.jedis.JedisPool</code>
+<code>sentinel</code>的配置替换为：<code>redis.clients.jedis.JedisPoolConfig</code>和<code>cn.tsoft.framework.redis.pool.JedisSentinelPoolFactory</code></p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot;
+    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+    xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd&quot;&gt;
+     
+    &lt;aop:aspectj-autoproxy /&gt;
+    &lt;context:component-scan base-package=&quot;cn.tsoft.framework.redis&quot; /&gt;
+     
+    &lt;bean id=&quot;redisClient&quot; class=&quot;cn.tsoft.framework.redis.client.impl.RedisClientImpl&quot;&gt;
+        &lt;property name=&quot;jedisSentinelPoolFactory&quot; ref=&quot;jedisSentinelPoolFactory&quot; /&gt;
+    &lt;/bean&gt;
+    &lt;bean id=&quot;jedisPoolConfig&quot; class=&quot;redis.clients.jedis.JedisPoolConfig&quot;&gt;
+        &lt;property name=&quot;maxTotal&quot; value=&quot;${redis.pool.maxTotal}&quot; /&gt;
+        &lt;property name=&quot;maxIdle&quot; value=&quot;${redis.pool.maxIdle}&quot; /&gt;
+        &lt;property name=&quot;minIdle&quot; value=&quot;${redis.pool.minIdle}&quot; /&gt;
+        &lt;property name=&quot;testOnBorrow&quot; value=&quot;${redis.pool.testOnBorrow}&quot; /&gt;
+        &lt;property name=&quot;testOnReturn&quot; value=&quot;${redis.pool.testOnReturn}&quot; /&gt;
+    &lt;/bean&gt;
+     
+    &lt;bean id=&quot;jedisSentinelPoolFactory&quot; class=&quot;cn.tsoft.framework.redis.pool.JedisSentinelPoolFactory&quot;&gt;
+        &lt;property name=&quot;poolConfig&quot; ref=&quot;jedisPoolConfig&quot; /&gt;
+        &lt;property name=&quot;masterName&quot; value=&quot;${redis.mastername}&quot; /&gt;
+        &lt;property name=&quot;sentinels&quot; value=&quot;${redis.sentinels}&quot; /&gt;
+        &lt;property name=&quot;timeout&quot; value=&quot;${redis.timeout}&quot; /&gt;
+        &lt;property name=&quot;password&quot; value=&quot;${redis.password}&quot; /&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre>
+
+<p><strong>ps.以上配置在redis-client-1.2.0-SNAPSHOT.jar包的spring-redis-sentinel.xml文件中</strong></p>
+
+<h2 id="4-项目中引用">4. 项目中引用</h2>
+
+<pre><code>&lt;!-- redis.properties加载方式采用UCM的统一配置加载，具体可以查看global中的配置，如需要替换global的配置只需要在项目自定义配置中配置相同的key来进行属性覆盖  --&gt;
+&lt;context:component-scan base-package=&quot;cn.tsoft.framework.redis&quot; /&gt;
+&lt;import resource=&quot;classpath:spring-redis-sentinel.xml&quot; /&gt;
+</code></pre>
+
+<p><strong>ps.替换掉以前的：<code>&lt;import resource=&quot;classpath:spring-redis.xml&quot; /&gt;</code></strong></p>
+
+<h2 id="5-注意事项">5. 注意事项</h2>
+
+<p>5.1. <code>pool</code>使用只允许使用一种，要么使用<code>jedis pool</code>要么使用<code>jedis sentinel pool</code>，两者不允许共存，<code>redisclient</code>启动会检测<code>pool</code>的设置是否合法，不合法会throw出异常，可能遇见的异常如下：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">异常</th>
+<th align="left">描述</th>
+<th align="left">解决办法</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">RedisClientException(&ldquo;There can only be one pool! Will not work.&rdquo;)</td>
+<td align="left">只能存在一个pool的设置</td>
+<td align="left">检查xml配置，确定使用的pool，只允许保留一个pool设置，直接引用redis-client.jar中的（spring-redis.xml、spring-redis-sentinel.xml）可以解决这个问题</td>
+</tr>
+
+<tr>
+<td align="left">RedisClientException(&ldquo;No connection pool found! Will not work.&rdquo;)</td>
+<td align="left">没有找到pool的设置</td>
+<td align="left">检查xml配置，是否有pool的设置，直接引用redis-client.jar中的（spring-redis.xml、spring-redis-sentinel.xml）可以解决这个问题</td>
+</tr>
+</tbody>
+</table>
+
+<p>5.2. API使用起来跟以前没有任何变化，只是配置发生了变化</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/28-redis-client-sentinel/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/27-webpack2/">Webpack 打包优化之速度篇</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-09-20T11:57:36.000&#43;00:00' itemprop="datePublished">2017-09-20</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/webpack">Webpack</a>
+
+<a href="https://ningyu1.github.io/site/tags/vue">Vue</a>
+
+<a href="https://ningyu1.github.io/site/tags/react">React</a>
+
+<a href="https://ningyu1.github.io/site/tags/angular">Angular</a>
+
+
+</div>
+    </div>
+        
+
+<p>文章来源：<a href="https://jeffjade.com/2017/08/12/125-webpack-package-optimization-for-speed/">https://jeffjade.com/2017/08/12/125-webpack-package-optimization-for-speed/</a>
+作者：@晚晴幽草轩轩主</p>
+
+<p>在前文 <a href="https://ningyu1.github.io/site/post/26-webpack1/">Webpack 打包优化之体积</a>篇中，对如何减小 <code>Webpack</code> 打包体积，做了些探讨；当然，那些法子对于打包速度的提升，也是大有裨益。然而，打包速度之于<strong>开发体验</strong>和<strong>及时构建</strong>，相当重要；所以有必要对其做更为深入的研究，以便完善工作流，这就是本文存在的缘由。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/webpack/1.png" alt="Webpack Package optimization" /></p>
+
+<p><center><em>Webpack Package optimization</em></center></p>
+
+<h2 id="减小文件搜索范围">减小文件搜索范围</h2>
+
+<p>在使用实际项目开发中，为了提升开发效率，很明显你会使用很多成熟第三方库；即便自己写的代码，模块间相互引用，为了方便也会使用相对路劲，或者别名(<code>alias</code>)；这中间如果能使得 <code>Webpack</code> 更快寻找到目标，将对打包速度产生很是积极的影响。于此，我们需要做的即：减小文件搜索范围，从而提升速度；实现这一点，可以有如下两法：</p>
+
+<h3 id="配置-resolve-modules">配置 resolve.modules</h3>
+
+<p><code>Webpack</code>的<code>resolve.modules</code>配置模块库（即 node_modules）所在的位置，在 js 里出现 <code>import 'vue'</code> 这样不是相对、也不是绝对路径的写法时，会去 <code>node_modules</code> 目录下找。但是默认的配置，会采用向上递归搜索的方式去寻找，但通常项目目录里只有一个 <code>node_modules</code>，且是在项目根目录，为了减少搜索范围，可以直接写明 <code>node_modules</code> 的全路径；同样，对于别名(<code>alias</code>)的配置，亦当如此：</p>
+
+<pre><code>function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
+module.exports = {
+  resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    modules: [
+      resolve('src'),
+      resolve('node_modules')
+    ],
+    alias: {
+      'vue$': 'vue/dist/vue.common.js',
+      'src': resolve('src'),
+      'assets': resolve('src/assets'),
+      'components': resolve('src/components'),
+      // ...
+      'store': resolve('src/store')
+    }
+  },
+  ...
+}
+</code></pre>
+
+<p>需要额外补充一点的是，这是 Webpack2.* 以上的写法。在 1.* 版本中，使用的是 <code>resolve.root</code>，如今已经被弃用为 <code>resolve.modules</code>；同时被弃用的还有<code>resolve.fallback</code>、<code>resolve.modulesDirectories</code>。</p>
+
+<h3 id="设置-test-include-exclude">设置 test &amp; include &amp; exclude</h3>
+
+<p><code>Webpack</code> 的装载机(loaders)，允许每个子项都可以有以下属性：</p>
+
+<pre><code>test：必须满足的条件（正则表达式，不要加引号，匹配要处理的文件）
+exclude：不能满足的条件（排除不处理的目录）
+include：导入的文件将由加载程序转换的路径或文件数组（把要处理的目录包括进来）
+loader：一串“！”分隔的装载机（2.0版本以上，”-loader”不可以省略）
+loaders：作为字符串的装载器阵列
+</code></pre>
+
+<p>对于<code>include</code>，更精确指定要处理的目录，这可以减少不必要的遍历，从而减少性能损失。同样，对于已经明确知道的，不需要处理的目录，则应该予以排除，从而进一步提升性能。假设你有一个第三方组件的引用，它肯定位于<code>node_modules</code>，通常它将有一个 <code>src</code> 和一个 <code>dist</code> 目录。如果配置 <code>Webpack</code> 来排除 <code>node_modules</code>，那么它将从 <code>dist</code> 已经编译的目录中获取文件。否则会再次编译它们。故而，合理的设置 <code>include</code> &amp; <code>exclude</code>，将会极大地提升 <code>Webpack</code> 打包优化速度，比如像这样：</p>
+
+<pre><code>module: {
+  preLoaders: [
+    {
+      test: /\.js$/,
+      loader: 'eslint',
+      include: [resolve('src')],
+      exclude: /node_modules/
+    },
+    {
+      test: /\.svg$/,
+      loader: 'svgo?' + JSON.stringify(svgoConfig)，
+      include: [resolve('src/assets/icons')],
+      exclude: /node_modules/
+    }
+  ],
+  loaders: [
+    {
+      test: /\.vue$/,
+      loader: 'vue-loader',
+      include: [resolve('src')],
+      exclude: /node_modules\/(?!(autotrack|dom-utils))|vendor\.dll\.js/
+    },
+    {
+      test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      loader: 'url',
+      exclude: /assets\/icons/,
+      query: {
+        limit: 10000,
+        name: utils.assetsPath('img/[name].[hash:7].[ext]')
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h2 id="增强代码代码压缩工具">增强代码代码压缩工具</h2>
+
+<p><code>Webpack</code> 默认提供的 <code>UglifyJS</code> 插件，由于采用单线程压缩，速度颇慢 ；推荐采用 <code>webpack-parallel-uglify-plugin</code> 插件，她可以并行运行 <code>UglifyJS</code> 插件，更加充分而合理的使用 <code>CPU</code> 资源，这可以大大减少的构建时间；当然，该插件应用于生产环境而非开发环境，其做法如下，</p>
+
+<pre><code>new webpack.optimize.UglifyJsPlugin({
+  compress: {
+    warnings: false
+  },
+  sourceMap: true
+})
+</code></pre>
+
+<p>替换如上自带的 <code>UglifyJsPlugin</code> 写法为如下配置即可：</p>
+
+<pre><code>var ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+new ParallelUglifyPlugin({
+  cacheDir: '.cache/',
+  uglifyJS:{
+    output: {
+      comments: false
+    },
+    compress: {
+      warnings: false
+    }
+  }
+})
+</code></pre>
+
+<p>当然也有其他同类型的插件，比如：<a href="https://www.npmjs.com/package/webpack-uglify-parallel">webpack-uglify-parallel</a>，但根据自己实践效果来看，并没有 <code>webpack-parallel-uglify-plugin</code> 表现的那么卓越，有兴趣的朋友，可以更全面的做下对比，择优选用。需要额外说明的是，<code>webpack-parallel-uglify-plugin</code> 插件的运用，会相对 <code>UglifyJsPlugin</code> 打出的包，看起来略大那么一丢丢(其实可以忽略不计)；如果在你使用时也是如此，那么在打包速度跟包体积之间，你应该有自己的抉择。</p>
+
+<h2 id="用-happypack-来加速代码构建">用 Happypack 来加速代码构建</h2>
+
+<p>你知道，<code>Webpack</code> 中为了方便各种资源和类型的加载，设计了以 <code>loader</code> 加载器的形式读取资源，但是受限于 <code>nodejs</code> 的编程模型影响，所有的 <code>loader</code> 虽然以 <code>async</code> 的形式来并发调用，但是还是运行在单个 <code>node</code> 的进程，以及在同一个事件循环中，这就直接导致了些问题：当同时读取多个<code>loader</code>文件资源时，比如<code>babel-loader</code>需要 <code>transform</code> 各种<code>jsx</code>，<code>es6</code>的资源文件。在这种同步计算同时需要大量耗费 <code>cpu</code> 运算的过程中，<code>node</code>的单进程模型就无优势了，而 <code>Happypack</code> 就是针对解决此类问题而生的存在。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/webpack/3.png" alt="Webpack-Happypack" /></p>
+
+<p><center><em>Webpack-Happypack</em></center></p>
+
+<p><code>Happypack</code> 的处理思路是：将原有的 <code>webpack</code> 对 <code>loader</code> 的执行过程，从单一进程的形式扩展多进程模式，从而加速代码构建；原本的流程保持不变，这样可以在不修改原有配置的基础上，来完成对编译过程的优化，具体配置如下：</p>
+
+<pre><code>var HappyPack = require('happypack');
+var happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
+module: {
+  loaders: [
+    {
+      test: /\.js[x]?$/,
+      include: [resolve('src')],
+      exclude: /node_modules/,
+      loader: 'happypack/loader?id=happybabel'
+    }
+  ]
+},
+plugins: [
+  new HappyPack({
+    id: 'happybabel',
+    loaders: ['babel-loader'],
+    threadPool: happyThreadPool,
+    cache: true,
+    verbose: true
+  })
+]
+</code></pre>
+
+<p>可以研究看到，通过在 <code>loader</code> 中配置直接指向 <code>happypack</code> 提供的 <code>loader</code>，对于文件实际匹配的处理 loader，则是通过配置在 plugin 属性来传递说明，这里 <code>happypack</code> 提供的 <code>loader</code> 与 <code>plugin</code> 的衔接匹配，则是通过<code>id=happybabel</code>来完成。配置完成后，<code>laoder</code>的工作模式就转变成了如下所示：</p>
+
+<p><img src="https://ningyu1.github.io/site/img/webpack/4.png" alt="Webpack-Happypack" /></p>
+
+<p><center><em>Webpack-Happypack</em></center></p>
+
+<p><code>Happypack</code> 在编译过程中，除了利用多进程的模式加速编译，还同时开启了 <code>cache</code> 计算，能充分利用缓存读取构建文件，对构建的速度提升也是非常明显的；更多关于 <code>happyoack</code> 个中原理，可参见 @淘宝前端团队(FED) 的这篇：<a href="https://taobaofed.org/blog/2016/12/08/happypack-source-code-analysis/">happypack 原理解析</a>。如果你使用的 <code>Vue.js</code> 框架来开发，也可参考 <a href="https://github.com/nicejade/vue-boilerplate-template/blob/master/build/webpack.base.conf.js">vue-webpack-happypack</a> 相关配置。</p>
+
+<h2 id="设置-babel-的-cachedirectory-为true">设置 babel 的 cacheDirectory 为true</h2>
+
+<p><a href="https://github.com/babel/babel-loader">babel-loader</a> is slow! 所以不仅要使用<code>exclude</code>、<code>include</code>，尽可能准确的指定要转化内容的范畴，而且要充分利用缓存，进一步提升性能。<code>babel-loader</code> 提供了 <code>cacheDirectory</code>特定选项（默认 <code>false</code>）：设置时，给定的目录将用于缓存加载器的结果。
+未来的 <code>Webpack</code> 构建将尝试从缓存中读取，以避免在每次运行时运行潜在昂贵的 Babel 重新编译过程。如果值为空（<code>loader: ‘babel-loader?cacheDirectory’</code>）或<code>true（loader: babel-loader?cacheDirectory=true</code>），<code>node_modules/.cache/babel-loader</code> 则 <code>node_modules</code> 在任何根目录中找不到任何文件夹时，加载程序将使用默认缓存目录或回退到默认的OS临时文件目录。实际使用中，效果显著；配置示例如下：</p>
+
+<pre><code>rules: [
+  {
+    test: /\.js$/,
+    loader: 'babel-loader?cacheDirectory=true',
+    exclude: /node_modules/,
+    include: [resolve('src'), resolve('test')]
+  },
+  ... ...
+]
+</code></pre>
+
+<h2 id="设置-noparse-https-webpack-github-io-docs-configuration-html-module-noparse">设置 <a href="https://webpack.github.io/docs/configuration.html#module-noparse">noParse</a></h2>
+
+<p>如果你确定一个模块中，没有其它新的依赖，就可以配置这项， <code>Webpack</code> 将不再扫描这个文件中的依赖，这对于比较大型类库，将能促进性能表现，具体可以参见以下配置：</p>
+
+<pre><code>module: {
+  noParse: /node_modules\/(element-ui\.js)/,
+  rules: [
+    {
+      ...
+    }
+}
+</code></pre>
+
+<h2 id="拷贝静态文件">拷贝静态文件</h2>
+
+<p>在前文 <a href="https://ningyu1.github.io/site/post/26-webpack1/">Webpack 打包优化之体积</a>篇中提到，引入 <code>DllPlugin</code> 和 <code>DllReferencePlugin</code> 来提前构建一些第三方库，来优化 <code>Webpack</code> 打包。而在生产环境时，就需要将提前构建好的包，同步到 <code>dist</code> 中；这里拷贝静态文件，你可以使用 <code>copy-webpack-plugin</code> 插件：把指定文件夹下的文件复制到指定的目录；其配置如下：</p>
+
+<pre><code>var CopyWebpackPlugin = require('copy-webpack-plugin')
+plugins: [
+  ...
+  // copy custom static assets
+  new CopyWebpackPlugin([
+    {
+      from: path.resolve(__dirname, '../static'),
+      to: config.build.assetsSubDirectory,
+      ignore: ['.*']
+    }
+  ])
+]
+</code></pre>
+
+<p>当然，这种工作，实现的法子很多，比如可以借助 <code>shelljs</code>，可以参见这里的实现 <a href="https://github.com/nicejade/vue-boilerplate-template/blob/master/build/build.js#L17-L22">vue-boilerplate-template</a>。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/27-webpack2/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/26-webpack1/">Webpack 打包优化之体积篇</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-09-20T10:36:36.000&#43;00:00' itemprop="datePublished">2017-09-20</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/webpack">Webpack</a>
+
+<a href="https://ningyu1.github.io/site/tags/vue">Vue</a>
+
+<a href="https://ningyu1.github.io/site/tags/react">React</a>
+
+<a href="https://ningyu1.github.io/site/tags/angular">Angular</a>
+
+
+</div>
+    </div>
+        
+
+<p>文章来源：<a href="https://jeffjade.com/2017/08/06/124-webpack-packge-optimization-for-volume/">https://jeffjade.com/2017/08/06/124-webpack-packge-optimization-for-volume/</a>
+作者：@晚晴幽草轩轩主</p>
+
+<p>谈及如今欣欣向荣的前端圈，不仅有各类框架百花齐放，如<code>Vue</code>， <code>React</code>， <code>Angular</code>等等，就打包工具而言，发展也是如火如荼，百家争鸣；从早期的王者<code>Browserify</code>, <code>Grun</code>t，到后来赢得宝座的 <code>Gulp</code>， 以及独树一帜的 <code>fis3</code>, 以及下一代打包神器 <code>Rollup</code> ；在 <code>browserify</code>,<code>grunt</code>,<code>gulp</code>,<code>rollup</code>,<code>webpack</code> 可以一窥其中部分对比。在本文要探究的是，当前打包工具绝对霸者 <code>Webpack</code>。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/webpack/1.png" alt="Webpack Package optimization" /></p>
+
+<p><center><em>Webpack Package optimization</em></center></p>
+
+<p><code>Webpack</code>，当前各大主流框架默认配备的打包方案，对其如何使用，已有较完备中英文文档；并且，各主流框架也有对应 <code>CLI</code> 予以基础配置，故不作为探讨范畴。从产品层来讲，如何使得构建的包体积小、运行快，这有必要不断摸索实践，提炼升级，使之臻于最佳。本文将从以下些许方面，对 <code>Webpack</code> 打包体积方面，做下优化探讨(备注： <code>Webpack</code>实践版本： 3.3.0)：</p>
+
+<h2 id="定位-webpack-大的原因">定位 webpack 大的原因</h2>
+
+<p>这里推荐使用 <a href="https://www.npmjs.com/package/webpack-bundle-analyzer">webpack-bundle-analyzer</a> —— Webpack 插件和 CLI 实用程序，她可以将内容束展示为方便交互的直观树状图，让你明白你所构建包中真正引入的内容；我们可以借助她，发现它大体有哪些模块组成，找到不合时宜的存在，然后优化它。我们可以在 项目的 package.json 文件中注入如下命令，以方便运行她(<code>npm run analyz</code>)，默认会打开 <a href="http://127.0.0.1:8888">http://127.0.0.1:8888</a> 作为展示。</p>
+
+<pre><code>“analyz”: “NODE_ENV=production npm_config_report=true npm run build”
+</code></pre>
+
+<p><img src="https://ningyu1.github.io/site/img/webpack/2.gif" alt="webpack-bundle-analyzer" /></p>
+
+<p><center><em>webpack-bundle-analyzer</em></center></p>
+
+<p>当然，同类型的还有 <a href="http://alexkuz.github.io/webpack-chart/">webpack-chart</a> 以及 <a href="http://webpack.github.io/analyse/">webpack-analyse</a>，这两个站点也是以可视方式呈现构造的组件，可以让你清楚的看到模块的组成部分；不过稍显麻烦的是，你需要运行以下命令，生成工具分析所需要的 json 文件：</p>
+
+<pre><code>webpack --profile --json &gt; stats.json
+// 如果，运行指定的 weboack 文件，可用此命令
+webpack --config build/webpack.prod.conf.js  --profile --json &gt; stats.json
+</code></pre>
+
+<h2 id="引入-dllplugin-和-dllreferenceplugin">引入 DllPlugin 和 DllReferencePlugin</h2>
+
+<p>DllPlugin 和 DllReferencePlugin 提供了以大幅度提高构建时间性能的方式拆分软件包的方法。其中原理是，将特定的第三方NPM包模块提前构建👌，然后通过页面引入。这不仅能够使得 vendor 文件可以大幅度减小，同时，也极大的提高了构件速度。鉴于篇幅，具体用法可参见：<code>webpack.dll.conf.js</code>。</p>
+
+<h2 id="外部引入模块-cdn">外部引入模块(CDN)</h2>
+
+<p>如今前端开发，自然是使用<code>ES6</code>甚至更高版本，撸将起来才更嗨。但由于浏览器兼容问题，仍得使用 babel 转换。而这 <code>babel-polyfill</code> 也得引入以确保兼容；还比如项目开发中常用到的 <code>moment</code>, <code>lodash</code>等，都是挺大的存在，如果必须引入的话，即考虑外部引入之，再借助 <code>externals</code> 予以指定， <code>webpack</code>可以处理使之不参与打包，而依旧可以在代码中通过<code>CMD</code>、<code>AMD</code>或者<code>window</code>/<code>global</code>全局的方式访问。</p>
+
+<pre><code>// webpack 中予以指定
+externals: {
+  // 'vue': 'Vue',
+  // 'lodash': '_',
+  'babel-polyfill': 'window'
+}
+//
+&lt;script src=&quot;//cdn.bootcss.com/autotrack/2.4.1/autotrack.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//cdn.bootcss.com/babel-polyfill/7.0.0-alpha.15/polyfill.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>需要补充的是 <code>externals</code> 中：key 是 require 的包名，value 是全局的变量。</p>
+
+<h2 id="让每个第三包-引有所值">让每个第三包“引有所值”</h2>
+
+<h3 id="确定引入的必要性">确定引入的必要性</h3>
+
+<p>前端发展到如今时期，倘若项目采用了 <code>MVVM</code>模式框架，数据双向绑定，那么像 <code>jQuery</code> 这般类库，不能说没有丝毫引入的必要，至少可以说确实没有引入的必要。对此，如果还有些顾虑，完全可以参考下 <a href="http://youmightnotneedjquery.com/">YOU MIGHT NOT NEED JQUERY</a>；用原生写几行代码就可以解决的事儿，实在不易引入这么个庞然大物，平添烦恼。</p>
+
+<h3 id="避免类库引而不用">避免类库引而不用</h3>
+
+<p>倘若这类情况发生，对整个打包体积，不仅大而且亏。项目一旦大了，很难人为保证每个引入的类库，都被有用到，尤其是二次开发。所以工具的利用十分必要，强烈推荐类如 <code>Eslint</code> 这般工具，并且注入对应规则，对声明却未使用的代码，给予强制提醒；这不仅可以有效的规避类似情形发生(也适用于普通变量的检测)，而且还能使得团队代码风格，尽可能地保持相似；要知道代码足够遵守规则，也可让压缩工具更有效压缩代码，一举多得，何乐不为？</p>
+
+<h3 id="尽量使用模块化引入">尽量使用模块化引入</h3>
+
+<p>如果说 <code>jQuery</code> 确实没有引入必要，很多人会同意；但对于 <code>lodash</code> 这类依赖的工具，并不是所有人都会去造一发轮子的。然而全包引入 400kb 的体量，可否有让你心肝一颤？幸好的是，<code>lodash</code> 提供了模块化的引入方式；可按需引入，快哉快哉：</p>
+
+<pre><code>import { debounce } from 'lodash'
+import { throttle } from 'lodash'
+// 改成如下写法
+import debounce from 'lodash/debounce'
+import throttle from 'lodash/throttle'
+</code></pre>
+
+<p>擅懒如你的优秀程序员，是否也发现这样写颇为麻烦？那么恭喜你，这个问题已经被解决；<a href="https://github.com/lodash/lodash-webpack-plugin">lodash-webpack-plugin</a> 和 <a href="https://www.npmjs.com/package/babel-plugin-lodash">babel-plugin-lodash</a> 的存在（组合使用），即是解决这问题的。它可将全路径引用的 <code>lodash</code>， 自动转变为模块化按使用引入（如下例示）；并且所需配置也十分简单，就不在此赘述(温馨提示：当涉及些特殊方法时，尚需些留意)。</p>
+
+<pre><code>// 引入组件，自动转换
+import _ from 'lodash'
+_.debounce()
+_.throttle()
+</code></pre>
+
+<p>额外补充的是，即便采用如上写法，还是不够快捷，每个用到的文件，都写一遍 <code>import</code>，实在多有不便。更可取的是，将项目所需的方法，统一引入，按需添加，组建出本地 <code>lodash</code> 类库，然后 <code>export</code> 给框架层（比如 <code>Vue.prototype</code>），以便全局使用；详情可参见：<a href="https://github.com/nicejade/vue-boilerplate-template">vue-modular-import-lodash</a>。</p>
+
+<pre><code>// helper 文件夹下 lodash，统一引入你需要的方法
+import _ from 'lodash'
+export default {
+  cloneDeep: _.cloneDeep,
+  debounce: _.debounce,
+  throttle: _.throttle,
+  size: _.size,
+  pick: _.pick,
+  isEmpty: _.isEmpty
+}
+// 注入到全局
+import _ from '@helper/lodash.js'
+Vue.prototype.$_ = _
+// vue 组件内运用
+this.$_.debounce()
+</code></pre>
+
+<h3 id="尽可能引入更合适的包">尽可能引入更合适的包</h3>
+
+<p>作为前端开发的你，想必知道有 <a href="https://github.com/moment/moment">momentjs</a> 的存在（Parse, validate, manipulate, and display dates in javascript.）；更多的是，你想必知道它很好用，然而它的体态却十分丰满(丰盈)，没念及此，是否有重新造轮子的冲动？<a href="https://github.com/smallwins/spacetime">SpaceTime</a>: A lightweight way to manipulate, traverse, compare, and format dates and times across planet Earth。 具有与 <code>monent</code> 相似 api 的新类库，其体积又相对小很多（当然，据观察其灵活度略逊一筹）；<a href="https://github.com/date-fns/date-fns">date-fns</a>：现代JavaScript日期实用程序库（ Modern JavaScript date utility library ），如 <code>lodash</code> 一样，可支持模块化；知道这些或者更多的你，会如何选择？</p>
+
+<h2 id="按需异步加载模块">按需异步加载模块</h2>
+
+<p>关于前端开发优化，重要的一条是，尽可能合并请求及资源，如常用的请求数据合并，压缩合并 <code>js</code>，构造雪碧图诸此等等（当然得适当，注意体积，过大不宜）；但，同时也当因需制宜，根据需要去异步加载，避免无端就引入早成的浪费。<code>webpack</code> 也是内置对这方面的支持； 假如，你使用的是 <code>Vue</code>，将一个组件（以及其所有依赖）改为异步加载，所需要的只是把：</p>
+
+<pre><code>import Foo from './Foo.vue'
+</code></pre>
+
+<p>改为如下写法:</p>
+
+<pre><code>const Foo = () =&gt; import('./Foo.vue')
+</code></pre>
+
+<p>如此分割之时，该组件所依赖的其他组件或其他模块，都会自动被分割进对应的 <code>chunk</code> 里，实现异步加载，当然也支持把组件按组分块，将同组中组件，打包在同个异步 <code>chunk</code> 中。如此能够非常有效的抑制 <code>Javascript</code> 包过大，同时也使得资源的利用更加合理化。</p>
+
+<h2 id="生产环境-压缩混淆并移除console">生产环境，压缩混淆并移除console</h2>
+
+<p>现代化中等规模以上的开发中，区分<code>开发环境</code>、<code>测试环境</code>和<code>生产环境</code>，并根据需要予以区别对待，已然成为行业共识；可能的话，还会有预发布环境。对待生产环境，压缩混淆可以很有效的减小包的体积；同时，如果能够移除使用比较频繁的 <code>console</code>，而不是简单的替换为空方法，也是精彩的一笔小优化。如果使用 <code>UglifyJsPlugin</code> 插件来压缩代码，加入如下配置，即可移除掉代码中的 <code>console</code>：</p>
+
+<pre><code>new webpack.optimize.UglifyJsPlugin({
+  compress: {
+    warnings: false,
+    drop_console: true,
+    pure_funcs: ['console.log']
+  },
+  sourceMap: false
+})
+</code></pre>
+
+<h2 id="webpack3-新功能-scope-hoisting">Webpack3 新功能: Scope Hoisting</h2>
+
+<p>截止目前(17-08-06), Webpack 最新版本是 3.4.1；Webpack在 3.0 版本，提供了一个新的功能：<code>Scope Hoisting</code>，又译作“作用域提升”。只需在配置文件中添加一个新的插件，就可以让 Webpack 打包出来的代码文件更小、运行的更快：</p>
+
+<pre><code>module.exports = {
+  plugins: [
+    new webpack.optimize.ModuleConcatenationPlugin()
+  ]
+}
+</code></pre>
+
+<p>据悉这个 <code>Scope Hoisting</code> 与 <code>Tree Shaking</code>，最初都是由 <code>Rollup</code> 实现的。在个人中实践中，这个功能的注入，对打包体积虽有影响，却不甚明显，有兴趣的盆友可以试下；更对关于此功能讯息，可参见 <code>Webpack 3</code> 的新功能：<code>Scope Hoisting</code>。</p>
+
+<p>下一篇 《<a href="https://ningyu1.github.io/site/post/27-webpack2/">Webpack 打包优化之速度篇</a>》</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/26-webpack1/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/25-licence/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-09-19T13:36:36.000&#43;00:00' itemprop="datePublished">2017-09-19</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/licence">Licence</a>
+
+<a href="https://ningyu1.github.io/site/tags/gpl">GPL</a>
+
+<a href="https://ningyu1.github.io/site/tags/lgpl">LGPL</a>
+
+<a href="https://ningyu1.github.io/site/tags/bsd">BSD</a>
+
+<a href="https://ningyu1.github.io/site/tags/mit">MIT</a>
+
+<a href="https://ningyu1.github.io/site/tags/apache">Apache</a>
+
+
+</div>
+    </div>
+        
+
+<h2 id="什么是许可协议">什么是许可协议？</h2>
+
+<p>什么是许可，当你为你的产品签发许可，你是在出让自己的权利，不过，你仍然拥有版权和专利（如果申请了的话），许可的目的是，向使用你产品的人提供 一定的权限。</p>
+
+<p>不管产品是免费向公众分发，还是出售，制定一份许可协议非常有用，否则，对于前者，你相当于放弃了自己所有的权利，任何人都没有义务表明你的原始作 者身份，对于后者，你将不得不花费比开发更多的精力用来逐个处理用户的授权问题。</p>
+
+<p>而<a href="http://en.wikipedia.org/wiki/Open-source_license">开源许可协议</a>使这些事情变得简单，开发者很容易向一个项目贡献自己的代码，它还可以保护你原始作者的身份，使你 至少获得认可，开源许可协议还可以阻止其它人将某个产品据为己有。以下是开源界的 5 大许可协议。</p>
+
+<h2 id="gnu-gpl">GNU GPL</h2>
+
+<p><a href="http://www.opensource.org/licenses/gpl-2.0.php">GNU General Public Licence</a> (GPL) 有可能是开源界最常用的许可模式。GPL 保证了所有开发者的权利，同时为使用者提供了足够的复制，分发，修改的权利：</p>
+
+<ul>
+<li>可自由复制
+你可以将软件复制到你的电脑，你客户的电脑，或者任何地方。复制份数没有任何限制。</li>
+<li>可自由分发
+在你的网站提供下载，拷贝到U盘送人，或者将源代码打印出来从窗户扔出去（环保起见，请别这样做）。</li>
+<li>可以用来盈利
+你可以在分发软件的时候收费，但你必须在收费前向你的客户提供该软件的 GNU GPL 许可协议，以便让他们知道，他们可以从别的渠道免费得到这份软件，以及你收费的理由。</li>
+<li>可自由修改
+如果你想添加或删除某个功能，没问题，如果你想在别的项目中使用部分代码，也没问题，唯一的要求是，使用了这段代码的项目也必须使用 GPL 协议。</li>
+</ul>
+
+<p>需要注意的是，分发的时候，需要明确提供源代码和二进制文件，另外，用于某些程序的某些协议有一些问题和限制，你可以看一下 <a href="http://www.twitter.com/PierreJoye">@PierreJoye</a> 写的 <a href="http://www.softwarefreedom.org/resources/2008/compliance-guide.html">Practical Guide to GPL Compliance</a> 一文。使用 GPL 协议，你必须在源代码代码中包含相应信息，以及协议本身。</p>
+
+<h2 id="gnu-lgpl">GNU LGPL</h2>
+
+<p>GNU 还有另外一种协议，叫做 LGPL （<a href="http://www.opensource.org/licenses/lgpl-2.1.php">Lesser General Public Licence</a>），它对产品所保留的权利比 GPL 少，总的来说，LGPL 适合那些用于非 GPL 或非开源产品的开源类库或框架。因为 GPL 要求，使用了 GPL 代码的产品必须也使用 GPL 协议，开发者不允许将 GPL 代码用于商业产品。LGPL 绕过了这一限制。</p>
+
+<h2 id="bsd">BSD</h2>
+
+<p>BSD 在软件分发方面的限制比别的开源协议（如 GNU GPL）要少。该协议有多种版本，最主要的版本有两个，新 BSD 协议与简单 BSD 协议，这两种协议经过修正，都和 GPL 兼容，并为开源组织所认可。</p>
+
+<p>新 BSD 协议（3条款协议）在软件分发方面，除需要包含一份版权提示和免责声明之外，没有任何限制。另外，该协议还禁止拿开发者的名义为衍生产品背书，但简单 BSD 协议删除了这一条款。</p>
+
+<h2 id="mit">MIT</h2>
+
+<p><a href="http://www.opensource.org/licenses/mit-license.php">MIT 协议</a>可能是几大开源协议中最宽松的一个，核心条款是：</p>
+
+<p>该软件及其相关文档对所有人免费，可以任意处置，包括使用，复制，修改，合并，发表，分发，再授权，或者销售。唯一的限制是，软件中必须包含上述版 权和许可提示。</p>
+
+<p>这意味着：</p>
+
+<ul>
+<li>你可以自由使用，复制，修改，可以用于自己的项目。</li>
+<li>可以免费分发或用来盈利。</li>
+<li>唯一的限制是必须包含许可声明。</li>
+</ul>
+
+<p>MIT 协议是所有开源许可中最宽松的一个，除了必须包含许可声明外，再无任何限制。</p>
+
+<h2 id="apache">Apache</h2>
+
+<p>Apache 协议 2.0 和别的开源协议相比，除了为用户提供版权许可之外，还有专利许可，对于那些涉及专利内容的开发者而言，该协议最适合（<a href="http://www.howstuffworks.com/question492.htm">这里有 一篇文章阐述这个问题</a>）。</p>
+
+<p>Apache 协议还有以下需要说明的地方:</p>
+
+<ul>
+<li>永久权利
+一旦被授权，永久拥有。</li>
+<li>全球范围的权利
+在一个国家获得授权，适用于所有国家。假如你在美国，许可是从印度授权的，也没有问题。</li>
+<li>授权免费，且无版税
+前期，后期均无任何费用。</li>
+<li>授权无排他性
+任何人都可以获得授权</li>
+<li>授权不可撤消
+一旦获得授权，没有任何人可以取消。比如，你基于该产品代码开发了衍生产品，你不用担心会在某一天被禁止使用该代码。</li>
+</ul>
+
+<p>分发代码方面包含一些要求，主要是，要在声明中对参与开发的人给予认可并包含一份许可协议原文。</p>
+
+<h2 id="creative-commons">Creative Commons</h2>
+
+<p>Creative Commons (CC) 并非严格意义上的开源许可，它主要用于设计。Creative Commons 有多种协议，每种都提供了相应授权模式，CC 协议主要包含 4 种基本形式：</p>
+
+<ul>
+<li>署名权
+必须为原始作者署名，然后才可以修改，分发，复制。</li>
+<li>保持一致
+作品同样可以在 CC 协议基础上修改，分发，复制。</li>
+<li>非商业
+作品可以被修改，分发，复制，但不能用于商业用途。但商业的定义有些模糊，比如，有的人认为非商业用途指的是不能销售，有的认为是甚至不能放在有广告的网 站，也有人认为非商业的意思是非盈利。</li>
+<li>不能衍生新作品
+你可以复制，分发，但不能修改，也不能以此为基础创作自己的作品。</li>
+</ul>
+
+<p>这些许可形式可以结合起来用，其中最严厉的组合是“署名，非商用，不能衍生新作品”，意味着，你可以分享作品，但不能改动或以此盈利，而且必须为原 作者署名。在这种许可模式下，原始作者对作品还拥有完全的控制权，而最宽松的组合是“署名”，意味着，只要为原始作者署名了，就可以自由处置。</p>
+
+<p><strong>因为在此之前，我用了国内的一些开源程序，但是呢这些程序都是需要商业授权的，不知道能不能免费的自己搭建起来给企业用。比如说 shopex，康盛的产品， PHPCMS等等。。。。
+如果真用了，他们会找上门来问你要版权么？</strong></p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/25-licence/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/24-zipkin/">利用Zipkin对Spring Cloud应用进行服务追踪分析</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-09-08T13:36:36.000&#43;00:00' itemprop="datePublished">2017-09-08</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/spring-cloud">Spring Cloud</a>
+
+<a href="https://ningyu1.github.io/site/tags/zipkin">Zipkin</a>
+
+
+</div>
+    </div>
+        
+
+<p>文章转自：<a href="https://yq.aliyun.com/articles/60165">https://yq.aliyun.com/articles/60165</a>
+作者：@libinjingshan</p>
+
+<h2 id="摘要-本文简单介绍了如何利用zipkin对springcloud应用进行服务分析-在实际的应用场景中-zipkin可以结合压力测试工具一起使用-分析系统在大压力下的可用性和性能">摘要： 本文简单介绍了如何利用Zipkin对SpringCloud应用进行服务分析。在实际的应用场景中，Zipkin可以结合压力测试工具一起使用，分析系统在大压力下的可用性和性能。</h2>
+
+<p>设想这么一种情况，如果你的微服务数量逐渐增大，服务间的依赖关系越来越复杂，怎么分析它们之间的调用关系及相互的影响？</p>
+
+<h2 id="服务追踪分析">服务追踪分析</h2>
+
+<p>一个由微服务构成的应用系统通过服务来划分问题域，通过REST请求服务API来连接服务来完成完整业务。对于入口的一个调用可能需要有多个后台服务协同完成，链路上任何一个调用超时或出错都可能造成前端请求的失败。服务的调用链也会越来越长，并形成一个树形的调用链。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/zipkin/1.png" alt="1.png" /></p>
+
+<p>随着服务的增多，对调用链的分析也会越来越负责。设想你在负责下面这个系统，其中每个小点都是一个微服务，他们之间的调用关系形成了复杂的网络。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/zipkin/2.png" alt="2.png" /></p>
+
+<p>有密集恐惧症的同学就忽略吧。</p>
+
+<p>针对服务化应用全链路追踪的问题，Google发表了<a href="http://research.google.com/pubs/pub36356.html?spm=5176.100239.blogcont60165.12.zDVtxt">Dapper论文</a>，介绍了他们如何进行服务追踪分析。其基本思路是在服务调用的请求和响应中加入ID，标明上下游请求的关系。利用这些信息，可以可视化地分析服务调用链路和服务间的依赖关系。</p>
+
+<h2 id="spring-cloud-sleuth和zipkin">Spring Cloud Sleuth和Zipkin</h2>
+
+<p>对应Dpper的开源实现是<a href="http://zipkin.io/?spm=5176.100239.blogcont60165.13.zDVtxt">Zipkin</a>，支持多种语言包括JavaScript，Python，Java, Scala, Ruby, C#, Go等。其中Java由多种不同的库来支持。</p>
+
+<p>在这个示例中，我们准备开发两个基于Spring Cloud的应用，利用Spring Cloud Sleuth来和Zipkin进行集成。Spring Cloud Sleuth是对Zipkin的一个封装，对于Span、Trace等信息的生成、接入HTTP Request，以及向Zipkin Server发送采集信息等全部自动完成。</p>
+
+<p>这是Spring Cloud Sleuth的概念图。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/zipkin/3.png" alt="3.png" /></p>
+
+<h2 id="服务rest调用">服务REST调用</h2>
+
+<p>本次演示的服务有两个：tracedemo做为前端服务接收用户的请求，tracebackend为后端服务，tracedemo通过http协议调用后端服务。</p>
+
+<p>利用RestTemplate进行HTTP请求调用
+tracedemo应用通过restTemplate调用后端tracedemo服务，注意，URL中指明tracedemo的地址为<code>backend</code>。</p>
+
+<pre><code class="language-java">@RequestMapping(&quot;/&quot;)
+public String callHome(){
+    LOG.log(Level.INFO, &quot;calling trace demo backend&quot;);
+    return restTemplate.getForObject(&quot;http://backend:8090&quot;, String.class);
+}
+</code></pre>
+
+<p>后端服务响应HTTP请求，输出一行日志后返回经典的“hello world”。</p>
+
+<pre><code class="language-java">@RequestMapping(&quot;/&quot;)
+public String home(){
+    LOG.log(Level.INFO, &quot;trace demo backend is being called&quot;);
+    return &quot;Hello World.&quot;;
+}
+</code></pre>
+
+<h2 id="引入sleuth和zipkin依赖包">引入Sleuth和Zipkin依赖包</h2>
+
+<p>可以看到，这是典型的两个spring应用通过RestTemplate进行访问的方式，哪在HTTP请求中注入追踪信息并把相关信息发送到Zipkin Server呢？答案在两个应用所加载的JAR包里。</p>
+
+<p>本示例采用gradle来构建应用，在build.gradle中加载了sleuth和zipkin相关的JAR包：</p>
+
+<pre><code class="language-xml">dependencies {
+    compile('org.springframework.cloud:spring-cloud-starter-sleuth')
+    compile('org.springframework.cloud:spring-cloud-sleuth-zipkin')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+</code></pre>
+
+<p>Spring应用在监测到Java依赖包中有sleuth和zipkin后，会自动在RestTemplate的调用过程中向HTTP请求注入追踪信息，并向Zipkin Server发送这些信息。</p>
+
+<p>哪么Zipkin Server的地址又是在哪里指定的呢？答案是在application.properties中：</p>
+
+<pre><code>spring.zipkin.base-url=http://zipkin-server:9411
+</code></pre>
+
+<p>注意Zipkin Server的地址为<code>zipkin-server</code>。</p>
+
+<h2 id="构建docker镜像">构建Docker镜像</h2>
+
+<p>为这两个服务创建相同的Dockerfile，用于生成Docker镜像：</p>
+
+<pre><code>FROM java:8-jre-alpine
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/' /etc/apk/repositories
+VOLUME /tmp
+ADD build/libs/*.jar app.jar
+RUN sh -c 'touch /app.jar'
+ENTRYPOINT [&quot;java&quot;,&quot;-Djava.security.egd=file:/dev/./urandom&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]
+</code></pre>
+
+<p>构建容器镜像的步骤如下：</p>
+
+<pre><code>cd tracedemo
+./gradlew build
+docker build -t zipkin-demo-frontend .
+
+cd ../tracebackend
+./gradlew build
+docker build -t zipkin-demo-backend .
+</code></pre>
+
+<p>构建镜像完成后用<code>docker push</code>命令上传到你的镜像仓库。</p>
+
+<h2 id="zipkin-server">Zipkin Server</h2>
+
+<p>利用Annotation声明方式创建Zipkin
+在build.gradle中引入Zipkin依赖包。</p>
+
+<pre><code>dependencies {
+    compile('org.springframework.boot:spring-boot-starter')
+    compile('io.zipkin.java:zipkin-server')
+    runtime('io.zipkin.java:zipkin-autoconfigure-ui')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+</code></pre>
+
+<p>在主程序Class增加一个注解<code>@EnableZipkinServer</code></p>
+
+<pre><code class="language-java">@SpringBootApplication
+@EnableZipkinServer
+public class ZipkinApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ZipkinApplication.class, args);
+    }
+}
+</code></pre>
+
+<p>在<code>application.properties</code>将端口指定为9411。</p>
+
+<pre><code>server.port=9411
+</code></pre>
+
+<h2 id="构建docker镜像-1">构建Docker镜像</h2>
+
+<p>Dockerfile和前面的两个服务一样，这里就不重复了。</p>
+
+<p>在阿里云容器服务上部署
+创建docker-compose.yml文件，内容如下：</p>
+
+<pre><code>version: &quot;2&quot;
+services:
+  zipkin-server:
+    image: registry.cn-hangzhou.aliyuncs.com/jingshanlb/zipkin-demo-server
+    labels:
+      aliyun.routing.port_9411: http://zipkin
+    restart: always
+
+  frontend:
+    image: registry.cn-hangzhou.aliyuncs.com/jingshanlb/zipkin-demo-frontend
+    labels:
+      aliyun.routing.port_8080: http://frontend
+    links:
+      - zipkin-server
+      - backend
+    restart: always
+
+  backend:
+    image: registry.cn-hangzhou.aliyuncs.com/jingshanlb/zipkin-demo-backend
+    links:
+      - zipkin-server
+    restart: always
+</code></pre>
+
+<p>在阿里云容器服务上<code>使用编排模版</code>创建应用，访问zipkin端点，可以看到服务分析的效果。</p>
+
+<p>访问前端应用3次，页面显示3次服务调用。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/zipkin/4.png" alt="4.png" /></p>
+
+<p>点击其中任意一个trace，可以看到请求链路上不同span所花费的时间。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/zipkin/5.png" alt="5.png" /></p>
+
+<p>进入Dependencies页面，还可以看到服务之间的依赖关系。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/zipkin/6.png" alt="6.png" /></p>
+
+<p>从这个过程可以看出，Zipkin和Spring Cloud的集成做得很好。而且对服务追踪分析的可视化也很直观。</p>
+
+<p>注意的是，在生产环境中还需要为Zipkin配置数据库，这里就不详细介绍了。</p>
+
+<p>本文的示例代码在此：<a href="https://github.com/binblee/zipkin-demo?spm=5176.100239.blogcont60165.18.zDVtxt">https://github.com/binblee/zipkin-demo</a></p>
+
+<h2 id="小节">小节</h2>
+
+<p>本文简单介绍了如何利用Zipkin对SpringCloud应用进行服务分析。在实际的应用场景中，Zipkin可以结合压力测试工具一起使用，分析系统在大压力下的可用性和性能。这部分内容未来会在DevOps系列中继续介绍。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/24-zipkin/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/23-spring-cloud/">Spring Cloud学习-Eureka、Ribbon和Feign</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-09-08T09:09:36.000&#43;00:00' itemprop="datePublished">2017-09-08</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/spring-cloud">Spring Cloud</a>
+
+<a href="https://ningyu1.github.io/site/tags/eureka">Eureka</a>
+
+<a href="https://ningyu1.github.io/site/tags/ribbon">Ribbon</a>
+
+<a href="https://ningyu1.github.io/site/tags/feign">Feign</a>
+
+
+</div>
+    </div>
+        
+
+<h1 id="前沿">前沿</h1>
+
+<p>这篇文章比较适合入门，对于spring cloud生态的成员有一个大致的了解，其实spring cloud生态将netflix的产品进行了很好的整合，netflix早几年就在服务治理这块有很深入的研究，出品了很多服务治理的工具hystrix就是很有名的一个，具体可以查看：<a href="https://github.com/netflix">https://github.com/netflix</a>，刚好在微服务盛行的年代服务治理是必不可少的一环，现在在微服务开发套件这块常用也就是下面这两种选择：</p>
+
+<ol>
+<li>spring cloud套件，成熟上手快</li>
+<li>自建微服务架构
+
+<ol>
+<li>UCM，统一配置管理（百度的disconf、阿里的diamond、点评的lion，等很多开源的）。</li>
+<li>RPC，阿里的Dubbo、点评的Pigeon，当当改的DubboX，grpc，等等很多开源的，还有很多公司自研的。</li>
+<li>服务治理，netflix的hystrix老牌的功能强大的服务治理工具，有熔断、降级等功能，很多公司会结合监控套件开发自己的服务治理工具。</li>
+<li>开发框架（rpc、restful这个一般公司都有自研的开发框架）</li>
+<li>注册中心（zookeeper、redis、Consul、SmartStack、Eureka，其中一些已经是spring cloud生态的一员了）。</li>
+<li>网关，restful的使用nginx+lua，这也是openAPI网关常用的手段</li>
+<li>负载均衡，这个结合选用的rpc框架来选择。一般rpc框架都有负载均衡的功能。</li>
+<li>服务治理熔断，使用hystrix（也已经是spring cloud生态的一员了）</li>
+<li>监控，使用pinpoint、点评的cat、等其他开源的APM工具</li>
+<li>DevOPS，持续交付一般也是自己构架的，采用jenkins打包docker镜像，使用docker生态的工具构建容器化发布平台。</li>
+</ol></li>
+</ol>
+
+<p>下面文章转自：<a href="https://www.jianshu.com/p/0aef3724e6bc">https://www.jianshu.com/p/0aef3724e6bc</a>
+作者：@杜琪</p>
+
+<h2 id="talk-is-cheap-show-me-the-code-书上得来终觉浅-绝知此事要躬行-在自己真正实现的过程中-会遇到很多莫名其妙的问题-而正是在解决这些问题的过程中-你会发现自己之前思维的盲点">Talk is cheap，show me the code ， 书上得来终觉浅，绝知此事要躬行。在自己真正实现的过程中，会遇到很多莫名其妙的问题，而正是在解决这些问题的过程中，你会发现自己之前思维的盲点。</h2>
+
+<h2 id="引子">引子</h2>
+
+<p>看完《微服务设计》后，算是补上了自己在服务化这块的理论知识，在业界，一般有两种微服务的实践方法：基于dubbo的微服务架构、基于Spring Cloud的微服务架构。从概念上来讲，Dubbo和Spring Cloud并不能放在一起对比，因为Dubbo仅仅是一个RPC框架，实现Java程序的远程调用，实施服务化的中间件则需要自己开发；而Spring Cloud则是实施微服务的一系列套件，包括：服务注册与发现、断路器、服务状态监控、配置管理、智能路由、一次性令牌、全局锁、分布式会话管理、集群状态管理等。</p>
+
+<p>在有赞，我们基于Dubbo实施服务化，刚开始是基于ZooKeeper进行服务注册与发现，现在已经转成使用Etcd。我这次学习Spring Cloud，则是想成体系得学习下微服务架构的实现，也许能够对基于Dubbo实施微服务架构有所借鉴。</p>
+
+<p>Spring Cloud下有很多工程：</p>
+
+<ul>
+<li>Spring Cloud Config：依靠git仓库实现的中心化配置管理。配置资源可以映射到Spring的不同开发环境中，但是也可以使用在非Spring应用中。</li>
+<li>Spring Cloud Netflix：不同的Netflix OSS组件的集合：Eureka、Hystrix、Zuul、Archaius等。</li>
+<li>Spring Cloud Bus：事件总线，利用分布式消息将多个服务连接起来。非常适合在集群中传播状态的改变事件（例如：配置变更事件）</li>
+<li>Spring Cloud Consul：服务发现和配置管理，由Hashicorp团队开发。</li>
+</ul>
+
+<p>我决定先从Spring Cloud Netflix看起，它提供了如下的功能特性：</p>
+
+<ul>
+<li>服务发现：Eureka-server实例作为服务提供者，可以注册到服务注册中心，Eureka客户端可以通过Spring管理的bean发现实例；</li>
+<li>服务发现：嵌套式的Eureka服务可以通过声明式的Java配置文件创建；</li>
+<li>断路器：利用注解，可以创建一个简单的Hystrix客户端；</li>
+<li>断路器：通过Java配置文件可以创建内嵌的Hystrix控制面板；</li>
+<li>声明式REST客户端：使用Feign可以创建声明式、模板化的HTTP客户端；</li>
+<li>客户端负载均衡器：Ribbon</li>
+<li>路由器和过滤器：Zuul可以在微服务架构中提供路由功能、身份验证、服务迁移、金丝雀发布等功能。</li>
+</ul>
+
+<p>本文计划利用Eureka实现一个简答的服务注册于发现的例子，需要创建三个角色：服务注册中心、服务提供者、服务消费者。</p>
+
+<h2 id="实践">实践</h2>
+
+<h3 id="1-服务注册中心">1. 服务注册中心</h3>
+
+<p>在IDEA中创建一个Spring Cloud工程，引入Eureka-Server包，pom文件整体如下：</p>
+
+<pre><code class="language-java">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;org.example.springcloud&lt;/groupId&gt;
+    &lt;artifactId&gt;service-register&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+
+    &lt;!-- spring boot的parent 配置文件，有大部分spring boot需要用的Jar包 --&gt;
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;
+    &lt;/parent&gt;
+
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+    &lt;/properties&gt;
+
+    &lt;!-- spring boot的maven打包插件 --&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+    &lt;dependencies&gt;
+        &lt;!-- eureka-server --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-eureka-server&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- spring boot test--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;Camden.SR5&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+&lt;/project&gt;
+</code></pre>
+
+<p>在src/main/java包下创建一个名为hello的包，然后创建<code>EurekaServiceRegisterApplication</code>类，并用@EnableEurekaServer和@SpringBootApplication两个注解修饰，后者是Spring Boot应用都需要用的，这里不作过多解释；@EnableEurekaServer注解的作用是触发Spring Boot的自动配置机制，由于我们之前在pom文件中导入了eureka-server，spring boot会在容器中创建对应的bean。EurekaServiceRegisterApplication的代码如下：</p>
+
+<pre><code class="language-java">package hello;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/2
+ * Time: 20:02
+ */
+
+@EnableEurekaServer //通过@EnableEurekaServer启动一个服务注册中心给其他应用使用
+@SpringBootApplication
+public class EurekaServiceRegisterApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(EurekaServiceRegisterApplication.class, args);
+    }
+}
+</code></pre>
+
+<p>在application.properties中还需要增加如下配置，才能创建一个真正可以使用的服务注册中心。</p>
+
+<pre><code>#注册服务的端口号
+server.port=8761
+
+#是否需要注册到注册中心，因为该项目本身作为服务注册中心，所以为false
+eureka.client.register-with-eureka=false
+#是否需要从注册中心获取服务列表，原因同上，为false
+eureka.client.fetch-registry=false
+#注册服务器的地址：服务提供者和服务消费者都要依赖这个地址
+eureka.client.service-url.defaultZone=http://localhost:${server.port}/eureka
+
+logging.level.com.netflix.eureka=OFF
+logging.level.com.netflix.discovery=OFF
+</code></pre>
+
+<p>启动注册服务，并访问：<code>http://localhost:8761</code>，就可以看到如下界面。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/spring-cloud/1.png" alt="eureka" /></p>
+
+<p>服务注册中心后台</p>
+
+<h3 id="2-服务提供者">2. 服务提供者</h3>
+
+<p>创建一个Spring Boot工程，代表服务提供者，该服务提供者会暴露一个加法服务，接受客户端传来的加数和被加数，并返回两者的和。</p>
+
+<p>工程的pom文件内容如下：</p>
+
+<pre><code class="language-java">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;org.example.springcloud&lt;/groupId&gt;
+    &lt;artifactId&gt;service-client&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;
+        &lt;relativePath/&gt; 
+    &lt;/parent&gt;
+
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+    &lt;/properties&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-eureka&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-eureka-server&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;Camden.SR5&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+&lt;/project&gt;
+</code></pre>
+
+<p>其中的关键在于spring-cloud-starter-eureka这个Jar包，其中包含了eureka的客户端实现。</p>
+
+<p>在src/main/java/hello下创建工程的主类EurekaServerProducerApplication，使用@EnableDiscoveryClient注解修饰，该注解在服务启动的时候，可以触发服务注册的过程，向配置文件中指定的服务注册中心（Eureka-Server）的地址注册自己提供的服务。EurekaServerProducerApplication的源码如下：</p>
+
+<pre><code class="language-java">package hello;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/2
+ * Time: 20:34
+ */
+@EnableDiscoveryClient
+@SpringBootApplication
+public class EurekaServerProducerApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(EurekaServerProducerApplication.class, args);
+    }
+
+}
+</code></pre>
+
+<p>配置文件的内容如下：</p>
+
+<pre><code>#服务提供者的名字
+spring.application.name=compute-service
+
+#服务提供者的端口号
+server.port=8888
+
+#服务注册中心的地址
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+</code></pre>
+
+<p>服务提供者的基本框架搭好后，需要实现服务的具体内容，在ServiceInstanceRestController类中实现，它的具体代码如下：</p>
+
+<pre><code class="language-java">package hello;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/2
+ * Time: 20:36
+ */
+@RestController
+public class ServiceInstanceRestController {
+
+    private static final Logger logger = LoggerFactory.getLogger(ServiceInstanceRestController.class);
+
+    @Autowired
+    private DiscoveryClient discoveryClient; //服务发现客户端
+
+    @GetMapping(value = &quot;/add&quot;)
+    public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
+        ServiceInstance instance = discoveryClient.getLocalServiceInstance();
+        Integer r = a + b;
+        logger.info(&quot;/add, host:&quot; + instance.getHost() + &quot;, service_id:&quot; + instance.getServiceId() + &quot;, result:&quot; + r);
+        return r;
+    }
+}
+</code></pre>
+
+<p>先启动服务注册中心的工程，然后再启动服务提供者，在访问：<code>localhost:8761</code>，如下图所示，服务提供者已经注册到服务注册中心啦。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/spring-cloud/2.png" alt="eureka2" /></p>
+
+<p>服务提供者注册到服务注册中心</p>
+
+<p>在Spring Cloud Netflix中，使用Ribbon实现客户端负载均衡，使用Feign实现声明式HTTP客户端调用——即写得像本地函数调用一样。</p>
+
+<h3 id="3-服务消费者-ribbon">3. 服务消费者-Ribbon</h3>
+
+<p>创建一个Spring boot工程，引入ribbon和eureka，pom文件内容如下：</p>
+
+<pre><code class="language-java">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;org.example.springcloud&lt;/groupId&gt;
+    &lt;artifactId&gt;serviceconsumer&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;
+    &lt;/parent&gt;
+
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+    &lt;/properties&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+    &lt;dependencies&gt;
+        &lt;!-- 客户端负载均衡 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-ribbon&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- eureka客户端 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-eureka&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- spring boot实现Java Web服务--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;Camden.SR5&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+&lt;/project&gt;
+</code></pre>
+
+<p>创建EurekaConsumerApplication类，定义REST客户端实例，代码如下：</p>
+
+<pre><code class="language-java">package hello;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/2
+ * Time: 22:55
+ */
+@EnableDiscoveryClient //开启服务发现的能力
+@SpringBootApplication
+public class EurekaConsumerApplication {
+
+    @Bean //定义REST客户端，RestTemplate实例
+    @LoadBalanced //开启负债均衡的能力
+    RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(EurekaConsumerApplication.class, args);
+    }
+}
+</code></pre>
+
+<p>application.properties中定义了服务注册中心的地址、消费者服务的端口号、消费者服务的名称这些内容：</p>
+
+<pre><code>#应用名称
+spring.application.name=ribbon-consumer
+
+#端口号
+server.port=9000
+
+#注册中心的地址
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+</code></pre>
+
+<p>消费者服务的入口为：ConsumerController，我们通过这个实例进行测试。消费者服务启动过程中，会从服务注册中心中拉最新的服务列表，当浏览器触发对应的请求，就会根据COMPUTE-SERVICE查找服务提供者的IP和端口号，然后发起调用。</p>
+
+<pre><code class="language-java">package hello;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/2
+ * Time: 22:58
+ */
+@RestController
+public class ConsumerController {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @GetMapping(value = &quot;/add&quot;)
+    public String add() {
+        return restTemplate.getForEntity(&quot;http://COMPUTE-SERVICE/add?a=10&amp;b=20&quot;, String.class).getBody();
+    }
+}
+</code></pre>
+
+<p>首先启动服务注册中心，第二分别启动两个服务提供者（IP相同、端口不同即可），然后启动服务消费者。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/spring-cloud/3.png" alt="eureka3" /></p>
+
+<p>两个服务提供者</p>
+
+<p>在浏览器里访问<code>localhost:9000/add</code>两次，可以看到请求有时候会在8888端口的服务，有时候会到8889的服务。具体背后选择的原理，还有待后续研究。</p>
+
+<h3 id="4-服务消费者-feign">4. 服务消费者-Feign</h3>
+
+<p>使用类似<code>restTemplate.getForEntity(&quot;http://COMPUTE-SERVICE/add?a=10&amp;b=20&quot;,String.class).getBody()</code>这样的语句进行服务间调用并非不可以，只是我们在服务化的过程中，希望跨服务调用能够看起来像本地调用，这也是我理解的Feign的使用场景。</p>
+
+<p>创建一个spring boot工程，该工程的pom文件与上一节的类似，只是把ribbon的依赖换为feign的即可，代码如下：</p>
+
+<pre><code class="language-java">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;org.example.springcloud&lt;/groupId&gt;
+    &lt;artifactId&gt;serviceconsumer&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;
+    &lt;/parent&gt;
+
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+    &lt;/properties&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+    &lt;dependencies&gt;
+        &lt;!-- Feign实现声明式HTTP客户端 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-feign&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- eureka客户端 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-eureka&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- spring boot实现Java Web服务--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;Camden.SR5&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+&lt;/project&gt;
+</code></pre>
+
+<p>首先创建应用程序启动类：EurekaConsumerApplication，代码如下：</p>
+
+<pre><code class="language-java">package hello;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
+
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/19
+ * Time: 16:59
+ */
+@EnableDiscoveryClient //用于启动服务发现功能
+@EnableFeignClients //用于启动Fegin功能
+@SpringBootApplication
+public class EurekaConsumerApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(EurekaConsumerApplication.class);
+    }
+}
+</code></pre>
+
+<p>然后定义远程调用的接口，在hello包下创建depend包，然后创建ComputeClient接口，使用@FeignClient(&ldquo;COMPUTE-SERVICE&rdquo;)注解修饰，COMPUTE-SERVICE就是服务提供者的名称，然后定义要使用的服务，代码如下：</p>
+
+<pre><code class="language-java">package hello.depend;
+
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/19
+ * Time: 17:02
+ */
+@FeignClient(&quot;COMPUTE-SERVICE&quot;)
+public interface ComputeClient {
+
+    @RequestMapping(method = RequestMethod.GET, value = &quot;/add&quot;)
+    Integer add(@RequestParam(value = &quot;a&quot;) Integer a, @RequestParam(value = &quot;b&quot;) Integer b);
+}
+</code></pre>
+
+<p>在ConsumerController中，像引入普通的spring bean一样引入ComputeClient对象，其他的和Ribbon的类似。</p>
+
+<pre><code class="language-java">package hello;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import hello.depend.ComputeClient;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: duqi
+ * Date: 2017/3/19
+ * Time: 17:06
+ */
+@RestController
+public class ConsumerController {
+
+    @Autowired
+    private ComputeClient computeClient;
+
+    @RequestMapping(value = &quot;/add&quot;, method = RequestMethod.GET)
+    public Integer add() {
+        return computeClient.add(10, 20);
+    }
+}
+</code></pre>
+
+<p>application.properties的内容如下：</p>
+
+<pre><code>#应用名称
+spring.application.name=fegin-consumer
+
+#端口号
+server.port=9000
+
+#注册中心的地址
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+</code></pre>
+
+<p>启动fegin消费者，访问<code>localhost:9000/add</code>，也可以看到服务提供者已经收到了消费者发来的请求。</p>
+
+<p><img src="https://ningyu1.github.io/site/img/spring-cloud/4.png" alt="log1" /></p>
+
+<p>请求到达服务提供者1</p>
+
+<p><img src="https://ningyu1.github.io/site/img/spring-cloud/5.png" alt="log2" /></p>
+
+<p>请求到达服务提供者2</p>
+
+<p>源码下载</p>
+
+<ul>
+<li><a href="https://github.com/duqicauc/eureka-register/tree/master">服务注册中心(Eureka服务端)</a></li>
+<li><a href="https://github.com/duqicauc/eureka-producer/tree/master">服务提供者(Eureka客户端)</a></li>
+<li><a href="https://github.com/duqicauc/eureka-consumer-ribbon/tree/master">服务消费者-Ribbon(Eureka客户端)</a></li>
+<li><a href="https://github.com/duqicauc/eureka-consumer-feign/tree/master">服务消费者-Feign(Eureka客户端)</a></li>
+</ul>
+
+<p>参考资料</p>
+
+<ul>
+<li><a href="http://blog.didispace.com/springcloud2/">Spring Cloud构建微服务架构（一）服务注册与发现</a></li>
+<li><a href="http://www.cnblogs.com/skyblog/p/5133752.html">Spring Cloud实现服务注册于发现</a></li>
+<li><a href="http://cloud.spring.io/spring-cloud-netflix/">spring-cloud-netflix官网</a></li>
+<li><a href="http://projects.spring.io/spring-cloud/">spring cloud 官网</a></li>
+<li><a href="http://blog.csdn.net/neosmith/article/details/52449921">使用Spring Cloud Feign作为HTTP客户端调用远程HTTP服务</a></li>
+</ul>
+
+<p>作者：杜琪
+链接：<a href="http://www.jianshu.com/p/0aef3724e6bc">http://www.jianshu.com/p/0aef3724e6bc</a>
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/23-spring-cloud/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+  <article class="post">
+    <h2 class="title"> 
+        <a href="https://ningyu1.github.io/site/post/22-redis-client/">RedisClient使用说明</a>
+    </h2>
+    <div class="entry-content">
+    <div class="meta">
+        <div class="date">Published on: <time datetime='2017-09-06T11:17:36.000&#43;00:00' itemprop="datePublished">2017-09-06</time>
+</div>
+        <div class="tags">Tags: 
+
+<a href="https://ningyu1.github.io/site/tags/redis">Redis</a>
+
+
+</div>
+    </div>
+        
+
+<h2 id="项目地址">项目地址</h2>
+
+<p><a href="https://github.com/ningyu1/redis-client">redis-client</a></p>
+
+<p><a href="https://github.com/ningyu1/redis-client/releases"><img src="https://img.shields.io/github/release/ningyu1/redis-client.svg?style=social&amp;label=Release"></a>&nbsp;<a href="https://github.com/ningyu1/redis-client/stargazers"><img src="https://img.shields.io/github/stars/ningyu1/redis-client.svg?style=social&amp;label=Star"></a>&nbsp;<a href="https://github.com/ningyu1/redis-client/fork"><img src="https://img.shields.io/github/forks/ningyu1/redis-client.svg?style=social&amp;label=Fork"></a>&nbsp;<a href="https://github.com/ningyu1/redis-client/watchers"><img src="https://img.shields.io/github/watchers/ningyu1/redis-client.svg?style=social&amp;label=Watch"></a> <a href="http://www.gnu.org/licenses/gpl-3.0.html"><img src="https://img.shields.io/badge/license-GPLv3-blue.svg"></a></p>
+
+<h2 id="maven引入">Maven引入</h2>
+
+<pre><code class="language-xml">&lt;dependency&gt;
+  &lt;groupId&gt;cn.tsoft.framework&lt;/groupId&gt;
+  &lt;artifactId&gt;redis-client&lt;/artifactId&gt;
+  &lt;version&gt;1.1.0-SNAPSHOT&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<h2 id="spring引入">Spring引入</h2>
+
+<pre><code class="language-xml">&lt;import resource=&quot;classpath:spring-redis.xml&quot; /&gt;
+</code></pre>
+
+<h2 id="api使用说明">Api使用说明</h2>
+
+<p>ps.本次版本增加了namespace、泛型的支持（存、取直接使用java对象），namespace可以有效的避免key名称冲突和对以后做sharding提供了基础，泛型则是提升使用友好度，本次版本包装了驱动（jedis）的95%的方法，有一些性能不好的方法没有开放，新增了一些使用上更加友好的方法。</p>
+
+<p>常规操作的command实现：RedisClientImpl</p>
+
+<p>二进制操作的command实现：BinaryRedisClientImpl</p>
+
+<p>两者都支持直接存、取java对象，区别在于前者序列化为json以string的方式发送到redis服务器，后者序列化为byte[]以字节方式发送到redis服务，通过redis-cli工具前者可以很明确的看到存的值，后者看到的是二进制编码。</p>
+
+<h2 id="接口方法">接口方法</h2>
+
+<p><img src="https://ningyu1.github.io/site/img/redis-client/1.png" alt="1.png" /></p>
+
+<h2 id="回调接口">回调接口</h2>
+
+<p>cn.tsoft.framework.redis.callback.GetDataCallBack<R></p>
+
+<p>接口提供两个方法</p>
+
+<pre><code class="language-java">    /**
+     * ttl时间,不是所有命令都支持ttl设置
+     * */
+    int getExpiredTime();
+ 
+    /**
+     * 执行回调方法
+     */
+    R invoke();
+</code></pre>
+
+<p><strong>ps.int getExpiredTime();这个方法并不是所有命令都支持（hget系列不支持，因为hash的attr是不支持ttl设置的，ttl必须设置在hash的key上并不是hash的attr上），因此不支持ttl的命令就采用默认的空实现。</strong>
+<strong>在使用get*和hget*方法时，如果key返回为null，则通过该接口的<code>R invoke();</code>方法获取数据并放到redis中。</strong>
+<strong>hgetAllObjects方法上的GetDataCallBack<T> gbs参数是无效的传入null即可。</strong>
+<strong>如果在get方法获取不到值时不想走数据回调时传入null即可。</strong></p>
+
+<p>示例：</p>
+
+<pre><code class="language-java">//不设置回调
+Metadata resule = redisClient.get(bizkey, nameSpace, Metadata.class, null);
+ 
+List&lt;Metadata &gt; resule = redisClient.get(bizkey, nameSpace, new TypeReference&lt;List&lt;Metadata&gt;&gt;() {}, null);
+ 
+//设置回调
+List&lt;Long&gt; resule = redisClient.get(bizkey, nameSpace, new TypeReference&lt;List&lt;Long&gt;&gt;() {}, new GetDataCallBack&lt;List&lt;Long&gt;&gt;() {
+            @Override
+            public int getExpiredTime() {
+                return 3600;
+            }
+            @Override
+            public List&lt;Long&gt; invoke() {
+                return getMetadataSourceProvider().getUserRoles(uid);
+            }
+        });
+ 
+List&lt;Long&gt; resule = redisClient.hgetObject(bizkey, nameSpace, String.valueOf(uid), new TypeReference&lt;List&lt;Long&gt;&gt;() {}, new GetDataCallBack&lt;List&lt;Long&gt;&gt;() {
+            @Override
+            public int getExpiredTime() {
+                return 0;
+            }
+            @Override
+            public List&lt;Long&gt; invoke() {
+                return getMetadataSourceProvider().getUserRoles(uid);
+            }
+        });
+</code></pre>
+
+<h2 id="参数说明">参数说明</h2>
+
+<p>get*方法的参数Class<T> value和TypeReference<T> type的区别，前者不支持嵌套泛型，后者支持嵌套泛型，举一个例子说明</p>
+
+<pre><code class="language-java">Metadata value = redisClient.get(bizkey, nameSpace, Metadata.class, null);
+ 
+List&lt;Metadata&gt; list = redisClient.get(bizkey, nameSpace, new TypeReference&lt;List&lt;Metadata&gt;&gt;(){}, null);
+</code></pre>
+
+<h2 id="综合使用示例">综合使用示例</h2>
+
+<pre><code class="language-java">redisClient.set(bizkey, namespace, new Metadata(), 60);//set并设置ttl60秒
+redisClient.set(bizkey, namespace, new Metadata(), -1);//set不设置ttl
+redisClient.setnx(bizkey, namespace, &quot;aaaa&quot;);//key不存在时才设置值
+redisClient.setex(bizkey, namespace, 60, new Metadata());//set一个key并设置ttl60秒，等价于第一行的用法
+//setbit和setrange用法不多做说明，参考redis.io上面的command说明
+ 
+redisClient.get(bizkey, namespace, new GetDataCallBack&lt;String&gt;(){
+            @Override
+            public int getExpiredTime() {
+                return 60;
+            }
+            @Override
+            public String invoke() {
+                return &quot;aaaa&quot;;
+            }
+});//获取，找不到取数据并set进去
+ 
+redisClient.get(bizkey, namespace, Metadata.class, new GetDataCallBack&lt;Metadata&gt;(){
+            @Override
+            public int getExpiredTime() {
+                return 60;
+            }
+            @Override
+            public Metadata invoke() {
+                return new Metadata();
+            }
+});//获取值，类型：Metadata
+ 
+redisClient.get(bizkey, namespace, new TypeReference&lt;List&lt;Metadata.class&gt;&gt;(){}, new GetDataCallBack&lt;List&lt;Metadata&gt;&gt;(){
+            @Override
+            public int getExpiredTime() {
+                return 60;
+            }
+            @Override
+            public List&lt;Metadata&gt; invoke() {
+                return new ArrayList&lt;Metadata&gt;;
+            }
+});//获取值，类型：List&lt;Metadata&gt;
+ 
+redisClient.get(bizkey, namespace, new TypeReference&lt;List&lt;Metadata.class&gt;&gt;(){}, null);//获取值，类型：List&lt;Metadata&gt;
+ 
+//getbit、getrange、getSet、hget、hgetAll、hgetObject、hgetAllObjects，用法不多做说明，参考redis.io上面的command说明
+ 
+//管道，批量发送多条命令，但是不支持namespace需要手动添加namespace
+Pipeline pipelined = redisClient.pipelined();
+pipelined.set(key, value);
+pipelined.get(key);
+pipelined.syncAndReturnAll(); //发送命令并接受返回值
+pipelined.sync();//发送命令不接受返回值
+ 
+//其他z*、incr、decr、h*、s*命令不做说明，参考redis.io上面的command说明
+</code></pre>
+
+    </div>
+
+<div class="meta">
+    
+    
+    <span class="comments"><a href="https://ningyu1.github.io/site/post/22-redis-client/#disqus_thread">Comments</a></span>
+    
+    
+</div>
+</article>
+
+
+
+  <nav id="pagenavi">
+    
+        <a href="https://ningyu1.github.io/site/page/8/" class="prev">Prev</a>
+    
+    
+        <a href="https://ningyu1.github.io/site/page/10/" class="next">Next</a>
+    
+    <div class="center"><a href="https://ningyu1.github.io/site/archives/index.html">Blog Archives</a></div>
+  </nav>
+
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2024
+    
+    凝雨-Yun
+    . Powered by <a href="http://gohugo.io" target="_blank">Hugo</a> |
+    Theme is <a href="https://github.com/wd/hugo-fabric">hugo-fabric</a>
+</div>
+
+    </footer>
+    <script src="https://ningyu1.github.io/site/js/fabric.js"></script>
+
+
+</div>
+</div>
+<script src="https://ningyu1.github.io/site/js/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+ 
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery);
+ 
+</script>
+</body>
+</html>
