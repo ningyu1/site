@@ -15,3 +15,12 @@
 9. 修改搜索site为根域名，修改位置：themes/hugo-fabric/layouts/partials/navigation.html
 10. 修改rss地址，修改位置：themes/hugo-fabric/layouts/partials/social/html
 
+# hugo 安装
+
+https://gohugo.io/installation/
+
+ps. 注意hugo版本：hugo_0.51，当前主题不支持此外版本
+
+# 生成静态文件
+
+hugo --buildDrafts
